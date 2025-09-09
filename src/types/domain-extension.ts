@@ -3,4 +3,5 @@ export interface DomainExtension {
   price: string;
   originalPrice?: string;
   isPopular?: boolean;
+  color?: string;
 }

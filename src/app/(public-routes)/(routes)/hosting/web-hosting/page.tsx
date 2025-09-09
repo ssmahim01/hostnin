@@ -3,6 +3,10 @@ import PricingPlans from "@/app/(public-routes)/components/web-hosting/pricing-p
 import { Metadata } from "next";
 import { TestimonialsSection } from "@/app/(public-routes)/components/web-hosting/testimonials";
 import { DomainSearchSection } from "@/app/(public-routes)/components/web-hosting/domain-search-section";
+import { InfrastructurePartners } from "@/app/(public-routes)/components/web-hosting/infrastructure-partners";
+import { FAQSection } from "@/app/(public-routes)/components/web-hosting/faq-section";
+import { WhyChooseHosting } from "@/app/(public-routes)/components/web-hosting/why-choose-hosting";
+import { MoneyBackGuarantee } from "@/app/(public-routes)/components/web-hosting/money-back-gurantee";
 
 export const metadata: Metadata = {
   title: "Fast & Secure Web Hosting | Hostnin",
@@ -27,6 +31,10 @@ export default function WebHostingPage() {
         <PricingPlans />
         <TestimonialsSection />
         <DomainSearchSection />
+        <InfrastructurePartners />
+        <WhyChooseHosting />
+        <MoneyBackGuarantee />
+        <FAQSection />
       </div>
     </>
   );
