@@ -82,7 +82,7 @@ export function Navbar() {
                   <div key={item.label} className="relative group">
                     <Link
                       href={item.href || "#"}
-                      className="flex items-center gap-1 px-4 py-3 text-gray-700 dark:text-gray-300 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all font-semibold"
+                      className="flex items-center gap-1 px-4 py-3 text-gray-700 dark:text-gray-300  hover:text-blue-600 hover:bg-accent rounded-lg transition-all font-semibold"
                     >
                       {item.label}
                       {item.hasDropdown && (
@@ -117,45 +117,45 @@ export function Navbar() {
               </div>
             </div>
 
-           <div className="flex items-center gap-2">
-             {/* Theme Toggle */}
-            <Button
-              variant={"ghost"}
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="p-2 rounded hover:bg-gray-200 cursor-pointer dark:hover:bg-gray-700 transition-colors"
-            >
-              {theme === "dark" ? (
-                <Sun className="w-5 h-5" />
-              ) : (
-                <Moon className="w-5 h-5" />
-              )}
-            </Button>
-
-            {/* CTA Button */}
-            <div className="hidden lg:block">
+            <div className="flex items-center gap-2">
+              {/* Theme Toggle */}
               <Button
-                variant={"default"}
-                className="bg-blue-600 cursor-pointer hover:bg-blue-700 text-white p-5 rounded-lg font-medium"
+                variant={"ghost"}
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                className="p-2 rounded hover:bg-gray-200 cursor-pointer dark:hover:bg-gray-700 transition-colors"
               >
-                Dashboard
+                {theme === "dark" ? (
+                  <Sun className="w-5 h-5" />
+                ) : (
+                  <Moon className="w-5 h-5" />
+                )}
               </Button>
+
+              {/* CTA Button */}
+              <div className="hidden lg:block">
+                <Button
+                  variant={"default"}
+                  className="bg-blue-600 cursor-pointer hover:bg-blue-700 text-white p-5 rounded-lg font-medium"
+                >
+                  Dashboard
+                </Button>
+              </div>
+            </div>
+
+            {/* Mobile menu button */}
+            <div className="lg:hidden">
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="text-gray-700 dark:text-gray-300 hover:text-blue-600 p-2"
+              >
+                {isOpen ? (
+                  <X className="w-6 h-6" />
+                ) : (
+                  <Menu className="w-6 h-6" />
+                )}
+              </button>
             </div>
           </div>
-
-          {/* Mobile menu button */}
-          <div className="lg:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 dark:text-gray-300 hover:text-blue-600 p-2"
-            >
-              {isOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
-            </button>
-          </div>
-           </div>
         </div>
       </div>
 
