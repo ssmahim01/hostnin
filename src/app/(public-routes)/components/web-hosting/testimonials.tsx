@@ -128,7 +128,7 @@ export function TestimonialsSection() {
                   {[...Array(3)].map((_, i) => (
                     <Avatar
                       key={i}
-                      className="w-10 h-10 border-2 border-white dark:border-gray-800"
+                      className="w-11 h-11 border-2 border-white dark:border-gray-800"
                     >
                       <AvatarImage
                         src={`${testimonials[i]?.avatar}`}
