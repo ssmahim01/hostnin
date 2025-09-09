@@ -103,7 +103,7 @@ export function Navbar() {
                             <li key={sub.label}>
                               <Link
                                 href={sub.href}
-                                className="block px-4 py-2 text-gray-700 dark:text-gray-300 text-sm font-semibold hover:bg-blue-50 dark:hover:bg-gray-800 hover:text-blue-600 transition"
+                                className="block px-4 py-2 text-gray-700 dark:text-gray-300 text-sm font-semibold hover:bg-blue-50 hover:text-blue-600 transition"
                               >
                                 {sub.label}
                               </Link>
