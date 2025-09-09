@@ -4,6 +4,7 @@ import "./globals.css";
 import { Suspense } from "react";
 import { ThemeProvider } from "@/components/theme-provider/theme-provider";
 import { Navbar } from "@/components/shared/navbar";
+import { Footer } from "@/components/shared/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,6 +42,7 @@ export default function RootLayout({
           >
             <Navbar />
             {children}
+            <Footer />
           </ThemeProvider>
         </Suspense>
       </body>
