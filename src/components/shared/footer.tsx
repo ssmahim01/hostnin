@@ -81,7 +81,7 @@ export function Footer() {
   return (
     <footer className="bg-blue-900 dark:bg-blue-950 text-white">
       {/* Payment Methods */}
-      <div className="border-b border-blue-800 dark:border-blue-900">
+      <div className="border-b border-blue-800 dark:border-blue-900 max-w-7xl mx-auto">
         <div className="container mx-auto px-4 py-4">
           <div className="flex flex-wrap justify-center items-center gap-4">
             <span className="text-sm text-blue-200">We Accept:</span>
@@ -101,7 +101,7 @@ export function Footer() {
       </div>
 
       {/* Main Footer Content */}
-      <div className="container mx-auto px-4 py-12">
+      <div className="container px-4 py-12 max-w-7xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
           {footerSections.map((section) => (
             <div key={section.title}>
@@ -124,7 +124,7 @@ export function Footer() {
       </div>
 
       {/* Bottom Footer */}
-      <div className="border-t border-blue-800 dark:border-blue-900">
+      <div className="border-t border-blue-800 dark:border-blue-900 max-w-7xl mx-auto">
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-4">

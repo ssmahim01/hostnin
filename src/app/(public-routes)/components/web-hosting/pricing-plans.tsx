@@ -84,7 +84,7 @@ export default function PricingPlans() {
   };
 
   return (
-    <div className="lg:py-40 py-32 bg-white dark:bg-gray-900">
+    <div className="lg:pt-40 pb-20 md:pt-64 pt-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
