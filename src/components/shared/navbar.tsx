@@ -82,7 +82,7 @@ export function Navbar() {
                   <div key={item.label} className="relative group">
                     <Link
                       href={item.href || "#"}
-                      className="flex items-center gap-1 px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all font-semibold"
+                      className="flex items-center gap-1 px-4 py-3 text-gray-700 dark:text-gray-300 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all font-semibold"
                     >
                       {item.label}
                       {item.hasDropdown && (
