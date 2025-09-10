@@ -58,7 +58,7 @@ export function HeroSection() {
             width={140}
             height={80}
             quality={90}
-            className="absolute -bottom-48 left-10 h-full w-auto object-contain"
+            className="absolute -bottom-[5.9rem] left-10 h-[280px] w-auto object-contain"
             priority
           />
         </div>

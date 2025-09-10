@@ -12,8 +12,8 @@ const footerSections: FooterSection[] = [
       { label: "Web Hosting", href: "/hosting/web" },
       { label: "Cloud Hosting", href: "/hosting/cloud" },
       { label: "WordPress Hosting", href: "/hosting/wordpress" },
-      { label: "VPS Hosting", href: "/hosting/vps" },
-      { label: "Reseller Hosting", href: "/hosting/reseller" },
+      { label: "BDIX Hosting", href: "/hosting/bdix" },
+      { label: "Turbo Hosting", href: "/hosting/turbo" },
     ],
   },
   {
@@ -81,7 +81,7 @@ const paymentMethods: PaymentMethod[] = [
 
 export function Footer() {
   return (
-    <footer className="bg-blue-900 dark:bg-blue-950 text-white">
+    <footer className="bg-[#001158] dark:bg-blue-950 text-white">
       {/* Payment Methods */}
       <div className="border-b border-blue-800 dark:border-blue-900 max-w-7xl mx-auto">
         <div className="container mx-auto px-4 py-4">

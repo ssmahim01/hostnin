@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { HeroSection } from "./(public-routes)/components/home/hero";
+import HostingPlan from "./(public-routes)/components/home/hosting-plan";
 
 export const metadata: Metadata = {
   title: "Hostnin - Reliable Hosting Solutions",
@@ -20,6 +21,7 @@ export default function Home() {
   return (
     <>
       <HeroSection />
+      <HostingPlan />
     </>
   );
 }
