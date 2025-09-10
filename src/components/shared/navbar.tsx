@@ -9,6 +9,7 @@ import type { NavItem } from "@/types/nav";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import Image from "next/image";
+import { ScrollArea, ScrollBar } from "../ui/scroll-area";
 
 const navItems: NavItem[] = [
   { label: "Pricing", href: "/pricing" },
@@ -87,45 +88,43 @@ export function Navbar() {
 
           <div className="flex items-center gap-4">
             {/* Desktop Navigation */}
-            <div className="hidden lg:block">
-              <div className="flex gap-2 items-baseline">
-                {navItems?.map((item) => (
-                  <div key={item.label} className="relative group">
-                    <Link
-                      href={item.href || "#"}
-                      className="flex items-center gap-1 px-4 py-3 text-gray-700 dark:text-gray-300  hover:text-blue-600 hover:bg-accent rounded-lg transition-all font-semibold"
-                    >
-                      {item.label}
-                      {item.hasDropdown && (
-                        <ChevronDown className="h-4 w-4 ml-1 transition-transform duration-300 group-hover:rotate-180" />
-                      )}
-                    </Link>
-
-                    {item.hasDropdown && item.dropdownItems && (
-                      <AnimatePresence>
-                        <motion.ul
-                          initial={{ opacity: 0, y: -10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -10 }}
-                          transition={{ duration: 0.2 }}
-                          className="absolute left-0 mt-1 w-48 bg-white dark:bg-gray-900 shadow-lg rounded-lg overflow-hidden z-50 hidden group-hover:block"
-                        >
-                          {item.dropdownItems.map((sub) => (
-                            <li key={sub.label}>
-                              <Link
-                                href={sub.href}
-                                className="block px-4 py-2 text-gray-700 dark:text-gray-300 text-sm font-semibold hover:bg-blue-50 hover:text-blue-600 transition"
-                              >
-                                {sub.label}
-                              </Link>
-                            </li>
-                          ))}
-                        </motion.ul>
-                      </AnimatePresence>
+            <div className="hidden lg:flex items-center gap-6">
+              {navItems.map((item) => (
+                <div key={item.label} className="relative group">
+                  <Link
+                    href={item.href || "#"}
+                    className="flex items-center gap-1 px-4 py-2 text-gray-800 dark:text-gray-200 hover:text-blue-600 rounded-md transition-all font-semibold"
+                  >
+                    {item.label}
+                    {item.hasDropdown && (
+                      <ChevronDown className="h-4 w-4 ml-1 transition-transform duration-300 group-hover:rotate-180" />
                     )}
-                  </div>
-                ))}
-              </div>
+                  </Link>
+
+                  {item.hasDropdown && item.dropdownItems && (
+                    <AnimatePresence>
+                      <motion.ul
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 0.2 }}
+                        className="absolute left-0 mt-2 w-56 bg-white dark:bg-gray-900 shadow-lg rounded-md overflow-hidden z-50 hidden group-hover:block"
+                      >
+                        {item.dropdownItems.map((sub) => (
+                          <li key={sub.label}>
+                            <Link
+                              href={sub.href}
+                              className="block px-4 py-2 text-gray-800 dark:text-gray-200 text-sm font-medium hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                            >
+                              {sub.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </motion.ul>
+                    </AnimatePresence>
+                  )}
+                </div>
+              ))}
             </div>
 
             <div className="flex items-center gap-2">
@@ -177,37 +176,39 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700"
+            className="lg:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700"
           >
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              {navItems.map((item) => (
-                <div key={item.label} className="relative">
-                  <Link
-                    href={item.href}
-                    className="text-gray-700 dark:text-gray-300 hover:text-blue-600 block px-3 py-2 text-base font-medium"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
+            <ScrollArea className="h-[70vh]">
+              <div className="px-4 pt-4 pb-6 space-y-4">
+                {navItems.map((item) => (
+                  <div key={item.label} className="relative">
+                    <Link
+                      href={item.href}
+                      className="text-gray-800 dark:text-gray-200 hover:text-blue-600 block px-4 py-3 text-lg font-medium rounded-md"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
 
-                  {/* Dropdown Menu for Mobile */}
-                  {item.hasDropdown && (
-                    <div className="absolute left-0 hidden mt-2 space-y-2 bg-white dark:bg-gray-800 shadow-lg group-hover:block">
-                      {item.dropdownItems?.map((dropdownItem) => (
-                        <Link
-                          key={dropdownItem.label}
-                          href={dropdownItem.href}
-                          className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
-                          onClick={() => setIsOpen(false)}
-                        >
-                          {dropdownItem.label}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
+                    {item.hasDropdown && item.dropdownItems && (
+                      <div className="pl-6 mt-2 space-y-2">
+                        {item.dropdownItems.map((dropdownItem) => (
+                          <Link
+                            key={dropdownItem.label}
+                            href={dropdownItem.href}
+                            className="block px-6 py-2 text-gray-700 dark:text-gray-300 text-base hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md"
+                            onClick={() => setIsOpen(false)}
+                          >
+                            {dropdownItem.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+              <ScrollBar orientation="vertical" />
+            </ScrollArea>
           </motion.div>
         )}
       </AnimatePresence>
