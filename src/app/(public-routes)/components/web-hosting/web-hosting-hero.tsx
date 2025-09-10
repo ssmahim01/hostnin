@@ -140,7 +140,7 @@ export default function WebHostingHero() {
                   width={500}
                   height={400}
                   priority
-                  src="https://res.cloudinary.com/daspo1tk3/image/upload/v1757431769/database_dxxpa2.jpg"
+                  src="https://res.cloudinary.com/daspo1tk3/image/upload/v1757507366/webhero_njrbf8.png"
                   alt="Hosting Infrastructure"
                   className="w-full h-full rounded-md shadow-lg"
                 />
