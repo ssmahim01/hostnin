@@ -10,6 +10,7 @@ export default function QuestionsSection() {
       <CardContent className="container mx-auto p-10 flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="md:w-1/2 text-center md:text-left space-y-6">
           <h2 className="md:text-4xl text-3xl font-bold mb-4">
+            
             Do You Have Questions?
           </h2>
           <p className="text-gray-200 text-base leading-relaxed font-medium mb-6">
