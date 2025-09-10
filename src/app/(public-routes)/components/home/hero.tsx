@@ -23,9 +23,9 @@ export function HeroSection() {
           "linear-gradient(278deg, rgba(0, 40, 160, 0.9) 16%, rgba(0, 20, 80, 0.9) 98%)",
       }}
     >
-      <div className=" max-w-7xl mx-auto container px-5 lg:px-10 flex flex-col md:flex-row items-center justify-between lg:gap-0 gap-8">
+      <div className=" max-w-7xl mx-auto container px-5 lg:px-10 flex flex-col lg:flex-row items-center justify-between lg:gap-0 gap-8">
         {/* Text Content */}
-        <div className="md:w-1/2 space-y-6 text-center lg:text-left">
+        <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
           <h1 className="text-[34px] sm:text-4xl md:text-5xl lg:text-5xl font-bold text-white leading-tight">
             Best Web Hosting <br />{" "}
             <span className="relative">
@@ -56,7 +56,7 @@ export function HeroSection() {
         </div>
 
         {/* Image */}
-        <div className=" relative md:w-1/2 flex justify-end">
+        <div className=" relative lg:w-1/2 flex justify-end">
           <Image
             src={heroData.image.src}
             alt={heroData.image.alt}
@@ -72,7 +72,7 @@ export function HeroSection() {
             width={140}
             height={80}
             quality={90}
-            className="absolute -bottom-[5.9rem] left-10 h-[280px] w-auto object-contain"
+            className="absolute md:-bottom-[5.9rem] -bottom-[4rem] left-10 h-[200px] md:h-[280px] w-auto object-contain"
             priority
           />
         </div>

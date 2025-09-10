@@ -78,8 +78,8 @@ const testimonials: Testimonial[] = [
 
 export function TestimonialsSection() {
   return (
-    <section className="lg:py-16 bg-gray-50 dark:bg-gray-900/50">
-      <div className="container mx-auto px-4">
+    <section className="lg:py-16 py-4 bg-gray-50 dark:bg-gray-900/50">
+      <div className="container max-w-7xl mx-auto px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 grid-cols-1 gap-12 items-center">
             {/* Left side content */}
