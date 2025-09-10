@@ -2,6 +2,8 @@
 import { Facebook, Linkedin, Twitter, Youtube } from "lucide-react";
 import type { FooterSection } from "@/types/footer";
 import { PaymentMethod } from "@/types/payment-method";
+import Image from "next/image";
+import Link from "next/link";
 
 const footerSections: FooterSection[] = [
   {
@@ -128,7 +130,17 @@ export function Footer() {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-4">
-              <div className="text-2xl font-bold">HOSTNIN</div>
+              <Link href="/" className="flex items-center">
+                <Image
+                  src="https://res.cloudinary.com/daspo1tk3/image/upload/v1757498973/logo11_nfcmpq.webp"
+                  alt="Travel Agency Logo"
+                  width={140}
+                  height={80}
+                  quality={90}
+                  className="h-10 w-full object-contain"
+                  priority
+                />
+              </Link>
               <span className="text-blue-200 text-sm">
                 © 2024 Hostnin. All Rights Reserved.
               </span>

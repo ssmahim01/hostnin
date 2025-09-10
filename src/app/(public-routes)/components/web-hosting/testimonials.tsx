@@ -78,10 +78,10 @@ const testimonials: Testimonial[] = [
 
 export function TestimonialsSection() {
   return (
-    <section className="py-16 bg-gray-50 dark:bg-gray-900/50">
+    <section className="lg:py-16 bg-gray-50 dark:bg-gray-900/50">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 grid-cols-1 gap-12 items-center">
             {/* Left side content */}
             <div>
               <div className="flex items-center gap-4 mb-6">
@@ -145,7 +145,7 @@ export function TestimonialsSection() {
             </div>
 
             {/* Right side carousel */}
-            <div className="w-full lg:block hidden relative">
+            <div className="w-full  relative">
               <Swiper
                 modules={[Navigation, Pagination, Autoplay]}
                 spaceBetween={20}
@@ -159,10 +159,7 @@ export function TestimonialsSection() {
                   bulletClass: "swiper-pagination-bullet-custom",
                   bulletActiveClass: "swiper-pagination-bullet-active-custom",
                 }}
-                autoplay={{
-                  delay: 5000,
-                  disableOnInteraction: false,
-                }}
+                autoplay={{ delay: 5000, disableOnInteraction: false }}
                 loop={true}
                 className="testimonials-swiper"
               >

@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import type { NavItem } from "@/types/nav";
 import Link from "next/link";
 import { useTheme } from "next-themes";
+import Image from "next/image";
 
 const navItems: NavItem[] = [
   { label: "Pricing", href: "/pricing" },
@@ -65,13 +66,23 @@ export function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 
-        bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg"
+        bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-sm"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <span className="text-2xl font-bold text-blue-600">HOSTNIN</span>
+            <Link href="/" className="flex items-center">
+              <Image
+                src="https://res.cloudinary.com/daspo1tk3/image/upload/v1757498973/logo11_nfcmpq.webp"
+                alt="Travel Agency Logo"
+                width={140}
+                height={80}
+                quality={90}
+                className="h-10 w-full object-contain"
+                priority
+              />
+            </Link>
           </div>
 
           <div className="flex items-center gap-4">

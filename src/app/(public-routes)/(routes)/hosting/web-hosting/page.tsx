@@ -7,6 +7,10 @@ import { InfrastructurePartners } from "@/app/(public-routes)/components/web-hos
 import { FAQSection } from "@/app/(public-routes)/components/web-hosting/faq-section";
 import { WhyChooseHosting } from "@/app/(public-routes)/components/web-hosting/why-choose-hosting";
 import { MoneyBackGuarantee } from "@/app/(public-routes)/components/web-hosting/money-back-gurantee";
+import WhyHostnin from "@/app/(public-routes)/components/web-hosting/why-hostnin";
+import UniqueFeatures from "@/app/(public-routes)/components/web-hosting/unique-features";
+import QuestionsSection from "@/app/(public-routes)/components/web-hosting/questions-section";
+import MigrationSection from "@/app/(public-routes)/components/web-hosting/migration-section";
 
 export const metadata: Metadata = {
   title: "Fast & Secure Web Hosting | Hostnin",
@@ -34,6 +38,10 @@ export default function WebHostingPage() {
         <InfrastructurePartners />
         <WhyChooseHosting />
         <MoneyBackGuarantee />
+        <WhyHostnin />
+        <UniqueFeatures />
+        <QuestionsSection />
+        <MigrationSection />
         <FAQSection />
       </div>
     </>
