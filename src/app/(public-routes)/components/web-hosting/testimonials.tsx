@@ -165,8 +165,8 @@ export function TestimonialsSection() {
               >
                 {testimonials.map((testimonial) => (
                   <SwiperSlide key={testimonial.id}>
-                    <Card className="border-0 shadow-lg bg-white dark:bg-gray-800">
-                      <CardContent className="p-8">
+                    <Card className="border-0 shadow-lg bg-white dark:bg-gray-800 p-0">
+                      <CardContent className="p-4">
                         <div className="flex items-start gap-4">
                           <Avatar className="w-16 h-16 flex-shrink-0">
                             <AvatarImage
