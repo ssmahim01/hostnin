@@ -1,6 +1,10 @@
 import { Metadata } from "next";
 import { HeroSection } from "./(public-routes)/components/home/hero";
 import HostingPlan from "./(public-routes)/components/home/hosting-plan";
+import MovingWebsites from "./(public-routes)/components/home/moving-websites";
+import Offer from "./(public-routes)/components/home/offer";
+import { DomainSearchSection } from "./(public-routes)/components/web-hosting/domain-search-section";
+import { TestimonialsSection } from "./(public-routes)/components/web-hosting/testimonials";
 
 export const metadata: Metadata = {
   title: "Hostnin - Reliable Hosting Solutions",
@@ -21,7 +25,13 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <HostingPlan />
+      <div id="hosting-plans">
+        <HostingPlan />
+        <MovingWebsites />
+        <DomainSearchSection />
+        <TestimonialsSection />
+        <Offer />
+      </div>
     </>
   );
 }

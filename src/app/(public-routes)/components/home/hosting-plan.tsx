@@ -25,8 +25,13 @@ export default function HostingPlan() {
           {plans.map((plan) => (
             <div
               key={plan.id}
-              className="border group border-gray-200 dark:border-gray-700 rounded-lg p-6 bg-accent text-gray-900 dark:text-gray-100 transition-all duration-300 ease-in-out hover:bg-blue-700 hover:text-white/95 dark:hover:text-blue-200"
+              className="relative border group border-gray-200 dark:border-gray-700 rounded-lg p-6 bg-accent text-gray-900 dark:text-gray-100 transition-all duration-300 ease-in-out hover:bg-blue-700 hover:text-white/95 dark:hover:text-blue-200"
             >
+                {plan.giftBadge && (
+                <div className="absolute top-0 right-0 bg-yellow-400 text-gray-800 text-xs font-bold px-3 py-1 rounded-bl-lg">
+                    Free Gift
+                </div>
+                )}
               <div className="flex flex-col items-center justify-center text-center gap-4">
                 <figure>
                   <Image

@@ -6,6 +6,15 @@ import Image from "next/image";
 import { heroData } from "@/data/hero";
 
 export function HeroSection() {
+  // Smooth scroll function
+  const handleScrollToPlan = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    const section = document.querySelector("#hosting-plans");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section
       className="py-28 text-white dark:bg-blue-950"
@@ -25,15 +34,20 @@ export function HeroSection() {
             </span>{" "}
           </h1>
 
-          <p className="text-xl opacity-90 max-w-xl leading-relaxed ">{heroData.description}</p>
+          <p className="text-xl opacity-90 max-w-xl leading-relaxed ">
+            {heroData.description}
+          </p>
           <div className="flex items-center flex-col md:flex-row gap-4 lg:justify-start justify-center">
             <Button
               variant="secondary"
               className="bg-white text-blue-800 hover:bg-gray-100 rounded-full p-6 hover:cursor-pointer font-semibold"
+              onClick={handleScrollToPlan}
             >
               {heroData.cta}
             </Button>
-            <span className="text-lg opacity-80 font-semibold">{heroData.trusted}</span>
+            <span className="text-lg opacity-80 font-semibold">
+              {heroData.trusted}
+            </span>
           </div>
           <div className="flex items-center gap-2 text-lg lg:justify-start justify-center opacity-80 font-semibold">
             <CircleCheckBig className="w-5 h-5 text-green-400" />
