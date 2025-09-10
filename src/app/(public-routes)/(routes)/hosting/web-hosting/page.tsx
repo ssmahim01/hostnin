@@ -11,6 +11,7 @@ import WhyHostnin from "@/app/(public-routes)/components/web-hosting/why-hostnin
 import UniqueFeatures from "@/app/(public-routes)/components/web-hosting/unique-features";
 import QuestionsSection from "@/app/(public-routes)/components/web-hosting/questions-section";
 import MigrationSection from "@/app/(public-routes)/components/web-hosting/migration-section";
+import AdvancedFeatures from "@/app/(public-routes)/components/web-hosting/advanced-features";
 
 export const metadata: Metadata = {
   title: "Fast & Secure Web Hosting | Hostnin",
@@ -41,6 +42,7 @@ export default function WebHostingPage() {
         <WhyHostnin />
         <UniqueFeatures />
         <QuestionsSection />
+        <AdvancedFeatures />
         <MigrationSection />
         <FAQSection />
       </div>
