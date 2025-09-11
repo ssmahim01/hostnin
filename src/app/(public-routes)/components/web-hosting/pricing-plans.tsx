@@ -63,7 +63,7 @@ export default function PricingPlans() {
           </div>
         </motion.div>
 
-        {/* Pricing Cards */}
+        {/* Pricing Card Component */}
         <PricingCard billingCycle={billingCycle} />
       </div>
     </div>
