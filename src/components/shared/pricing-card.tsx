@@ -368,7 +368,7 @@ export default function PricingCard({
                 >
                   <>
                     <span className="text-orange-600 font-semibold text-sm hover:text-orange-700">
-                      {" "}
+                   
                       Show Less Features
                     </span>
                     <ChevronUp className="w-4 h-4 mr-1 text-orange-600 hover:text-orange-700" />
