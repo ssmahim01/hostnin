@@ -28,6 +28,7 @@ export default function SupportTeam() {
             spaceBetween={30}
             slidesPerView={1}
             autoplay={{ delay: 4000, disableOnInteraction: false }}
+            loop={true}
             navigation={{
               nextEl: ".swiper-button-next",
               prevEl: ".swiper-button-prev",
@@ -39,7 +40,7 @@ export default function SupportTeam() {
           >
             {supportHeroes.map((hero) => (
               <SwiperSlide key={hero.name}>
-                <Card className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg mx-auto max-w-5xl">
+                <Card className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg mx-auto max-w-[68rem] relative">
                   <CardContent className="flex flex-col md:flex-row items-center gap-8 p-10">
                     {/* Image Wrapper with outside border */}
                     <figure className="relative md:w-1/2 flex justify-center hover:scale-105 transition-transform duration-300">
@@ -77,10 +78,10 @@ export default function SupportTeam() {
             ))}
 
             {/* Navigation Arrows */}
-            <div className="swiper-button-prev absolute -left-16 top-1/2 -translate-y-1/2 text-blue-600 bg-white dark:bg-gray-800 rounded-full p-4 shadow-md cursor-pointer">
+            <div className="swiper-button-prev absolute top-1/2 -translate-y-1/2 left-0 md:-left-8 z-10 text-blue-600 bg-white dark:bg-gray-800 rounded-full p-4 shadow-md cursor-pointer">
               <ArrowLeft className="w-6 h-6" />
             </div>
-            <div className="swiper-button-next absolute -right-16 top-1/2 -translate-y-1/2 text-blue-600 bg-white dark:bg-gray-800 rounded-full p-4 shadow-md cursor-pointer">
+            <div className="swiper-button-next absolute top-1/2 -translate-y-1/2 right-0 md:-right-8 z-10 text-blue-600 bg-white dark:bg-gray-800 rounded-full p-4 shadow-md cursor-pointer">
               <ArrowRight className="w-6 h-6" />
             </div>
           </Swiper>
