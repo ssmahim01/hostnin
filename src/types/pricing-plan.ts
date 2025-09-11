@@ -1,42 +1,43 @@
 export interface PricingPlan {
-  id: string
-  name: string
-  description: string
+  id: string;
+  name: string;
+  description: string;
   price: {
-    monthly: number
-    yearly: number
-  }
+    monthly: number;
+    yearly: number;
+  };
   originalPrice?: {
-    monthly: number
-    yearly: number
-  }
-  isPopular?: boolean
-  features: string[]
-  cta: string
-  guarantee: string
-  badge?: string
+    monthly: number;
+    yearly: number;
+  };
+  isPopular?: boolean;
+  features: string[];
+  cta: string;
+  guarantee: string;
+  badge?: string;
 }
 
 export interface PricingFeature {
-  category: string
-  items: string[]
+  category: string;
+  items: string[];
 }
 
 export interface PricingPlansData {
-  id: string
-  name: string
-  description: string
+  id: string;
+  name: string;
+  description: string;
   price: {
-    monthly: number
-    yearly: number
-  }
+    monthly: number;
+    yearly: number;
+  };
+  image?: string;
   originalPrice?: {
-    monthly: number
-    yearly: number
-  }
-  isPopular?: boolean
-  features: PricingFeature[]
-  cta: string
-  guarantee: string
-  badge?: string
+    monthly: number;
+    yearly: number;
+  };
+  isPopular?: boolean;
+  features: PricingFeature[];
+  cta: string;
+  guarantee: string;
+  badge?: string;
 }

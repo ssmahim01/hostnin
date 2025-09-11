@@ -128,6 +128,11 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { theme, setTheme } = useTheme();
+  const defaultLogo =
+    "https://res.cloudinary.com/daspo1tk3/image/upload/v1757498973/logo11_nfcmpq.webp";
+
+  const whiteLogo =
+    "https://res.cloudinary.com/daspo1tk3/image/upload/v1757579469/footer-logo_z7x8v3.webp";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -150,7 +155,7 @@ export function Navbar() {
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
               <Image
-                src="https://res.cloudinary.com/daspo1tk3/image/upload/v1757498973/logo11_nfcmpq.webp"
+                src={theme === "dark" ? whiteLogo : defaultLogo}
                 alt="Hostnin Logo"
                 width={140}
                 height={80}

@@ -26,10 +26,10 @@ export default function PricingPlans() {
           {/* Billing Toggle */}
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="flex items-center justify-center gap-4 mb-2">
-              <div className="flex bg-gray-800 rounded-lg p-1">
+              <div className="flex bg-gray-700 p-1 rounded-full">
                 <button
                   onClick={() => setBillingCycle("monthly")}
-                  className={`px-6 py-2 rounded-md text-white/90 hover:text-white text-sm font-medium transition-all ${
+                  className={`px-6 py-2 hover:cursor-pointer text-white/90 rounded-full hover:text-white text-sm font-medium transition-all ${
                     billingCycle === "monthly"
                       ? "bg-blue-600 text-white shadow-sm"
                       : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
@@ -39,7 +39,7 @@ export default function PricingPlans() {
                 </button>
                 <button
                   onClick={() => setBillingCycle("yearly")}
-                  className={`px-6 py-2 rounded-md text-sm font-medium transition-all ${
+                  className={`px-6 py-2 hover:cursor-pointer text-sm font-medium text-white rounded-full hover:text-white/85 transition-all ${
                     billingCycle === "yearly"
                       ? "bg-blue-600 text-white shadow-sm"
                       : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
@@ -48,7 +48,7 @@ export default function PricingPlans() {
                   Yearly
                 </button>
               </div>
-              <p className="text-sm flex gap-2 items-center text-blue-800 dark:text-gray-200 font-medium">
+              <div className="text-base flex gap-2 items-center text-blue-600 dark:text-gray-200 font-medium">
                 <Image
                   src={"/assets/arrow-dark.webp"}
                   alt="Right Arrow "
@@ -57,8 +57,8 @@ export default function PricingPlans() {
                   className="w-8 h-8"
                   priority
                 />{" "}
-                <span>Save 76% more</span>
-              </p>
+                <span className="font-medium text-base">Upto 76% save</span>
+              </div>
             </div>
           </div>
         </motion.div>

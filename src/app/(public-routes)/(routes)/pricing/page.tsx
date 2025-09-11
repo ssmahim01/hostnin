@@ -1,5 +1,8 @@
 import Pricing from "@/components/shared/pricing";
 import { Metadata } from "next";
+import { TestimonialsSection } from "../../components/web-hosting/testimonials";
+import { InfrastructurePartners } from "../../components/web-hosting/infrastructure-partners";
+import ControlPanelSection from "../../components/home/control-panel";
 
 export const metadata: Metadata = {
   title: "Pricing Plans | Hostnin",
@@ -19,6 +22,9 @@ export default function PricingPlan() {
   return (
     <>
       <Pricing />
+      <TestimonialsSection />
+      <InfrastructurePartners />
+      <ControlPanelSection />
     </>
   );
 }

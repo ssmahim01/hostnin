@@ -62,7 +62,7 @@ export default function Pricing() {
               </button>
               <button
                 onClick={() => setBillingCycle("yearly")}
-                className={`px-6 py-2 rounded-md text-sm font-medium transition-all ${
+                className={`px-6 py-2 rounded-md text-sm text-white/90 hover:text-white font-medium transition-all ${
                   billingCycle === "yearly"
                     ? "bg-blue-600 text-white shadow-sm"
                     : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"

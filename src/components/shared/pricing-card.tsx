@@ -7,11 +7,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import type { PricingPlansData } from "@/types/pricing-plan";
 import { useState } from "react";
 import { Button } from "../ui/button";
+import Image from "next/image";
 
 const pricingPlans: PricingPlansData[] = [
   {
     id: "starter",
     name: "Starter",
+    image: "/assets/starter-42.svg",
     description:
       "Ideal for multiple sites with storage, WordPress & latest control panel",
     price: {
@@ -74,6 +76,7 @@ const pricingPlans: PricingPlansData[] = [
   {
     id: "pro",
     name: "Pro",
+    image: "/assets/pro.svg",
     description: "Best solution for eCommerce & product landing page websites",
     price: {
       monthly: 5495,
@@ -137,6 +140,7 @@ const pricingPlans: PricingPlansData[] = [
   {
     id: "ultimate",
     name: "Ultimate",
+    image: "/assets/ultimate.svg",
     description:
       "Great for businesses with high traffic and focused on best performance",
     price: {
@@ -210,7 +214,7 @@ export default function PricingCard({
   };
 
   return (
-    <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto pt-4">
       {pricingPlans.map((plan) => {
         const visibleFeatures = allExpanded
           ? plan.features
@@ -235,12 +239,17 @@ export default function PricingCard({
               className={`text-center ${plan.isPopular ? "pt-12" : "pt-6"}`}
             >
               <div className="flex items-center justify-center gap-2 mb-2">
-                <Badge
-                  variant="secondary"
-                  className="bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400"
-                >
-                  {plan.name}
-                </Badge>
+                <div className="flex gap-2 items-center">
+                  <Image
+                    src={plan.image || ""}
+                    alt={plan.name}
+                    width={100}
+                    height={90}
+                    className="w-10 h-10 object-contain"
+                    priority
+                  />{" "}
+                  <span className="text-lg font-bold">{plan.name}</span>
+                </div>
               </div>
 
               <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
@@ -249,7 +258,7 @@ export default function PricingCard({
 
               <div className="mb-4">
                 <div className="flex items-center justify-center gap-1">
-                  <span className="text-sm text-gray-500 dark:text-gray-400">
+                  <span className="text-2xl text-gray-500 dark:text-gray-400">
                     ৳
                   </span>
                   <span className="text-4xl font-bold text-gray-900 dark:text-white">
@@ -258,31 +267,55 @@ export default function PricingCard({
                       : plan.price.monthly}
                   </span>
                   <span className="text-sm text-gray-500 dark:text-gray-400">
-                    /{billingCycle === "yearly" ? "Year" : "Month"}
+                    /{billingCycle === "yearly" ? "Per Year" : "Per Month"}
                   </span>
                 </div>
               </div>
 
-              <p className="text-sm text-blue-600 dark:text-blue-400 font-medium mb-4">
-                {plan.guarantee}
-              </p>
+              <div className="bg-gradient-to-r from-green-50 to-blue-50 text-green-700 font-bold text-sm md:text-base mb-6 px-4 py-2 rounded-full border border-green-200 inline-block shadow-sm">
+                30 Days Money back Guarantee
+              </div>
 
               <Button
-                className={`w-full py-3 font-medium ${
+                className={`w-full py-6 text-base hover:cursor-pointer font-medium ${
                   plan.isPopular
                     ? "bg-blue-600 hover:bg-blue-700 text-white"
-                    : "bg-white dark:bg-gray-700 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-600"
+                    : "bg-white dark:bg-gray-700 text-gray-900 dark:text-white border-2 border-blue-500 dark:border-gray-600 hover:bg-blue-500 hover:border-none dark:hover:bg-gray-600 hover:text-white"
                 }`}
               >
                 {plan.cta}
               </Button>
 
               <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
-                Save Upto 70% on Yearly Plan
+                Renew at Same Price, Every year.
               </p>
             </CardHeader>
 
-            <CardContent className="px-6 pb-6">
+            <CardContent className="px-6 pb-4">
+              <div className="mb-6">
+                <div className="bg-green-50 rounded-lg p-3 relative group">
+                  <div className="bg-teal-500 text-white text-xs font-semibold px-2 py-1 rounded-full inline-block mb-2">
+                    Special Gift
+                  </div>
+                  <div className="flex items-center gap-1 cursor-pointer">
+                    <span className="text-teal-500 md:text-2xl text-sm">
+                      🎁
+                    </span>
+                    <a
+                      target="_blank"
+                      className="text-gray-700 text-sm md:text-[19px] underline decoration-dotted  font-medium"
+                      href="https://pro.hostnin.com"
+                    >
+                      Landing page design and Facebook ads mastery course
+                    </a>
+                  </div>
+                  <div className="absolute left-0 top-full mt-2 z-50 w-80 bg-blue-600 text-white text-sm md:text-lg rounded-lg p-2 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                    Claim your complimentary Landing Page &amp; Ads Masterclass
+                    — designed to help you succeed online. (৳6000 Value)
+                    <div className="absolute -top-2 left-4 w-3 h-3 bg-blue-600 transform rotate-45"></div>
+                  </div>
+                </div>
+              </div>
               <AnimatePresence>
                 {visibleFeatures.map((category, categoryIndex) => (
                   <motion.div
@@ -316,23 +349,32 @@ export default function PricingCard({
                 ))}
               </AnimatePresence>
 
-              <Button
-                variant="ghost"
-                onClick={toggleAllPlans}
-                className="w-full hover:cursor-pointer mt-4 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium"
-              >
-                {allExpanded ? (
-                  <>
-                    <ChevronUp className="w-4 h-4 mr-1" />
-                    Show Less Features
-                  </>
-                ) : (
+              {!allExpanded ? (
+                <Button
+                  variant="ghost"
+                  onClick={toggleAllPlans}
+                  className="w-full hover:cursor-pointer mt-4 border border-blue-400 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium"
+                >
                   <>
                     <ChevronDown className="w-4 h-4 mr-1" />
                     Show More Features
                   </>
-                )}
-              </Button>
+                </Button>
+              ) : (
+                <Button
+                  variant="ghost"
+                  onClick={toggleAllPlans}
+                  className="w-full hover:cursor-pointer flex items-center justify-center gap-2 hover:bg-orange-50 rounded-lg p-3 transition-all duration-200 border border-orange-200 my-6 dark:hover:text-orange-300 font-medium"
+                >
+                  <>
+                    <span className="text-orange-600 font-semibold text-sm hover:text-orange-700">
+                      {" "}
+                      Show Less Features
+                    </span>
+                    <ChevronUp className="w-4 h-4 mr-1 text-orange-600 hover:text-orange-700" />
+                  </>
+                </Button>
+              )}
             </CardContent>
           </Card>
         );
