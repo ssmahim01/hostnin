@@ -7,6 +7,7 @@ import { DomainSearchSection } from "./(public-routes)/components/web-hosting/do
 import { TestimonialsSection } from "./(public-routes)/components/web-hosting/testimonials";
 import ControlPanelSection from "./(public-routes)/components/home/control-panel";
 import SupportBanner from "./(public-routes)/components/home/support-banner";
+import SupportTeam from "./(public-routes)/components/home/support-team";
 
 export const metadata: Metadata = {
   title: "Hostnin - Reliable Hosting Solutions",
@@ -34,6 +35,7 @@ export default function Home() {
         <ControlPanelSection />
         <SupportBanner />
         <TestimonialsSection />
+        <SupportTeam />
         <Offer />
       </div>
     </>
