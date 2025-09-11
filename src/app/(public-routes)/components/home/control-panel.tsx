@@ -5,7 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { controlPanels } from "@/data/control-panel";
 import Image from "next/image";
 
-export function ControlPanelSection() {
+export default function ControlPanelSection() {
   return (
     <section className="py-14 bg-white dark:bg-gray-900">
       <div className="container max-w-7xl mx-auto px-4 lg:px-8">

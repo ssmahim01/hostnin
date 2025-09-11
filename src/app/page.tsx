@@ -5,7 +5,8 @@ import MovingWebsites from "./(public-routes)/components/home/moving-websites";
 import Offer from "./(public-routes)/components/home/offer";
 import { DomainSearchSection } from "./(public-routes)/components/web-hosting/domain-search-section";
 import { TestimonialsSection } from "./(public-routes)/components/web-hosting/testimonials";
-import { ControlPanelSection } from "./(public-routes)/components/home/control-panel";
+import ControlPanelSection from "./(public-routes)/components/home/control-panel";
+import SupportBanner from "./(public-routes)/components/home/support-banner";
 
 export const metadata: Metadata = {
   title: "Hostnin - Reliable Hosting Solutions",
@@ -31,6 +32,7 @@ export default function Home() {
         <MovingWebsites />
         <DomainSearchSection />
         <ControlPanelSection />
+        <SupportBanner />
         <TestimonialsSection />
         <Offer />
       </div>
