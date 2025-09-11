@@ -128,9 +128,6 @@ export function WhyChooseHosting() {
                   <div className="flex-shrink-0">{feature.icon}</div>
                   <div>
                     <h3 className="font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
-                      <span className="text-blue-600 dark:text-blue-400 text-sm font-medium">
-                        {feature.highlight}
-                      </span>
                       {feature.title}
                     </h3>
                     <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">

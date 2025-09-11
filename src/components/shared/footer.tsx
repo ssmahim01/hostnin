@@ -1,7 +1,6 @@
 "use client";
 import { Facebook, Linkedin, Twitter, Youtube } from "lucide-react";
 import type { FooterSection } from "@/types/footer";
-import { PaymentMethod } from "@/types/payment-method";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -68,16 +67,16 @@ const footerSections: FooterSection[] = [
   },
 ];
 
-const paymentMethods: PaymentMethod[] = [
-  { name: "Visa", icon: "💳" },
-  { name: "Mastercard", icon: "💳" },
-  { name: "PayPal", icon: "💰" },
-  { name: "American Express", icon: "💳" },
-  { name: "Discover", icon: "💳" },
-  { name: "Bitcoin", icon: "₿" },
-  { name: "Stripe", icon: "💳" },
-  { name: "Razorpay", icon: "💳" },
-];
+// const paymentMethods: PaymentMethod[] = [
+//   { name: "Visa", icon: "💳" },
+//   { name: "Mastercard", icon: "💳" },
+//   { name: "PayPal", icon: "💰" },
+//   { name: "American Express", icon: "💳" },
+//   { name: "Discover", icon: "💳" },
+//   { name: "Bitcoin", icon: "₿" },
+//   { name: "Stripe", icon: "💳" },
+//   { name: "Razorpay", icon: "💳" },
+// ];
 
 export function Footer() {
   return (
@@ -85,20 +84,18 @@ export function Footer() {
       {/* Payment Methods */}
       <div className="border-b border-blue-800 dark:border-blue-900 max-w-7xl mx-auto">
         <div className="container mx-auto px-4 py-4">
-          <div className="flex flex-wrap justify-center items-center gap-4">
-            <span className="text-sm text-blue-200">We Accept:</span>
-            <div className="flex flex-wrap gap-3">
-              {paymentMethods.map((method) => (
-                <div
-                  key={method.name}
-                  className="flex items-center justify-center w-12 h-8 bg-white rounded border text-gray-800 text-xs font-medium"
-                  title={method.name}
-                >
-                  {method.icon}
-                </div>
-              ))}
-            </div>
-          </div>
+          <figure className="flex flex-wrap justify-center items-center gap-4">
+            <Image
+              src={
+                "https://res.cloudinary.com/daspo1tk3/image/upload/v1757578028/SSLCommerz-Pay-With-logo-All-Size-01_trtqxf.webp"
+              }
+              alt="Payment Methods"
+              width={1920}
+              height={50}
+              quality={90}
+              priority
+            />
+          </figure>
         </div>
       </div>
 
@@ -132,8 +129,8 @@ export function Footer() {
             <div className="flex items-center gap-4">
               <Link href="/" className="flex items-center">
                 <Image
-                  src="https://res.cloudinary.com/daspo1tk3/image/upload/v1757498973/logo11_nfcmpq.webp"
-                  alt="Travel Agency Logo"
+                  src="https://res.cloudinary.com/daspo1tk3/image/upload/v1757579469/footer-logo_z7x8v3.webp"
+                  alt="Hostnin Logo"
                   width={140}
                   height={80}
                   quality={90}

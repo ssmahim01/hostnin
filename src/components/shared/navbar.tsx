@@ -76,7 +76,7 @@ export function Navbar() {
             <Link href="/" className="flex items-center">
               <Image
                 src="https://res.cloudinary.com/daspo1tk3/image/upload/v1757498973/logo11_nfcmpq.webp"
-                alt="Travel Agency Logo"
+                alt="Hostnin Logo"
                 width={140}
                 height={80}
                 quality={90}
