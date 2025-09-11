@@ -4,10 +4,15 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import PricingCard from "@/components/shared/pricing-card";
+import { hostingPlansData } from "@/data/pricing-data";
 
 export default function PricingPlans() {
   const [billingCycle, setBillingCycle] = useState<"monthly" | "yearly">(
     "yearly"
+  );
+
+  const currentHostingData = hostingPlansData.find(
+    (hosting) => hosting?.id === "web"
   );
 
   return (
@@ -64,7 +69,10 @@ export default function PricingPlans() {
         </motion.div>
 
         {/* Pricing Card Component */}
-        <PricingCard billingCycle={billingCycle} />
+        <PricingCard
+          billingCycle={billingCycle}
+          plans={currentHostingData?.plans || []}
+        />
       </div>
     </div>
   );

@@ -25,19 +25,31 @@ export interface PricingFeature {
 export interface PricingPlansData {
   id: string;
   name: string;
+  image?: string;
   description: string;
   price: {
-    monthly: number;
-    yearly: number;
+    monthly: string;
+    yearly: string;
   };
-  image?: string;
   originalPrice?: {
     monthly: number;
     yearly: number;
   };
   isPopular?: boolean;
   features: PricingFeature[];
+  subHeading?: string;
   cta: string;
   guarantee: string;
   badge?: string;
+}
+
+export interface PricingFeature {
+  category: string;
+  items: string[];
+}
+
+export interface HostingTypeData {
+  id: string;
+  label: string;
+  plans: PricingPlansData[];
 }
