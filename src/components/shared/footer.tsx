@@ -106,9 +106,11 @@ export function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-blue-200 hover:text-white transition-colors text-sm"
+                      className="text-blue-200 hover:text-white transition-colors text-lg"
                     >
-                      {link.label}
+                      {link.label} {link?.label === "Careers (Hiring)" && (
+                        <span className="font-semibold text-yellow-400">(Hiring)</span>
+                      )}
                     </Link>
                   </li>
                 ))}
