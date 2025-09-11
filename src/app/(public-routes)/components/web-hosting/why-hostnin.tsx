@@ -7,7 +7,9 @@ import type { Feature } from "@/types/feature";
 
 export default function WhyHostnin() {
   return (
-    <section className="py-16 bg-blue-50 dark:bg-blue-950/50">
+    <section className="mt-6 pt-14 bg-cover bg-center bg-no-repeat" style={{
+      backgroundImage: "url('/assets/shape.png')",
+    }}>
       <div className="container max-w-7xl mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center gap-6">
           {/* Person Image */}
@@ -15,8 +17,8 @@ export default function WhyHostnin() {
             <Image
               src="https://res.cloudinary.com/daspo1tk3/image/upload/v1757498867/mujabhai_lnhrfm.webp"
               alt="Hostin representative"
-              width={400}
-              height={500}
+              width={1100}
+              height={700}
               className="rounded-lg object-cover max-w-full h-auto"
               priority
             />

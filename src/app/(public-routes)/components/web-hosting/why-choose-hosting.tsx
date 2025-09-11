@@ -100,13 +100,18 @@ const features = [
 
 export function WhyChooseHosting() {
   return (
-    <section className="py-14 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
+    <section
+      className="py-14  bg-cover bg-center bg-no-repeat dark:from-gray-900 dark:to-gray-800"
+      style={{
+        backgroundImage: "url('/assets/bg-curve.png')",
+      }}
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
             Why Choose Web Hosting?
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-200 max-w-3xl mx-auto">
             With our{" "}
             <span className="text-blue-600 dark:text-blue-400 font-medium">
               Web Hosting
@@ -130,7 +135,7 @@ export function WhyChooseHosting() {
                     <h3 className="font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
                       {feature.title}
                     </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                    <p className="text-sm text-gray-600 dark:text-gray-200 leading-relaxed">
                       {feature.description}
                     </p>
                   </div>
@@ -146,7 +151,7 @@ export function WhyChooseHosting() {
             {features.slice(6).map((feature, index) => (
               <Card
                 key={index + 6}
-                className="border border-gray-200 dark:border-gray-700 hover:shadow-lg bg-white dark:bg-gray-800 backdrop-blur-sm hover:bg-white/20 dark:hover:bg-white/10 transition-all duration-300"
+                className="border border-gray-200 dark:border-gray-700 hover:shadow-lg bg-white dark:bg-gray-800 backdrop-blur-sm dark:hover:bg-white/10 transition-all duration-300"
               >
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
@@ -158,7 +163,7 @@ export function WhyChooseHosting() {
                         </span>
                         {feature.title}
                       </h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                      <p className="text-sm text-gray-600 dark:text-gray-200 leading-relaxed">
                         {feature.description}
                       </p>
                     </div>

@@ -3,7 +3,25 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown, Sun, Moon } from "lucide-react";
+import {
+  Sun,
+  Moon,
+  Menu,
+  X,
+  ChevronDown,
+  Server,
+  Cloud,
+  Compass as Wordpress,
+  Database,
+  Zap,
+  Building2,
+  Shield,
+  Phone,
+  FileText,
+  Briefcase,
+  HardDrive,
+  Monitor,
+} from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { NavItem } from "@/types/nav";
 import Link from "next/link";
@@ -18,12 +36,42 @@ const navItems: NavItem[] = [
     href: "/hosting",
     hasDropdown: true,
     dropdownItems: [
-      { label: "Web Hosting", href: "/hosting/web-hosting" },
-      { label: "VPS Hosting", href: "/hosting/vps-hosting" },
-      { label: "Cloud Hosting", href: "/hosting/cloud-hosting" },
-      { label: "Dedicated Hosting", href: "/hosting/dedicated-hosting" },
-      { label: "Reseller Hosting", href: "/hosting/reseller-hosting" },
-      { label: "Managed Hosting", href: "/hosting/managed-hosting" },
+      {
+        label: "Web Hosting",
+        href: "/hosting/web-hosting",
+        icon: Server,
+        description: "NVMe SSD server",
+      },
+      {
+        label: "Cloud Hosting",
+        href: "/hosting/cloud-hosting",
+        icon: Cloud,
+        description: "Fast autoscaling server",
+      },
+      {
+        label: "WordPress Hosting",
+        href: "/hosting/wordpress-hosting",
+        icon: Wordpress,
+        description: "Fully Managed WordPress",
+      },
+      {
+        label: "Reseller Hosting",
+        href: "/hosting/reseller-hosting",
+        icon: Building2,
+        description: "Start your Business",
+      },
+      {
+        label: "BDIX Hosting",
+        href: "/hosting/bdix-hosting",
+        icon: Database,
+        description: "Lowest Network Latency",
+      },
+      {
+        label: "Turbo Hosting",
+        href: "/hosting/turbo-hosting",
+        icon: Zap,
+        description: "Fast Speed Guaranteed",
+      },
     ],
   },
   { label: "Domain", href: "/domain" },
@@ -32,8 +80,18 @@ const navItems: NavItem[] = [
     href: "/server",
     hasDropdown: true,
     dropdownItems: [
-      { label: "Dedicated Servers", href: "/server/dedicated-servers" },
-      { label: "Cloud Servers", href: "/server/cloud-servers" },
+      {
+        label: "VPS",
+        href: "/server/vps",
+        icon: HardDrive,
+        description: "Virtual Private Server",
+      },
+      {
+        label: "Dedicated",
+        href: "/server/dedicated",
+        icon: Monitor,
+        description: "Dedicated Server Solutions",
+      },
     ],
   },
   {
@@ -41,10 +99,27 @@ const navItems: NavItem[] = [
     href: "/about",
     hasDropdown: true,
     dropdownItems: [
-      { label: "Company", href: "/about/company" },
-      { label: "Careers", href: "/about/careers" },
-      { label: "Blog", href: "/about/blog" },
-      { label: "Contact", href: "/about/contact" },
+      {
+        label: "Privacy Policy",
+        href: "/about/privacy-policy",
+        icon: Shield,
+      },
+      {
+        label: "Terms & Condition",
+        href: "/about/terms-conditions",
+        icon: FileText,
+      },
+      {
+        label: "Careers",
+        href: "/about/careers",
+        icon: Briefcase,
+        badge: "(Hiring)",
+      },
+      {
+        label: "Contact",
+        href: "/about/contact",
+        icon: Phone,
+      },
     ],
   },
 ];
@@ -92,36 +167,61 @@ export function Navbar() {
               {navItems.map((item) => (
                 <div key={item.label} className="relative group">
                   <Link
-                    href={item.href || "#"}
-                    className="flex items-center gap-1 px-4 py-2 text-gray-800 dark:text-gray-200 hover:text-blue-600 rounded-md transition-all font-semibold"
+                    href={item.href}
+                    className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors duration-200 flex items-center gap-1"
                   >
                     {item.label}
                     {item.hasDropdown && (
-                      <ChevronDown className="h-4 w-4 ml-1 transition-transform duration-300 group-hover:rotate-180" />
+                      <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
                     )}
                   </Link>
-
                   {item.hasDropdown && item.dropdownItems && (
-                    <AnimatePresence>
-                      <motion.ul
-                        initial={{ opacity: 0, y: -10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }}
-                        transition={{ duration: 0.2 }}
-                        className="absolute left-0 mt-2 w-56 bg-white dark:bg-gray-900 shadow-lg rounded-md overflow-hidden z-50 hidden group-hover:block"
+                    <div
+                      className={`absolute left-0 mt-2 bg-white dark:bg-gray-900 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0
+                      ${item.label === "Hosting" ? "w-[550px]" : "w-80"}`}
+                    >
+                      <div
+                        className={`grid gap-2 ${
+                          item.label === "Hosting"
+                            ? "grid-cols-1 sm:grid-cols-1 md:grid-cols-2"
+                            : "grid-cols-1"
+                        } p-2`}
                       >
-                        {item.dropdownItems.map((sub) => (
-                          <li key={sub.label}>
+                        {item.dropdownItems.map((dropdownItem) => {
+                          const IconComponent = dropdownItem.icon;
+                          return (
                             <Link
-                              href={sub.href}
-                              className="block px-4 py-2 text-gray-800 dark:text-gray-200 text-sm font-medium hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                              key={dropdownItem.label}
+                              href={dropdownItem.href}
+                              className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group/item"
                             >
-                              {sub.label}
+                              {IconComponent && (
+                                <div className="flex-shrink-0 w-7 h-7 rounded-lg flex items-center justify-center">
+                                  <IconComponent className="w-full h-full text-gray-900 dark:text-gray-200" />
+                                </div>
+                              )}
+                              <div className="flex-1">
+                                <div className="flex items-center gap-2">
+                                  <span className="font-medium text-gray-900 dark:text-gray-100 group-hover/item:text-blue-600 dark:group-hover/item:text-blue-400">
+                                    {dropdownItem.label}
+                                  </span>
+                                  {dropdownItem.badge && (
+                                    <span className="text-xs bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 px-2 py-1 rounded-full font-medium">
+                                      {dropdownItem.badge}
+                                    </span>
+                                  )}
+                                </div>
+                                {dropdownItem.description && (
+                                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                                    {dropdownItem.description}
+                                  </p>
+                                )}
+                              </div>
                             </Link>
-                          </li>
-                        ))}
-                      </motion.ul>
-                    </AnimatePresence>
+                          );
+                        })}
+                      </div>
+                    </div>
                   )}
                 </div>
               ))}
@@ -181,27 +281,37 @@ export function Navbar() {
             <ScrollArea className="h-[70vh]">
               <div className="px-4 pt-4 pb-6 space-y-4">
                 {navItems.map((item) => (
-                  <div key={item.label} className="relative">
+                  <div key={item.label}>
                     <Link
                       href={item.href}
-                      className="text-gray-800 dark:text-gray-200 hover:text-blue-600 block px-4 py-3 text-lg font-medium rounded-md"
+                      className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 text-base font-medium"
                       onClick={() => setIsOpen(false)}
                     >
                       {item.label}
                     </Link>
-
                     {item.hasDropdown && item.dropdownItems && (
-                      <div className="pl-6 mt-2 space-y-2">
-                        {item.dropdownItems.map((dropdownItem) => (
-                          <Link
-                            key={dropdownItem.label}
-                            href={dropdownItem.href}
-                            className="block px-6 py-2 text-gray-700 dark:text-gray-300 text-base hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md"
-                            onClick={() => setIsOpen(false)}
-                          >
-                            {dropdownItem.label}
-                          </Link>
-                        ))}
+                      <div className="pl-6 space-y-1">
+                        {item.dropdownItems.map((dropdownItem) => {
+                          const IconComponent = dropdownItem.icon;
+                          return (
+                            <Link
+                              key={dropdownItem.label}
+                              href={dropdownItem.href}
+                              className="flex items-center gap-2 px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
+                              onClick={() => setIsOpen(false)}
+                            >
+                              {IconComponent && (
+                                <IconComponent className="w-4 h-4" />
+                              )}
+                              <span>{dropdownItem.label}</span>
+                              {dropdownItem.badge && (
+                                <span className="text-xs bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 px-1.5 py-0.5 rounded">
+                                  {dropdownItem.badge}
+                                </span>
+                              )}
+                            </Link>
+                          );
+                        })}
                       </div>
                     )}
                   </div>

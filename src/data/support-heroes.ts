@@ -27,7 +27,7 @@ export const supportHeroes: SupportHero[] = [
     description:
       "Dedicated support professional ensuring fast responses, friendly communication, and effective solutions for all your hosting needs",
     image: {
-      src: "https://res.cloudinary.com/daspo1tk3/image/upload/v1757582484/3_ulwilc.webp",
+      src: "https://res.cloudinary.com/daspo1tk3/image/upload/v1757582483/4_szn8lm.webp",
       alt: "Rafy support hero",
     },
   },
@@ -37,7 +37,7 @@ export const supportHeroes: SupportHero[] = [
     description:
       "Dedicated support professional ensuring fast responses, friendly communication, and effective solutions for all your hosting needs.",
     image: {
-      src: "https://res.cloudinary.com/daspo1tk3/image/upload/v1757582483/4_szn8lm.webp",
+      src: "https://res.cloudinary.com/daspo1tk3/image/upload/v1757582483/5_j32mce.webp",
       alt: "Mujahid support hero",
     },
   },
@@ -47,7 +47,7 @@ export const supportHeroes: SupportHero[] = [
     description:
       "Dedicated support professional ensuring fast responses, friendly communication, and effective solutions for all your hosting needs.",
     image: {
-      src: "https://res.cloudinary.com/daspo1tk3/image/upload/v1757582483/5_j32mce.webp",
+      src: "https://res.cloudinary.com/daspo1tk3/image/upload/v1757582484/3_ulwilc.webp",
       alt: "Asad support hero",
     },
   },

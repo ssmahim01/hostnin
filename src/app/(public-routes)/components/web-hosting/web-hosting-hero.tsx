@@ -31,7 +31,7 @@ export default function WebHostingHero() {
       <motion.div
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className="bg-blue-600 text-white text-center relative"
+        className="bg-gradient-to-r from-blue-500 to-blue-800 text-white text-center relative"
       >
         <div className="flex items-center justify-between gap-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
           <div className="flex flex-col md:flex-row md:items-center items-start gap-2 md:gap-6">
@@ -64,10 +64,10 @@ export default function WebHostingHero() {
 
       {/* Hero Content */}
       <div
-        className="text-white pt-20 pb-28 bg-center bg-no-repeat bg-cover"
+        className="text-white pt-20 pb-28 bg-center bg-no-repeat bg-cover bg-[#001158] dark:bg-blue-950"
         style={{
           backgroundImage:
-            "url('https://res.cloudinary.com/daspo1tk3/image/upload/v1757431768/theme-bg_t5k0md.jpg')",
+            "url('https://res.cloudinary.com/daspo1tk3/image/upload/v1757597921/sh-hero-bg_wrvx9s.png')",
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -119,7 +119,7 @@ export default function WebHostingHero() {
                   <Button
                     size="lg"
                     onClick={handleScrollToPricing}
-                    className="bg-blue-500 mt-6 cursor-pointer text-white px-8 py-6 text-lg font-semibold rounded-lg shadow-lg border-2 border-blue-700 flex items-center gap-3
+                    className="bg-blue-500 mt-6 cursor-pointer text-white px-9 py-7 text-lg font-semibold rounded-lg shadow-lg border-2 border-blue-700 flex items-center gap-3
                     transition-all duration-300 mx-auto lg:mx-0 ease-in-out hover:scale-105 hover:bg-blue-600 hover:shadow-blue-400/50 active:scale-95"
                   >
                     <Zap /> Claim Offer Now
@@ -140,7 +140,7 @@ export default function WebHostingHero() {
                   width={500}
                   height={400}
                   priority
-                  src="https://res.cloudinary.com/daspo1tk3/image/upload/v1757507366/webhero_njrbf8.png"
+                  src="https://res.cloudinary.com/daspo1tk3/image/upload/v1757597921/webhero_wilmkp.png"
                   alt="Hosting Infrastructure"
                   className="w-full h-full rounded-md shadow-lg"
                 />
@@ -168,24 +168,24 @@ export default function WebHostingHero() {
       </div>
 
       {/* Feature Cards */}
-      <div className="md:block hidden absolute w-full left-0 lg:-bottom-32 -bottom-60 py-8">
+      <div className="md:block hidden absolute w-full left-0 lg:-bottom-40 -bottom-64 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                icon: "⚡",
+                icon: "/assets/wp-rocket.svg",
                 title: "Fastest Loading Speed",
                 description:
                   "You control your website and we take care of the rest. This is the promise of Hostnin and super-fast enhanced website performance.",
               },
               {
-                icon: "🎧",
+                icon: "/assets/wp-2.svg",
                 title: "24/7 Dedicated Support",
                 description:
                   "We provide 24/7 LiveChat support for you to get online any time you need. Support is provided through chat, chat, and ticket systems.",
               },
               {
-                icon: "🛡️",
+                icon: "/assets/wp-3.svg",
                 title: "99.9% Uptime Guarantee",
                 description:
                   "There is no way a professional website can go down. Stay always online with our web hosting with a 99.9% uptime guarantee.",
@@ -198,7 +198,24 @@ export default function WebHostingHero() {
                 transition={{ delay: 0.2 + index * 0.1 }}
                 className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
               >
-                <div className="text-4xl mb-4">{feature.icon}</div>
+                <div className="flex justify-between items-center mb-4">
+                  <Image
+                    src={feature.icon}
+                    alt={feature.title}
+                    width={90}
+                    height={80}
+                    priority
+                    className="w-16 h-16 object-contain rounded-full shadow-lg bg-accent hover:scale-105"
+                  />
+                  <Image
+                    src={feature.icon}
+                    alt={feature.title}
+                    width={90}
+                    height={80}
+                    priority
+                    className="w-16 h-16 object-contain rounded-full grayscale hover:scale-105"
+                  />
+                </div>
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
                   {feature.title}
                 </h3>

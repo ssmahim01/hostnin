@@ -1,5 +1,4 @@
 import WebHostingHero from "@/app/(public-routes)/components/web-hosting/web-hosting-hero";
-import PricingPlans from "@/app/(public-routes)/components/web-hosting/pricing-plans";
 import { Metadata } from "next";
 import { TestimonialsSection } from "@/app/(public-routes)/components/web-hosting/testimonials";
 import { DomainSearchSection } from "@/app/(public-routes)/components/web-hosting/domain-search-section";
@@ -12,6 +11,7 @@ import UniqueFeatures from "@/app/(public-routes)/components/web-hosting/unique-
 import QuestionsSection from "@/app/(public-routes)/components/web-hosting/questions-section";
 import MigrationSection from "@/app/(public-routes)/components/web-hosting/migration-section";
 import AdvancedFeatures from "@/app/(public-routes)/components/web-hosting/advanced-features";
+import PricingPlans from "@/app/(public-routes)/components/web-hosting/pricing-plans";
 
 export const metadata: Metadata = {
   title: "Fast & Secure Web Hosting | Hostnin",
@@ -34,18 +34,18 @@ export default function WebHostingPage() {
       <WebHostingHero />
       <div id="pricing">
         <PricingPlans />
-        <TestimonialsSection />
-        <DomainSearchSection />
-        <InfrastructurePartners />
-        <WhyChooseHosting />
-        <MoneyBackGuarantee />
-        <WhyHostnin />
-        <UniqueFeatures />
-        <QuestionsSection />
-        <AdvancedFeatures />
-        <MigrationSection />
-        <FAQSection />
       </div>
+      <TestimonialsSection />
+      <DomainSearchSection />
+      <InfrastructurePartners />
+      <WhyChooseHosting />
+      <MoneyBackGuarantee />
+      <WhyHostnin />
+      <UniqueFeatures />
+      <QuestionsSection />
+      <AdvancedFeatures />
+      <MigrationSection />
+      <FAQSection />
     </>
   );
 }

@@ -16,7 +16,7 @@ export default function Offer() {
       className="py-16 dark:mt-6 bg-cover bg-center bg-no-repeat relative text-center max-w-7xl mx-auto"
       style={{
         backgroundImage:
-          "url('https://res.cloudinary.com/daspo1tk3/image/upload/v1757536651/offer-bg_zx71gp.jpg')",
+          "url('https://res.cloudinary.com/daspo1tk3/image/upload/v1757597595/bg1_kdhj8o.jpg')",
       }}
     >
       <div className="container max-w-5xl mx-auto px-4">
