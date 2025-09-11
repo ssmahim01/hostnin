@@ -12,9 +12,9 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 
 export default function SupportTeam() {
   return (
-    <section className="py-14 bg-white dark:bg-gray-900">
+    <section className="py-10 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4">
-        <h2 className="text-5xl font-extrabold text-center text-gray-900 dark:text-white mb-6">
+        <h2 className="lg:text-5xl text-4xl font-bold lg:font-extrabold text-center text-gray-900 dark:text-white mb-6">
           Expert Support by an Outstanding Team
         </h2>
         <p className="text-center text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-14 max-w-2xl mx-auto">
@@ -68,7 +68,7 @@ export default function SupportTeam() {
                       <p className="text-xl text-blue-600 dark:text-blue-400 font-semibold mb-4">
                         {hero.role}
                       </p>
-                      <p className="text-base md:text-lg text-gray-600 dark:text-gray-400">
+                      <p className="text-lg text-gray-600 dark:text-gray-400">
                         {hero.description}
                       </p>
                     </div>
@@ -87,7 +87,7 @@ export default function SupportTeam() {
           </Swiper>
 
           {/* Pagination Dots outside card */}
-          <div className="swiper-pagination !relative mt-8 flex justify-center gap-2" />
+          <div className="swiper-pagination !relative mt-12 flex justify-center gap-2" />
         </div>
       </div>
     </section>
