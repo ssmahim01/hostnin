@@ -55,7 +55,7 @@ const footerSections: FooterSection[] = [
     links: [
       { label: "Terms & Conditions", href: "/company/terms" },
       { label: "Affiliate", href: "/company/affiliate" },
-      { label: "Careers (Hiring)", href: "/company/careers" },
+      { label: "Careers", href: "/company/careers" },
       { label: "Contact", href: "/company/contact" },
     ],
   },
@@ -108,7 +108,7 @@ export function Footer() {
                       href={link.href}
                       className="text-blue-200 hover:text-white transition-colors text-lg"
                     >
-                      {link.label} {link?.label === "Careers (Hiring)" && (
+                      {link.label} {link?.label === "Careers" && (
                         <span className="font-semibold text-yellow-400">(Hiring)</span>
                       )}
                     </Link>
