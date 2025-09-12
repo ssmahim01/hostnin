@@ -173,9 +173,9 @@ export const features: Feature[] = [
 
 export default function WordPressPlansInclude() {
   return (
-    <section className="w-full bg-[#fafbfc] md:py-16 py-8">
+    <section className="w-full bg-[#fafbfc] dark:bg-gray-900 md:py-16 py-8">
       <div className="max-w-7xl mx-auto md:px-4">
-        <h2 className="text-4xl sm:text-5xl font-semibold text-center text-[#03206B] md:mb-14 mb-7 tracking-tight">
+        <h2 className="text-4xl sm:text-5xl font-semibold text-center text-[#03206B] dark:text-white md:mb-14 mb-7 tracking-tight">
           All WordPress Hosting Plans Include
         </h2>
 
@@ -183,12 +183,12 @@ export default function WordPressPlansInclude() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="flex items-center bg-white rounded-sm shadow-lg px-6 py-5 md:w-[400px] w-[350px] mx-auto gap-4 hover:shadow-xl hover:scale-105 transition-all duration-200"
+              className="flex items-center bg-white dark:bg-gray-800 rounded-sm shadow-lg px-6 py-5 md:w-[400px] w-[350px] mx-auto gap-4 hover:shadow-xl hover:scale-105 transition-all duration-200"
             >
-              <span className="flex items-center justify-center w-12 h-12 rounded-full bg-white">
+              <span className="flex items-center justify-center w-12 h-12 rounded-full bg-white dark:bg-gray-700">
                 {feature.icon}
               </span>
-              <span className="font-bold text-lg md:text-xl text-[#03206B] text-left font-['Urbanist',sans-serif]">
+              <span className="font-bold text-lg md:text-xl text-[#03206B] dark:text-white text-left font-['Urbanist',sans-serif]">
                 {feature.title}
               </span>
             </div>
