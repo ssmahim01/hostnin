@@ -29,7 +29,7 @@ export default function PricingCard({
   const gridCols = plans.length === 4 ? "md:grid-cols-4" : "md:grid-cols-3";
 
   return (
-    <div className={`grid ${gridCols} gap-8 max-w-7xl mx-auto pt-4`}>
+    <div className={`grid ${gridCols} gap-8 max-w-7xl mx-auto`}>
       {plans.map((plan) => {
         const visibleFeatures = allExpanded
           ? plan.features

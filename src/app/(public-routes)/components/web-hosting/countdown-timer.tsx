@@ -60,12 +60,12 @@ export function CountdownTimer({ targetDate }: CountdownTimerProps) {
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: index * 0.1 }}
-          className="bg-white dark:bg-gray-800 rounded-lg p-3 text-center shadow-lg md:min-w-[60px] min-w-[40px]"
+          className="bg-white dark:bg-gray-800 rounded-lg p-3 text-center shadow-lg md:min-w-[100px] lg:h-[80px] h-[70px] min-w-[40px]"
         >
-          <div className="text-sm lg:text-2xl font-bold text-gray-900 dark:text-white">
+          <div className="text-base lg:text-2xl font-bold text-gray-900 dark:text-white">
             {unit.value}
           </div>
-          <div className="text-xs text-gray-500 dark:text-gray-400 font-medium">
+          <div className="text-sm text-gray-500 dark:text-gray-400 font-medium">
             {unit.label}
           </div>
         </motion.div>
