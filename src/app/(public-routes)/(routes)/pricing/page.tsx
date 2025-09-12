@@ -20,11 +20,11 @@ export const metadata: Metadata = {
 
 export default function PricingPlan() {
   return (
-    <>
+    <div className="pt-4">
       <Pricing />
       <TestimonialsSection />
       <InfrastructurePartners />
       <ControlPanelSection />
-    </>
+    </div>
   );
 }
