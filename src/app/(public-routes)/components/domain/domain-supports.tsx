@@ -32,13 +32,13 @@ export default function DomainSupports() {
               {supportSectionData.titleParts.map((part, index) => (
                 <h2
                   key={index}
-                  className="text-3xl lg:text-4xl font-bold leading-tight"
+                  className="text-3xl md:text-4xl font-bold leading-tight"
                 >
                   {part}
                 </h2>
               ))}
             </div>
-            <p className="text-base leading-relaxed max-w-xl mx-auto lg:mx-0 text-justify opacity-90">
+            <p className="text-base leading-relaxed max-w-xl mx-auto lg:text-left text-center lg:mx-0 opacity-90">
               {supportSectionData.description}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start">
