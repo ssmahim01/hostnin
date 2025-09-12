@@ -102,7 +102,7 @@ const navItems: NavItem[] = [
     dropdownItems: [
       {
         label: "Privacy Policy",
-        href: "/about/privacy-policy",
+        href: "/privacy-policy",
         icon: Shield,
       },
       {
