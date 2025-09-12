@@ -16,6 +16,8 @@ export default function Pricing() {
     (hosting) => hosting.id === activeHostingType
   );
 
+  const arrowSrc = "/assets/right-arrow.png";
+
   return (
     <section className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -44,7 +46,7 @@ export default function Pricing() {
           </div>
 
           {/* Billing Toggle */}
-          <div className="flex items-center justify-center gap-4 mb-2">
+          <div className="flex items-center justify-center gap-4">
             <div className="flex bg-gray-700 p-1 rounded-full">
               <button
                 onClick={() => setBillingCycle("monthly")}
@@ -67,16 +69,16 @@ export default function Pricing() {
                 Yearly
               </button>
             </div>
-            <p className="text-sm flex gap-2 items-center text-blue-500 dark:text-gray-200 font-medium">
+            <div className="text-base flex items-center text-blue-500 dark:text-gray-200 font-medium">
               <Image
-                src={"/assets/arrow-dark.webp"}
-                alt="Right Arrow "
-                width={100}
-                height={80}
-                className="w-8 h-8"
+                src={arrowSrc}
+                alt="Right Arrow"
+                width={120}
+                height={90}
+                className={"w-16 h-14"}
                 priority
-              />{" "}
-              <span>
+              />
+              <span className="text-base font-medium">
                 Upto{" "}
                 {currentHostingData?.id === "web"
                   ? "76%"
@@ -87,7 +89,7 @@ export default function Pricing() {
                   : "75%"}{" "}
                 Save
               </span>
-            </p>
+            </div>
           </div>
         </div>
 

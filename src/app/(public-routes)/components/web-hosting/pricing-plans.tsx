@@ -55,13 +55,13 @@ export default function PricingPlans() {
               </div>
               <div className="text-base flex gap-2 items-center text-blue-600 dark:text-gray-200 font-medium">
                 <Image
-                  src={"/assets/arrow-dark.webp"}
-                  alt="Right Arrow "
-                  width={100}
-                  height={80}
-                  className="w-8 h-8"
+                  src={"/assets/right-arrow.png"}
+                  alt="Right Arrow"
+                  width={120}
+                  height={90}
+                  className={"w-16 h-14"}
                   priority
-                />{" "}
+                />
                 <span className="font-medium text-base">Upto 76% save</span>
               </div>
             </div>
