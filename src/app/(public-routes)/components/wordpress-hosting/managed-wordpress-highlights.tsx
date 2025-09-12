@@ -52,7 +52,7 @@ export default function ManagedWordPressHighlights() {
     <section className="w-full bg-[#fafbfc] dark:bg-gray-900 py-16">
       <div className="max-w-7xl mx-auto px-4">
         {/* heading */}
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-10 gap-6">
+        <div className="flex flex-col lg:flex-row items-center lg:justify-between mb-10 gap-6">
           <div>
             <h2 className="text-3xl sm:text-4xl font-bold text-[#03206B] dark:text-blue-200 mb-2">
               Managed WordPress Hosting Highlights
