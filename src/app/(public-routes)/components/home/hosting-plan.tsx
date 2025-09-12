@@ -52,7 +52,7 @@ export default function HostingPlan() {
 
                 <Button
                   variant="outline"
-                  className="w-full flex gap-2 items-center bg-transparent border-gray-300 dark:border-gray-600 text-blue-600 dark:text-white group-hover:text-gray-800 group-hover:bg-white/90 group transition-colors duration-300 hover:cursor-pointer font-bold"
+                  className="w-full flex gap-2 items-center hover:scale-110 bg-transparent border-gray-300 dark:border-gray-600 text-blue-600 dark:text-white group-hover:text-gray-800 group-hover:bg-white/90 group transition-colors duration-300 hover:cursor-pointer font-bold"
                   onClick={() => handleChoosePlan(plan?.title)}
                 >
                   <span>See Plans</span> <ArrowRight className="w-4 h-4" />

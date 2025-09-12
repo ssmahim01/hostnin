@@ -83,7 +83,7 @@ export default function WebHostingHero() {
                 <p className="text-yellow-300 font-bold text-xl leading-tight">
                   Expertly Crafted for Online Businesses
                 </p>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-balance text-white/90">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-balance text-white">
                   <span>Get Fastest Hosting</span>
                   <br />
                   <span className="">Up to 76% Discount</span>

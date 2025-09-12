@@ -31,7 +31,7 @@ export default function Offer() {
           <Button
             variant={"default"}
             asChild
-            className="py-6 px-12 bg-blue-600 hover:bg-blue-700 text-lg shadow-lg hover:shadow-2xl text-white rounded-sm"
+            className="py-6 px-12 hover:scale-110 transition-colors duration-300 bg-blue-600 hover:bg-blue-700 text-lg shadow-lg hover:shadow-2xl text-white rounded-sm"
           >
             <Link href={offerData.primaryButton.link}>
               {offerData.primaryButton.label}

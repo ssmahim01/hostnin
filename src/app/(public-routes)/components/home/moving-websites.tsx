@@ -61,7 +61,7 @@ export default function MovingWebsites() {
             variant={"outline"}
             asChild
             onClick={handleScrollToPlan}
-            className="hover:cursor-pointer mt-4 px-6 rounded-md hover:border-none py-5 hover:bg-blue-700 hover:text-white text-[#2a54fa] border-2 border-[#2a55ff]"
+            className="hover:cursor-pointer hover:scale-110 transition-colors duration-300 mt-4 px-6 rounded-md hover:border-none py-5 hover:bg-blue-700 hover:text-white text-[#2a54fa] border-2 border-[#2a55ff]"
           >
             <p>
               {movingWebsiteData.button.label}

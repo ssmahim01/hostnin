@@ -15,7 +15,11 @@ interface PricingCardProps {
   hostingId?: string;
 }
 
-export default function PricingCard({ billingCycle, plans, hostingId }: PricingCardProps) {
+export default function PricingCard({
+  billingCycle,
+  plans,
+  hostingId,
+}: PricingCardProps) {
   const [allExpanded, setAllExpanded] = useState(false);
 
   const toggleAllPlans = () => {
@@ -36,8 +40,8 @@ export default function PricingCard({ billingCycle, plans, hostingId }: PricingC
             key={plan.id}
             className={`relative overflow-hidden p-2 ${
               plan.isPopular
-                ? "border-2 border-blue-500 shadow-xl scale-105"
-                : "border border-gray-200 dark:border-gray-700 shadow-lg"
+                ? "border-2 border-blue-500 shadow-xl"
+                : "border border-gray-200 dark:border-gray-700 shadow-lg my-2"
             } bg-white dark:bg-gray-800`}
           >
             {plan.isPopular && (
@@ -92,7 +96,7 @@ export default function PricingCard({ billingCycle, plans, hostingId }: PricingC
               )}
 
               <Button
-                className={`w-full py-6 text-base hover:cursor-pointer font-medium ${
+                className={`w-full py-6 text-base hover:cursor-pointer hover:scale-105 transition-colors duration-300 font-medium ${
                   plan.isPopular
                     ? "bg-blue-600 hover:bg-blue-700 text-white"
                     : "bg-white dark:bg-gray-700 text-gray-900 dark:text-white border-2 border-blue-500 dark:border-gray-600 hover:bg-blue-500 hover:border-none dark:hover:bg-gray-600 hover:text-white"
@@ -156,7 +160,7 @@ export default function PricingCard({ billingCycle, plans, hostingId }: PricingC
                       {category.items.map((feature, index) => (
                         <li
                           key={index}
-                          className="flex items-center gap-2 text-sm"
+                          className="flex items-center gap-2 text-base"
                         >
                           <Check className="w-4 h-4 text-green-500 flex-shrink-0" />
                           <span className="text-gray-700 dark:text-gray-300">

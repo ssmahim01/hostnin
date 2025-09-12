@@ -1,0 +1,169 @@
+"use client";
+
+import { SupportHero } from "@/types/support-hero";
+import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
+import { motion, AnimatePresence } from "motion/react";
+import Image from "next/image";
+
+import { useCallback, useEffect, useState } from "react";
+
+export const AnimatedSupportTeam = ({
+  supportHeroes,
+  autoplay = false,
+}: {
+  supportHeroes: SupportHero[];
+  autoplay?: boolean;
+}) => {
+  const [active, setActive] = useState(0);
+
+  const handleNext = useCallback(() => {
+    setActive((prev) => (prev + 1) % supportHeroes.length);
+  }, [supportHeroes.length]);
+
+  const handlePrev = () => {
+    setActive(
+      (prev) => (prev - 1 + supportHeroes.length) % supportHeroes.length
+    );
+  };
+
+  const isActive = (index: number) => {
+    return index === active;
+  };
+
+  useEffect(() => {
+    if (autoplay) {
+      const interval = setInterval(handleNext, 4000);
+      return () => clearInterval(interval);
+    }
+  }, [autoplay, handleNext]);
+
+  const randomRotateY = () => {
+    return Math.floor(Math.random() * 21) - 10;
+  };
+  return (
+    <div className="mx-auto max-w-4xl md:px-6 px-4 pt-4 pb-14 font-sans antialiased md:max-w-4xl lg:px-8">
+      <div className="relative grid grid-cols-1 gap-20 md:grid-cols-2">
+        <div>
+          <div className="relative h-96 md:w-11/12 lg:w-full w-4/5 mx-auto">
+            <AnimatePresence>
+              {supportHeroes.map((hero, index) => (
+                <motion.div
+                  key={index}
+                  initial={{
+                    opacity: 0,
+                    scale: 0.9,
+                    z: -100,
+                    rotate: randomRotateY(),
+                  }}
+                  animate={{
+                    opacity: isActive(index) ? 1 : 0.7,
+                    scale: isActive(index) ? 1 : 0.95,
+                    z: isActive(index) ? 0 : -100,
+                    rotate: isActive(index) ? 0 : randomRotateY(),
+                    zIndex: isActive(index)
+                      ? 40
+                      : supportHeroes.length + 2 - index,
+                    y: isActive(index) ? [0, -80, 0] : 0,
+                  }}
+                  exit={{
+                    opacity: 0,
+                    scale: 0.9,
+                    z: 100,
+                    rotate: randomRotateY(),
+                  }}
+                  transition={{
+                    duration: 0.4,
+                    ease: "easeInOut",
+                  }}
+                  className="absolute inset-0 origin-bottom"
+                >
+                  <Image
+                    src={hero.image.src}
+                    alt={hero.image.alt}
+                    width={1300}
+                    height={1100}
+                    priority
+                    draggable={false}
+                    className="h-full w-full rounded-3xl object-cover object-center"
+                  />
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </div>
+        </div>
+        <div className="flex flex-col justify-between py-4">
+          <motion.div
+            key={active}
+            initial={{
+              y: 20,
+              opacity: 0,
+            }}
+            animate={{
+              y: 0,
+              opacity: 1,
+            }}
+            exit={{
+              y: -20,
+              opacity: 0,
+            }}
+            transition={{
+              duration: 0.2,
+              ease: "easeInOut",
+            }}
+          >
+            <h3 className="text-2xl font-semibold text-gray-700 dark:text-white mb-2">
+              Meet Our Support Hero
+            </h3>
+            <h3 className="md:text-4xl text-3xl font-bold text-black dark:text-white mb-2">
+              {supportHeroes[active].name}
+            </h3>
+            <p className="text-lg text-blue-600 font-semibold dark:text-neutral-500">
+              {supportHeroes[active].role}
+            </p>
+            <motion.p className="mt-4 text-lg font-medium leading-relaxed mb-4 text-gray-500 dark:text-neutral-300">
+              {supportHeroes[active].description
+                .split(" ")
+                .map((word, index) => (
+                  <motion.span
+                    key={index}
+                    initial={{
+                      filter: "blur(10px)",
+                      opacity: 0,
+                      y: 5,
+                    }}
+                    animate={{
+                      filter: "blur(0px)",
+                      opacity: 1,
+                      y: 0,
+                    }}
+                    transition={{
+                      duration: 0.2,
+                      ease: "easeInOut",
+                      delay: 0.02 * index,
+                    }}
+                    className="inline-block"
+                  >
+                    {word}&nbsp;
+                  </motion.span>
+                ))}
+            </motion.p>
+          </motion.div>
+          <div className="flex gap-4 pt-12 md:pt-0">
+            <button
+              onClick={handlePrev}
+              className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"
+            >
+              <IconArrowLeft className="h-5 w-5 text-black transition-transform duration-300 group-hover/button:rotate-12 dark:text-neutral-400" />
+            </button>
+            <button
+              onClick={handleNext}
+              className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"
+            >
+              <IconArrowRight className="h-5 w-5 text-black transition-transform duration-300 group-hover/button:-rotate-12 dark:text-neutral-400" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};

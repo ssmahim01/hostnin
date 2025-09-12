@@ -28,6 +28,7 @@ import Link from "next/link";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import { ScrollArea, ScrollBar } from "../ui/scroll-area";
+import Dropdown from "../ui/menu-dropdown";
 
 const navItems: NavItem[] = [
   { label: "Pricing", href: "/pricing" },
@@ -143,9 +144,7 @@ export function Navbar() {
   }, []);
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
+    <nav
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 
         bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-sm"
     >
@@ -166,9 +165,9 @@ export function Navbar() {
             </Link>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2">
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-6">
+            <div className="hidden lg:flex items-center gap-2">
               {navItems.map((item) => (
                 <div key={item.label} className="relative group">
                   <Link
@@ -183,7 +182,7 @@ export function Navbar() {
                   {item.hasDropdown && item.dropdownItems && (
                     <div
                       className={`absolute left-0 mt-2 bg-white dark:bg-gray-900 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0
-                      ${item.label === "Hosting" ? "w-[550px]" : "w-80"}`}
+                      ${item.label === "Hosting" ? "w-[550px]" : "w-56"}`}
                     >
                       <div
                         className={`grid gap-2 ${
@@ -248,12 +247,7 @@ export function Navbar() {
 
               {/* CTA Button */}
               <div className="hidden lg:block">
-                <Button
-                  variant={"default"}
-                  className="bg-blue-600 cursor-pointer hover:bg-blue-700 text-white p-5 rounded-lg font-medium"
-                >
-                  Dashboard
-                </Button>
+                <Dropdown />
               </div>
             </div>
 
@@ -283,7 +277,7 @@ export function Navbar() {
             exit={{ opacity: 0, height: 0 }}
             className="lg:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700"
           >
-            <ScrollArea className="h-[70vh]">
+            <ScrollArea className="h-[90vh] py-4">
               <div className="px-4 pt-4 pb-6 space-y-4">
                 {navItems.map((item) => (
                   <div key={item.label}>
@@ -321,12 +315,16 @@ export function Navbar() {
                     )}
                   </div>
                 ))}
+
+                <div className="w-full">
+                  <Dropdown />
+                </div>
               </div>
               <ScrollBar orientation="vertical" />
             </ScrollArea>
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </nav>
   );
 }

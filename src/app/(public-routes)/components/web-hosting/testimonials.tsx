@@ -1,14 +1,14 @@
 "use client";
 
 import { Star } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
 import type { Testimonial } from "@/types/testimonial";
 
-// Import Swiper styles
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Image from "next/image";
@@ -78,12 +78,12 @@ const testimonials: Testimonial[] = [
 
 export function TestimonialsSection() {
   return (
-    <section className="lg:py-16 py-4 bg-gray-50 dark:bg-gray-900/50">
+    <section className="pt-4 pb-16 bg-gray-50 dark:bg-gray-900/50">
       <div className="container max-w-7xl mx-auto px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 grid-cols-1 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 items-center">
             {/* Left side content */}
-            <div>
+            <div className="flex-1">
               <div className="flex items-center gap-4 mb-6">
                 <Image
                   width={100}
@@ -144,66 +144,82 @@ export function TestimonialsSection() {
               </div>
             </div>
 
-            {/* Right side carousel */}
-            <div className="w-full  relative">
+            <div className="flex-1 relative">
               <Swiper
-                modules={[Navigation, Pagination, Autoplay]}
-                spaceBetween={20}
-                slidesPerView={1}
+                spaceBetween={30}
                 navigation={{
-                  nextEl: ".swiper-button-next-custom",
                   prevEl: ".swiper-button-prev-custom",
+                  nextEl: ".swiper-button-next-custom",
                 }}
                 pagination={{
                   clickable: true,
                   bulletClass: "swiper-pagination-bullet-custom",
                   bulletActiveClass: "swiper-pagination-bullet-active-custom",
                 }}
-                autoplay={{ delay: 5000, disableOnInteraction: false }}
+                autoplay={{ delay: 4000, disableOnInteraction: false }}
+                modules={[Navigation, Pagination, Autoplay, EffectFade]}
                 loop={true}
-                className="testimonials-swiper"
+                effect={"fade"}
+                className="mySwiper testimonials-swiper rounded-xl w-full"
               >
                 {testimonials.map((testimonial) => (
-                  <SwiperSlide key={testimonial.id}>
-                    <Card className="border-0 shadow-sm  p-0">
-                      <CardContent className="p-8 bg-white dark:bg-gray-800" >
-                        <div className="flex items-start gap-4">
-                          <Avatar className="w-16 h-16 flex-shrink-0">
-                            <AvatarImage
-                              src={testimonial.avatar || "/placeholder.svg"}
-                              alt={testimonial.name}
-                            />
-                            <AvatarFallback className="text-lg">
-                              {testimonial.name[0]}
-                            </AvatarFallback>
-                          </Avatar>
-                          <div className="flex-1">
-                            <div className="flex items-center gap-2 mb-3">
-                              <h4 className="font-bold text-lg text-gray-900 dark:text-white">
-                                {testimonial.name}
-                              </h4>
-                            </div>
-                            <div className="flex items-center gap-1 mb-4">
-                              {[...Array(testimonial.rating)].map((_, i) => (
-                                <Star
-                                  key={i}
-                                  className="w-4 h-4 fill-yellow-400 text-yellow-400"
-                                />
-                              ))}
-                            </div>
-                            <p className="text-gray-600 dark:text-gray-300 leading-relaxed pr-6">
-                              {testimonial.review}
-                            </p>
+                  <SwiperSlide key={testimonial.id} className="rounded-xl">
+                    <Card
+                      className="
+                        bg-white dark:bg-gray-800 
+                        rounded-xl shadow-lg 
+                        max-w-full 
+                       md:h-[345px] h-[440px] 
+                        flex flex-col
+                        justify-between
+                        py-4 sm:py-6 px-4 overflow-hidden 
+                      "
+                    >
+                      <div className="flex items-center mb-4 px-5">
+                        <Avatar className="w-20 h-20 rounded-full flex-shrink-0">
+                          <AvatarImage
+                            src={testimonial.avatar || "/placeholder.svg"}
+                            alt={testimonial.name}
+                            className="object-cover"
+                          />
+                          <AvatarFallback>{testimonial.name[0]}</AvatarFallback>
+                        </Avatar>
+                        <div className="ml-4 flex flex-col">
+                          <span className="font-bold sm:font-extrabold text-lg sm:text-xl text-blue-900 dark:text-blue-100 leading-tight">
+                            {testimonial.name}
+                          </span>
+                          <div className="flex items-center mt-1">
+                            {[...Array(testimonial.rating)].map((_, i) => (
+                              <Star
+                                key={i}
+                                className="w-4 h-4 sm:w-5 sm:h-5 fill-yellow-400 text-yellow-400"
+                              />
+                            ))}
                           </div>
                         </div>
-                      </CardContent>
+                      </div>
+
+                      <div className="flex-1 flex flex-col justify-between">
+                        <p className="text-gray-600 dark:text-gray-300 text-base sm:text-base leading-relaxed max-w-full px-3 mb-4">
+                          {testimonial.review}
+                        </p>
+                        <div className="px-5 mt-auto">
+                          <Image
+                            src="/assets/quote-icon.svg"
+                            alt="Quote"
+                            width={70}
+                            height={70}
+                            className="object-contain"
+                          />
+                        </div>
+                      </div>
                     </Card>
                   </SwiperSlide>
                 ))}
               </Swiper>
 
               {/* Custom navigation buttons */}
-              <div className="swiper-button-prev-custom absolute left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white dark:bg-gray-700 rounded-full shadow-lg flex items-center justify-center cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors">
+              <div className="swiper-button-prev-custom absolute -left-5 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white dark:bg-gray-700 rounded-full shadow-lg flex items-center justify-center cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors">
                 <svg
                   className="w-5 h-5 text-gray-600 dark:text-gray-300"
                   fill="none"
@@ -218,7 +234,7 @@ export function TestimonialsSection() {
                   />
                 </svg>
               </div>
-              <div className="swiper-button-next-custom absolute right-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white dark:bg-gray-700 rounded-full shadow-lg flex items-center justify-center cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors">
+              <div className="swiper-button-next-custom absolute -right-5 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white dark:bg-gray-700 rounded-full shadow-lg flex items-center justify-center cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors">
                 <svg
                   className="w-5 h-5 text-gray-600 dark:text-gray-300"
                   fill="none"

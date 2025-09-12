@@ -40,7 +40,7 @@ export function HeroSection() {
           <div className="flex items-center flex-col md:flex-row gap-4 lg:justify-start justify-center">
             <Button
               variant="secondary"
-              className="bg-white text-blue-800 hover:bg-gray-100 rounded-full p-6 hover:cursor-pointer font-semibold"
+              className="bg-white text-blue-800 hover:scale-105 hover:bg-gray-100 rounded-full px-9 hover:shadow-lg py-7 text-base font-bold hover:cursor-pointer"
               onClick={handleScrollToPlan}
             >
               {heroData.cta}
