@@ -200,7 +200,7 @@ export function TestimonialsSection() {
                       </div>
 
                       <div className="flex-1 flex flex-col justify-between">
-                        <p className="text-gray-600 dark:text-gray-300 text-base sm:text-base leading-relaxed max-w-full px-3 mb-4">
+                        <p className="text-gray-600 dark:text-gray-300 text-base sm:text-base leading-relaxed max-w-full lg:px-3 px-7 mb-4">
                           {testimonial.review}
                         </p>
                         <div className="px-5 mt-auto">
@@ -219,7 +219,7 @@ export function TestimonialsSection() {
               </Swiper>
 
               {/* Custom navigation buttons */}
-              <div className="swiper-button-prev-custom absolute md:-left-5 left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white dark:bg-gray-700 rounded-full shadow-lg flex items-center justify-center cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors">
+              <div className="swiper-button-prev-custom absolute lg:-left-5 left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white dark:bg-gray-700 rounded-full shadow-lg flex items-center justify-center cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors">
                 <svg
                   className="w-5 h-5 text-gray-600 dark:text-gray-300"
                   fill="none"
@@ -234,7 +234,7 @@ export function TestimonialsSection() {
                   />
                 </svg>
               </div>
-              <div className="swiper-button-next-custom absolute md:-right-5 right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white dark:bg-gray-700 rounded-full shadow-lg flex items-center justify-center cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors">
+              <div className="swiper-button-next-custom absolute lg:-right-5 right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white dark:bg-gray-700 rounded-full shadow-lg flex items-center justify-center cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors">
                 <svg
                   className="w-5 h-5 text-gray-600 dark:text-gray-300"
                   fill="none"
