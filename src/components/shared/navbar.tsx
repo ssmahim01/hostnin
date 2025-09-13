@@ -107,7 +107,7 @@ const navItems: NavItem[] = [
       },
       {
         label: "Terms & Condition",
-        href: "/about/terms-conditions",
+        href: "/terms-conditions",
         icon: FileText,
       },
       {
@@ -118,7 +118,7 @@ const navItems: NavItem[] = [
       },
       {
         label: "Contact",
-        href: "/about/contact",
+        href: "/contact",
         icon: Phone,
       },
     ],

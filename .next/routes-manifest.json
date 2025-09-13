@@ -33,6 +33,12 @@
       "namedRegex": "^/_not\\-found(?:/)?$"
     },
     {
+      "page": "/contact",
+      "regex": "^/contact(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/contact(?:/)?$"
+    },
+    {
       "page": "/domain",
       "regex": "^/domain(?:/)?$",
       "routeKeys": {},
@@ -67,6 +73,12 @@
       "regex": "^/privacy\\-policy(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/privacy\\-policy(?:/)?$"
+    },
+    {
+      "page": "/terms-conditions",
+      "regex": "^/terms\\-conditions(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/terms\\-conditions(?:/)?$"
     }
   ],
   "dataRoutes": [],

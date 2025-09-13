@@ -1,9 +1,11 @@
 {
+  "/(public-routes)/(routes)/contact/page": "/contact",
   "/(public-routes)/(routes)/domain/page": "/domain",
   "/(public-routes)/(routes)/hosting/web-hosting/page": "/hosting/web-hosting",
   "/(public-routes)/(routes)/hosting/wordpress-hosting/page": "/hosting/wordpress-hosting",
   "/(public-routes)/(routes)/pricing/page": "/pricing",
   "/(public-routes)/(routes)/privacy-policy/page": "/privacy-policy",
+  "/(public-routes)/(routes)/terms-conditions/page": "/terms-conditions",
   "/_not-found/page": "/_not-found",
   "/api/whmcs-login/route": "/api/whmcs-login",
   "/api/whmcs-register/route": "/api/whmcs-register",
