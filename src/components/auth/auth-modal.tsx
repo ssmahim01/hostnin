@@ -68,39 +68,37 @@ export const AuthModal: React.FC<AuthModalProps> = ({
   const onSubmit = async (values: any) => {
     try {
       setLoading(true);
+      const endpoint =
+        mode === "login" ? "/api/whmcs-login" : "/api/whmcs-register";
 
-      let body: URLSearchParams;
+      const payload = new URLSearchParams(
+        mode === "login"
+          ? {
+              action: "ValidateLogin",
+              responsetype: "json",
+              email: values.email,
+              password: values.password,
+            }
+          : {
+              action: "AddClient",
+              responsetype: "json",
+              firstname: values.firstname,
+              lastname: values.lastname,
+              email: values.email,
+              address1: values.address1,
+              city: values.city,
+              state: values.state,
+              postcode: values.postcode,
+              country: values.country,
+              phonenumber: values.phonenumber,
+              password2: values.password2,
+            }
+      );
 
-      if (mode === "login") {
-        body = new URLSearchParams({
-          action: "ValidateLogin",
-          responsetype: "json",
-          username: values.email,
-          password: values.password,
-        });
-      } else {
-        body = new URLSearchParams({
-          action: "AddClient",
-          responsetype: "json",
-          firstname: values.firstname,
-          lastname: values.lastname,
-          email: values.email,
-          address1: values.address1,
-          city: values.city,
-          state: values.state,
-          postcode: values.postcode,
-          country: values.country,
-          phonenumber: values.phonenumber,
-          password2: values.password2,
-        });
-      }
-
-      const res = await fetch("https://my.hostnin.com/includes/api.php", {
+      const res = await fetch(endpoint, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
       });
 
       const data = await res.json();
@@ -115,9 +113,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
       }
     } catch (err) {
       console.error(err);
-      form.setError("root", {
-        message: "Network or server error",
-      });
+      form.setError("root", { message: "Network or server error" });
     } finally {
       setLoading(false);
     }
