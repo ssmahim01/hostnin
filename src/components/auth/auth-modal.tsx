@@ -71,17 +71,13 @@ export const AuthModal: React.FC<AuthModalProps> = ({
       const endpoint =
         mode === "login" ? "/api/whmcs-login" : "/api/whmcs-register";
 
-      const payload = new URLSearchParams(
+      const payload =
         mode === "login"
           ? {
-              action: "ValidateLogin",
-              responsetype: "json",
               email: values.email,
               password: values.password,
             }
           : {
-              action: "AddClient",
-              responsetype: "json",
               firstname: values.firstname,
               lastname: values.lastname,
               email: values.email,
@@ -92,8 +88,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
               country: values.country,
               phonenumber: values.phonenumber,
               password2: values.password2,
-            }
-      );
+            };
 
       const res = await fetch(endpoint, {
         method: "POST",
