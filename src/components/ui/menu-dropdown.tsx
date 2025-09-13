@@ -8,6 +8,7 @@ import {
   LogIn,
   Wrench,
 } from "lucide-react";
+import { AuthModal } from "../auth/auth-modal";
 
 interface DropdownMenuProps {
   children: ReactNode;
@@ -91,6 +92,9 @@ const DropdownMenuSeparator = () => (
 );
 
 export default function Dropdown() {
+  const [authOpen, setAuthOpen] = React.useState(false);
+  const [authMode, setAuthMode] = React.useState<"login" | "register">("login");
+
   return (
     <div className=" flex items-center justify-center font-sans p-2">
       <DropdownMenu
@@ -118,21 +122,21 @@ export default function Dropdown() {
           </DropdownMenuItem>
 
           <DropdownMenuItem
-            onClick={() => (
-              (window.location.href = "https://my.hostnin.com/index.php/login"),
-              "_blank"
-            )}
+            onClick={() => {
+              setAuthMode("login");
+              setAuthOpen(true);
+            }}
           >
-            <LogIn className="mr-3 h-5 w-5 text-zinc-500" />
+            <LogIn className="mr-3 h-5 w-5" />
             <span>Login</span>
           </DropdownMenuItem>
           <DropdownMenuItem
-            onClick={() => (
-              (window.location.href = "https://my.hostnin.com/register.php"),
-              "_blank"
-            )}
+            onClick={() => {
+              setAuthMode("register");
+              setAuthOpen(true);
+            }}
           >
-            <FilePen className="mr-3 h-5 w-5 text-zinc-500" />
+            <FilePen className="mr-3 h-5 w-5" />
             <span>Register</span>
           </DropdownMenuItem>
         </div>
@@ -160,6 +164,13 @@ export default function Dropdown() {
           </DropdownMenuItem>
         </div>
       </DropdownMenu>
+
+      <AuthModal
+        open={authOpen}
+        mode={authMode}
+        onOpenChange={setAuthOpen}
+        onModeChange={setAuthMode}
+      />
     </div>
   );
 }
