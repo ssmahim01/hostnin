@@ -3,7 +3,6 @@ import { Metadata } from "next";
 import { TestimonialsSection } from "@/app/(public-routes)/components/web-hosting/testimonials";
 import { DomainSearchSection } from "@/app/(public-routes)/components/web-hosting/domain-search-section";
 import { InfrastructurePartners } from "@/app/(public-routes)/components/web-hosting/infrastructure-partners";
-import { FAQSection } from "@/app/(public-routes)/components/web-hosting/faq-section";
 import { WhyChooseHosting } from "@/app/(public-routes)/components/web-hosting/why-choose-hosting";
 import { MoneyBackGuarantee } from "@/app/(public-routes)/components/web-hosting/money-back-gurantee";
 import WhyHostnin from "@/app/(public-routes)/components/web-hosting/why-hostnin";
@@ -12,6 +11,7 @@ import QuestionsSection from "@/app/(public-routes)/components/web-hosting/quest
 import MigrationSection from "@/app/(public-routes)/components/web-hosting/migration-section";
 import AdvancedFeatures from "@/app/(public-routes)/components/web-hosting/advanced-features";
 import PricingPlans from "@/app/(public-routes)/components/web-hosting/pricing-plans";
+import HostingFAQs from "@/components/shared/hosting/hosting-faqs";
 
 export const metadata: Metadata = {
   title: "Fast & Secure Web Hosting | Hostnin",
@@ -45,7 +45,7 @@ export default function WebHostingPage() {
       <QuestionsSection />
       <AdvancedFeatures />
       <MigrationSection />
-      <FAQSection />
+      <HostingFAQs />
     </>
   );
 }

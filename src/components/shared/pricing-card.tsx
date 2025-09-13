@@ -116,7 +116,7 @@ export default function PricingCard({
             <CardContent className="px-6 pb-4">
               {hostingId !== "cloud" && (
                 <div className="mb-6">
-                  <div className="bg-green-50 dark:bg-green-900/20 rounded-lg p-3 relative group">
+                  <div className="bg-amber-50 dark:bg-amber-900/20 rounded-lg p-3 relative group">
                     <div className="bg-teal-500 text-white text-xs font-semibold px-2 py-1 rounded-full inline-block mb-2">
                       Special Gift
                     </div>

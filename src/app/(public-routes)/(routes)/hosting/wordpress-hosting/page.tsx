@@ -4,6 +4,9 @@ import ManagedWordPressHighlights from "@/app/(public-routes)/components/wordpre
 import { WordPressBanner } from "@/app/(public-routes)/components/wordpress-hosting/wordpress-banner";
 import WordPressPlansInclude from "@/app/(public-routes)/components/wordpress-hosting/wordpress-plans-include";
 import { WordPressPricingSection } from "@/app/(public-routes)/components/wordpress-hosting/wordpress-pricing";
+import WordPressSignUp from "@/app/(public-routes)/components/wordpress-hosting/wordpress-signup";
+import WordPressTestimonials from "@/app/(public-routes)/components/wordpress-hosting/wordpress-testimonials";
+import HostingFAQs from "@/components/shared/hosting/hosting-faqs";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -35,6 +38,9 @@ export default function WordpressHosting() {
       <ManagedWordPressHighlights />
       <JoinHostingSection />
       <WordPressPlansInclude />
+      <WordPressSignUp />
+      <WordPressTestimonials />
+      <HostingFAQs />
     </>
   );
 }
