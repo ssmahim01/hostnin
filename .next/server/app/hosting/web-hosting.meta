@@ -1,0 +1,7 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/(public-routes)/layout,_N_T_/(public-routes)/(routes)/layout,_N_T_/(public-routes)/(routes)/hosting/layout,_N_T_/(public-routes)/(routes)/hosting/web-hosting/layout,_N_T_/(public-routes)/(routes)/hosting/web-hosting/page,_N_T_/hosting/web-hosting"
+  }
+}
