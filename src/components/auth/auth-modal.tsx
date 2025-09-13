@@ -21,6 +21,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { loginSchema, registerSchema } from "@/lib/auth-schemas";
 import { Eye, EyeOff } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 interface AuthModalProps {
   open: boolean;
@@ -55,6 +56,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
   });
 
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
   const [showPassword, setShowPassword] = useState({
     login: false,
     register: false,
@@ -74,13 +76,13 @@ export const AuthModal: React.FC<AuthModalProps> = ({
       const payload =
         mode === "login"
           ? {
-              email: values.email,
+              username: values.email,
               password: values.password,
             }
           : {
               firstname: values.firstname,
               lastname: values.lastname,
-              email: values.email,
+              username: values.email,
               address1: values.address1,
               city: values.city,
               state: values.state,
@@ -100,6 +102,12 @@ export const AuthModal: React.FC<AuthModalProps> = ({
       console.log("API response:", data);
 
       if (data.result === "success") {
+        if (mode === "register") {
+          onModeChange("login");
+          form.reset({ email: payload.username, password: "" });
+        } else if (mode === "login") {
+          router.push("https://my.hostnin.com");
+        }
         onOpenChange(false);
       } else {
         form.setError("root", {
@@ -264,12 +272,97 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                   render={({ field }) => (
                     <FormItem>
                       <FormControl>
-                        <Input placeholder="Country" {...field} />
+                        <select
+                          {...field}
+                          className="w-full border rounded px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-600"
+                        >
+                          <option value="">Select Country</option>
+                          {[
+                            "BD",
+                            "USA",
+                            "UK",
+                            "AF",
+                            "AL",
+                            "DZ",
+                            "AR",
+                            "AM",
+                            "AU",
+                            "AT",
+                            "AZ",
+                            "BH",
+                            "BE",
+                            "BR",
+                            "BG",
+                            "CA",
+                            "CN",
+                            "CO",
+                            "CR",
+                            "HR",
+                            "CY",
+                            "CZ",
+                            "DK",
+                            "EG",
+                            "FI",
+                            "FR",
+                            "DE",
+                            "GR",
+                            "HK",
+                            "HU",
+                            "IS",
+                            "IN",
+                            "ID",
+                            "IE",
+                            "IL",
+                            "IT",
+                            "JP",
+                            "JO",
+                            "KZ",
+                            "KE",
+                            "KW",
+                            "LV",
+                            "LB",
+                            "LT",
+                            "LU",
+                            "MY",
+                            "MX",
+                            "MA",
+                            "NL",
+                            "NZ",
+                            "NG",
+                            "NO",
+                            "PK",
+                            "PL",
+                            "PT",
+                            "QA",
+                            "RO",
+                            "RU",
+                            "SA",
+                            "SG",
+                            "SK",
+                            "SI",
+                            "ZA",
+                            "KR",
+                            "ES",
+                            "SE",
+                            "CH",
+                            "TW",
+                            "TH",
+                            "TR",
+                            "UA",
+                            "AE",
+                            "GB",
+                          ].map((c) => (
+                            <option key={c} value={c}>
+                              {c}
+                            </option>
+                          ))}
+                        </select>
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
+
                 <FormField
                   control={form.control}
                   name="phonenumber"
