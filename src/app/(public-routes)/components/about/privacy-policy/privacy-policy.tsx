@@ -4,7 +4,7 @@ export default function PrivacyPolicySection() {
   return (
     <div className="bg-gray-50 dark:bg-gray-900 min-h-screen py-24 px-4 sm:px-6 lg:px-8">
       <header className="text-center mb-14">
-        <h1 className="text-5xl font-extrabold text-blue-700 dark:text-blue-400 tracking-tight">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-blue-700 dark:text-blue-400 tracking-tight">
           Hostnin Privacy Policy
         </h1>
         <p className="mt-2 text-gray-500 dark:text-gray-400 text-lg">
@@ -12,7 +12,7 @@ export default function PrivacyPolicySection() {
         </p>
       </header>
 
-      <div className="max-w-7xl mx-auto bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-12 space-y-14">
+      <div className="max-w-7xl mx-auto bg-white dark:bg-gray-800 rounded-2xl shadow-lg lg:p-12 p-6 space-y-10">
         {/* Introduction */}
         <section className="border-l-4 border-blue-600 dark:border-blue-400 pl-6">
           <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4">

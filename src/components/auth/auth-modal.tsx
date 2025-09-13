@@ -23,6 +23,14 @@ import { loginSchema, registerSchema } from "@/lib/auth-schemas";
 import { Eye, EyeOff } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { ScrollArea, ScrollBar } from "../ui/scroll-area";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../ui/select";
+import { toast } from "sonner";
 
 interface AuthModalProps {
   open: boolean;
@@ -30,6 +38,82 @@ interface AuthModalProps {
   onOpenChange: (open: boolean) => void;
   onModeChange: (mode: "login" | "register") => void;
 }
+
+const countries = [
+  "Afghanistan",
+  "Albania",
+  "Algeria",
+  "Armenia",
+  "Australia",
+  "Austria",
+  "Azerbaijan",
+  "Bahrain",
+  "Bangladesh",
+  "Belgium",
+  "Brazil",
+  "Bulgaria",
+  "Canada",
+  "China",
+  "Colombia",
+  "Costa Rica",
+  "Croatia",
+  "Cyprus",
+  "Czech Republic",
+  "Denmark",
+  "Egypt",
+  "Finland",
+  "France",
+  "Germany",
+  "Greece",
+  "Hong Kong",
+  "Hungary",
+  "Iceland",
+  "India",
+  "Indonesia",
+  "Ireland",
+  "Israel",
+  "Italy",
+  "Japan",
+  "Jordan",
+  "Kazakhstan",
+  "Kenya",
+  "Kuwait",
+  "Latvia",
+  "Lebanon",
+  "Lithuania",
+  "Luxembourg",
+  "Malaysia",
+  "Mexico",
+  "Morocco",
+  "Netherlands",
+  "New Zealand",
+  "Nigeria",
+  "Norway",
+  "Pakistan",
+  "Poland",
+  "Portugal",
+  "Qatar",
+  "Romania",
+  "Russia",
+  "Saudi Arabia",
+  "Singapore",
+  "Slovakia",
+  "Slovenia",
+  "South Africa",
+  "South Korea",
+  "Spain",
+  "Sweden",
+  "Switzerland",
+  "Taiwan",
+  "Thailand",
+  "Turkey",
+  "Ukraine",
+  "United Arab Emirates",
+  "United Kingdom",
+  "United States",
+];
+
+countries.sort();
 
 export const AuthModal: React.FC<AuthModalProps> = ({
   open,
@@ -274,91 +358,25 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                     render={({ field }) => (
                       <FormItem>
                         <FormControl>
-                          <select
-                            {...field}
-                            className="w-full border rounded px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-600"
+                          <Select
+                            value={field.value || ""}
+                            onValueChange={(value) => {
+                              field.onChange(value);
+                              if (value)
+                                toast.success(`Selected country: ${value}`);
+                            }}
                           >
-                            <option value="">Select Country</option>
-                            {[
-                              "BD",
-                              "USA",
-                              "UK",
-                              "AF",
-                              "AL",
-                              "DZ",
-                              "AR",
-                              "AM",
-                              "AU",
-                              "AT",
-                              "AZ",
-                              "BH",
-                              "BE",
-                              "BR",
-                              "BG",
-                              "CA",
-                              "CN",
-                              "CO",
-                              "CR",
-                              "HR",
-                              "CY",
-                              "CZ",
-                              "DK",
-                              "EG",
-                              "FI",
-                              "FR",
-                              "DE",
-                              "GR",
-                              "HK",
-                              "HU",
-                              "IS",
-                              "IN",
-                              "ID",
-                              "IE",
-                              "IL",
-                              "IT",
-                              "JP",
-                              "JO",
-                              "KZ",
-                              "KE",
-                              "KW",
-                              "LV",
-                              "LB",
-                              "LT",
-                              "LU",
-                              "MY",
-                              "MX",
-                              "MA",
-                              "NL",
-                              "NZ",
-                              "NG",
-                              "NO",
-                              "PK",
-                              "PL",
-                              "PT",
-                              "QA",
-                              "RO",
-                              "RU",
-                              "SA",
-                              "SG",
-                              "SK",
-                              "SI",
-                              "ZA",
-                              "KR",
-                              "ES",
-                              "SE",
-                              "CH",
-                              "TW",
-                              "TH",
-                              "TR",
-                              "UA",
-                              "AE",
-                              "GB",
-                            ].map((c) => (
-                              <option key={c} value={c}>
-                                {c}
-                              </option>
-                            ))}
-                          </select>
+                            <SelectTrigger className="w-full">
+                              <SelectValue placeholder="Select Country" />
+                            </SelectTrigger>
+                            <SelectContent>
+                              {countries.map((c) => (
+                                <SelectItem key={c} value={c}>
+                                  {c}
+                                </SelectItem>
+                              ))}
+                            </SelectContent>
+                          </Select>
                         </FormControl>
                         <FormMessage />
                       </FormItem>
