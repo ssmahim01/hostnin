@@ -26,7 +26,10 @@ export default function PricingCard({
     setAllExpanded((prev) => !prev);
   };
 
-  const gridCols = plans.length === 4 ? "md:grid-cols-4" : "md:grid-cols-3";
+  const gridCols =
+    plans.length === 4
+      ? "lg:grid-cols-4 md:grid-cols-3 grid-cols-1"
+      : "lg:grid-cols-3 md:grid-cols-2 grid-cols-1";
 
   return (
     <div className={`grid ${gridCols} gap-8 max-w-7xl mx-auto`}>
