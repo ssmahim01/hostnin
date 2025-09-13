@@ -1,25 +1,28 @@
 import { NextRequest, NextResponse } from "next/server";
 
+const WHMCS_API_URL = "https://my.hostnin.com/includes/api.php";
+const WHMCS_IDENTIFIER = "j2OsM3t8m0h6MrsmTiCZ6FPkrcR4sRaB";
+const WHMCS_SECRET = "by6T9nfLz4lkImHY7HGUJtzugYznJJVX";
+
 export async function POST(req: NextRequest) {
   try {
-    const body = await req.json();
-    const { email, password } = body;
+    const { email, password } = await req.json();
 
-    // Convert to URLSearchParams for WHMCS
     const payload = new URLSearchParams({
       action: "ValidateLogin",
       responsetype: "json",
+      identifier: WHMCS_IDENTIFIER,
+      secret: WHMCS_SECRET,
       username: email,
       password,
     });
 
-    const whmcsRes = await fetch("https://my.hostnin.com/includes/api.php", {
+    const whmcsRes = await fetch(WHMCS_API_URL, {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: payload.toString(),
     });
 
-    // Parse response safely
     const contentType = whmcsRes.headers.get("content-type");
     let data;
     if (contentType?.includes("application/json")) {
