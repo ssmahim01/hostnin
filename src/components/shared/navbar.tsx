@@ -112,7 +112,7 @@ const navItems: NavItem[] = [
       },
       {
         label: "Careers",
-        href: "/about/careers",
+        href: "/careers",
         icon: Briefcase,
         badge: "(Hiring)",
       },

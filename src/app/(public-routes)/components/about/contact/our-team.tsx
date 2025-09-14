@@ -63,7 +63,7 @@ const teamMembers = [
 
 export default function OurTeam() {
   return (
-    <section className="max-w-7xl mx-auto px-4 md:px-0 pt-28 lg:pt-32">
+    <section className="max-w-7xl mx-auto px-4 md:px-0 pt-[540px] md:pt-44 lg:pt-32">
       <h2 className="text-3xl md:text-5xl font-bold text-center mb-4 text-gray-900 dark:text-gray-100">
         Our Team
       </h2>
