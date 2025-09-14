@@ -344,6 +344,7 @@ export function Navbar() {
                   )
                 )}
               </div>
+              <ScrollBar orientation="vertical" />
             </ScrollArea>
 
             {/* Dashboard at the bottom */}
