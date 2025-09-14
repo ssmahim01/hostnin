@@ -1,8 +1,6 @@
 {
   "/(public-routes)/(routes)/domain/page": "app/(public-routes)/(routes)/domain/page.js",
   "/(public-routes)/(routes)/hosting/web-hosting/page": "app/(public-routes)/(routes)/hosting/web-hosting/page.js",
-  "/api/whmcs-login/route": "app/api/whmcs-login/route.js",
-  "/api/whmcs-register/route": "app/api/whmcs-register/route.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/page": "app/page.js"
 }

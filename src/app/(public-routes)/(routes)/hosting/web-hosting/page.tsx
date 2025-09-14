@@ -6,7 +6,7 @@ import { InfrastructurePartners } from "@/app/(public-routes)/components/web-hos
 import { WhyChooseHosting } from "@/app/(public-routes)/components/web-hosting/why-choose-hosting";
 import { MoneyBackGuarantee } from "@/app/(public-routes)/components/web-hosting/money-back-gurantee";
 import WhyHostnin from "@/app/(public-routes)/components/web-hosting/why-hostnin";
-import UniqueFeatures from "@/app/(public-routes)/components/web-hosting/unique-features";
+// import UniqueFeatures from "@/app/(public-routes)/components/web-hosting/unique-features";
 import QuestionsSection from "@/app/(public-routes)/components/web-hosting/questions-section";
 import MigrationSection from "@/app/(public-routes)/components/web-hosting/migration-section";
 import AdvancedFeatures from "@/app/(public-routes)/components/web-hosting/advanced-features";
@@ -41,7 +41,7 @@ export default function WebHostingPage() {
       <WhyChooseHosting />
       <MoneyBackGuarantee />
       <WhyHostnin />
-      <UniqueFeatures />
+      {/* <UniqueFeatures /> */}
       <QuestionsSection />
       <AdvancedFeatures />
       <MigrationSection />

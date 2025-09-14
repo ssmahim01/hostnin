@@ -14,22 +14,44 @@ const domainSchema = z
   .regex(/^[a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*$/, "Invalid domain name format")
   .max(63, "Domain name too long");
 
-export default function DomainBanner() {
-  const [domain, setDomain] = useState<string>("");
+// Suggested domain TLDs
+const domainTlds = [".COM", ".ORG", ".NET", ".XYZ"];
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+type DomainResult = {
+  domain: string;
+  available: boolean;
+};
+
+export default function DomainBanner() {
+  const [domain, setDomain] = useState("");
+  const [results, setResults] = useState<DomainResult[]>([]);
+  const [loading, setLoading] = useState(false);
+
+  // Mock API function for checking domain availability
+  const checkDomainAvailability = async (domainName: string) => {
+    return domainTlds.map((tld) => ({
+      domain: `${domainName}${tld}`,
+      available: true,
+    }));
+  };
+
+  const handleSearch = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
       const validatedDomain = domainSchema.parse(domain.trim());
-      const url = `https://my.hostnin.com/cart.php?a=add&domain=register&query=${validatedDomain}`;
-      window.open(url, "_blank");
+      setLoading(true);
+      const availability = await checkDomainAvailability(validatedDomain);
+      setResults(availability);
+      setLoading(false);
     } catch (err) {
       if (err instanceof z.ZodError) {
         toast.error(err.issues[0].message);
       } else {
-        toast.error("Something went wrong. Please try again.");
+        toast.error("Something went wrong!");
       }
+      setResults([]);
+      setLoading(false);
     }
   };
 
@@ -52,7 +74,7 @@ export default function DomainBanner() {
           </p>
           <form
             className="flex flex-row mb-6 max-w-xs md:max-w-md lg:max-w-xl mx-auto lg:mx-0"
-            onSubmit={handleSubmit}
+            onSubmit={handleSearch}
           >
             <Input
               type="text"
@@ -70,6 +92,32 @@ export default function DomainBanner() {
               <span>Check</span>
             </Button>
           </form>
+
+          {/* Results */}
+          {loading && <p className="text-white">Checking...</p>}
+          {results.length > 0 && (
+            <div className="space-y-2 mt-4">
+              {results.map((res) => (
+                <div
+                  key={res.domain}
+                  className="flex items-center justify-between bg-green-50 dark:bg-green-900/20 p-3 rounded-lg"
+                >
+                  <span className="text-gray-900 dark:text-white font-medium">
+                    {res.domain} is available!
+                  </span>
+                  <a
+                    href={`https://my.hostnin.com/cart.php?a=add&domain=register&query=${res.domain}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button className="hover:cursor-pointer hover:scale-105 transition-all duration-500 bg-blue-600 hover:bg-blue-700 text-white py-1 px-3">
+                      Purchase
+                    </Button>
+                  </a>
+                </div>
+              ))}
+            </div>
+          )}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mt-8">
             {[
               { tld: ".COM", price: "৳1650/Year" },
