@@ -8,7 +8,7 @@ export const loginSchema = z.object({
 export const registerSchema = z.object({
   firstname: z.string().min(1, "First name is required"),
   lastname: z.string().min(1, "Last name is required"),
-  email: z.string().email("Enter a valid email"),
+  username: z.string().email("Enter a valid email"),
   address1: z.string().min(1, "Address is required"),
   city: z.string().min(1, "City is required"),
   state: z.string().min(1, "State is required"),
@@ -17,3 +17,7 @@ export const registerSchema = z.object({
   phonenumber: z.string().min(6, "Phone number required"),
   password2: z.string().min(6, "Password must be at least 6 characters"),
 });
+
+// Export TS types for useForm
+export type LoginFormValues = z.infer<typeof loginSchema>;
+export type RegisterFormValues = z.infer<typeof registerSchema>;

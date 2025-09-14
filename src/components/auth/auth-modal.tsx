@@ -17,12 +17,17 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { loginSchema, registerSchema } from "@/lib/auth-schemas";
 import { Eye, EyeOff } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { ScrollArea, ScrollBar } from "../ui/scroll-area";
+import {
+  loginSchema,
+  registerSchema,
+  LoginFormValues,
+  RegisterFormValues,
+} from "@/lib/auth-schemas";
 import {
   Select,
   SelectContent,
@@ -125,11 +130,11 @@ export const AuthModal: React.FC<AuthModalProps> = ({
     resolver: zodResolver(mode === "login" ? loginSchema : registerSchema),
     defaultValues:
       mode === "login"
-        ? { email: "", password: "" }
+        ? { username: "", password: "" }
         : {
             firstname: "",
             lastname: "",
-            email: "",
+            username: "",
             address1: "",
             city: "",
             state: "",
@@ -152,7 +157,9 @@ export const AuthModal: React.FC<AuthModalProps> = ({
     setShowPassword({ login: false, register: false });
   }, [form, mode]);
 
-  const onSubmit = async (values: any) => {
+  const onSubmit: SubmitHandler<LoginFormValues | RegisterFormValues> = async (
+    values: any
+  ) => {
     try {
       setLoading(true);
       const endpoint =
@@ -189,7 +196,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
       if (data.result === "success") {
         if (mode === "register") {
           onModeChange("login");
-          form.reset({ email: payload.username, password: "" });
+          form.reset({ username: payload.username, password: "" });
         } else if (mode === "login") {
           router.push("https://my.hostnin.com");
         }
@@ -228,7 +235,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                 <>
                   <FormField
                     control={form.control}
-                    name="email"
+                    name="username"
                     render={({ field }) => (
                       <FormItem>
                         <FormControl>
@@ -306,7 +313,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
 
                   <FormField
                     control={form.control}
-                    name="email"
+                    name="username"
                     render={({ field }) => (
                       <FormItem>
                         <FormControl>

@@ -61,7 +61,7 @@ export default function JobApply() {
             <p className="text-muted-foreground mb-6">{right.description}</p>
 
             <Card className="mb-6 bg-blue-50 dark:bg-blue-900/20 border-blue-100 dark:border-blue-800">
-              <CardContent className="py-0 px-5 font-semibold flex gap-2 items-center">
+              <CardContent className="py-0 px-5 font-semibold flex gap-2 md:flex-row flex-col items-center">
                 <p className="text-foreground">
                   Send your CV to{" "}
                   </p>
