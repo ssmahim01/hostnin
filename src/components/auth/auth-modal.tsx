@@ -134,7 +134,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
         : {
             firstname: "",
             lastname: "",
-            username: "",
+            email: "",
             address1: "",
             city: "",
             state: "",
@@ -174,7 +174,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
           : {
               firstname: values.firstname,
               lastname: values.lastname,
-              username: values.email,
+              email: values.email,
               address1: values.address1,
               city: values.city,
               state: values.state,
@@ -196,7 +196,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
       if (data.result === "success") {
         if (mode === "register") {
           onModeChange("login");
-          form.reset({ username: payload.username, password: "" });
+          form.reset({ username: payload.email, password: "" });
         } else if (mode === "login") {
           router.push("https://my.hostnin.com");
         }
@@ -313,7 +313,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
 
                   <FormField
                     control={form.control}
-                    name="username"
+                    name="email"
                     render={({ field }) => (
                       <FormItem>
                         <FormControl>

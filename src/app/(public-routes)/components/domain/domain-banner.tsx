@@ -4,8 +4,35 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
 import Image from "next/image";
+import { useState } from "react";
+import { toast } from "sonner";
+import z from "zod";
+
+const domainSchema = z
+  .string()
+  .min(1, "Please enter a domain name")
+  .regex(/^[a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*$/, "Invalid domain name format")
+  .max(63, "Domain name too long");
 
 export default function DomainBanner() {
+  const [domain, setDomain] = useState<string>("");
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    try {
+      const validatedDomain = domainSchema.parse(domain.trim());
+      const url = `https://my.hostnin.com/cart.php?a=add&domain=register&query=${validatedDomain}`;
+      window.open(url, "_blank");
+    } catch (err) {
+      if (err instanceof z.ZodError) {
+        toast.error(err.issues[0].message);
+      } else {
+        toast.error("Something went wrong. Please try again.");
+      }
+    }
+  };
+
   return (
     <section
       className="pt-16 pb-20 md:pt-20 px-2 sm:px-7 lg:pt-28 lg:pb-16 lg:px-10 relative bg-gradient-to-r from-blue-900/90 to-blue-950/90 bg-no-repeat bg-contain md:bg-cover bg-center dark:from-blue-950/90 dark:to-blue-900/90"
@@ -25,15 +52,15 @@ export default function DomainBanner() {
           </p>
           <form
             className="flex flex-row mb-6 max-w-xs md:max-w-md lg:max-w-xl mx-auto lg:mx-0"
-            action="https://my.hostnin.com/cart.php?a=add&domain=register"
-            method="post"
-            target="_blank"
+            onSubmit={handleSubmit}
           >
             <Input
               type="text"
               name="query"
               className="rounded-l-lg rounded-r-none py-8 flex-1 border-none focus:ring-0 focus:border-blue-500 bg-white/90 placeholder-white/80 text-gray-700 font-medium"
               placeholder="Enter your domain name..."
+              value={domain}
+              onChange={(e) => setDomain(e.target.value)}
             />
             <Button
               type="submit"

@@ -34,6 +34,7 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import { ScrollArea, ScrollBar } from "../ui/scroll-area";
 import Dropdown from "../ui/menu-dropdown";
+import { AuthModal } from "../auth/auth-modal";
 
 const navItems: NavItem[] = [
   { label: "Pricing", href: "/pricing" },
@@ -135,7 +136,10 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [dashboardOpen, setDashboardOpen] = useState(false);
   const [expandedItems, setExpandedItems] = useState<string[]>([]);
-   const toggleExpand = (label: string) => {
+  const [authOpen, setAuthOpen] = useState(false);
+  const [authMode, setAuthMode] = useState<"login" | "register">("login");
+  
+  const toggleExpand = (label: string) => {
     setExpandedItems((prev) =>
       prev.includes(label) ? prev.filter((i) => i !== label) : [...prev, label]
     );
@@ -285,7 +289,7 @@ export function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
+            initial={{ opacity: 0, height: "90vh" }}
             animate={{ opacity: 1, height: "90vh" }}
             exit={{ opacity: 0, height: 0 }}
             className="bg-white dark:bg-gray-900 overflow-hidden border-t border-gray-200 dark:border-gray-700 flex flex-col"
@@ -296,12 +300,18 @@ export function Navbar() {
                   item.hasDropdown ? (
                     <div key={item.label} className="flex flex-col">
                       <Button
-                      variant={"ghost"}
+                        variant={"ghost"}
                         className="w-full flex justify-between items-center px-3 py-2 text-gray-700 dark:text-gray-300 font-medium hover:text-blue-600 dark:hover:text-blue-400"
                         onClick={() => toggleExpand(item.label)}
                       >
                         {item.label}
-                        <ChevronDown className={`w-4 h-4 transition-transform ${expandedItems.includes(item.label) ? "rotate-180" : ""}`} />
+                        <ChevronDown
+                          className={`w-4 h-4 transition-transform ${
+                            expandedItems.includes(item.label)
+                              ? "rotate-180"
+                              : ""
+                          }`}
+                        />
                       </Button>
 
                       <AnimatePresence>
@@ -350,13 +360,21 @@ export function Navbar() {
             {/* Dashboard at the bottom */}
             <div className="border-t border-gray-200 dark:border-gray-700 px-4 py-4 mb-1">
               <Button
-              variant={"outline"}
+                variant={"outline"}
                 onClick={() => setDashboardOpen((prev) => !prev)}
                 className={`w-full flex justify-center gap-3 items-center p-4 text-blue-600 border-2 border-blue-600 rounded-md font-bold
-                  ${dashboardOpen ? "bg-blue-600 text-white" : "hover:bg-blue-700 hover:text-white"}`}
+                  ${
+                    dashboardOpen
+                      ? "bg-blue-600 text-white"
+                      : "hover:bg-blue-700 hover:text-white"
+                  }`}
               >
                 Dashboard
-                <ChevronDown className={`w-5 h-5 transition-transform ${dashboardOpen ? "rotate-180" : ""}`} />
+                <ChevronDown
+                  className={`w-5 h-5 transition-transform ${
+                    dashboardOpen ? "rotate-180" : ""
+                  }`}
+                />
               </Button>
 
               <AnimatePresence>
@@ -376,13 +394,19 @@ export function Navbar() {
                       Dashboard
                     </Link>
                     <button
-                      onClick={() => alert("Login")}
+                      onClick={() => {
+                        setAuthMode("login");
+                        setAuthOpen(true);
+                      }}
                       className="flex items-center gap-2 p-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md"
                     >
                       <LogIn className="w-5 h-5" /> Login
                     </button>
                     <button
-                      onClick={() => alert("Register")}
+                      onClick={() => {
+                        setAuthMode("register");
+                        setAuthOpen(true);
+                      }}
                       className="flex items-center gap-2 p-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md"
                     >
                       <FilePen className="w-5 h-5" /> Register
@@ -404,6 +428,13 @@ export function Navbar() {
                   </motion.div>
                 )}
               </AnimatePresence>
+
+              <AuthModal
+                open={authOpen}
+                mode={authMode}
+                onOpenChange={setAuthOpen}
+                onModeChange={setAuthMode}
+              />
             </div>
           </motion.div>
         )}

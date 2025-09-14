@@ -8,7 +8,7 @@ export const loginSchema = z.object({
 export const registerSchema = z.object({
   firstname: z.string().min(1, "First name is required"),
   lastname: z.string().min(1, "Last name is required"),
-  username: z.string().email("Enter a valid email"),
+  email: z.string().email("Enter a valid email"),
   address1: z.string().min(1, "Address is required"),
   city: z.string().min(1, "City is required"),
   state: z.string().min(1, "State is required"),
