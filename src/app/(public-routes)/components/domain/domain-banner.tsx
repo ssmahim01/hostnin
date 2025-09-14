@@ -79,7 +79,7 @@ export default function DomainBanner() {
             <Input
               type="text"
               name="query"
-              className="rounded-l-lg rounded-r-none py-8 flex-1 border-none  placeholder-white/80 text-gray-700 font-medium"
+              className="rounded-l-lg rounded-r-none py-8 flex-1 border-none dark:text-white text-gray-700 font-medium"
               placeholder="Enter your domain name..."
               value={domain}
               onChange={(e) => setDomain(e.target.value)}
