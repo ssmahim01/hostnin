@@ -1,11 +1,11 @@
 {
   "pages": {
     "/api/whmcs-register/route": [
-      "static/chunks/3eba6931cad880e3.js",
+      "static/chunks/d4a0bd92e57e27fa.js",
       "static/chunks/47f477e3d2ef265b.js",
       "static/chunks/c19da6693934fea1.js",
       "static/chunks/8082ab48faca5ea1.js",
-      "static/chunks/turbopack-75a8a69d503d4491.js"
+      "static/chunks/turbopack-51d71afbe7b3e0a4.js"
     ]
   }
 }

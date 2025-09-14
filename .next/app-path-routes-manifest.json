@@ -1,4 +1,5 @@
 {
+  "/(public-routes)/(routes)/careers/page": "/careers",
   "/(public-routes)/(routes)/contact/page": "/contact",
   "/(public-routes)/(routes)/domain/page": "/domain",
   "/(public-routes)/(routes)/hosting/web-hosting/page": "/hosting/web-hosting",
