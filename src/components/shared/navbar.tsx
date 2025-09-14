@@ -34,7 +34,6 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import { ScrollArea, ScrollBar } from "../ui/scroll-area";
 import Dropdown from "../ui/menu-dropdown";
-import MobileDropdown from "./mobile-dropdown";
 
 const navItems: NavItem[] = [
   { label: "Pricing", href: "/pricing" },
