@@ -24,7 +24,7 @@ export default function CareersBanner() {
   };
 
   return (
-    <section className="bg-[#f8f8f8] dark:bg-gray-900 pt-20 pb-5 lg:pt-24 lg:pb-16 md:pb-12 px-4">
+    <section className="bg-[#f8f8f8] dark:bg-gray-900 pt-20 lg:pt-24 lg:pb-16 md:pb-12 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 grid-cols-1 gap-12 items-center mb-16">
           {/* Left text content */}
