@@ -8,23 +8,14 @@ import { useState } from "react";
 import { toast } from "sonner";
 import z from "zod";
 
-// base part only (no dot)
-const baseDomainSchema = z
+const domainSchema = z
   .string()
   .min(1, "Please enter a domain name")
-  .regex(/^[a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*$/, "Invalid base domain")
+  .regex(/^[a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*$/, "Invalid domain name format")
   .max(63, "Domain name too long");
 
-// full domain (with dot + tld)
-const fullDomainSchema = z
-  .string()
-  .min(1)
-  .regex(
-    /^(?!-)([a-zA-Z0-9-]{1,63}\.)+[a-zA-Z]{2,}$/,
-    "Invalid full domain"
-  );
-
-const domainTlds = [".COM", ".ORG", ".NET", ".XYZ", ".INFO"];
+// Suggested domain TLDs
+const domainTlds = [".COM", ".ORG", ".NET", ".XYZ"];
 
 type DomainResult = {
   domain: string;
@@ -36,44 +27,21 @@ export default function DomainBanner() {
   const [results, setResults] = useState<DomainResult[]>([]);
   const [loading, setLoading] = useState(false);
 
-  // fake API call — replace with your real API
+  // Mock API function for checking domain availability
   const checkDomainAvailability = async (domainName: string) => {
     return domainTlds.map((tld) => ({
       domain: `${domainName}${tld}`,
-      available: Math.random() > 0.5,
+      available: true,
     }));
   };
 
   const handleSearch = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     try {
-      let validatedDomain = "";
-      let mode: "base" | "full" = "base";
-
-      if (domain.includes(".")) {
-        validatedDomain = fullDomainSchema.parse(domain.trim().toLowerCase());
-        mode = "full";
-      } else {
-        validatedDomain = baseDomainSchema.parse(domain.trim().toLowerCase());
-      }
-
+      const validatedDomain = domainSchema.parse(domain.trim());
       setLoading(true);
-      setResults([]);
-
-      let availability: DomainResult[] = [];
-      if (mode === "base") {
-        // check all TLDs
-        availability = await checkDomainAvailability(validatedDomain);
-      } else {
-        // check only full domain
-        availability = [
-          {
-            domain: validatedDomain,
-            available: Math.random() > 0.5, 
-          },
-        ];
-      }
-
+      const availability = await checkDomainAvailability(validatedDomain);
       setResults(availability);
       setLoading(false);
     } catch (err) {
@@ -104,7 +72,6 @@ export default function DomainBanner() {
             Cheap domains with advanced features; get top-level domains only at
             1650TK/year.
           </p>
-
           <form
             className="flex flex-row mb-6 max-w-xs md:max-w-md lg:max-w-xl mx-auto lg:mx-0"
             onSubmit={handleSearch}
@@ -112,7 +79,7 @@ export default function DomainBanner() {
             <Input
               type="text"
               name="query"
-              className="rounded-l-lg rounded-r-none py-8 flex-1 border-none bg-white/90 placeholder-white/80 text-gray-700 font-medium"
+              className="rounded-l-lg rounded-r-none py-8 flex-1 border-none focus:ring-0 focus:border-blue-500 bg-white/90 placeholder-white/80 text-gray-700 font-medium"
               placeholder="Enter your domain name..."
               value={domain}
               onChange={(e) => setDomain(e.target.value)}
@@ -126,39 +93,31 @@ export default function DomainBanner() {
             </Button>
           </form>
 
-          {loading && <p className="text-white">Checking {domain}…</p>}
-
+          {/* Results */}
+          {loading && <p className="text-white">Checking...</p>}
           {results.length > 0 && (
             <div className="space-y-2 mt-4">
               {results.map((res) => (
                 <div
                   key={res.domain}
-                  className={`flex items-center justify-between p-3 rounded-lg ${
-                    res.available
-                      ? "bg-green-50 dark:bg-green-900/20"
-                      : "bg-red-50 dark:bg-red-900/20"
-                  }`}
+                  className="flex items-center justify-between bg-green-50 dark:bg-green-900/20 p-3 rounded-lg"
                 >
                   <span className="text-gray-900 dark:text-white font-medium">
-                    {res.domain}{" "}
-                    {res.available ? "is available!" : "is unavailable!"}
+                    {res.domain} is available!
                   </span>
-                  {res.available && (
-                    <a
-                      href={`https://my.hostnin.com/cart.php?a=add&domain=register&query=${res.domain}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Button className="hover:cursor-pointer hover:scale-105 transition-all duration-500 bg-blue-600 hover:bg-blue-700 text-white py-1 px-3">
-                        Purchase
-                      </Button>
-                    </a>
-                  )}
+                  <a
+                    href={`https://my.hostnin.com/cart.php?a=add&domain=register&query=${res.domain}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button className="hover:cursor-pointer hover:scale-105 transition-all duration-500 bg-blue-600 hover:bg-blue-700 text-white py-1 px-3">
+                      Purchase
+                    </Button>
+                  </a>
                 </div>
               ))}
             </div>
           )}
-
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mt-8">
             {[
               { tld: ".COM", price: "৳1650/Year" },
@@ -174,7 +133,6 @@ export default function DomainBanner() {
             ))}
           </div>
         </div>
-
         <div className="flex-1 flex justify-center mt-4 sm:mt-8 lg:mt-0 w-full max-w-xs sm:max-w-md lg:max-w-xl xl:max-w-2xl h-full">
           <Image
             src="/assets/dm-hero.png"
