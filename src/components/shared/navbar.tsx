@@ -34,7 +34,7 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import { ScrollArea, ScrollBar } from "../ui/scroll-area";
 import Dropdown from "../ui/menu-dropdown";
-import MobileDropdown from "./mobile-dropdown";
+import { AuthModal } from "../auth/auth-modal";
 
 const navItems: NavItem[] = [
   { label: "Pricing", href: "/pricing" },
@@ -89,7 +89,7 @@ const navItems: NavItem[] = [
     dropdownItems: [
       {
         label: "VPS",
-        href: "/server/vps",
+        href: "/hosting/vps-hosting",
         icon: HardDrive,
         description: "Virtual Private Server",
       },
@@ -136,7 +136,10 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [dashboardOpen, setDashboardOpen] = useState(false);
   const [expandedItems, setExpandedItems] = useState<string[]>([]);
-   const toggleExpand = (label: string) => {
+  const [authOpen, setAuthOpen] = useState(false);
+  const [authMode, setAuthMode] = useState<"login" | "register">("login");
+
+  const toggleExpand = (label: string) => {
     setExpandedItems((prev) =>
       prev.includes(label) ? prev.filter((i) => i !== label) : [...prev, label]
     );
@@ -285,127 +288,148 @@ export function Navbar() {
       {/* Mobile Navigation */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "90vh" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="bg-white dark:bg-gray-900 overflow-hidden border-t border-gray-200 dark:border-gray-700 flex flex-col"
-          >
-            <ScrollArea className="flex-1 py-4">
-              <div className="flex flex-col space-y-2 px-4">
-                {navItems.map((item) =>
-                  item.hasDropdown ? (
-                    <div key={item.label} className="flex flex-col">
-                      <Button
-                      variant={"ghost"}
-                        className="w-full flex justify-between items-center px-3 py-2 text-gray-700 dark:text-gray-300 font-medium hover:text-blue-600 dark:hover:text-blue-400"
-                        onClick={() => toggleExpand(item.label)}
-                      >
-                        {item.label}
-                        <ChevronDown className={`w-4 h-4 transition-transform ${expandedItems.includes(item.label) ? "rotate-180" : ""}`} />
-                      </Button>
+           <motion.div
+      initial={{ opacity: 0, height: 0 }}
+      animate={{ opacity: 1, height: "90vh" }}
+      exit={{ opacity: 0, height: 0 }}
+      className="bg-white dark:bg-gray-900 overflow-hidden border-t border-gray-200 dark:border-gray-700 flex flex-col relative"
+    >
+      <ScrollArea className="flex-1 py-4">
+        <div className="flex flex-col space-y-2 px-4">
+          {navItems.map((item) =>
+            item.hasDropdown ? (
+              <div key={item.label} className="flex flex-col">
+                <Button
+                  variant={"ghost"}
+                  className="w-full flex justify-between items-center px-3 py-2 text-gray-700 dark:text-gray-300 font-medium hover:text-blue-600 dark:hover:text-blue-400"
+                  onClick={() => toggleExpand(item.label)}
+                >
+                  {item.label}
+                  <ChevronDown
+                    className={`w-4 h-4 transition-transform ${
+                      expandedItems.includes(item.label) ? "rotate-180" : ""
+                    }`}
+                  />
+                </Button>
 
-                      <AnimatePresence>
-                        {expandedItems.includes(item.label) && (
-                          <motion.div
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: "auto" }}
-                            exit={{ opacity: 0, height: 0 }}
-                            className="flex flex-col pl-6"
-                          >
-                            {item.dropdownItems?.map((sub) => (
-                              <Link
-                                key={sub.label}
-                                href={sub.href || "#"}
-                                className="flex items-center gap-2 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
-                                onClick={() => setIsOpen(false)}
-                              >
-                                {sub.icon && <sub.icon className="w-4 h-4" />}
-                                <span>{sub.label}</span>
-                                {sub.badge && (
-                                  <span className="text-xs bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 px-1.5 py-0.5 rounded">
-                                    {sub.badge}
-                                  </span>
-                                )}
-                              </Link>
-                            ))}
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </div>
-                  ) : (
-                    <Link
-                      key={item.label}
-                      href={item.href || "#"}
-                      className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium"
-                      onClick={() => setIsOpen(false)}
+                <AnimatePresence>
+                  {expandedItems.includes(item.label) && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="flex flex-col pl-6"
                     >
-                      {item.label}
-                    </Link>
-                  )
-                )}
+                      {item.dropdownItems?.map((sub) => (
+                        <Link
+                          key={sub.label}
+                          href={sub.href || "#"}
+                          className="flex items-center gap-2 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {sub.icon && <sub.icon className="w-4 h-4" />}
+                          <span>{sub.label}</span>
+                          {sub.badge && (
+                            <span className="text-xs bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 px-1.5 py-0.5 rounded">
+                              {sub.badge}
+                            </span>
+                          )}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
-            </ScrollArea>
-
-            {/* Dashboard at the bottom */}
-            <div className="border-t border-gray-200 dark:border-gray-700 px-4 py-4 mb-1">
-              <Button
-              variant={"outline"}
-                onClick={() => setDashboardOpen((prev) => !prev)}
-                className={`w-full flex justify-center gap-3 items-center p-4 text-blue-600 border-2 border-blue-600 rounded-md font-bold
-                  ${dashboardOpen ? "bg-blue-600 text-white" : "hover:bg-blue-700 hover:text-white"}`}
+            ) : (
+              <Link
+                key={item.label}
+                href={item.href || "#"}
+                className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium"
+                onClick={() => setIsOpen(false)}
               >
-                Dashboard
-                <ChevronDown className={`w-5 h-5 transition-transform ${dashboardOpen ? "rotate-180" : ""}`} />
-              </Button>
+                {item.label}
+              </Link>
+            )
+          )}
+        </div>
+        <ScrollBar orientation="vertical" />
+      </ScrollArea>
 
-              <AnimatePresence>
-                {dashboardOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    className="flex flex-col mt-2 space-y-1"
-                  >
-                    <Link
-                      href="https://my.hostnin.com"
-                      target="_blank"
-                      className="flex items-center gap-2 p-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md"
-                    >
-                      <LayoutDashboard className="w-5 h-5" />
-                      Dashboard
-                    </Link>
-                    <button
-                      onClick={() => alert("Login")}
-                      className="flex items-center gap-2 p-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md"
-                    >
-                      <LogIn className="w-5 h-5" /> Login
-                    </button>
-                    <button
-                      onClick={() => alert("Register")}
-                      className="flex items-center gap-2 p-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md"
-                    >
-                      <FilePen className="w-5 h-5" /> Register
-                    </button>
-                    <Link
-                      href="https://my.hostnin.com/index.php/store/marketgoo"
-                      target="_blank"
-                      className="flex items-center gap-2 p-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md"
-                    >
-                      <Wrench className="w-5 h-5" /> SEO Tools
-                    </Link>
-                    <Link
-                      href="https://my.hostnin.com/cart.php?a=add&domain=register"
-                      target="_blank"
-                      className="flex items-center gap-2 p-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md"
-                    >
-                      <BadgePlus className="w-5 h-5" /> Register Domain
-                    </Link>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          </motion.div>
+      {/* Dashboard Bottom Section */}
+      <div className="absolute bottom-0 left-0 w-full border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 px-4 py-4">
+        <Button
+          variant={"outline"}
+          onClick={() => setDashboardOpen((prev) => !prev)}
+          className="w-full flex justify-center gap-3 items-center p-4 text-blue-600 border-2 border-blue-600 rounded-md font-bold hover:bg-blue-600 hover:text-white transition-colors"
+        >
+          Dashboard
+          <ChevronDown
+            className={`w-5 h-5 transition-transform ${
+              dashboardOpen ? "rotate-180" : ""
+            }`}
+          />
+        </Button>
+
+        <AnimatePresence>
+          {dashboardOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="flex flex-col mt-2 space-y-1"
+            >
+              <Link
+                href="https://my.hostnin.com"
+                target="_blank"
+                className="flex items-center gap-2 p-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md"
+              >
+                <LayoutDashboard className="w-5 h-5" />
+                Dashboard
+              </Link>
+              <button
+                onClick={() => {
+                  setAuthMode("login");
+                  setAuthOpen(true);
+                }}
+                className="flex items-center gap-2 p-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md"
+              >
+                <LogIn className="w-5 h-5" /> Login
+              </button>
+              <button
+                onClick={() => {
+                  setAuthMode("register");
+                  setAuthOpen(true);
+                }}
+                className="flex items-center gap-2 p-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md"
+              >
+                <FilePen className="w-5 h-5" /> Register
+              </button>
+              <Link
+                href="https://my.hostnin.com/index.php/store/marketgoo"
+                target="_blank"
+                className="flex items-center gap-2 p-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md"
+              >
+                <Wrench className="w-5 h-5" /> SEO Tools
+              </Link>
+              <Link
+                href="https://my.hostnin.com/cart.php?a=add&domain=register"
+                target="_blank"
+                className="flex items-center gap-2 p-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md"
+              >
+                <BadgePlus className="w-5 h-5" /> Register Domain
+              </Link>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+
+      <AuthModal
+        open={authOpen}
+        mode={authMode}
+        onOpenChange={setAuthOpen}
+        onModeChange={setAuthMode}
+      />
+    </motion.div>
         )}
       </AnimatePresence>
     </nav>

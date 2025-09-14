@@ -1,11 +1,94 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { useState } from "react";
 import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 import { Search } from "lucide-react";
 import Image from "next/image";
+import { toast } from "sonner";
+
+type DomainResult = {
+  domain: string;
+  available: boolean | null;
+  purchaseUrl?: string | null;
+};
+
+const domainTlds = [".COM", ".ORG", ".NET", ".XYZ", ".INFO"];
+
+function isFullDomain(input: string) {
+  return /\.[a-zA-Z]{2,}$/.test(input);
+}
+
+function normalizeDomain(input: string) {
+  return input
+    .trim()
+    .toLowerCase()
+    .replace(/^www\./, "")
+    .replace(/\/.*/, "");
+}
 
 export default function DomainBanner() {
+  const [domain, setDomain] = useState("");
+  const [results, setResults] = useState<DomainResult[]>([]);
+  const [loading, setLoading] = useState(false);
+
+  const checkDomain = async (fullDomain: string) => {
+    try {
+      const res = await fetch("/api/check-domain", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ domain: fullDomain }),
+      });
+      const data = await res.json();
+      return {
+        available: data.status === "available",
+        purchaseUrl:
+          data.status === "available"
+            ? `https://my.hostnin.com/cart.php?a=add&domain=register&query=${fullDomain}`
+            : null,
+      };
+    } catch (err) {
+      return { available: false, purchaseUrl: null };
+    }
+  };
+
+  const handleSearch = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const input = normalizeDomain(domain);
+    if (!input) return toast.error("Please enter a domain");
+
+    let initialResults: DomainResult[] = [];
+
+    if (isFullDomain(input)) {
+      initialResults = [{ domain: input, available: null }];
+    } else {
+      initialResults = domainTlds.map((tld) => ({
+        domain: `${input}${tld}`,
+        available: null,
+      }));
+    }
+
+    setResults(initialResults);
+    setLoading(true);
+
+    const updatedResults: DomainResult[] = [];
+
+    for (let i = 0; i < initialResults.length; i++) {
+      const { available, purchaseUrl } = await checkDomain(
+        initialResults[i].domain
+      );
+      updatedResults.push({
+        domain: initialResults[i].domain,
+        available,
+        purchaseUrl,
+      });
+      setResults([...updatedResults]);
+    }
+
+    setLoading(false);
+  };
+
   return (
     <section
       className="pt-16 pb-20 md:pt-20 px-2 sm:px-7 lg:pt-28 lg:pb-16 lg:px-10 relative bg-gradient-to-r from-blue-900/90 to-blue-950/90 bg-no-repeat bg-contain md:bg-cover bg-center dark:from-blue-950/90 dark:to-blue-900/90"
@@ -25,15 +108,15 @@ export default function DomainBanner() {
           </p>
           <form
             className="flex flex-row mb-6 max-w-xs md:max-w-md lg:max-w-xl mx-auto lg:mx-0"
-            action="https://my.hostnin.com/cart.php?a=add&domain=register"
-            method="post"
-            target="_blank"
+            onSubmit={handleSearch}
           >
             <Input
               type="text"
               name="query"
-              className="rounded-l-lg rounded-r-none py-8 flex-1 border-none focus:ring-0 focus:border-blue-500 bg-white/90 placeholder-white/80 text-gray-700 font-medium"
+              className="rounded-l-lg rounded-r-none py-8 bg-white/90 focus:ring-0 flex-1 border-none dark:text-white text-gray-700 font-medium"
               placeholder="Enter your domain name..."
+              value={domain}
+              onChange={(e) => setDomain(e.target.value)}
             />
             <Button
               type="submit"
@@ -43,6 +126,44 @@ export default function DomainBanner() {
               <span>Check</span>
             </Button>
           </form>
+
+          {loading && <p className="text-white mb-4">Checking...</p>}
+
+          {results.length > 0 && (
+            <div className="space-y-2">
+              {results.map((res) => (
+                <div
+                  key={res.domain}
+                  className={`flex justify-between p-3 rounded-lg ${
+                    res.available === null
+                      ? "bg-yellow-50 text-yellow-800"
+                      : res.available
+                      ? "bg-green-50 text-green-800"
+                      : "bg-red-50 text-red-600"
+                  }`}
+                >
+                  <span>
+                    {res.domain}{" "}
+                    {res.available === null
+                      ? "Checking..."
+                      : res.available
+                      ? "is available!"
+                      : "is unavailable"}
+                  </span>
+                  {res.available && res.purchaseUrl && (
+                    <a
+                      href={res.purchaseUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button>Purchase</Button>
+                    </a>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
+
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mt-8">
             {[
               { tld: ".COM", price: "৳1650/Year" },
@@ -58,6 +179,7 @@ export default function DomainBanner() {
             ))}
           </div>
         </div>
+
         <div className="flex-1 flex justify-center mt-4 sm:mt-8 lg:mt-0 w-full max-w-xs sm:max-w-md lg:max-w-xl xl:max-w-2xl h-full">
           <Image
             src="/assets/dm-hero.png"
