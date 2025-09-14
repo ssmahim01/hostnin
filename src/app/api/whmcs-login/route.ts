@@ -6,14 +6,15 @@ const WHMCS_SECRET = "by6T9nfLz4lkImHY7HGUJtzugYznJJVX";
 
 export async function POST(req: NextRequest) {
   try {
-    const { email, password } = await req.json();
+    const { username, password } = await req.json();
+    console.log(username, password);
 
     const payload = new URLSearchParams({
       action: "ValidateLogin",
       responsetype: "json",
       identifier: WHMCS_IDENTIFIER,
       secret: WHMCS_SECRET,
-      username: email,
+      username,
       password,
     });
 
@@ -23,21 +24,11 @@ export async function POST(req: NextRequest) {
       body: payload.toString(),
     });
 
-    const contentType = whmcsRes.headers.get("content-type");
-    let data;
-    if (contentType?.includes("application/json")) {
-      data = await whmcsRes.json();
-    } else {
-      data = {
-        error: "WHMCS did not return JSON",
-        body: await whmcsRes.text(),
-      };
-    }
-
+    const data = await whmcsRes.json();
     return NextResponse.json(data, { status: whmcsRes.ok ? 200 : 400 });
   } catch (err) {
     return NextResponse.json(
-      { error: "Server error", details: (err as Error).message },
+      { error: (err as Error).message },
       { status: 500 }
     );
   }

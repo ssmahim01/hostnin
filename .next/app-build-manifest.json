@@ -26,7 +26,7 @@
       "static/chunks/_a0ff3932._.js",
       "static/chunks/turbopack-_cdba956c._.js"
     ],
-    "/(public-routes)/(routes)/hosting/web-hosting/page": [
+    "/(public-routes)/(routes)/pricing/page": [
       "static/chunks/node_modules_next_dist_8db7fb1f._.js",
       "static/chunks/src_app_favicon_ico_mjs_243aa161._.js",
       "static/chunks/[root-of-the-server]__0f0ba101._.css",
@@ -39,10 +39,10 @@
       "static/chunks/node_modules_1052a8c8._.js",
       "static/chunks/src_app_layout_tsx_0a548d63._.js",
       "static/chunks/node_modules_next_dist_client_components_builtin_global-error_0e5acd83.js",
-      "static/chunks/src_7c3aafa1._.js",
-      "static/chunks/node_modules_d787793b._.js",
+      "static/chunks/src_b9b3efc1._.js",
+      "static/chunks/node_modules_a6af0597._.js",
       "static/chunks/node_modules_swiper_885ac8f6._.css",
-      "static/chunks/src_app_(public-routes)_(routes)_hosting_web-hosting_page_tsx_0e5acd83._.js",
+      "static/chunks/src_app_(public-routes)_(routes)_pricing_page_tsx_0e5acd83._.js",
       "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_57d40746._.js",
       "static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js",
       "static/chunks/node_modules_next_dist_compiled_next-devtools_index_a9cb0712.js",
