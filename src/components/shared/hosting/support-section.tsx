@@ -26,7 +26,7 @@ export default function SupportSection() {
               {/* Call button */}
               <Link
                 href="tel:+8801325875955"
-                className="group relative inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out border border-blue-500/30 hover:border-blue-400/50 w-full sm:w-auto"
+                className="group relative inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out border md:justify-start justify-center  border-blue-500/30 hover:border-blue-400/50 w-full sm:w-auto"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-blue-600/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <Phone className="text-lg sm:text-xl md:text-2xl relative z-10 group-hover:rotate-12 transition-transform duration-300" />
@@ -40,7 +40,7 @@ export default function SupportSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://api.whatsapp.com/send/?phone=%2B8801325875955&text&type=phone_number&app_absent=0"
-                className="group relative inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out border border-green-500/30 hover:border-green-400/50 w-full sm:w-auto"
+                className="group relative inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white font-semibold rounded-lg  md:justify-start justify-center shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out border border-green-500/30 hover:border-green-400/50 w-full sm:w-auto"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-green-400/20 to-green-600/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <MessageCircle className="text-lg sm:text-xl md:text-2xl relative z-10 group-hover:rotate-12 transition-transform duration-300" />

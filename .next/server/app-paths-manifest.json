@@ -1,11 +1,5 @@
 {
-  "/(public-routes)/(routes)/domain/page": "app/(public-routes)/(routes)/domain/page.js",
   "/(public-routes)/(routes)/hosting/vps-hosting/page": "app/(public-routes)/(routes)/hosting/vps-hosting/page.js",
-  "/(public-routes)/(routes)/hosting/web-hosting/page": "app/(public-routes)/(routes)/hosting/web-hosting/page.js",
-  "/(public-routes)/(routes)/hosting/wordpress-hosting/page": "app/(public-routes)/(routes)/hosting/wordpress-hosting/page.js",
-  "/(public-routes)/(routes)/privacy-policy/page": "app/(public-routes)/(routes)/privacy-policy/page.js",
-  "/_not-found/page": "app/_not-found/page.js",
-  "/api/check-domain/route": "app/api/check-domain/route.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/page": "app/page.js"
 }

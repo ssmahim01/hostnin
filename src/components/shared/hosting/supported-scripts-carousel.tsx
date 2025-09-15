@@ -10,7 +10,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 
 export default function SupportedScriptsCarousel() {
   return (
-    <div className="absolute left-1/2 transform -translate-x-1/2 w-full max-w-7xl -bottom-60 sm:-bottom-68 z-20 px-4 sm:px-6 lg:px-10">
+    <div className="absolute left-1/2 transform -translate-x-1/2 w-full max-w-7xl -bottom-60 md:-bottom-80 lg:-bottom-68 z-20 px-4 sm:px-6 lg:px-10">
       <section className="bg-[#f8f8f8] dark:bg-neutral-900 px-2 sm:px-4 rounded-xl sm:rounded-2xl">
         <div
           className="
