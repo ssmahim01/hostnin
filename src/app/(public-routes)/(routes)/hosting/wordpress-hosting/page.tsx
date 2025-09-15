@@ -5,7 +5,7 @@ import { WordPressBanner } from "@/app/(public-routes)/components/wordpress-host
 import WordPressPlansInclude from "@/app/(public-routes)/components/wordpress-hosting/wordpress-plans-include";
 import { WordPressPricingSection } from "@/app/(public-routes)/components/wordpress-hosting/wordpress-pricing";
 import WordPressSignUp from "@/app/(public-routes)/components/wordpress-hosting/wordpress-signup";
-import WordPressTestimonials from "@/app/(public-routes)/components/wordpress-hosting/wordpress-testimonials";
+import WordPressTestimonials from "@/components/shared/hosting/client-testimonials";
 import HostingFAQs from "@/components/shared/hosting/hosting-faqs";
 import { Metadata } from "next";
 

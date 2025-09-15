@@ -65,6 +65,12 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   handler satisfies AppPageConfig<"/domain">
 }
 
+// Validate ../../src/app/(public-routes)/(routes)/hosting/dedicated-server/page.tsx
+{
+  const handler = {} as typeof import("../../src/app/(public-routes)/(routes)/hosting/dedicated-server/page.js")
+  handler satisfies AppPageConfig<"/hosting/dedicated-server">
+}
+
 // Validate ../../src/app/(public-routes)/(routes)/hosting/vps-hosting/page.tsx
 {
   const handler = {} as typeof import("../../src/app/(public-routes)/(routes)/hosting/vps-hosting/page.js")

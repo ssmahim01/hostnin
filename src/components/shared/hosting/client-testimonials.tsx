@@ -5,6 +5,7 @@ import { Autoplay, Pagination } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/pagination";
+import { usePathname } from "next/navigation";
 
 const testimonials = [
   {
@@ -40,10 +41,18 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
+  const pathname = usePathname();
+
   return (
-    <section className="bg-[#f8f8f9] md:pt-32 pt-16 pb-10">
+    <section className="bg-[#f8f8f9] md:pt-28 pt-16 pb-10">
       <div className="max-w-7xl mx-auto px-2">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 mb-10">
+        <div
+          className={`${
+            pathname === "/hosting/dedicated-server"
+              ? "hidden"
+              : "flex flex-col md:flex-row md:items-center md:justify-between gap-8 mb-10"
+          }`}
+        >
           <div>
             <h2 className="font-bold text-[28px] sm:text-3xl md:text-4xl text-black mb-2 leading-tight">
               What&apos;s Our Clients Say&apos;s
@@ -60,7 +69,13 @@ export default function Testimonials() {
               width={80}
               height={40}
             />
-            <div className="flex items-center mb-1 mt-2 text-green-500 text-xl">
+            <div
+              className={`flex items-center mb-1 mt-2 ${
+                pathname === "/hosting/dedicated-server"
+                  ? "text-amber-500"
+                  : "text-green-500"
+              } text-xl`}
+            >
               ★★★★★
             </div>
             <div className="text-gray-700 text-sm font-medium">
@@ -72,7 +87,7 @@ export default function Testimonials() {
         <Swiper
           modules={[Autoplay, Pagination]}
           autoplay={{ delay: 4000, disableOnInteraction: false }}
-          pagination={{ clickable: true }}
+          // pagination={{ clickable: true }}
           spaceBetween={20}
           loop={true}
           breakpoints={{
@@ -99,12 +114,16 @@ export default function Testimonials() {
                       {t.name}
                     </h3>
                     <div className="flex mt-1">
-                      <Image
-                        src="/assets/green-star.svg"
-                        alt="Star"
-                        width={100}
-                        height={50}
-                      />
+                      {pathname !== "/hosting/dedicated-server" ? (
+                        <Image
+                          src="/assets/green-star.svg"
+                          alt="Star"
+                          width={100}
+                          height={50}
+                        />
+                      ) : (
+                        <span className="text-amber-400 text-xl"> ★★★★★</span>
+                      )}
                     </div>
                   </div>
                 </div>

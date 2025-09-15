@@ -1,5 +1,13 @@
 "use client";
 
+import { usePathname } from "next/navigation";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "@/components/ui/accordion";
 import { useState } from "react";
 
 const categories = [
@@ -21,7 +29,7 @@ const categories = [
       {
         question: "What is Web Hosting?",
         answer:
-          "Web hosting stores website data and keeps sites running. All websites need a host server, but quality varies. Key factors are uptime, speed, and data transfer. Most hosts offer sufficient speed, bandwidth, and storage for small to medium sites, while large websites may require advanced hosting.",
+          "Web hosting is the service of storing data that keeps websites up and running for users. Every website online has a host server, and almost all use a web host to manage that storage. However, not all web hosts provide the same level of quality. Uptime, data speed, and transfer quantity are the most reliable measures of a host's success. You can often pay more to get data transferred in higher quantities and at faster speeds. Most web hosts offer unlimited bandwidth and disk space at a speed suitable for small-to-moderate-sized businesses or individuals. Companies with large websites may need to seek out a more advanced web host to meet their needs.",
       },
       {
         question: "What is shared web hosting?",
@@ -207,12 +215,8 @@ const categories = [
 ];
 
 export default function HostingFAQs() {
-  const [activeTab, setActiveTab] = useState(0);
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const toggleAccordion = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+  const [activeTab, setActiveTab] = useState<string>(categories[0].title);
+  const pathname = usePathname();
 
   return (
     <section className="w-full pb-10 md:pb-20 flex flex-col items-center bg-gray-50 dark:bg-gray-900 py-8 px-4 sm:px-6 transition-colors duration-300">
@@ -226,93 +230,85 @@ export default function HostingFAQs() {
         </p>
       </div>
 
-      <div className="flex flex-col md:flex-row gap-6 sm:gap-10 w-full max-w-7xl justify-center items-start">
-        {/* Tabs */}
-        <div className="flex flex-col gap-4 w-full md:w-[280px]">
-          {categories.map((cat, i) => (
-            <button
-              key={i}
-              onClick={() => setActiveTab(i)}
-              className={`flex items-center cursor-pointer gap-3 sm:gap-4 px-4 sm:px-6 py-5 text-sm sm:text-base font-semibold transition-all duration-200 rounded-md shadow-sm
-            ${
-              activeTab === i
-                ? "bg-[#2250F4] text-white dark:bg-[#1a40c9]"
-                : "bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
-            }`}
+      <Tabs
+        value={activeTab}
+        onValueChange={setActiveTab}
+        className={`flex flex-col ${
+          pathname === "/hosting/dedicated-server" ? "flex-col" : "md:flex-row"
+        } gap-6 sm:gap-10 w-full max-w-7xl justify-center items-start`}
+      >
+        {/* Left side: tab triggers */}
+        <TabsList
+          className={`flex ${
+            pathname === "/hosting/dedicated-server"
+              ? "flex-row overflow-x-auto h-full"
+              : "flex-col md:w-[280px] h-full overflow-x-auto"
+          } gap-4 w-full bg-transparent`}
+        >
+          {categories.map((cat) => (
+            <TabsTrigger
+              key={cat.title}
+              value={cat.title}
+              className={`flex items-center cursor-pointer gap-3 sm:gap-4 px-4 sm:px-6 py-5 text-sm sm:text-base font-semibold transition-all duration-200 rounded-md shadow-sm w-full
+              bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700
+              data-[state=active]:bg-[#2250F4] 
+              data-[state=active]:text-white
+              dark:data-[state=active]:bg-[#1a40c9]
+            `}
             >
               <span
-                className={`flex items-center justify-center w-10 h-10 rounded-full transition-colors duration-300 ${
-                  activeTab === i
-                    ? "bg-white dark:bg-gray-300"
-                    : "bg-[#e6edff] dark:bg-gray-700"
-                }`}
+                className="flex items-center justify-center w-10 h-10 rounded-full transition-duration-300
+                bg-[#e6edff] dark:bg-gray-700
+                data-[state=active]:bg-white dark:data-[state=active]:bg-gray-300
+              "
               >
                 {cat.icon}
               </span>
               <span
-                className="text-lg md:text-lg font-bold"
+                className="text-base font-bold"
                 style={{ fontFamily: "Urbanist, sans-serif" }}
               >
                 {cat.title}
               </span>
-            </button>
+            </TabsTrigger>
           ))}
-        </div>
+        </TabsList>
 
-        {/* Accordion content */}
-        <div className="flex-1 bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 sm:p-6 min-h-[470px] w-full overflow-anchor: auto transition-colors duration-300">
-          {categories[activeTab].faqs.map((faq, idx) => (
-            <div
-              key={idx}
-              className="border-b border-gray-200 dark:border-gray-700 last:border-b-0 transition-colors duration-300"
-            >
-              <div
-                className="flex items-center justify-between cursor-pointer py-4"
-                onClick={() => toggleAccordion(idx)}
+        {/* Right side: tab content */}
+        {categories.map((cat) => (
+          <TabsContent key={cat.title} value={cat.title} className="flex-1 w-full">
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 sm:p-6 min-h-[470px] w-full transition-colors duration-300">
+              <Accordion
+                type="single"
+                collapsible
+                defaultValue={`item-0`}
+                className="w-full"
               >
-                <h4
-                  className="text-[17px] sm:text-base font-bold text-gray-900 dark:text-white transition-colors duration-300"
-                  style={{ fontFamily: "Urbanist, sans-serif" }}
-                >
-                  {faq.question}
-                </h4>
-                <span className="text-xl sm:text-2xl text-[#2250F4] dark:text-[#1a40c9] transition-colors duration-300">
-                  <svg
-                    stroke="currentColor"
-                    fill="none"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    height="1em"
-                    width="1em"
+                {cat.faqs.map((faq, idx) => (
+                  <AccordionItem
+                    key={idx}
+                    value={`item-${idx}`}
+                    className="border-b border-gray-200 dark:border-gray-700 last:border-b-0 transition-colors duration-300"
                   >
-                    {openIndex === idx ? (
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                    ) : (
-                      <>
-                        <line x1="12" y1="5" x2="12" y2="19"></line>
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                      </>
-                    )}
-                  </svg>
-                </span>
-              </div>
-              <div
-                className="overflow-hidden transition-all duration-300 ease-in-out"
-                style={{ maxHeight: openIndex === idx ? "500px" : "0px" }}
-              >
-                <p
-                  className="mb-4 text-gray-600 dark:text-gray-300 text-[15px] sm:text-base leading-relaxed whitespace-pre-line transition-colors duration-300"
-                  style={{ fontFamily: "Mulish, sans-serif" }}
-                >
-                  {faq.answer}
-                </p>
-              </div>
+                    <AccordionTrigger
+                      className="flex justify-between py-4 text-left text-[17px] sm:text-base font-bold text-gray-900 dark:text-white transition-colors duration-300"
+                      style={{ fontFamily: "Urbanist, sans-serif" }}
+                    >
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent
+                      className="pb-4 text-gray-600 dark:text-gray-300 text-[15px] sm:text-base leading-relaxed whitespace-pre-line transition-colors duration-300"
+                      style={{ fontFamily: "Mulish, sans-serif" }}
+                    >
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
             </div>
-          ))}
-        </div>
-      </div>
+          </TabsContent>
+        ))}
+      </Tabs>
     </section>
   );
 }

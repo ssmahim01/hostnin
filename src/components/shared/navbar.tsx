@@ -95,7 +95,7 @@ const navItems: NavItem[] = [
       },
       {
         label: "Dedicated",
-        href: "/server/dedicated",
+        href: "/hosting/dedicated-server",
         icon: Monitor,
         description: "Dedicated Server Solutions",
       },
