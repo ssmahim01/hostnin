@@ -1,5 +1,11 @@
+import Offer from "@/components/shared/offer";
+import ManagedVPSSection from "@/app/(public-routes)/components/vps-hosting/managed-vps";
 import { VPSBannerSection } from "@/app/(public-routes)/components/vps-hosting/vps-banner";
+import HostninVPSFeatures from "@/app/(public-routes)/components/vps-hosting/vps-features";
 import PricingTable from "@/app/(public-routes)/components/vps-hosting/vps-pricing";
+import HostingFAQs from "@/components/shared/hosting/hosting-faqs";
+import SupportSection from "@/components/shared/hosting/support-section";
+import { TestimonialsSection } from "@/components/shared/testimonials";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -20,7 +26,15 @@ export default function VPSHostingPage() {
   return (
     <>
       <VPSBannerSection />
-      <PricingTable />
+      <div id="vps-packages">
+        <PricingTable />
+        <TestimonialsSection />
+        <ManagedVPSSection />
+        <HostninVPSFeatures />
+        <SupportSection />
+        <HostingFAQs />
+        <Offer />
+      </div>
     </>
   );
 }

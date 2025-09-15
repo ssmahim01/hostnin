@@ -2,6 +2,15 @@
 
 import { Check } from "lucide-react";
 import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  TableRow,
+  TableHead,
+  TableCell,
+} from "@/components/ui/table";
 
 type Plan = {
   name: string;
@@ -81,6 +90,42 @@ const plans: Plan[] = [
 ];
 
 export default function PricingTable() {
+  // refs for sentinel observation
+  const wrapperRef = useRef<HTMLDivElement | null>(null);
+  const topSentinelRef = useRef<HTMLDivElement | null>(null);
+  const bottomSentinelRef = useRef<HTMLDivElement | null>(null);
+
+  const [topVisible, setTopVisible] = useState(true);
+  const [bottomVisible, setBottomVisible] = useState(false);
+  const isSticky = !topVisible && bottomVisible;
+
+  useEffect(() => {
+    const topObserver = new IntersectionObserver(
+      (entries) => {
+        const e = entries[0];
+        setTopVisible(e.isIntersecting);
+      },
+      { root: null, threshold: 0 }
+    );
+
+    const bottomObserver = new IntersectionObserver(
+      (entries) => {
+        const e = entries[0];
+        setBottomVisible(e.isIntersecting);
+      },
+      { root: null, threshold: 0 }
+    );
+
+    if (topSentinelRef.current) topObserver.observe(topSentinelRef.current);
+    if (bottomSentinelRef.current)
+      bottomObserver.observe(bottomSentinelRef.current);
+
+    return () => {
+      topObserver.disconnect();
+      bottomObserver.disconnect();
+    };
+  }, []);
+
   return (
     <section className="bg-accent py-10 lg:pt-[400px] pt-[700px] md:pt-[550px]">
       <div className="max-w-7xl mx-auto px-3 sm:px-6">
@@ -137,69 +182,77 @@ export default function PricingTable() {
           ))}
         </div>
 
-        {/* Desktop Table */}
-        <div className="hidden lg:block mt-10 overflow-x-auto rounded-lg border border-gray-200 dark:border-gray-700 shadow-lg">
-          <table className="w-full min-w-[900px] table-fixed border-collapse">
-            <colgroup>
-              <col className="w-1/5" />
-              {plans.map(() => (
-                <col key={Math.random()} className="w-1/5" />
-              ))}
-            </colgroup>
-            <thead className="sticky top-0 z-50 bg-gradient-to-r from-blue-700 to-blue-500">
-              <tr>
-                <th className="p-4 text-white font-bold text-lg border-r border-blue-600/50">
-                  Features
-                </th>
-                {plans.map((plan) => (
-                  <th
-                    key={plan.name}
-                    className="p-4 text-white font-bold text-center border-r border-blue-600/50 last:border-r-0"
-                  >
-                    <div className="space-y-2">
-                      <div className="font-bold text-xl">{plan.name}</div>
-                      <div className="bg-white/15 rounded-lg p-2 backdrop-blur-sm border border-white/25">
-                        <div className="text-2xl font-bold text-white">
-                          {plan.price}
-                        </div>
-                        <div className="text-sm text-blue-200">/mo</div>
-                      </div>
-                    </div>
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {plans[0].features.map((feature, idx) => (
-                <tr
-                  key={feature.label}
-                  className={`hover:bg-blue-50/50 dark:hover:bg-gray-800 transition-colors duration-200 ${
-                    idx % 2 === 0
-                      ? "bg-gray-50 dark:bg-gray-900/50"
-                      : "bg-white dark:bg-gray-800"
-                  }`}
-                >
-                  <td className="p-4 font-semibold text-gray-700 dark:text-gray-200 border-r border-gray-200 dark:border-gray-700">
-                    {feature.label}
-                  </td>
+        {/* Desktop Table - SENTINELS used to control sticky header */}
+        <div ref={wrapperRef} className="hidden lg:block mt-10">
+          {/* top sentinel: placed right above the table wrapper */}
+          <div ref={topSentinelRef} />
+
+          <div className="overflow-x-auto rounded-lg border border-gray-200 dark:border-gray-700 shadow-lg">
+            <Table className="w-full min-w-[900px] table-fixed border-collapse">
+              <TableHeader
+                className={`${
+                  isSticky ? "sticky top-16 z-[200] shadow-lg" : ""
+                } bg-gradient-to-r from-blue-700 to-blue-500`}
+              >
+                <TableRow>
+                  <TableHead className="p-4 text-white font-bold text-lg border-r border-blue-600/50">
+                    Features
+                  </TableHead>
+
                   {plans.map((plan) => (
-                    <td
-                      key={plan.name + feature.label}
-                      className="p-4 text-center border-r border-gray-200 dark:border-gray-700 last:border-r-0"
+                    <TableHead
+                      key={plan.name}
+                      className="p-4 text-white font-bold text-center border-r border-blue-600/50 last:border-r-0"
                     >
-                      {plan.features[idx].included ? (
-                        <Check className="inline text-green-500 dark:text-green-400 text-lg" />
-                      ) : (
-                        <span className="font-medium text-gray-700 dark:text-gray-200">
-                          {plan.features[idx].value}
-                        </span>
-                      )}
-                    </td>
+                      <div className="space-y-2">
+                        <div className="font-bold text-xl">{plan.name}</div>
+                        <div className="bg-white/15 rounded-lg p-2 backdrop-blur-sm border border-white/25">
+                          <div className="text-2xl font-bold text-white">
+                            {plan.price}
+                          </div>
+                          <div className="text-sm text-blue-200">/mo</div>
+                        </div>
+                      </div>
+                    </TableHead>
                   ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
+                </TableRow>
+              </TableHeader>
+
+              <TableBody>
+                {plans[0].features.map((feature, idx) => (
+                  <TableRow
+                    key={feature.label}
+                    className={`hover:bg-blue-50/50 dark:hover:bg-gray-800 transition-colors duration-200 ${
+                      idx % 2 === 0
+                        ? "bg-gray-50 dark:bg-gray-900/50"
+                        : "bg-white dark:bg-gray-800"
+                    }`}
+                  >
+                    <TableCell className="p-4 font-semibold text-gray-700 dark:text-gray-200 border-r border-gray-200 dark:border-gray-700">
+                      {feature.label}
+                    </TableCell>
+
+                    {plans.map((plan) => (
+                      <TableCell
+                        key={plan.name + feature.label}
+                        className="p-4 text-center border-r border-gray-200 dark:border-gray-700 last:border-r-0"
+                      >
+                        {plan.features[idx].included ? (
+                          <Check className="inline text-green-500 dark:text-green-400 text-lg" />
+                        ) : (
+                          <span className="font-medium text-gray-700 dark:text-gray-200">
+                            {plan.features[idx].value}
+                          </span>
+                        )}
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
+
+          <div ref={bottomSentinelRef} />
         </div>
       </div>
     </section>

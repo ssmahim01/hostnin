@@ -3,11 +3,26 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-const offerData = {
+export interface Offer {
+  title: string;
+  subtitle: string;
+  primaryButton: {
+    label: string;
+    link: string;
+  };
+  secondaryButton: {
+    label: string;
+    link: string;
+  };
+}
+const offerData: Offer = {
   title: "Try Hostnin Risk-Free for 30 Days",
   subtitle: "30 Days to Decide. Full Refund Guaranteed.",
   primaryButton: { label: "Get the Offer", link: "/pricing" },
-  secondaryButton: { label: "Chat with an Expert", link: "#chat" },
+  secondaryButton: {
+    label: "Chat with an Expert",
+    link: "https://api.whatsapp.com/send/?phone=8801325875955&text&type=phone_number&app_absent=0",
+  },
 };
 
 export default function Offer() {
@@ -42,7 +57,7 @@ export default function Offer() {
             variant="ghost"
             className="text-yellow-500 hover:text-yellow-600 hover:bg-transparent text-xl font-semibold"
           >
-            <Link href={offerData.secondaryButton.link}>
+            <Link href={offerData.secondaryButton.link} target="_blank">
               {offerData.secondaryButton.label}
             </Link>
           </Button>

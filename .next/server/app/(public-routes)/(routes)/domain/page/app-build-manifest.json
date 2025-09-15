@@ -1,23 +1,29 @@
 {
   "pages": {
     "/(public-routes)/(routes)/domain/page": [
-      "static/chunks/ff1a16fafef87110.js",
-      "static/chunks/7dd66bdf8a7e5707.js",
-      "static/chunks/2473c16c0c2f6b5f.css",
-      "static/chunks/93cedc49dcaa6b60.css",
-      "static/chunks/ed14879fd87d0671.js",
-      "static/chunks/c0ecf726b9a1d950.js",
-      "static/chunks/ef48bbffcddd99b3.js",
-      "static/chunks/7c9ccd552cb9890d.js",
-      "static/chunks/3303fc834eebc704.js",
-      "static/chunks/254b03bd24e9e047.js",
-      "static/chunks/922ddc8ec0068043.js",
-      "static/chunks/a68ba0ed9773646e.js",
-      "static/chunks/d4a0bd92e57e27fa.js",
-      "static/chunks/47f477e3d2ef265b.js",
-      "static/chunks/c19da6693934fea1.js",
-      "static/chunks/8082ab48faca5ea1.js",
-      "static/chunks/turbopack-51d71afbe7b3e0a4.js"
+      "static/chunks/node_modules_next_dist_8db7fb1f._.js",
+      "static/chunks/src_app_favicon_ico_mjs_243aa161._.js",
+      "static/chunks/[root-of-the-server]__0f0ba101._.css",
+      "static/chunks/src_e60de538._.js",
+      "static/chunks/node_modules_next_6c267dd0._.js",
+      "static/chunks/node_modules_tailwind-merge_dist_bundle-mjs_mjs_56b6fd65._.js",
+      "static/chunks/node_modules_motion-dom_dist_es_da948acf._.js",
+      "static/chunks/node_modules_framer-motion_dist_es_5b4aafa7._.js",
+      "static/chunks/node_modules_zod_v4_df0fe25e._.js",
+      "static/chunks/node_modules_1052a8c8._.js",
+      "static/chunks/src_app_layout_tsx_0a548d63._.js",
+      "static/chunks/node_modules_next_dist_client_components_builtin_global-error_0e5acd83.js",
+      "static/chunks/_5c05035a._.js",
+      "static/chunks/src_app_(public-routes)_(routes)_domain_page_tsx_0e5acd83._.js",
+      "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_57d40746._.js",
+      "static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js",
+      "static/chunks/node_modules_next_dist_compiled_next-devtools_index_a9cb0712.js",
+      "static/chunks/node_modules_next_dist_compiled_5150ccfd._.js",
+      "static/chunks/node_modules_next_dist_client_cf1d9188._.js",
+      "static/chunks/node_modules_next_dist_b0daae9a._.js",
+      "static/chunks/node_modules_@swc_helpers_cjs_b3dc30d6._.js",
+      "static/chunks/_a0ff3932._.js",
+      "static/chunks/turbopack-_cdba956c._.js"
     ]
   }
 }

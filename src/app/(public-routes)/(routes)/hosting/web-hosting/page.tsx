@@ -1,6 +1,6 @@
 import WebHostingHero from "@/app/(public-routes)/components/web-hosting/web-hosting-hero";
 import { Metadata } from "next";
-import { TestimonialsSection } from "@/app/(public-routes)/components/web-hosting/testimonials";
+import { TestimonialsSection } from "@/components/shared/testimonials";
 import { DomainSearchSection } from "@/app/(public-routes)/components/web-hosting/domain-search-section";
 import { InfrastructurePartners } from "@/app/(public-routes)/components/web-hosting/infrastructure-partners";
 import { WhyChooseHosting } from "@/app/(public-routes)/components/web-hosting/why-choose-hosting";

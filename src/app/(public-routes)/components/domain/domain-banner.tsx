@@ -4,9 +4,10 @@
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Search } from "lucide-react";
+import { Search, ShoppingBag } from "lucide-react";
 import Image from "next/image";
 import { toast } from "sonner";
+import Link from "next/link";
 
 type DomainResult = {
   domain: string;
@@ -130,7 +131,7 @@ export default function DomainBanner() {
           {loading && <p className="text-white mb-4">Checking...</p>}
 
           {results.length > 0 && (
-            <div className="space-y-2">
+            <div className="space-y-2 max-w-xs md:max-w-md lg:max-w-xl mx-auto lg:mx-0">
               {results.map((res) => (
                 <div
                   key={res.domain}
@@ -151,13 +152,15 @@ export default function DomainBanner() {
                       : "is unavailable"}
                   </span>
                   {res.available && res.purchaseUrl && (
-                    <a
+                    <Link
                       href={res.purchaseUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <Button>Purchase</Button>
-                    </a>
+                      <Button className="bg-blue-600 hover:bg-blue-700 flex gap-2 items-center hover:cursor-pointer text-white py-1 px-3">
+                        <ShoppingBag /> <span>Purchase</span>
+                      </Button>
+                    </Link>
                   )}
                 </div>
               ))}

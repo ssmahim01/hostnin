@@ -1,4 +1,4 @@
-import { TestimonialsSection } from "@/app/(public-routes)/components/web-hosting/testimonials";
+import { TestimonialsSection } from "@/components/shared/testimonials";
 import JoinHostingSection from "@/app/(public-routes)/components/wordpress-hosting/join-hosting-section";
 import ManagedWordPressHighlights from "@/app/(public-routes)/components/wordpress-hosting/managed-wordpress-highlights";
 import { WordPressBanner } from "@/app/(public-routes)/components/wordpress-hosting/wordpress-banner";

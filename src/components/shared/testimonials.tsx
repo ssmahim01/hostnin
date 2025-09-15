@@ -12,6 +12,7 @@ import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Image from "next/image";
+import Link from "next/link";
 
 const testimonials: Testimonial[] = [
   {
@@ -138,9 +139,16 @@ export function TestimonialsSection() {
                     </Avatar>
                   ))}
                 </div>
-                <span className="text-blue-600 dark:text-blue-400 font-medium hover:underline cursor-pointer">
-                  📄 More Review
-                </span>
+                <Link
+                  href={
+                    "https://www.google.com/search?q=hostnin&oq=hostnin&gs_lcrp=EgZjaHJvbWUqDwgAECMYJxjjAhiABBiKBTIPCAAQIxgnGOMCGIAEGIoFMgYIARBFGDwyBggCEEUYQTIGCAMQRRg8MhIIBBAuGCcYrwEYxwEYgAQYigUyBggFEEUYPDIGCAYQRRg8MgYIBxBFGEHSAQgxODQzajBqNKgCALACAQ&sourceid=chrome&ie=UTF-8#lrd="
+                  }
+                  target="_blank"
+                >
+                  <span className="text-blue-600 dark:text-blue-400 font-medium hover:underline cursor-pointer">
+                    📄 More Review
+                  </span>
+                </Link>
               </div>
             </div>
 

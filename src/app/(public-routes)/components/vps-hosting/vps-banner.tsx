@@ -52,6 +52,15 @@ const plans: Plan[] = [
 export const VPSBannerSection: React.FC = () => {
   const [selectedPlan, setSelectedPlan] = useState<number>(0);
 
+  // Smooth scroll function
+  const handleScrollToPricing = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    const section = document.querySelector("#vps-packages");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section
       className="pt-20 pb-24 px-3 sm:pt-24 sm:pb-32 sm:px-6 lg:pt-28 lg:pb-44 lg:px-10 relative overflow-visible"
@@ -95,6 +104,7 @@ export const VPSBannerSection: React.FC = () => {
           <div className="px-4 md:px-0 flex flex-col sm:flex-row gap-4 lg:items-start lg:justify-start justify-center items-center mx-auto">
             <Button
               variant={"default"}
+              onClick={handleScrollToPricing}
               size={"lg"}
               className="py-7 px-16 bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-600 hover:from-blue-600 hover:via-indigo-600 hover:to-purple-600 text-white font-bold rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-transform border-2 lg:justify-start justify-center border-indigo-500 hover:border-none hover:cursor-pointer flex gap-2 items-center"
             >
