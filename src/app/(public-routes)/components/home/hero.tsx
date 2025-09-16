@@ -72,7 +72,7 @@ export function HeroSection() {
             width={140}
             height={80}
             quality={90}
-            className="absolute md:-bottom-[5.9rem] -bottom-[4rem] left-10 h-[200px] md:h-[280px] w-auto object-contain"
+            className="md:block hidden absolute md:-bottom-[5.9rem] -bottom-[4rem] left-10 h-[200px] md:h-[280px] w-auto object-contain"
             priority
           />
         </div>

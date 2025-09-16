@@ -287,21 +287,21 @@ export function Navbar() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="min-h-screen bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 flex flex-col relative ">
-          {/* Scroll area takes everything except bottom dashboard */}
-          <ScrollArea className="flex-1 py-4">
-            <div className="flex flex-col space-y-2 px-4">
+        <div className="flex flex-col h-full min-h-screen bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 relative">
+          {/* Scroll area for nav items */}
+          <ScrollArea className="flex-1 overflow-y-auto py-4 max-h-[90vh]">
+            <div className="flex flex-col space-y-3 px-4">
               {navItems.map((item) =>
                 item.hasDropdown ? (
                   <div key={item.label} className="flex flex-col">
                     <Button
                       variant={"ghost"}
-                      className="w-full flex justify-between items-center px-3 py-2 text-gray-700 dark:text-gray-300 font-medium hover:text-blue-600 dark:hover:text-blue-400"
+                      className="w-full flex justify-between items-center px-3 py-3 text-2xl text-gray-800 dark:text-gray-200 font-semibold hover:text-blue-600 dark:hover:text-blue-400"
                       onClick={() => toggleExpand(item.label)}
                     >
                       {item.label}
                       <ChevronDown
-                        className={`w-4 h-4 transition-transform ${
+                        className={`w-7 h-7 transition-transform ${
                           expandedItems.includes(item.label) ? "rotate-180" : ""
                         }`}
                       />
@@ -312,13 +312,13 @@ export function Navbar() {
                           <Link
                             key={sub.label}
                             href={sub.href || "#"}
-                            className="flex items-center gap-2 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
+                            className="flex items-center gap-2 py-2 text-lg text-gray-700 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
                             onClick={() => setIsOpen(false)}
                           >
-                            {sub.icon && <sub.icon className="w-4 h-4" />}
+                            {sub.icon && <sub.icon className="w-7 h-7" />}
                             <span>{sub.label}</span>
                             {sub.badge && (
-                              <span className="text-xs bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 px-1.5 py-0.5 rounded">
+                              <span className="text-sm bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 px-1.5 py-0.5 rounded">
                                 {sub.badge}
                               </span>
                             )}
@@ -331,7 +331,7 @@ export function Navbar() {
                   <Link
                     key={item.label}
                     href={item.href || "#"}
-                    className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium"
+                    className="block px-3 py-3 text-2xl text-gray-800 dark:text-gray-200 font-semibold hover:text-blue-600 dark:hover:text-blue-400"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.label}
@@ -339,13 +339,15 @@ export function Navbar() {
                 )
               )}
             </div>
+            <ScrollBar orientation="vertical" />
           </ScrollArea>
 
+          {/* Dashboard Button always at bottom */}
           <div className="border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 px-4 py-4 sticky bottom-0 z-10">
             <Button
-              variant={"outline"}
+              variant={"default"}
               onClick={() => setDashboardOpen((prev) => !prev)}
-              className="w-full flex justify-center gap-3 items-center p-4 text-blue-600 border-2 border-blue-600 rounded-md font-bold hover:bg-blue-600 hover:text-white transition-colors"
+              className="w-full flex justify-center gap-3 items-center p-4 hover:text-white/90 hover:border-2 hover:border-blue-600 rounded-md font-bold hover:bg-blue-700 bg-blue-600 text-white transition-colors"
             >
               Dashboard
               <ChevronDown
@@ -360,7 +362,7 @@ export function Navbar() {
                 <Link
                   href="https://my.hostnin.com"
                   target="_blank"
-                  className="flex items-center gap-2 p-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md"
+                  className="flex items-center gap-2 p-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md text-base"
                 >
                   <LayoutDashboard className="w-5 h-5" />
                   Dashboard
@@ -370,7 +372,7 @@ export function Navbar() {
                     setAuthMode("login");
                     setAuthOpen(true);
                   }}
-                  className="flex items-center gap-2 p-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md"
+                  className="flex items-center gap-2 p-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md text-base"
                 >
                   <LogIn className="w-5 h-5" /> Login
                 </button>
@@ -379,21 +381,21 @@ export function Navbar() {
                     setAuthMode("register");
                     setAuthOpen(true);
                   }}
-                  className="flex items-center gap-2 p-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md"
+                  className="flex items-center gap-2 p-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md text-base"
                 >
                   <FilePen className="w-5 h-5" /> Register
                 </button>
                 <Link
                   href="https://my.hostnin.com/index.php/store/marketgoo"
                   target="_blank"
-                  className="flex items-center gap-2 p-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md"
+                  className="flex items-center gap-2 p-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md text-base"
                 >
                   <Wrench className="w-5 h-5" /> SEO Tools
                 </Link>
                 <Link
                   href="https://my.hostnin.com/cart.php?a=add&domain=register"
                   target="_blank"
-                  className="flex items-center gap-2 p-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md"
+                  className="flex items-center gap-2 p-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md text-base"
                 >
                   <BadgePlus className="w-5 h-5" /> Register Domain
                 </Link>
