@@ -3,7 +3,7 @@ import { HeroSection } from "./(public-routes)/components/home/hero";
 import HostingPlan from "./(public-routes)/components/home/hosting-plan";
 import MovingWebsites from "./(public-routes)/components/home/moving-websites";
 import Offer from "../components/shared/offer";
-import { DomainSearchSection } from "./(public-routes)/components/web-hosting/domain-search-section";
+import { DomainSearchSection } from "../components/shared/hosting/domain-search-section";
 import { TestimonialsSection } from "../components/shared/testimonials";
 import ControlPanelSection from "./(public-routes)/components/home/control-panel";
 import SupportBanner from "./(public-routes)/components/home/support-banner";

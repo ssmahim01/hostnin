@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { CountdownTimer } from "./countdown-timer";
+import { CountdownTimer } from "../../../../components/shared/hosting/countdown-timer";
 import { Check, X, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";

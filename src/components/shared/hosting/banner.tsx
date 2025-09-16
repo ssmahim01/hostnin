@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Check, Zap } from "lucide-react";
-import { CountdownTimer } from "@/app/(public-routes)/components/web-hosting/countdown-timer";
+import { CountdownTimer } from "@/components/shared/hosting/countdown-timer";
 import FeatureCard from "./feature-card";
 import { ReactNode } from "react";
 
@@ -44,7 +44,7 @@ export const Banner: React.FC<BannerProps> = ({
 
   return (
     <section
-      className="pt-8 pb-12 px-2 sm:pt-12 sm:pb-20 lg:pt-28 lg:pb-24 md:px-0 relative"
+      className="pt-8 pb-12 px-2 sm:pt-16 sm:pb-[68px] lg:pt-28 lg:pb-24 md:px-0 relative"
       style={{
         backgroundImage: `url(${backgroundImage}), ${gradient}`,
         backgroundPosition: "left center, center center",
@@ -66,13 +66,20 @@ export const Banner: React.FC<BannerProps> = ({
           </h1>
 
           {/* Bullets */}
-          <ul className="mb-6 my-5 sm:mb-8 space-y-2 text-sm xs:text-base sm:text-lg">
+          <ul
+            className={`
+                grid gap-3 sm:gap-4 
+                ${
+                  bullets.length > 3
+                    ? "grid-cols-1 sm:grid-cols-2"
+                    : "grid-cols-1"
+                }
+                mb-6 my-5 sm:mb-8 text-sm xs:text-base sm:text-lg
+            `}
+          >
             {bullets.map((b, idx) => (
-              <li
-                key={idx}
-                className="flex items-center gap-2 justify-center lg:justify-start"
-              >
-                <Check className="text-lg sm:text-xl" />
+              <li key={idx} className="flex items-start gap-2 sm:gap-3">
+                <Check className="text-lg sm:text-xl flex-shrink-0 mt-1" />
                 <span className="text-base sm:text-lg">{b.text}</span>
               </li>
             ))}

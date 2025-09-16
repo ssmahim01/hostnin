@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Zap } from "lucide-react";
-import { CountdownTimer } from "../web-hosting/countdown-timer";
+import { CountdownTimer } from "../../../../components/shared/hosting/countdown-timer";
 import FeatureCard from "@/components/shared/hosting/feature-card";
 
 export interface WordPressFeature {

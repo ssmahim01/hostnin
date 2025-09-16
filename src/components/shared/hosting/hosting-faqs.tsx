@@ -235,7 +235,8 @@ export default function HostingFAQs() {
         onValueChange={setActiveTab}
         className={`flex flex-col ${
           pathname === "/hosting/dedicated-server" ||
-          pathname === "/hosting/turbo-hosting"
+          pathname === "/hosting/turbo-hosting" ||
+          pathname === "/hosting/bdix-hosting"
             ? "flex-col"
             : "md:flex-row"
         } gap-6 sm:gap-10 w-full max-w-7xl justify-center items-start`}
@@ -244,7 +245,8 @@ export default function HostingFAQs() {
         <TabsList
           className={`flex ${
             pathname === "/hosting/dedicated-server" ||
-            pathname === "/hosting/turbo-hosting"
+            pathname === "/hosting/turbo-hosting" ||
+            pathname === "/hosting/bdix-hosting"
               ? "flex-row overflow-x-auto h-full"
               : "flex-col md:w-[280px] h-full overflow-x-auto"
           } gap-4 w-full bg-transparent`}

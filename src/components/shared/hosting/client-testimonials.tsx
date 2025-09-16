@@ -6,6 +6,7 @@ import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import { usePathname } from "next/navigation";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 const testimonials = [
   {
@@ -44,7 +45,7 @@ export default function Testimonials() {
   const pathname = usePathname();
 
   return (
-    <section className="bg-[#f8f8f9] md:pt-20 pt-16 pb-10">
+    <section className="bg-[#f8f8f9] dark:bg-slate-900 md:pt-20 pt-16 pb-10">
       <div className="max-w-7xl mx-auto px-2">
         <div
           className={`${
@@ -55,15 +56,15 @@ export default function Testimonials() {
           }`}
         >
           <div>
-            <h2 className="font-bold text-[28px] sm:text-3xl md:text-4xl text-black mb-2 leading-tight">
+            <h2 className="font-bold text-[28px] sm:text-3xl md:text-4xl text-gray-900 dark:text-white mb-2 leading-tight">
               What&apos;s Our Clients Say&apos;s
             </h2>
-            <p className="text-gray-500 mb-4 max-w-xl text-base">
+            <p className="text-gray-500 dark:text-neutral-400 mb-4 max-w-xl text-base">
               Our migration service is free and quick. In most cases, we can
               have websites. Then click below to speak to our team.
             </p>
           </div>
-          <div className="bg-white rounded-lg shadow p-5 flex flex-col items-center min-w-[220px] border border-gray-100">
+          <div className="bg-white dark:bg-neutral-800 rounded-lg shadow p-5 flex flex-col items-center min-w-[220px] border border-gray-100 dark:border-neutral-700">
             <Image
               src="/assets/google-logo.svg"
               alt="Google"
@@ -80,7 +81,7 @@ export default function Testimonials() {
             >
               ★★★★★
             </div>
-            <div className="text-gray-700 text-sm font-medium">
+            <div className="text-gray-700 dark:text-neutral-300 text-sm font-medium">
               4.9 Excellent 250 Review
             </div>
           </div>
@@ -89,9 +90,8 @@ export default function Testimonials() {
         <Swiper
           modules={[Autoplay, Pagination]}
           autoplay={{ delay: 4000, disableOnInteraction: false }}
-          // pagination={{ clickable: true }}
           spaceBetween={20}
-          loop={true}
+          loop
           breakpoints={{
             640: { slidesPerView: 1 },
             1024: { slidesPerView: 2 },
@@ -100,9 +100,9 @@ export default function Testimonials() {
         >
           {testimonials.map((t, idx) => (
             <SwiperSlide key={idx}>
-              <div className="bg-white rounded-lg shadow-sm p-8 flex flex-col justify-between h-[400px]">
-                <div className="flex items-center mb-4">
-                  <div className="w-20 h-20 rounded-full overflow-hidden mr-4 border-4 border-white shadow flex-shrink-0">
+              <Card className="bg-white dark:bg-neutral-800 rounded-lg shadow-sm h-[400px] flex flex-col justify-between">
+                <CardHeader className="flex flex-row items-center gap-4 pb-0">
+                  <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-white dark:border-neutral-700 shadow flex-shrink-0">
                     <Image
                       src={t.avatar}
                       alt={t.name}
@@ -112,7 +112,7 @@ export default function Testimonials() {
                     />
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg text-[#1a2343]">
+                    <h3 className="font-bold text-lg text-gray-900 dark:text-white">
                       {t.name}
                     </h3>
                     <div className="flex mt-1">
@@ -129,22 +129,24 @@ export default function Testimonials() {
                       )}
                     </div>
                   </div>
-                </div>
-                <p className="text-[#6b6b6b] text-[15px] md:text-base hover:overflow-y-auto flex-1 font-['Mulish',sans-serif]">
-                  {t.text}
-                </p>
-                <svg
-                  stroke="currentColor"
-                  fill="currentColor"
-                  viewBox="0 0 512 512"
-                  className="text-4xl text-[#f3f3f3] mt-4"
-                  height="1em"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"></path>
-                </svg>
-              </div>
+                </CardHeader>
+                <CardContent className="flex-1 pt-4 flex flex-col justify-between">
+                  <p className="text-gray-700 dark:text-neutral-300 text-[15px] md:text-base font-['Mulish',sans-serif]">
+                    {t.text}
+                  </p>
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    viewBox="0 0 512 512"
+                    className="text-4xl text-gray-100 dark:text-neutral-700 mt-4"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"></path>
+                  </svg>
+                </CardContent>
+              </Card>
             </SwiperSlide>
           ))}
         </Swiper>

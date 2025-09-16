@@ -47,6 +47,12 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
 }
 
 
+// Validate ../../src/app/(public-routes)/(footer-routes)/refund-policy/page.tsx
+{
+  const handler = {} as typeof import("../../src/app/(public-routes)/(footer-routes)/refund-policy/page.js")
+  handler satisfies AppPageConfig<"/refund-policy">
+}
+
 // Validate ../../src/app/(public-routes)/(routes)/careers/page.tsx
 {
   const handler = {} as typeof import("../../src/app/(public-routes)/(routes)/careers/page.js")
@@ -63,6 +69,12 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
 {
   const handler = {} as typeof import("../../src/app/(public-routes)/(routes)/domain/page.js")
   handler satisfies AppPageConfig<"/domain">
+}
+
+// Validate ../../src/app/(public-routes)/(routes)/hosting/bdix-hosting/page.tsx
+{
+  const handler = {} as typeof import("../../src/app/(public-routes)/(routes)/hosting/bdix-hosting/page.js")
+  handler satisfies AppPageConfig<"/hosting/bdix-hosting">
 }
 
 // Validate ../../src/app/(public-routes)/(routes)/hosting/dedicated-server/page.tsx

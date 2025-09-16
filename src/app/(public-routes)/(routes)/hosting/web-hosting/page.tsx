@@ -1,9 +1,9 @@
 import WebHostingHero from "@/app/(public-routes)/components/web-hosting/web-hosting-hero";
 import { Metadata } from "next";
 import { TestimonialsSection } from "@/components/shared/testimonials";
-import { DomainSearchSection } from "@/app/(public-routes)/components/web-hosting/domain-search-section";
+import { DomainSearchSection } from "@/components/shared/hosting/domain-search-section";
 import { InfrastructurePartners } from "@/components/shared/hosting/infrastructure-partners";
-import { WhyChooseHosting } from "@/app/(public-routes)/components/web-hosting/why-choose-hosting";
+import { WhyChooseHosting } from "@/components/shared/hosting/why-choose-hosting";
 import { MoneyBackGuarantee } from "@/app/(public-routes)/components/web-hosting/money-back-gurantee";
 import WhyHostnin from "@/app/(public-routes)/components/web-hosting/why-hostnin";
 // import UniqueFeatures from "@/app/(public-routes)/components/web-hosting/unique-features";
@@ -38,7 +38,18 @@ export default function WebHostingPage() {
       <TestimonialsSection />
       <DomainSearchSection />
       <InfrastructurePartners />
-      <WhyChooseHosting />
+      <WhyChooseHosting
+        heading="Why Choose Web Hosting?"
+        subTitle={`With our{" "}
+            ${(
+              <span className="text-blue-600 dark:text-blue-400 font-medium">
+                Web Hosting
+              </span>
+            )}{" "}
+            plans, you&apos;ll receive more resources for less money, ensuring
+            the reliability you can count on. Starting your own business with
+            Hostnin is easier than you think!`}
+      />
       <MoneyBackGuarantee />
       <WhyHostnin />
       {/* <UniqueFeatures /> */}
