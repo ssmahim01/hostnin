@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { Search } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -14,54 +13,32 @@ const domainSearchSchema = z.object({
   domain: z
     .string()
     .min(1, "Domain name is required")
-    .regex(
-      /^[a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*$/,
-      "Invalid domain name format"
-    )
     .max(63, "Domain name too long"),
 });
 
 const domainExtensions: DomainExtension[] = [
-  {
-    extension: ".com",
-    price: "₹1650",
-    originalPrice: "₹2000",
-    isPopular: true,
-    color: "text-blue-500",
-  },
-  {
-    extension: ".net",
-    price: "₹1650",
-    originalPrice: "₹2000",
-    color: "text-red-500",
-  },
-  {
-    extension: ".org",
-    price: "₹1650",
-    originalPrice: "₹2000",
-    color: "text-green-500",
-  },
-  {
-    extension: ".xyz",
-    price: "₹599",
-    originalPrice: "₹1200",
-    color: "text-yellow-500",
-  },
+  { extension: ".com", price: "৳1650", color: "text-blue-500" },
+  { extension: ".net", price: "৳1650", color: "text-red-500" },
+  { extension: ".org", price: "৳1650", color: "text-green-500" },
+  { extension: ".xyz", price: "৳599", color: "text-yellow-500" },
 ];
 
 export function DomainSearchSection() {
   const [searchTerm, setSearchTerm] = useState("");
   const [errors, setErrors] = useState<string[]>([]);
 
-  const handleSearch = () => {
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
     try {
       const result = domainSearchSchema.parse({ domain: searchTerm });
       setErrors([]);
-      toast.success(`Searching for ${result.domain}...`);
-      // Backend integration point
+      window.open(
+        `https://my.hostnin.com/cart.php?a=add&domain=register&query=${result.domain}`,
+        "_blank"
+      );
     } catch (error) {
       if (error instanceof z.ZodError) {
-        const errorMessages = error?.issues?.map((err) => err.message);
+        const errorMessages = error.issues.map((err) => err.message);
         setErrors(errorMessages);
         toast.error(errorMessages[0]);
       }
@@ -74,33 +51,35 @@ export function DomainSearchSection() {
         <Card className="max-w-6xl mx-auto bg-white dark:bg-gray-800 shadow-lg">
           <CardContent className="p-8">
             <div className="flex flex-col lg:flex-row items-center gap-8">
-              {/* Left side - Search form */}
+              {/* Left side */}
               <div className="flex-1 w-full">
-                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center md:text-left">
                   Search your Domain Name
                 </h2>
 
-                <div className="flex flex-col sm:flex-row gap-3 mb-6">
+                {/* form submits directly to the action */}
+                <form
+                  onSubmit={handleSubmit}
+                  className="flex flex-col sm:flex-row gap-3 md:gap-0 mb-6 max-w-xl mx-auto md:mx-0"
+                >
                   <div className="flex-1 relative">
                     <Input
                       type="text"
                       placeholder="yourdomain.com"
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
-                      onKeyPress={(e) => e.key === "Enter" && handleSearch()}
-                      className="h-12 text-lg border-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-400"
+                      className="h-14 text-lg rounded-l-lg rounded-r-none border-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-400"
                     />
-                    <Search className="absolute right-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                    {/* <Search className="absolute right-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" /> */}
                   </div>
-                  <Button
-                    size="lg"
-                    onClick={handleSearch}
-                    className="h-12 px-8 bg-blue-600 hover:bg-blue-700 text-white font-medium"
+                  <button
+                    type="submit"
+                    className="h-14 px-7 rounded-r-lg rounded-l-none bg-gradient-to-r from-[#0A8AFF] to-[#3B82F6] text-white font-medium flex gap-2 text-lg items-center hover:opacity-90 transition hover:cursor-pointer"
                   >
-                    <Search className="w-4 h-4 mr-2" />
+                    <Search className="w-5 h-5" />
                     Search
-                  </Button>
-                </div>
+                  </button>
+                </form>
 
                 {errors.length > 0 && (
                   <div className="mb-4 p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
@@ -115,24 +94,27 @@ export function DomainSearchSection() {
                   </div>
                 )}
 
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                <div className="flex md:gap-6 gap-4 flex-wrap mx-auto md:mx-0">
                   {domainExtensions.map((domain) => (
                     <div
                       key={domain.extension}
-                      className="text-center p-3 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-blue-300 dark:hover:border-blue-600 transition-colors cursor-pointer bg-gray-50 dark:bg-gray-700/50"
+                      className="text-start md:min-w-[80px] min-w-[50px]"
                     >
-                      <div className={`text-xl font-bold mb-1 ${domain.color}`}>
+                      <span
+                        className={`font-bold text-xl sm:text-2xl ${domain.color}`}
+                      >
                         {domain.extension}
-                      </div>
-                      <div className="text-sm font-medium text-gray-900 dark:text-white">
+                      </span>
+                      <br />
+                      <span className="text-gray-600 font-medium text-xs md:text-base">
                         {domain.price}/Year
-                      </div>
+                      </span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* Right side - Promotional badge */}
+              {/* Right side badge */}
               <div className="relative">
                 <div className="relative bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-8 rounded-2xl border border-blue-200 dark:border-blue-800">
                   <Badge className="absolute -top-3 -right-3 bg-gradient-to-r from-pink-500 to-red-500 text-white px-4 py-1 text-sm font-medium transform rotate-12">
@@ -155,8 +137,6 @@ export function DomainSearchSection() {
                       1650tk/year
                     </div>
                   </div>
-
-                  {/* Decorative elements */}
                   <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-blue-500 rounded-full"></div>
                   <div className="absolute -top-1 -left-1 w-2 h-2 bg-pink-500 rounded-full"></div>
                 </div>
