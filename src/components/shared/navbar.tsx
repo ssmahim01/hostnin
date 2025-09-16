@@ -362,7 +362,7 @@ export function Navbar() {
                 <Link
                   href="https://my.hostnin.com"
                   target="_blank"
-                  className="flex items-center gap-2 p-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md text-base"
+                  className="flex items-center gap-2 p-5 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md text-base"
                 >
                   <LayoutDashboard className="w-5 h-5" />
                   Dashboard
