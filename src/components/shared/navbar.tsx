@@ -289,7 +289,7 @@ export function Navbar() {
       {isOpen && (
         <div className="flex flex-col h-full min-h-screen bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 relative">
           {/* Scroll area for nav items */}
-          <ScrollArea className="flex-1 overflow-y-auto py-4 max-h-[90vh]">
+          <ScrollArea className="flex-1 overflow-y-auto py-4 max-h-[80vh]">
             <div className="flex flex-col space-y-3 px-4">
               {navItems.map((item) =>
                 item.hasDropdown ? (
