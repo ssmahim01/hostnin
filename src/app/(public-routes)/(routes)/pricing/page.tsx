@@ -1,7 +1,7 @@
 import Pricing from "@/components/shared/pricing";
 import { Metadata } from "next";
 import { TestimonialsSection } from "../../../../components/shared/testimonials";
-import { InfrastructurePartners } from "../../components/web-hosting/infrastructure-partners";
+import { InfrastructurePartners } from "../../../../components/shared/hosting/infrastructure-partners";
 import ControlPanelSection from "../../components/home/control-panel";
 
 export const metadata: Metadata = {

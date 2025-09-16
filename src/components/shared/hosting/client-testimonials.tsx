@@ -44,11 +44,12 @@ export default function Testimonials() {
   const pathname = usePathname();
 
   return (
-    <section className="bg-[#f8f8f9] md:pt-28 pt-16 pb-10">
+    <section className="bg-[#f8f8f9] md:pt-20 pt-16 pb-10">
       <div className="max-w-7xl mx-auto px-2">
         <div
           className={`${
-            pathname === "/hosting/dedicated-server"
+            pathname === "/hosting/dedicated-server" ||
+            pathname === "/hosting/reseller-hosting"
               ? "hidden"
               : "flex flex-col md:flex-row md:items-center md:justify-between gap-8 mb-10"
           }`}
@@ -71,7 +72,8 @@ export default function Testimonials() {
             />
             <div
               className={`flex items-center mb-1 mt-2 ${
-                pathname === "/hosting/dedicated-server"
+                pathname === "/hosting/dedicated-server" ||
+                pathname === "/hosting/reseller-hosting"
                   ? "text-amber-500"
                   : "text-green-500"
               } text-xl`}
@@ -114,15 +116,16 @@ export default function Testimonials() {
                       {t.name}
                     </h3>
                     <div className="flex mt-1">
-                      {pathname !== "/hosting/dedicated-server" ? (
+                      {pathname === "/hosting/dedicated-server" ||
+                      pathname === "/hosting/reseller-hosting" ? (
+                        <span className="text-amber-400 text-xl"> ★★★★★</span>
+                      ) : (
                         <Image
                           src="/assets/green-star.svg"
                           alt="Star"
                           width={100}
                           height={50}
                         />
-                      ) : (
-                        <span className="text-amber-400 text-xl"> ★★★★★</span>
                       )}
                     </div>
                   </div>

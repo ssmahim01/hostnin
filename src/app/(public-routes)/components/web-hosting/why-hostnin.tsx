@@ -7,9 +7,13 @@ import type { Feature } from "@/types/feature";
 
 export default function WhyHostnin() {
   return (
-    <section className="mt-6 pt-14 bg-cover bg-center bg-no-repeat" style={{
-      backgroundImage: "url('/assets/shape.png')",
-    }}>
+    <section
+      className="
+    mt-6 pt-14 
+    bg-cover bg-center bg-[url('/assets/shape.png')] bg-no-repeat 
+    dark:bg-none dark:bg-gray-900
+  "
+    >
       <div className="container max-w-7xl mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center gap-6">
           {/* Person Image */}

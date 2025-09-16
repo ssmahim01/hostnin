@@ -31,7 +31,7 @@ export default function FeatureBlock({
   // Smooth scroll function
   const handleScrollToPricing = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    const section = document.querySelector("#turbo-pricing");
+    const section = document.querySelector("#pricing");
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }
@@ -40,7 +40,7 @@ export default function FeatureBlock({
   return (
     <div
       className={`flex flex-col ${
-        reverse ? "md:flex-row-reverse" : "md:flex-row"
+        reverse ? "lg:flex-row-reverse" : "lg:flex-row"
       } items-center justify-between gap-6 sm:gap-8 xs:gap-12`}
     >
       <div className="flex-1 max-w-xl order-2 md:order-1">

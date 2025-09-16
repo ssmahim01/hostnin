@@ -2,7 +2,7 @@ import WebHostingHero from "@/app/(public-routes)/components/web-hosting/web-hos
 import { Metadata } from "next";
 import { TestimonialsSection } from "@/components/shared/testimonials";
 import { DomainSearchSection } from "@/app/(public-routes)/components/web-hosting/domain-search-section";
-import { InfrastructurePartners } from "@/app/(public-routes)/components/web-hosting/infrastructure-partners";
+import { InfrastructurePartners } from "@/components/shared/hosting/infrastructure-partners";
 import { WhyChooseHosting } from "@/app/(public-routes)/components/web-hosting/why-choose-hosting";
 import { MoneyBackGuarantee } from "@/app/(public-routes)/components/web-hosting/money-back-gurantee";
 import WhyHostnin from "@/app/(public-routes)/components/web-hosting/why-hostnin";

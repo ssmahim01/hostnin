@@ -71,6 +71,12 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   handler satisfies AppPageConfig<"/hosting/dedicated-server">
 }
 
+// Validate ../../src/app/(public-routes)/(routes)/hosting/reseller-hosting/page.tsx
+{
+  const handler = {} as typeof import("../../src/app/(public-routes)/(routes)/hosting/reseller-hosting/page.js")
+  handler satisfies AppPageConfig<"/hosting/reseller-hosting">
+}
+
 // Validate ../../src/app/(public-routes)/(routes)/hosting/turbo-hosting/page.tsx
 {
   const handler = {} as typeof import("../../src/app/(public-routes)/(routes)/hosting/turbo-hosting/page.js")
