@@ -347,7 +347,7 @@ export function Navbar() {
             <Button
               variant={"default"}
               onClick={() => setDashboardOpen((prev) => !prev)}
-              className="w-full flex justify-center gap-3 items-center p-4 hover:text-white/90 hover:border-2 hover:border-blue-600 rounded-md font-bold hover:bg-blue-700 bg-blue-600 text-white transition-colors"
+              className="w-full flex justify-center gap-3 items-center px-4 py-7 text-lg hover:text-white/90 hover:border-2 hover:border-blue-600 rounded-md font-bold hover:bg-blue-700 bg-blue-600 text-white transition-colors"
             >
               Dashboard
               <ChevronDown
@@ -362,7 +362,7 @@ export function Navbar() {
                 <Link
                   href="https://my.hostnin.com"
                   target="_blank"
-                  className="flex items-center gap-2 p-5 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md text-base"
+                  className="flex items-center gap-2 p-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md text-base"
                 >
                   <LayoutDashboard className="w-5 h-5" />
                   Dashboard
