@@ -141,7 +141,7 @@ export function Footer() {
               </span>
             </div>
 
-            <div className="flex items-end flex-col gap-4">
+            <div className="flex items-center md:items-end flex-col gap-4">
               <div className="flex space-x-4 text-2xl sm:text-3xl">
                 <a
                   target="_blank"

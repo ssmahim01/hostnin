@@ -234,13 +234,17 @@ export default function HostingFAQs() {
         value={activeTab}
         onValueChange={setActiveTab}
         className={`flex flex-col ${
-          pathname === "/hosting/dedicated-server" ? "flex-col" : "md:flex-row"
+          pathname === "/hosting/dedicated-server" ||
+          pathname === "/hosting/turbo-hosting"
+            ? "flex-col"
+            : "md:flex-row"
         } gap-6 sm:gap-10 w-full max-w-7xl justify-center items-start`}
       >
         {/* Left side: tab triggers */}
         <TabsList
           className={`flex ${
-            pathname === "/hosting/dedicated-server"
+            pathname === "/hosting/dedicated-server" ||
+            pathname === "/hosting/turbo-hosting"
               ? "flex-row overflow-x-auto h-full"
               : "flex-col md:w-[280px] h-full overflow-x-auto"
           } gap-4 w-full bg-transparent`}
@@ -276,7 +280,11 @@ export default function HostingFAQs() {
 
         {/* Right side: tab content */}
         {categories.map((cat) => (
-          <TabsContent key={cat.title} value={cat.title} className="flex-1 w-full">
+          <TabsContent
+            key={cat.title}
+            value={cat.title}
+            className="flex-1 w-full"
+          >
             <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 sm:p-6 min-h-[470px] w-full transition-colors duration-300">
               <Accordion
                 type="single"
