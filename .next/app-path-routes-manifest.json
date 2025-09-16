@@ -1,7 +1,12 @@
 {
+  "/(public-routes)/(footer-routes)/refund-policy/page": "/refund-policy",
   "/(public-routes)/(routes)/careers/page": "/careers",
   "/(public-routes)/(routes)/contact/page": "/contact",
   "/(public-routes)/(routes)/domain/page": "/domain",
+  "/(public-routes)/(routes)/hosting/bdix-hosting/page": "/hosting/bdix-hosting",
+  "/(public-routes)/(routes)/hosting/dedicated-server/page": "/hosting/dedicated-server",
+  "/(public-routes)/(routes)/hosting/reseller-hosting/page": "/hosting/reseller-hosting",
+  "/(public-routes)/(routes)/hosting/turbo-hosting/page": "/hosting/turbo-hosting",
   "/(public-routes)/(routes)/hosting/vps-hosting/page": "/hosting/vps-hosting",
   "/(public-routes)/(routes)/hosting/web-hosting/page": "/hosting/web-hosting",
   "/(public-routes)/(routes)/hosting/wordpress-hosting/page": "/hosting/wordpress-hosting",
