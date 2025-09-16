@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Zap } from "lucide-react";
 import { CountdownTimer } from "../web-hosting/countdown-timer";
+import FeatureCard from "@/components/shared/hosting/feature-card";
 
 export interface WordPressFeature {
   title: string;
@@ -282,38 +283,24 @@ export function WordPressBanner() {
       </div>
 
       {/* Feature Cards */}
-      <div className="md:block hidden absolute w-full left-0 lg:-bottom-32 -bottom-64 py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-8">
-            {wordpressBanner.features.map((feature, index) => (
-              <div
-                key={index}
-                className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
-              >
-                <div className="flex justify-between items-center mb-4">
-                  <Image
-                    src={feature.icon.src}
-                    alt={feature.icon.alt}
-                    width={feature.icon.width}
-                    height={feature.icon.height}
-                    className="w-16 h-16 object-contain rounded-full shadow-lg bg-blue-100 hover:scale-105"
-                  />
-                  <Image
-                    src={feature.icon.src}
-                    alt={feature.icon.alt}
-                    width={feature.icon.width}
-                    height={feature.icon.height}
-                    className="w-16 h-16 object-contain rounded-full grayscale hover:scale-105"
-                  />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
-            ))}
+      <div className="hidden sm:block">
+        <div className="absolute left-1/2 lg:-bottom-40 -bottom-64 transform -translate-x-1/2 z-20 w-full max-w-7xl px-4 md:px-0 font-[Mulish,sans-serif]">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center items-stretch">
+            <FeatureCard
+              iconSrc="/assets/wp-rocket.svg"
+              title="Fastest Loading Speed"
+              description="You create your website and we take care of the rest. This is the promise of NVMe SSD of super fast enhanced website performance."
+            />
+            <FeatureCard
+              iconSrc="/assets/wp-2.svg"
+              title="24/7 Dedicated Support"
+              description="We provide 24/7 LiveChat support for you to help anytime you need. Support is provided through calls, chat, and ticket systems."
+            />
+            <FeatureCard
+              iconSrc="/assets/wp-3.svg"
+              title="99.9% Uptime Guarantee"
+              description="There is no way a professional website can go down. Stay always online with our web hosting with a 99.9% uptime guarantee."
+            />
           </div>
         </div>
       </div>

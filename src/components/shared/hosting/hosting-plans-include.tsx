@@ -171,12 +171,12 @@ export const features: Feature[] = [
   },
 ];
 
-export default function WordPressPlansInclude() {
+export default function HostingPlansInclude({ title }: { title: string }) {
   return (
     <section className="w-full bg-[#fafbfc] dark:bg-gray-900 md:py-16 py-8">
       <div className="max-w-7xl mx-auto md:px-4">
         <h2 className="text-4xl sm:text-5xl font-semibold text-center text-[#03206B] dark:text-white md:mb-14 mb-7 tracking-tight">
-          All WordPress Hosting Plans Include
+          {title}
         </h2>
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-8 gap-4">

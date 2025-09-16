@@ -53,7 +53,7 @@ export function CountdownTimer({ targetDate }: CountdownTimerProps) {
   ];
 
   return (
-    <div className="flex gap-3">
+    <div className="flex gap-3 md:items-start items-center md:justify-start justify-center">
       {timeUnits.map((unit, index) => (
         <motion.div
           key={unit.label}

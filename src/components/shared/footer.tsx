@@ -213,7 +213,7 @@ export function Footer() {
                 </a>
               </div>
 
-              <div className="flex items-center gap-4 text-sm text-blue-200">
+              <div className="flex items-center md:justify-start justify-center gap-4 text-sm text-blue-200">
                 <Link
                   href="/privacy"
                   className="hover:text-white transition-colors"
