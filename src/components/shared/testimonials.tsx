@@ -154,9 +154,11 @@ export function TestimonialsSection() {
                       className={"w-11 h-6"}
                       priority
                     />
-                    <span className="text-blue-600 dark:text-blue-400 font-medium hover:cursor-pointer">
-                      More Review
-                    </span>
+                    <Link href={"/reviews"}>
+                      <span className="text-blue-600 dark:text-blue-400 font-medium hover:cursor-pointer">
+                        More Review
+                      </span>
+                    </Link>
                   </div>
                 </Link>
               </div>
