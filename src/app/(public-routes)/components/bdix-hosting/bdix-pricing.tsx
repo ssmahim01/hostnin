@@ -198,7 +198,7 @@ export default function BdixHostingPricing() {
                   <div className="mb-6">
                     {/* Starter Plan Special Gift */}
                     {plan.title === "Starter" && (
-                      <div className="bg-amber-100 rounded-lg p-3 relative group">
+                      <div className="bg-amber-50 rounded-lg p-3 relative group">
                         <div className="bg-gray-400 text-gray-700 text-xs font-semibold px-2 py-1 rounded-full inline-block mb-2">
                           Special Gift
                         </div>
@@ -226,7 +226,7 @@ export default function BdixHostingPricing() {
 
                     {/* Pro/Ultimate Plan Special Gift */}
                     {(plan.title === "Pro" || plan.title === "Ultimate") && (
-                      <div className="bg-amber-100 rounded-lg p-3 relative group">
+                      <div className="bg-amber-50 rounded-lg p-3 relative group">
                         <div className="bg-teal-500 text-white text-xs font-semibold px-2 py-1 rounded-full inline-block mb-2">
                           Special Gift
                         </div>
