@@ -7,6 +7,7 @@ import Link from "next/link";
 
 interface FeatureBlockProps {
   heading: string;
+  largeHeading?: boolean;
   description: string;
   buttonLabel?: string;
   buttonHref?: string;
@@ -19,6 +20,7 @@ interface FeatureBlockProps {
 
 export default function FeatureBlock({
   heading,
+  largeHeading,
   description,
   buttonLabel,
   buttonHref,
@@ -44,7 +46,11 @@ export default function FeatureBlock({
       } items-center justify-between gap-6 sm:gap-8 xs:gap-12`}
     >
       <div className="flex-1 max-w-xl order-2 md:order-1">
-        <h2 className="text-[27px] sm:text-2xl md:text-5xl font-bold text-[#0a174e] dark:text-white mb-3 sm:mb-4 leading-tight font-[Urbanist,sans-serif]">
+        <h2
+          className={`text-[27px] sm:text-2xl ${
+            largeHeading ? "md:text-4xl" : "md:text-5xl"
+          } font-bold text-[#0a174e] dark:text-white mb-3 sm:mb-4 leading-tight font-[Urbanist,sans-serif]`}
+        >
           {heading}
         </h2>
         <p className="text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 text-base md:text-[17px] leading-relaxed font-['Mulish',sans-serif]">

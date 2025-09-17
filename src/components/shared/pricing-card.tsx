@@ -28,7 +28,7 @@ export default function PricingCard({
 
   const gridCols =
     plans.length === 4
-      ? "lg:grid-cols-4 md:grid-cols-3 grid-cols-1"
+      ? "lg:grid-cols-4 md:grid-cols-2 grid-cols-1"
       : "lg:grid-cols-3 md:grid-cols-2 grid-cols-1";
 
   return (
@@ -92,7 +92,7 @@ export default function PricingCard({
                 </div>
               </div>
 
-              {hostingId !== "cloud" && (
+              {hostingId === "cloud" && (
                 <div className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 text-green-700 dark:text-green-400 font-bold text-sm md:text-base mb-6 px-4 py-2 rounded-full border border-green-200 dark:border-green-700 inline-block shadow-sm">
                   {plan?.guarantee}
                 </div>
@@ -114,7 +114,7 @@ export default function PricingCard({
             </CardHeader>
 
             <CardContent className="px-6 pb-4">
-              {hostingId !== "cloud" && (
+              {hostingId === "cloud" && (
                 <div className="mb-6">
                   <div className="bg-amber-50 dark:bg-amber-900/20 rounded-lg p-3 relative group">
                     <div className="bg-teal-500 text-white text-xs font-semibold px-2 py-1 rounded-full inline-block mb-2">

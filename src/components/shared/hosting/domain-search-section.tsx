@@ -46,7 +46,7 @@ export function DomainSearchSection() {
   };
 
   return (
-    <section className="py-16 bg-gray-50 dark:bg-gray-900">
+    <section className="pt-8 pb-16 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <Card className="max-w-6xl mx-auto bg-white dark:bg-gray-800 shadow-lg">
           <CardContent className="p-8">
@@ -68,13 +68,13 @@ export function DomainSearchSection() {
                       placeholder="yourdomain.com"
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
-                      className="h-14 text-lg rounded-l-lg rounded-r-none border-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-400"
+                      className="h-14 text-lg rounded-lg md:rounded-l-lg md:rounded-r-none border-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-400"
                     />
                     {/* <Search className="absolute right-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" /> */}
                   </div>
                   <button
                     type="submit"
-                    className="h-14 px-7 rounded-r-lg rounded-l-none bg-gradient-to-r from-[#0A8AFF] to-[#3B82F6] text-white font-medium flex gap-2 text-lg items-center hover:opacity-90 transition hover:cursor-pointer"
+                    className="h-14 px-7 rounded-lg md:rounded-r-lg md:rounded-l-none bg-gradient-to-r from-[#0A8AFF] to-[#3B82F6] text-white font-medium flex gap-2 justify-center text-lg items-center hover:opacity-90 transition hover:cursor-pointer"
                   >
                     <Search className="w-5 h-5" />
                     Search

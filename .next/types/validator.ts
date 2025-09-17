@@ -77,6 +77,12 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   handler satisfies AppPageConfig<"/hosting/bdix-hosting">
 }
 
+// Validate ../../src/app/(public-routes)/(routes)/hosting/cloud-hosting/page.tsx
+{
+  const handler = {} as typeof import("../../src/app/(public-routes)/(routes)/hosting/cloud-hosting/page.js")
+  handler satisfies AppPageConfig<"/hosting/cloud-hosting">
+}
+
 // Validate ../../src/app/(public-routes)/(routes)/hosting/dedicated-server/page.tsx
 {
   const handler = {} as typeof import("../../src/app/(public-routes)/(routes)/hosting/dedicated-server/page.js")

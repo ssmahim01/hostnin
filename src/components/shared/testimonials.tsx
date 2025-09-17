@@ -145,9 +145,19 @@ export function TestimonialsSection() {
                   }
                   target="_blank"
                 >
-                  <span className="text-blue-600 dark:text-blue-400 font-medium hover:underline cursor-pointer">
-                    📄 More Review
-                  </span>
+                  <div className="flex gap-2 items-center">
+                    <Image
+                      src={"/assets/arrow-dark.webp"}
+                      alt="Right Arrow"
+                      width={120}
+                      height={90}
+                      className={"w-11 h-6"}
+                      priority
+                    />
+                    <span className="text-blue-600 dark:text-blue-400 font-medium hover:cursor-pointer">
+                      More Review
+                    </span>
+                  </div>
                 </Link>
               </div>
             </div>
