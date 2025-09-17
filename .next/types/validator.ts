@@ -47,6 +47,12 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
 }
 
 
+// Validate ../../src/app/(public-routes)/(footer-routes)/affiliate/page.tsx
+{
+  const handler = {} as typeof import("../../src/app/(public-routes)/(footer-routes)/affiliate/page.js")
+  handler satisfies AppPageConfig<"/affiliate">
+}
+
 // Validate ../../src/app/(public-routes)/(footer-routes)/refund-policy/page.tsx
 {
   const handler = {} as typeof import("../../src/app/(public-routes)/(footer-routes)/refund-policy/page.js")

@@ -18,7 +18,7 @@ export default function RefundPolicy() {
       </p>
 
       {/* 1. Refund Eligibility */}
-      <Card className="mb-10 bg-white dark:bg-neutral-800 border border-gray-200 dark:border-neutral-700">
+      <Card className="mb-10 bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700">
         <CardHeader>
           <CardTitle className="text-2xl font-bold mb-4 text-blue-600 text-center">
             1. Refund Eligibility
@@ -73,7 +73,7 @@ export default function RefundPolicy() {
       </Card>
 
       {/* 2. Refund Process */}
-      <Card className="mb-10 bg-white dark:bg-neutral-800 border border-gray-200 dark:border-neutral-700">
+      <Card className="mb-10 bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700">
         <CardHeader>
           <CardTitle className="text-2xl font-bold mb-4 text-blue-600 text-center">
             2. Refund Process and Timelines
@@ -119,7 +119,7 @@ export default function RefundPolicy() {
       </Card>
 
       {/* 3. Requesting a Refund */}
-      <Card className="mb-10 bg-white dark:bg-neutral-800 border border-gray-200 dark:border-neutral-700">
+      <Card className="mb-10 bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700">
         <CardHeader>
           <CardTitle className="text-2xl font-bold mb-4 text-blue-600 text-center">
             3. Requesting a Refund
@@ -141,7 +141,7 @@ export default function RefundPolicy() {
       </Card>
 
       {/* 4. Special Cases */}
-      <Card className="mb-10 bg-white dark:bg-neutral-800 border border-gray-200 dark:border-neutral-700">
+      <Card className="mb-10 bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700">
         <CardHeader>
           <CardTitle className="text-2xl font-bold mb-4 text-blue-600 text-center">
             4. Special Cases and Considerations
