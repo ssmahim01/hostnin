@@ -7,7 +7,7 @@ const WHMCS_SECRET = "by6T9nfLz4lkImHY7HGUJtzugYznJJVX";
 export async function POST(req: NextRequest) {
   try {
     const { username, password } = await req.json();
-    console.log(username, password);
+    // console.log(username, password);
 
     const payload = new URLSearchParams({
       action: "ValidateLogin",
