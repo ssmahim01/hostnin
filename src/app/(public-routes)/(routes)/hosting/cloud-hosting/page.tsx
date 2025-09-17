@@ -1,4 +1,3 @@
-import { CloudHostingPricing } from "@/app/(public-routes)/components/cloud-hosting/cloud-hosting-pricing";
 import WhyHostnin from "@/components/shared/hosting/why-hostnin";
 import { Banner } from "@/components/shared/hosting/banner";
 import { MoneyBackGuarantee } from "@/components/shared/hosting/money-back-gurantee";
@@ -12,6 +11,7 @@ import SpecialsSection from "@/app/(public-routes)/components/cloud-hosting/spec
 import CloudPlanFeatures from "@/app/(public-routes)/components/cloud-hosting/cloud-plan-features";
 import CloudControlPanel from "@/app/(public-routes)/components/cloud-hosting/cloud-control-panel";
 import ComprehensiveGuides from "@/app/(public-routes)/components/cloud-hosting/comprehensive-guides";
+import CloudHostingPricing from "@/app/(public-routes)/components/cloud-hosting/cloud-hosting-pricing";
 
 export const metadata: Metadata = {
   title: "Cloud Hosting | Hostnin – Fast, Secure & Scalable Cloud Hosting",

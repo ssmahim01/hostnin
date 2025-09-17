@@ -2,13 +2,12 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import PricingCard from "@/components/shared/pricing-card";
 import { hostingPlansData } from "@/data/pricing-data";
 
 export function WordPressPricingSection() {
   const [billingCycle, setBillingCycle] = useState<"monthly" | "yearly">(
-    "yearly"
+    "monthly"
   );
 
   const currentHostingData = hostingPlansData.find(
@@ -54,14 +53,28 @@ export function WordPressPricingSection() {
                 </button>
               </div>
               <div className="text-base flex gap-2 items-center text-blue-600 dark:text-gray-200 font-medium">
-                <Image
-                  src={"/assets/right-arrow.png"}
-                  alt="Right Arrow"
-                  width={120}
-                  height={90}
-                  className={"w-16 h-14"}
-                  priority
-                />
+                <svg
+              width="90"
+              height="40"
+              viewBox="0 0 90 40"
+              fill="none"
+              className="absolute -top-6 left-0 sm:-top-6 lg:-top-8 lg:left-0"
+              style={{ pointerEvents: "none" }}
+            >
+              <path
+                d="M10 30 C40 0, 70 0, 80 20"
+                stroke="#2563eb"
+                strokeWidth="2"
+                strokeDasharray="4,4"
+                fill="none"
+                markerEnd="url(#arrowhead)"
+              />
+              <defs>
+                <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+                  <path d="M0,0 L8,4 L0,8 L2,4 Z" fill="#2563eb" />
+                </marker>
+              </defs>
+            </svg>
                 <span className="font-medium text-base">Flat 75% save</span>
               </div>
             </div>

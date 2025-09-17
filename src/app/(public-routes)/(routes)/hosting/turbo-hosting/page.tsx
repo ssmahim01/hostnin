@@ -1,7 +1,7 @@
 import ManagedTurboHighlights from "@/app/(public-routes)/components/turbo-hosting/managed-turbo-highlights";
 import TurboHostingBanner from "@/app/(public-routes)/components/turbo-hosting/turbo-hosting-banner";
 import TurboHostingFeatures from "@/app/(public-routes)/components/turbo-hosting/turbo-hosting-features";
-import { TurboHostingPricing } from "@/app/(public-routes)/components/turbo-hosting/turbo-hosting-pricing";
+import TurboHostingPricing from "@/app/(public-routes)/components/turbo-hosting/turbo-hosting-pricing";
 import HostingFAQs from "@/components/shared/hosting/hosting-faqs";
 import HostingPlansInclude from "@/components/shared/hosting/hosting-plans-include";
 import { QuestionsSection } from "@/components/shared/questions";

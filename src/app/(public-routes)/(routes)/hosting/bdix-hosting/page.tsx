@@ -1,5 +1,5 @@
 import BdixHostingPlans from "@/app/(public-routes)/components/bdix-hosting/bdix-hosting-plans";
-import { BDIXHostingPricing } from "@/app/(public-routes)/components/bdix-hosting/bdix-pricing";
+import BDIXHostingPricing from "@/app/(public-routes)/components/bdix-hosting/bdix-pricing";
 import { WhyChooseHosting } from "@/components/shared/hosting/why-choose-hosting";
 import { Banner } from "@/components/shared/hosting/banner";
 import { DomainSearchSection } from "@/components/shared/hosting/domain-search-section";

@@ -187,20 +187,29 @@ export function Navbar() {
             <div className="hidden lg:flex items-center gap-2">
               {navItems.map((item) => (
                 <div key={item.label} className="relative group">
-                  <Link
-                    href={item.href}
-                    className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors duration-200 flex items-center gap-1"
-                  >
-                    {item.label}
-                    {item.hasDropdown && (
+                  {item.hasDropdown && item.dropdownItems ? (
+                    <button
+                      type="button"
+                      className="text-gray-700 dark:text-gray-300 text-base hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 font-medium transition-colors duration-200 flex items-center gap-1"
+                    >
+                      {item.label}
                       <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
-                    )}
-                  </Link>
+                    </button>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 text-base font-medium transition-colors duration-200 flex items-center gap-1"
+                    >
+                      {item.label}
+                    </Link>
+                  )}
+
                   {item.hasDropdown && item.dropdownItems && (
                     <div
-                      className={`absolute left-0 mt-2 bg-white dark:bg-gray-900 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0
-                      ${item.label === "Hosting" ? "w-[550px]" : "w-56"}`}
+                      className={`absolute left-0 mt-2 bg-accent dark:bg-gray-900 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0
+                    ${item.label === "Hosting" ? "w-[550px]" : "w-60"}`}
                     >
+                      {/* Dropdown items remain links */}
                       <div
                         className={`grid gap-2 ${
                           item.label === "Hosting"

@@ -2,21 +2,18 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import PricingCard from "./pricing-card";
 import { hostingPlansData } from "@/data/pricing-data";
 
 export default function Pricing() {
   const [billingCycle, setBillingCycle] = useState<"monthly" | "yearly">(
-    "yearly"
+    "monthly"
   );
   const [activeHostingType, setActiveHostingType] = useState("web");
 
   const currentHostingData = hostingPlansData.find(
     (hosting) => hosting.id === activeHostingType
   );
-
-  const arrowSrc = "/assets/right-arrow.png";
 
   return (
     <section className="py-20 bg-gray-50 dark:bg-gray-900">
@@ -69,16 +66,30 @@ export default function Pricing() {
                 Yearly
               </button>
             </div>
-            <div className="text-base flex items-center text-blue-500 dark:text-gray-200 font-medium">
-              <Image
-                src={arrowSrc}
-                alt="Right Arrow"
-                width={120}
-                height={90}
-                className={"w-16 h-14"}
-                priority
+             <div className="relative flex items-center -ml-3 mt-3 sm:mt-0" style={{ minWidth: 120 }}>
+            <svg
+              width="90"
+              height="40"
+              viewBox="0 0 90 40"
+              fill="none"
+              className="absolute -top-6 left-0 sm:-top-6 lg:-top-8 lg:left-0"
+              style={{ pointerEvents: "none" }}
+            >
+              <path
+                d="M10 30 C40 0, 70 0, 80 20"
+                stroke="#2563eb"
+                strokeWidth="2"
+                strokeDasharray="4,4"
+                fill="none"
+                markerEnd="url(#arrowhead)"
               />
-              <span className="text-base font-medium">
+              <defs>
+                <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+                  <path d="M0,0 L8,4 L0,8 L2,4 Z" fill="#2563eb" />
+                </marker>
+              </defs>
+            </svg>
+            <span className="text-base font-medium">
                 Upto{" "}
                 {currentHostingData?.id === "web"
                   ? "76%"
@@ -89,7 +100,7 @@ export default function Pricing() {
                   : "75%"}{" "}
                 Save
               </span>
-            </div>
+          </div>
           </div>
         </div>
 
