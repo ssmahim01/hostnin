@@ -5,14 +5,30 @@ import { ArrowRight } from "lucide-react";
 import { toast } from "sonner";
 import { plans } from "@/data/hosting-plan";
 import Image from "next/image";
+import { Plan } from "@/types/hosting-plan";
+import { useRouter } from "next/navigation";
 
 export default function HostingPlan() {
-  const handleChoosePlan = (planTitle: string) => {
+  const router = useRouter();
+
+  const handleChoosePlan = (plan: Plan) => {
     toast("Success!", {
-      description: `You have selected the ${planTitle}. Redirecting to checkout...`,
+      description: `You have selected the ${plan.title}. Redirecting...`,
       duration: 2000,
       className: "bg-green-500 text-white",
     });
+
+    // compute the route
+    const route =
+      plan.title === "Cloud Hosting"
+        ? "/hosting/cloud-hosting"
+        : plan.title === "Web Hosting"
+        ? "/hosting/web-hosting"
+        : "/hosting/turbo-hosting";
+
+    setTimeout(() => {
+      router.push(route);
+    }, 1000);
   };
 
   return (
@@ -27,11 +43,11 @@ export default function HostingPlan() {
               key={plan.id}
               className="relative border group border-gray-200 dark:border-gray-700 rounded-lg p-6 bg-accent text-gray-900 dark:text-gray-100 transition-all duration-300 ease-in-out hover:bg-blue-700 hover:text-white/95 dark:hover:text-blue-200"
             >
-                {plan.giftBadge && (
+              {plan.giftBadge && (
                 <div className="absolute top-0 right-0 bg-yellow-400 text-gray-800 text-xs font-bold px-3 py-1 rounded-bl-lg">
-                    Free Gift
+                  Free Gift
                 </div>
-                )}
+              )}
               <div className="flex flex-col items-center justify-center text-center gap-4">
                 <figure>
                   <Image
@@ -53,7 +69,7 @@ export default function HostingPlan() {
                 <Button
                   variant="outline"
                   className="w-full flex gap-2 items-center hover:scale-110 bg-transparent border-gray-300 dark:border-gray-600 text-blue-600 dark:text-white group-hover:text-gray-800 group-hover:bg-white/90 group transition-colors duration-300 hover:cursor-pointer font-bold"
-                  onClick={() => handleChoosePlan(plan?.title)}
+                  onClick={() => handleChoosePlan(plan)}
                 >
                   <span>See Plans</span> <ArrowRight className="w-4 h-4" />
                 </Button>
