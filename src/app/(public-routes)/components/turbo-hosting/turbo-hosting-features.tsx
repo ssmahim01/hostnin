@@ -11,7 +11,7 @@ export default function TurboHostingFeatures() {
           description={`In addition to our web hosting solution, Hostnin's also offers advanced anti-virus and spam protections, along with up to unlimited storage mailboxes. For any business to be successful, email correspondence needs to remain uninterrupted at all times.
           In case you have any confusion regarding which Email Solution is best suited for your business, you can contact us for assistance. Live Chat is available 24 hours a day, 7 days a week.`}
           buttonLabel="Contact Us"
-          buttonHref="https://tawk.to/chat/64e3c190cc26a871b0308e91/1h8cqo8b6"
+          buttonHref="/contact"
           imageSrc="/assets/man.png"
           imageAlt="Security Features"
         />
