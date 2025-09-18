@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
 import Link from "next/link";
 
@@ -53,15 +52,15 @@ export default function SupportBanner() {
           </p>
         </div>
         <div className="flex flex-col md:flex-row items-center gap-4">
-          <Button
-            variant={"default"}
-            className="bg-blue-600 hover:cursor-pointer hover:bg-blue-700 text-white rounded-md px-8 py-6 font-semibold"
-            asChild
+          <button
+            className="px-6 py-3 cursor-pointer bg-transparent text-white/95 border border-blue-600 font-semibold rounded-lg shadow 
+             hover:bg-blue-700 hover:text-white transform hover:scale-105 
+             transition-all duration-300 ease-in-out"
           >
             <Link href={supportBannerData.buttonHref} target="_blank">
               {supportBannerData.buttonLabel}
             </Link>
-          </Button>
+          </button>
           <Link
             href={"tel:01325875955"}
             className="flex items-center gap-2 text-lg font-bold"

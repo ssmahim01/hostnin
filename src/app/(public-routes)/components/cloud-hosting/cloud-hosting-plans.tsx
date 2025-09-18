@@ -1,8 +1,6 @@
 "use client";
 
-import React from "react";
-
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Check, X } from "lucide-react";
 import {
@@ -17,66 +15,34 @@ import type {
 export default function CloudHostingPlans() {
   const [isSticky, setIsSticky] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
-  const tableRef = useRef<HTMLTableElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLTableSectionElement>(null);
+  const [headerHeight, setHeaderHeight] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (!sectionRef.current || !tableRef.current || !containerRef.current)
-        return;
+      if (!sectionRef.current || !headerRef.current) return;
 
       const sectionRect = sectionRef.current.getBoundingClientRect();
-      const containerRect = containerRef.current.getBoundingClientRect();
+      const headerH = headerRef.current.offsetHeight;
+      setHeaderHeight(headerH);
+
+      // navbar height offset
       const navbarHeight = 64;
-
-      // Check if section is in view and table header should be sticky
-      const shouldBeSticky =
+      const shouldSticky =
         sectionRect.top <= navbarHeight &&
-        sectionRect.bottom > navbarHeight + 100;
+        sectionRect.bottom > headerH + navbarHeight;
 
-      if (shouldBeSticky !== isSticky) {
-        setIsSticky(shouldBeSticky);
-
-        if (shouldBeSticky) {
-          const thead = tableRef.current.querySelector("thead");
-          if (thead) {
-            const stickyHeader = thead as HTMLElement;
-            stickyHeader.style.position = "fixed";
-            stickyHeader.style.top = `${navbarHeight}px`;
-            stickyHeader.style.left = `${containerRect.left}px`;
-            stickyHeader.style.width = `${containerRect.width}px`;
-            stickyHeader.style.zIndex = "40";
-            stickyHeader.style.boxShadow = "0 4px 6px -1px rgba(0, 0, 0, 0.1)";
-            stickyHeader.style.backgroundColor = "rgb(30, 64, 175)";
-            stickyHeader.style.backgroundImage =
-              "linear-gradient(to right, rgb(30, 64, 175), rgb(37, 99, 235))";
-          }
-        } else {
-          // Reset sticky styles
-          const thead = tableRef.current.querySelector("thead");
-          if (thead) {
-            const stickyHeader = thead as HTMLElement;
-            stickyHeader.style.position = "static";
-            stickyHeader.style.top = "auto";
-            stickyHeader.style.left = "auto";
-            stickyHeader.style.width = "auto";
-            stickyHeader.style.zIndex = "auto";
-            stickyHeader.style.boxShadow = "none";
-            stickyHeader.style.backgroundColor = "";
-            stickyHeader.style.backgroundImage = "";
-          }
-        }
-      }
+      setIsSticky(shouldSticky);
     };
 
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleScroll);
-
+    handleScroll();
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleScroll);
     };
-  }, [isSticky]);
+  }, []);
 
   const renderFeatureValue = (feature: CloudHostingFeature) => {
     if (typeof feature.value === "boolean") {
@@ -102,7 +68,6 @@ export default function CloudHostingPlans() {
       ultimate:
         "https://my.hostnin.com/index.php/store/cloud-hosting/ultimate?billingcycle=annually",
     };
-
     const url = orderUrls[planId as keyof typeof orderUrls];
     if (url) {
       window.open(url, "_blank");
@@ -172,7 +137,6 @@ export default function CloudHostingPlans() {
                 key={plan.id}
                 className="border-b border-gray-200 dark:border-gray-700 last:border-b-0"
               >
-                {/* Plan Header */}
                 <div className="bg-gradient-to-r from-blue-700 to-blue-600 p-4 text-center space-y-3">
                   <div className="font-bold text-xl text-white">
                     {plan.name}
@@ -192,7 +156,6 @@ export default function CloudHostingPlans() {
                   </Button>
                 </div>
 
-                {/* Plan Features */}
                 <div className="p-4">
                   {featureCategories.map((category) => {
                     const categoryFeatures = getPlanFeaturesForCategory(
@@ -228,8 +191,68 @@ export default function CloudHostingPlans() {
           </div>
 
           {/* Desktop Layout */}
-          <div ref={containerRef} className="hidden lg:block">
-            <table ref={tableRef} className="w-full table-fixed">
+          <div className="hidden lg:block relative">
+            {/* Fixed clone header */}
+            {isSticky && (
+              <div
+                className="fixed top-16 left-0 right-0 z-40 bg-gradient-to-r from-blue-800 to-blue-600 shadow-lg hidden lg:block"
+                style={{
+                  width: "100%",
+                  maxWidth: "76rem",
+                  margin: "0 auto",
+                  left: "50%",
+                  transform: "translateX(-50%)",
+                  pointerEvents: "none",
+                }}
+              >
+                <table className="w-full">
+                  <colgroup>
+                    <col className="w-1/5" />
+                    {cloudHostingPlans.map((_, idx) => (
+                      <col key={idx} className="w-1/5" />
+                    ))}
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th className="p-4 text-white font-bold text-lg border-r border-blue-700/50">
+                        Features
+                      </th>
+                      {cloudHostingPlans.map((plan, index) => (
+                        <th
+                          key={plan.id}
+                          className={`p-4 text-white text-center border-r border-blue-700/50 ${
+                            index === cloudHostingPlans.length - 1
+                              ? "border-r-0"
+                              : ""
+                          }`}
+                        >
+                          <div className="space-y-3">
+                            <div className="font-bold text-xl">{plan.name}</div>
+                            <div className="bg-white/15 rounded-lg p-2 backdrop-blur-sm border border-white/25">
+                              <div className="text-[26px] font-bold text-white">
+                                {plan.currency}
+                                {plan.price}
+                              </div>
+                              <div className="text-sm text-blue-200">
+                                {plan.period}
+                              </div>
+                            </div>
+                            <Button
+                              onClick={() => handleOrderNow(plan.id)}
+                              className="w-full bg-white/95 hover:bg-white text-black font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 cursor-pointer"
+                            >
+                              Order Now
+                            </Button>
+                          </div>
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                </table>
+              </div>
+            )}
+
+            <table className="w-full table-fixed">
               <colgroup>
                 <col className="w-1/5" />
                 <col className="w-1/5" />
@@ -238,15 +261,20 @@ export default function CloudHostingPlans() {
                 <col className="w-1/5" />
               </colgroup>
 
-              {/* Table Header */}
-              <thead className="bg-gradient-to-r from-blue-800 to-blue-600">
-                <tr
-                  className={`${
-                    isSticky
-                      ? "flex justify-between *:w-full gap-4 items-center"
-                      : ""
-                  }`}
-                >
+              {/* Spacer when sticky header shown */}
+              {isSticky && (
+                <tbody>
+                  <tr>
+                    <td colSpan={5} style={{ height: headerHeight }}></td>
+                  </tr>
+                </tbody>
+              )}
+
+              <thead
+                ref={headerRef}
+                className="bg-gradient-to-r from-blue-800 to-blue-600"
+              >
+                <tr>
                   <th className="p-4 text-white font-bold text-lg border-r border-blue-700/50">
                     Features
                   </th>
@@ -287,7 +315,6 @@ export default function CloudHostingPlans() {
                   const categoryFeatures = getFeaturesForCategory(category.id);
                   return (
                     <React.Fragment key={category.id}>
-                      {/* Category Header - only show for non-basic categories */}
                       {categoryIndex > 0 && (
                         <tr className="bg-gradient-to-r from-blue-800 to-blue-600">
                           <th
@@ -298,8 +325,6 @@ export default function CloudHostingPlans() {
                           </th>
                         </tr>
                       )}
-
-                      {/* Category Features */}
                       {categoryFeatures.map((feature, featureIndex) => (
                         <tr
                           key={`${category.id}-${featureIndex}`}

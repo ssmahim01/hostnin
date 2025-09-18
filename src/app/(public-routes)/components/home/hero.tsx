@@ -1,7 +1,6 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { CircleCheckBig } from "lucide-react";
+import { ArrowRight, CircleCheckBig } from "lucide-react";
 import Image from "next/image";
 import { heroData } from "@/data/hero";
 
@@ -38,13 +37,17 @@ export function HeroSection() {
             {heroData.description}
           </p>
           <div className="flex items-center flex-col md:flex-row gap-4 lg:justify-start justify-center">
-            <Button
-              variant="secondary"
-              className="bg-white text-blue-800 hover:scale-105 hover:bg-gray-100 rounded-full px-9 hover:shadow-lg py-7 text-base font-bold hover:cursor-pointer"
+            <button
+              className="group w-full sm:w-auto cursor-pointer bg-transparent text-gray-100 font-bold px-6 sm:px-8 py-3 sm:py-4 
+            rounded-full border border-gray-300 hover:bg-blue-700 hover:text-white/95
+            transition-transform duration-300 ease-in-out 
+            flex items-center justify-center gap-2 text-sm sm:text-base lg:text-[17px] hover:border-none
+              hover:scale-105"
               onClick={handleScrollToPlan}
             >
-              {heroData.cta}
-            </Button>
+              <span>{heroData.cta}</span>
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-100 group-hover:text-white/95" />
+            </button>
             <span className="text-lg opacity-80 font-semibold">
               {heroData.trusted}
             </span>

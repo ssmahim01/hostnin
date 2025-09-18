@@ -43,19 +43,19 @@ export default function Offer() {
         </p>
 
         <div className="flex flex-col justify-center gap-4 mt-8 items-center">
-          <Button
-            variant={"default"}
-            asChild
-            className="py-6 px-12 hover:scale-110 transition-colors duration-300 bg-blue-600 hover:bg-blue-700 text-lg shadow-lg hover:shadow-2xl text-white rounded-sm"
+          <button
+            className="px-10 py-3 cursor-pointer bg-transparent border border-blue-600 text-blue-400 font-semibold rounded-lg shadow 
+             hover:bg-blue-700 hover:text-white transform hover:scale-105 
+             transition-all duration-300 ease-in-out"
           >
             <Link href={offerData.primaryButton.link}>
               {offerData.primaryButton.label}
             </Link>
-          </Button>
+          </button>
           <Button
             asChild
             variant="ghost"
-            className="text-yellow-500 hover:text-yellow-600 hover:bg-transparent text-xl font-semibold"
+            className="text-yellow-400 hover:text-yellow-600 hover:bg-transparent text-xl font-semibold"
           >
             <Link href={offerData.secondaryButton.link} target="_blank">
               {offerData.secondaryButton.label}

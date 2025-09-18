@@ -1,19 +1,21 @@
-export interface Plan {
-  id: string;
-  title: string;
-  price: string;
-  period?: string;
-  link: string;
+export interface PlanItem {
+  name: string;
+  price: number;
+  priceUnit: string;
+  orderLink: string;
 }
 
-export interface FeatureRow {
-  key: string;
+export interface Feature {
   label: string;
-  values: [string, string, string];
+  values: string[];
 }
 
-export interface FeatureGroup {
-  key: string;
-  title?: string;
-  rows: FeatureRow[];
+export interface Section {
+  title: string;
+  features: Feature[];
+}
+
+export interface BdixHostingPlans {
+  plans: PlanItem[];
+  sections: Section[];
 }

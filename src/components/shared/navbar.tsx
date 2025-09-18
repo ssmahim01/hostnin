@@ -26,6 +26,7 @@ import {
   Wrench,
   BadgePlus,
   LayoutDashboard,
+  Star,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { NavItem } from "@/types/nav";
@@ -115,6 +116,11 @@ const navItems: NavItem[] = [
         label: "Terms & Condition",
         href: "/terms-conditions",
         icon: FileText,
+      },
+      {
+        label: "Testimonials",
+        href: "/reviews",
+        icon: Star,
       },
       {
         label: "Careers",

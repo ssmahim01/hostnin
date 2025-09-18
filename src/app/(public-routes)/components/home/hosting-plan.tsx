@@ -1,23 +1,16 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { toast } from "sonner";
 import { plans } from "@/data/hosting-plan";
 import Image from "next/image";
 import { Plan } from "@/types/hosting-plan";
 import { useRouter } from "next/navigation";
+import { Card } from "@/components/ui/card";
 
 export default function HostingPlan() {
   const router = useRouter();
 
   const handleChoosePlan = (plan: Plan) => {
-    toast("Success!", {
-      description: `You have selected the ${plan.title}. Redirecting...`,
-      duration: 2000,
-      className: "bg-green-500 text-white",
-    });
-
     // compute the route
     const route =
       plan.title === "Cloud Hosting"
@@ -26,9 +19,7 @@ export default function HostingPlan() {
         ? "/hosting/web-hosting"
         : "/hosting/turbo-hosting";
 
-    setTimeout(() => {
-      router.push(route);
-    }, 1000);
+    router.push(route);
   };
 
   return (
@@ -39,9 +30,9 @@ export default function HostingPlan() {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {plans.map((plan) => (
-            <div
+            <Card
               key={plan.id}
-              className="relative border group border-gray-200 dark:border-gray-700 rounded-lg p-6 bg-accent text-gray-900 dark:text-gray-100 transition-all duration-300 ease-in-out hover:bg-blue-700 hover:text-white/95 dark:hover:text-blue-200"
+              className="relative border group border-gray-200 dark:border-gray-700 rounded-lg p-6 bg-accent text-gray-900 dark:text-gray-100 transition-all duration-300 ease-in-out hover:bg-blue-700 hover:text-white/95 dark:hover:text-blue-200 mx-2"
             >
               {plan.giftBadge && (
                 <div className="absolute top-0 right-0 bg-yellow-400 text-gray-800 text-xs font-bold px-3 py-1 rounded-bl-lg">
@@ -66,15 +57,16 @@ export default function HostingPlan() {
                 </h3>
                 <p className="text-2xl font-bold mb-6">{plan.price}</p>
 
-                <Button
-                  variant="outline"
-                  className="w-full flex gap-2 items-center hover:scale-110 bg-transparent border-gray-300 dark:border-gray-600 text-blue-600 dark:text-white group-hover:text-gray-800 group-hover:bg-white/90 group transition-colors duration-300 hover:cursor-pointer font-bold"
+                <button
+                  className="w-full py-2 cursor-pointer bg-white border border-blue-600 text-blue-600 font-semibold rounded-lg shadow justify-center flex gap-2 items-center
+             hover:bg-blue-50 hover:text-blue-600 transform mb-1
+             transition-all duration-300 ease-in-out"
                   onClick={() => handleChoosePlan(plan)}
                 >
                   <span>See Plans</span> <ArrowRight className="w-4 h-4" />
-                </Button>
+                </button>
               </div>
-            </div>
+            </Card>
           ))}
         </div>
       </div>

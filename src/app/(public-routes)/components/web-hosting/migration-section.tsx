@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
 
@@ -29,12 +28,13 @@ export default function MigrationSection() {
               of experts who are always ready to migrate your website smoothly.
             </p>
             <Link href={"/contact"}>
-              <Button
-                variant={"default"}
-                className="bg-blue-600 rounded-sm py-6 hover:scale-105 duration-500 transition-transform transform-3d hover:cursor-pointer hover:bg-blue-700 text-white"
+              <button
+                className="px-6 py-3 cursor-pointer bg-white border border-blue-600 text-blue-600 font-semibold rounded-lg shadow 
+             hover:bg-blue-700 hover:text-white transform hover:scale-105 
+             transition-all duration-300 ease-in-out"
               >
                 Request Free Migration
-              </Button>
+              </button>
             </Link>
           </div>
         </CardContent>

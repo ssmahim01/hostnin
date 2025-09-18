@@ -13,6 +13,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Image from "next/image";
 import Link from "next/link";
+import { useTheme } from "next-themes";
 
 const testimonials: Testimonial[] = [
   {
@@ -78,6 +79,10 @@ const testimonials: Testimonial[] = [
 ];
 
 export function TestimonialsSection() {
+  const { theme } = useTheme();
+  const arrowImage =
+    theme === "light" ? "/assets/arrow-dark.webp" : "/assets/right-arrow.png";
+
   return (
     <section className="pt-4 pb-16 bg-gray-50 dark:bg-gray-900/50">
       <div className="container max-w-7xl mx-auto px-4">
@@ -147,11 +152,13 @@ export function TestimonialsSection() {
                 >
                   <div className="flex gap-2 items-center">
                     <Image
-                      src={"/assets/arrow-dark.webp"}
+                      src={arrowImage}
                       alt="Right Arrow"
                       width={120}
                       height={90}
-                      className={"w-11 h-6"}
+                      className={`${
+                        theme === "light" ? "w-11 h-6" : "w-12 h-12"
+                      }`}
                       priority
                     />
                     <Link href={"/reviews"}>

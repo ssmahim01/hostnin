@@ -1,119 +1,169 @@
 "use client";
+import { plans } from "@/data/bdix-hosting-plans";
 import React, { useEffect, useRef, useState } from "react";
-import { Button } from "@/components/ui/button";
-import { groups, plans } from "@/data/bdix-hosting-plans";
-import {
-  Table,
-  TableHeader,
-  TableBody,
-  TableHead,
-  TableRow,
-  TableCell,
-} from "@/components/ui/table";
-import Link from "next/link";
 
 export default function BdixHostingPlans() {
   const [isSticky, setIsSticky] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const tableRef = useRef<HTMLTableElement>(null);
+  const tableSectionRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLTableSectionElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (!sectionRef.current || !tableRef.current) return;
+      if (!tableSectionRef.current || !headerRef.current) return;
 
-      const sectionRect = sectionRef.current.getBoundingClientRect();
-      const tableRect = tableRef.current.getBoundingClientRect();
-
+      const sectionRect = tableSectionRef.current.getBoundingClientRect();
+      const headerHeight = headerRef.current.offsetHeight;
       const shouldBeSticky =
-        sectionRect.top <= 64 &&
-        sectionRect.bottom > 100 &&
-        tableRect.top <= 64;
+        sectionRect.top <= 0 && sectionRect.bottom > headerHeight;
 
       setIsSticky(shouldBeSticky);
     };
 
     window.addEventListener("scroll", handleScroll);
     handleScroll();
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <div
-      ref={sectionRef}
-      className="bg-[#f8f8f8] dark:bg-gray-900 py-8 sm:py-12 lg:py-16 lg:pb-28"
-    >
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-8">
-          <h1 className="text-[26px] sm:text-3xl lg:text-5xl font-bold text-black dark:text-white mb-3 sm:mb-4">
+    <div className="bg-gray-50 dark:bg-gray-900/50 py-8 sm:py-12 lg:py-16 lg:pb-28 hidden md:block">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-8 sm:mb-12">
+          <h1 className="text-[26px] sm:text-3xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-3 sm:mb-4">
             Compare BDIX Hosting Plans
           </h1>
         </div>
 
-        {/* Mobile / stacked cards (visible on small screens) */}
-        <div className="lg:hidden">
-          {plans.map((plan, pi) => (
-            <div
-              key={plan.id}
-              className="mb-6 last:mb-0 bg-white dark:bg-gray-800 rounded-xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden"
-            >
-              <div className="border-b border-gray-200 dark:border-gray-700">
-                <div className="bg-gradient-to-r from-blue-700 to-blue-600 p-4">
-                  <div className="text-center space-y-3">
-                    <div className="font-bold text-xl text-white">
-                      {plan.title}
-                    </div>
-                    <div className="bg-white/15 rounded-lg p-3 backdrop-blur-sm border border-white/25 inline-block">
-                      <div className="text-3xl font-bold text-white">
-                        {plan.price}
-                      </div>
-                      <div className="text-sm text-blue-200">{plan.period}</div>
-                    </div>
-                    <div className="mt-2">
-                      <Button
-                        asChild
-                        className="w-full block bg-white/95 transition-all duration-300 text-black font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-center"
-                      >
+        {/* Sticky Header */}
+        {isSticky && (
+          <div
+            className="fixed top-14 left-0 right-0 z-40 shadow-lg hidden lg:block"
+            style={{
+              width: "100%",
+              maxWidth: "80rem",
+              margin: "0 auto",
+              left: "50%",
+              transform: "translateX(-50%)",
+              pointerEvents: "none",
+            }}
+          >
+            <table className="w-full bg-blue-700 dark:bg-blue-800 rounded-lg">
+              <colgroup>
+                <col className="w-1/5" />
+                {plans.plans.map((_, idx) => (
+                  <col key={idx} className="w-1/5" />
+                ))}
+              </colgroup>
+              <thead>
+                <tr>
+                  <th className="p-4 text-white font-bold text-base lg:text-lg border-r border-blue-600/50">
+                    Features
+                  </th>
+                  {plans.plans.map((plan, planIdx) => (
+                    <th
+                      key={plan.name}
+                      className={`p-4 text-white text-center border-r border-blue-600/50 ${
+                        planIdx === plans.plans.length - 1 ? "border-r-0" : ""
+                      }`}
+                    >
+                      <div className="space-y-2 lg:space-y-3 pointer-events-auto">
+                        <div className="font-bold text-lg lg:text-xl">
+                          {plan.name}
+                        </div>
+                        <div className="bg-white/20 dark:bg-white/10 rounded-lg p-2 lg:p-3 backdrop-blur-sm border border-white/25">
+                          <div className="text-2xl lg:text-[27px] font-bold text-white">
+                            ৳{plan.price}
+                          </div>
+                          <div className="text-xs lg:text-sm text-blue-200">
+                            {plan.priceUnit}
+                          </div>
+                        </div>
                         <a
-                          href={plan.link}
+                          href={plan.orderLink}
                           target="_blank"
                           rel="noopener noreferrer"
+                          className="w-full block bg-white dark:bg-gray-100 transition-all duration-300 text-black dark:text-gray-900 font-semibold py-2 lg:py-3 px-4 lg:px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-sm lg:text-base text-center"
                         >
                           Order Now
                         </a>
-                      </Button>
+                      </div>
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+            </table>
+          </div>
+        )}
+
+        <div
+          ref={tableSectionRef}
+          className="bg-white dark:bg-gray-800 rounded-xl lg:rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden"
+        >
+          {isSticky && (
+            <div
+              style={{
+                height: headerRef.current?.offsetHeight || 0,
+                width: "100%",
+              }}
+            />
+          )}
+
+          {/* Mobile Cards */}
+          <div className="lg:hidden">
+            {plans.plans.map((plan, planIdx) => (
+              <div
+                key={plan.name}
+                className="border-b border-gray-200 dark:border-gray-700 last:border-b-0"
+              >
+                <div className="bg-gradient-to-r from-blue-700 to-blue-600 p-4 rounded-t-lg">
+                  <div className="text-center space-y-3">
+                    <div className="font-bold text-xl text-white">
+                      {plan.name}
                     </div>
+                    <div className="bg-white/20 dark:bg-white/10 rounded-lg p-3 backdrop-blur-sm border border-white/25">
+                      <div className="text-3xl font-bold text-white">
+                        ৳{plan.price}
+                      </div>
+                      <div className="text-sm text-blue-200">
+                        {plan.priceUnit}
+                      </div>
+                    </div>
+                    <a
+                      href={plan.orderLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full block bg-white dark:bg-gray-100 transition-all duration-300 text-black dark:text-gray-900 font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-center"
+                    >
+                      Order Now
+                    </a>
                   </div>
                 </div>
 
                 <div className="p-4">
-                  {/* Render feature groups sequentially for mobile */}
-                  {groups.map((g) => (
-                    <div key={g.key} className="mb-6 last:mb-0">
-                      {g.title && (
+                  {plans.sections.map((section, sectionIdx) => (
+                    <div key={sectionIdx} className="mb-6 last:mb-0">
+                      {sectionIdx > 0 && (
                         <div className="bg-gradient-to-r from-blue-700 to-blue-600 p-3 mb-4 rounded-lg">
                           <div className="flex items-center justify-center">
                             <span className="text-lg font-bold text-white">
-                              {g.title}
+                              {section.title}
                             </span>
                           </div>
                         </div>
                       )}
-
                       <div className="space-y-3">
-                        {g.rows.map((r) => (
+                        {section.features.map((feature, featureIdx) => (
                           <div
-                            key={r.key}
+                            key={featureIdx}
                             className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700 rounded-lg"
                           >
                             <div className="flex-1">
-                              <span className="font-semibold text-gray-700 dark:text-gray-300 text-sm">
-                                {r.label}
+                              <span className="font-semibold text-gray-700 dark:text-gray-200 text-sm">
+                                {feature.label}
                               </span>
                             </div>
                             <div className="ml-4">
-                              <span className="font-medium text-gray-700 dark:text-gray-300 text-sm">
-                                {r.values[pi]}
+                              <span className="font-medium text-gray-700 dark:text-gray-200 text-sm">
+                                {feature.values[planIdx]}
                               </span>
                             </div>
                           </div>
@@ -123,126 +173,103 @@ export default function BdixHostingPlans() {
                   ))}
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        {/* Desktop table (visible on lg and up) */}
-        <div className="hidden lg:block overflow-x-auto">
-          <div className="relative">
-            <Table
-              ref={tableRef}
-              className="w-full min-w-[800px] border-separate border-spacing-0"
-            >
-              {/* TableHeader */}
-              <TableHeader
-                className={`${
-                  isSticky
-                    ? "fixed top-[64px] left-0 right-0 z-50 shadow-lg max-w-7xl mx-auto"
-                    : "relative"
-                } bg-gradient-to-r w-full from-blue-800 to-blue-600 transition-all duration-200 `}
-                style={
-                  isSticky
-                    ? {
-                        width: tableRef.current?.offsetWidth,
-                        maxWidth: "80rem",
-                        pointerEvents: "none",
-                        display: "flex",
-                        justifyContent: "center"
-                      }
-                    : undefined
-                }
+          {/* Desktop Table */}
+          <div className="hidden lg:block overflow-x-auto">
+            <table className="w-full min-w-[800px]">
+              <colgroup>
+                <col className="w-1/5" />
+                {plans.plans.map((_, idx) => (
+                  <col key={idx} className="w-1/5" />
+                ))}
+              </colgroup>
+
+              <thead
+                ref={headerRef}
+                className="bg-gradient-to-r from-blue-800 to-blue-600"
               >
-                <TableRow className="hover:bg-blue-600">
-                  <TableHead className="p-6 text-white font-bold text-2xl border-r border-blue-700/50">
+                <tr>
+                  <th className="p-6 text-white font-bold text-lg border-r border-blue-600/50">
                     Features
-                  </TableHead>
-                  {plans.map((plan) => (
-                    <TableHead
-                      key={plan.id}
-                      className="p-3 text-white text-center border-r border-blue-700/50"
+                  </th>
+                  {plans.plans.map((plan, planIdx) => (
+                    <th
+                      key={plan.name}
+                      className={`p-3 text-white text-center border-r border-blue-600/50 ${
+                        planIdx === plans.plans.length - 1 ? "border-r-0" : ""
+                      }`}
                     >
                       <div className="space-y-3">
-                        <div className="font-bold text-xl">{plan.title}</div>
-
-                        <div className="bg-white/15 rounded-lg p-3 backdrop-blur-sm border border-white/25 inline-block">
+                        <div className="font-bold text-xl">{plan.name}</div>
+                        <div className="bg-white/20 dark:bg-white/10 rounded-lg p-3 backdrop-blur-sm border border-white/25">
                           <div className="text-3xl font-bold text-white">
-                            {plan.price}
+                            ৳{plan.price}
                           </div>
                           <div className="text-sm text-blue-200">
-                            {plan.period}
+                            {plan.priceUnit}
                           </div>
                         </div>
-
-                        <div className="mt-3">
-                          <Button
-                            asChild
-                            className="w-full bg-white/95 transition-all duration-300 text-black font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-1 text-center hover:bg-white"
-                          >
-                            <Link
-                              href={plan.link}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              Order Now
-                            </Link>
-                          </Button>
-                        </div>
+                        <a
+                          href={plan.orderLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full block bg-white dark:bg-gray-100 transition-all duration-300 text-black dark:text-gray-900 font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-center"
+                        >
+                          Order Now
+                        </a>
                       </div>
-                    </TableHead>
+                    </th>
                   ))}
-                </TableRow>
-              </TableHeader>
+                </tr>
+              </thead>
 
-              <TableBody>
-                {isSticky && (
-                  <TableRow>
-                    <TableCell colSpan={4} className="p-0 h-[200px]" />
-                  </TableRow>
-                )}
-
-                {groups.map((g) => (
-                  <React.Fragment key={g.key}>
-                    {g.title && (
-                      <TableRow className="bg-gradient-to-r from-blue-800 to-blue-600">
-                        <TableCell colSpan={4} className="p-6 text-center">
-                          <span className="text-2xl font-bold text-white">
-                            {g.title}
-                          </span>
-                        </TableCell>
-                      </TableRow>
+              <tbody>
+                {plans.sections.map((section, sectionIdx) => (
+                  <React.Fragment key={sectionIdx}>
+                    {sectionIdx > 0 && (
+                      <tr className="bg-gradient-to-r from-blue-800 to-blue-600">
+                        <th
+                          colSpan={plans.plans.length + 1}
+                          className="p-6 text-center text-white font-bold"
+                        >
+                          {section.title}
+                        </th>
+                      </tr>
                     )}
-
-                    {g.rows.map((r, ri) => (
-                      <TableRow
-                        key={r.key}
-                        className={`${
-                          ri % 2 === 0
-                            ? "hover:bg-blue-50/50 bg-gray-50/50 dark:bg-gray-800/50 dark:hover:bg-gray-700/50"
-                            : "hover:bg-blue-50/50 bg-white dark:bg-gray-900 dark:hover:bg-gray-700/50"
-                        } transition-colors duration-200`}
+                    {section.features.map((feature, featureIdx) => (
+                      <tr
+                        key={`${sectionIdx}-${featureIdx}`}
+                        className={`hover:bg-blue-50/50 transition-colors duration-200 ${
+                          featureIdx % 2 === 0
+                            ? "bg-gray-50 dark:bg-gray-700"
+                            : "bg-white dark:bg-gray-800"
+                        }`}
                       >
-                        <TableCell className="p-6 font-semibold text-gray-700 dark:text-gray-300 border-r border-gray-200 dark:border-gray-700">
-                          {r.label}
-                        </TableCell>
-                        {r.values.map((val, idx) => (
-                          <TableCell
+                        <td className="p-6 font-semibold text-gray-700 dark:text-gray-200 border-r border-gray-200 dark:border-gray-600">
+                          {feature.label}
+                        </td>
+                        {feature.values.map((value, idx) => (
+                          <td
                             key={idx}
-                            className={`p-6 text-center border-r border-gray-200 dark:border-gray-700 ${
-                              idx === r.values.length - 1 ? "border-r-0" : ""
+                            className={`p-6 text-center border-r border-gray-200 dark:border-gray-600 ${
+                              idx === feature.values.length - 1
+                                ? "border-r-0"
+                                : ""
                             }`}
                           >
-                            <span className="font-medium text-gray-700 dark:text-gray-300">
-                              {val}
+                            <span className="font-medium text-gray-700 dark:text-gray-200">
+                              {value}
                             </span>
-                          </TableCell>
+                          </td>
                         ))}
-                      </TableRow>
+                      </tr>
                     ))}
                   </React.Fragment>
                 ))}
-              </TableBody>
-            </Table>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>

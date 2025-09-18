@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 
 const movingWebsiteData = {
   tag: "Moving Websites",
@@ -57,16 +56,14 @@ export default function MovingWebsites() {
           <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
             {movingWebsiteData.description}
           </p>
-          <Button
-            variant={"outline"}
-            asChild
+          <button
             onClick={handleScrollToPlan}
-            className="hover:cursor-pointer hover:scale-110 transition-colors duration-300 mt-4 px-6 rounded-md hover:border-none py-5 hover:bg-blue-700 hover:text-white text-[#2a54fa] border-2 border-[#2a55ff]"
+            className="px-7 py-3 cursor-pointer bg-white border border-blue-600 text-blue-600 font-semibold rounded-lg shadow 
+             hover:bg-blue-700 hover:text-white transform hover:scale-105 
+             transition-all duration-300 ease-in-out"
           >
-            <p>
-              {movingWebsiteData.button.label}
-            </p>
-          </Button>
+            <p>{movingWebsiteData.button.label}</p>
+          </button>
         </div>
       </div>
     </section>

@@ -81,7 +81,7 @@ export default function Reviews({ reviews }: ReviewsProps) {
             <div className="text-center">
               <StarRating rating={4.4} />
               <p className="text-2xl font-bold text-gray-900 dark:text-white">
-                {(4.4).toFixed(1)} out of 5
+                {(4.8).toFixed(1)} out of 5
               </p>
               <p className="text-sm text-gray-600 dark:text-slate-400">
                 Based on 122 reviews
