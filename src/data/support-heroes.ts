@@ -7,7 +7,7 @@ export const supportHeroes: SupportHero[] = [
     description:
       "Dedicated support professional ensuring fast responses, friendly communication, and effective solutions for all your hosting needs.",
     image: {
-      src: "https://res.cloudinary.com/daspo1tk3/image/upload/v1757582484/1_bfnhtc.webp",
+      src: "/assets/support/1.png",
       alt: "Imran support hero",
     },
   },
@@ -17,7 +17,7 @@ export const supportHeroes: SupportHero[] = [
     description:
       "Dedicated support professional ensuring fast responses, friendly communication, and effective solutions for all your hosting needs.",
     image: {
-      src: "https://res.cloudinary.com/daspo1tk3/image/upload/v1757582484/2_uqftty.webp",
+      src: "/assets/support/2.png",
       alt: "Sajjad support hero",
     },
   },
@@ -27,7 +27,7 @@ export const supportHeroes: SupportHero[] = [
     description:
       "Dedicated support professional ensuring fast responses, friendly communication, and effective solutions for all your hosting needs",
     image: {
-      src: "https://res.cloudinary.com/daspo1tk3/image/upload/v1757582483/4_szn8lm.webp",
+      src: "/assets/support/4.png",
       alt: "Rafy support hero",
     },
   },
@@ -37,7 +37,7 @@ export const supportHeroes: SupportHero[] = [
     description:
       "Dedicated support professional ensuring fast responses, friendly communication, and effective solutions for all your hosting needs.",
     image: {
-      src: "https://res.cloudinary.com/daspo1tk3/image/upload/v1757582483/5_j32mce.webp",
+      src: "/assets/support/5.png",
       alt: "Mujahid support hero",
     },
   },
@@ -47,7 +47,7 @@ export const supportHeroes: SupportHero[] = [
     description:
       "Dedicated support professional ensuring fast responses, friendly communication, and effective solutions for all your hosting needs.",
     image: {
-      src: "https://res.cloudinary.com/daspo1tk3/image/upload/v1757582484/3_ulwilc.webp",
+      src: "/assets/support/3.png",
       alt: "Asad support hero",
     },
   },
@@ -57,7 +57,7 @@ export const supportHeroes: SupportHero[] = [
     description:
       "Dedicated support professional ensuring fast responses, friendly communication, and effective solutions for all your hosting needs.",
     image: {
-      src: "https://res.cloudinary.com/daspo1tk3/image/upload/v1757582484/6_dtfsds.webp",
+      src: "/assets/support/6.png",
       alt: "Tareq support hero",
     },
   },

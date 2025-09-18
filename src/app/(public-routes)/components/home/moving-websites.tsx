@@ -12,7 +12,7 @@ const movingWebsiteData = {
     label: "View Pricing Plan",
   },
   image:
-    "https://res.cloudinary.com/daspo1tk3/image/upload/v1757535103/features_ck3pps.webp",
+    "/assets/features.webp",
 };
 
 export default function MovingWebsites() {

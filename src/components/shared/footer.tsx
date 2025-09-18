@@ -130,7 +130,7 @@ export function Footer() {
           <figure className="flex flex-wrap justify-center items-center gap-4">
             <Image
               src={
-                "https://res.cloudinary.com/daspo1tk3/image/upload/v1757578028/SSLCommerz-Pay-With-logo-All-Size-01_trtqxf.webp"
+                "/assets/SSLCommerz-Pay-With-logo-All-Size-01.png"
               }
               alt="Payment Methods"
               width={1920}
@@ -177,7 +177,7 @@ export function Footer() {
             <div className="flex flex-col gap-4 items-start text-left">
               <Link href="/" className="flex items-start gap-2">
                 <Image
-                  src="https://res.cloudinary.com/daspo1tk3/image/upload/v1757579469/footer-logo_z7x8v3.webp"
+                  src="/assets/footer-logo.webp"
                   alt="Hostnin Logo"
                   width={300}
                   height={240}

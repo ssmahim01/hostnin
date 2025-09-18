@@ -22,7 +22,7 @@ export const controlPanels: ControlPanel[] = [
       },
     ],
     image: {
-      src: "https://res.cloudinary.com/daspo1tk3/image/upload/v1757579460/cpanelmockup_ewgryc.webp",
+      src: "/assets/cpanelmockup.png",
       alt: "cPanel dashboard screenshot",
     },
   },
@@ -47,7 +47,7 @@ export const controlPanels: ControlPanel[] = [
       },
     ],
     image: {
-      src: "https://res.cloudinary.com/daspo1tk3/image/upload/v1757579460/webuzumockup_jlefvy.webp",
+      src: "/assets/webuzumockup.png",
       alt: "Webuzo dashboard screenshot",
     },
   },
@@ -72,7 +72,7 @@ export const controlPanels: ControlPanel[] = [
       },
     ],
     image: {
-      src: "https://res.cloudinary.com/daspo1tk3/image/upload/v1757579460/cloudhostingcPanel_zrupge.webp",
+      src: "/assets/cloud hosting cPanel.png",
       alt: "StackCP dashboard screenshot",
     },
   },

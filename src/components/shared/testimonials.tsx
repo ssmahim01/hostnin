@@ -96,7 +96,7 @@ export function TestimonialsSection() {
                   height={60}
                   quality={90}
                   priority
-                  src="https://res.cloudinary.com/daspo1tk3/image/upload/v1757452795/google_kpi3cz.webp"
+                  src="/assets/google-logo.svg"
                   alt="Google"
                   className="w-20 h-8 object-contain"
                 />
@@ -146,7 +146,7 @@ export function TestimonialsSection() {
                 </div>
                 <Link
                   href={
-                    "https://www.google.com/search?q=hostnin&oq=hostnin&gs_lcrp=EgZjaHJvbWUqDwgAECMYJxjjAhiABBiKBTIPCAAQIxgnGOMCGIAEGIoFMgYIARBFGDwyBggCEEUYQTIGCAMQRRg8MhIIBBAuGCcYrwEYxwEYgAQYigUyBggFEEUYPDIGCAYQRRg8MgYIBxBFGEHSAQgxODQzajBqNKgCALACAQ&sourceid=chrome&ie=UTF-8#lrd="
+                    "/reviews"
                   }
                   target="_blank"
                 >

@@ -19,7 +19,7 @@ export default function WhyHostnin() {
           {/* Person Image */}
           <div className="md:w-1/2 flex justify-center md:justify-end">
             <Image
-              src="https://res.cloudinary.com/daspo1tk3/image/upload/v1757498867/mujabhai_lnhrfm.webp"
+              src="/assets/mujabhai.png"
               alt="Hostin representative"
               width={1100}
               height={700}

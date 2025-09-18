@@ -30,7 +30,7 @@ export default function QuestionsSection() {
         </div>
         <div className="md:w-1/2 flex justify-center">
           <Image
-            src="https://res.cloudinary.com/daspo1tk3/image/upload/v1757500425/man-attending-online-meeting_mll0in.webp"
+            src="/assets/man-attending-online-meeting.png"
             alt="Support character"
             width={400}
             height={300}

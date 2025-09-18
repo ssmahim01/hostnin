@@ -7,52 +7,52 @@ import Image from "next/image";
 const partners: InfrastructurePartner[] = [
   {
     name: "cPanel",
-    logo: "https://res.cloudinary.com/daspo1tk3/image/upload/v1757450498/cpanel_wjvnvc.png",
+    logo: "/assets/cpanel.png",
     description: "Web hosting control panel",
   },
   {
     name: "CloudLinux",
-    logo: "https://res.cloudinary.com/daspo1tk3/image/upload/v1757450499/cloud-linux_whspid.webp",
+    logo: "/assets/cloud-linux.webp",
     description: "Operating system for shared hosting",
   },
   {
     name: "LiteSpeed",
-    logo: "https://res.cloudinary.com/daspo1tk3/image/upload/v1757450499/litespeed_pusv0g.png",
+    logo: "/assets/litespeed.png",
     description: "High-performance web server",
   },
   {
     name: "Webuzo",
-    logo: "https://res.cloudinary.com/daspo1tk3/image/upload/v1757450499/webuzu_onejol.webp",
+    logo: "/assets/webuzu.webp",
     description: "Single user control panel",
   },
   {
     name: "Spam Experts",
-    logo: "https://res.cloudinary.com/daspo1tk3/image/upload/v1757450498/spam-expert_xvxm3f.webp",
+    logo: "/assets/spam-expert.png",
     description: "Email security solution",
   },
   {
     name: "Cloudflare",
-    logo: "https://res.cloudinary.com/daspo1tk3/image/upload/v1757450498/cloudflare_igtgfl.webp",
+    logo: "/assets/cloudflare.webp",
     description: "CDN and security services",
   },
   {
     name: "MailChannels",
-    logo: "https://res.cloudinary.com/daspo1tk3/image/upload/v1757450498/mailchannels_uxm1zd.webp",
+    logo: "/assets/mailchannels.webp",
     description: "Email delivery service",
   },
   {
     name: "Intel",
-    logo: "https://res.cloudinary.com/daspo1tk3/image/upload/v1757450498/intel_afkje0.webp",
+    logo: "/assets/intel.png",
     description: "Server processors",
   },
   {
     name: "JetBackup",
-    logo: "https://res.cloudinary.com/daspo1tk3/image/upload/v1757450498/jetbackup_c31mmb.webp",
+    logo: "/assets/jetbackup.png",
     description: "Backup solution",
   },
   {
     name: "Imunify360",
-    logo: "https://res.cloudinary.com/daspo1tk3/image/upload/v1757450498/imunify360_cba40l.webp",
+    logo: "/assets/imunify360.png",
     description: "Security suite",
   },
 ];

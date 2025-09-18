@@ -101,7 +101,8 @@ export default function Dropdown() {
         trigger={(isOpen) => (
           <Button
             variant={"outline"}
-            className={`border-2 p-5 hover:cursor-pointer rounded-md font-bold duration-300 ease-in-out
+            className={`border-2 p-5 hover:cursor-pointer rounded-md font-bold transform hover:scale-105 
+             transition-all duration-300 ease-in-out
               ${
                 isOpen
                   ? "bg-blue-600 text-white border-blue-600"

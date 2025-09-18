@@ -153,10 +153,10 @@ export function Navbar() {
 
   const { theme, setTheme } = useTheme();
   const defaultLogo =
-    "https://res.cloudinary.com/daspo1tk3/image/upload/v1757498973/logo11_nfcmpq.webp";
+    "/assets/logo11.png";
 
   const whiteLogo =
-    "https://res.cloudinary.com/daspo1tk3/image/upload/v1757579469/footer-logo_z7x8v3.webp";
+    "/assets/footer-logo.webp";
 
   useEffect(() => {
     const handleScroll = () => {

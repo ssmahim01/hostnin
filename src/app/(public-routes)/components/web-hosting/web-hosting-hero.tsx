@@ -68,7 +68,7 @@ export default function WebHostingHero() {
         className="text-white pt-20 pb-28 bg-center bg-no-repeat bg-cover bg-[#06249a] dark:bg-blue-950"
         style={{
           backgroundImage:
-            "url('https://res.cloudinary.com/daspo1tk3/image/upload/v1757597921/sh-hero-bg_wrvx9s.png')",
+            "url('/assets/sh-hero-bg.png')",
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -11,7 +11,7 @@ export default function MigrationSection() {
         <CardContent className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6 ">
           <div className="md:w-1/2 flex justify-center">
             <Image
-              src="https://res.cloudinary.com/daspo1tk3/image/upload/v1757500441/lock_e687j7.webp"
+              src="/assets/lock.webp"
               alt="Migration illustration"
               width={400}
               height={300}
