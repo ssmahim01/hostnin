@@ -40,13 +40,7 @@ export default function WebHostingPage() {
       <InfrastructurePartners />
       <WhyChooseHosting
         heading="Why Choose Web Hosting?"
-        subTitle={`With our{" "}
-            ${(
-              <span className="text-blue-600 dark:text-blue-400 font-medium">
-                Web Hosting
-              </span>
-            )}{" "}
-            plans, you&apos;ll receive more resources for less money, ensuring
+        subTitle={`With our Web Hosting plans, you'll receive more resources for less money, ensuring
             the reliability you can count on. Starting your own business with
             Hostnin is easier than you think!`}
       />

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import Link from "next/link";
 
 export default function QuestionsSection() {
   return (
@@ -18,12 +19,14 @@ export default function QuestionsSection() {
             technical advisors at any time. Our team of professionals is
             available 24/7 via live chat, ticket, and WhatsApp to assist you
           </p>
+         <Link href={"https://wa.me/8801325875955"} target="_blank">
           <Button
             variant={"default"}
-            className="bg-blue-600 hover:cursor-pointer py-4 rounded-sm hover:bg-blue-700 text-white"
+            className="bg-blue-600 hover:cursor-pointer py-6 hover:scale-105 duration-500 transition-all rounded-sm hover:bg-blue-700 text-white"
           >
             Live Chat With Sales
           </Button>
+         </Link>
         </div>
         <div className="md:w-1/2 flex justify-center">
           <Image

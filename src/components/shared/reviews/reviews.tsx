@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Star, Filter, Search } from "lucide-react";
+import { Filter, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/select";
 import ReviewCard from "./review-card";
 import type { Review } from "@/types/review";
+import StarRating from "../star-rating";
 
 interface ReviewsProps {
   reviews: Review[];
@@ -27,9 +28,6 @@ export default function Reviews({ reviews }: ReviewsProps) {
 
   // Get unique services for filter
   const services = Array.from(new Set(reviews.map((review) => review.service)));
-
-  const averageRating =
-    reviews.reduce((sum, review) => sum + review.rating, 0) / reviews.length;
 
   React.useEffect(() => {
     let filtered = reviews;
@@ -81,23 +79,12 @@ export default function Reviews({ reviews }: ReviewsProps) {
           {/* Stats */}
           <div className="flex flex-wrap justify-center items-center gap-8 mb-8">
             <div className="text-center">
-              <div className="flex items-center justify-center gap-1 mb-2">
-                {Array.from({ length: 5 }, (_, i) => (
-                  <Star
-                    key={i}
-                    className={`w-6 h-6 ${
-                      i < Math.floor(averageRating)
-                        ? "text-yellow-400 fill-yellow-400"
-                        : "text-gray-300 dark:text-gray-600"
-                    }`}
-                  />
-                ))}
-              </div>
+              <StarRating rating={4.4} />
               <p className="text-2xl font-bold text-gray-900 dark:text-white">
-                {averageRating.toFixed(1)} out of 5
+                {(4.4).toFixed(1)} out of 5
               </p>
               <p className="text-sm text-gray-600 dark:text-slate-400">
-                Based on {reviews.length} reviews
+                Based on 122 reviews
               </p>
             </div>
             <div className="text-center">

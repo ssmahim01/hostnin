@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import Link from "next/link";
 
 export default function MigrationSection() {
   return (
@@ -27,12 +28,14 @@ export default function MigrationSection() {
               Migrating a website can be daunting, which is why we have a team
               of experts who are always ready to migrate your website smoothly.
             </p>
-            <Button
-              variant={"default"}
-              className="bg-blue-600 rounded-sm py-4 hover:cursor-pointer hover:bg-blue-700 text-white"
-            >
-              Request Free Migration
-            </Button>
+            <Link href={"/contact"}>
+              <Button
+                variant={"default"}
+                className="bg-blue-600 rounded-sm py-6 hover:scale-105 duration-500 transition-transform transform-3d hover:cursor-pointer hover:bg-blue-700 text-white"
+              >
+                Request Free Migration
+              </Button>
+            </Link>
           </div>
         </CardContent>
       </Card>
