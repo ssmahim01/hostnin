@@ -186,9 +186,17 @@ export function Footer() {
                   priority
                 />
               </Link>
-              <span className="text-blue-200 text-sm mt-4">
-                © {getFullYear} Hostnin. All Rights Reserved.
-              </span>
+              <p className="text-blue-200 text-sm mt-4">
+                © {getFullYear}{" "}
+                <Link
+                  href={"https://hostnin.com"}
+                  className="hover:text-blue-500"
+                  target="_blank"
+                >
+                  Hostnin.
+                </Link>{" "}
+                All Rights Reserved.
+              </p>
             </div>
 
             <div className="flex items-center md:items-end flex-col gap-4">
