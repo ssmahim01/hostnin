@@ -19,7 +19,7 @@ export default function QuestionsSection() {
             technical advisors at any time. Our team of professionals is
             available 24/7 via live chat, ticket, and WhatsApp to assist you
           </p>
-         <Link href={"https://wa.me/8801325875955"} target="_blank">
+         <Link href={"https://tawk.to/chat/64e3c190cc26a871b0308e91/1h8cqo8b6"} target="_blank">
           <Button
             variant={"default"}
             className="bg-blue-600 hover:cursor-pointer py-6 hover:scale-105 duration-500 transition-all rounded-sm hover:bg-blue-700 text-white"
