@@ -165,9 +165,12 @@ export default function Reviews({ reviews }: ReviewsProps) {
 
         {/* Reviews Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredReviews.map((review, index) => (
-            <ReviewCard key={review.id} review={review} index={index} />
-          ))}
+          {filteredReviews
+            .slice()
+            .sort((a, b) => b.rating - a.rating)
+            .map((review, index) => (
+              <ReviewCard key={review.id} review={review} index={index} />
+            ))}
         </div>
 
         {/* No Results */}
