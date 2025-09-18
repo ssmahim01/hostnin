@@ -2,12 +2,12 @@ import { TestimonialsSection } from "@/components/shared/testimonials";
 import JoinHostingSection from "@/app/(public-routes)/components/wordpress-hosting/join-hosting-section";
 import ManagedWordPressHighlights from "@/app/(public-routes)/components/wordpress-hosting/managed-wordpress-highlights";
 import { WordPressBanner } from "@/app/(public-routes)/components/wordpress-hosting/wordpress-banner";
-import { WordPressPricingSection } from "@/app/(public-routes)/components/wordpress-hosting/wordpress-pricing";
 import WordPressSignUp from "@/app/(public-routes)/components/wordpress-hosting/wordpress-signup";
 import WordPressTestimonials from "@/components/shared/hosting/client-testimonials";
 import HostingFAQs from "@/components/shared/hosting/hosting-faqs";
 import { Metadata } from "next";
 import HostingPlansInclude from "@/components/shared/hosting/hosting-plans-include";
+import WordpressPricing from "@/app/(public-routes)/components/wordpress-hosting/wordpress-pricing";
 
 export const metadata: Metadata = {
   title: "WordPress Hosting | Hostnin",
@@ -32,7 +32,7 @@ export default function WordpressHosting() {
     <>
       <WordPressBanner />
       <div id="wordpress-pricing">
-        <WordPressPricingSection />
+        <WordpressPricing />
       </div>
       <TestimonialsSection />
       <ManagedWordPressHighlights />

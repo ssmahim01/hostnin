@@ -59,7 +59,7 @@ export default function PricingTab() {
       </div>
 
       {/* Tab Content */}
-      <div className="rounded-xl shadow-lg p-4">
+      <div className="rounded-xl shadow-lg">
         {tabs.find((tab) => tab.id === activeTab)?.component}
       </div>
     </div>

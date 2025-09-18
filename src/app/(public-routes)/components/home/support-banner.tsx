@@ -16,7 +16,7 @@ const supportBannerData: SupportBanner = {
   title: "Do You Have Questions?",
   subtitle: "About Our Hosting and Domain Service",
   buttonLabel: "Live Chat With Sales",
-  buttonHref: "#",
+  buttonHref: "https://tawk.to/chat/64e3c190cc26a871b0308e91/1h8cqo8b6",
   phoneNumber: "01325 875 955",
 };
 
@@ -58,7 +58,7 @@ export default function SupportBanner() {
             className="bg-blue-600 hover:cursor-pointer hover:bg-blue-700 text-white rounded-md px-8 py-6 font-semibold"
             asChild
           >
-            <Link href={supportBannerData.buttonHref}>
+            <Link href={supportBannerData.buttonHref} target="_blank">
               {supportBannerData.buttonLabel}
             </Link>
           </Button>

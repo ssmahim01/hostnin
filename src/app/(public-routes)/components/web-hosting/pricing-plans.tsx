@@ -165,7 +165,7 @@ export default function PricePlans() {
                     <span className="text-3xl sm:text-4xl font-bold text-gray-800 dark:text-gray-200">
                       {plan.price.toLocaleString()}
                     </span>
-                    <span className="text-sm text-gray-600">
+                    <span className="text-sm text-gray-600 dark:text-gray-300">
                       /Per {billing === "monthly" ? "Month" : "Year"}
                     </span>
                   </div>

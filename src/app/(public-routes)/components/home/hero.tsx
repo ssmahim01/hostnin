@@ -17,11 +17,11 @@ export function HeroSection() {
 
   return (
     <section
-      className="py-28 text-white dark:bg-blue-950"
-      style={{
-        background:
-          "linear-gradient(278deg, rgba(0, 40, 160, 0.9) 16%, rgba(0, 20, 80, 0.9) 98%)",
-      }}
+      className="
+        py-28 text-white
+        bg-[linear-gradient(278deg,rgba(0,40,160,0.9)_16%,rgba(0,20,80,0.9)_98%)]
+     dark:bg-[linear-gradient(278deg,rgba(17,17,17,0.5)_16%,rgba(17,17,17,0.5)_98%)]
+      "
     >
       <div className=" max-w-7xl mx-auto container px-5 lg:px-10 flex flex-col lg:flex-row items-center justify-between lg:gap-0 gap-8">
         {/* Text Content */}
