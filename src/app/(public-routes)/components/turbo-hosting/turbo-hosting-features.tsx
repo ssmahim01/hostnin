@@ -18,6 +18,7 @@ export default function TurboHostingFeatures() {
 
         <FeatureBlock
           heading="Let us take worries away & put time back in your day"
+          
           largeHeading={true}
           description={`We offer expert 24/7/365 problem-solving for everyone. For a closer partnership, choose the Advanced Support add-on that enhances your support experience or the Premium Support add-on where our Senior Support Engineers work as an extension of your in-house team.`}
           bullets={[
