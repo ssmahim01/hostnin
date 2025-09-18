@@ -20,7 +20,7 @@ export default function TurboHostingPage() {
   return (
     <>
       <TurboHostingBanner />
-      <div id="pricing">
+      <div id="turbo-pricing">
         <TurboHostingPricing />
       </div>
       <HostingPlansInclude title="All Turbo Hosting Plans Include" />

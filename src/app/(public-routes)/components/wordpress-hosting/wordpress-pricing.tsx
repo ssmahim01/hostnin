@@ -296,7 +296,6 @@ export default function WordpressPricing() {
                         <>
                           {(
                             [
-                              "primary",
                               "server",
                               "security",
                               "support",
