@@ -3,6 +3,14 @@
 import Image from "next/image";
 
 export default function WordPressSignUp() {
+    const handleScrollToPricing = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    const section = document.querySelector("#wordpress-pricing");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="w-full bg-gradient-to-r from-[#0A2A6C] to-[#1746A2] flex items-center justify-center px-4 sm:px-6 md:px-8 py-8 md:py-0 relative overflow-hidden">
       <div className="w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
@@ -19,7 +27,7 @@ export default function WordPressSignUp() {
           </p>
 
           <div className="mt-6 sm:mt-8">
-            <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-all duration-300 text-[15px] sm:text-base shadow-lg hover:shadow-xl transform hover:scale-105 w-full sm:w-auto cursor-pointer">
+            <button onClick={handleScrollToPricing} className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-all duration-300 text-[15px] sm:text-base shadow-lg hover:shadow-xl transform hover:scale-105 w-full sm:w-auto cursor-pointer">
               Get Started
             </button>
           </div>

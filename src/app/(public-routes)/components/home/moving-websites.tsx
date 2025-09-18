@@ -58,7 +58,7 @@ export default function MovingWebsites() {
           </p>
           <button
             onClick={handleScrollToPlan}
-            className="px-7 py-3 cursor-pointer bg-white border border-blue-600 text-blue-600 font-semibold rounded-lg shadow 
+            className="px-7 py-3 cursor-pointer bg-white dark:bg-transparent border border-blue-600 text-blue-600 font-semibold rounded-lg shadow 
              hover:bg-blue-700 hover:text-white transform hover:scale-105 
              transition-all duration-300 ease-in-out"
           >

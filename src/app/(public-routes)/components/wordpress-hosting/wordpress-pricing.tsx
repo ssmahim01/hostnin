@@ -71,7 +71,7 @@ export default function WordpressPricing() {
           Choose Your Perfect Plan
         </h2>
       )}
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div id="wordpress-pricing" className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-row items-center gap-4 mb-8 justify-center">
           <div className="flex bg-[#2a3553] rounded-full p-1">
             <button

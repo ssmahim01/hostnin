@@ -31,9 +31,7 @@ export default function WordpressHosting() {
   return (
     <>
       <WordPressBanner />
-      <div id="wordpress-pricing">
-        <WordpressPricing />
-      </div>
+      <WordpressPricing />
       <TestimonialsSection />
       <ManagedWordPressHighlights />
       <JoinHostingSection />
