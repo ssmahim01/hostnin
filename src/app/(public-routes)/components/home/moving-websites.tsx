@@ -26,7 +26,7 @@ export default function MovingWebsites() {
   };
 
   return (
-    <section className="py-12 bg-gray-50 dark:bg-gray-900">
+    <section className="py-10">
       <div className="container max-w-7xl mx-auto px-4 flex flex-col-reverse md:flex-row items-center gap-10">
         {/* Left Image */}
         <div className="md:w-1/2 flex justify-center">

@@ -38,15 +38,15 @@ export function HeroSection() {
           </p>
           <div className="flex items-center flex-col md:flex-row gap-4 lg:justify-start justify-center">
             <button
-              className="group w-full sm:w-auto cursor-pointer bg-transparent text-gray-100 font-bold px-6 sm:px-8 py-3 sm:py-4 
-            rounded-full border border-gray-300 hover:bg-blue-700 hover:text-white/95
+              className="group w-full sm:w-auto cursor-pointer bg-transparent text-gray-100 font-semibold px-6 sm:px-8 py-3 sm:py-4 
+            rounded-full border border-gray-300 hover:bg-white hover:text-blue-700
             transition-transform duration-300 ease-in-out 
             flex items-center justify-center gap-2 text-sm sm:text-base lg:text-[17px] hover:border-none
               hover:scale-105"
               onClick={handleScrollToPlan}
             >
               <span>{heroData.cta}</span>
-              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-100 group-hover:text-white/95" />
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-100 group-hover:text-blue-700" />
             </button>
             <span className="text-lg opacity-80 font-semibold">
               {heroData.trusted}

@@ -46,10 +46,10 @@ export function DomainSearchSection() {
   };
 
   return (
-    <section className="pt-8 pb-16 bg-gray-50 dark:bg-gray-900">
+    <section className="py-10">
       <div className="container mx-auto px-4">
-        <Card className="max-w-6xl mx-auto bg-white dark:bg-gray-800 shadow-lg">
-          <CardContent className="p-8">
+        <Card className="max-w-6xl mx-auto bg-white dark:bg-gray-800 shadow-lg p-0">
+          <CardContent className="p-12">
             <div className="flex flex-col lg:flex-row items-center gap-8">
               {/* Left side */}
               <div className="flex-1 w-full">
@@ -114,9 +114,10 @@ export function DomainSearchSection() {
                 </div>
               </div>
 
-              {/* Right side badge */}
-              <div className="relative">
-                <div className="relative bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-8 rounded-2xl border border-blue-200 dark:border-blue-800">
+              {/* Right side badges */}
+              <div className="flex flex-col md:flex-row gap-12 md:justify-between items-center">
+                {/* .com limited offer */}
+                <div className="relative bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-8 rounded-2xl border border-blue-200 dark:border-blue-800 flex-1">
                   <Badge className="absolute -top-3 -right-3 bg-gradient-to-r from-pink-500 to-red-500 text-white px-4 py-1 text-sm font-medium transform rotate-12">
                     Limited Time Offer
                   </Badge>
@@ -137,8 +138,36 @@ export function DomainSearchSection() {
                       1650tk/year
                     </div>
                   </div>
-                  <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-blue-500 rounded-full"></div>
+
+                  <div className="absolute -bottom-2 -right-2 w-4 h-4 bg-blue-500 rounded-full"></div>
                   <div className="absolute -top-1 -left-1 w-2 h-2 bg-pink-500 rounded-full"></div>
+                </div>
+
+                {/* .org special deal */}
+                <div className="relative bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-8 rounded-2xl border border-blue-200 dark:border-blue-800 flex-1">
+                  <Badge className="absolute -top-3 -left-3 bg-gradient-to-r from-purple-500 to-indigo-500 text-white px-4 py-1 text-sm font-medium transform rotate-12">
+                    Limited Time Offer
+                  </Badge>
+
+                  <div className="text-center">
+                    <div className="text-lg font-medium text-gray-600 dark:text-gray-300 mb-2">
+                      Special Deal
+                    </div>
+                    <div className="text-5xl font-bold text-gray-900 dark:text-white mb-4">
+                      .org
+                    </div>
+                    <div className="flex items-center justify-center gap-2 mb-2">
+                      <div className="bg-green-600 text-white px-4 py-2 rounded-full text-lg font-bold">
+                        35% off
+                      </div>
+                    </div>
+                    <div className="text-xl font-semibold text-green-600 dark:text-green-400">
+                      1450tk/year
+                    </div>
+                  </div>
+
+                  <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-green-500 rounded-full"></div>
+                  <div className="absolute -top-1 -right-1 w-2 h-2 bg-purple-500 rounded-full"></div>
                 </div>
               </div>
             </div>

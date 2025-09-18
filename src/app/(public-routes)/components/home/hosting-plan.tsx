@@ -23,7 +23,7 @@ export default function HostingPlan() {
   };
 
   return (
-    <section className="py-16 bg-gray-50 dark:bg-gray-900">
+    <section className="pt-14 pb-10">
       <div className="container max-w-7xl mx-auto px-4">
         <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">
           Select Your Perfect Hosting Plan
@@ -32,7 +32,7 @@ export default function HostingPlan() {
           {plans.map((plan) => (
             <Card
               key={plan.id}
-              className="relative border group border-gray-200 dark:border-gray-700 rounded-lg p-6 bg-accent text-gray-900 dark:text-gray-100 transition-all duration-300 ease-in-out hover:bg-blue-700 hover:text-white/95 dark:hover:text-blue-200 mx-2"
+              className="relative border group border-gray-200 dark:border-gray-700 rounded-lg p-8 bg-accent text-gray-900 dark:text-gray-100 transition-all duration-300 ease-in-out hover:bg-blue-700 hover:text-white/95 dark:hover:text-blue-200 mx-2"
             >
               {plan.giftBadge && (
                 <div className="absolute top-0 right-0 bg-yellow-400 text-gray-800 text-xs font-bold px-3 py-1 rounded-bl-lg">
@@ -59,7 +59,7 @@ export default function HostingPlan() {
 
                 <button
                   className="w-full py-2 cursor-pointer bg-white dark:bg-transparent border border-blue-600 text-blue-600 font-semibold rounded-lg shadow justify-center flex gap-2 items-center
-             hover:bg-blue-50 hover:text-blue-600 dark:group-hover:text-white/95 transform mb-1
+             hover:bg-blue-50 hover:text-blue-600 hover:scale-105 dark:group-hover:text-white/95 transform mb-1
              transition-all duration-300 ease-in-out"
                   onClick={() => handleChoosePlan(plan)}
                 >

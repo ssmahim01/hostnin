@@ -129,9 +129,7 @@ export function Footer() {
         <div className="container mx-auto px-4 py-4">
           <figure className="flex flex-wrap justify-center items-center gap-4">
             <Image
-              src={
-                "/assets/SSLCommerz-Pay-With-logo-All-Size-01.png"
-              }
+              src={"/assets/SSLCommerz-Pay-With-logo-All-Size-01.png"}
               alt="Payment Methods"
               width={1920}
               height={50}
@@ -147,13 +145,15 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
           {footerSections.map((section) => (
             <div key={section.title}>
-              <h3 className="font-semibold text-white mb-4">{section.title}</h3>
+              <h3 className="font-semibold text-xl text-white mb-4">
+                {section.title}
+              </h3>
               <ul className="space-y-2">
                 {section.links.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-blue-200 hover:text-white transition-colors text-lg"
+                      className="text-blue-200 hover:text-white transition-colors text-base"
                     >
                       {link.label}{" "}
                       {link?.label === "Careers" && (
@@ -188,11 +188,7 @@ export function Footer() {
               </Link>
               <p className="text-blue-200 text-sm mt-4">
                 © {getFullYear}{" "}
-                <Link
-                  href={"https://hostnin.com"}
-                  className="hover:text-blue-500"
-                  target="_blank"
-                >
+                <Link href={"https://hostnin.com"} target="_blank">
                   Hostnin.
                 </Link>{" "}
                 All Rights Reserved.

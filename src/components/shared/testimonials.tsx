@@ -84,7 +84,7 @@ export function TestimonialsSection() {
     theme === "light" ? "/assets/arrow-dark.webp" : "/assets/right-arrow.png";
 
   return (
-    <section className="pt-4 pb-16 bg-gray-50 dark:bg-gray-900/50">
+    <section className="py-10">
       <div className="container max-w-7xl mx-auto px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 items-center">

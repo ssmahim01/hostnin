@@ -2,8 +2,9 @@ import type { SupportHero } from "@/types/support-hero";
 
 export const supportHeroes: SupportHero[] = [
   {
-    name: "Imran",
+    name: "Imran Mahmud",
     role: "Hostnin Support",
+    email: "imran@hostnin.com",
     description:
       "Dedicated support professional ensuring fast responses, friendly communication, and effective solutions for all your hosting needs.",
     image: {
@@ -12,8 +13,9 @@ export const supportHeroes: SupportHero[] = [
     },
   },
   {
-    name: "Sajjad",
+    name: "Asad Ujjaman",
     role: "Hostnin Support",
+     email: "asad@hostnin.com",
     description:
       "Dedicated support professional ensuring fast responses, friendly communication, and effective solutions for all your hosting needs.",
     image: {
@@ -22,8 +24,9 @@ export const supportHeroes: SupportHero[] = [
     },
   },
   {
-    name: "Rafy",
+    name: "Kamrul Hasan",
     role: "Hostnin Support",
+     email: "kamrul@hostnin.com",
     description:
       "Dedicated support professional ensuring fast responses, friendly communication, and effective solutions for all your hosting needs",
     image: {
@@ -32,8 +35,9 @@ export const supportHeroes: SupportHero[] = [
     },
   },
   {
-    name: "Mujahid",
+    name: "Mujahidul Islam",
     role: "Hostnin Support",
+     email: "mujahid@hostnin.com",
     description:
       "Dedicated support professional ensuring fast responses, friendly communication, and effective solutions for all your hosting needs.",
     image: {
@@ -42,8 +46,9 @@ export const supportHeroes: SupportHero[] = [
     },
   },
   {
-    name: "Asad",
+    name: "Sajjadur Rahman",
     role: "Hostnin Support",
+     email: "sajjadur@hostnin.com",
     description:
       "Dedicated support professional ensuring fast responses, friendly communication, and effective solutions for all your hosting needs.",
     image: {
@@ -52,8 +57,9 @@ export const supportHeroes: SupportHero[] = [
     },
   },
   {
-    name: "Tareq",
+    name: "Hasan Tareq",
     role: "Hostnin Support",
+     email: "hasan@hostnin.com",
     description:
       "Dedicated support professional ensuring fast responses, friendly communication, and effective solutions for all your hosting needs.",
     image: {

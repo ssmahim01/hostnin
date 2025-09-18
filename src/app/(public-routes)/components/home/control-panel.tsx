@@ -6,7 +6,7 @@ import PanelAccordion from "./panel-accordion";
 
 export default function ControlPanelSection() {
   return (
-    <section className="py-14 bg-white dark:bg-gray-900">
+    <section className="py-10">
       <div className="container max-w-7xl mx-auto px-4 lg:px-8">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center text-[#13205A] mb-4 dark:text-blue-300">
           User-Friendly Control Panel
