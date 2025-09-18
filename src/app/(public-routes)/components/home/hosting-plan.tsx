@@ -59,7 +59,7 @@ export default function HostingPlan() {
 
                 <button
                   className="w-full py-2 cursor-pointer bg-white dark:bg-transparent border border-blue-600 text-blue-600 font-semibold rounded-lg shadow justify-center flex gap-2 items-center
-             hover:bg-blue-50 hover:text-blue-600 transform mb-1
+             hover:bg-blue-50 hover:text-blue-600 dark:hover:text-white/95 transform mb-1
              transition-all duration-300 ease-in-out"
                   onClick={() => handleChoosePlan(plan)}
                 >
