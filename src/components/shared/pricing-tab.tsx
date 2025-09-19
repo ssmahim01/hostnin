@@ -31,7 +31,7 @@ export default function PricingTab() {
   const [activeTab, setActiveTab] = useState("Web Hosting");
 
   return (
-    <div className="pt-8">
+    <div className="py-8">
       {/* Heading */}
       <p className="text-[25px] md:text-4xl lg:text-5xl text-center font-bold py-9 text-gray-900 dark:text-white">
         Select your Perfect Plan
