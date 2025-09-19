@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider/theme-provider";
 import { Navbar } from "@/components/shared/navbar";
 import { Footer } from "@/components/shared/footer";
 import { Toaster } from "sonner";
+import ScrollToTopButton from "@/components/shared/scroll-to-top";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -43,6 +44,7 @@ export default function RootLayout({
           >
             <Navbar />
             {children}
+            <ScrollToTopButton />
              <Toaster />
             <Footer />
           </ThemeProvider>
