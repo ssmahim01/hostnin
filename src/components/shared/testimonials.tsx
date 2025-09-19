@@ -234,8 +234,8 @@ export function TestimonialsSection() {
                           <Image
                             src="/assets/quote-icon.svg"
                             alt="Quote"
-                            width={70}
-                            height={70}
+                            width={50}
+                            height={50}
                             className="object-contain"
                           />
                         </div>

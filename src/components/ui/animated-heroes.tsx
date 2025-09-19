@@ -116,29 +116,35 @@ export const AnimatedSupportTeam = ({
             <h3 className="md:text-4xl text-3xl font-bold text-black dark:text-white mb-2">
               {currentHero.name}
             </h3>
-            <p className="text-lg text-blue-600 font-semibold dark:text-neutral-500">
+            <p className="text-lg text-blue-600 font-semibold dark:text-neutral-300">
               {currentHero.role}
             </p>
 
             {/* Email with copy */}
-            {currentHero.email && (
-              <div className="mt-3 flex items-center justify-between bg-gray-100 dark:bg-slate-950 rounded-lg px-3 py-2">
-                <span className="text-sm md:text-base text-gray-700 dark:text-neutral-300 truncate">
-                  {currentHero.email}
-                </span>
-                <button
-                  onClick={() => copyEmail(currentHero?.email ?? "")}
-                  className="flex items-center justify-center rounded-md hover:cursor-pointer p-1.5 hover:bg-gray-200 dark:hover:bg-neutral-700 transition"
-                  title="Copy email"
-                >
-                  {copied ? (
-                    <IconCheck className="h-5 w-5 text-green-500" />
-                  ) : (
-                    <IconCopy className="h-5 w-5 text-gray-700 dark:text-neutral-300" />
-                  )}
-                </button>
-              </div>
-            )}
+            <div className="flex gap-2 mt-3 items-center">
+              <p className="text-gray-700 text-lg font-bold dark:text-neutral-300">
+                Contact At:
+              </p>
+
+              {currentHero.email && (
+                <div className="flex items-center justify-between bg-gray-100 dark:bg-slate-950 rounded-md gap-2 px-3 py-1">
+                  <span className="text-sm md:text-base font-medium text-gray-700 dark:text-neutral-300 truncate">
+                    {currentHero.email}
+                  </span>
+                  <button
+                    onClick={() => copyEmail(currentHero?.email ?? "")}
+                    className="flex items-center justify-center rounded-md hover:cursor-pointer p-1.5 hover:bg-gray-200 dark:hover:bg-neutral-700 transition"
+                    title="Copy email"
+                  >
+                    {copied ? (
+                      <IconCheck className="h-5 w-5 text-green-500" />
+                    ) : (
+                      <IconCopy className="h-5 w-5 text-gray-700 dark:text-neutral-300" />
+                    )}
+                  </button>
+                </div>
+              )}
+            </div>
 
             <motion.p className="mt-4 text-lg font-medium leading-relaxed mb-4 text-gray-500 dark:text-neutral-300">
               {currentHero.description.split(" ").map((word, index) => (

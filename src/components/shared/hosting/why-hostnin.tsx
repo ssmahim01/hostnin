@@ -9,9 +9,9 @@ export default function WhyHostnin() {
   return (
     <section
       className="
-    mt-6 pt-14 
+    mt-6 pt-14 -mb-[0.5px]
     bg-cover bg-center bg-[url('/assets/shape.png')] bg-no-repeat 
-    dark:bg-none dark:bg-gray-900
+    dark:bg-none
   "
     >
       <div className="container max-w-7xl mx-auto px-4">
@@ -44,7 +44,7 @@ export default function WhyHostnin() {
               {features.map((feature: Feature, index: number) => (
                 <Card
                   key={index}
-                  className="bg-white dark:bg-gray-800 border-0 shadow-sm"
+                  className="border hover:scale-105 border-gray-200 dark:border-gray-700 hover:shadow-lg bg-white dark:bg-gray-800 backdrop-blur-sm dark:hover:bg-white/10 transition-all duration-500"
                 >
                   <CardHeader className="flex flex-col">
                     <div className="p-2 bg-blue-100 dark:bg-blue-900 rounded-full">

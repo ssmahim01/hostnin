@@ -64,7 +64,7 @@ const tabs = [
 
 export default function AdvancedFeatures() {
   return (
-    <section className="pt-14 pb-8 bg-white dark:bg-gray-900">
+    <section className="py-14">
       <div className="container max-w-7xl mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center gap-8">
           {/* Illustration Image */}
@@ -87,20 +87,28 @@ export default function AdvancedFeatures() {
 
             <Tabs defaultValue="control-panel" className="w-full">
               <ScrollArea className="w-full lg:max-w-full max-w-sm">
-                <TabsList className="flex border-b border-gray-200 dark:border-gray-700 mb-6 w-max">
+                <TabsList className="flex border-b border-gray-200 dark:border-gray-700 mb-6 w-max gap-2">
                   {tabs.map((tab) => (
                     <TabsTrigger
                       key={tab.value}
                       value={tab.value}
-                      className="px-4 whitespace-nowrap text-gray-600 dark:text-gray-300 
-                        data-[state=active]:text-blue-600 data-[state=active]:border-b-2 
-                        data-[state=active]:border-b-blue-600 data-[state=active]:dark:text-blue-400 
-                        data-[state=active]:dark:border-blue-400"
+                      className={`
+                      px-5 py-3 whitespace-nowrap rounded-md font-medium hover:cursor-pointer
+                      text-gray-600 dark:text-gray-300
+                      transition-all duration-300 ease-in-out
+                      hover:text-blue-600 hover:dark:text-blue-400
+                      hover:scale-105 hover:bg-blue-50 dark:hover:bg-blue-900/20
+                      data-[state=active]:text-white
+                      data-[state=active]:bg-blue-600
+                      data-[state=active]:shadow-md
+                      data-[state=active]:dark:bg-blue-500
+                    `}
                     >
                       {tab.title}
                     </TabsTrigger>
                   ))}
                 </TabsList>
+
                 <ScrollBar orientation="horizontal" className="h-1" />
               </ScrollArea>
 

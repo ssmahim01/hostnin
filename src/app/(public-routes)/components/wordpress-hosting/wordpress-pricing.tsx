@@ -6,6 +6,7 @@ import { IconMap } from "@/components/shared/icon-map";
 import { usePathname } from "next/navigation";
 import { PricingPlan } from "@/types/pricing";
 import { wordPressPricingData } from "@/data/wordpress-hosting-plans";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 const tabClass = (active: boolean) =>
   `px-3 sm:px-4 md:px-7 md:py-1.5 py-1 cursor-pointer font-semibold text-sm sm:text-sm md:text-base focus:outline-none transition-colors duration-200 rounded-full ${
@@ -42,6 +43,8 @@ export default function WordpressPricing() {
   >({});
   const [activeTooltip, setActiveTooltip] = useState<number | null>(null);
   const pathname = usePathname();
+  const [showAllFeatures, setShowAllFeatures] = useState(false);
+  const isMobile = useIsMobile();
 
   const handleTooltipClick = (i: number) => {
     setActiveTooltip(i);
@@ -71,8 +74,11 @@ export default function WordpressPricing() {
           Choose Your Perfect Plan
         </h2>
       )}
-      <div id="wordpress-pricing" className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-row items-center gap-4 mb-8 justify-center">
+      <div
+        id="wordpress-pricing"
+        className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
+        <div id="plans-container" className="flex flex-row items-center gap-4 mb-8 justify-center">
           <div className="flex bg-[#2a3553] rounded-full p-1">
             <button
               className={tabClass(billing === "monthly")}
@@ -290,98 +296,135 @@ export default function WordpressPricing() {
                       </div>
                     ))}
 
-                    {/* Show More */}
-                    {showExpandedFeatures[plan.title] &&
+                    {((!isMobile && showAllFeatures) ||
+                      (isMobile && showExpandedFeatures[plan.title])) &&
                       plan.expandedFeatures && (
                         <>
-                          {(
-                            [
-                              "server",
-                              "security",
-                              "support",
-                            ] as const
-                          ).map((category) => (
-                            <div key={category} className="mt-6">
-                              <h5 className="font-bold text-gray-800 dark:text-gray-200 mb-3 text-lg capitalize bg-accent px-3 py-2 rounded-lg">
-                                {category}
-                              </h5>
-                              {plan.expandedFeatures &&
-                                plan.expandedFeatures[category] &&
-                                plan.expandedFeatures[category].map(
-                                  (feature, i: number) => (
-                                    <div
-                                      key={`${category}-${i}`}
-                                      className="flex items-center gap-3 group relative mb-2"
-                                    >
-                                      {feature.included ? (
-                                        <div className="flex-shrink-0 w-5 h-5 bg-green-100 rounded-full flex items-center justify-center">
-                                          <Check className="text-xs text-green-600 font-bold" />
-                                        </div>
-                                      ) : (
-                                        <div className="flex-shrink-0 w-5 h-5 bg-red-100 rounded-full flex items-center justify-center">
-                                          <X className="text-xs text-red-600 font-bold" />
-                                        </div>
-                                      )}
-                                      <span className="text-[15px] lg:text-base text-gray-700 dark:text-gray-300 cursor-help font-medium">
-                                        {feature.text}
-                                      </span>
-                                      {feature.tooltip && (
-                                        <div className="absolute left-0 top-8 z-50 w-80 bg-blue-600 text-white text-sm md:text-lg rounded-lg p-3 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none">
-                                          {feature.tooltip}
-                                          <div className="absolute -top-1 left-4 w-2 h-2 bg-blue-600 transform rotate-45"></div>
-                                        </div>
-                                      )}
-                                    </div>
-                                  )
-                                )}
-                            </div>
-                          ))}
+                          {(["server", "security", "support"] as const).map(
+                            (category) => (
+                              <div key={category} className="mt-6">
+                                <h5 className="font-bold text-gray-800 dark:text-gray-200 mb-3 text-lg capitalize bg-accent px-3 py-2 rounded-lg">
+                                  {category}
+                                </h5>
+                                {plan.expandedFeatures &&
+                                  plan.expandedFeatures[category] &&
+                                  plan.expandedFeatures[category].map(
+                                    (feature, i: number) => (
+                                      <div
+                                        key={`${category}-${i}`}
+                                        className="flex items-center gap-3 group relative mb-2"
+                                      >
+                                        {feature.included ? (
+                                          <div className="flex-shrink-0 w-5 h-5 bg-green-100 rounded-full flex items-center justify-center">
+                                            <Check className="text-xs text-green-600 font-bold" />
+                                          </div>
+                                        ) : (
+                                          <div className="flex-shrink-0 w-5 h-5 bg-red-100 rounded-full flex items-center justify-center">
+                                            <X className="text-xs text-red-600 font-bold" />
+                                          </div>
+                                        )}
+                                        <span className="text-[15px] lg:text-base text-gray-700 dark:text-gray-300 cursor-help font-medium">
+                                          {feature.text}
+                                        </span>
+                                        {feature.tooltip && (
+                                          <div className="absolute left-0 top-8 z-50 w-80 bg-blue-600 text-white text-sm md:text-lg rounded-lg p-3 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none">
+                                            {feature.tooltip}
+                                            <div className="absolute -top-1 left-4 w-2 h-2 bg-blue-600 transform rotate-45"></div>
+                                          </div>
+                                        )}
+                                      </div>
+                                    )
+                                  )}
+                              </div>
+                            )
+                          )}
                         </>
                       )}
                   </div>
                 </div>
 
-                {/* Show More */}
-                {!showExpandedFeatures[plan.title] ? (
-                  <div
-                    className={`flex items-center justify-center gap-2 cursor-pointer hover:bg-blue-50 rounded-lg p-3 transition-all duration-200 border border-blue-200 ${
-                      plan.highlight ? "mt-4 mb-6" : "mt-4"
-                    }`}
-                    onClick={() =>
-                      setShowExpandedFeatures((prev) => ({
-                        ...prev,
-                        [plan.title]: true,
-                      }))
-                    }
-                  >
-                    <span className="text-blue-600 font-semibold text-sm hover:text-blue-700">
-                      See More Features
-                    </span>
-                    <ChevronDown
-                      size={18}
-                      className="text-blue-600 hover:text-blue-700 transition-transform duration-200"
-                    />
-                  </div>
-                ) : (
-                  <div
-                    className={`flex items-center justify-center gap-2 cursor-pointer hover:bg-orange-50 rounded-lg p-3 transition-all duration-200 border border-orange-200 ${
-                      plan.highlight ? "mt-6 mb-6" : "mt-6"
-                    }`}
-                    onClick={() =>
-                      setShowExpandedFeatures((prev) => ({
-                        ...prev,
-                        [plan.title]: false,
-                      }))
-                    }
-                  >
-                    <span className="text-orange-600 font-semibold text-sm hover:text-orange-700">
-                      Show Less Features
-                    </span>
-                    <span className="text-orange-600 text-sm hover:text-orange-700 transform rotate-180 transition-transform duration-200">
-                      ^
-                    </span>
-                  </div>
-                )}
+                {/* Mobile: each card toggle */}
+                {isMobile ? (
+                  !showExpandedFeatures[plan.title] ? (
+                    <div
+                      className={`flex items-center justify-center gap-2 cursor-pointer hover:bg-blue-50 rounded-lg p-3 transition-all duration-200 border border-blue-200 ${
+                        plan.highlight ? "mt-4 mb-6" : "mt-4"
+                      }`}
+                      onClick={() =>
+                        setShowExpandedFeatures((prev) => ({
+                          ...prev,
+                          [plan.title]: true,
+                        }))
+                      }
+                    >
+                      <span className="text-blue-600 font-semibold text-sm hover:text-blue-700">
+                        See More Features
+                      </span>
+                      <ChevronDown
+                        size={18}
+                        className="text-blue-600 hover:text-blue-700 transition-transform duration-200"
+                      />
+                    </div>
+                  ) : (
+                    <div
+                      className={`flex items-center justify-center gap-2 cursor-pointer hover:bg-orange-50 rounded-lg p-3 transition-all duration-200 border border-orange-200 ${
+                        plan.highlight ? "mt-6 mb-6" : "mt-6"
+                      }`}
+                      onClick={() =>
+                        setShowExpandedFeatures((prev) => ({
+                          ...prev,
+                          [plan.title]: false,
+                        }))
+                      }
+                    >
+                      <span className="text-orange-600 font-semibold text-sm hover:text-orange-700">
+                        Show Less Features
+                      </span>
+                      <span className="text-orange-600 text-sm hover:text-orange-700 transform rotate-180 transition-transform duration-200">
+                        ^
+                      </span>
+                    </div>
+                  )
+                ) : null}
+
+                {/* Desktop: one toggle controls all */}
+                {!isMobile &&
+                  (!showAllFeatures ? (
+                    <div
+                      className="flex items-center justify-center gap-2 cursor-pointer hover:bg-blue-50 rounded-lg p-3 transition-all duration-200 border border-blue-200 mt-6"
+                      onClick={() => setShowAllFeatures(true)}
+                    >
+                      <span className="text-blue-600 font-semibold text-sm hover:text-blue-700">
+                        See All Features
+                      </span>
+                      <ChevronDown
+                        size={18}
+                        className="text-blue-600 hover:text-blue-700 transition-transform duration-200"
+                      />
+                    </div>
+                  ) : (
+                    <div
+                      className="flex items-center justify-center gap-2 cursor-pointer hover:bg-orange-50 rounded-lg p-3 transition-all duration-200 border border-orange-200 mt-6"
+                      onClick={() => {
+                        setShowAllFeatures(false);
+
+                        const el = document.getElementById("plans-container");
+                        if (el) {
+                          el.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",
+                          });
+                        }
+                      }}
+                    >
+                      <span className="text-orange-600 font-semibold text-sm hover:text-orange-700">
+                        Hide All Features
+                      </span>
+                      <span className="text-orange-600 text-sm hover:text-orange-700 transform rotate-180 transition-transform duration-200">
+                        ^
+                      </span>
+                    </div>
+                  ))}
               </div>
             </div>
           ))}

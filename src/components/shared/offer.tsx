@@ -28,7 +28,7 @@ const offerData: Offer = {
 export default function Offer() {
   return (
     <section
-      className="py-10 bg-cover bg-center bg-no-repeat relative text-center max-w-7xl mx-auto"
+      className="py-8 bg-cover bg-center bg-no-repeat relative text-center max-w-7xl mx-auto"
       style={{
         backgroundImage:
           "url('https://res.cloudinary.com/daspo1tk3/image/upload/v1757597595/bg1_kdhj8o.jpg')",
@@ -44,7 +44,7 @@ export default function Offer() {
 
         <div className="flex flex-col justify-center gap-4 mt-8 items-center">
           <button
-            className="px-10 py-3 cursor-pointer bg-transparent border border-blue-600 text-blue-400 font-semibold rounded-lg shadow 
+            className="px-10 py-3 cursor-pointer bg-transparent border border-gray-200 hover:border-gray-600 text-white/95 font-semibold rounded-lg shadow 
              hover:bg-blue-700 hover:text-white transform hover:scale-105 
              transition-all duration-300 ease-in-out"
           >

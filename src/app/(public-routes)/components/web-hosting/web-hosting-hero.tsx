@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { CountdownTimer } from "../../../../components/shared/hosting/countdown-timer";
 import { Check, X, Zap } from "lucide-react";
 import { motion } from "framer-motion";
@@ -32,7 +31,7 @@ export default function WebHostingHero() {
       <motion.div
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className="bg-gradient-to-r from-blue-500 to-blue-800 text-white text-center relative"
+        className="bg-gradient-to-r from-blue-700 to-blue-900 text-white text-center relative"
       >
         <div className="flex items-center justify-between gap-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
           <div className="flex flex-col md:flex-row md:items-center items-start gap-2 md:gap-6">
@@ -67,8 +66,7 @@ export default function WebHostingHero() {
       <div
         className="text-white pt-20 pb-28 bg-center bg-no-repeat bg-cover bg-[#06249a] dark:bg-blue-950"
         style={{
-          backgroundImage:
-            "url('/assets/sh-hero-bg.png')",
+          backgroundImage: "url('/assets/sh-hero-bg.png')",
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -110,21 +108,21 @@ export default function WebHostingHero() {
               </div>
 
               {/* Countdown + Button */}
-              <div className="space-y-4">
+              <div className="space-y-8">
                 <CountdownTimer />
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 }}
                 >
-                  <Button
-                    size="lg"
+                  <button
                     onClick={handleScrollToPricing}
-                    className="bg-blue-500 mt-6 cursor-pointer text-white px-9 py-7 text-lg font-semibold rounded-lg shadow-lg border-2 border-blue-700 flex items-center gap-3
-                    transition-all duration-300 mx-auto lg:mx-0 ease-in-out hover:scale-105 hover:bg-blue-600 hover:shadow-blue-400/50 active:scale-95"
+                    className="relative bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-600 hover:from-blue-600 hover:via-indigo-600 hover:to-purple-600 text-white font-bold px-8 py-4 rounded-xl transition-all duration-500 text-base sm:text-lg shadow-xl hover:shadow-2xl hover:scale-105 w-full sm:w-auto mb-6 sm:mb-10 transform hover:-translate-y-1 border-2 border-blue-400 hover:border-indigo-500 flex items-center justify-center gap-2 cursor-pointer lg:mx-0 mx-auto"
                   >
-                    <Zap /> Claim Offer Now
-                  </Button>
+                    <Zap />{" "}
+                    <span className="relative z-10">Claim Offer Now</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-300/20 to-indigo-300/20 rounded-xl opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
+                  </button>
                 </motion.div>
               </div>
             </motion.div>

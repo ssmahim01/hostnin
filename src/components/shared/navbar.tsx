@@ -92,13 +92,13 @@ const navItems: NavItem[] = [
         label: "VPS",
         href: "/hosting/vps-hosting",
         icon: HardDrive,
-        description: "Virtual Private Server",
+        // description: "Virtual Private Server",
       },
       {
         label: "Dedicated",
         href: "/hosting/dedicated-server",
         icon: Monitor,
-        description: "Dedicated Server Solutions",
+        // description: "Dedicated Server Solutions",
       },
     ],
   },
@@ -212,8 +212,8 @@ export function Navbar() {
 
                   {item.hasDropdown && item.dropdownItems && (
                     <div
-                      className={`absolute left-0 mt-2 bg-accent dark:bg-gray-900 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0
-                    ${item.label === "Hosting" ? "w-[550px]" : "w-60"}`}
+                      className={`absolute  ${item.label === "Hosting" ? "  -left-50" : "-left-10"} mt-2 bg-accent dark:bg-gray-900 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0
+                    ${item.label === "Hosting" ? "w-[550px]" : "w-52"}`}
                     >
                       {/* Dropdown items remain links */}
                       <div
@@ -232,13 +232,13 @@ export function Navbar() {
                               className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group/item"
                             >
                               {IconComponent && (
-                                <div className="flex-shrink-0 w-7 h-7 rounded-lg flex items-center justify-center">
+                                <div className={`flex-shrink-0  ${item.label === "Hosting" ? "w-8 h-8" : "w-6 h-6"} rounded-lg flex items-center justify-center`}>
                                   <IconComponent className="w-full h-full text-gray-900 dark:text-gray-200" />
                                 </div>
                               )}
                               <div className="flex-1">
                                 <div className="flex items-center gap-2">
-                                  <span className="font-medium text-gray-900 dark:text-gray-100 group-hover/item:text-blue-600 dark:group-hover/item:text-blue-400">
+                                  <span className="font-medium text-gray-900 text-sm dark:text-gray-100 group-hover/item:text-blue-600 dark:group-hover/item:text-blue-400">
                                     {dropdownItem.label}
                                   </span>
                                   {dropdownItem.badge && (

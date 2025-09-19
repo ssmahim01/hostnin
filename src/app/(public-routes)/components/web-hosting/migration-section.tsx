@@ -6,8 +6,8 @@ import Link from "next/link";
 
 export default function MigrationSection() {
   return (
-    <section className="my-20 max-w-7xl px-4 mx-auto">
-      <Card className="lg:py-4 py-8 lg:px-8 px-6 rounded-lg shadow-xl bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 hover:shadow-2xl hover:scale-105 transition-transform duration-300 overflow-hidden">
+    <section className="my-14 max-w-7xl px-4 mx-auto">
+      <Card className="lg:py-4 py-8 lg:px-8 px-6 rounded-lg shadow-md bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 hover:shadow-xl hover:scale-105 transition-transform duration-500 overflow-hidden">
         <CardContent className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6 ">
           <div className="md:w-1/2 flex justify-center">
             <Image
@@ -29,7 +29,7 @@ export default function MigrationSection() {
             </p>
             <Link href={"/contact"}>
               <button
-                className="px-6 py-3 cursor-pointer bg-white border border-blue-600 text-blue-600 font-semibold rounded-lg shadow 
+                className="px-6 py-3 cursor-pointer bg-transparent border border-blue-600 dark:text-blue-500 text-blue-600 font-semibold rounded-lg shadow dark:hover:text-white
              hover:bg-blue-700 hover:text-white transform hover:scale-105 
              transition-all duration-300 ease-in-out"
               >

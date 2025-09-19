@@ -115,10 +115,10 @@ export function DomainSearchSection() {
               </div>
 
               {/* Right side badges */}
-              <div className="flex flex-col md:flex-row gap-12 md:justify-between items-center">
+              <div className="flex flex-col md:flex-row gap-10 md:gap-16 md:justify-between items-center">
                 {/* .com limited offer */}
                 <div className="relative bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-8 rounded-2xl border border-blue-200 dark:border-blue-800 flex-1">
-                  <Badge className="absolute -top-3 -right-3 bg-gradient-to-r from-pink-500 to-red-500 text-white px-4 py-1 text-sm font-medium transform rotate-12">
+                  <Badge className="absolute -top-3 -right-3 bg-gradient-to-r from-pink-500 to-red-500 text-white px-4 py-1 text-sm font-medium transform">
                     Limited Time Offer
                   </Badge>
 
@@ -145,13 +145,13 @@ export function DomainSearchSection() {
 
                 {/* .org special deal */}
                 <div className="relative bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-8 rounded-2xl border border-blue-200 dark:border-blue-800 flex-1">
-                  <Badge className="absolute -top-3 -left-3 bg-gradient-to-r from-purple-500 to-indigo-500 text-white px-4 py-1 text-sm font-medium transform rotate-12">
-                    Limited Time Offer
+                  <Badge className="absolute -top-3 -left-3 bg-gradient-to-r from-purple-500 to-indigo-500 text-white px-4 py-1 text-sm font-medium transform">
+                    Special Offer
                   </Badge>
 
                   <div className="text-center">
                     <div className="text-lg font-medium text-gray-600 dark:text-gray-300 mb-2">
-                      Special Deal
+                      Deal
                     </div>
                     <div className="text-5xl font-bold text-gray-900 dark:text-white mb-4">
                       .org
@@ -162,7 +162,7 @@ export function DomainSearchSection() {
                       </div>
                     </div>
                     <div className="text-xl font-semibold text-green-600 dark:text-green-400">
-                      1450tk/year
+                      1650tk/year
                     </div>
                   </div>
 

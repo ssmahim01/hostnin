@@ -4,7 +4,7 @@ import { Clock, MinusSquare, Plus } from "lucide-react";
 
 export function MoneyBackGuarantee() {
   return (
-    <section className="py-14 bg-gray-50 dark:bg-gray-900/50 relative overflow-hidden max-w-7xl mx-auto">
+    <section className="my-14 py-14 bg-gray-50 dark:bg-gray-900/50 relative overflow-hidden max-w-7xl mx-auto">
       {/* Background decorative elements */}
       <div className="absolute top-0 left-0 w-44 h-44 bg-blue-100 dark:bg-blue-900/20 rounded-full -translate-x-16 -translate-y-16"></div>
       <div className="absolute bottom-0 right-0 w-60 h-60 bg-pink-100 dark:bg-pink-900/20 rounded-full translate-x-20 translate-y-20"></div>

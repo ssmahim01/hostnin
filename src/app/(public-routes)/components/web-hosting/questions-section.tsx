@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function QuestionsSection() {
   return (
-    <Card className="p-0 dark:my-6 max-w-7xl mx-auto bg-gradient-to-r from-blue-950 to-blue-800 text-white rounded-lg shadow-lg overflow-hidden">
+    <Card className="p-0 max-w-7xl mx-auto bg-gradient-to-r from-blue-950 to-blue-800 text-white rounded-lg shadow-lg overflow-hidden">
       <CardContent className="container mx-auto p-10 flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="md:w-1/2 text-center md:text-left space-y-6">
           <h2 className="md:text-4xl text-3xl font-bold mb-4">

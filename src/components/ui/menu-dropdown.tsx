@@ -106,7 +106,7 @@ export default function Dropdown() {
     ${
       isOpen
         ? "bg-blue-600 text-white border-blue-600"
-        : "text-blue-600 dark:text-blue-400 border-blue-600 hover:bg-blue-700 dark:hover:bg-blue-700 dark:hover:text-white/95 hover:text-white hover:border-blue-700"
+        : "text-blue-600 dark:text-blue-400 border-blue-600 hover:bg-blue-700 dark:hover:text-white/95 hover:text-white hover:border-blue-700"
     }`}
           >
             Dashboard

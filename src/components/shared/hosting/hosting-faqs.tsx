@@ -219,7 +219,7 @@ export default function HostingFAQs() {
   const pathname = usePathname();
 
   return (
-    <section className="w-full pb-10 md:pb-20 flex flex-col items-center bg-gray-50 dark:bg-gray-900 py-8 px-4 sm:px-6 transition-colors duration-300">
+    <section className="w-full pt-6 pb-16 flex flex-col items-center px-4 sm:px-6 transition-colors duration-300">
       <div className="pb-8 text-center">
         <h2 className="text-[28px] sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2 transition-colors duration-300">
           FAQs: Your questions, our answers

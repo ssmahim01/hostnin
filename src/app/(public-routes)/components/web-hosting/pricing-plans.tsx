@@ -6,6 +6,7 @@ import { PricingPlan } from "@/types/pricing";
 import { Check, ChevronDown, X } from "lucide-react";
 import { IconMap } from "@/components/shared/icon-map";
 import { usePathname } from "next/navigation";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 const tabClass = (active: boolean) =>
   `px-3 sm:px-4 md:px-7 md:py-1.5 py-1 cursor-pointer font-semibold text-sm sm:text-sm md:text-base focus:outline-none transition-colors duration-200 rounded-full ${
@@ -40,6 +41,8 @@ export default function PricePlans() {
   >({});
   const [activeTooltip, setActiveTooltip] = useState<number | null>(null);
   const pathname = usePathname();
+  const [showAllFeatures, setShowAllFeatures] = useState(false);
+  const isMobile = useIsMobile();
 
   const handleTooltipClick = (i: number) => {
     setActiveTooltip(i);
@@ -69,7 +72,10 @@ export default function PricePlans() {
           Choose Your Perfect Plan
         </h2>
       )}
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div
+        id="plans-container"
+        className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
         <div className="flex flex-row items-center gap-4 mb-8 justify-center">
           <div className="flex bg-[#2a3553] rounded-full p-1">
             <button
@@ -288,8 +294,8 @@ export default function PricePlans() {
                       </div>
                     ))}
 
-                    {/* Show More */}
-                    {showExpandedFeatures[plan.title] &&
+                    {((!isMobile && showAllFeatures) ||
+                      (isMobile && showExpandedFeatures[plan.title])) &&
                       plan.expandedFeatures && (
                         <>
                           {(
@@ -340,47 +346,88 @@ export default function PricePlans() {
                   </div>
                 </div>
 
-                {/* Show More */}
-                {!showExpandedFeatures[plan.title] ? (
-                  <div
-                    className={`flex items-center justify-center gap-2 cursor-pointer hover:bg-blue-50 rounded-lg p-3 transition-all duration-200 border border-blue-200 ${
-                      plan.highlight ? "mt-4 mb-6" : "mt-4"
-                    }`}
-                    onClick={() =>
-                      setShowExpandedFeatures((prev) => ({
-                        ...prev,
-                        [plan.title]: true,
-                      }))
-                    }
-                  >
-                    <span className="text-blue-600 font-semibold text-sm hover:text-blue-700">
-                      See More Features
-                    </span>
-                    <ChevronDown
-                      size={18}
-                      className="text-blue-600 hover:text-blue-700 transition-transform duration-200"
-                    />
-                  </div>
-                ) : (
-                  <div
-                    className={`flex items-center justify-center gap-2 cursor-pointer hover:bg-orange-50 rounded-lg p-3 transition-all duration-200 border border-orange-200 ${
-                      plan.highlight ? "mt-6 mb-6" : "mt-6"
-                    }`}
-                    onClick={() =>
-                      setShowExpandedFeatures((prev) => ({
-                        ...prev,
-                        [plan.title]: false,
-                      }))
-                    }
-                  >
-                    <span className="text-orange-600 font-semibold text-sm hover:text-orange-700">
-                      Show Less Features
-                    </span>
-                    <span className="text-orange-600 text-sm hover:text-orange-700 transform rotate-180 transition-transform duration-200">
-                      ^
-                    </span>
-                  </div>
-                )}
+                {/* Mobile: each card toggle */}
+                {isMobile ? (
+                  !showExpandedFeatures[plan.title] ? (
+                    <div
+                      className={`flex items-center justify-center gap-2 cursor-pointer hover:bg-blue-50 rounded-lg p-3 transition-all duration-200 border border-blue-200 ${
+                        plan.highlight ? "mt-4 mb-6" : "mt-4"
+                      }`}
+                      onClick={() =>
+                        setShowExpandedFeatures((prev) => ({
+                          ...prev,
+                          [plan.title]: true,
+                        }))
+                      }
+                    >
+                      <span className="text-blue-600 font-semibold text-sm hover:text-blue-700">
+                        See More Features
+                      </span>
+                      <ChevronDown
+                        size={18}
+                        className="text-blue-600 hover:text-blue-700 transition-transform duration-200"
+                      />
+                    </div>
+                  ) : (
+                    <div
+                      className={`flex items-center justify-center gap-2 cursor-pointer hover:bg-orange-50 rounded-lg p-3 transition-all duration-200 border border-orange-200 ${
+                        plan.highlight ? "mt-6 mb-6" : "mt-6"
+                      }`}
+                      onClick={() =>
+                        setShowExpandedFeatures((prev) => ({
+                          ...prev,
+                          [plan.title]: false,
+                        }))
+                      }
+                    >
+                      <span className="text-orange-600 font-semibold text-sm hover:text-orange-700">
+                        Show Less Features
+                      </span>
+                      <span className="text-orange-600 text-sm hover:text-orange-700 transform rotate-180 transition-transform duration-200">
+                        ^
+                      </span>
+                    </div>
+                  )
+                ) : null}
+
+                {/* Desktop: one toggle controls all */}
+                {!isMobile &&
+                  (!showAllFeatures ? (
+                    <div
+                      className="flex items-center justify-center gap-2 cursor-pointer hover:bg-blue-50 rounded-lg p-3 transition-all duration-200 border border-blue-200 mt-6"
+                      onClick={() => setShowAllFeatures(true)}
+                    >
+                      <span className="text-blue-600 font-semibold text-sm hover:text-blue-700">
+                        See All Features
+                      </span>
+                      <ChevronDown
+                        size={18}
+                        className="text-blue-600 hover:text-blue-700 transition-transform duration-200"
+                      />
+                    </div>
+                  ) : (
+                    <div
+                      className="flex items-center justify-center gap-2 cursor-pointer hover:bg-orange-50 rounded-lg p-3 transition-all duration-200 border border-orange-200 mt-6"
+                      onClick={() => {
+                        setShowAllFeatures(false);
+
+                        const el = document.getElementById("plans-container");
+                        if (el) {
+                          el.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",
+                          });
+                        }
+                      }}
+                    >
+                      <span className="text-orange-600 font-semibold text-sm hover:text-orange-700">
+                        Hide All Features
+                      </span>
+                      <span className="text-orange-600 text-sm hover:text-orange-700 transform rotate-180 transition-transform duration-200">
+                        ^
+                      </span>
+                    </div>
+                  ))}
               </div>
             </div>
           ))}

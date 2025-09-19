@@ -32,10 +32,10 @@ export default function HostingPlan() {
           {plans.map((plan) => (
             <Card
               key={plan.id}
-              className="relative border group border-gray-200 dark:border-gray-700 rounded-lg p-8 bg-accent text-gray-900 dark:text-gray-100 transition-all duration-300 ease-in-out hover:bg-blue-700 hover:text-white/95 dark:hover:text-blue-200 mx-2"
+              className="relative border group border-gray-200 dark:border-gray-700 rounded-lg p-8 bg-accent text-gray-900 dark:text-white transition-all duration-300 ease-in-out hover:bg-blue-700 hover:text-white/95 dark:hover:text-gray-100 mx-2"
             >
               {plan.giftBadge && (
-                <div className="absolute top-0 right-0 bg-yellow-400 text-gray-800 text-xs font-bold px-3 py-1 rounded-bl-lg">
+                <div className="absolute top-0 right-0 bg-yellow-400 text-gray-100 text-xs font-semibold px-3 py-1 rounded-bl-lg">
                   Free Gift
                 </div>
               )}
@@ -58,8 +58,8 @@ export default function HostingPlan() {
                 <p className="text-2xl font-bold mb-6">{plan.price}</p>
 
                 <button
-                  className="w-full py-2 cursor-pointer bg-white dark:bg-transparent border border-blue-600 text-blue-600 font-semibold rounded-lg shadow justify-center flex gap-2 items-center
-             hover:bg-blue-50 hover:text-blue-600 hover:scale-105 dark:group-hover:text-white/95 transform mb-1
+                  className="w-full py-2 cursor-pointer bg-white border dark:border-none border-blue-600 text-blue-600 font-semibold rounded-lg shadow justify-center flex gap-2 items-center
+             group-hover:bg-blue-50 dark:group-hover:bg-white/90 hover:text-blue-600 hover:scale-105 dark:group-hover:text-blue-500 transform mb-1
              transition-all duration-300 ease-in-out"
                   onClick={() => handleChoosePlan(plan)}
                 >

@@ -129,7 +129,7 @@ export function WhyChooseHosting({
           {features.slice(0, 6).map((feature, index) => (
             <Card
               key={index}
-              className="border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800"
+              className="border hover:scale-105 border-gray-200 dark:border-gray-700 hover:shadow-lg bg-white dark:bg-gray-800 backdrop-blur-sm dark:hover:bg-white/10 transition-all duration-500"
             >
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
@@ -156,7 +156,7 @@ export function WhyChooseHosting({
             {features.slice(6).map((feature, index) => (
               <Card
                 key={index + 6}
-                className="border border-gray-200 dark:border-gray-700 hover:shadow-lg bg-white dark:bg-gray-800 backdrop-blur-sm dark:hover:bg-white/10 transition-all duration-300"
+                className="border hover:scale-105 border-gray-200 dark:border-gray-700 hover:shadow-lg bg-white dark:bg-gray-800 backdrop-blur-sm dark:hover:bg-white/10 transition-all duration-500"
               >
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">

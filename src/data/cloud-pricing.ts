@@ -186,7 +186,7 @@ export const cloudHostingData: PricingPlan[] = [
   },
   {
     title: "Starter",
-    price: 2150,
+    price: 2350,
     currency: "৳",
     billingPeriod: "monthly",
     features: [
@@ -913,7 +913,7 @@ export const cloudHostingData: PricingPlan[] = [
   },
   {
     title: "Starter",
-    price: 2350,
+    price: 2150,
     currency: "৳",
     billingPeriod: "yearly",
     features: [
