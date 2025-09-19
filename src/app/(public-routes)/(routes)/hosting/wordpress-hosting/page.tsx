@@ -1,13 +1,13 @@
 import { TestimonialsSection } from "@/components/shared/testimonials";
 import JoinHostingSection from "@/app/(public-routes)/components/wordpress-hosting/join-hosting-section";
 import ManagedWordPressHighlights from "@/app/(public-routes)/components/wordpress-hosting/managed-wordpress-highlights";
-import { WordPressBanner } from "@/app/(public-routes)/components/wordpress-hosting/wordpress-banner";
 import WordPressSignUp from "@/app/(public-routes)/components/wordpress-hosting/wordpress-signup";
 import WordPressTestimonials from "@/components/shared/hosting/client-testimonials";
 import HostingFAQs from "@/components/shared/hosting/hosting-faqs";
 import { Metadata } from "next";
 import HostingPlansInclude from "@/components/shared/hosting/hosting-plans-include";
 import WordpressPricing from "@/app/(public-routes)/components/wordpress-hosting/wordpress-pricing";
+import { Banner } from "@/components/shared/hosting/banner";
 
 export const metadata: Metadata = {
   title: "WordPress Hosting | Hostnin",
@@ -30,7 +30,30 @@ export const metadata: Metadata = {
 export default function WordpressHosting() {
   return (
     <>
-      <WordPressBanner />
+      {/* <WordPressBanner /> */}
+      <Banner
+        backgroundImage="/assets/sh-hero-bg.png"
+        tagline="Everything You Need to Create a Website"
+        headline={
+          <>
+            2X Fast & Secure
+            <br />
+            WordPress Hosting
+          </>
+        }
+        bullets={[
+          { text: "Super Fast SSD Storage" },
+          { text: "Unlimited Bandwidth" },
+          { text: "Advanced Cache Management" },
+          { text: "Managed WordPress" },
+          { text: "Lifetime Free SSL Certificate" },
+          { text: "WordPress Acceleration" },
+        ]}
+        countdown={true}
+        buttonText="Claim Offer Now"
+        illustration="/assets/hero-img-1.png"
+        scrollId="wordpress-pricing"
+      />
       <WordpressPricing />
       <TestimonialsSection />
       <ManagedWordPressHighlights />

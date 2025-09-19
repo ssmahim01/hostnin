@@ -1,10 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { Check, Zap } from "lucide-react";
+import { Check, Earth, MessageCircleQuestion, Gift, Zap } from "lucide-react";
 import { CountdownTimer } from "@/components/shared/hosting/countdown-timer";
 import FeatureCard from "./feature-card";
 import { ReactNode } from "react";
+import { usePathname } from "next/navigation";
 
 export interface BulletItem {
   text: string;
@@ -33,6 +34,7 @@ export const Banner: React.FC<BannerProps> = ({
   scrollId,
   illustration,
 }) => {
+  const pathname = usePathname();
   // Smooth scroll function
   const handleScrollToPricing = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -44,7 +46,11 @@ export const Banner: React.FC<BannerProps> = ({
 
   return (
     <section
-      className="pt-8 pb-12 px-2 sm:pt-16 sm:pb-[68px] lg:pt-28 lg:pb-24 md:px-0 relative"
+      className={`${
+        pathname === "/hosting/web-hosting"
+          ? "pt-5 sm:pt-12 lg:pt-4"
+          : "pt-8 sm:pt-16 lg:pt-28"
+      } pb-12 px-2  sm:pb-[68px]  lg:pb-24 md:px-0 relative`}
       style={{
         backgroundImage: `url(${backgroundImage}), ${gradient}`,
         backgroundPosition: "left center, center center",
@@ -122,16 +128,19 @@ export const Banner: React.FC<BannerProps> = ({
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center items-stretch">
             <FeatureCard
               iconSrc="/assets/wp-rocket.svg"
+              decorativeSrc={Earth}
               title="Fastest Loading Speed"
               description="You create your website and we take care of the rest. This is the promise of NVMe SSD of super fast enhanced website performance."
             />
             <FeatureCard
               iconSrc="/assets/wp-2.svg"
+              decorativeSrc={MessageCircleQuestion}
               title="24/7 Dedicated Support"
               description="We provide 24/7 LiveChat support for you to help anytime you need. Support is provided through calls, chat, and ticket systems."
             />
             <FeatureCard
-              iconSrc="/assets/wp-3.svg"
+              iconSrc="/assets/cloud-icon.svg"
+              decorativeSrc={Gift}
               title="99.9% Uptime Guarantee"
               description="There is no way a professional website can go down. Stay always online with our web hosting with a 99.9% uptime guarantee."
             />

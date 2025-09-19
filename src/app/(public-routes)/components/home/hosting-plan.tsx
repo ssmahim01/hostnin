@@ -17,7 +17,11 @@ export default function HostingPlan() {
         ? "/hosting/cloud-hosting"
         : plan.title === "Web Hosting"
         ? "/hosting/web-hosting"
-        : "/hosting/turbo-hosting";
+        : plan.title === "Bdix Hosting"
+        ? "/hosting/bdix-hosting"
+        : plan.title === "Wordpress Hosting"
+        ? "/hosting/wordpress-hosting"
+        : "/hosting/reseller-hosting";
 
     router.push(route);
   };
@@ -32,14 +36,14 @@ export default function HostingPlan() {
           {plans.map((plan) => (
             <Card
               key={plan.id}
-              className="relative border group border-gray-200 dark:border-gray-700 rounded-lg p-8 bg-accent text-gray-900 dark:text-white transition-all duration-300 ease-in-out hover:bg-blue-700 hover:text-white/95 dark:hover:text-gray-100 mx-2"
+              className="relative border group border-gray-200 dark:border-gray-700 rounded-xl p-8 bg-accent text-gray-900 dark:text-white transition-all duration-300 ease-in-out hover:bg-blue-700 hover:text-white/95 dark:hover:text-gray-100 mx-2"
             >
               {plan.giftBadge && (
                 <div className="absolute top-0 right-0 bg-yellow-400 text-gray-100 text-xs font-semibold px-3 py-1 rounded-bl-lg">
                   Free Gift
                 </div>
               )}
-              <div className="flex flex-col items-center justify-center text-center gap-4">
+              <div className="flex flex-col items-center justify-center text-center gap-3">
                 <figure>
                   <Image
                     width={140}
@@ -51,11 +55,9 @@ export default function HostingPlan() {
                     className="w-16 h-16 object-contain"
                   />
                 </figure>
-                <h3 className="text-xl font-bold mb-4">{plan?.title}</h3>
-                <h3 className="text-xl font-medium mb-4">
-                  {plan?.description}
-                </h3>
-                <p className="text-2xl font-bold mb-6">{plan.price}</p>
+                <h3 className="text-2xl font-bold">{plan?.title}</h3>
+                <h3 className="text-base">{plan?.description}</h3>
+                <p className="text-xl font-bold mb-4">{plan.price}</p>
 
                 <button
                   className="w-full py-2 cursor-pointer bg-white border dark:border-none border-blue-600 text-blue-600 font-semibold rounded-lg shadow justify-center flex gap-2 items-center

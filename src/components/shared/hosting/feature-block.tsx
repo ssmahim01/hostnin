@@ -58,22 +58,22 @@ export default function FeatureBlock({
         </p>
 
         {bullets && (
-          <ul className="mb-6 sm:mb-8 space-y-2.5 sm:space-y-3">
+          <div className="mb-6 sm:mb-8 grid grid-cols-1 gap-3">
             {bullets.map((b, i) => (
-              <li
+              <div
                 key={i}
-                className="flex items-start gap-2.5 sm:gap-3 text-sm sm:text-base text-[#0a174e] dark:text-white"
+                className="flex items-start gap-2.5 sm:gap-3 p-2 sm:p-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm hover:shadow-md hover:scale-105 ease-in-out transition-all duration-500"
               >
                 <CheckCircle2
                   className="text-blue-600 flex-shrink-0 mt-0.5"
                   size={22}
                 />
-                <span className="font-bold text-[15px] sm:text-[17px] leading-relaxed font-[Urbanist,sans-serif]">
+                <span className="font-semibold leading-relaxed text-[#0a174e] dark:text-white font-[Urbanist,sans-serif]">
                   {b}
                 </span>
-              </li>
+              </div>
             ))}
-          </ul>
+          </div>
         )}
 
         {buttonLabel && buttonHref && !scrollId && (

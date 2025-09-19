@@ -31,4 +31,28 @@ export const plans: Plan[] = [
     image:
       "https://res.cloudinary.com/daspo1tk3/image/upload/v1757531476/turbo-icon.e4f3cc2c_ddw2nv.svg",
   },
+  {
+    id: "bdix-hosting",
+    title: "Bdix Hosting",
+    price: "৳799 /year",
+    description:
+      "Optimized for local Bangladesh traffic with ultra-fast Bdix connectivity and reliable uptime.",
+    image: "/assets/bdix.png",
+  },
+  {
+    id: "wordpress-hosting",
+    title: "WordPress Hosting",
+    price: "৳2499 /year",
+    description:
+      "Tailored for WordPress websites with pre-installed optimizations, caching, and security features.",
+    image: "/assets/wordpress-logo.svg",
+  },
+  {
+    id: "reseller-hosting",
+    title: "Reseller Hosting",
+    price: "৳6999 /year",
+    description:
+      "Designed for entrepreneurs and agencies to host multiple client websites with full control and branding.",
+    image: "/assets/reseller.png",
+  },
 ];

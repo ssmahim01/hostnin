@@ -58,7 +58,7 @@ const guides: Guide[] = [
 
 export default function ComprehensiveGuides() {
   return (
-    <section className="bg-gray-50 dark:bg-slate-950 py-8 sm:py-10 lg:py-12">
+    <section className="py-8 sm:py-10 lg:py-12">
       <div className="max-w-7xl mx-auto px-3 sm:px-4">
         <h2 className="text-3xl sm:text-3xl lg:text-4xl font-bold text-center mb-2">
           Comprehensive Guides: a Full Roadmap

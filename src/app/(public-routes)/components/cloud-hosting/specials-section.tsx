@@ -96,7 +96,7 @@ export default function SpecialsSection() {
                     {item.title}
                   </h3>
                 </div>
-                <p className="text-gray-500 dark:text-gray-300 text-[15px] md:text-base leading-relaxed font-semibold font-['Mulish',sans-serif]">
+                <p className="text-gray-500 dark:text-gray-300 text-[15px] md:text-base leading-relaxed font-medium font-['Mulish',sans-serif]">
                   {item.description}
                 </p>
               </CardContent>

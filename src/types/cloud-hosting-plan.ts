@@ -1,27 +1,22 @@
-export interface CloudHostingPlan {
-  id: string;
+export interface Plan {
   name: string;
   price: number;
-  currency: string;
-  period: string;
-  features: {
-    basic: CloudHostingFeature[];
-    mail: CloudHostingFeature[];
-    database: CloudHostingFeature[];
-    tech: CloudHostingFeature[];
-    site: CloudHostingFeature[];
-    support: CloudHostingFeature[];
-  };
+  priceUnit: string;
+  orderLink: string;
+  currency?: string;
 }
 
-export interface CloudHostingFeature {
-  name: string;
-  value: string | boolean;
-  highlight?: boolean;
+export interface Feature {
+  label: string;
+  values: (string | number)[];
 }
 
-export interface CloudHostingCategory {
-  id: string;
-  name: string;
-  features: string[];
+export interface Section {
+  title: string;
+  features: Feature[];
+}
+
+export interface CloudHostingPlan {
+  plans: Plan[];
+  sections: Section[];
 }
