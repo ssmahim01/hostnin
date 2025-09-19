@@ -89,7 +89,7 @@ export default function HostingPlan() {
           <div className="flex justify-center mt-10">
             <button
               onClick={() => router.push("/pricing?scrollTo=plans")}
-              className="flex items-center gap-3 bg-transparent border border-blue-500 hover:bg-blue-700 text-blue-500 dark:bg-white/95 dark:text-blue-600 hover:cursor-pointer dark:hover:bg-blue-600 dark:hover:text-white hover:text-white font-semibold py-3 px-6 rounded-full dark:border-none shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out"
+              className="flex items-center gap-3 bg-transparent border border-blue-500 hover:bg-blue-700 text-blue-500 dark:bg-transparent dark:text-white hover:cursor-pointer dark:hover:bg-blue-600 dark:hover:text-white hover:text-white font-semibold py-3 px-6 dark:border-gray-400 dark:hover:border-transparent rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out"
             >
               See More Plans <ArrowRight className="w-5 h-5" />
             </button>
