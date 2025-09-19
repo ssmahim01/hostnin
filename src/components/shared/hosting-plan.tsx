@@ -4,14 +4,14 @@ import { ArrowRight } from "lucide-react";
 import { plans } from "@/data/hosting-plan";
 import Image from "next/image";
 import { Plan } from "@/types/hosting-plan";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { Card } from "@/components/ui/card";
 
 export default function HostingPlan() {
   const router = useRouter();
+  const pathname = usePathname();
 
   const handleChoosePlan = (plan: Plan) => {
-    // compute the route
     const route =
       plan.title === "Cloud Hosting"
         ? "/hosting/cloud-hosting"
@@ -26,14 +26,18 @@ export default function HostingPlan() {
     router.push(route);
   };
 
+  // Show only first 3 plans on home page
+  const visiblePlans = pathname === "/pricing" ? plans : plans.slice(0, 3);
+
   return (
     <section className="pt-14 pb-10">
       <div className="container max-w-7xl mx-auto px-4">
         <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">
           Select Your Perfect Hosting Plan
         </h2>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {plans.map((plan) => (
+          {visiblePlans.map((plan) => (
             <Card
               key={plan.id}
               className="relative border group border-gray-200 dark:border-gray-700 rounded-xl p-8 bg-accent text-gray-900 dark:text-white transition-all duration-300 ease-in-out hover:bg-blue-700 hover:text-white/95 dark:hover:text-gray-100 mx-2"
@@ -63,7 +67,14 @@ export default function HostingPlan() {
                   className="w-full py-2 cursor-pointer bg-white border dark:border-none border-blue-600 text-blue-600 font-semibold rounded-lg shadow justify-center flex gap-2 items-center
              group-hover:bg-blue-50 dark:group-hover:bg-white/90 hover:text-blue-600 hover:scale-105 dark:group-hover:text-blue-500 transform mb-1
              transition-all duration-300 ease-in-out"
-                  onClick={() => handleChoosePlan(plan)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleChoosePlan(plan);
+                    const section = document.querySelector(`#plans`);
+                    if (section) {
+                      section.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }}
                 >
                   <span>See Plans</span> <ArrowRight className="w-4 h-4" />
                 </button>
@@ -71,6 +82,17 @@ export default function HostingPlan() {
             </Card>
           ))}
         </div>
+
+        {pathname === "/" && (
+          <div className="flex justify-center mt-10">
+            <button
+              onClick={() => router.push("/pricing?scrollTo=plans")}
+              className="flex items-center gap-3 bg-transparent border border-blue-500 hover:bg-blue-700 text-blue-500 dark:bg-white/95 dark:text-blue-600 hover:cursor-pointer dark:hover:bg-blue-600 dark:hover:text-white hover:text-white font-semibold py-3 px-6 rounded-full dark:border-none shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out"
+            >
+              See More Plans <ArrowRight className="w-5 h-5" />
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

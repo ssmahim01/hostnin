@@ -3,6 +3,8 @@ import { TestimonialsSection } from "../../../../components/shared/testimonials"
 import { InfrastructurePartners } from "../../../../components/shared/hosting/infrastructure-partners";
 import ControlPanelSection from "../../components/home/control-panel";
 import PricingTab from "@/components/shared/pricing-tab";
+import HostingPlan from "../../../../components/shared/hosting-plan";
+import ScrollToSection from "@/components/shared/scroll";
 
 export const metadata: Metadata = {
   title: "Pricing Plans | Hostnin",
@@ -18,12 +20,22 @@ export const metadata: Metadata = {
   ],
 };
 
-export default function PricingPlan() {
+export default function PricingPlan({
+  searchParams,
+}: {
+  searchParams?: { scrollTo?: string };
+}) {
+  const scrollToId = searchParams?.scrollTo;
+
   return (
     <div className="pt-4">
       <PricingTab />
       <TestimonialsSection />
       <InfrastructurePartners />
+      {scrollToId && <ScrollToSection id={scrollToId} />}
+      <div id="plans">
+        <HostingPlan />
+      </div>
       <ControlPanelSection />
     </div>
   );

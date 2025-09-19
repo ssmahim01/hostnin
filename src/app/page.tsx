@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { HeroSection } from "./(public-routes)/components/home/hero";
-import HostingPlan from "./(public-routes)/components/home/hosting-plan";
+import HostingPlan from "../components/shared/hosting-plan";
 import MovingWebsites from "./(public-routes)/components/home/moving-websites";
 import Offer from "../components/shared/offer";
 import { DomainSearchSection } from "../components/shared/hosting/domain-search-section";

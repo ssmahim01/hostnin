@@ -127,7 +127,7 @@ export const AnimatedSupportTeam = ({
               </p>
 
               {currentHero.email && (
-                <div className="flex items-center justify-between bg-gray-100 dark:accent rounded-md gap-2 px-3 py-1">
+                <div className="flex items-center justify-between bg-accent rounded-md gap-2 px-3 py-1">
                   <span className="text-sm md:text-base font-medium text-gray-700 dark:text-neutral-300 truncate">
                     {currentHero.email}
                   </span>

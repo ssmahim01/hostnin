@@ -45,7 +45,7 @@ export const plans: Plan[] = [
     price: "৳2499 /year",
     description:
       "Tailored for WordPress websites with pre-installed optimizations, caching, and security features.",
-    image: "/assets/wordpress-logo.svg",
+    image: "/assets/wordpress-staging.svg",
   },
   {
     id: "reseller-hosting",
