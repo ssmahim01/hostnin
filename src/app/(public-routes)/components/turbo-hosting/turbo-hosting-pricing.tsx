@@ -34,7 +34,7 @@ const planLinks = {
 };
 
 export default function TurboHostingPricing() {
-  const [billing, setBilling] = useState<"monthly" | "yearly">("yearly");
+  const [billing, setBilling] = useState<"monthly" | "yearly">("monthly");
   const [showExpandedFeatures, setShowExpandedFeatures] = useState<
     Record<string, boolean>
   >({});
@@ -62,15 +62,20 @@ export default function TurboHostingPricing() {
       className={`w-full flex flex-col items-center justify-center ${
         pathname === "/pricing"
           ? "pt-6 pb-7 sm:pt-8 sm:pb-9 md:pt-14 md:pb-16"
-          : "lg:pt-56 pb-20 md:pt-72 pt-20 "
-      }  px-3 sm:px-6`}
+          : "lg:pt-36 pb-20 md:pt-64 "
+      } px-3 sm:px-6`}
       style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
     >
-      {pathname !== "/pricing" && (
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-8 text-balance">
-          Choose Your Perfect Plan
-        </h2>
-      )}
+      <div
+        id="turbo-pricing"
+        className={`${pathname === "/pricing" ? "" : "pt-24"}`}
+      >
+        {pathname !== "/pricing" && (
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-8 text-balance">
+            Choose Your Perfect Plan
+          </h2>
+        )}
+      </div>
       <div id="plans-container" className="w-full max-w-7xl">
         <div className="flex flex-row items-center gap-4 mb-8 justify-center">
           <div className="flex bg-[#2a3553] rounded-full p-1">
@@ -403,7 +408,7 @@ export default function TurboHostingPricing() {
                   ) : (
                     <div
                       className="flex items-center justify-center gap-2 cursor-pointer hover:bg-orange-50 rounded-lg p-3 transition-all duration-200 border border-orange-200 mt-6"
-                       onClick={() => {
+                      onClick={() => {
                         setShowAllFeatures(false);
 
                         const el = document.getElementById("plans-container");

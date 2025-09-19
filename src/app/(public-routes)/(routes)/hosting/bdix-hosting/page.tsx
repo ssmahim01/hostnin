@@ -44,9 +44,7 @@ export default function BDIXHostingPage() {
         illustration="/assets/banglaee.svg"
         scrollId="bdix-pricing"
       />
-      <div id="bdix-pricing">
         <BDIXHostingPricing />
-      </div>
       <TestimonialsSection />
       <DomainSearchSection />
       <BdixHostingPlans />

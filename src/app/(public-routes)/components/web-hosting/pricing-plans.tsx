@@ -35,7 +35,7 @@ const planLinks = {
 };
 
 export default function PricePlans() {
-  const [billing, setBilling] = useState<"monthly" | "yearly">("yearly");
+  const [billing, setBilling] = useState<"monthly" | "yearly">("monthly");
   const [showExpandedFeatures, setShowExpandedFeatures] = useState<
     Record<string, boolean>
   >({});
@@ -63,15 +63,20 @@ export default function PricePlans() {
       className={`w-full flex flex-col items-center justify-center ${
         pathname === "/pricing"
           ? "pt-6 pb-7 sm:pt-8 sm:pb-9 md:pt-14 md:pb-16"
-          : "lg:pt-56 pb-20 md:pt-72 pt-20 "
-      }  px-3 sm:px-6`}
+          : "lg:pt-24 pb-20 md:pt-52 "
+      } px-3 sm:px-6`}
       style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
     >
-      {pathname !== "/pricing" && (
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-8 text-balance">
-          Choose Your Perfect Plan
-        </h2>
-      )}
+      <div
+        id="pricing"
+        className={`${pathname === "/pricing" ? "" : "md:pt-24"}`}
+      >
+        {pathname !== "/pricing" && (
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-8 text-balance">
+            Choose Your Perfect Plan
+          </h2>
+        )}
+      </div>
       <div
         id="plans-container"
         className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
@@ -186,10 +191,10 @@ export default function PricePlans() {
                     href={getPlanLink(plan.title)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`block w-full py-4 px-6 rounded-xl font-bold text-sm transition-all duration-300 cursor-pointer transform hover:scale-105 ${
+                    className={`block w-full py-4 px-6 rounded-xl font-bold text-sm transition-all duration-500 cursor-pointer transform hover:scale-105 ${
                       plan.highlight
                         ? "bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-500 hover:to-blue-600 shadow-lg hover:shadow-xl"
-                        : "bg-white text-blue-600 border-2 border-blue-600 hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-600 hover:text-white hover:border-transparent shadow-md hover:shadow-lg"
+                        : "bg-white text-blue-600 border-2 border-blue-600 hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-600 hover:text-white dark:border-transparent hover:border-transparent hover:shadow-lg"
                     }`}
                   >
                     {plan.buttonText || "Add to Cart"}

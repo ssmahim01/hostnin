@@ -44,9 +44,7 @@ export default function CloudHostingPage() {
         illustration="/assets/security-machine.png"
         scrollId="pricing"
       />
-      <div id="pricing">
         <CloudHostingPricing />
-      </div>
       <TestimonialsSection />
       <CloudHostingPlans />
       <CloudPlanSection />

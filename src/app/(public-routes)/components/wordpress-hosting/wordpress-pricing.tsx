@@ -37,7 +37,7 @@ const planLinks = {
 };
 
 export default function WordpressPricing() {
-  const [billing, setBilling] = useState<"monthly" | "yearly">("yearly");
+  const [billing, setBilling] = useState<"monthly" | "yearly">("monthly");
   const [showExpandedFeatures, setShowExpandedFeatures] = useState<
     Record<string, boolean>
   >({});
@@ -65,20 +65,25 @@ export default function WordpressPricing() {
       className={`w-full flex flex-col items-center justify-center ${
         pathname === "/pricing"
           ? "pt-6 pb-7 sm:pt-8 sm:pb-9 md:pt-14 md:pb-16"
-          : "lg:pt-56 pb-20 md:pt-72 pt-20 "
-      }  px-3 sm:px-6`}
+          : "lg:pt-36 pb-20 md:pt-64 "
+      } px-3 sm:px-6`}
       style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
     >
-      {pathname !== "/pricing" && (
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-8 text-balance">
-          Choose Your Perfect Plan
-        </h2>
-      )}
       <div
         id="wordpress-pricing"
-        className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        className={`${pathname === "/pricing" ? "" : "pt-24"}`}
       >
-        <div id="plans-container" className="flex flex-row items-center gap-4 mb-8 justify-center">
+        {pathname !== "/pricing" && (
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-8 text-balance">
+            Choose Your Perfect Plan
+          </h2>
+        )}
+      </div>
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          id="plans-container"
+          className="flex flex-row items-center gap-4 mb-8 justify-center"
+        >
           <div className="flex bg-[#2a3553] rounded-full p-1">
             <button
               className={tabClass(billing === "monthly")}

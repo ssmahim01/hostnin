@@ -32,9 +32,7 @@ export default function WebHostingPage() {
   return (
     <>
       <WebHostingHero />
-      <div id="pricing">
         <PricingPlans />
-      </div>
       <TestimonialsSection />
       <DomainSearchSection />
       <InfrastructurePartners />

@@ -44,7 +44,7 @@ const icons = IconMap({
 });
 
 export default function CloudHostingPrice() {
-  const [billing, setBilling] = useState<"monthly" | "yearly">("yearly");
+  const [billing, setBilling] = useState<"monthly" | "yearly">("monthly");
   const [showExpandedFeatures, setShowExpandedFeatures] = useState<
     Record<string, boolean>
   >({});
@@ -68,15 +68,20 @@ export default function CloudHostingPrice() {
       className={`w-full flex flex-col items-center justify-center ${
         pathname === "/pricing"
           ? "pt-6 pb-7 sm:pt-8 sm:pb-9 md:pt-14 md:pb-16"
-          : "lg:pt-56 pb-20 md:pt-72 pt-20 "
+          : "lg:pt-36 pb-20 md:pt-64 "
       } px-3 sm:px-6`}
       style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
     >
-      {pathname !== "/pricing" && (
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-8 text-balance">
-          Choose Your Perfect Plan
-        </h2>
-      )}
+      <div
+        id="pricing"
+        className={`${pathname === "/pricing" ? "" : "pt-24"}`}
+      >
+        {pathname !== "/pricing" && (
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-8 text-balance">
+            Choose Your Perfect Plan
+          </h2>
+        )}
+      </div>
       <div id="plans-container" className="w-full max-w-7xl">
         <div className="flex flex-row items-center gap-4  justify-center">
           <div className="flex bg-[#2a3553] rounded-full p-1">
@@ -138,7 +143,7 @@ export default function CloudHostingPrice() {
           </div>
         </div>
 
-        <div className="w-full  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-10 justify-center items-start  sm:mt-16">
+        <div className="w-full  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-10 justify-center items-start">
           {plans.map((plan) => (
             <div
               key={plan.title}
