@@ -19,8 +19,10 @@ export default function HostingPlan() {
         ? "/hosting/web-hosting"
         : plan.title === "Bdix Hosting"
         ? "/hosting/bdix-hosting"
-        : plan.title === "Wordpress Hosting"
+        : plan.title === "WordPress Hosting"
         ? "/hosting/wordpress-hosting"
+        : plan.title === "Turbo Hosting"
+        ? "/hosting/turbo-hosting"
         : "/hosting/reseller-hosting";
 
     router.push(route);
