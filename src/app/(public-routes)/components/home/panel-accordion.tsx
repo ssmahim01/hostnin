@@ -16,8 +16,9 @@ export default function PanelAccordion({ panel }: { panel: ControlPanel }) {
 
   return (
     <TabsContent value={panel.name}>
-      <Card className="flex flex-col lg:flex-row items-start justify-between gap-8">
-        <CardContent className="lg:w-1/2 space-y-4 lg:px-8 px-4">
+      <Card className="flex flex-col lg:flex-row items-stretch gap-8">
+        {/* Text Content */}
+        <CardContent className="lg:w-1/2 space-y-4 h-full">
           <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
             {panel.title}
           </h3>
@@ -60,15 +61,17 @@ export default function PanelAccordion({ panel }: { panel: ControlPanel }) {
           })}
         </CardContent>
 
-        <div className="lg:w-1/2 w-full flex justify-center lg:justify-end">
-          <Image
-            src={panel.image.src}
-            alt={panel.image.alt}
-            width={1200}
-            height={800}
-            className="max-w-full w-auto max-h-full h-auto rounded-lg"
-            priority
-          />
+        {/* Image */}
+        <div className="lg:w-1/2 w-full flex justify-center lg:justify-end items-center h-[21.3rem]">
+          <div className="relative w-full h-full max-h-[600px] lg:max-h-full">
+            <Image
+              src={panel.image.src}
+              alt={panel.image.alt}
+              fill
+              className="object-cover w-full h-full rounded-lg"
+              priority
+            />
+          </div>
         </div>
       </Card>
     </TabsContent>

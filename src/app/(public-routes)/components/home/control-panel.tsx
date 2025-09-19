@@ -8,7 +8,7 @@ export default function ControlPanelSection() {
   return (
     <section className="py-10">
       <div className="container max-w-7xl mx-auto px-4 lg:px-8">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center text-[#13205A] mb-4 dark:text-blue-300">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center text-[#13205A] mb-4 dark:text-gray-200">
           User-Friendly Control Panel
         </h2>
         <p className="text-center text-gray-600 dark:text-gray-400 mb-8">
