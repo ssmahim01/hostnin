@@ -20,14 +20,14 @@ const icons = IconMap({
 });
 
 const planLinks = {
-  monthly: {
+  yearly: {
     starter:
       "https://my.hostnin.com/index.php/store/wordpress-hosting/wp-starter",
     pro: "https://my.hostnin.com/index.php/store/wordpress-hosting/professional",
     ultimate:
       "https://my.hostnin.com/index.php/store/wordpress-hosting/ultimate",
   },
-  yearly: {
+  "3-years": {
     starter:
       "https://my.hostnin.com/index.php/store/wordpress-hosting/wp-starter?billingcycle=annually",
     pro: "https://my.hostnin.com/index.php/store/wordpress-hosting/professional?billingcycle=annually",
@@ -37,7 +37,7 @@ const planLinks = {
 };
 
 export default function WordpressPricing() {
-  const [billing, setBilling] = useState<"monthly" | "yearly">("monthly");
+  const [billing, setBilling] = useState<"yearly" | "3-years">("yearly");
   const [showExpandedFeatures, setShowExpandedFeatures] = useState<
     Record<string, boolean>
   >({});
@@ -57,7 +57,7 @@ export default function WordpressPricing() {
 
   const getPlanLink = (planTitle: string) => {
     const planKey = planTitle.replace("WP ", "").toLowerCase();
-    return planLinks[billing][planKey as keyof typeof planLinks.monthly];
+    return planLinks[billing][planKey as keyof typeof planLinks.yearly];
   };
 
   return (
@@ -86,16 +86,16 @@ export default function WordpressPricing() {
         >
           <div className="flex bg-[#2a3553] rounded-full p-1">
             <button
-              className={tabClass(billing === "monthly")}
-              onClick={() => setBilling("monthly")}
-            >
-              Monthly
-            </button>
-            <button
               className={tabClass(billing === "yearly")}
               onClick={() => setBilling("yearly")}
             >
               Yearly
+            </button>
+            <button
+              className={tabClass(billing === "3-years")}
+              onClick={() => setBilling("3-years")}
+            >
+              3 Years
             </button>
           </div>
 
@@ -133,7 +133,7 @@ export default function WordpressPricing() {
               </defs>
             </svg>
             <span className="text-blue-400 font-medium text-base md:text-lg inline ml-10">
-              Flat 75% save
+              {billing === "yearly" ? "Flat 75% save" : "Free .com domain"}
             </span>
           </div>
         </div>
@@ -179,7 +179,7 @@ export default function WordpressPricing() {
                       {plan.price.toLocaleString()}
                     </span>
                     <span className="text-sm text-gray-600 dark:text-gray-300">
-                      /Per {billing === "monthly" ? "Month" : "Year"}
+                      {billing === "yearly" ? "/Per Year" : "/Triennially"}
                     </span>
                   </div>
 
@@ -196,7 +196,7 @@ export default function WordpressPricing() {
                     className={`block w-full py-4 px-6 rounded-xl font-bold text-sm transition-all duration-300 cursor-pointer transform hover:scale-105 ${
                       plan.highlight
                         ? "bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-500 hover:to-blue-600 shadow-lg hover:shadow-xl"
-                        : "bg-white text-blue-600 border-2 border-blue-600 hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-600 hover:text-white hover:border-transparent shadow-md hover:shadow-lg"
+                        : "bg-white text-blue-600 border-2 border-blue-600 hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-600 hover:text-white dark:border-transparent hover:border-transparent shadow-md hover:shadow-lg"
                     }`}
                   >
                     {plan.buttonText || "Add to Cart"}
@@ -208,7 +208,7 @@ export default function WordpressPricing() {
                 </div>
 
                 <div className="w-full mb-8">
-                  <div className="mb-6">
+                  <div className="mb-2">
                     {/* Starter Plan Special Gift */}
                     {plan.title === "Starter" && (
                       <div className="bg-amber-50 rounded-lg p-3 relative group">
@@ -396,15 +396,15 @@ export default function WordpressPricing() {
                 {!isMobile &&
                   (!showAllFeatures ? (
                     <div
-                      className="flex items-center justify-center gap-2 cursor-pointer hover:bg-blue-50 rounded-lg p-3 transition-all duration-200 border border-blue-200 mt-6"
+                      className="flex items-center justify-center gap-2 cursor-pointer hover:bg-blue-50 rounded-lg p-3 transition-all duration-200 border border-blue-200 mt-6 text-blue-600 dark:text-gray-200 hover:text-blue-700 dark:hover:text-blue-600"
                       onClick={() => setShowAllFeatures(true)}
                     >
-                      <span className="text-blue-600 font-semibold text-sm hover:text-blue-700">
+                      <span className="font-semibold text-sm">
                         See All Features
                       </span>
                       <ChevronDown
                         size={18}
-                        className="text-blue-600 hover:text-blue-700 transition-transform duration-200"
+                        className="transition-transform duration-200"
                       />
                     </div>
                   ) : (

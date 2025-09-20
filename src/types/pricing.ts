@@ -2,7 +2,7 @@ export interface PricingPlan {
   title: string;
   price: number;
   currency: string;
-  billingPeriod: "yearly" | "3-years";
+  billingPeriod: "monthly" | "yearly" | "3-years";
   features: Array<{
     text: string;
     tooltip?: string;
