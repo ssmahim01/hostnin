@@ -298,7 +298,7 @@ export default function DomainBanner() {
             <Input
               type="text"
               name="query"
-              className="rounded-l-lg rounded-r-none py-8 bg-white/90 flex-1 border-none text-gray-700 font-medium"
+              className="rounded-l-lg rounded-r-none py-8 bg-white/90 dark:text-white flex-1 border-none text-gray-700 font-medium"
               placeholder="Enter your domain name..."
               value={domain}
               onChange={(e) => setDomain(e.target.value)}
@@ -313,7 +313,7 @@ export default function DomainBanner() {
           </form>
 
           {errors.length > 0 && (
-            <div className="mb-4 p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
+            <div className="mb-4 p-3 bg-red-50 max-w-xs md:max-w-md lg:max-w-xl mx-auto lg:mx-0 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
               {errors.map((error, index) => (
                 <p
                   key={index}

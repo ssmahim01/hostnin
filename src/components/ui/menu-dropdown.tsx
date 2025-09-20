@@ -44,7 +44,7 @@ const DropdownMenu = ({ children, trigger }: DropdownMenuProps) => {
       </div>
       {isOpen && (
         <div
-          className="origin-top-right absolute right-0 mt-2 w-64 rounded-2xl shadow-xl bg-white dark:bg-zinc-900 ring-1 ring-black ring-opacity-5 focus:outline-none z-50 animate-in fade-in-0 zoom-in-95 p-2"
+          className="origin-top-right absolute right-0 mt-2 w-64 rounded-2xl shadow-xl bg-white dark:bg-slate-900 ring-1 ring-black ring-opacity-5 focus:outline-none z-50 animate-in fade-in-0 zoom-in-95 p-2"
           role="menu"
           aria-orientation="vertical"
         >
@@ -57,28 +57,29 @@ const DropdownMenu = ({ children, trigger }: DropdownMenuProps) => {
 
 interface DropdownMenuItemProps {
   children: ReactNode;
+  href?: string;
   onClick?: () => void;
   active?: boolean;
 }
 
 const DropdownMenuItem = ({
   children,
+  href,
   onClick,
   active = false,
 }: DropdownMenuItemProps) => (
   <a
-    href="#"
-    onClick={(e: React.MouseEvent) => {
-      e.preventDefault();
-      if (onClick) onClick();
-    }}
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    onClick={onClick}
     className={`
       text-zinc-800 dark:text-zinc-200 font-medium group flex items-center 
       px-3 py-2.5 text-sm rounded-lg transition-colors duration-150
       ${
         active
-          ? "bg-zinc-100 dark:bg-zinc-800"
-          : "hover:bg-zinc-100 dark:hover:bg-zinc-800"
+          ? "bg-zinc-100 dark:bg-slate-800"
+          : "hover:bg-zinc-100 dark:hover:bg-slate-900"
       }
     `}
     role="menuitem"
@@ -114,52 +115,28 @@ export default function Dropdown() {
         )}
       >
         <div className="flex flex-col space-y-1">
-          <DropdownMenuItem
-            onClick={() => window.open("https://my.hostnin.com", "_blank")}
-            active={true}
-          >
-            <LayoutDashboard className="mr-3 h-5 w-5 text-zinc-500" />
+          <DropdownMenuItem href="https://my.hostnin.com" active>
+            <LayoutDashboard className="mr-3 h-5 w-5" />
             <span>Dashboard</span>
           </DropdownMenuItem>
 
-          <DropdownMenuItem
-            onClick={() => (
-              (window.location.href = "https://my.hostnin.com/index.php/login"),
-              "_blank"
-            )}
-          >
+          <DropdownMenuItem href="https://my.hostnin.com/index.php/login">
             <LogIn className="mr-3 h-5 w-5" />
             <span>Login</span>
           </DropdownMenuItem>
-          <DropdownMenuItem
-            onClick={() => (
-              (window.location.href = "https://my.hostnin.com/register.php"),
-              "_blank"
-            )}
-          >
+
+          <DropdownMenuItem href="https://my.hostnin.com/register.php">
             <FilePen className="mr-3 h-5 w-5" />
             <span>Register</span>
           </DropdownMenuItem>
         </div>
         <DropdownMenuSeparator />
         <div className="flex flex-col space-y-1">
-          <DropdownMenuItem
-            onClick={() => (
-              (window.location.href =
-                "https://my.hostnin.com/submitticket.php"),
-              "_blank"
-            )}
-          >
+          <DropdownMenuItem href="https://my.hostnin.com/submitticket.php">
             <Wrench className="mr-3 h-5 w-5 text-zinc-500" />
             <span>Open Ticket</span>
           </DropdownMenuItem>
-          <DropdownMenuItem
-            onClick={() => (
-              (window.location.href =
-                "https://my.hostnin.com/cart.php?a=add&domain=register"),
-              "_blank"
-            )}
-          >
+          <DropdownMenuItem href="https://my.hostnin.com/cart.php?a=add&domain=register">
             <BadgePlus className="mr-3 h-5 w-5 text-zinc-500" />
             <span>Register A New Domain</span>
           </DropdownMenuItem>

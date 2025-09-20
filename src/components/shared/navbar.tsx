@@ -318,63 +318,124 @@ export function Navbar() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="flex flex-col h-full min-h-screen bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 relative">
-          {/* Scroll area for nav items */}
-          <ScrollArea className="flex-1 overflow-y-auto py-4 max-h-[80vh]">
-            <div className="flex flex-col space-y-3 px-4">
-              {navItems.map((item) =>
-                item.hasDropdown ? (
-                  <div key={item.label} className="flex flex-col">
-                    <Button
-                      variant={"ghost"}
-                      className="w-full flex justify-between items-center px-3 py-3 text-2xl text-gray-800 dark:text-gray-200 font-semibold hover:text-blue-600 dark:hover:text-blue-400"
-                      onClick={() => toggleExpand(item.label)}
+        <div
+          className={`fixed inset-0 h-screen w-screen bg-white dark:bg-gray-900 z-50 flex flex-col transform transition-transform duration-300 ease-in-out ${
+            isOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
+          {/* Header */}
+          <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
+            <Link href="/" onClick={() => setIsOpen(false)}>
+              <Image
+                src={theme === "dark" ? whiteLogo : defaultLogo}
+                alt="Logo"
+                width={170}
+                height={100}
+                className="object-contain"
+              />
+            </Link>
+            <div className="flex gap-2 items-center">
+              <Button
+                variant={"ghost"}
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                className="p-2 rounded hover:bg-gray-200 cursor-pointer dark:hover:bg-gray-700 transition-colors"
+              >
+                {theme === "dark" ? (
+                  <Sun className="w-5 h-5" />
+                ) : (
+                  <Moon className="w-5 h-5" />
+                )}
+              </Button>
+              <button
+                onClick={() => setIsOpen(false)}
+                className="text-gray-700 dark:text-gray-300 hover:text-blue-600 p-2"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+          </div>
+
+          {/* Scrollable area */}
+          <div className="flex-1 p-4 overflow-y-auto">
+            <ul className="flex flex-col gap-0 text-base font-medium text-gray-700 dark:text-gray-300">
+              {navItems.map((item) => (
+                <li
+                  key={item.label}
+                  className="border-b border-gray-100 dark:border-gray-800"
+                >
+                  {item.hasDropdown ? (
+                    <div>
+                      <button
+                        className="w-full flex justify-between items-center py-4 text-left hover:text-blue-600 transition-colors duration-200 cursor-pointer text-base font-medium"
+                        onClick={() => toggleExpand(item.label)}
+                      >
+                        <span>{item.label}</span>
+                        <ChevronDown
+                          className={`transition-transform duration-300 ease-in-out ${
+                            expandedItems.includes(item.label)
+                              ? "rotate-180"
+                              : ""
+                          }`}
+                        />
+                      </button>
+                      <div
+                        className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                          expandedItems.includes(item.label)
+                            ? "max-h-96 opacity-100"
+                            : "max-h-0 opacity-0"
+                        }`}
+                      >
+                        <div className="pl-4 pb-4 flex flex-col">
+                          {item.dropdownItems?.map((sub) => (
+                            <Link
+                              key={sub.label}
+                              href={sub.href || "#"}
+                              className="group flex items-center gap-3 py-2 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 hover:translate-x-1 text-base font-medium"
+                              onClick={() => setIsOpen(false)}
+                            >
+                              <span className="flex items-center justify-center w-10 h-10 rounded-lg text-xl text-black dark:text-gray-200 group-hover:text-blue-500 transition-colors">
+                                {sub.icon && <sub.icon className="w-5 h-5" />}
+                              </span>
+                              <div className="flex flex-col">
+                                <span className="text-sm font-medium">
+                                  {sub.badge ? (
+                                    <>
+                                      {sub.label}{" "}
+                                      <span className="text-yellow-500">
+                                        {sub.badge}
+                                      </span>
+                                    </>
+                                  ) : (
+                                    sub.label
+                                  )}
+                                </span>
+                                {sub.description && (
+                                  <span className="text-xs text-gray-500 dark:text-gray-400">
+                                    {sub.description}
+                                  </span>
+                                )}
+                              </div>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <Link
+                      href={item.href || "#"}
+                      className="block py-4 hover:text-blue-600 transition-all duration-200 hover:translate-x-1 text-base font-medium"
+                      onClick={() => setIsOpen(false)}
                     >
                       {item.label}
-                      <ChevronDown
-                        className={`w-7 h-7 transition-transform ${
-                          expandedItems.includes(item.label) ? "rotate-180" : ""
-                        }`}
-                      />
-                    </Button>
-                    {expandedItems.includes(item.label) && (
-                      <div className="flex flex-col pl-6">
-                        {item.dropdownItems?.map((sub) => (
-                          <Link
-                            key={sub.label}
-                            href={sub.href || "#"}
-                            className="flex items-center gap-2 py-2 text-lg text-gray-700 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
-                            onClick={() => setIsOpen(false)}
-                          >
-                            {sub.icon && <sub.icon className="w-7 h-7" />}
-                            <span>{sub.label}</span>
-                            {sub.badge && (
-                              <span className="text-sm bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 px-1.5 py-0.5 rounded">
-                                {sub.badge}
-                              </span>
-                            )}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <Link
-                    key={item.label}
-                    href={item.href || "#"}
-                    className="block px-3 py-3 text-2xl text-gray-800 dark:text-gray-200 font-semibold hover:text-blue-600 dark:hover:text-blue-400"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                )
-              )}
-            </div>
-            <ScrollBar orientation="vertical" />
-          </ScrollArea>
+                    </Link>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
 
-          {/* Dashboard Button always at bottom */}
-          <div className="border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 px-4 py-4 sticky bottom-0 z-10">
+          {/* Dashboard button */}
+          <div className="bg-white dark:bg-gray-900 px-4 pb-4 sticky bottom-0 z-10">
             <Button
               variant={"default"}
               onClick={() => setDashboardOpen((prev) => !prev)}
