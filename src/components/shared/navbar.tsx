@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Sun,
@@ -28,7 +28,6 @@ import {
   LayoutDashboard,
   Star,
 } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 import type { NavItem } from "@/types/nav";
 import Link from "next/link";
 import { useTheme } from "next-themes";
@@ -144,6 +143,15 @@ export function Navbar() {
   const [expandedItems, setExpandedItems] = useState<string[]>([]);
   const [authOpen, setAuthOpen] = useState(false);
   const [authMode, setAuthMode] = useState<"login" | "register">("login");
+  const navbarRef = useRef<HTMLDivElement>(null);
+  const closeDropdown = () => {
+    // force mouseleave so group-hover stops
+    if (navbarRef.current) {
+      if (document.activeElement instanceof HTMLElement) {
+        document.activeElement.blur();
+      }
+    }
+  };
 
   const toggleExpand = (label: string) => {
     setExpandedItems((prev) =>
@@ -152,11 +160,9 @@ export function Navbar() {
   };
 
   const { theme, setTheme } = useTheme();
-  const defaultLogo =
-    "/assets/logo11.png";
+  const defaultLogo = "/assets/logo11.png";
 
-  const whiteLogo =
-    "/assets/footer-logo.webp";
+  const whiteLogo = "/assets/footer-logo.webp";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -168,8 +174,9 @@ export function Navbar() {
 
   return (
     <nav
+      ref={navbarRef}
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 
-        bg-background backdrop-blur-md shadow-sm"
+        bg-white dark:bg-slate-900 backdrop-blur-md shadow-sm"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -212,7 +219,9 @@ export function Navbar() {
 
                   {item.hasDropdown && item.dropdownItems && (
                     <div
-                      className={`absolute  ${item.label === "Hosting" ? "  -left-50" : "-left-10"} mt-2 bg-accent dark:bg-gray-900 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0
+                      className={`absolute  ${
+                        item.label === "Hosting" ? "  -left-50" : "-left-10"
+                      } mt-2 bg-accent dark:bg-gray-900 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0
                     ${item.label === "Hosting" ? "w-[550px]" : "w-52"}`}
                     >
                       {/* Dropdown items remain links */}
@@ -229,10 +238,17 @@ export function Navbar() {
                             <Link
                               key={dropdownItem.label}
                               href={dropdownItem.href}
+                              onClick={closeDropdown}
                               className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group/item"
                             >
                               {IconComponent && (
-                                <div className={`flex-shrink-0  ${item.label === "Hosting" ? "w-8 h-8" : "w-6 h-6"} rounded-lg flex items-center justify-center`}>
+                                <div
+                                  className={`flex-shrink-0  ${
+                                    item.label === "Hosting"
+                                      ? "w-8 h-8"
+                                      : "w-6 h-6"
+                                  } rounded-lg flex items-center justify-center`}
+                                >
                                   <IconComponent className="w-full h-full text-gray-900 dark:text-gray-200" />
                                 </div>
                               )}

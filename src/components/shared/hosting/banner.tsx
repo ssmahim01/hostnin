@@ -50,8 +50,8 @@ export const Banner: React.FC<BannerProps> = ({
       className={`${
         pathname === "/hosting/web-hosting"
           ? "pt-5 sm:pt-12 lg:pt-4"
-          : "pt-8 sm:pt-16 lg:pt-28"
-      } pb-12 px-4 lg:pr-2 lg:pl-[72px] sm:pb-[68px] lg:pb-24 relative`}
+          : "pt-14 sm:pt-16 md:pt-20 lg:pt-28"
+      } pb-14 px-4 lg:pr-2 lg:pl-[72px] sm:pb-[68px] lg:pb-24 relative`}
       style={{
         backgroundImage: `url(${backgroundImage}), var(--banner-gradient)`,
         backgroundPosition: "left center, center center",
@@ -115,14 +115,25 @@ export const Banner: React.FC<BannerProps> = ({
         </div>
 
         {/* Right Illustration */}
-        <div className="flex-1 flex justify-center mt-4 sm:mt-8 lg:mt-0 w-full max-w-[220px] xs:max-w-xs sm:max-w-md lg:max-w-2xl xl:max-w-4xl h-full">
+        <div
+          className="
+            flex-1 flex justify-center 
+            sm:mt-2 lg:mt-0 
+            w-full 
+            max-w-xs sm:max-w-md lg:max-w-xl xl:max-w-2xl 
+            h-full
+          "
+        >
           <Image
-            alt="Illustration"
+            alt="Server Illustration"
             loading="lazy"
             width={400}
             height={400}
             className="object-contain w-full h-auto"
             src={illustration}
+            sizes="(max-width: 640px) 100vw,
+           (max-width: 768px) 50vw,
+           33vw"
           />
         </div>
       </div>

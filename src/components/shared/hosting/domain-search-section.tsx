@@ -6,7 +6,6 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { z } from "zod";
-import { toast } from "sonner";
 import type { DomainExtension } from "@/types/domain-extension";
 
 const domainSearchSchema = z.object({
@@ -40,7 +39,7 @@ export function DomainSearchSection() {
       if (error instanceof z.ZodError) {
         const errorMessages = error.issues.map((err) => err.message);
         setErrors(errorMessages);
-        toast.error(errorMessages[0]);
+        // toast.error(errorMessages[0]);
       }
     }
   };

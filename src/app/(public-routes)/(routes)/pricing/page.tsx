@@ -34,9 +34,7 @@ export default async function PricingPlan({
       <TestimonialsSection />
       <InfrastructurePartners />
       {scrollToId && <ScrollToSection id={scrollToId} />}
-      <div id="plans">
         <HostingPlan />
-      </div>
       <ControlPanelSection />
     </div>
   );

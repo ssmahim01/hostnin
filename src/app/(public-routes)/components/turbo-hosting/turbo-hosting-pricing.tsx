@@ -19,17 +19,17 @@ const icons = IconMap({
 
 const planLinks = {
   monthly: {
-    starter:
-      "https://my.hostnin.com/index.php/store/turbo-hosting/cloud-starter",
-    pro: "https://my.hostnin.com/index.php/store/turbo-hosting/professional",
-    ultimate: "https://my.hostnin.com/index.php/store/turbo-hosting/ultimate",
+    starter: "https://my.hostnin.com/index.php/store/turbo-host/turbo-stater",
+    pro: "https://my.hostnin.com/index.php/store/turbo-host/turbo-pro",
+    ultimate:
+      "https://my.hostnin.com/index.php/store/turbo-host/turbo-host-ultimate",
   },
   yearly: {
     starter:
-      "https://my.hostnin.com/index.php/store/turbo-hosting/cloud-starter?billingcycle=annually",
-    pro: "https://my.hostnin.com/index.php/store/turbo-hosting/professional?billingcycle=annually",
+      "https://my.hostnin.com/index.php/store/turbo-host/turbo-stater?billingcycle=annually",
+    pro: "https://my.hostnin.com/index.php/store/turbo-host/turbo-pro?billingcycle=annually",
     ultimate:
-      "https://my.hostnin.com/index.php/store/turbo-hosting/ultimate?billingcycle=annually",
+      "https://my.hostnin.com/index.php/store/turbo-host/turbo-host-ultimate?billingcycle=annually",
   },
 };
 

@@ -28,7 +28,6 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <div id="hosting-plans">
         <HostingPlan />
         <MovingWebsites />
         <DomainSearchSection />
@@ -37,7 +36,6 @@ export default function Home() {
         <TestimonialsSection />
         <SupportTeam />
         <Offer />
-      </div>
     </>
   );
 }

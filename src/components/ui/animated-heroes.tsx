@@ -7,8 +7,10 @@ import {
   IconCopy,
   IconCheck,
 } from "@tabler/icons-react";
+import { ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 
 export const AnimatedSupportTeam = ({
@@ -146,7 +148,7 @@ export const AnimatedSupportTeam = ({
               )}
             </div>
 
-            <motion.p className="mt-4 text-lg font-medium leading-relaxed mb-4 text-gray-500 dark:text-neutral-300">
+            <motion.p className="mt-4 text-base font-medium leading-relaxed text-gray-500 dark:text-neutral-300">
               {currentHero.description.split(" ").map((word, index) => (
                 <motion.span
                   key={index}
@@ -165,19 +167,31 @@ export const AnimatedSupportTeam = ({
             </motion.p>
           </motion.div>
 
-          <div className="flex gap-4 pt-12 md:pt-0">
-            <button
+            <div className="flex gap-5 pt-6 md:pt-0 items-center">
+          <div className="flex gap-4 ">
+              <button
               onClick={handlePrev}
-              className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"
+              className="group/button flex h-7 hover:cursor-pointer w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"
             >
               <IconArrowLeft className="h-5 w-5 text-black transition-transform duration-300 group-hover/button:rotate-12 dark:text-neutral-400" />
             </button>
             <button
               onClick={handleNext}
-              className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"
+              className="group/button flex h-7 hover:cursor-pointer w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"
             >
               <IconArrowRight className="h-5 w-5 text-black transition-transform duration-300 group-hover/button:-rotate-12 dark:text-neutral-400" />
             </button>
+            </div>
+
+            <Link href="/contact">
+             <button
+            className="px-7 py-2 cursor-pointer bg-white dark:bg-transparent dark:border-gray-100 dark:hover:bg-white/90 dark:hover:text-blue-600 dark:text-white border border-blue-600 text-blue-600 font-bold rounded-lg shadow 
+             hover:bg-blue-700 hover:text-white transform hover:scale-105 
+             transition-all duration-300 ease-in-out flex gap-2 items-center"
+          >
+            <p>Explore More</p> <ArrowRight />
+          </button>
+            </Link>
           </div>
         </div>
       </div>

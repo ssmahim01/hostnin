@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export interface Offer {
@@ -21,7 +20,7 @@ const offerData: Offer = {
   primaryButton: { label: "Get the Offer", link: "/pricing" },
   secondaryButton: {
     label: "Chat with an Expert",
-    link: "https://api.whatsapp.com/send/?phone=8801325875955&text&type=phone_number&app_absent=0",
+    link: "https://tawk.to/chat/64e3c190cc26a871b0308e91/1h8cqo8b6",
   },
 };
 
@@ -52,15 +51,14 @@ export default function Offer() {
               {offerData.primaryButton.label}
             </Link>
           </button>
-          <Button
-            asChild
-            variant="ghost"
+
+          <Link
+            href={offerData.secondaryButton.link}
+            target="_blank"
             className="text-yellow-400 hover:text-yellow-600 hover:bg-transparent text-xl font-semibold"
           >
-            <Link href={offerData.secondaryButton.link} target="_blank">
-              {offerData.secondaryButton.label}
-            </Link>
-          </Button>
+            {offerData.secondaryButton.label}
+          </Link>
         </div>
       </div>
     </section>

@@ -1,24 +1,23 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import type { CountdownTimer as CountdownTimerType } from "@/types/countdown-timer";
 
 interface CountdownTimerProps {
   targetDate?: Date;
 }
 
-export function CountdownTimer({ targetDate }: CountdownTimerProps) {
-  const [timeLeft, setTimeLeft] = useState<CountdownTimerType>({
+export function CountdownTimer({}: CountdownTimerProps) {
+  const [timeLeft, setTimeLeft] = useState({
     days: 0,
-    hours: 9,
-    minutes: 31,
-    seconds: 4,
+    hours: 2,
+    minutes: 20,
+    seconds: 40,
   });
 
+  // simple countdown with days
   useEffect(() => {
-    const timer = setInterval(() => {
+    const t = setInterval(() => {
       setTimeLeft((prev) => {
         let { days, hours, minutes, seconds } = prev;
 
@@ -41,8 +40,7 @@ export function CountdownTimer({ targetDate }: CountdownTimerProps) {
         return { days, hours, minutes, seconds };
       });
     }, 1000);
-
-    return () => clearInterval(timer);
+    return () => clearInterval(t);
   }, []);
 
   const timeUnits = [

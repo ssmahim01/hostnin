@@ -1,4 +1,5 @@
 {
+  "/(public-routes)/(routes)/contact/page": "app/(public-routes)/(routes)/contact/page.js",
   "/(public-routes)/(routes)/hosting/bdix-hosting/page": "app/(public-routes)/(routes)/hosting/bdix-hosting/page.js",
   "/(public-routes)/(routes)/hosting/cloud-hosting/page": "app/(public-routes)/(routes)/hosting/cloud-hosting/page.js",
   "/(public-routes)/(routes)/hosting/reseller-hosting/page": "app/(public-routes)/(routes)/hosting/reseller-hosting/page.js",

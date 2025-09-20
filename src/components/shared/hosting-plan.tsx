@@ -32,9 +32,9 @@ export default function HostingPlan() {
   const visiblePlans = pathname === "/pricing" ? plans : plans.slice(0, 3);
 
   return (
-    <section className="pt-14 pb-10">
+    <section id="hosting-plans" className="pt-[70px] pb-10">
       <div className="container max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">
+        <h2 id="plans" className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">
           Select Your Perfect Hosting Plan
         </h2>
 
