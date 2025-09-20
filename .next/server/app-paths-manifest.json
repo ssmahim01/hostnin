@@ -12,6 +12,7 @@
   "/(public-routes)/(routes)/hosting/vps-hosting/page": "app/(public-routes)/(routes)/hosting/vps-hosting/page.js",
   "/(public-routes)/(routes)/hosting/web-hosting/page": "app/(public-routes)/(routes)/hosting/web-hosting/page.js",
   "/(public-routes)/(routes)/hosting/wordpress-hosting/page": "app/(public-routes)/(routes)/hosting/wordpress-hosting/page.js",
+  "/(public-routes)/(routes)/pricing/page": "app/(public-routes)/(routes)/pricing/page.js",
   "/(public-routes)/(routes)/privacy-policy/page": "app/(public-routes)/(routes)/privacy-policy/page.js",
   "/(public-routes)/(routes)/reviews/page": "app/(public-routes)/(routes)/reviews/page.js",
   "/(public-routes)/(routes)/terms-conditions/page": "app/(public-routes)/(routes)/terms-conditions/page.js",

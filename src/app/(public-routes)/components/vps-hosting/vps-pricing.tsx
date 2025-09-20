@@ -73,24 +73,29 @@ export default function PricingTable() {
                   {vpsPlansData.plans.map((plan, idx) => (
                     <th
                       key={plan.name}
-                      className={`p-4 lg:p-2.5 text-white text-center border-r border-blue-700/50 ${
+                      className={`p-4 pt-5.5 text-white text-center border-r border-blue-700/50 ${
                         idx === vpsPlansData.plans.length - 1
                           ? "border-r-0"
                           : ""
                       }`}
                     >
-                      <div className="space-y-2 lg:space-y-3">
-                        <div className="font-bold text-lg lg:text-xl">
-                          {plan.name}
-                        </div>
-                        <div className="bg-white/15 dark:bg-white/10 rounded-lg p-2 lg:p-3 backdrop-blur-sm border border-white/25">
-                          <div className="text-2xl lg:text-[26px] font-bold text-white">
+                      <div className="space-y-3 pointer-events-auto">
+                        <div className="font-bold text-xl">{plan.name}</div>
+                        <div className="bg-white/15 dark:bg-white/10 rounded-lg p-2 backdrop-blur-sm border border-white/25">
+                          <div className="text-[26px] font-bold text-white">
                             ৳{plan.price}
                           </div>
-                          <div className="text-xs lg:text-sm text-blue-200">
+                          <div className="text-sm text-blue-200">
                             {plan.priceUnit}
                           </div>
                         </div>
+                        <button
+                          onClick={() => window.open(plan.orderLink, "_blank")}
+                          className="w-full bg-white/95 dark:bg-gray-100 text-black dark:text-gray-900 font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl cursor-pointer transform hover:scale-105 
+                          transition-transform duration-500 ease-in-out"
+                        >
+                          Order Now
+                        </button>
                       </div>
                     </th>
                   ))}
@@ -133,6 +138,12 @@ export default function PricingTable() {
                         {plan.priceUnit}
                       </div>
                     </div>
+                    <button
+                      onClick={() => window.open(plan.orderLink, "_blank")}
+                      className="cursor-pointer w-full bg-white/95 dark:bg-gray-100 transition-all duration-300 text-black dark:text-gray-900 font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                    >
+                      Order Now
+                    </button>
                   </div>
                 </div>
 
@@ -216,6 +227,13 @@ export default function PricingTable() {
                             {plan.priceUnit}
                           </div>
                         </div>
+                        <button
+                          onClick={() => window.open(plan.orderLink, "_blank")}
+                          className="w-full bg-white/95 dark:bg-gray-100 text-black dark:text-gray-900 font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl cursor-pointer transform hover:scale-105 
+                          transition-transform duration-500 ease-in-out "
+                        >
+                          Order Now
+                        </button>
                       </div>
                     </th>
                   ))}

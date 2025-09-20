@@ -28,7 +28,7 @@ export const supportHeroes: SupportHero[] = [
     role: "Hostnin Support",
      email: "kamrul@hostnin.com",
     description:
-      "Dedicated support professional ensuring fast responses, friendly communication, and effective solutions for all your hosting needs",
+      "Dedicated support professional ensuring fast responses, friendly communication, and effective solutions for all your hosting needs.",
     image: {
       src: "/assets/support/4.png",
       alt: "Rafy support hero",

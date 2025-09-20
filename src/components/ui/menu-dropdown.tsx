@@ -106,7 +106,7 @@ export default function Dropdown() {
     ${
       isOpen
         ? "bg-blue-600 text-white border-blue-600"
-        : "text-blue-600 dark:text-blue-400 border-blue-600 hover:bg-blue-700 dark:hover:text-white/95 hover:text-white hover:border-blue-700 transform hover:scale-105 transition-all duration-300 ease-in-out"
+        : "text-blue-600 dark:text-gray-100 border-blue-600 hover:bg-blue-700 dark:hover:text-white/95 hover:text-white hover:border-blue-700 transform hover:scale-105 transition-all duration-300 ease-in-out"
     }`}
           >
             Dashboard
@@ -123,19 +123,19 @@ export default function Dropdown() {
           </DropdownMenuItem>
 
           <DropdownMenuItem
-            onClick={() => {
-              setAuthMode("login");
-              setAuthOpen(true);
-            }}
+            onClick={() => (
+              (window.location.href = "https://my.hostnin.com/index.php/login"),
+              "_blank"
+            )}
           >
             <LogIn className="mr-3 h-5 w-5" />
             <span>Login</span>
           </DropdownMenuItem>
           <DropdownMenuItem
-            onClick={() => {
-              setAuthMode("register");
-              setAuthOpen(true);
-            }}
+            onClick={() => (
+              (window.location.href = "https://my.hostnin.com/register.php"),
+              "_blank"
+            )}
           >
             <FilePen className="mr-3 h-5 w-5" />
             <span>Register</span>
@@ -146,12 +146,12 @@ export default function Dropdown() {
           <DropdownMenuItem
             onClick={() => (
               (window.location.href =
-                "https://my.hostnin.com/index.php/store/marketgoo"),
+                "https://my.hostnin.com/submitticket.php"),
               "_blank"
             )}
           >
             <Wrench className="mr-3 h-5 w-5 text-zinc-500" />
-            <span>SEO Tools</span>
+            <span>Open Ticket</span>
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={() => (

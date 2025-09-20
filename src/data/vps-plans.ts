@@ -6,25 +6,25 @@ export const vpsPlansData: VPSPlanData = {
       name: "Starter",
       price: 1999,
       priceUnit: "/mo",
-      orderLink: "https://example.com/starter",
+      orderLink: "https://my.hostnin.com/cart.php?a=confproduct&i=1",
     },
     {
       name: "Plus",
       price: 2999,
       priceUnit: "/mo",
-      orderLink: "https://example.com/plus",
+      orderLink: "https://my.hostnin.com/cart.php?a=confproduct&i=2",
     },
     {
       name: "Pro",
       price: 4999,
       priceUnit: "/mo",
-      orderLink: "https://example.com/pro",
+      orderLink: "https://my.hostnin.com/cart.php?a=confproduct&i=3",
     },
     {
       name: "Ultimate",
       price: 7999,
       priceUnit: "/mo",
-      orderLink: "https://example.com/ultimate",
+      orderLink: "https://my.hostnin.com/cart.php?a=confproduct&i=4",
     },
   ],
   sections: [
@@ -78,7 +78,7 @@ export const vpsPlanPackages: VPSPlanPackages[] = [
   {
     name: "Starter",
     price: 2999,
-    link: "https://my.hostnin.com/cart.php?a=confproduct",
+    link: "https://my.hostnin.com/cart.php?a=confproduct&i=1",
     features: [
       {
         icon: "/assets/cpu-icon.svg",
@@ -97,7 +97,7 @@ export const vpsPlanPackages: VPSPlanPackages[] = [
   {
     name: "Starter Plus",
     price: 2999,
-    link: "https://my.hostnin.com/cart.php?a=confproduct&i=4",
+    link: "https://my.hostnin.com/cart.php?a=confproduct&i=2",
     features: [
       {
         icon: "/assets/cpu-icon.svg",
@@ -120,7 +120,7 @@ export const vpsPlanPackages: VPSPlanPackages[] = [
   {
     name: "Pro",
     price: 4999,
-    link: "https://my.hostnin.com/cart.php?a=confproduct&i=7",
+    link: "https://my.hostnin.com/cart.php?a=confproduct&i=3",
     features: [
       {
         icon: "/assets/cpu-icon.svg",
@@ -139,7 +139,7 @@ export const vpsPlanPackages: VPSPlanPackages[] = [
   {
     name: "Ultimate",
     price: 7999,
-    link: "https://my.hostnin.com/cart.php?a=confproduct&i=8",
+    link: "https://my.hostnin.com/cart.php?a=confproduct&i=4",
     features: [
       {
         icon: "/assets/cpu-icon.svg",
