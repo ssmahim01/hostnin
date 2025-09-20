@@ -372,9 +372,7 @@ export default function WordpressPricing() {
                     </div>
                   ) : (
                     <div
-                      className={`flex items-center justify-center gap-2 cursor-pointer hover:bg-orange-50 rounded-lg p-3 transition-all duration-200 border border-orange-200 ${
-                        plan.highlight ? "mt-6 mb-6" : "mt-6"
-                      }`}
+                      className={`flex items-center justify-center gap-2 cursor-pointer hover:bg-orange-50 rounded-lg p-3 transition-all duration-200 border border-orange-200`}
                       onClick={() =>
                         setShowExpandedFeatures((prev) => ({
                           ...prev,
@@ -396,7 +394,7 @@ export default function WordpressPricing() {
                 {!isMobile &&
                   (!showAllFeatures ? (
                     <div
-                      className="flex items-center justify-center gap-2 cursor-pointer hover:bg-blue-50 rounded-lg p-3 transition-all duration-200 border border-blue-200 mt-6 text-blue-600 dark:text-gray-200 hover:text-blue-700 dark:hover:text-blue-600"
+                      className="flex items-center justify-center gap-2 cursor-pointer hover:bg-blue-50 rounded-lg p-3 transition-all duration-200 border border-blue-200 text-blue-600 dark:text-gray-200 hover:text-blue-700 dark:hover:text-blue-600"
                       onClick={() => setShowAllFeatures(true)}
                     >
                       <span className="font-semibold text-sm">
@@ -409,7 +407,7 @@ export default function WordpressPricing() {
                     </div>
                   ) : (
                     <div
-                      className="flex items-center justify-center gap-2 cursor-pointer hover:bg-orange-50 rounded-lg p-3 transition-all duration-200 border border-orange-200 mt-6"
+                      className="flex items-center justify-center gap-2 cursor-pointer hover:bg-orange-50 rounded-lg p-3 transition-all duration-200 border border-orange-200"
                       onClick={() => {
                         setShowAllFeatures(false);
 

@@ -18,7 +18,7 @@ const categories = [
         stroke="currentColor"
         fill="currentColor"
         viewBox="0 0 512 512"
-        className="text-xl text-[#2250F4]"
+        className="text-xl text-[#2250F4] dark:text-gray-100"
         height="1em"
         width="1em"
       >
@@ -60,7 +60,7 @@ const categories = [
         stroke="currentColor"
         fill="currentColor"
         viewBox="0 0 576 512"
-        className="text-xl text-[#2250F4]"
+        className="text-xl text-[#2250F4] dark:text-gray-100"
         height="1em"
         width="1em"
       >
@@ -102,7 +102,7 @@ const categories = [
         stroke="currentColor"
         fill="currentColor"
         viewBox="0 0 512 512"
-        className="text-xl text-[#2250F4]"
+        className="text-xl text-[#2250F4] dark:text-gray-100"
         height="1em"
         width="1em"
       >
@@ -144,7 +144,7 @@ const categories = [
         stroke="currentColor"
         fill="currentColor"
         viewBox="0 0 512 512"
-        className="text-xl text-[#2250F4]"
+        className="text-xl text-[#2250F4] dark:text-gray-100"
         height="1em"
         width="1em"
       >
@@ -181,7 +181,7 @@ const categories = [
         stroke="currentColor"
         fill="currentColor"
         viewBox="0 0 512 512"
-        className="text-xl text-[#2250F4]"
+        className="text-xl text-[#2250F4] dark:text-gray-100"
         height="1em"
         width="1em"
       >

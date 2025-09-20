@@ -1,7 +1,6 @@
 import { TestimonialsSection } from "@/components/shared/testimonials";
 import JoinHostingSection from "@/app/(public-routes)/components/wordpress-hosting/join-hosting-section";
 import ManagedWordPressHighlights from "@/app/(public-routes)/components/wordpress-hosting/managed-wordpress-highlights";
-import WordPressSignUp from "@/app/(public-routes)/components/wordpress-hosting/wordpress-signup";
 import WordPressTestimonials from "@/components/shared/hosting/client-testimonials";
 import HostingFAQs from "@/components/shared/hosting/hosting-faqs";
 import { Metadata } from "next";
@@ -59,7 +58,7 @@ export default function WordpressHosting() {
       <ManagedWordPressHighlights />
       <JoinHostingSection />
       <HostingPlansInclude title="All WordPress Hosting Plans Include" />
-      <WordPressSignUp />
+      {/* <WordPressSignUp /> */}
       <WordPressTestimonials />
       <HostingFAQs />
     </>

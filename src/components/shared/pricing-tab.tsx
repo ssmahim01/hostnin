@@ -63,7 +63,7 @@ export default function PricingTab() {
       </div>
 
       {/* Tab Content */}
-      <div className="rounded-xl mt-4">
+      <div className="rounded-xl">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}

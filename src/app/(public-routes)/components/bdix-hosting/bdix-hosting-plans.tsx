@@ -25,7 +25,7 @@ export default function BdixHostingPlans() {
   }, []);
 
   return (
-    <div className="bg-gray-50 dark:bg-gray-900/50 py-8 sm:py-12 lg:py-16 lg:pb-28 hidden md:block">
+    <div className="py-8 sm:py-12 lg:pt-6 lg:pb-10 hidden md:block">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-8 sm:mb-12">
           <h1 className="text-[26px] sm:text-3xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-3 sm:mb-4">
@@ -46,7 +46,7 @@ export default function BdixHostingPlans() {
               pointerEvents: "none",
             }}
           >
-            <table className="w-full bg-blue-700 dark:bg-blue-800 rounded-lg">
+            <table className="w-full bg-blue-700 dark:bg-blue-800">
               <colgroup>
                 <col className="w-1/5" />
                 {plans.plans.map((_, idx) => (
@@ -55,7 +55,7 @@ export default function BdixHostingPlans() {
               </colgroup>
               <thead>
                 <tr>
-                  <th className="p-4 text-white font-bold text-base lg:text-lg border-r border-blue-600/50">
+                  <th className="p-4 text-white font-bold text-base lg:text-2xl border-r border-blue-600/50">
                     Features
                   </th>
                   {plans.plans.map((plan, planIdx) => (
@@ -81,7 +81,8 @@ export default function BdixHostingPlans() {
                           href={plan.orderLink}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-full block bg-white dark:bg-gray-100 transition-all duration-300 text-black dark:text-gray-900 font-semibold py-2 lg:py-3 px-4 lg:px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-sm lg:text-base text-center"
+                          className="w-full block bg-white dark:bg-gray-100 text-black dark:text-gray-900 font-semibold py-2 lg:py-3 px-4 lg:px-6 rounded-lg shadow-lg hover:shadow-xl text-sm lg:text-base text-center transform hover:scale-105 
+                          transition-transform duration-500 ease-in-out "
                         >
                           Order Now
                         </a>
@@ -191,7 +192,7 @@ export default function BdixHostingPlans() {
                 className="bg-gradient-to-r from-blue-800 to-blue-600"
               >
                 <tr>
-                  <th className="p-6 text-white font-bold text-lg border-r border-blue-600/50">
+                  <th className="p-6 text-white font-bold text-2xl border-r border-blue-600/50">
                     Features
                   </th>
                   {plans.plans.map((plan, planIdx) => (
@@ -215,7 +216,8 @@ export default function BdixHostingPlans() {
                           href={plan.orderLink}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-full block bg-white dark:bg-gray-100 transition-all duration-300 text-black dark:text-gray-900 font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-center"
+                          className="w-full block bg-white dark:bg-gray-100 text-black dark:text-gray-900 font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl text-center transform hover:scale-105 
+                          transition-transform duration-500 ease-in-out "
                         >
                           Order Now
                         </a>
@@ -232,7 +234,7 @@ export default function BdixHostingPlans() {
                       <tr className="bg-gradient-to-r from-blue-800 to-blue-600">
                         <th
                           colSpan={plans.plans.length + 1}
-                          className="p-6 text-center text-white font-bold"
+                          className="p-6 text-left text-white font-bold"
                         >
                           {section.title}
                         </th>

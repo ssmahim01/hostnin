@@ -29,7 +29,7 @@ export default function CloudHostingPlans() {
   }, []);
 
   return (
-    <div className="py-8 sm:py-12 lg:py-14 transition-colors duration-300">
+    <div className="py-8 sm:py-12 lg:pt-7 lg:pb-14 transition-colors duration-300">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-8 sm:mb-12">
           <h1 className="text-[26px] sm:text-3xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
@@ -83,7 +83,8 @@ export default function CloudHostingPlans() {
                         </div>
                         <button
                           onClick={() => window.open(plan.orderLink, "_blank")}
-                          className="w-full bg-white/95 dark:bg-gray-100 transition-all duration-300 text-black dark:text-gray-900 font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 cursor-pointer"
+                          className="w-full bg-white/95 dark:bg-gray-100 text-black dark:text-gray-900 font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl cursor-pointer transform hover:scale-105 
+                          transition-transform duration-500 ease-in-out"
                         >
                           Order Now
                         </button>
@@ -204,7 +205,8 @@ export default function CloudHostingPlans() {
                         </div>
                         <button
                           onClick={() => window.open(plan.orderLink, "_blank")}
-                          className="w-full bg-white/95 dark:bg-gray-100 transition-all duration-300 text-black dark:text-gray-900 font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 cursor-pointer"
+                          className="w-full bg-white/95 dark:bg-gray-100 text-black dark:text-gray-900 font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl cursor-pointer transform hover:scale-105 
+                          transition-transform duration-500 ease-in-out "
                         >
                           Order Now
                         </button>
