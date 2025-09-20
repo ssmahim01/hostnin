@@ -23,7 +23,7 @@ const testimonials: Testimonial[] = [
       "https://res.cloudinary.com/daspo1tk3/image/upload/v1757453008/r-5_ntxuhe.webp",
     rating: 5,
     review:
-      "I think that it's the best hosting site. Their service is very good. I am using the Premium Professional pack. It loads extremely quickly. They are very friendly. My love for them remained. The customer support team is exceptional and always responds promptly to any queries. The hosting performance exceeds my expectations.",
+      "I think that it's the best hosting site. Their service is very good. I am using the Premium Professional pack. It loads extremely quickly. They are very friendly. My love for them remained. The customer support team is exceptional and always responds promptly to any queries.",
     platform: "Google",
   },
   {
@@ -84,8 +84,8 @@ export function TestimonialsSection() {
     theme === "light" ? "/assets/arrow-dark.webp" : "/assets/right-arrow.png";
 
   return (
-    <section className="pt-10 pb-16">
-      <div className="container max-w-7xl mx-auto px-4">
+    <section className="pt-4 pb-14">
+      <div className="container max-w-7xl mx-auto px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 items-center">
             {/* Left side content */}

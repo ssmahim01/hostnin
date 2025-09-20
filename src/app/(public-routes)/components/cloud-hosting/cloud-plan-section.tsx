@@ -2,7 +2,6 @@
 
 import React from "react";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 
 export default function CloudPlanSection() {
@@ -16,7 +15,7 @@ export default function CloudPlanSection() {
   };
 
   return (
-    <section className="rounded-2xl shadow-xl bg-white dark:bg-slate-950 px-4 sm:px-8 lg:px-12 py-8 sm:py-12 lg:py-16 flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto">
+    <section className="rounded-2xl shadow-xl bg-white dark:bg-slate-950 px-4 sm:px-8 lg:px-12 py-8 sm:py-12 lg:py-14 flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto">
       {/* Left column */}
       <div className="flex-1 lg:pr-8 xl:pr-16">
         <h2
@@ -77,12 +76,14 @@ export default function CloudPlanSection() {
         </ul>
 
         <div className="flex flex-col sm:flex-row gap-2">
-          <Button
-            className="bg-blue-600 hover:bg-blue-700 text-white font-bold cursor-pointer px-4 sm:px-6 lg:px-8 py-6 rounded-lg transition-colors text-[15px] sm:text-base"
+          <button
+            className="px-7 py-3 cursor-pointer bg-white dark:bg-transparent dark:border-gray-100 dark:hover:bg-white/90 dark:hover:text-blue-600 dark:text-white border border-blue-600 text-blue-600 font-bold rounded-lg shadow 
+             hover:bg-blue-700 hover:text-white transform hover:scale-105 
+             transition-all duration-300 ease-in-out"
             onClick={handleScrollToPricing}
           >
             See Pricing
-          </Button>
+          </button>
         </div>
       </div>
 

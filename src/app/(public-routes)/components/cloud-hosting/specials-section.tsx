@@ -59,7 +59,7 @@ const specials: SpecialItem[] = [
 export default function SpecialsSection() {
   return (
     <section
-      className="w-full bg-no-repeat bg-cover bg-center my-14"
+      className="w-full bg-no-repeat bg-cover bg-center mt-8 mb-12"
       style={{
         backgroundImage: "url('/assets/bg-curve.png')",
         fontFamily: "Mulish, sans-serif",
@@ -79,7 +79,7 @@ export default function SpecialsSection() {
           {specials.map((item, idx) => (
             <Card
               key={idx}
-              className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm p-6 sm:p-6 lg:p-8 flex flex-col hover:shadow-md transition"
+              className="bg-white  hover:scale-105 duration-500 ease-in-out dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm p-6 sm:p-6 lg:p-8 flex flex-col hover:shadow-xl transition-all"
             >
               <CardContent className="p-0">
                 <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">

@@ -58,7 +58,7 @@ const stats: StatItem[] = [
 
 export default function JoinHostingSection() {
   return (
-    <section className="w-full flex justify-center items-center py-10 px-2 bg-[#f8f8f8] dark:bg-gray-900">
+    <section className="w-full flex justify-center items-center py-8 px-2">
       <div className="w-full max-w-7xl rounded-2xl shadow-lg bg-gradient-to-br from-blue-800 to-blue-950 px-6 py-12 flex flex-col items-center">
         <h2 className="text-white text-[26px] sm:text-2xl md:text-4xl font-bold text-center mb-10">
           Join a web Hosting Company that Started

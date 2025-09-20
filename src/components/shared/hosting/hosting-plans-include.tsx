@@ -173,7 +173,7 @@ export const features: Feature[] = [
 
 export default function HostingPlansInclude({ title }: { title: string }) {
   return (
-    <section className="w-full bg-[#fafbfc] dark:bg-gray-900 py-8">
+    <section className="w-full pt-10 pb-14">
       <div className="max-w-7xl mx-auto md:px-4">
         <h2 className="text-4xl sm:text-5xl font-semibold text-center text-[#03206B] dark:text-white md:mb-14 mb-7 tracking-tight">
           {title}

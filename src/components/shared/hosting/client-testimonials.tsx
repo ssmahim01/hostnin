@@ -7,7 +7,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { usePathname } from "next/navigation";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 const testimonials = [
   {
@@ -46,7 +47,14 @@ export default function Testimonials() {
   const pathname = usePathname();
 
   return (
-    <section className="bg-[#f8f8f9] dark:bg-slate-900 md:pt-20 pt-16 pb-10">
+    <section
+      className={`${
+        pathname === "/hosting/dedicated-server" ||
+        pathname === "/hosting/reseller-hosting"
+          ? "pt-10 pb-16"
+          : "md:pt-20 pt-16 pb-12"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-2">
         <div
           className={`${
@@ -60,12 +68,20 @@ export default function Testimonials() {
             <h2 className="font-bold text-[28px] sm:text-3xl md:text-4xl text-gray-900 dark:text-white mb-2 leading-tight">
               What&apos;s Our Clients Say&apos;s
             </h2>
-            <p className="text-gray-500 dark:text-neutral-400 mb-4 max-w-xl text-base">
+            <p className="text-gray-500 dark:text-neutral-400 mb-3 max-w-xl text-base">
               Our migration service is free and quick. In most cases, we can
               have websites. Then click below to speak to our team.
             </p>
+
+            <Link
+              href="/reviews"
+              className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-medium hover:underline hover:text-blue-700 dark:hover:text-blue-500 ease-in-out transition-colors duration-500"
+            >
+              <span>View More Reviews</span>
+              <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
-          <div className="bg-white dark:bg-neutral-800 rounded-lg shadow p-5 flex flex-col items-center min-w-[220px] border border-gray-100 dark:border-neutral-700">
+          <div className="bg-accent rounded-lg shadow p-5 flex flex-col items-center min-w-[220px] border border-gray-100 dark:border-neutral-700">
             <Image
               src="/assets/google-logo.svg"
               alt="Google"
@@ -88,6 +104,31 @@ export default function Testimonials() {
           </div>
         </div>
 
+        <div
+          className={`${
+            pathname === "/hosting/dedicated-server" ||
+            pathname === "/hosting/reseller-hosting"
+              ? "flex flex-col justify-center items-center mb-8"
+              : "hidden"
+          }`}
+        >
+          <h2 className="font-bold text-[28px] sm:text-3xl md:text-4xl text-gray-900 dark:text-white mb-2 leading-tight">
+            What&apos;s Our Clients Say&apos;s
+          </h2>
+          <p className="text-gray-500 dark:text-neutral-400 mb-2 text-center max-w-xl text-base">
+            Our migration service is free and quick. In most cases, we can have
+            websites. Then click below to speak to our team.
+          </p>
+
+          <Link
+            href="/reviews"
+            className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-medium hover:underline hover:text-blue-700 dark:hover:text-blue-500 ease-in-out transition-colors duration-500"
+          >
+            <span>View More Reviews</span>
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+
         <Swiper
           modules={[Autoplay, Pagination]}
           autoplay={{ delay: 4000, disableOnInteraction: false }}
@@ -101,7 +142,7 @@ export default function Testimonials() {
         >
           {testimonials.map((t, idx) => (
             <SwiperSlide key={idx}>
-              <Card className="bg-white dark:bg-neutral-800 rounded-lg shadow-sm h-[400px] flex flex-col justify-between">
+              <Card className="bg-accent rounded-lg shadow-sm h-[400px] flex flex-col justify-between">
                 <CardHeader className="flex flex-row items-center gap-4 pb-0">
                   <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-white dark:border-neutral-700 shadow flex-shrink-0">
                     <Image

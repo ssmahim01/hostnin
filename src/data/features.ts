@@ -1,4 +1,4 @@
-import { Cpu, Archive, Zap, Lock } from "lucide-react";
+import { Cpu, Zap, Lock, Download } from "lucide-react";
 import type { Feature } from "@/types/feature";
 
 export const features: Feature[] = [
@@ -12,7 +12,7 @@ export const features: Feature[] = [
     title: "Daily Multi-layer Backup",
     description:
       "We use a 3-layer backup system to keep your data secure. By taking snapshots each month, we ensure no element is missed.",
-    icon: Archive,
+    icon: Download,
   },
   {
     title: "LightSpeed Web Server",

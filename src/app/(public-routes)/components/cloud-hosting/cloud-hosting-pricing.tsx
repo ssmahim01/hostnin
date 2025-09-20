@@ -13,14 +13,14 @@ const tabClass = (active: boolean) =>
   }`;
 
 const planLinks = {
-  monthly: {
+  yearly: {
     basic: "https://my.hostnin.com/index.php/store/cloud-hosting/basic",
     starter:
       "https://my.hostnin.com/index.php/store/cloud-hosting/cloud-starter",
     pro: "https://my.hostnin.com/index.php/store/cloud-hosting/professional",
     ultimate: "https://my.hostnin.com/index.php/store/cloud-hosting/ultimate",
   },
-  yearly: {
+  "3-years": {
     basic:
       "https://my.hostnin.com/index.php/store/cloud-hosting/basic?billingcycle=annually",
     starter:
@@ -31,8 +31,8 @@ const planLinks = {
   },
 };
 
-const getPlanLink = (planTitle: string, billing: "monthly" | "yearly") => {
-  const planKey = planTitle.toLowerCase() as keyof typeof planLinks.monthly;
+const getPlanLink = (planTitle: string, billing: "yearly" | "3-years") => {
+  const planKey = planTitle.toLowerCase() as keyof typeof planLinks.yearly;
   return planLinks[billing][planKey] || "#";
 };
 
@@ -44,7 +44,7 @@ const icons = IconMap({
 });
 
 export default function CloudHostingPrice() {
-  const [billing, setBilling] = useState<"monthly" | "yearly">("monthly");
+  const [billing, setBilling] = useState<"yearly" | "3-years">("yearly");
   const [showExpandedFeatures, setShowExpandedFeatures] = useState<
     Record<string, boolean>
   >({});
@@ -72,10 +72,7 @@ export default function CloudHostingPrice() {
       } px-3 sm:px-6`}
       style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
     >
-      <div
-        id="pricing"
-        className={`${pathname === "/pricing" ? "" : "pt-24"}`}
-      >
+      <div id="pricing" className={`${pathname === "/pricing" ? "" : "pt-24"}`}>
         {pathname !== "/pricing" && (
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-8 text-balance">
             Choose Your Perfect Plan
@@ -86,18 +83,18 @@ export default function CloudHostingPrice() {
         <div className="flex flex-row items-center gap-4  justify-center">
           <div className="flex bg-[#2a3553] rounded-full p-1">
             <button
-              className={tabClass(billing === "monthly")}
-              onClick={() => setBilling("monthly")}
-              style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
-            >
-              Monthly
-            </button>
-            <button
               className={tabClass(billing === "yearly")}
               onClick={() => setBilling("yearly")}
               style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
             >
               Yearly
+            </button>
+            <button
+              className={tabClass(billing === "3-years")}
+              onClick={() => setBilling("3-years")}
+              style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
+            >
+              3 Years
             </button>
           </div>
 
@@ -135,10 +132,10 @@ export default function CloudHostingPrice() {
               </defs>
             </svg>
             <span
-              className="text-blue-400 font-medium text-base inline ml-10"
+              className="text-blue-500 font-medium text-base inline ml-10"
               style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
             >
-              Upto 90% save
+              {billing === "yearly" ? "Upto 90% save" : "Free .com domain"}
             </span>
           </div>
         </div>
@@ -149,7 +146,7 @@ export default function CloudHostingPrice() {
               key={plan.title}
               className={`relative w-full max-w-sm mx-auto bg-white dark:bg-slate-900 rounded-2xl shadow-xl flex flex-col transition-all duration-300 border-2 hover:shadow-2xl ${
                 plan.highlight
-                  ? "border-blue-500 translate-y-10 z-10 shadow-2xl max-w-md"
+                  ? "border-blue-500 translate-y-9 z-10 shadow-2xl max-w-md"
                   : plan.title === "Basic" || plan.title === "Starter"
                   ? "translate-y-14 border-transparent hover:border-blue-200"
                   : plan.title === "Ultimate"
@@ -173,7 +170,7 @@ export default function CloudHostingPrice() {
               )}
 
               <div className="flex flex-col justify-between px-6 py-6 w-full h-full">
-                <div className="text-center mb-6">
+                <div className="text-center mb-3">
                   <div className="flex items-center justify-center gap-3 mb-4">
                     {icons[plan.icon as keyof typeof icons]}
                     <h3
@@ -184,14 +181,14 @@ export default function CloudHostingPrice() {
                     </h3>
                   </div>
                   <p
-                    className="text-sm md:text-base text-gray-600 dark:text-gray-300 font-medium"
+                    className="text-sm text-gray-600 dark:text-gray-300 font-medium"
                     style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
                   >
                     {plan.description}
                   </p>
                 </div>
 
-                <div className="text-center mb-8">
+                <div className="text-center mb-6">
                   <div className="flex items-baseline justify-center gap-1 mb-3">
                     <span
                       className="text-sm md:text-lg text-gray-600 dark:text-gray-300"
@@ -209,7 +206,7 @@ export default function CloudHostingPrice() {
                       className="text-sm text-gray-600 dark:text-gray-300"
                       style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
                     >
-                      /Per {billing === "monthly" ? "Month" : "Year"}
+                       {billing === "yearly" ? "/Per Year" : "/Triennially"}
                     </span>
                   </div>
 
@@ -220,7 +217,7 @@ export default function CloudHostingPrice() {
                     className={`block w-full py-4 px-6 rounded-xl font-bold text-sm transition-all duration-300 cursor-pointer transform hover:scale-105 ${
                       plan.highlight
                         ? "bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-500 hover:to-blue-600 shadow-lg hover:shadow-xl"
-                        : "bg-white text-blue-600 border-2 border-blue-600 hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-600 hover:text-white hover:border-transparent shadow-md hover:shadow-lg"
+                        : "bg-white text-blue-600 border-2 dark:border-transparent border-blue-600 hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-600 hover:text-white hover:border-transparent shadow-md hover:shadow-lg"
                     }`}
                   >
                     {plan.buttonText || "Add to Cart"}

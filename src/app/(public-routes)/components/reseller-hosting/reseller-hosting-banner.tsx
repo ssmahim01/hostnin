@@ -63,6 +63,14 @@ const resellerPlans: Plan[] = [
 ];
 
 export default function ResellerHostingBanner() {
+  const handleScrollToPricing = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    const section = document.querySelector("#pricing");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section
       className="relative min-h-[500px] sm:min-h-[700px] md:min-h-[750px] lg:min-h-[850px] flex items-center justify-center pt-8 md:pt-0 bg-cover bg-center bg-no-repeat text-white dark:text-white"
@@ -89,15 +97,19 @@ export default function ResellerHostingBanner() {
           )}
         </ul>
 
-        <Link href={"/pricing"}>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-7 py-3 hover:cursor-pointer hover:scale-105 rounded transition-transform duration-500 text-[15px] sm:text-base md:text-lg gap-2 shadow mb-6 flex items-center justify-center">
-            <span> View Pricing</span> <ArrowRight />
-          </button>
-        </Link>
+        <button
+          onClick={handleScrollToPricing}
+          className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-7 py-3 hover:cursor-pointer hover:scale-105 rounded transition-transform duration-500 text-[15px] sm:text-base md:text-lg gap-2 shadow mb-6 flex items-center justify-center"
+        >
+          <span> View Pricing</span> <ArrowRight />
+        </button>
       </div>
 
       {/* Pricing Cards */}
-      <div  id="pricing" className="absolute left-0 right-0 bottom-[-1300px] md:bottom-[-530px] lg:bottom-[-320px] xl:bottom-[-400px] z-10 flex justify-center px-4">
+      <div
+        id="pricing"
+        className="absolute left-0 right-0 bottom-[-1300px] md:bottom-[-530px] lg:bottom-[-320px] xl:bottom-[-400px] z-10 flex justify-center px-4"
+      >
         <div className="w-full max-w-7xl mx-auto flex flex-col sm:flex-row gap-4 justify-center items-stretch">
           {resellerPlans.map((plan, idx) => (
             <div

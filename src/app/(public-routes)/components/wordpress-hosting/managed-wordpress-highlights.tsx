@@ -49,7 +49,7 @@ const highlights: Highlight[] = [
 
 export default function ManagedWordPressHighlights() {
   return (
-    <section className="w-full bg-[#fafbfc] dark:bg-gray-900 py-16">
+    <section className="w-full pt-8 pb-14">
       <div className="max-w-7xl mx-auto px-4">
         {/* heading */}
         <div className="flex flex-col lg:flex-row items-center lg:justify-between mb-10 gap-6">

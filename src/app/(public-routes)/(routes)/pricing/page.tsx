@@ -20,12 +20,13 @@ export const metadata: Metadata = {
   ],
 };
 
-export default function PricingPlan({
+export default async function PricingPlan({
   searchParams,
 }: {
-  searchParams?: { scrollTo?: string };
+  searchParams?: Promise<{ scrollTo?: string }> | { scrollTo?: string };
 }) {
-  const scrollToId = searchParams?.scrollTo;
+  const resolvedParams = await searchParams;
+  const scrollToId = resolvedParams?.scrollTo;
 
   return (
     <div className="pt-4">

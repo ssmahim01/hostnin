@@ -1,3 +1,4 @@
+import SupportBanner from "@/app/(public-routes)/components/home/support-banner";
 import ResellerHostingBanner from "@/app/(public-routes)/components/reseller-hosting/reseller-hosting-banner";
 import ResellerHostingFeatures from "@/app/(public-routes)/components/reseller-hosting/reseller-hosting-features";
 import BenefitsSection from "@/components/shared/hosting/benefits";
@@ -48,6 +49,7 @@ export default function ResellerHostingPage() {
       <ResellerHostingFeatures />
       <Testimonials />
       <InfrastructurePartners />
+      <SupportBanner />
     </>
   );
 }
