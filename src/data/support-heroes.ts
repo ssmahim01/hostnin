@@ -48,7 +48,7 @@ export const supportHeroes: SupportHero[] = [
   {
     name: "Sajjadur Rahman",
     role: "Hostnin Support",
-     email: "sajjadur@hostnin.com",
+     email: "sajjad@hostnin.com",
     description:
       "Dedicated support professional ensuring fast responses, friendly communication, and effective solutions for all your hosting needs.",
     image: {
