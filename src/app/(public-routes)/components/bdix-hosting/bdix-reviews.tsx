@@ -77,14 +77,14 @@ const ratingSources: RatingSource[] = [
       </svg>
     ),
     label: "Hostnin is rated “Excellent” with 4.9/5 on",
-    score: "Trustpilot",
+    score: "View in Trustpilot",
     link: "https://www.trustpilot.com/review/hostnin.com",
   },
 ];
 
 export default function BDIXReviews() {
   return (
-    <section className="relative pt-10 lg:pt-28 pb-10 sm:pb-20 px-2 sm:px-6 lg:px-8 overflow-hidden bg-gray-50 dark:bg-gray-900 min-h-[940px]">
+    <section className="relative pt-10 lg:pt-28 pb-10 my-10 sm:pb-20 px-2 sm:px-6 lg:px-8 overflow-hidden">
       <div
         className="absolute inset-0 z-0 bg-center bg-cover"
         style={{ backgroundImage: 'url("/assets/bg-shape.svg")' }}

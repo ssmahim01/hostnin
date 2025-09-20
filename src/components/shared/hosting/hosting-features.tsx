@@ -79,7 +79,7 @@ export default function HostingFeatures({
   subheading,
 }: HostingFeaturesProps) {
   return (
-    <section className="w-full flex flex-col items-center justify-center py-12 sm:py-20 lg:py-14 bg-[#f8f8f8] dark:bg-gray-900 px-4">
+    <section className="w-full flex flex-col items-center justify-center py-11 sm:py-12 lg:py-14 px-4">
       <div className="w-full max-w-7xl mx-auto">
         <h2 className="text-3xl sm:text-5xl font-bold text-black dark:text-white mb-4 text-start">
           {heading}
@@ -94,12 +94,12 @@ export default function HostingFeatures({
           {featuresData?.map((feature) => (
             <Card
               key={feature.id}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 flex flex-col items-start hover:shadow-xl hover:scale-110 transition-all duration-300 min-h-[200px] py-12"
+              className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-5 flex flex-col items-start hover:shadow-xl hover:scale-110 transition-all duration-300 min-h-[200px]"
             >
-              <div className="mb-4 text-5xl text-[#1a40c6] dark:text-blue-400">
+              <div className="text-5xl text-[#1a40c6] dark:text-blue-400">
                 <feature.icon size={40} />
               </div>
-              <h3 className="font-bold text-xl mb-2 text-[#232946] dark:text-gray-100 font-['Urbanist',sans-serif]">
+              <h3 className="font-bold text-xl text-[#232946] dark:text-gray-100 font-['Urbanist',sans-serif]">
                 {feature.title}
               </h3>
               <p className="text-[#6b7280] dark:text-gray-300 text-base font-['Mulish',sans-serif]">

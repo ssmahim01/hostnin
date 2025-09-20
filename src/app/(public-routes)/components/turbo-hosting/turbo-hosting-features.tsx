@@ -4,8 +4,8 @@ import FeatureBlock from "@/components/shared/hosting/feature-block";
 
 export default function TurboHostingFeatures() {
   return (
-    <section className="w-full py-8 sm:py-10 xs:py-14 px-4 sm:px-6 xs:px-8">
-      <div className="max-w-7xl mx-auto flex flex-col gap-12 sm:gap-16 xs:gap-20">
+    <section className="w-full py-8 sm:py-10 xs:py-14">
+      <div className="max-w-7xl mx-auto flex flex-col gap-12 sm:gap-16 xs:gap-20 px-4 sm:px-6 xs:px-12">
         <FeatureBlock
           heading="Enterprise-Grade Security For Your Website"
           description={`In addition to our web hosting solution, Hostnin's also offers advanced anti-virus and spam protections, along with up to unlimited storage mailboxes. For any business to be successful, email correspondence needs to remain uninterrupted at all times.

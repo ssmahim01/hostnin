@@ -37,7 +37,9 @@ export default function TurboHostingPage() {
         whatsappNumber="01325 875 955"
       />
 
-      <HostingFAQs />
+     <div className="pt-6">
+       <HostingFAQs />
+     </div>
     </>
   );
 }

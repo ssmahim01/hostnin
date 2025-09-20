@@ -13,7 +13,7 @@ export default function AffordableBdix() {
   };
 
   return (
-    <section className="bg-[#f8f8f8] dark:bg-neutral-900 px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 md:pt-10 pb-8">
+    <section className="px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6 pb-14">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8 relative">
         {/* Text */}
         <div className="flex-1 max-w-xl text-center lg:text-left order-2 lg:order-1">
@@ -43,13 +43,13 @@ export default function AffordableBdix() {
         </div>
 
         {/* Image */}
-        <div className="flex-1 flex items-center justify-center relative w-full max-w-sm sm:max-w-md lg:max-w-xl order-1 lg:order-2 mb-6 lg:mb-0">
+        <div className="flex-1 flex items-center justify-center relative w-full max-w-sm sm:max-w-md lg:max-w-xl order-1 lg:order-2 mb-6 lg:mb-0 p-2 rounded-lg shadow-md hover:scale-105 hover:shadow-xl transition-transform transform duration-500 ease-in-out bg-accent">
           <Image
             src="/assets/laptop-man.webp"
             alt="Man holding laptop"
             width={420}
             height={420}
-            className="object-contain w-full h-auto z-0 max-w-[280px] sm:max-w-[320px] md:max-w-[380px] lg:max-w-none"
+            className="object-contain w-full h-auto -mb-[7px] z-0 max-w-[280px] sm:max-w-[320px] md:max-w-[380px] lg:max-w-none"
             priority
           />
         </div>
