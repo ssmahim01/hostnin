@@ -114,7 +114,7 @@ export default function ResellerHostingBanner() {
           {resellerPlans.map((plan, idx) => (
             <div
               key={idx}
-              className="relative w-full max-w-[400px] sm:max-w-sm mx-auto bg-white dark:bg-neutral-900 shadow-xl flex flex-col items-center px-3 sm:px-4 md:px-6 py-2.5 sm:py-6 md:py-8 border border-gray-200 dark:border-neutral-700 mt-4 sm:mt-0 rounded-lg"
+              className="relative w-full max-w-[400px] sm:max-w-sm mx-auto bg-accent shadow-xl flex flex-col items-center px-3 sm:px-4 md:px-6 py-2.5 sm:py-6 md:py-8 border border-gray-200 dark:border-neutral-700 mt-4 sm:mt-0 rounded-lg"
             >
               <div className="flex flex-col items-center mb-2 sm:mb-4 mt-1 sm:mt-2 w-full">
                 <span className="text-[#232946] dark:text-white font-bold text-xl mb-2 text-start w-full">

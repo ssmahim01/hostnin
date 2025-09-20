@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function UniqueFeatures() {
   return (
-    <section className="py-16 bg-gray-50 dark:bg-gray-900">
+    <section className="py-14">
       <div className="container max-w-7xl mx-auto px-4">
         <div className="">
           {uniqueFeatures.map((feature: Feature, index: number) => (

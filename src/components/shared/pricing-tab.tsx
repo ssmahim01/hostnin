@@ -40,7 +40,7 @@ export default function PricingTab() {
       {/* Buttons inside ScrollArea */}
       <div className="px-3">
         <ScrollArea className="w-full">
-          <div className="flex gap-4 items-center justify-start mx-auto w-max rounded-full border-2 border-gray-200 dark:border-gray-700 shadow-lg bg-gradient-to-r from-white/60 via-white/40 to-white/60 dark:from-gray-800/60 dark:via-gray-900/40 dark:to-gray-800/60 backdrop-blur-md p-2 mb-2">
+          <div className="flex gap-4 items-center justify-start mx-auto w-max rounded-full border-2 border-gray-200 dark:border-gray-700 shadow-sm bg-gradient-to-r from-white/60 via-white/40 to-white/60 dark:from-gray-800/60 dark:via-gray-900/40 dark:to-gray-800/60 backdrop-blur-md p-2 mb-2">
             {tabs.map((tab) => (
               <button
                 key={tab.id}

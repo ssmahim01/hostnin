@@ -8,7 +8,7 @@ import { AnimatedSupportTeam } from "@/components/ui/animated-heroes";
 
 export default function SupportTeam() {
   return (
-    <section className="py-10">
+    <section className="pb-10">
       <div className="container mx-auto px-4">
         <h2 className="lg:text-5xl text-4xl font-bold lg:font-extrabold text-center text-gray-900 dark:text-white mb-6">
           Expert Support by an Outstanding Team

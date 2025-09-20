@@ -10,7 +10,7 @@ export default function BenefitsSection({
   sideCards,
 }: BenefitsSectionProps) {
   return (
-    <section className="bg-[#f8f8f8] dark:bg-neutral-950 py-8 sm:py-12 md:py-16 pt-[1330px] sm:pt-[480px] md:pt-[600px] lg:pt-[450px] md:px-4 px-2">
+    <section className="py-8 sm:py-12 md:py-16 pt-[1330px] sm:pt-[480px] md:pt-[600px] lg:pt-[450px] md:px-4 px-2">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-start">
         {/* Left */}
         <div>
@@ -21,7 +21,7 @@ export default function BenefitsSection({
             {mainDescription}
           </p>
 
-          <div className="bg-white dark:bg-neutral-900 rounded-xl shadow-lg p-6 md:p-8 pb-8 w-full transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer">
+          <div className="bg-accent rounded-xl shadow-lg p-6 md:p-8 pb-8 w-full transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer">
             <div className="flex items-center gap-4 sm:gap-6 mb-3">
               <div className="flex-shrink-0">
                 <Image
@@ -47,7 +47,7 @@ export default function BenefitsSection({
           {sideCards.map((card, i) => (
             <div
               key={i}
-              className="bg-white dark:bg-neutral-900 rounded-xl shadow-lg p-6 md:p-8 transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
+              className="bg-accent rounded-xl shadow-lg p-6 md:p-8 transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
             >
               <div className="flex items-center gap-4 sm:gap-6 mb-3">
                 <div className="flex-shrink-0">

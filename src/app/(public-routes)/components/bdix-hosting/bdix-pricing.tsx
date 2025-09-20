@@ -354,9 +354,7 @@ export default function BdixHostingPricing() {
                 {isMobile ? (
                   !showExpandedFeatures[plan.title] ? (
                     <div
-                      className={`flex items-center justify-center gap-2 cursor-pointer hover:bg-blue-50 rounded-lg p-3 transition-all duration-200 border border-blue-200 ${
-                        plan.highlight ? "mt-4 mb-6" : "mt-4"
-                      }`}
+                      className={`flex items-center justify-center gap-2 cursor-pointer hover:bg-blue-50 rounded-lg p-3 transition-all duration-200 border border-blue-200 `}
                       onClick={() =>
                         setShowExpandedFeatures((prev) => ({
                           ...prev,
@@ -398,7 +396,7 @@ export default function BdixHostingPricing() {
                 {!isMobile &&
                   (!showAllFeatures ? (
                     <div
-                      className="flex items-center justify-center gap-2 cursor-pointer hover:bg-blue-50 rounded-lg p-3 transition-all duration-200 border border-blue-200 mt-6"
+                      className="flex items-center justify-center gap-2 cursor-pointer hover:bg-blue-50 rounded-lg p-3 transition-all duration-200 border border-blue-200"
                       onClick={() => setShowAllFeatures(true)}
                     >
                       <span className="text-blue-600 font-semibold text-sm hover:text-blue-700">
@@ -411,7 +409,7 @@ export default function BdixHostingPricing() {
                     </div>
                   ) : (
                     <div
-                      className="flex items-center justify-center gap-2 cursor-pointer hover:bg-orange-50 rounded-lg p-3 transition-all duration-200 border border-orange-200 mt-6"
+                      className="flex items-center justify-center gap-2 cursor-pointer hover:bg-orange-50 rounded-lg p-3 transition-all duration-200 border border-orange-200"
                       onClick={() => {
                         setShowAllFeatures(false);
 

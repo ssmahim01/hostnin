@@ -12,8 +12,8 @@ interface SupportBanner {
 }
 
 const supportBannerData: SupportBanner = {
-  title: "Do You Have Questions?",
-  subtitle: "About Our Hosting and Domain Service",
+  title: "Have Questions About Hosting or Domains?",
+  subtitle: "Our team is here 24/7 to help you choose the right plan or solve any issue",
   buttonLabel: "Live Chat With Sales",
   buttonHref: "https://tawk.to/chat/64e3c190cc26a871b0308e91/1h8cqo8b6",
   phoneNumber: "01325 875 955",
@@ -47,14 +47,14 @@ export default function SupportBanner() {
           <h2 className="text-white text-2xl sm:text-3xl md:text-4xl font-bold mb-2 font-['Urbanist',sans-serif]">
             {supportBannerData.title}
           </h2>
-          <p className="text-white text-lg md:text-3xl lg:text-4xl font-bold mb-6 font-['Urbanist',sans-serif]">
+          <p className="text-white text-sm md:text-lg font-medium mb-6 font-['Urbanist',sans-serif]">
             {supportBannerData.subtitle}
           </p>
         </div>
         <div className="flex flex-col md:flex-row items-center gap-4">
           <button
-            className="px-6 py-3 cursor-pointer bg-transparent text-white/95 border border-blue-600 font-semibold rounded-lg shadow 
-             hover:bg-blue-700 hover:text-white transform hover:scale-105 
+            className="px-6 py-3 cursor-pointer text-white/95 border border-blue-600 font-semibold rounded-lg shadow 
+             bg-blue-600 hover:border-transparent hover:bg-blue-800 hover:text-white transform hover:scale-105 
              transition-all duration-300 ease-in-out"
           >
             <Link href={supportBannerData.buttonHref} target="_blank">
