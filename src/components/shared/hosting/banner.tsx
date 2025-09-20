@@ -50,7 +50,7 @@ export const Banner: React.FC<BannerProps> = ({
         pathname === "/hosting/web-hosting"
           ? "pt-5 sm:pt-12 lg:pt-4"
           : "pt-8 sm:pt-16 lg:pt-28"
-      } pb-12 px-2  sm:pb-[68px]  lg:pb-24 md:px-0 relative`}
+      } pb-12  px-4 lg:pr-2 lg:pl-[72px] sm:pb-[68px]  lg:pb-24 relative`}
       style={{
         backgroundImage: `url(${backgroundImage}), ${gradient}`,
         backgroundPosition: "left center, center center",
@@ -84,7 +84,7 @@ export const Banner: React.FC<BannerProps> = ({
             `}
           >
             {bullets.map((b, idx) => (
-              <li key={idx} className="flex items-start gap-2 sm:gap-3">
+              <li key={idx} className="flex items-center lg:justify-start justify-center lg:items-start gap-2 sm:gap-3">
                 <Check className="text-lg sm:text-xl flex-shrink-0 mt-1" />
                 <span className="text-base sm:text-lg">{b.text}</span>
               </li>
@@ -124,7 +124,7 @@ export const Banner: React.FC<BannerProps> = ({
       </div>
 
       <div className="hidden sm:block">
-        <div className="absolute left-1/2 transform -translate-x-1/2 z-20 w-full max-w-7xl px-4 md:px-0 font-[Mulish,sans-serif]">
+        <div className="lg:px-8 px-4 absolute left-1/2 transform -translate-x-1/2 z-20 w-full max-w-7xl font-[Mulish,sans-serif]">
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center items-stretch">
             <FeatureCard
               iconSrc="/assets/wp-rocket.svg"
