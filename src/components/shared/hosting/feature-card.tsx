@@ -43,12 +43,12 @@ export default function FeatureCard({
       </div>
 
       {/* Title */}
-      <span className="font-bold text-lg sm:text-xl md:text-2xl text-[#03206B] dark:text-white mb-2 sm:mb-3 block text-left">
+      <span className="font-bold text-base lg:text-2xl text-[#03206B] dark:text-white mb-2 sm:mb-3 block text-left">
         {title}
       </span>
 
       {/* Description */}
-      <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base relative z-10 text-left leading-relaxed">
+      <p className="text-gray-600 dark:text-gray-300 text-[10px] lg:text-base relative z-10 text-left leading-relaxed">
         {description}
       </p>
     </div>

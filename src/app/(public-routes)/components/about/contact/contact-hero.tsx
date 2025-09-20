@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function ContactHero() {
   return (
     <section
-      className="pt-8 pb-12 px-2 sm:pt-12 sm:pb-20 sm:px-6 lg:pt-28 lg:pb-24 lg:px-10 relative bg-no-repeat bg-cover bg-center"
+      className="pt-8 pb-12 px-2 sm:pt-12 lg:pr-2 lg:pl-[72px] sm:pb-20 sm:px-6 lg:pt-28 lg:pb-24 lg:px-10 relative bg-no-repeat bg-cover bg-center"
       style={{
         backgroundImage: `url('/assets/sh-hero-bg.png'), linear-gradient(278deg, rgba(0, 40, 160, 0.9) 16%, rgba(0, 20, 80, 0.9) 98%)`,
       }}

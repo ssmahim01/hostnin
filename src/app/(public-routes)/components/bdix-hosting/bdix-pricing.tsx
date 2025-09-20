@@ -64,7 +64,7 @@ export default function BdixHostingPricing() {
       className={`w-full flex flex-col items-center justify-center ${
         pathname === "/pricing"
           ? "pt-6 pb-7 sm:pt-8 sm:pb-9 md:pt-14 md:pb-16"
-          : "lg:pt-36 pb-20 md:pt-64 "
+          : "lg:pt-36 pb-20 md:pt-36 "
       } px-3 sm:px-6`}
       style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
     >

@@ -6,17 +6,17 @@ import Section from "@/components/shared/Section";
 
 export default function PrivacyPolicySection() {
   return (
-    <div className="bg-gray-50 dark:bg-gray-900/50 py-24 px-4 sm:px-6 lg:px-8">
-      <header className="text-center mb-14">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-blue-700 dark:text-blue-400 tracking-tight">
+    <div className="pt-24 pb-20 px-4 max-w-7xl mx-auto sm:px-6 lg:px-8">
+      <header className="text-center mb-9">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-blue-700 dark:text-gray-100 tracking-tight">
           Hostnin Privacy Policy
         </h1>
-        <p className="mt-2 text-gray-500 dark:text-gray-400 text-lg">
+        <p className="mt-2 text-gray-500 dark:text-gray-300 text-lg">
           Last Updated: 25th August 2025
         </p>
       </header>
 
-      <Card className="max-w-7xl mx-auto bg-white dark:bg-gray-800 rounded-2xl shadow-lg">
+      <Card className="max-w-7xl mx-auto bg-accent rounded-2xl shadow-lg">
         <CardContent className="lg:p-12 p-6 space-y-10">
           {/* Introduction */}
           <Section title="Introduction">

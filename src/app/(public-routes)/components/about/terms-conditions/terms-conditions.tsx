@@ -4,10 +4,10 @@ import { termsSections } from "@/data/terms-conditions";
 
 export default function TermsAndConditions() {
   return (
-    <div className="bg-[#f7f9fa] dark:bg-gray-900 py-20">
-      <div className="max-w-7xl mx-auto px-4">
+    <div className="pt-24 pb-16 max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto md:px-4">
         <div className="text-center mb-7">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#1877f2] font-['Urbanist',sans-serif]">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#1877f2] dark:text-gray-100 font-['Urbanist',sans-serif]">
             Hostnin Terms & Conditions
           </h1>
           <p className="text-gray-600 dark:text-gray-300 mt-4 text-lg max-w-2xl mx-auto font-['Mulish',sans-serif]">
@@ -18,7 +18,7 @@ export default function TermsAndConditions() {
         {termsSections.map((section) => (
           <section
             key={section.id}
-            className="mb-8 bg-white dark:bg-gray-800 p-4 md:p-8 rounded-lg shadow-sm"
+            className="mb-8 bg-accent p-4 md:p-8 rounded-lg shadow-sm"
           >
             <h2 className="text-2xl font-bold mb-4 text-center font-['Urbanist',sans-serif]">
               {section.title}

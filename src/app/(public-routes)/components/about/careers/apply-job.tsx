@@ -30,14 +30,14 @@ export default function JobApply() {
   )}`;
 
   return (
-    <section className="bg-muted dark:bg-gray-900 pb-10 px-4">
+    <section className="pb-10 md:-mt-0 -mt-10">
       <Card
         id="job-apply"
-        className="max-w-7xl mx-auto overflow-hidden rounded-2xl shadow-lg bg-background p-0"
+        className="max-w-7xl mx-auto overflow-hidden rounded-2xl shadow-lg bg-background p-0 border-transparent"
       >
-        <div className="md:flex">
+        <div className="md:flex px-4 md:px-8">
           {/* Left gradient column */}
-          <div className="md:w-1/2 bg-gradient-to-r from-blue-600 to-indigo-700 p-8 text-white">
+          <div className="md:w-1/2 bg-gradient-to-r from-blue-600 p-8 to-indigo-700 text-white">
             <h2 className="text-3xl font-bold mb-6">{left.title}</h2>
             <p className="mb-6 text-blue-100">{left.description}</p>
 
@@ -61,7 +61,7 @@ export default function JobApply() {
             <p className="text-muted-foreground mb-6">{right.description}</p>
 
             <Card className="mb-6 bg-blue-50 dark:bg-blue-900/20 border-blue-100 dark:border-blue-800">
-              <CardContent className="py-0 px-5 font-semibold flex gap-2 md:flex-row flex-col items-center">
+              <CardContent className="py-0 px-5 font-semibold flex gap-2 md:flex-row flex-wrap justify-center flex-col items-center">
                 <p className="text-foreground">
                   Send your CV to{" "}
                   </p>

@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function AffiliateHero() {
   return (
-    <section className="relative bg-[#f8f8f8] dark:bg-gray-900 py-16 px-4 sm:px-6 lg:px-8">
+    <section className="relative lg:pr-2 lg:pl-[72px] pt-16 px-4 sm:px-6">
       {/* blurred circle */}
       <div className="absolute inset-0 overflow-hidden -z-10">
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-[60rem] h-[60rem] bg-blue-100 dark:bg-blue-950 rounded-full opacity-20 blur-3xl" />

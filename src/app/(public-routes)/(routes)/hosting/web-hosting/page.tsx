@@ -45,7 +45,9 @@ export default function WebHostingPage() {
       <MoneyBackGuarantee />
       <WhyHostnin />
       {/* <UniqueFeatures /> */}
-      <QuestionsSection />
+      <div className="-mt-[42px]">
+        <QuestionsSection />
+      </div>
       <AdvancedFeatures />
       <MigrationSection />
       <HostingFAQs />
