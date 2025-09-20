@@ -114,9 +114,9 @@ export function DomainSearchSection() {
               </div>
 
               {/* Right side badges */}
-              <div className="flex flex-row gap-8 flex-wrap md:gap-16 md:justify-between items-center">
+              <div className="flex flex-row flex-wrap gap-10 md:gap-16 justify-between items-center">
                 {/* .com limited offer */}
-                <div className="relative bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-8 rounded-2xl border border-blue-200 dark:border-blue-800 flex-1">
+                <div className="relative bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-5 md:p-8 rounded-2xl border border-blue-200 dark:border-blue-800 flex-1">
                   <Badge className="absolute -top-3 -right-3 bg-gradient-to-r from-pink-500 to-red-500 text-white px-4 py-1 text-sm font-medium transform">
                     Limited Time Offer
                   </Badge>
@@ -143,7 +143,7 @@ export function DomainSearchSection() {
                 </div>
 
                 {/* .org special deal */}
-                <div className="relative bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-8 rounded-2xl border border-blue-200 dark:border-blue-800 flex-1">
+                <div className="relative bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-5 md:p-8 rounded-2xl border border-blue-200 dark:border-blue-800 flex-1">
                   <Badge className="absolute -top-3 -left-3 bg-gradient-to-r from-purple-500 to-indigo-500 text-white px-4 py-1 text-sm font-medium transform">
                     Special Offer
                   </Badge>
