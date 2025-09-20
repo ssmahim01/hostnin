@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function SearchDomain() {
   return (
-    <section className="py-16 px-2 bg-gray-50 dark:bg-gray-900">
+    <section className="py-16 px-2">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">

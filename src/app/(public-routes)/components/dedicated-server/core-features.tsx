@@ -73,7 +73,7 @@ const features: Feature[] = [
 export default function ServerCoreFeatures() {
   return (
     <section
-      className="py-5 bg-[#f8f8f8] dark:bg-slate-900"
+      className="py-5"
       style={{ fontFamily: "Mulish, sans-serif" }}
     >
       <div className="max-w-7xl mx-auto px-4">

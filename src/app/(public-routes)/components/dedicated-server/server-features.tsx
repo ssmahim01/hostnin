@@ -1,5 +1,7 @@
 "use client";
 
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 import React from "react";
 
 interface Feature {
@@ -41,18 +43,29 @@ const GradientCheck: React.FC = () => (
 
 export default function FeatureGrid() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-      {features.map((item) => (
-        <div
-          key={item.label}
-          className="flex items-center gap-3 bg-white dark:bg-gray-800 rounded-xl shadow p-4"
-        >
-          <GradientCheck />
-          <span className="text-gray-800 dark:text-gray-100 font-medium text-base font-['Mulish',sans-serif]">
-            {item.label}
-          </span>
-        </div>
-      ))}
-    </div>
+    <>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+        {features.map((item) => (
+          <div
+            key={item.label}
+            className="flex items-center gap-3 bg-white dark:bg-gray-800 rounded-xl shadow p-4"
+          >
+            <GradientCheck />
+            <span className="text-gray-800 dark:text-gray-100 font-medium text-base font-['Mulish',sans-serif]">
+              {item.label}
+            </span>
+          </div>
+        ))}
+      </div>
+
+      <Link
+        href={"/contact"}
+        className="flex w-full justify-center items-center mx-auto mt-8"
+      >
+        <button className="text-white font-semibold px-10 hover:scale-105 hover:cursor-pointer flex gap-2 justify-center items-center text-base py-4 rounded shadow w-full sm:w-auto mb-6 sm:mb-10 bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-700 hover:to-blue-900 transition-all duration-300">
+          <span> Custom Quote </span> <ArrowRight />
+        </button>
+      </Link>
+    </>
   );
 }

@@ -26,15 +26,15 @@ export default function VPSHostingPage() {
   return (
     <>
       <VPSBannerSection />
-      <div id="vps-packages">
-        <PricingTable />
-        <TestimonialsSection />
-        <ManagedVPSSection />
-        <HostninVPSFeatures />
-        <SupportSection />
+      <PricingTable />
+      <TestimonialsSection />
+      <ManagedVPSSection />
+      <HostninVPSFeatures />
+      <SupportSection />
+      <div className="pt-8 md:pt-16 lg:pt-10">
         <HostingFAQs />
-        <Offer />
       </div>
+      <Offer />
     </>
   );
 }

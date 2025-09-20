@@ -58,7 +58,7 @@ const features: Feature[] = [
 
 export default function HostninVPSFeatures() {
   return (
-    <section className="w-full bg-[#f7f8fa] dark:bg-neutral-900 py-5 sm:py-5 pb-8 sm:pb-10 flex flex-col items-center relative overflow-x-hidden">
+    <section className="w-full py-10 sm:py-8 pb-14 sm:pb-20 flex flex-col items-center relative overflow-x-hidden">
       <div className="max-w-7xl w-full mx-auto px-4">
         <h2 className="text-[30px] sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-black dark:text-white mb-3 sm:mb-8 text-center font-['Urbanist',sans-serif]">
           Hostnin Virtual Private Servers Include

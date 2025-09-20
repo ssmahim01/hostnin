@@ -13,13 +13,13 @@ export default function DomainFAQs() {
   };
 
   return (
-    <section className="py-16 md:pb-40 pb-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900">
+    <section className="pt-6 pb-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             {faqSection.title}
           </h2>
-          <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+          <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             {faqSection.description}
           </p>
         </div>
@@ -51,7 +51,7 @@ export default function DomainFAQs() {
                   }}
                 >
                   <div className="px-6 pb-4">
-                    <p className="text-gray-600 dark:text-gray-400 text-[15px] leading-relaxed">
+                    <p className="text-gray-600 dark:text-gray-300 text-[15px] leading-relaxed">
                       {faq.answer}
                     </p>
                   </div>

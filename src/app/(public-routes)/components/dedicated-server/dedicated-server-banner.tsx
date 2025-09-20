@@ -3,14 +3,21 @@
 import React from "react";
 import Image from "next/image";
 import { ArrowRight, Check } from "lucide-react";
-import Link from "next/link";
 
 export default function DedicatedServerBanner() {
   const features = ["Performance", "SSD24x7 Support", "Gbit Port Speed"];
+  
+  const handleScrollToPricing = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    const section = document.querySelector(`#pricing`);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <section
-      className="pt-14 pb-10 px-2 sm:pt-24 sm:pb-10 sm:px-6 lg:pt-20 lg:pb-10 lg:px-10 relative bg-no-repeat"
+      className="pt-14 pb-10 px-2 sm:pt-24 lg:pr-2 lg:pl-[72px] sm:pb-10 sm:px-6 lg:pt-20 lg:pb-6 relative bg-no-repeat"
       style={{
         backgroundImage: `url('/assets/sh-hero-bg.png'), linear-gradient(278deg, rgba(0,40,160,0.9) 16%, rgba(0,20,80,0.9) 98%)`,
         backgroundPosition: "left center, center center",
@@ -48,14 +55,13 @@ export default function DedicatedServerBanner() {
           </ul>
 
           {/* Button */}
-          <Link
-            href={"/contact"}
-            className="inline-flex w-full lg:justify-start justify-center"
+          <button
+            onClick={handleScrollToPricing}
+            className="relative bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold px-8 py-4 rounded-xl transition-all duration-500 text-base sm:text-lg shadow-xl hover:shadow-2xl hover:scale-105 w-full sm:w-auto mb-6 sm:mb-10 transform hover:-translate-y-1 hover:border-transparent border-2 border-blue-400 flex items-center justify-center gap-2 cursor-pointer lg:mx-0 mx-auto"
           >
-            <button className="text-white font-semibold px-10 hover:scale-105 hover:cursor-pointer flex gap-2 lg:justify-start justify-center items-center text-base py-4 rounded shadow w-full sm:w-auto mb-6 sm:mb-10 bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-700 hover:to-blue-900 transition-all duration-300">
-              <span> Custom Quote </span> <ArrowRight />
-            </button>
-          </Link>
+            <span> Custom Quote </span> <ArrowRight />
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-300/20 to-indigo-300/20 rounded-xl opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
+          </button>
         </div>
 
         {/* Image */}

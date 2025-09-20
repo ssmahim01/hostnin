@@ -54,7 +54,7 @@ const features: Feature[] = [
 
 export default function ManagedVPSSection() {
   return (
-    <section className="w-full bg-[#f7f8fa] dark:bg-gray-900 py-5 sm:py-14 flex flex-col items-center relative overflow-x-hidden font-[Mulish,sans-serif]">
+    <section className="w-full py-5 sm:py-10 flex flex-col items-center relative overflow-x-hidden font-[Mulish,sans-serif]">
       <div className="max-w-7xl w-full mx-auto px-4">
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center mb-8 sm:mb-10 gap-4 md:gap-0">

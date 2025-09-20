@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function EnterpriseNVMe() {
   return (
-    <section className="w-full py-5 bg-gray-50 dark:bg-slate-950 transition-colors">
+    <section className="w-full py-5 transition-colors">
       <div className="max-w-7xl mx-auto flex flex-wrap gap-12 items-center justify-center px-4">
         {/* Left Column */}
         <div className="flex-1 min-w-[320px]">

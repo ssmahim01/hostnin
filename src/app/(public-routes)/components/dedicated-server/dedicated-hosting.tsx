@@ -169,9 +169,12 @@ const plans: PlanProps[] = [
 
 export default function DedicatedPlans() {
   return (
-    <section className="w-full flex flex-col items-center justify-center py-12 px-2 bg-background">
+    <section
+      id="pricing"
+      className="w-full flex flex-col items-center justify-center pt-12 pb-6 px-2 bg-background"
+    >
       <div className="w-full max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-foreground">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mt-7 mb-10 text-foreground">
           Dedicated CPU Hosting plans <br /> and Pricing
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -239,7 +242,7 @@ export default function DedicatedPlans() {
           ))}
         </div>
 
-       <FeatureGrid />
+        <FeatureGrid />
       </div>
     </section>
   );

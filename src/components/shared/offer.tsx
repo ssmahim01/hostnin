@@ -55,7 +55,7 @@ export default function Offer() {
           <Link
             href={offerData.secondaryButton.link}
             target="_blank"
-            className="text-yellow-400 hover:text-yellow-600 hover:bg-transparent text-xl font-semibold"
+            className="text-amber-400 hover:text-amber-500 hover:bg-transparent text-xl font-semibold"
           >
             {offerData.secondaryButton.label}
           </Link>
