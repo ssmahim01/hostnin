@@ -38,20 +38,20 @@ const footerSections: FooterSection[] = [
     title: "Service",
     links: [
       {
-        label: "Manage Service",
-        href: "https://my.hostnin.com/clientarea.php?action=services",
+        label: "Book Consultation",
+        href: "/book-consultation",
       },
       {
         label: "View Addons",
         href: "https://my.hostnin.com/cart.php?gid=addons",
       },
       {
-        label: "Renew Services",
-        href: "https://my.hostnin.com/index.php/service-renewals",
+        label: "Server Report",
+        href: "https://report.hostnin.com",
       },
       {
         label: "Service Status",
-        href: "https://my.hostnin.com/serverstatus.php",
+        href: "https://status.hostnin.com",
       },
     ],
   },
@@ -153,6 +153,7 @@ export function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
+                      target="_blank"
                       className="text-blue-200 hover:text-white transition-colors text-base"
                     >
                       {link.label}{" "}

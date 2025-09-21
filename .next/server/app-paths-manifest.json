@@ -1,5 +1,6 @@
 {
   "/(public-routes)/(footer-routes)/affiliate/page": "app/(public-routes)/(footer-routes)/affiliate/page.js",
+  "/(public-routes)/(routes)/book-consultation/page": "app/(public-routes)/(routes)/book-consultation/page.js",
   "/(public-routes)/(routes)/domain/page": "app/(public-routes)/(routes)/domain/page.js",
   "/(public-routes)/(routes)/hosting/bdix-hosting/page": "app/(public-routes)/(routes)/hosting/bdix-hosting/page.js",
   "/(public-routes)/(routes)/hosting/cloud-hosting/page": "app/(public-routes)/(routes)/hosting/cloud-hosting/page.js",
