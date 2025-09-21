@@ -32,9 +32,9 @@ import type { NavItem } from "@/types/nav";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import Image from "next/image";
-import { ScrollArea, ScrollBar } from "../ui/scroll-area";
 import Dropdown from "../ui/menu-dropdown";
 import { AuthModal } from "../auth/auth-modal";
+import { AnimatePresence, motion } from "framer-motion";
 
 const navItems: NavItem[] = [
   { label: "Pricing", href: "/pricing" },
@@ -317,192 +317,193 @@ export function Navbar() {
       </div>
 
       {/* Mobile Navigation */}
-      {isOpen && (
-        <div
-          className={`fixed inset-0 h-screen w-screen bg-white dark:bg-gray-900 z-50 flex flex-col transform transition-transform duration-300 ease-in-out ${
-            isOpen ? "translate-x-0" : "translate-x-full"
-          }`}
-        >
-          {/* Header */}
-          <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
-            <Link href="/" onClick={() => setIsOpen(false)}>
-              <Image
-                src={theme === "dark" ? whiteLogo : defaultLogo}
-                alt="Logo"
-                width={170}
-                height={100}
-                className="object-contain"
-              />
-            </Link>
-            <div className="flex gap-2 items-center">
-              <Button
-                variant={"ghost"}
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="p-2 rounded hover:bg-gray-200 cursor-pointer dark:hover:bg-gray-700 transition-colors"
-              >
-                {theme === "dark" ? (
-                  <Sun className="w-5 h-5" />
-                ) : (
-                  <Moon className="w-5 h-5" />
-                )}
-              </Button>
-              <button
-                onClick={() => setIsOpen(false)}
-                className="text-gray-700 dark:text-gray-300 hover:text-blue-600 p-2"
-              >
-                <X className="w-6 h-6" />
-              </button>
-            </div>
-          </div>
-
-          {/* Scrollable area */}
-          <div className="flex-1 p-4 overflow-y-auto">
-            <ul className="flex flex-col gap-0 text-base font-medium text-gray-700 dark:text-gray-300">
-              {navItems.map((item) => (
-                <li
-                  key={item.label}
-                  className="border-b border-gray-100 dark:border-gray-800"
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            key="mobile-menu"
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ type: "tween", duration: 0.35 }}
+            className="fixed inset-0 h-screen w-screen bg-white dark:bg-gray-900 z-50 flex flex-col"
+          >
+            {/* Header */}
+            <div className="flex items-center justify-between p-3 border-b border-gray-200 dark:border-gray-700">
+              <Link href="/" onClick={() => setIsOpen(false)}>
+                <Image
+                  src={theme === "dark" ? whiteLogo : defaultLogo}
+                  alt="Logo"
+                  width={170}
+                  height={100}
+                  className="object-contain"
+                />
+              </Link>
+              <div className="flex gap-2 items-center">
+                <Button
+                  variant={"ghost"}
+                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                  className="p-2 rounded hover:bg-gray-200 cursor-pointer dark:hover:bg-gray-700 transition-colors"
                 >
-                  {item.hasDropdown ? (
-                    <div>
-                      <button
-                        className="w-full flex justify-between items-center py-4 text-left hover:text-blue-600 transition-colors duration-200 cursor-pointer text-base font-medium"
-                        onClick={() => toggleExpand(item.label)}
-                      >
-                        <span>{item.label}</span>
-                        <ChevronDown
-                          className={`transition-transform duration-300 ease-in-out ${
+                  {theme === "dark" ? (
+                    <Sun className="w-5 h-5" />
+                  ) : (
+                    <Moon className="w-5 h-5" />
+                  )}
+                </Button>
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="text-gray-700 dark:text-gray-300 hover:text-blue-600 p-2"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
+            </div>
+            
+            {/* Scrollable area */}
+            <div className="flex-1 p-4 overflow-y-auto">
+              <ul className="flex flex-col gap-0 text-base font-medium text-gray-700 dark:text-gray-300">
+                {navItems.map((item) => (
+                  <li
+                    key={item.label}
+                    className="border-b border-gray-100 dark:border-gray-800"
+                  >
+                    {item.hasDropdown ? (
+                      <div>
+                        <button
+                          className="w-full flex justify-between items-center py-4 text-left hover:text-blue-600 transition-colors duration-200 cursor-pointer text-base font-medium"
+                          onClick={() => toggleExpand(item.label)}
+                        >
+                          <span>{item.label}</span>
+                          <ChevronDown
+                            className={`transition-transform duration-300 ease-in-out ${
+                              expandedItems.includes(item.label)
+                                ? "rotate-180"
+                                : ""
+                            }`}
+                          />
+                        </button>
+                        <div
+                          className={`overflow-hidden transition-all duration-300 ease-in-out ${
                             expandedItems.includes(item.label)
-                              ? "rotate-180"
-                              : ""
+                              ? "max-h-96 opacity-100"
+                              : "max-h-0 opacity-0"
                           }`}
-                        />
-                      </button>
-                      <div
-                        className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                          expandedItems.includes(item.label)
-                            ? "max-h-96 opacity-100"
-                            : "max-h-0 opacity-0"
-                        }`}
-                      >
-                        <div className="pl-4 pb-4 flex flex-col">
-                          {item.dropdownItems?.map((sub) => (
-                            <Link
-                              key={sub.label}
-                              href={sub.href || "#"}
-                              className="group flex items-center gap-3 py-2 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 hover:translate-x-1 text-base font-medium"
-                              onClick={() => setIsOpen(false)}
-                            >
-                              <span className="flex items-center justify-center w-10 h-10 rounded-lg text-xl text-black dark:text-gray-200 group-hover:text-blue-500 transition-colors">
-                                {sub.icon && <sub.icon className="w-5 h-5" />}
-                              </span>
-                              <div className="flex flex-col">
-                                <span className="text-sm font-medium">
-                                  {sub.badge ? (
-                                    <>
-                                      {sub.label}{" "}
-                                      <span className="text-yellow-500">
-                                        {sub.badge}
-                                      </span>
-                                    </>
-                                  ) : (
-                                    sub.label
-                                  )}
+                        >
+                          <div className="pl-4 pb-4 flex flex-col">
+                            {item.dropdownItems?.map((sub) => (
+                              <Link
+                                key={sub.label}
+                                href={sub.href || "#"}
+                                className="group flex items-center gap-3 py-2 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 hover:translate-x-1 text-base font-medium"
+                                onClick={() => setIsOpen(false)}
+                              >
+                                <span className="flex items-center justify-center w-10 h-10 rounded-lg text-xl text-black dark:text-gray-200 group-hover:text-blue-500 transition-colors">
+                                  {sub.icon && <sub.icon className="w-5 h-5" />}
                                 </span>
-                                {sub.description && (
-                                  <span className="text-xs text-gray-500 dark:text-gray-400">
-                                    {sub.description}
+                                <div className="flex flex-col">
+                                  <span className="text-sm font-medium">
+                                    {sub.badge ? (
+                                      <>
+                                        {sub.label}{" "}
+                                        <span className="text-yellow-500">
+                                          {sub.badge}
+                                        </span>
+                                      </>
+                                    ) : (
+                                      sub.label
+                                    )}
                                   </span>
-                                )}
-                              </div>
-                            </Link>
-                          ))}
+                                  {sub.description && (
+                                    <span className="text-xs text-gray-500 dark:text-gray-400">
+                                      {sub.description}
+                                    </span>
+                                  )}
+                                </div>
+                              </Link>
+                            ))}
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  ) : (
-                    <Link
-                      href={item.href || "#"}
-                      className="block py-4 hover:text-blue-600 transition-all duration-200 hover:translate-x-1 text-base font-medium"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {item.label}
-                    </Link>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
+                    ) : (
+                      <Link
+                        href={item.href || "#"}
+                        className="block py-4 hover:text-blue-600 transition-all duration-200 hover:translate-x-1 text-base font-medium"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {item.label}
+                      </Link>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          {/* Dashboard button */}
-          <div className="bg-white dark:bg-gray-900 px-4 pb-4 sticky bottom-0 z-10">
-            <Button
-              variant={"default"}
-              onClick={() => setDashboardOpen((prev) => !prev)}
-              className="w-full flex justify-center gap-3 items-center px-4 py-7 text-lg hover:text-white/90 hover:border-2 hover:border-blue-600 rounded-md font-bold hover:bg-blue-700 bg-blue-600 text-white transition-colors"
-            >
-              Dashboard
-              <ChevronDown
-                className={`w-5 h-5 transition-transform ${
-                  dashboardOpen ? "rotate-180" : ""
-                }`}
-              />
-            </Button>
+            {/* Dashboard button */}
+            <div className="bg-white dark:bg-gray-900 px-4 pb-4 sticky bottom-0 z-10">
+              <Button
+                variant={"default"}
+                onClick={() => setDashboardOpen((prev) => !prev)}
+                className="w-full flex justify-center gap-3 items-center px-4 py-7 text-lg hover:text-white/90 hover:border-2 hover:border-blue-600 rounded-md font-bold hover:bg-blue-700 bg-blue-600 text-white transition-colors"
+              >
+                Dashboard
+                <ChevronDown
+                  className={`w-5 h-5 transition-transform ${
+                    dashboardOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </Button>
 
-            {dashboardOpen && (
-              <div className="flex flex-col mt-2 space-y-1">
-                <Link
-                  href="https://my.hostnin.com"
-                  target="_blank"
-                  className="flex items-center gap-2 p-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md text-base"
-                >
-                  <LayoutDashboard className="w-5 h-5" />
-                  Dashboard
-                </Link>
-                <button
-                  onClick={() => {
-                    setAuthMode("login");
-                    setAuthOpen(true);
-                  }}
-                  className="flex items-center gap-2 p-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md text-base"
-                >
-                  <LogIn className="w-5 h-5" /> Login
-                </button>
-                <button
-                  onClick={() => {
-                    setAuthMode("register");
-                    setAuthOpen(true);
-                  }}
-                  className="flex items-center gap-2 p-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md text-base"
-                >
-                  <FilePen className="w-5 h-5" /> Register
-                </button>
-                <Link
-                  href="https://my.hostnin.com/index.php/store/marketgoo"
-                  target="_blank"
-                  className="flex items-center gap-2 p-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md text-base"
-                >
-                  <Wrench className="w-5 h-5" /> SEO Tools
-                </Link>
-                <Link
-                  href="https://my.hostnin.com/cart.php?a=add&domain=register"
-                  target="_blank"
-                  className="flex items-center gap-2 p-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md text-base"
-                >
-                  <BadgePlus className="w-5 h-5" /> Register Domain
-                </Link>
-              </div>
-            )}
-          </div>
+              {dashboardOpen && (
+                <div className="flex flex-col mt-2 space-y-1">
+                  <Link
+                    href="https://my.hostnin.com"
+                    target="_blank"
+                    className="flex items-center gap-2 p-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md text-base"
+                  >
+                    <LayoutDashboard className="w-5 h-5" />
+                    Dashboard
+                  </Link>
+                  <Link
+                    href="https://my.hostnin.com/index.php/login"
+                    target="_blank"
+                    className="flex items-center gap-2 p-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md text-base"
+                  >
+                    <LogIn className="w-5 h-5" /> Login
+                  </Link>
+                  <Link
+                    href={"https://my.hostnin.com/register.php"}
+                    target="_blank"
+                    className="flex items-center gap-2 p-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md text-base"
+                  >
+                    <FilePen className="w-5 h-5" /> Register
+                  </Link>
+                  <Link
+                    href="https://my.hostnin.com/submitticket.php"
+                    target="_blank"
+                    className="flex items-center gap-2 p-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md text-base"
+                  >
+                    <Wrench className="w-5 h-5" /> Open Ticket
+                  </Link>
+                  <Link
+                    href="https://my.hostnin.com/cart.php?a=add&domain=register"
+                    target="_blank"
+                    className="flex items-center gap-2 p-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md text-base"
+                  >
+                    <BadgePlus className="w-5 h-5" /> Register A New Domain
+                  </Link>
+                </div>
+              )}
+            </div>
 
-          <AuthModal
-            open={authOpen}
-            mode={authMode}
-            onOpenChange={setAuthOpen}
-            onModeChange={setAuthMode}
-          />
-        </div>
-      )}
+            <AuthModal
+              open={authOpen}
+              mode={authMode}
+              onOpenChange={setAuthOpen}
+              onModeChange={setAuthMode}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }

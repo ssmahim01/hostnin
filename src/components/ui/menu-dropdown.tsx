@@ -9,6 +9,7 @@ import {
   Wrench,
 } from "lucide-react";
 import { AuthModal } from "../auth/auth-modal";
+import Link from "next/link";
 
 interface DropdownMenuProps {
   children: ReactNode;
@@ -44,7 +45,7 @@ const DropdownMenu = ({ children, trigger }: DropdownMenuProps) => {
       </div>
       {isOpen && (
         <div
-          className="origin-top-right absolute right-0 mt-2 w-64 rounded-2xl shadow-xl bg-white dark:bg-slate-900 ring-1 ring-black ring-opacity-5 focus:outline-none z-50 animate-in fade-in-0 zoom-in-95 p-2"
+          className="origin-top-right absolute right-0 mt-2 w-64 rounded-xl shadow-xl bg-white dark:bg-slate-900 ring-1 ring-accent ring-opacity-5 focus:outline-none z-50 animate-in fade-in-0 zoom-in-95 p-2"
           role="menu"
           aria-orientation="vertical"
         >
@@ -68,8 +69,8 @@ const DropdownMenuItem = ({
   onClick,
   active = false,
 }: DropdownMenuItemProps) => (
-  <a
-    href={href}
+  <Link
+    href={href || ""}
     target="_blank"
     rel="noopener noreferrer"
     onClick={onClick}
@@ -85,7 +86,7 @@ const DropdownMenuItem = ({
     role="menuitem"
   >
     {children}
-  </a>
+  </Link>
 );
 
 const DropdownMenuSeparator = () => (

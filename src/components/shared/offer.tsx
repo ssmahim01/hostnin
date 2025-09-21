@@ -17,7 +17,7 @@ export interface Offer {
 const offerData: Offer = {
   title: "Try Hostnin Risk-Free for 30 Days",
   subtitle: "30 Days to Decide. Full Refund Guaranteed.",
-  primaryButton: { label: "Get the Offer", link: "/pricing" },
+  primaryButton: { label: "Get the Offer", link: "/hosting/web-hosting" },
   secondaryButton: {
     label: "Chat with an Expert",
     link: "https://tawk.to/chat/64e3c190cc26a871b0308e91/1h8cqo8b6",

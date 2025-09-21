@@ -25,10 +25,10 @@ export default function BdixHostingPlans() {
   }, []);
 
   return (
-    <div className="py-8 sm:py-12 lg:pt-6 lg:pb-10 hidden md:block">
-      <div className="max-w-7xl mx-auto">
+    <div className="py-8 sm:pt-6 sm:pb-12 lg:pt-6 lg:pb-10 hidden md:block">
+      <div className="max-w-7xl mx-auto px-4  md:px-7 lg:px-8">
         <div className="text-center mb-8 sm:mb-12">
-          <h1 className="text-[26px] sm:text-3xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-3 sm:mb-4">
+          <h1 className="text-3xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-3 sm:mb-4">
             Compare BDIX Hosting Plans
           </h1>
         </div>
@@ -39,7 +39,7 @@ export default function BdixHostingPlans() {
             className="fixed top-14 left-0 right-0 z-40 shadow-lg hidden lg:block"
             style={{
               width: "100%",
-              maxWidth: "80rem",
+              maxWidth: "76rem",
               margin: "0 auto",
               left: "50%",
               transform: "translateX(-50%)",

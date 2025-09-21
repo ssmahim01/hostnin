@@ -29,10 +29,10 @@ export default function CloudHostingPlans() {
   }, []);
 
   return (
-    <div className="py-8 sm:py-12 lg:pt-7 lg:pb-14 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto">
+    <div className="py-8 sm:pt-6 sm:pb-12 lg:pt-7 lg:pb-14 transition-colors duration-300 hidden md:block">
+      <div className="max-w-7xl mx-auto px-4 md:px-7 lg:px-8">
         <div className="text-center mb-8 sm:mb-12">
-          <h1 className="text-[26px] sm:text-3xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
+          <h1 className="text-3xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
             Compare Cloud Hosting Plans
           </h1>
         </div>
@@ -43,7 +43,7 @@ export default function CloudHostingPlans() {
             className="fixed top-16 left-0 right-0 z-40 bg-gradient-to-r from-blue-800 to-blue-600 shadow-lg hidden lg:block"
             style={{
               width: "100%",
-              maxWidth: "80rem",
+              maxWidth: "76rem",
               margin: "0 auto",
               left: "50%",
               transform: "translateX(-50%)",

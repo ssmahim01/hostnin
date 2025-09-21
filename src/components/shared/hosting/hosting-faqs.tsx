@@ -243,13 +243,7 @@ export default function HostingFAQs() {
       >
         {/* Left side: tab triggers */}
         <TabsList
-          className={`flex ${
-            pathname === "/hosting/dedicated-server" ||
-            pathname === "/hosting/turbo-hosting" ||
-            pathname === "/hosting/bdix-hosting"
-              ? "flex-row overflow-x-auto h-full"
-              : "flex-col md:w-[280px] h-full overflow-x-auto"
-          } gap-4 w-full bg-transparent`}
+          className={`flex flex-col md:w-[280px] h-full overflow-x-auto gap-4 w-full bg-transparent`}
         >
           {categories.map((cat) => (
             <TabsTrigger

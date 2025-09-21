@@ -81,7 +81,7 @@ export function DomainSearchSection() {
                 </form>
 
                 {errors.length > 0 && (
-                  <div className="mb-4 p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
+                  <div className="mb-4 p-3 bg-red-50 max-w-xl dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
                     {errors.map((error, index) => (
                       <p
                         key={index}

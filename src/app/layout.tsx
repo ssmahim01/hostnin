@@ -7,6 +7,7 @@ import { Navbar } from "@/components/shared/navbar";
 import { Footer } from "@/components/shared/footer";
 import { Toaster } from "sonner";
 import ScrollToTopButton from "@/components/shared/scroll-to-top";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,9 +20,20 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Hostnin - Premium Web Hosting Solutions",
+  title: "Premium Web Hosting Solutions | Hostnin",
   description:
-    "Get fastest hosting with up to 76% discount. Premium web hosting solutions for businesses.",
+    "Hostnin is a web hosting company that provides reliable and affordable web hosting services.",
+  icons: {
+    icon: [
+      {
+        url: "/assets/favicon.png",
+        sizes: "160x160",
+        type: "image/png",
+      },
+    ],
+    shortcut: "/assets/favicon.png",
+    apple: "/assets/favicon.png",
+  },
   generator: "Hostnin",
 };
 
@@ -32,9 +44,35 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Google Tag Manager */}
+        <Script
+          id="google-tag-manager"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];
+              w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+              var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+              j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+              f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-KVN2PWTQ');`,
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-KVN2PWTQ"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
+
         <Suspense fallback={null}>
           <ThemeProvider
             attribute="class"
@@ -43,11 +81,9 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <Navbar />
-            <div className="bg-gray-50 dark:bg-background">
-              {children}
-            </div>
+            <div className="bg-gray-50 dark:bg-background">{children}</div>
             <ScrollToTopButton />
-             <Toaster />
+            <Toaster />
             <Footer />
           </ThemeProvider>
         </Suspense>

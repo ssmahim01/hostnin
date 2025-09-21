@@ -33,7 +33,7 @@ export default function AffiliateSteps() {
   return (
     <section className="px-4 lg:px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="bg-white dark:bg-slate-900 rounded-3xl overflow-hidden lg:flex">
+        <div className="rounded-3xl overflow-hidden lg:flex">
           {/* Left text / steps */}
           <div className="lg:w-1/2 py-8 md:px-4 lg:p-12 flex flex-col justify-center">
             <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-gray-100 mb-8 leading-tight">

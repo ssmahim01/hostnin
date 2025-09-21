@@ -28,7 +28,7 @@ const features: AffiliateFeature[] = [
 export default function AffiliateMarketing() {
   return (
     <section className="w-full pb-6 md:px-4 lg:px-8">
-      <div className="max-w-7xl mx-auto bg-white dark:bg-gray-800 py-10 px-4 lg:px-8 rounded-xl">
+      <div className="max-w-7xl mx-auto py-10 px-4 lg:px-8 rounded-xl">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Text column */}
           <div className="w-full lg:w-1/2">

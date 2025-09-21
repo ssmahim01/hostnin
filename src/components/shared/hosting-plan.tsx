@@ -42,7 +42,7 @@ export default function HostingPlan() {
           {visiblePlans.map((plan) => (
             <Card
               key={plan.id}
-              className="relative border group border-gray-200 dark:border-gray-700 rounded-xl p-8 bg-accent text-gray-900 dark:text-white transition-all duration-300 ease-in-out hover:bg-blue-700 hover:text-white/95 dark:hover:text-gray-100 mx-2"
+              className="relative border group border-gray-200 dark:border-gray-700 rounded-xl p-8 text-gray-900 dark:text-white transition-all duration-300 ease-in-out hover:bg-blue-700 hover:text-white/95 dark:hover:text-gray-100 mx-2"
             >
               {plan.giftBadge && (
                 <div className="absolute top-0 right-0 bg-yellow-400 text-gray-100 text-xs font-semibold px-3 py-1 rounded-bl-lg">
