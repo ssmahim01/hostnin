@@ -27,6 +27,7 @@ import {
   BadgePlus,
   LayoutDashboard,
   Star,
+  HelpCircle,
 } from "lucide-react";
 import type { NavItem } from "@/types/nav";
 import Link from "next/link";
@@ -110,27 +111,38 @@ const navItems: NavItem[] = [
         label: "Privacy Policy",
         href: "/privacy-policy",
         icon: Shield,
+        description: "How we protect your data",
       },
       {
         label: "Terms & Condition",
         href: "/terms-conditions",
         icon: FileText,
+        description: "Understand our service policies",
       },
       {
         label: "Testimonials",
         href: "/reviews",
         icon: Star,
+        description: "See what our clients say",
+      },
+      {
+        label: "Support Ticket",
+        href: "/support",
+        icon: HelpCircle,
+        description: "Get help from our support team",
       },
       {
         label: "Careers",
         href: "/careers",
         icon: Briefcase,
         badge: "(Hiring)",
+        description: "Join our growing team",
       },
       {
         label: "Contact",
         href: "/contact",
         icon: Phone,
+        description: "Reach out to us",
       },
     ],
   },
@@ -220,14 +232,14 @@ export function Navbar() {
                   {item.hasDropdown && item.dropdownItems && (
                     <div
                       className={`absolute  ${
-                        item.label === "Hosting" ? "  -left-50" : "-left-10"
-                      } mt-2 bg-accent dark:bg-gray-900 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0
-                    ${item.label === "Hosting" ? "w-[550px]" : "w-52"}`}
+                        item.label === "Hosting" || item.label === "About" ? "  -left-50" : "-left-10"
+                      } mt-2 bg-white dark:bg-gray-900 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0
+                    ${item.label === "Hosting" || item.label === "About" ? "w-[550px]" : "w-52"}`}
                     >
                       {/* Dropdown items remain links */}
                       <div
                         className={`grid gap-2 ${
-                          item.label === "Hosting"
+                          item.label === "Hosting" || item.label === "About"
                             ? "grid-cols-1 sm:grid-cols-1 md:grid-cols-2"
                             : "grid-cols-1"
                         } p-2`}
@@ -358,7 +370,7 @@ export function Navbar() {
                 </button>
               </div>
             </div>
-            
+
             {/* Scrollable area */}
             <div className="flex-1 p-4 overflow-y-auto">
               <ul className="flex flex-col gap-0 text-base font-medium text-gray-700 dark:text-gray-300">

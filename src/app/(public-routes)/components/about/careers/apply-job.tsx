@@ -33,9 +33,9 @@ export default function JobApply() {
     <section className="pb-10 md:-mt-0 -mt-10">
       <Card
         id="job-apply"
-        className="max-w-7xl mx-auto overflow-hidden rounded-2xl shadow-lg bg-background p-0 border-transparent"
+        className="max-w-7xl mx-auto overflow-hidden bg-accent rounded-2xl shadow-lg p-0 border-transparent"
       >
-        <div className="md:flex px-4 md:px-8">
+        <div className="md:flex">
           {/* Left gradient column */}
           <div className="md:w-1/2 bg-gradient-to-r from-blue-600 p-8 to-indigo-700 text-white">
             <h2 className="text-3xl font-bold mb-6">{left.title}</h2>

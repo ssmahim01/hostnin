@@ -1,33 +1,32 @@
-"use client";
+"use client"
 
-import { useState, useEffect } from "react";
-import { ArrowUp } from "lucide-react";
+import { useState, useEffect } from "react"
+import { ArrowUp } from "lucide-react"
 
 export default function ScrollToTopButton() {
-  const [isVisible, setIsVisible] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
+  const [isVisible, setIsVisible] = useState(false)
+  const [scrollProgress, setScrollProgress] = useState(0)
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const docHeight =
-        document.documentElement.scrollHeight - window.innerHeight;
-      const progress = (scrollTop / docHeight) * 100;
-      setScrollProgress(progress);
+      const scrollTop = window.scrollY
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight
+      const progress = (scrollTop / docHeight) * 100
+      setScrollProgress(progress)
 
-      setIsVisible(scrollTop > 300);
-    };
+      setIsVisible(scrollTop > 300)
+    }
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  }
 
-  const radius = 28;
-  const circumference = 2 * Math.PI * radius;
+  const radius = 28
+  const circumference = 2 * Math.PI * radius
 
   return (
     <div
@@ -35,25 +34,11 @@ export default function ScrollToTopButton() {
         isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
     >
-      <div
-        className="relative w-16 h-16"
-        aria-label="Scroll progress & scroll to top"
-      >
+      <div className="relative w-16 h-16" aria-label="Scroll progress & scroll to top">
         {/* Progress ring */}
-        <svg
-          className="absolute top-0 left-0 -rotate-90"
-          width="64"
-          height="64"
-        >
+        <svg className="absolute top-0 left-0 -rotate-90" width="64" height="64">
           {/* Background ring */}
-          <circle
-            cx="32"
-            cy="32"
-            r={radius}
-            stroke="#e5e7eb"
-            strokeWidth="4"
-            fill="transparent"
-          />
+          <circle cx="32" cy="32" r={radius} stroke="#e5e7eb" strokeWidth="4" fill="transparent" />
           {/* Progress ring */}
           <circle
             cx="32"
@@ -79,5 +64,5 @@ export default function ScrollToTopButton() {
         </button>
       </div>
     </div>
-  );
+  )
 }
