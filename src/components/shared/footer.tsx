@@ -92,8 +92,8 @@ const footerSections: FooterSection[] = [
         href: "mailto:support@hostnin.com",
       },
       {
-        label: "Open Ticket",
-        href: "https://my.hostnin.com/submitticket.php",
+        label: "File A Complain",
+        href: "/complain",
       },
     ],
   },

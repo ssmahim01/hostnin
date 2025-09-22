@@ -55,7 +55,7 @@ const contactInfo = [
   {
     icon: PhoneIcon,
     label: "Hotline",
-    value: "+880-1XXX-XXXXXX",
+    value: "+880 1325 875 955",
     color: "text-green-500",
   },
 ];
