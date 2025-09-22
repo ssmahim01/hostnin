@@ -13,7 +13,7 @@ export const BDIXCreateFeatures = (storage: string, speed: string, domains: stri
   },
   {
     text: "Free .COM Domain",
-    tooltip: "Get a free .com domain name for the first year. Includes domain registration, DNS management, and domain privacy protection."
+    tooltip: "When you sign up for 3 years of hosting, we’ll give you a .COM domain free for the first year. That’s domain registration, DNS management, and privacy protection, all included."
   },
   {
     text: "Lifetime Free SSL",

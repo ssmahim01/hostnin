@@ -195,9 +195,9 @@ export const wordPressPricingData: PricingPlan[] = [
           tooltip: "Enhanced security with two-factor authentication",
         },
         {
-          text: "CXS, OSM, MSFE Addon",
+          text: "3 Step DDos Mitigation",
           included: true,
-          tooltip: "Additional security addons for comprehensive protection",
+          tooltip: "Our 3-Step DDoS Mitigation ensures maximum uptime detecting attacks early, filtering malicious traffic instantly, and restoring full performance with stronger defenses",
         },
         {
           text: "Included Premium KernelCare",
@@ -429,9 +429,9 @@ export const wordPressPricingData: PricingPlan[] = [
           tooltip: "Enhanced security with two-factor authentication",
         },
         {
-          text: "CXS, OSM, MSFE Addon",
+          text: "3 Step DDos Mitigation",
           included: true,
-          tooltip: "Additional security addons for comprehensive protection",
+          tooltip: "Our 3-Step DDoS Mitigation ensures maximum uptime detecting attacks early, filtering malicious traffic instantly, and restoring full performance with stronger defenses",
         },
         {
           text: "Included Premium KernelCare",
@@ -665,9 +665,9 @@ export const wordPressPricingData: PricingPlan[] = [
           tooltip: "Enhanced security with two-factor authentication",
         },
         {
-          text: "CXS, OSM, MSFE Addon",
+          text: "3 Step DDos Mitigation",
           included: true,
-          tooltip: "Additional security addons for comprehensive protection",
+          tooltip: "Our 3-Step DDoS Mitigation ensures maximum uptime detecting attacks early, filtering malicious traffic instantly, and restoring full performance with stronger defenses",
         },
         {
           text: "Included Premium KernelCare",
@@ -912,9 +912,9 @@ export const wordPressPricingData: PricingPlan[] = [
           tooltip: "Enhanced security with two-factor authentication",
         },
         {
-          text: "CXS, OSM, MSFE Addon",
+          text: "3 Step DDos Mitigation",
           included: true,
-          tooltip: "Additional security addons for comprehensive protection",
+          tooltip: "Our 3-Step DDoS Mitigation ensures maximum uptime detecting attacks early, filtering malicious traffic instantly, and restoring full performance with stronger defenses",
         },
         {
           text: "Included Premium KernelCare",
@@ -1146,9 +1146,9 @@ export const wordPressPricingData: PricingPlan[] = [
           tooltip: "Enhanced security with two-factor authentication",
         },
         {
-          text: "CXS, OSM, MSFE Addon",
+          text: "3 Step DDos Mitigation",
           included: true,
-          tooltip: "Additional security addons for comprehensive protection",
+          tooltip: "Our 3-Step DDoS Mitigation ensures maximum uptime detecting attacks early, filtering malicious traffic instantly, and restoring full performance with stronger defenses",
         },
         {
           text: "Included Premium KernelCare",
@@ -1382,9 +1382,9 @@ export const wordPressPricingData: PricingPlan[] = [
           tooltip: "Enhanced security with two-factor authentication",
         },
         {
-          text: "CXS, OSM, MSFE Addon",
+          text: "3 Step DDos Mitigation",
           included: true,
-          tooltip: "Additional security addons for comprehensive protection",
+          tooltip: "Our 3-Step DDoS Mitigation ensures maximum uptime detecting attacks early, filtering malicious traffic instantly, and restoring full performance with stronger defenses",
         },
         {
           text: "Included Premium KernelCare",
