@@ -12,7 +12,7 @@ export const BDIXCreateFeatures = (storage: string, speed: string, domains: stri
     tooltip: "Host multiple domain names on a single hosting account. Each domain can have its own website and email addresses."
   },
   {
-    text: "Free .COM Domain",
+    text: "Free .COM Domain (Triennially)",
     tooltip: "When you sign up for 3 years of hosting, we’ll give you a .COM domain free for the first year. That’s domain registration, DNS management, and privacy protection, all included."
   },
   {

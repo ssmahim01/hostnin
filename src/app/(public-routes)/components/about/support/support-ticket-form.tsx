@@ -526,16 +526,35 @@ ${data.email || ""}
                 </div>
               </div>
 
+              <FormField
+                control={form.control}
+                name="credentialUrl"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Login URL</FormLabel>
+                    <FormControl>
+                      <Input
+                        type="url"
+                        readOnly
+                        defaultValue={field.value}
+                        placeholder="https://my.hostnin.com/index.php/login"
+                        {...field}
+                      />
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
+
               <div className="grid gap-6 md:grid-cols-2">
                 <FormField
                   control={form.control}
                   name="credentialEmail"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Account Email</FormLabel>
+                      <FormLabel>Username/Email</FormLabel>
                       <FormControl>
                         <Input
-                          placeholder="Account email for login"
+                          placeholder="Provide username or email"
                           {...field}
                         />
                       </FormControl>
@@ -552,24 +571,6 @@ ${data.email || ""}
                         <Input
                           type="password"
                           placeholder="Account password"
-                          {...field}
-                        />
-                      </FormControl>
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="credentialUrl"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Login URL</FormLabel>
-                      <FormControl>
-                        <Input
-                          type="url"
-                          readOnly
-                          defaultValue={field.value}
-                          placeholder="https://my.hostnin.com/index.php/login"
                           {...field}
                         />
                       </FormControl>
