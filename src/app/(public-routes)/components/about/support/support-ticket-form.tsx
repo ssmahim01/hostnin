@@ -42,18 +42,26 @@ import {
   ServerIcon,
   AlertCircleIcon,
   RefreshCcw,
+  Box,
+  ShieldAlert,
+  Notebook,
+  Server,
 } from "lucide-react";
 import { toast } from "sonner";
+import { Separator } from "@/components/ui/separator";
 
 const supportTicketSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Please enter a valid email address"),
+  name: z.string().optional(),
+  email: z.string().optional(),
   subject: z.string().min(5, "Subject must be at least 5 characters"),
   category: z.string().min(1, "Please select a category"),
   priority: z.string().min(1, "Please select a priority level"),
   description: z.string().min(20, "Description must be at least 20 characters"),
   serverDetails: z.string().optional(),
   errorMessage: z.string().optional(),
+  credentialEmail: z.string().optional(),
+  credentialLogin: z.string().optional(),
+  credentialUrl: z.string().optional(),
 });
 
 type SupportTicketForm = z.infer<typeof supportTicketSchema>;
@@ -92,6 +100,27 @@ const priorities = [
   },
 ];
 
+function RequiredLabel({
+  name,
+  label,
+  requiredFields,
+  icon,
+}: {
+  name: keyof SupportTicketForm;
+  label: string;
+  requiredFields: string[];
+  icon?: React.ReactNode;
+}) {
+  const isRequired = requiredFields.includes(name);
+  return (
+    <span className="flex items-center gap-1 text-sm font-medium">
+      {icon}
+      {label}
+      {isRequired && <span className="text-red-500">*</span>}
+    </span>
+  );
+}
+
 export function SupportTicketForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formProgress, setFormProgress] = useState(0);
@@ -116,23 +145,19 @@ export function SupportTicketForm() {
       name: "",
       email: "",
       subject: "",
-      category: "",
+      category: "hosting",
       priority: "",
       description: "",
       serverDetails: "",
       errorMessage: "",
+      credentialEmail: "",
+      credentialLogin: "",
+      credentialUrl: "",
     },
   });
 
   const watchedFields = form.watch();
-  const requiredFields = [
-    "name",
-    "email",
-    "subject",
-    "category",
-    "priority",
-    "description",
-  ];
+  const requiredFields = ["subject", "category", "priority", "description"];
   const completedFields = requiredFields.filter((field) =>
     watchedFields[field as keyof SupportTicketForm]?.toString().trim()
   );
@@ -140,40 +165,45 @@ export function SupportTicketForm() {
 
   const onSubmit = async (data: SupportTicketForm) => {
     setIsSubmitting(true);
-
     try {
-      // Simulate progress bar
       for (let i = 0; i <= 100; i += 10) {
         setFormProgress(i);
         await new Promise((resolve) => setTimeout(resolve, 50));
       }
 
-      // Build a professional email body
+      let credentialBlock = "";
+      if (data.credentialEmail || data.credentialLogin || data.credentialUrl) {
+        credentialBlock = `
+Access Credentials:
+
+${data.credentialEmail ? `• Email: ${data.credentialEmail}` : ""}
+${data.credentialLogin ? `• Login: ${data.credentialLogin}` : ""}
+${data.credentialUrl ? `• Login URL: ${data.credentialUrl}` : ""}
+`;
+      }
       const emailBody = `
 Dear Support Team,
 
-I hope you are doing well.  
-My name is ${
-        data.name
-      }, and I am reaching out regarding ${data.subject.toLowerCase()}.
+I hope you are doing well.
 
-I have been using your service and encountered the following issue/request:
+${
+  data.name ? `My name is ${data.name} and ` : ""
+}I’m reaching out regarding an issue with your service.
 
-Category: ${data.category}  
+Category: ${data.category}
 Priority: ${data.priority.toUpperCase()}
 
+Issue / Details:
 ${data.description}
 
-I would appreciate it if you could assist me with this matter at your earliest convenience.
-
-Best regards,  
-${data.name}  
-${data.email}
+${credentialBlock ? credentialBlock + "\n" : ""}
+${data.name ? "Best regards," : ""}
+${data.name || ""}
+${data.email || ""}
 `;
 
-      // Pre-fill Gmail compose with subject & body
       const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=support@hostnin.com&su=${encodeURIComponent(
-        data.subject
+        `${data.subject}`
       )}&body=${encodeURIComponent(emailBody)}`;
 
       window.open(gmailLink, "_blank");
@@ -225,7 +255,7 @@ ${data.email}
                     d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
                   />
                   <motion.path
-                    className="text-primary stroke-current"
+                    className="text-blue-500 stroke-current"
                     strokeWidth="3"
                     strokeLinecap="round"
                     fill="none"
@@ -309,7 +339,7 @@ ${data.email}
                       <FormItem>
                         <FormLabel className="flex items-center gap-2 text-sm font-medium">
                           <MailIcon className="h-4 w-4" />
-                          Email Address
+                          <span>Email Address</span>
                         </FormLabel>
                         <FormControl>
                           <motion.div
@@ -344,8 +374,12 @@ ${data.email}
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel className="flex items-center gap-2 text-sm font-medium">
-                        <MessageSquareIcon className="h-4 w-4" />
-                        Subject
+                        <RequiredLabel
+                          name="subject"
+                          label="Subject"
+                          requiredFields={requiredFields}
+                          icon={<MessageSquareIcon className="h-4 w-4" />}
+                        />
                       </FormLabel>
                       <FormControl>
                         <Input
@@ -364,7 +398,14 @@ ${data.email}
                     name="category"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Category</FormLabel>
+                        <FormLabel>
+                          <RequiredLabel
+                            name="category"
+                            label="Category"
+                            requiredFields={requiredFields}
+                            icon={<Box className="h-4 w-4" />}
+                          />
+                        </FormLabel>
                         <Select
                           onValueChange={field.onChange}
                           defaultValue={field.value}
@@ -398,7 +439,14 @@ ${data.email}
                     name="priority"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Priority Level</FormLabel>
+                        <FormLabel>
+                          <RequiredLabel
+                            name="priority"
+                            label="Priority"
+                            requiredFields={requiredFields}
+                            icon={<ShieldAlert className="h-4 w-4" />}
+                          />
+                        </FormLabel>
                         <Select
                           onValueChange={field.onChange}
                           defaultValue={field.value}
@@ -444,7 +492,14 @@ ${data.email}
                   name="description"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Detailed Description</FormLabel>
+                      <FormLabel>
+                        <RequiredLabel
+                          name="description"
+                          label="Detailed Issue"
+                          requiredFields={requiredFields}
+                          icon={<Notebook className="h-4 w-4" />}
+                        />
+                      </FormLabel>
                       <FormControl>
                         <Textarea
                           placeholder="Please provide a detailed description of your issue, including steps to reproduce if applicable..."
@@ -458,12 +513,75 @@ ${data.email}
                 />
               </motion.div>
 
+              {/* Optional Credentials Section */}
+
+              <div className="pt-6 border-t border-muted-foreground/10">
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Server className="h-4 w-4 text-primary" />
+                  </div>
+                  <h3 className="text-lg font-semibold">
+                    Access Credentials (Optional)
+                  </h3>
+                </div>
+              </div>
+
+              <div className="grid gap-6 md:grid-cols-2">
+                <FormField
+                  control={form.control}
+                  name="credentialEmail"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Account Email</FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder="Account email for login"
+                          {...field}
+                        />
+                      </FormControl>
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="credentialLogin"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Password</FormLabel>
+                      <FormControl>
+                        <Input
+                          type="password"
+                          placeholder="Account password"
+                          {...field}
+                        />
+                      </FormControl>
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="credentialUrl"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Login URL</FormLabel>
+                      <FormControl>
+                        <Input
+                          type="url"
+                          placeholder="https://my.hostnin.com/index.php/login"
+                          {...field}
+                        />
+                      </FormControl>
+                    </FormItem>
+                  )}
+                />
+              </div>
+
               {/* Submit Button */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.7 }}
-                className="flex gap-4 pt-6"
+                className="flex gap-4 pt-2"
               >
                 <Button
                   type="submit"

@@ -42,15 +42,15 @@ export default function Offer() {
         </p>
 
         <div className="flex flex-col justify-center gap-4 mt-8 items-center">
+          <Link href={offerData.primaryButton.link}>
           <button
             className="px-10 py-3 cursor-pointer bg-transparent border border-gray-200 hover:border-gray-600 text-white/95 font-semibold rounded-lg shadow 
              hover:bg-blue-700 hover:text-white transform hover:scale-105 
              transition-all duration-300 ease-in-out"
           >
-            <Link href={offerData.primaryButton.link}>
               {offerData.primaryButton.label}
-            </Link>
           </button>
+            </Link>
 
           <Link
             href={offerData.secondaryButton.link}
