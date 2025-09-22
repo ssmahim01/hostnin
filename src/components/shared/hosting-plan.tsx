@@ -5,9 +5,9 @@ import {
   Cloud,
   Server,
   Database,
-  Rocket,
   Globe,
   Layers,
+  Zap,
 } from "lucide-react";
 import { plans } from "@/data/hosting-plan";
 import { Plan } from "@/types/hosting-plan";
@@ -57,7 +57,7 @@ export default function HostingPlan() {
         );
       case "Turbo Hosting":
         return (
-          <Rocket className="w-14 h-14 text-blue-600 group-hover:text-white" />
+          <Zap className="w-14 h-14 text-blue-600 group-hover:text-white" />
         );
       default:
         return (
@@ -87,7 +87,7 @@ export default function HostingPlan() {
             >
               {/* Badge */}
               {plan.giftBadge && (
-                <div className="absolute top-3 left-3 group-hover:bg-white group-hover:text-blue-700 bg-blue-600 text-white font-semibold px-4 py-1 rounded-full shadow-lg text-sm">
+                <div className="absolute animate-bounce top-3 left-3 group-hover:bg-white group-hover:text-blue-700 bg-blue-600 text-white font-semibold px-4 py-1 rounded-full shadow-lg text-sm">
                   🎁 Free Gift
                 </div>
               )}

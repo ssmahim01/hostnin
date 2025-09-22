@@ -28,6 +28,7 @@ import {
   LayoutDashboard,
   Star,
   HelpCircle,
+  Globe,
 } from "lucide-react";
 import type { NavItem } from "@/types/nav";
 import Link from "next/link";
@@ -65,7 +66,7 @@ const navItems: NavItem[] = [
       {
         label: "Reseller Hosting",
         href: "/hosting/reseller-hosting",
-        icon: Building2,
+        icon: Globe,
         description: "Start your Business",
       },
       {
