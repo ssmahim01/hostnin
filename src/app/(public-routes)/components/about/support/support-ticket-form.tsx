@@ -152,7 +152,7 @@ export function SupportTicketForm() {
       errorMessage: "",
       credentialEmail: "",
       credentialLogin: "",
-      credentialUrl: "https://my.hostnin.com/index.php/login",
+      credentialUrl: "https://",
     },
   });
 
@@ -535,7 +535,6 @@ ${data.email || ""}
                     <FormControl>
                       <Input
                         type="url"
-                        readOnly
                         defaultValue={field.value}
                         placeholder="https://my.hostnin.com/index.php/login"
                         {...field}

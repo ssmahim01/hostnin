@@ -16,11 +16,11 @@ export default function ComplainPage() {
       {/* Background Pattern */}
       {/* <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]" /> */}
 
-      <div className="relative z-10">
+      <div className="relative z-10 space-y-10">
+            <ComplainHeader />
         <div className="grid gap-8 lg:grid-cols-3 lg:gap-12">
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-8">
-            <ComplainHeader />
             <ComplainForm />
           </div>
 

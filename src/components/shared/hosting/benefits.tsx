@@ -10,7 +10,7 @@ export default function BenefitsSection({
   sideCards,
 }: BenefitsSectionProps) {
   return (
-    <section className="py-8 sm:py-12 md:py-16 pt-[1330px] sm:pt-[480px] md:pt-[600px] lg:pt-[450px] md:px-4 px-2">
+    <section className="py-16 md:px-4 px-2">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-start">
         {/* Left */}
         <div>

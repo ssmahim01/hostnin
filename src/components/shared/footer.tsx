@@ -92,7 +92,7 @@ const footerSections: FooterSection[] = [
         href: "mailto:support@hostnin.com",
       },
       {
-        label: "File A Complain",
+        label: "File a Complain",
         href: "/complain",
       },
     ],
@@ -118,6 +118,15 @@ const footerSections: FooterSection[] = [
 //   { name: "Stripe", icon: "💳" },
 //   { name: "Razorpay", icon: "💳" },
 // ];
+
+function isExternalLink(href: string): boolean {
+  return (
+    href.startsWith("http://") ||
+    href.startsWith("https://") ||
+    href.startsWith("mailto:") ||
+    href.startsWith("tel:")
+  );
+}
 
 export function Footer() {
   const getFullYear = new Date().getFullYear();
@@ -149,22 +158,26 @@ export function Footer() {
                 {section.title}
               </h3>
               <ul className="space-y-2">
-                {section.links.map((link) => (
-                  <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      target="_blank"
-                      className="text-blue-200 hover:text-white transition-colors text-base"
-                    >
-                      {link.label}{" "}
-                      {link?.label === "Careers" && (
-                        <span className="font-semibold text-yellow-400">
-                          (Hiring)
-                        </span>
-                      )}
-                    </Link>
-                  </li>
-                ))}
+                {section.links.map((link) => {
+                  const external = isExternalLink(link.href);
+                  return (
+                    <li key={link.label}>
+                      <Link
+                        href={link.href}
+                        target={external ? "_blank" : "_self"}
+                        rel={external ? "noopener noreferrer" : undefined}
+                        className="text-blue-200 hover:text-white transition-colors text-base"
+                      >
+                        {link.label}
+                        {link?.label === "Careers" && (
+                          <span className="font-semibold text-yellow-400">
+                            (Hiring)
+                          </span>
+                        )}
+                      </Link>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}

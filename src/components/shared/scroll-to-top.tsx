@@ -58,7 +58,7 @@ export default function ScrollToTopButton() {
         {/* Button sits slightly inside */}
         <button
           onClick={scrollToTop}
-          className="absolute inset-[6px] flex items-center justify-center rounded-full bg-blue-600 text-white shadow-lg hover:bg-blue-700 hover:cursor-pointer hover:scale-105 transition-transform transform ease-in-out duration-500"
+          className="absolute inset-[6px] flex items-center justify-center rounded-full bg-[#2563eb] text-white shadow-lg hover:cursor-pointer hover:scale-105 transition-transform transform ease-in-out duration-500"
         >
           <ArrowUp className="w-5 h-5" />
         </button>

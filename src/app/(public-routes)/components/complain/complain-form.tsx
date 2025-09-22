@@ -201,10 +201,8 @@ ${data.email}
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+    <div
+     
     >
       <Card className="shadow-md border-0 backdrop-blur-sm bg-white/80 dark:bg-gray-900/80">
         <CardHeader className="space-y-4 pb-6">
@@ -515,12 +513,12 @@ ${data.email}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.7 }}
-                className="flex gap-4 pt-2"
+                className="flex gap-4 flex-wrap md:justify-center flex-col md:flex-row w-full items-center pt-2"
               >
                 <Button
                   type="submit"
                   disabled={isSubmitting || progress < 100}
-                  className="flex-1 md:flex-none md:px-8 bg-blue-600 hover:bg-blue-700 text-white hover:cursor-pointer hover:scale-105 transition-transform transform duration-500 h-12 text-base font-medium relative overflow-hidden group"
+                  className="flex-1 md:flex-none md:px-8 bg-blue-600 hover:bg-blue-700 text-white hover:cursor-pointer hover:scale-105 transition-transform transform duration-500 h-12 text-base font-medium relative overflow-hidden group md:w-auto w-full"
                 >
                   <AnimatePresence mode="wait">
                     {isSubmitting ? (
@@ -582,7 +580,7 @@ ${data.email}
                     setFormProgress(0);
                   }}
                   disabled={isSubmitting}
-                  className="h-12 px-6 flex gap-2 items-center hover:bg-blue-600 hover:cursor-pointer hover:scale-105 hover:text-white transition-transform transform duration-500"
+                  className="h-12 px-6 flex gap-2 items-center hover:bg-blue-600 hover:cursor-pointer hover:scale-105 hover:text-white transition-transform md:w-auto w-full transform duration-500"
                 >
                   <RefreshCcw className="h-4 w-4" />
                   <span>Reset Form</span>
@@ -592,6 +590,6 @@ ${data.email}
           </Form>
         </CardContent>
       </Card>
-    </motion.div>
+    </div>
   );
 }

@@ -129,7 +129,7 @@ export const Banner: React.FC<BannerProps> = ({
             loading="lazy"
             width={400}
             height={400}
-            className="object-contain w-full h-auto"
+            className="object-contain w-full h-auto shadow-lg"
             src={illustration}
             sizes="(max-width: 640px) 100vw,
            (max-width: 768px) 50vw,

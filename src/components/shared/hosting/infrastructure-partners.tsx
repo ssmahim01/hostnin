@@ -3,6 +3,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import type { InfrastructurePartner } from "@/types/infrastructure-partner";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const partners: InfrastructurePartner[] = [
   {
@@ -58,13 +59,19 @@ const partners: InfrastructurePartner[] = [
 ];
 
 export function InfrastructurePartners() {
+  const pathname = usePathname();
+
   return (
     <section className="py-16 bg-[#001143]">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Web Hosting Infrastructure{" "}
-            <span className="text-yellow-400">Partners</span>
+            {pathname === "/hosting/web-hosting"
+              ? " Web Hosting"
+              : pathname === "/pricing"
+              ? "Pricing Plan"
+              : "Reseller Hosting"}{" "}
+            Infrastructure <span className="text-yellow-400">Partners</span>
           </h2>
         </div>
 

@@ -1,6 +1,7 @@
 import SupportBanner from "@/app/(public-routes)/components/home/support-banner";
 import ResellerHostingBanner from "@/app/(public-routes)/components/reseller-hosting/reseller-hosting-banner";
 import ResellerHostingFeatures from "@/app/(public-routes)/components/reseller-hosting/reseller-hosting-features";
+import ResellerPricing from "@/app/(public-routes)/components/reseller-hosting/reseller-pricing";
 import BenefitsSection from "@/components/shared/hosting/benefits";
 import Testimonials from "@/components/shared/hosting/client-testimonials";
 import { InfrastructurePartners } from "@/components/shared/hosting/infrastructure-partners";
@@ -18,6 +19,7 @@ export default function ResellerHostingPage() {
   return (
     <>
       <ResellerHostingBanner />
+      <ResellerPricing />
       <BenefitsSection
         mainTitle={`We Offers massive benefits with\nour reseller hosting plans!`}
         mainDescription={`Let your dreams become a reality with the most advanced tailored hosting. Traditional shared hosting is buggy, slow, and way more, but we're not. Our advanced technology makes your website fast and secure with no downtime.`}
