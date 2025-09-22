@@ -4,8 +4,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function RefundPolicy() {
   return (
-    <section className="w-full max-w-7xl mx-auto py-20 px-4 lg:px-8 rounded-lg shadow-lg">
-      <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-8 text-center">
+    <section className="w-full max-w-7xl mx-auto pt-24 pb-20 px-4 lg:px-8">
+      <h1 className="text-4xl font-extrabold text-blue-600 dark:text-white mb-8 text-center">
         Refund Policy
       </h1>
 

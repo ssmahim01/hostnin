@@ -30,14 +30,6 @@ export default function FeatureBlock({
   reverse,
   bullets,
 }: FeatureBlockProps) {
-  // Smooth scroll function
-  const handleScrollToPricing = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    const section = document.querySelector("#pricing");
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
     <div
@@ -87,14 +79,14 @@ export default function FeatureBlock({
           </Button>
         )}
 
-        {buttonLabel && scrollId && (
+        {/* {buttonLabel && scrollId && (
           <Button
             onClick={handleScrollToPricing}
             className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-4 sm:px-6 md:px-8 py-6 hover:scale-105 duration-500 rounded-full hover:cursor-pointer transition-colors text-[15px] sm:text-base w-full sm:w-auto"
           >
             {buttonLabel}
           </Button>
-        )}
+        )} */}
       </div>
 
       <div className="flex-1 flex justify-center w-full max-w-[250px] sm:max-w-[220px] xs:max-w-xs md:max-w-lg order-1 md:order-2">

@@ -4,7 +4,7 @@ import FeatureBlock from "@/components/shared/hosting/feature-block";
 
 export default function TurboHostingFeatures() {
   return (
-    <section className="w-full py-8 sm:py-10 xs:py-14">
+    <section className="w-full py-6 sm:py-8 xs:py-12">
       <div className="max-w-7xl mx-auto flex flex-col gap-12 sm:gap-16 xs:gap-20 px-4 sm:px-6 xs:px-12">
         <FeatureBlock
           heading="Enterprise-Grade Security For Your Website"

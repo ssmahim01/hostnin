@@ -29,7 +29,7 @@ export default function CloudHostingPlans() {
   }, []);
 
   return (
-    <div className="py-8 sm:pt-6 sm:pb-12 lg:pt-7 lg:pb-14 transition-colors duration-300 hidden md:block">
+    <div className="py-8 sm:pt-6 sm:pb-12 lg:pt-7 lg:pb-14 transition-colors duration-300 hidden lg:block">
       <div className="max-w-7xl mx-auto px-4 md:px-7 lg:px-8">
         <div className="text-center mb-8 sm:mb-12">
           <h1 className="text-3xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
@@ -178,7 +178,8 @@ export default function CloudHostingPlans() {
               </colgroup>
               <thead
                 ref={headerRef}
-                className="bg-gradient-to-r from-blue-800 to-blue-600"
+                className={`bg-gradient-to-r from-blue-800 to-blue-600 
+                ${isSticky ? "opacity-0 invisible" : "opacity-100 visible"}`}
               >
                 <tr>
                   <th className="p-3 text-white font-bold text-lg border-r border-blue-700/50">

@@ -4,6 +4,7 @@ import SearchDomain from "../../components/domain/search-domain";
 import DomainSupports from "../../components/domain/domain-supports";
 import DomainFeatures from "../../components/domain/domain-features";
 import DomainFAQs from "../../components/domain/domain-faqs";
+import Offer from "../../../../components/shared/offer";
 
 export const metadata: Metadata = {
   title: "Domain | Hostnin - Search & Register Your Domain",
@@ -32,6 +33,7 @@ export default function Domain() {
       <DomainSupports />
       <DomainFeatures />
       <DomainFAQs />
+      <Offer />
     </>
   );
 }

@@ -142,7 +142,7 @@ export default function Testimonials() {
         >
           {testimonials.map((t, idx) => (
             <SwiperSlide key={idx}>
-              <Card className="bg-accent rounded-lg shadow-sm h-[400px] flex flex-col justify-between">
+              <Card className="bg-white dark:bg-slate-900 hover:scale-105 transition-transform transform duration-500 rounded-lg shadow-sm h-[400px] flex flex-col justify-between">
                 <CardHeader className="flex flex-row items-center gap-4 pb-0">
                   <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-white dark:border-neutral-700 shadow flex-shrink-0">
                     <Image

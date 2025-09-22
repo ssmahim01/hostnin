@@ -140,18 +140,18 @@ export default function CloudHostingPrice() {
           </div>
         </div>
 
-        <div className="w-full  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-10 justify-center items-start">
+        <div className="w-full mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-10 justify-center items-start">
           {plans.map((plan) => (
             <div
               key={plan.title}
-              className={`relative w-full max-w-sm mx-auto bg-white dark:bg-slate-900 rounded-2xl shadow-xl flex flex-col transition-all duration-300 border-2 hover:shadow-2xl ${
+              className={`relative w-full max-w-sm mx-auto bg-white dark:bg-slate-900 rounded-2xl shadow-lg flex flex-col transition-all duration-300 border-2 hover:shadow-xl ${
                 plan.highlight
-                  ? "border-blue-500 translate-y-9 z-10 shadow-2xl max-w-md"
+                  ? "border-blue-500 translate-y-4 z-10 shadow-2xl max-w-md"
                   : plan.title === "Basic" || plan.title === "Starter"
-                  ? "translate-y-14 border-transparent hover:border-blue-200"
+                  ? "translate-y-14 border-blue-100 dark:hover:border-blue-400 dark:border-transparent hover:border-blue-200"
                   : plan.title === "Ultimate"
-                  ? "translate-y-[62px] border-transparent hover:border-blue-200"
-                  : "translate-y-20 border-transparent hover:border-blue-200"
+                  ? "translate-y-14 border-blue-100 dark:hover:border-blue-400 dark:border-transparent"
+                  : "translate-y-14 border-blue-100 dark:hover:border-blue-400 dark:border-transparent"
               } ${plan.title === "Pro" ? "mt-6 sm:mt-0" : ""}`}
               style={{
                 // minHeight: "820px",
@@ -206,13 +206,12 @@ export default function CloudHostingPrice() {
                       className="text-sm text-gray-600 dark:text-gray-300"
                       style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
                     >
-                       {billing === "yearly" ? "/Per Year" : "/Triennially"}
+                      {billing === "yearly" ? "/Per Year" : "/Triennially"}
                     </span>
                   </div>
 
                   <Link
                     href={getPlanLink(plan.title, billing)}
-                    target="_blank"
                     rel="noopener noreferrer"
                     className={`block w-full py-4 px-6 rounded-xl font-bold text-sm transition-all duration-300 cursor-pointer transform hover:scale-105 ${
                       plan.highlight
@@ -224,7 +223,7 @@ export default function CloudHostingPrice() {
                   </Link>
 
                   <div
-                    className="text-xs md:text-base text-gray-500 dark:text-gray-300 mt-4 text-center"
+                    className="text-xs md:text-sm text-gray-500 dark:text-gray-300 mt-4 text-center"
                     style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
                   >
                     {plan.infoText}
@@ -254,7 +253,7 @@ export default function CloudHostingPrice() {
 
                         {feature.tooltip && (
                           <div
-                            className={`absolute left-0 top-full mt-2 z-50 w-60 bg-blue-600 text-white text-sm md:text-lg rounded-lg p-3 shadow-lg
+                            className={`absolute left-0 top-full z-50 w-60 bg-blue-600 text-white text-sm md:text-lg rounded-lg p-3 shadow-lg
                 ${
                   activeTooltip === i
                     ? "opacity-100 visible"
@@ -300,7 +299,7 @@ export default function CloudHostingPrice() {
                                     ) => (
                                       <div
                                         key={`${category}-${i}`}
-                                        className="flex items-center gap-3 group relative mb-2"
+                                        className="flex items-center gap-3 group relative space-y-2"
                                       >
                                         {feature.included ? (
                                           <div className="flex-shrink-0 w-5 h-5 bg-green-100 rounded-full flex items-center justify-center">

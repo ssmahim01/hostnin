@@ -151,7 +151,7 @@ function ContactCard({
 }) {
   return (
     <div className="relative bg-white dark:bg-gray-800 rounded-lg shadow-xl pt-12 sm:pt-10 pb-6 sm:pb-8 min-w-0 flex flex-col justify-between items-start overflow-visible px-3 sm:px-6 lg:px-8 flex-1 transition-colors">
-      <span className="absolute left-6 sm:left-10 -top-7 sm:-top-8 w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-blue-600 shadow-[0_0_30px_8px_rgba(37,99,235,0.4)] flex items-center justify-center text-white text-2xl sm:text-3xl z-20">
+      <span className="absolute left-6 sm:left-10 -top-7 sm:-top-8 w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-blue-600 shadow-[0_0_30px_8px_rgba(37,99,235,0.4)] flex items-center p-3 justify-center text-white text-2xl sm:text-3xl z-20">
         {icon}
       </span>
       <span

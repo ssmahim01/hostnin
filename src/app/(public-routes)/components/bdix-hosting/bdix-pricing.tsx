@@ -138,10 +138,10 @@ export default function BdixHostingPricing() {
           {plans.map((plan) => (
             <div
               key={plan.title}
-              className={`relative w-full max-w-sm mx-auto bg-white dark:bg-slate-900 rounded-2xl shadow-xl flex flex-col transition-all duration-300 border-2 hover:shadow-2xl ${
+              className={`relative w-full max-w-sm mx-auto bg-white dark:bg-slate-900 rounded-2xl shadow-lg flex flex-col transition-all duration-300 border-2 hover:shadow-xl ${
                 plan.highlight
                   ? "border-blue-500 sm:-translate-y-4 z-10 shadow-2xl max-w-md"
-                  : "translate-y-2 sm:translate-y-6 border-transparent hover:border-blue-200"
+                  : "translate-y-2 sm:translate-y-6 border-blue-100 dark:border-transparent hover:border-blue-200 dark:hover:border-blue-400"
               }`}
               style={{ minHeight: "auto" }}
             >
@@ -187,7 +187,6 @@ export default function BdixHostingPricing() {
 
                   <Link
                     href={getPlanLink(plan.title)}
-                    target="_blank"
                     rel="noopener noreferrer"
                     className={`block w-full py-4 px-6 rounded-xl font-bold text-sm transition-all duration-300 cursor-pointer transform hover:scale-105 ${
                       plan.highlight

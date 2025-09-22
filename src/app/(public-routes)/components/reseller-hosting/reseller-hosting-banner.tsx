@@ -67,7 +67,20 @@ export default function ResellerHostingBanner() {
     e.preventDefault();
     const section = document.querySelector("#pricing");
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+      const top = section.getBoundingClientRect().top + window.pageYOffset;
+
+      // Set offset based on screen width
+      let offset = -140;
+      if (window.innerWidth < 768) {
+        offset = -80;
+      } else if (window.innerWidth < 1024) {
+        offset = -70;
+      }
+
+      window.scrollTo({
+        top: top - offset,
+        behavior: "smooth",
+      });
     }
   };
 
@@ -106,51 +119,50 @@ export default function ResellerHostingBanner() {
       </div>
 
       {/* Pricing Cards */}
-      <div
-        id="pricing"
-        className="absolute left-0 right-0 bottom-[-1300px] md:bottom-[-530px] lg:bottom-[-320px] xl:bottom-[-400px] z-10 flex justify-center px-4"
-      >
-        <div className="w-full max-w-7xl mx-auto flex flex-col sm:flex-row gap-4 justify-center items-stretch">
-          {resellerPlans.map((plan, idx) => (
-            <div
-              key={idx}
-              className="relative w-full max-w-[400px] sm:max-w-sm mx-auto bg-accent shadow-xl flex flex-col items-center px-3 sm:px-4 md:px-6 py-2.5 sm:py-6 md:py-8 border border-gray-200 dark:border-neutral-700 mt-4 sm:mt-0 rounded-lg"
-            >
-              <div className="flex flex-col items-center mb-2 sm:mb-4 mt-1 sm:mt-2 w-full">
-                <span className="text-[#232946] dark:text-white font-bold text-xl mb-2 text-start w-full">
-                  {plan.title}
-                </span>
-                <div className="flex items-start mb-2 sm:mb-4 w-full">
-                  <span className="text-pink-600 text-3xl sm:text-3xl md:text-5xl font-bold">
-                    {plan.price.split(" ")[0]}
+      <div id="pricing">
+        <div className="absolute left-0 right-0 bottom-[-1300px] md:bottom-[-290px] lg:bottom-[-320px] xl:bottom-[-400px] z-10 flex justify-center px-4">
+          <div className="w-full max-w-7xl mx-auto flex flex-col sm:flex-row gap-4 justify-center items-stretch">
+            {resellerPlans.map((plan, idx) => (
+              <div
+                key={idx}
+                className="relative w-full max-w-[400px] sm:max-w-sm mx-auto bg-accent shadow-xl flex flex-col items-center px-3 sm:px-4 md:px-6 py-2.5 sm:py-6 lg:py-8 md:py-4 border border-gray-200 dark:border-neutral-700 mt-4 sm:mt-0 rounded-lg"
+              >
+                <div className="flex flex-col items-center mb-2 sm:mb-4 mt-1 sm:mt-2 w-full">
+                  <span className="text-[#232946] dark:text-white font-bold text-xl mb-2 text-start w-full">
+                    {plan.title}
                   </span>
-                  <span className="text-gray-500 dark:text-gray-300 text-sm sm:text-base font-medium ml-1 mb-1">
-                    {plan.price.split(" ")[1]}
-                  </span>
-                </div>
-                <Link
-                  href={plan.link}
-                  target="_blank"
-                  className="w-full block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 text-center rounded transition"
-                >
-                  Buy Now
-                </Link>
-              </div>
-
-              <ul className="w-full flex-1 mb-2 sm:mb-4 space-y-1 sm:space-y-2 text-sm sm:text-base">
-                {plan.features.map((f, i) => (
-                  <li key={i} className="flex items-center gap-2">
-                    <div className="w-4 h-4 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center flex-shrink-0">
-                      <Check className="w-2 h-2 text-white" />
-                    </div>
-                    <span className="text-slate-700 dark:text-slate-200 text-[15px] md:text-lg py-1">
-                      {f.text}
+                  <div className="flex items-start mb-2 sm:mb-4 w-full">
+                    <span className="text-pink-600 text-3xl sm:text-3xl md:text-2xl lg:text-5xl font-bold">
+                      {plan.price.split(" ")[0]}
                     </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+                    <span className="text-gray-500 dark:text-gray-300 text-sm md:text-lg sm:text-base font-medium ml-1 mb-1">
+                      {plan.price.split(" ")[1]}
+                    </span>
+                  </div>
+                  <Link
+                    href={plan.link}
+                    target="_blank"
+                    className="w-full block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 text-center rounded transition"
+                  >
+                    Buy Now
+                  </Link>
+                </div>
+
+                <ul className="w-full flex-1 mb-2 sm:mb-4 space-y-1 sm:space-y-2 text-sm sm:text-base">
+                  {plan.features.map((f, i) => (
+                    <li key={i} className="flex items-center gap-2">
+                      <div className="w-4 h-4 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center flex-shrink-0">
+                        <Check className="w-2 h-2 text-white" />
+                      </div>
+                      <span className="text-slate-700 dark:text-slate-200 text-[15px] md:text-[13px] lg:text-lg py-1">
+                        {f.text}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -44,14 +44,18 @@ export default function CloudHostingPage() {
         illustration="/assets/security-machine.png"
         scrollId="pricing"
       />
-        <CloudHostingPricing />
+      <CloudHostingPricing />
       <TestimonialsSection />
       <CloudHostingPlans />
       <CloudPlanSection />
       <SpecialsSection />
       <MoneyBackGuarantee />
-      <WhyHostnin />
-      <CloudPlanFeatures />
+      <div className="md:pb-0 pb-14">
+        <WhyHostnin />
+      </div>
+      <div className="md:block hidden">
+        <CloudPlanFeatures />
+      </div>
       <CloudControlPanel />
       <CloudHostingFeatures />
       <ComprehensiveGuides />

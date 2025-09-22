@@ -41,6 +41,7 @@ import {
   MessageSquareIcon,
   ServerIcon,
   AlertCircleIcon,
+  RefreshCcw,
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -94,20 +95,20 @@ const priorities = [
 export function SupportTicketForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formProgress, setFormProgress] = useState(0);
-//   const buildGmailComposeLink = (data: SupportTicketForm) => {
-//     const to = encodeURIComponent("support@hostnin.com");
-//     const subject = encodeURIComponent(
-//       `[${data.category.toUpperCase()}] ${data.subject}`
-//     );
-//     const body = encodeURIComponent(
-//       `Name: ${data.name}
-// Email: ${data.email}
-// Priority: ${data.priority}
+  //   const buildGmailComposeLink = (data: SupportTicketForm) => {
+  //     const to = encodeURIComponent("support@hostnin.com");
+  //     const subject = encodeURIComponent(
+  //       `[${data.category.toUpperCase()}] ${data.subject}`
+  //     );
+  //     const body = encodeURIComponent(
+  //       `Name: ${data.name}
+  // Email: ${data.email}
+  // Priority: ${data.priority}
 
-// ${data.description}`
-//     );
-//     return `https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${subject}&body=${body}`;
-//   };
+  // ${data.description}`
+  //     );
+  //     return `https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${subject}&body=${body}`;
+  //   };
 
   const form = useForm<SupportTicketForm>({
     resolver: zodResolver(supportTicketSchema),
@@ -149,26 +150,26 @@ export function SupportTicketForm() {
 
       // Build a professional email body
       const emailBody = `
-        Hello Support Team,
+Dear Support Team,
 
-        A new support ticket has been submitted:
+I hope you are doing well.  
+My name is ${
+        data.name
+      }, and I am reaching out regarding ${data.subject.toLowerCase()}.
 
-        🔹 **Name:** ${data.name}
-        🔹 **Email:** ${data.email}
-        🔹 **Priority:** ${data.priority.toUpperCase()}
-        🔹 **Category:** ${data.category}
-        🔹 **Subject:** ${data.subject}
+I have been using your service and encountered the following issue/request:
 
-        ---  
-        **Description / Details:**  
-        ${data.description}
+Category: ${data.category}  
+Priority: ${data.priority.toUpperCase()}
 
-        ${data.serverDetails ? `\nServer Details: ${data.serverDetails}` : ""}
-        ${data.errorMessage ? `\nError Message: ${data.errorMessage}` : ""}
+${data.description}
 
-        ---  
-        This email is generated using our official Support Ticket Portal.
-        `;
+I would appreciate it if you could assist me with this matter at your earliest convenience.
+
+Best regards,  
+${data.name}  
+${data.email}
+`;
 
       // Pre-fill Gmail compose with subject & body
       const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=support@hostnin.com&su=${encodeURIComponent(
@@ -176,10 +177,6 @@ export function SupportTicketForm() {
       )}&body=${encodeURIComponent(emailBody)}`;
 
       window.open(gmailLink, "_blank");
-
-      toast("Almost done!", {
-        description: "Review the email in Gmail and click send.",
-      });
 
       form.reset();
       setFormProgress(0);
@@ -207,8 +204,7 @@ export function SupportTicketForm() {
                 Support Ticket Portal
               </CardTitle>
               <CardDescription className="text-lg text-muted-foreground">
-                Submit your issue below — our technical team will reach out
-                promptly.
+                Submit your issue below - our technical team will reach out.
               </CardDescription>
             </div>
             <motion.div
@@ -534,9 +530,9 @@ export function SupportTicketForm() {
                     setFormProgress(0);
                   }}
                   disabled={isSubmitting}
-                  className="h-12 px-6 hover:bg-blue-600 hover:cursor-pointer hover:scale-105 hover:text-white transition-transform transform duration-500"
+                  className="h-12 px-6 flex gap-2 items-center hover:bg-blue-600 hover:cursor-pointer hover:scale-105 hover:text-white transition-transform transform duration-500"
                 >
-                  Reset Form
+                  <RefreshCcw /> <span>Reset Form</span>
                 </Button>
               </motion.div>
             </form>

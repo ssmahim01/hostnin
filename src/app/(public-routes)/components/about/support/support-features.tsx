@@ -40,9 +40,9 @@ const features = [
 ];
 
 const supportStats = [
-  { label: "Tickets Resolved", value: "50K+", icon: CheckCircleIcon },
-  { label: "Happy Customers", value: "10K+", icon: UsersIcon },
-  { label: "Expert Technicians", value: "25+", icon: HeadphonesIcon },
+  { label: "Tickets Resolved", value: "5K+", icon: CheckCircleIcon },
+  { label: "Happy Customers", value: "7K+", icon: UsersIcon },
+  { label: "Expert Technicians", value: "15+", icon: HeadphonesIcon },
 ];
 
 export function SupportFeatures() {
@@ -73,8 +73,8 @@ export function SupportFeatures() {
                 transition={{ duration: 0.3, delay: 0.4 + index * 0.1 }}
                 className="flex items-start gap-3 p-3 rounded-lg bg-muted/50"
               >
-                <div className="flex-shrink-0 p-2 bg-primary/10 rounded-lg">
-                  <feature.icon className="h-5 w-5 text-primary" />
+                <div className="flex-shrink-0 p-2 bg-accent rounded-lg">
+                  <feature.icon className="h-12 w-9 text-blue-500" />
                 </div>
                 <div className="flex-1 space-y-1">
                   <div className="flex items-center justify-between">
@@ -116,8 +116,8 @@ export function SupportFeatures() {
                   transition={{ duration: 0.3, delay: 0.6 + index * 0.1 }}
                   className="flex items-center gap-3 p-3 rounded-lg border bg-card/50"
                 >
-                  <div className="flex-shrink-0 p-2 bg-accent/10 rounded-lg">
-                    <stat.icon className="h-5 w-5 text-accent" />
+                  <div className="flex-shrink-0 p-2 bg-accent rounded-lg">
+                    <stat.icon className="h-8 w-8 text-blue-500" />
                   </div>
                   <div className="flex-1">
                     <div className="text-2xl font-bold text-primary">

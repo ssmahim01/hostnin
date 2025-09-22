@@ -232,9 +232,17 @@ export function Navbar() {
                   {item.hasDropdown && item.dropdownItems && (
                     <div
                       className={`absolute  ${
-                        item.label === "Hosting" || item.label === "About" ? "  -left-50" : "-left-10"
-                      } mt-2 bg-white dark:bg-gray-900 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0
-                    ${item.label === "Hosting" || item.label === "About" ? "w-[550px]" : "w-52"}`}
+                        item.label === "Hosting"
+                          ? "-left-50"
+                          : item.label === "About"
+                          ? "-left-[17.2rem]"
+                          : "-left-10"
+                      } mt-2 bg-white dark:bg-gray-900 rounded-b-lg shadow-xl border-b border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0
+                    ${
+                      item.label === "Hosting" || item.label === "About"
+                        ? "w-[550px]"
+                        : "w-52"
+                    }`}
                     >
                       {/* Dropdown items remain links */}
                       <div
@@ -256,7 +264,8 @@ export function Navbar() {
                               {IconComponent && (
                                 <div
                                   className={`flex-shrink-0  ${
-                                    item.label === "Hosting"
+                                    item.label === "Hosting" ||
+                                    item.label === "About"
                                       ? "w-8 h-8"
                                       : "w-6 h-6"
                                   } rounded-lg flex items-center justify-center`}

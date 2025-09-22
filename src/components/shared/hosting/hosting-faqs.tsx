@@ -243,13 +243,20 @@ export default function HostingFAQs() {
       >
         {/* Left side: tab triggers */}
         <TabsList
-          className={`flex flex-col md:w-[280px] h-full overflow-x-auto gap-4 w-full bg-transparent`}
+          className={`grid gap-4 bg-transparent h-full 
+            ${
+              pathname === "/hosting/dedicated-server" ||
+              pathname === "/hosting/turbo-hosting" ||
+              pathname === "/hosting/bdix-hosting"
+                ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-5 w-full "
+                : "grid-cols-1 md:w-[280px] w-full"
+            }`}
         >
           {categories.map((cat) => (
             <TabsTrigger
               key={cat.title}
               value={cat.title}
-              className={`flex items-center cursor-pointer gap-3 sm:gap-4 px-4 sm:px-6 py-5 text-sm sm:text-base font-semibold transition-all duration-200 rounded-md shadow-sm w-full
+              className={`flex items-center justify-start cursor-pointer gap-3 sm:gap-4 px-4 sm:px-6 py-5 text-sm sm:text-base font-semibold transition-all duration-200 rounded-md shadow-sm w-full
               bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700
               data-[state=active]:bg-[#2250F4] 
               data-[state=active]:text-white

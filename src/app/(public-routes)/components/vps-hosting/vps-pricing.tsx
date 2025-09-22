@@ -202,7 +202,8 @@ export default function PricingTable() {
               </colgroup>
               <thead
                 ref={headerRef}
-                className="bg-gradient-to-r from-blue-800 to-blue-600"
+                className={`bg-gradient-to-r from-blue-800 to-blue-600 
+                ${isSticky ? "opacity-0 invisible" : "opacity-100 visible"}`}
               >
                 <tr>
                   <th className="p-3 text-white font-bold text-lg md:text-2xl border-r border-blue-700/50 dark:border-slate-700">

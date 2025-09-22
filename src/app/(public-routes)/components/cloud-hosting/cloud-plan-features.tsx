@@ -69,7 +69,7 @@ export default function CloudPlanFeatures() {
             col.items.map((item, idx) => (
               <div
                 key={`${colIndex}-${idx}`}
-                className="flex flex-col justify-center items-center p-4 w-full bg-white dark:bg-gray-800 rounded-xl shadow-md dark:shadow-black/40 border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:shadow-lg hover:scale-[1.02] "
+                className="flex flex-col justify-center items-start p-4 w-full bg-white dark:bg-gray-800 rounded-xl shadow-md dark:shadow-black/40 border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:shadow-lg hover:scale-[1.02] "
               >
                 <div className="flex items-center">
                   <div className="w-6 h-6 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center flex-shrink-0 mr-3">

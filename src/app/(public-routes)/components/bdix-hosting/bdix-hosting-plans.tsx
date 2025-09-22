@@ -25,7 +25,7 @@ export default function BdixHostingPlans() {
   }, []);
 
   return (
-    <div className="py-8 sm:pt-6 sm:pb-12 lg:pt-6 lg:pb-10 hidden md:block">
+    <div className="py-8 sm:pt-6 sm:pb-12 lg:pt-6 lg:pb-10 hidden lg:block">
       <div className="max-w-7xl mx-auto px-4  md:px-7 lg:px-8">
         <div className="text-center mb-8 sm:mb-12">
           <h1 className="text-3xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-3 sm:mb-4">
@@ -189,7 +189,8 @@ export default function BdixHostingPlans() {
 
               <thead
                 ref={headerRef}
-                className="bg-gradient-to-r from-blue-800 to-blue-600"
+                className={`bg-gradient-to-r from-blue-800 to-blue-600 
+                ${isSticky ? "opacity-0 invisible" : "opacity-100 visible"}`}
               >
                 <tr>
                   <th className="p-6 text-white font-bold text-2xl border-r border-blue-600/50">
@@ -217,7 +218,7 @@ export default function BdixHostingPlans() {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="w-full block bg-white dark:bg-gray-100 text-black dark:text-gray-900 font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl text-center transform hover:scale-105 
-                          transition-transform duration-500 ease-in-out "
+                  transition-transform duration-500 ease-in-out "
                         >
                           Order Now
                         </a>
