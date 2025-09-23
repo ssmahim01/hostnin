@@ -81,7 +81,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <Navbar />
-            <div className="bg-gray-50 dark:bg-background">{children}</div>
+            <div className="">{children}</div>
             <ScrollToTopButton />
             <Toaster />
             <Footer />

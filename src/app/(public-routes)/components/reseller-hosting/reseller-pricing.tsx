@@ -72,7 +72,7 @@ export default function ResellerPricing() {
         </h2>
         <p className="mt-4 text-lg sm:text-xl text-slate-600 dark:text-slate-300">
           Start your own hosting business with our reliable, white-label
-          reseller packages — scalable, secure and built for performance.
+          reseller packages with scalable, secure and built for performance.
         </p>
       </div>
 
@@ -81,7 +81,7 @@ export default function ResellerPricing() {
         {resellerPlans.map((plan, idx) => (
           <div
             key={idx}
-            className="relative w-full max-w-[400px] sm:max-w-sm mx-auto bg-accent shadow-xl flex flex-col items-center px-4 md:px-6 py-6 lg:py-8 border border-gray-200 dark:border-neutral-700 rounded-xl hover:shadow-2xl transition-shadow"
+            className="relative w-full max-w-[400px] sm:max-w-sm mx-auto bg-white dark:bg-slate-900 shadow-xl flex flex-col items-center px-4 md:px-6 py-6 lg:py-8 border border-gray-200 dark:border-slate-700 rounded-xl hover:shadow-2xl transition-shadow"
           >
             <div className="flex flex-col items-center mb-4 w-full">
               <span className="text-[#232946] dark:text-white font-bold text-xl mb-3 w-full text-center">
