@@ -68,7 +68,7 @@ export default function AdvancedFeatures() {
           {/* Illustration Image */}
           <div className="md:w-2/5 flex justify-center md:justify-start">
             <Image
-              src="/assets/advanced-feature.jpg"
+              src="/assets/team-hostnin.jpg"
               alt="Advanced features illustration"
               width={900}
               height={800}
