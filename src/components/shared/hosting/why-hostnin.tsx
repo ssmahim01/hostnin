@@ -9,7 +9,7 @@ export default function WhyHostnin() {
   return (
     <section
       className="
-    mt-6 pt-14 -mb-[0.5px]
+    md:mt-6 md:pt-14 -mb-[0.5px]
     bg-cover bg-center bg-[url('/assets/shape.png')] bg-no-repeat 
     dark:bg-none
   "

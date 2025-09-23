@@ -2,8 +2,11 @@ import ManagedTurboHighlights from "@/app/(public-routes)/components/turbo-hosti
 import TurboHostingBanner from "@/app/(public-routes)/components/turbo-hosting/turbo-hosting-banner";
 import TurboHostingFeatures from "@/app/(public-routes)/components/turbo-hosting/turbo-hosting-features";
 import TurboHostingPricing from "@/app/(public-routes)/components/turbo-hosting/turbo-hosting-pricing";
+import { DomainSearchSection } from "@/components/shared/hosting/domain-search-section";
 import HostingFAQs from "@/components/shared/hosting/hosting-faqs";
 import HostingPlansInclude from "@/components/shared/hosting/hosting-plans-include";
+import { InfrastructurePartners } from "@/components/shared/hosting/infrastructure-partners";
+import { WhyChooseHosting } from "@/components/shared/hosting/why-choose-hosting";
 import { QuestionsSection } from "@/components/shared/questions";
 import { highlights } from "@/data/turbo-highlights";
 import { Metadata } from "next";
@@ -20,15 +23,24 @@ export default function TurboHostingPage() {
   return (
     <>
       <TurboHostingBanner />
-        <TurboHostingPricing />
+      <TurboHostingPricing />
       <HostingPlansInclude title="All Turbo Hosting Plans Include" />
-      <TurboHostingFeatures />
+      <DomainSearchSection />
       <ManagedTurboHighlights
         heading="Managed Turbo Hosting Highlights"
         subheading="Keep your attention on running your company, and don't bother yourself with the intricacies of Turbo hosting. Superior speed, uptime, and support are the hallmarks of our managed hosting."
         highlights={highlights}
       />
 
+      <InfrastructurePartners />
+      <WhyChooseHosting
+        heading="Why Choose Turbo Hosting?"
+        subTitle={`With our Turbo Hosting plans, you'll receive more resources for less money, ensuring
+        the reliability you can count on. Starting your own business with
+        Hostnin is easier than you think!`}
+      />
+
+      <TurboHostingFeatures />
       <QuestionsSection
         heading="Do You Have Questions?"
         subheading="About Hostnin Budget Hosting Service"
@@ -36,10 +48,9 @@ export default function TurboHostingPage() {
         whatsappUrl="https://wa.me/8801325875955"
         whatsappNumber="01325 875 955"
       />
-
-     <div className="pt-6">
-       <HostingFAQs />
-     </div>
+      <div className="pt-6">
+        <HostingFAQs />
+      </div>
     </>
   );
 }

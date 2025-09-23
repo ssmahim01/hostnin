@@ -21,7 +21,7 @@ export default function ResellerHostingBanner() {
         ]}
         countdown={true}
         buttonText="Claim Offer Now"
-        illustration="/assets/reseller.svg"
+        illustration="/assets/reseller-hero.png"
         scrollId="pricing"
       />
     </section>

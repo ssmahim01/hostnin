@@ -46,7 +46,7 @@ export function DomainSearchSection() {
 
   return (
     <section className="py-10">
-      <div className="max-w-7xl mx-auto container px-4 md:px-7 lg:px-10">
+      <div className="max-w-7xl mx-auto container px-4 md:px-7">
         <Card className="shadow-md p-0">
           <CardContent className="md:p-12 p-5">
             <div className="flex flex-col lg:flex-row items-center gap-8">

@@ -14,7 +14,7 @@ import PricingPlans from "@/app/(public-routes)/components/web-hosting/pricing-p
 import HostingFAQs from "@/components/shared/hosting/hosting-faqs";
 
 export const metadata: Metadata = {
-  title: "Fast & Secure Web Hosting | Hostnin",
+  title: "Web Hosting | Hostnin",
   description:
     "Get blazing fast, secure, and affordable web hosting with Hostnin. Enjoy free SSL, domain, 99.9% uptime, and 24/7 support. Perfect for businesses & developers.",
   keywords: [

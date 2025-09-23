@@ -10,12 +10,12 @@ export default function ManagedTurboHighlights({
   highlights,
 }: ManagedTurboHighlightsProps) {
   return (
-    <section className="w-full bg-[#fafbfc] dark:bg-gray-900 py-16">
+    <section className="w-full bg-[#fafbfc] dark:bg-gray-900 pt-8 pb-16">
       <div className="max-w-7xl mx-auto px-4">
         {/* heading */}
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-10 gap-6">
+        <div className="flex flex-col lg:flex-row md:items-center lg:justify-between mb-10 gap-6">
           <div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#03206B] dark:text-white mb-2">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#03206B] dark:text-white lg:mb-2">
               {heading}
             </h2>
           </div>

@@ -70,6 +70,8 @@ export function InfrastructurePartners() {
               ? " Web Hosting"
               : pathname === "/pricing"
               ? "Pricing Plan"
+              : pathname === "/hosting/turbo-hosting"
+              ? "Turbo Hosting"
               : "Reseller Hosting"}{" "}
             Infrastructure <span className="text-yellow-400">Partners</span>
           </h2>

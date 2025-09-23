@@ -3,7 +3,6 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CheckCircle2 } from "lucide-react";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 const tabs = [
@@ -44,7 +43,6 @@ const tabs = [
       "East USA",
       "West USA",
       "Germany",
-      "Finland",
     ],
     button: "Explore More",
   },
@@ -64,36 +62,36 @@ const tabs = [
 
 export default function AdvancedFeatures() {
   return (
-    <section className="py-14">
-      <div className="container max-w-7xl mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center gap-8">
+    <section className="pt-20 md:pt-14">
+      <div className="container max-w-[76rem] mx-auto px-4">
+        <div className="flex flex-col md:flex-row md:justify-between items-center gap-8">
           {/* Illustration Image */}
-          <div className="md:w-1/2 flex justify-center md:justify-start">
+          <div className="md:w-2/5 flex justify-center md:justify-start">
             <Image
-              src="https://res.cloudinary.com/daspo1tk3/image/upload/v1757504885/featureTab.0273689f_vwb9p8.svg"
+              src="/assets/advanced-feature.jpg"
               alt="Advanced features illustration"
-              width={500}
-              height={400}
-              className="max-w-full h-auto"
+              width={900}
+              height={800}
+              className="max-w-full w-full md:h-[450px] h-80 lg:h-[430px] rounded-md shadow-md object-cover"
               priority
             />
           </div>
 
           {/* Content */}
-          <div className="md:w-1/2">
+          <div className="flex-1">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white/85 mb-6">
               Advance features for the <br /> advanced user
             </h2>
 
             <Tabs defaultValue="control-panel" className="w-full">
               <ScrollArea className="w-full lg:max-w-full max-w-sm">
-                <TabsList className="flex border-b border-gray-200 dark:border-gray-700 mb-6 w-max gap-2">
+                <TabsList className="flex border-b border-gray-200 dark:border-gray-700 h-14 mb-6 w-full gap-2">
                   {tabs.map((tab) => (
                     <TabsTrigger
                       key={tab.value}
                       value={tab.value}
                       className={`
-                      px-5 py-3 whitespace-nowrap rounded-md font-medium hover:cursor-pointer
+                      px-5 py-4 whitespace-nowrap rounded-md font-medium hover:cursor-pointer
                       text-gray-600 dark:text-gray-300
                       transition-all duration-300 ease-in-out
                       hover:text-blue-600 hover:dark:text-blue-400
@@ -128,14 +126,6 @@ export default function AdvancedFeatures() {
                       </li>
                     ))}
                   </ul>
-                  {tab.button && (
-                    <Button
-                      variant={"default"}
-                      className="mt-4 hover:cursor-pointer py-4 px-6 bg-blue-600 hover:bg-blue-700 rounded-sm text-white"
-                    >
-                      {tab.button}
-                    </Button>
-                  )}
                 </TabsContent>
               ))}
             </Tabs>

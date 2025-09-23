@@ -1,14 +1,6 @@
 {
-  "/(public-routes)/(routes)/careers/page": "app/(public-routes)/(routes)/careers/page.js",
-  "/(public-routes)/(routes)/complain/page": "app/(public-routes)/(routes)/complain/page.js",
-  "/(public-routes)/(routes)/contact/page": "app/(public-routes)/(routes)/contact/page.js",
-  "/(public-routes)/(routes)/domain/page": "app/(public-routes)/(routes)/domain/page.js",
-  "/(public-routes)/(routes)/hosting/cloud-hosting/page": "app/(public-routes)/(routes)/hosting/cloud-hosting/page.js",
-  "/(public-routes)/(routes)/hosting/dedicated-server/page": "app/(public-routes)/(routes)/hosting/dedicated-server/page.js",
-  "/(public-routes)/(routes)/hosting/vps-hosting/page": "app/(public-routes)/(routes)/hosting/vps-hosting/page.js",
+  "/(public-routes)/(routes)/hosting/reseller-hosting/page": "app/(public-routes)/(routes)/hosting/reseller-hosting/page.js",
+  "/(public-routes)/(routes)/hosting/turbo-hosting/page": "app/(public-routes)/(routes)/hosting/turbo-hosting/page.js",
   "/(public-routes)/(routes)/hosting/web-hosting/page": "app/(public-routes)/(routes)/hosting/web-hosting/page.js",
-  "/(public-routes)/(routes)/hosting/wordpress-hosting/page": "app/(public-routes)/(routes)/hosting/wordpress-hosting/page.js",
-  "/(public-routes)/(routes)/privacy-policy/page": "app/(public-routes)/(routes)/privacy-policy/page.js",
-  "/(public-routes)/(routes)/terms-conditions/page": "app/(public-routes)/(routes)/terms-conditions/page.js",
   "/page": "app/page.js"
 }

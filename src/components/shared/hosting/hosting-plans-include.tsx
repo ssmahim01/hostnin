@@ -179,11 +179,11 @@ export default function HostingPlansInclude({ title }: { title: string }) {
           {title}
         </h2>
 
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-8 gap-4">
+        <div className="max-w-7xl  px-4 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-8 gap-4">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="flex items-center bg-white dark:bg-gray-800 rounded-sm shadow-lg px-6 py-5 lg:w-[400px] w-[350px] mx-auto gap-4 hover:shadow-xl hover:scale-105 transition-all duration-200"
+              className="flex items-center bg-white dark:bg-gray-800 rounded-sm shadow-md px-6 py-4 lg:w-[400px] md:w-[350px] w-full mx-auto gap-4 hover:shadow-xl hover:scale-105 transition-all duration-200"
             >
               <span className="flex items-center justify-center w-12 h-12 rounded-full bg-white dark:bg-gray-700">
                 {feature.icon}

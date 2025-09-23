@@ -2,7 +2,7 @@
 "use client";
 
 import Image from "next/image";
-import { Check, Earth, MessageCircleQuestion, Gift, Zap } from "lucide-react";
+import { Check, Earth, MessageCircleQuestion, Zap, Activity } from "lucide-react";
 import { CountdownTimer } from "@/components/shared/hosting/countdown-timer";
 import FeatureCard from "./feature-card";
 import { ReactNode } from "react";
@@ -125,7 +125,7 @@ export const Banner: React.FC<BannerProps> = ({
 
         {/* Right Illustration */}
         <div
-          className={`${pathname === "/hosting/web-hosting" ? "hidden" : "flex"}
+          className={`${pathname === "/hosting/web-hosting" ? "md:flex hidden" : "flex"}
             flex-1 justify-center 
             sm:mt-2 lg:mt-0 
             w-full 
@@ -138,7 +138,7 @@ export const Banner: React.FC<BannerProps> = ({
             loading="lazy"
             width={400}
             height={400}
-            className="object-cover w-full h-auto shadow-lg"
+            className="object-cover w-full h-auto shadow-lg rounded-md"
             src={illustration}
             sizes="(max-width: 640px) 100vw,
            (max-width: 768px) 50vw,
@@ -164,7 +164,7 @@ export const Banner: React.FC<BannerProps> = ({
             />
             <FeatureCard
               iconSrc="/assets/cloud-icon.svg"
-              decorativeSrc={Gift}
+              decorativeSrc={Activity}
               title="99.9% Uptime Guarantee"
               description="There is no way a professional website can go down. Stay always online with our web hosting with a 99.9% uptime guarantee."
             />

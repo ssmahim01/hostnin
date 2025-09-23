@@ -236,13 +236,15 @@ export function Navbar() {
                         item.label === "Hosting"
                           ? "-left-50"
                           : item.label === "About"
-                          ? "-left-[17.2rem]"
+                          ? "-left-[14.4rem]"
                           : "-left-10"
                       } mt-2 bg-white dark:bg-gray-900 rounded-b-lg shadow-xl border-b border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0
                     ${
-                      item.label === "Hosting" || item.label === "About"
-                        ? "w-[550px]"
-                        : "w-52"
+                      item.label === "Hosting"
+                        ? "w-[435px]"
+                        : item.label === "About"
+                        ? "w-[505px]"
+                        : "w-36"
                     }`}
                     >
                       {/* Dropdown items remain links */}
