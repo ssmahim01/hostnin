@@ -68,10 +68,10 @@ export default function HostninVPSFeatures() {
           {features.map((feature) => (
             <Card
               key={feature.title}
-              className="bg-white dark:bg-neutral-800 rounded-2xl shadow-lg p-5 pb-6 sm:p-5 md:p-8 flex flex-col items-start border border-gray-100 dark:border-neutral-700 min-h-[120px] sm:min-h-[140px] md:min-h-[180px] hover:shadow-2xl hover:scale-105 transition-all duration-300"
+              className="bg-white dark:bg-slate-900 rounded-2xl shadow-lg p-5 pb-6 sm:p-5 md:p-8 flex flex-col items-start border border-gray-100 dark:border-neutral-700 min-h-[120px] sm:min-h-[140px] md:min-h-[180px] hover:shadow-2xl hover:scale-105 transition-all duration-300"
             >
               <CardContent className="p-0 flex flex-col items-start">
-                <div className="flex-shrink-0 w-20 h-20 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center bg-[#f1f6ff] dark:bg-neutral-700 mb-2 sm:mb-3 md:mb-4 relative">
+                <div className="flex-shrink-0 w-20 h-20 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center bg-[#f1f6ff] dark:bg-accent mb-2 sm:mb-3 md:mb-4 relative">
                   <Image
                     alt={feature.alt}
                     width={50}

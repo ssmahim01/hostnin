@@ -16,7 +16,7 @@ export default function PrivacyPolicySection() {
         </p>
       </header>
 
-      <Card className="max-w-7xl mx-auto bg-accent rounded-2xl shadow-lg">
+      <Card className="max-w-7xl mx-auto bg-white dark:bg-slate-900 rounded-2xl shadow-lg">
         <CardContent className="lg:p-12 p-6 space-y-10">
           {/* Introduction */}
           <Section title="Introduction">

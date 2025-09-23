@@ -49,7 +49,7 @@ export const Banner: React.FC<BannerProps> = ({
     <section
       className={`${
         pathname === "/hosting/web-hosting"
-          ? "pt-5 sm:pt-12 lg:pt-4"
+          ? "sm:pt-5"
           : "pt-14 sm:pt-16 md:pt-20 lg:pt-28"
       } pb-14 px-4 lg:pr-2 lg:pl-[72px] sm:pb-[68px] lg:pb-24 relative`}
       style={{
@@ -61,7 +61,7 @@ export const Banner: React.FC<BannerProps> = ({
     >
       <div className="w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-0 pt-5">
         {/* Left Content */}
-        <div className="flex-1 text-white lg:pr-12 text-center lg:text-start mb-8 lg:mb-0 pt-8 md:pt-0">
+        <div className="flex-1 text-white lg:pr-12 text-center lg:text-start lg:mb-0 pt-8 md:pt-0">
           <p className="text-yellow-400 font-bold mb-2 text-base xs:text-base sm:text-xl">
             {tagline}
           </p>
@@ -87,7 +87,16 @@ export const Banner: React.FC<BannerProps> = ({
             {bullets.map((b, idx) => (
               <li
                 key={idx}
-                className="flex items-center lg:justify-start justify-center lg:items-start gap-2 sm:gap-3"
+                className="md:flex hidden items-center lg:justify-start justify-center lg:items-start gap-2 sm:gap-3"
+              >
+                <Check className="text-lg sm:text-xl flex-shrink-0 mt-1" />
+                <span className="text-base sm:text-lg">{b.text}</span>
+              </li>
+            ))}
+            {bullets.slice(0, 3).map((b, idx) => (
+              <li
+                key={idx}
+                className="flex md:hidden items-center lg:justify-start justify-center lg:items-start gap-2 sm:gap-3"
               >
                 <Check className="text-lg sm:text-xl flex-shrink-0 mt-1" />
                 <span className="text-base sm:text-lg">{b.text}</span>
@@ -97,7 +106,7 @@ export const Banner: React.FC<BannerProps> = ({
 
           {/* Countdown */}
           {countdown && (
-            <div className="mb-8 sm:mb-14">
+            <div className="mb-8 sm:mb-12">
               <CountdownTimer />
             </div>
           )}
@@ -116,20 +125,20 @@ export const Banner: React.FC<BannerProps> = ({
 
         {/* Right Illustration */}
         <div
-          className="
-            flex-1 flex justify-center 
+          className={`${pathname === "/hosting/web-hosting" ? "hidden" : "flex"}
+            flex-1 justify-center 
             sm:mt-2 lg:mt-0 
             w-full 
-            max-w-xs sm:max-w-md lg:max-w-xl xl:max-w-2xl 
+            max-w-xs md:mb-4 sm:max-w-md lg:max-w-xl xl:max-w-2xl 
             h-full
-          "
+          `}
         >
           <Image
             alt="Server Illustration"
             loading="lazy"
             width={400}
             height={400}
-            className="object-contain w-full h-auto shadow-lg"
+            className="object-cover w-full h-auto shadow-lg"
             src={illustration}
             sizes="(max-width: 640px) 100vw,
            (max-width: 768px) 50vw,

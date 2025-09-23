@@ -131,7 +131,7 @@ export default function ComplainForm() {
       email: "",
       complainDetails: "",
       supportExecutive: "",
-      complainType: "",
+      complainType: "service-quality",
       priority: "",
     },
   });

@@ -23,7 +23,7 @@ const testimonials: Testimonial[] = [
       "https://res.cloudinary.com/daspo1tk3/image/upload/v1757453008/r-5_ntxuhe.webp",
     rating: 5,
     review:
-      "I think that it's the best hosting site. Their service is very good. I am using the Premium Professional pack. It loads extremely quickly. They are very friendly. My love for them remained. The customer support team is exceptional and always responds promptly to any queries.",
+      "I think that it's the best hosting site. Their service is very good. I am using the Premium Professional pack. It loads extremely quickly. They are very friendly. My love for them remained.",
     platform: "Google",
   },
   {
@@ -33,7 +33,7 @@ const testimonials: Testimonial[] = [
       "https://res.cloudinary.com/daspo1tk3/image/upload/v1757453008/r-6_mdggkh.webp",
     rating: 5,
     review:
-      "Outstanding hosting service! The uptime is incredible and the speed is amazing. Customer support is available 24/7 and they really know what they're doing. I've been using their services for over 2 years now and never had any major issues.",
+      "Outstanding hosting service! The uptime is incredible and the speed is amazing. Customer support is available 24/7 and they really know what they're doing. I've been using their services for over 2 years now.",
     platform: "Google",
   },
   {
@@ -196,13 +196,13 @@ export function TestimonialsSection() {
                         bg-white dark:bg-gray-800 
                         rounded-xl shadow-lg 
                         max-w-full 
-                       md:h-[345px] h-[440px] 
+                       h-[300px] md:h-[290px] 
                         flex flex-col
                         justify-between
                         py-4 sm:py-6 px-4 overflow-hidden 
                       "
                     >
-                      <div className="flex items-center mb-4 px-5">
+                      <div className="flex items-center px-5">
                         <Avatar className="w-20 h-20 rounded-full flex-shrink-0">
                           <AvatarImage
                             src={testimonial.avatar || "/placeholder.svg"}
@@ -227,7 +227,7 @@ export function TestimonialsSection() {
                       </div>
 
                       <div className="flex-1 flex flex-col justify-between">
-                        <p className="text-gray-600 dark:text-gray-300 text-base sm:text-base leading-relaxed max-w-full lg:px-3 px-7 mb-4">
+                        <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base leading-relaxed max-w-full lg:px-3 px-7 mb-4">
                           {testimonial.review}
                         </p>
                         <div className="px-5 mt-auto">

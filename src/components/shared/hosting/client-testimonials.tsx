@@ -34,12 +34,12 @@ const testimonials = [
   {
     name: "Tiyaan",
     avatar: "/assets/r-5.png",
-    text: "I am very pleased with the customer service. the assistant called Riyad was really helpful and resolved the problem very fast. They answer very quickly to all my questions. I rarely have issues with my hosting of websites. However, in each and every case this team never disappoints! They are extremely helpful, fast and detail oriented. I can say, best web hosting in bangladesh.",
+    text: "I am very pleased with the customer service. the assistant called Riyad was really helpful and resolved the problem very fast. They answer very quickly to all my questions. I rarely have issues with my hosting of websites.",
   },
   {
     name: "Md. Mazharul Islam",
     avatar: "/assets/r-6.png",
-    text: "I am Really Happy about their honesty performance. Alhamdulillah they are very honest, active & sincere. I am using there hosting. I think they provide the best hosting @ best price. Their Customer service is awesome. i really love you subahost. I hope you will always with us with best service and best support. May Allah always with you",
+    text: "I am Really Happy about their honesty performance. Alhamdulillah they are very honest, active & sincere. I am using there hosting. I think they provide the best hosting @ best price. Their Customer service is awesome.",
   },
 ];
 
@@ -142,7 +142,7 @@ export default function Testimonials() {
         >
           {testimonials.map((t, idx) => (
             <SwiperSlide key={idx}>
-              <Card className="bg-white dark:bg-slate-900 hover:scale-105 transition-transform transform duration-500 rounded-lg shadow-sm h-[400px] flex flex-col justify-between">
+              <Card className="bg-white dark:bg-slate-900 hover:scale-105 transition-transform transform duration-500 rounded-lg shadow-sm lg:h-[350px] md:h-[290px] h-[340px] flex flex-col justify-between">
                 <CardHeader className="flex flex-row items-center gap-4 pb-0">
                   <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-white dark:border-neutral-700 shadow flex-shrink-0">
                     <Image

@@ -257,7 +257,7 @@ export default function DomainBanner() {
   };
 
   return (
-    <section className="relative pt-16 pb-20 md:pt-20 px-2 sm:px-7 lg:pt-28 lg:pb-16 lg:px-10">
+    <section className="relative pt-16 pb-16 md:pt-20 px-2 sm:px-7 lg:pt-28 lg:pb-16 lg:px-10">
       {/* Overlay gradient */}
       <div
         className="absolute inset-0 w-full h-full"
@@ -333,7 +333,10 @@ export default function DomainBanner() {
               { tld: ".INFO", price: "৳599/Year" },
               { tld: ".XYZ", price: "৳599/Year" },
             ].map((domain, index) => (
-              <div key={index} className="text-center">
+              <div
+                key={index}
+                className={`text-center ${index > 3 ? "hidden md:block" : ""}`}
+              >
                 <div className="text-xl font-bold mb-1">{domain.tld}</div>
                 <div className="text-sm opacity-90">{domain.price}</div>
               </div>

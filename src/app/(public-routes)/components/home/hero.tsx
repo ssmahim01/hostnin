@@ -17,7 +17,7 @@ export function HeroSection() {
   return (
     <section
       className="
-        py-28 text-white
+        md:py-28 pt-24 pb-16 text-white
         bg-[linear-gradient(278deg,rgba(0,40,160,0.9)_16%,rgba(0,20,80,0.9)_98%)]
      dark:bg-[linear-gradient(278deg,rgba(17,17,17,0.5)_16%,rgba(17,17,17,0.5)_98%)]
       "
@@ -51,14 +51,14 @@ export function HeroSection() {
               {heroData.trusted}
             </span>
           </div>
-          <div className="flex items-center gap-2 text-lg lg:justify-start justify-center opacity-80 font-semibold">
-            <CircleCheckBig className="w-5 h-5 text-green-400" />
+          <div className="flex items-center gap-2 text-base md:text-lg lg:justify-start justify-center opacity-80 font-semibold">
+            <CircleCheckBig className="w-5 h-5 text-gray-100" />
             <span>{heroData.guarantee}</span>
           </div>
         </div>
 
         {/* Image */}
-        <div className=" relative lg:w-1/2 flex justify-end">
+        <div className=" relative lg:w-1/2 md:flex justify-end hidden">
           <Image
             src={heroData.image.src}
             alt={heroData.image.alt}

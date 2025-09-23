@@ -56,21 +56,21 @@ export const VPSBannerSection: React.FC = () => {
           <p className="text-white font-bold mb-2 text-xl sm:text-2xl">
             Lightning-fast with 100% NVMe storage
           </p>
-          <h1 className="text-[36px] sm:text-3xl md:text-4xl lg:text-6xl font-bold leading-tight mb-3 sm:mb-6">
+          <h1 className="text-[34px] sm:text-3xl md:text-4xl lg:text-6xl font-bold leading-tight mb-3 sm:mb-6">
             We Provide High
             <br className="hidden sm:block" /> Performance VPS
           </h1>
-          <p className="mb-2 sm:mb-3 text-lg my-4 sm:text-xl font-semibold text-white/90">
+          <p className="mb-2 sm:mb-3 text-base my-4 sm:text-xl font-semibold text-white/90">
             VPS Starter plan - Starting at{" "}
             <span className="text-yellow-500">৳1999/mo</span>
           </p>
 
           {/* Features List */}
-          <ul className="flex flex-col gap-y-2 mt-4 mb-8 sm:mb-8 text-base sm:text-base">
+          <ul className="flex flex-col gap-y-2 mt-4 mb-8 sm:mb-8 text-sm sm:text-base">
             {features.map((feature, idx) => (
               <li
                 key={idx}
-                className="flex items-center lg:justify-start justify-center gap-2 font-semibold text-[16px] md:text-lg"
+                className="flex items-center lg:justify-start justify-center gap-2 font-semibold text-[13px] md:text-lg"
               >
                 <Check className="w-5 h-5 text-white" />
                 <span>{feature.label}</span>
@@ -91,7 +91,7 @@ export const VPSBannerSection: React.FC = () => {
         </div>
 
         {/* Image Column */}
-        <div className="flex-1 flex justify-center items-center w-full max-w-xl h-40 xs:h-52 sm:h-72 md:h-96 lg:h-[600px]">
+        <div className="flex-1 flex justify-center items-center w-full max-w-xl h-40 xs:h-36 sm:h-72 md:h-96 lg:h-[600px]">
           <Image
             src="/assets/vps-header-1.png"
             alt="Server Illustration"

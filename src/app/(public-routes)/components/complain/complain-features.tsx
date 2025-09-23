@@ -145,7 +145,7 @@ export default function ComplainFeatures() {
       </motion.div>
 
       {/* Resolution Timeline */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, x: 30 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, delay: 0.7 }}
@@ -187,7 +187,7 @@ export default function ComplainFeatures() {
             </div>
           </CardContent>
         </Card>
-      </motion.div>
+      </motion.div> */}
     </div>
   );
 }

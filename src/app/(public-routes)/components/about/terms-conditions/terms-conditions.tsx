@@ -18,7 +18,7 @@ export default function TermsAndConditions() {
         {termsSections.map((section) => (
           <section
             key={section.id}
-            className="mb-8 bg-accent p-4 md:p-8 rounded-lg shadow-sm"
+            className="mb-8 bg-white dark:bg-slate-900 p-4 md:p-8 rounded-lg shadow-sm"
           >
             <h2 className="text-2xl font-bold mb-4 text-center font-['Urbanist',sans-serif]">
               {section.title}
