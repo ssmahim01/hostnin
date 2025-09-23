@@ -9,7 +9,7 @@ export default function ResellerHostingBanner() {
         tagline="Everything You Need to Create a Website"
         headline={
           <>
-            KickStart Your Business
+            KickStart Business
             <br />
             With Reseller Hosting
           </>
