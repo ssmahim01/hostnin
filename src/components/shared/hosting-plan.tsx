@@ -41,27 +41,27 @@ export default function HostingPlan() {
     switch (title) {
       case "Cloud Hosting":
         return (
-          <Cloud className="w-14 h-14 text-blue-600 group-hover:text-white" />
+          <Cloud className="w-14 h-14 text-blue-600 dark:text-white group-hover:text-white" />
         );
       case "Web Hosting":
         return (
-          <Server className="w-14 h-14 text-blue-600 group-hover:text-white" />
+          <Server className="w-14 h-14 text-blue-600 dark:text-white group-hover:text-white" />
         );
       case "Bdix Hosting":
         return (
-          <Database className="w-14 h-14 text-blue-600 group-hover:text-white" />
+          <Database className="w-14 h-14 text-blue-600 dark:text-white group-hover:text-white" />
         );
       case "WordPress Hosting":
         return (
-          <Layers className="w-14 h-14 text-blue-600 group-hover:text-white" />
+          <Layers className="w-14 h-14 text-blue-600 dark:text-white group-hover:text-white" />
         );
       case "Turbo Hosting":
         return (
-          <Zap className="w-14 h-14 text-blue-600 group-hover:text-white" />
+          <Zap className="w-14 h-14 text-blue-600 dark:text-white group-hover:text-white" />
         );
       default:
         return (
-          <Globe className="w-14 h-14 text-blue-600 group-hover:text-white" />
+          <Globe className="w-14 h-14 text-blue-600 dark:text-white group-hover:text-white" />
         );
     }
   };
