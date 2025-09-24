@@ -10,7 +10,7 @@ import SupportBanner from "./(public-routes)/components/home/support-banner";
 import SupportTeam from "./(public-routes)/components/home/support-team";
 
 export const metadata: Metadata = {
-  title: "Home | Hostnin",
+  title: "Home | Best Web Hosting Company in Bangladesh",
   description:
     "Discover the best web hosting in Bangladesh with Hostnin. Enjoy top-notch hosting for portfolios, e-commerce, and more with 24/7 support, advanced features, and a 30-day money-back guarantee.",
   keywords: [

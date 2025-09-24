@@ -1,3 +1,4 @@
 {
+  "/(public-routes)/(routes)/hosting/web-hosting/page": "app/(public-routes)/(routes)/hosting/web-hosting/page.js",
   "/page": "app/page.js"
 }

@@ -102,12 +102,12 @@ export function TestimonialsSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Stats & Trust Indicators */}
           <div className="lg:col-span-4 space-y-8">
             <div className="flex md:flex-row lg:flex-col flex-col gap-5 justify-between items-center">
               {/* Google Reviews */}
-              <div className="bg-white dark:bg-slate-900 rounded-2xl lg:p-6 p-4 md:w-auto w-full shadow-sm border border-slate-200 dark:border-slate-700">
+              <div className="bg-white dark:bg-slate-900 rounded-2xl p-6 md:w-auto w-full shadow-sm border border-slate-200 dark:border-slate-700">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-20 h-12 bg-accent px-3 rounded-lg flex items-center justify-center">
                     <Image
@@ -176,8 +176,8 @@ export function TestimonialsSection() {
               </div>
 
               {/* Customer Avatars */}
-              <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm border border-slate-200 dark:border-slate-700">
-                <div className="flex items-center gap-4 mb-4">
+              <div className="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-slate-200 dark:border-slate-700">
+                <div className="flex items-center gap-3">
                   <div className="flex -space-x-3">
                     {testimonials.slice(0, 4).map((testimonial, i) => (
                       <Avatar
@@ -215,22 +215,12 @@ export function TestimonialsSection() {
 
                 <Link
                   href="/reviews"
-                  className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium text-sm transition-colors"
+                  className="mt-2 inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium text-sm transition-colors"
                 >
                   View all reviews
                   <ChevronRight className="w-4 h-4" />
                 </Link>
               </div>
-            </div>
-
-            {/* Trust Badge */}
-            <div className="text-center lg:text-left">
-              <Badge
-                variant="outline"
-                className="bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 border-green-200 dark:border-green-800 px-4 py-2"
-              >
-                ✓ 99.9% Uptime Guarantee
-              </Badge>
             </div>
           </div>
 
@@ -261,17 +251,17 @@ export function TestimonialsSection() {
               {testimonials.map((testimonial) => (
                 <SwiperSlide key={testimonial.id}>
                   <Card className="bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md hover:border-transparent p-0">
-                    <div className="p-6 h-full flex flex-col">
+                    <div className="p-5 h-full flex flex-col">
                       {/* Quote Icon */}
-                      <div className="mb-4">
+                      <div className="mb-3">
                         <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
                           <Quote className="w-5 h-5 text-white" />
                         </div>
                       </div>
 
                       {/* Review Text */}
-                      <blockquote className="text-slate-700 dark:text-slate-300 leading-relaxed mb-6 text-sm flex-grow">
-                        &quot;{testimonial.review}&quot;
+                      <blockquote className="text-slate-700 dark:text-slate-300 leading-relaxed mb-4 text-sm flex-grow">
+                        &quot;{testimonial.review.slice(0, 130)}...&quot;
                       </blockquote>
 
                       {/* Customer Info */}
@@ -331,8 +321,18 @@ export function TestimonialsSection() {
               ))}
             </Swiper>
 
+            {/* Trust Badge */}
+            <div className="absolute md:block hidden bottom-4 text-center lg:text-left">
+              <Badge
+                variant="outline"
+                className="bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 border-green-200 dark:border-green-800 px-4 py-2"
+              >
+                ✓ 99.9% Uptime Guarantee
+              </Badge>
+            </div>
+
             {/* Custom Navigation */}
-            <div className="flex items-center justify-center gap-4 mt-8">
+            <div className="flex items-center justify-center gap-4 mt-5">
               <button className="testimonials-prev hover:cursor-pointer hover:scale-105 transition-transform transform ease-in-out duration-500 w-12 h-12 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full shadow-sm hover:shadow-md hover:bg-slate-50 dark:hover:bg-slate-700 flex items-center justify-center group">
                 <ChevronLeft className="w-5 h-5 text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white transition-colors" />
               </button>

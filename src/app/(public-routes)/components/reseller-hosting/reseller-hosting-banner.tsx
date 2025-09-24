@@ -15,9 +15,9 @@ export default function ResellerHostingBanner() {
           </>
         }
         bullets={[
-          { text: "Blazing Performance" },
-          { text: "24/7 Support" },
-          { text: "Unlimited Features" },
+          { text: "Blazing Fast Performance" },
+          { text: "24/7 Expert Support Included" },
+          { text: "Limitless Hosting Features" },
         ]}
         countdown={true}
         buttonText="Claim Offer Now"
