@@ -88,13 +88,12 @@ export function TestimonialsSection() {
             Customer Reviews
           </div>
 
-          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6 text-balance">
-            Trusted by{" "}
-            <span className="text-blue-600 dark:text-blue-400">thousands</span>{" "}
-            of customers
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-4 text-balance">
+            <span className="text-blue-600 dark:text-blue-400">Trusted</span> by
+            Businesses and Creators Worldwide
           </h2>
 
-          <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto text-pretty">
+          <p className="text-sm md:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto text-pretty">
             Don&apos;t just take our word for it. Here&apos;s what our customers
             have to say about their hosting experience with Hostnin.
           </p>

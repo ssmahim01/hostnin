@@ -583,7 +583,7 @@ ${data.email || ""}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.7 }}
-                className="flex gap-4 pt-2"
+                className="flex flex-wrap md:justify-center flex-col md:flex-row w-full gap-4 pt-2"
               >
                 <Button
                   type="submit"
