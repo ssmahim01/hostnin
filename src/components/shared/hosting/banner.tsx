@@ -2,7 +2,13 @@
 "use client";
 
 import Image from "next/image";
-import { Check, Earth, MessageCircleQuestion, Zap, Activity } from "lucide-react";
+import {
+  Check,
+  Earth,
+  MessageCircleQuestion,
+  Zap,
+  Activity,
+} from "lucide-react";
 import { CountdownTimer } from "@/components/shared/hosting/countdown-timer";
 import FeatureCard from "./feature-card";
 import { ReactNode } from "react";
@@ -106,13 +112,20 @@ export const Banner: React.FC<BannerProps> = ({
 
           {/* Countdown */}
           {countdown && (
-            <div className="mb-7 sm:mb-12">
+            <div className="mb-7 sm:mb-8">
               <CountdownTimer />
             </div>
           )}
 
           {/* Button */}
-          <div className="px-4 md:px-0">
+          <div
+            className={`px-4 md:px-0 ${
+              pathname === "/hosting/web-hosting" ||
+              pathname === "/hosting/cloud-hosting"
+                ? "lg:mb-10"
+                : "lg:-mb-5"
+            }`}
+          >
             <button
               onClick={handleScrollToPricing}
               className="relative bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold px-6 md:px-8 py-4 rounded-xl transition-all duration-500 text-sm sm:text-lg shadow-xl hover:shadow-2xl hover:scale-105 w-full sm:w-auto mb-2 sm:mb-5 transform hover:-translate-y-1 hover:border-transparent border-2 border-blue-400 flex items-center justify-center gap-2 cursor-pointer lg:mx-0 mx-auto"
@@ -125,9 +138,11 @@ export const Banner: React.FC<BannerProps> = ({
 
         {/* Right Illustration */}
         <div
-          className={`${pathname === "/hosting/web-hosting" ? "md:flex hidden" : "flex"}
+          className={`${
+            pathname === "/hosting/web-hosting" ? "md:flex hidden" : "hidden md:flex"
+          }
             flex-1 justify-center 
-            sm:mt-2 lg:mt-0 
+             lg:mt-0 
             w-full 
             max-w-[17rem] md:mb-4 sm:max-w-sm lg:max-w-xl xl:max-w-2xl 
             h-full
