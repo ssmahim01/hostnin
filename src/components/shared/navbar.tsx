@@ -234,7 +234,7 @@ export function Navbar() {
                     <div
                       className={`absolute  ${
                         item.label === "Hosting"
-                          ? "-left-50"
+                          ? "-left-40"
                           : item.label === "About"
                           ? "-left-[14.4rem]"
                           : "-left-10"

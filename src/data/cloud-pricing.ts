@@ -427,13 +427,13 @@ export const cloudHostingData: PricingPlan[] = [
           included: true,
         },
         {
-          text: "4 Core Hosting CPU",
-          tooltip: "Four dedicated CPU cores for your hosting needs.",
+          text: "3 Core Hosting CPU",
+          tooltip: "Three dedicated CPU cores for your hosting needs.",
           included: true,
         },
         {
-          text: "4 GB Hosting RAM",
-          tooltip: "4GB of RAM allocated for your hosting environment.",
+          text: "3 GB Hosting RAM",
+          tooltip: "3GB of RAM allocated for your hosting environment.",
           included: true,
         },
         {
@@ -442,8 +442,8 @@ export const cloudHostingData: PricingPlan[] = [
           included: true,
         },
         {
-          text: "25 EP (Entry Process)",
-          tooltip: "25 concurrent entry processes allowed for your website.",
+          text: "30 EP (Entry Process)",
+          tooltip: "30 concurrent entry processes allowed for your website.",
           included: true,
         },
         {
@@ -1153,13 +1153,13 @@ export const cloudHostingData: PricingPlan[] = [
           included: true,
         },
         {
-          text: "4 Core Hosting CPU",
-          tooltip: "Four dedicated CPU cores for your hosting needs.",
+          text: "3 Core Hosting CPU",
+          tooltip: "Three dedicated CPU cores for your hosting needs.",
           included: true,
         },
         {
-          text: "4 GB Hosting RAM",
-          tooltip: "4GB of RAM allocated for your hosting environment.",
+          text: "3 GB Hosting RAM",
+          tooltip: "3GB of RAM allocated for your hosting environment.",
           included: true,
         },
         {
@@ -1168,8 +1168,8 @@ export const cloudHostingData: PricingPlan[] = [
           included: true,
         },
         {
-          text: "25 EP (Entry Process)",
-          tooltip: "25 concurrent entry processes allowed for your website.",
+          text: "30 EP (Entry Process)",
+          tooltip: "30 concurrent entry processes allowed for your website.",
           included: true,
         },
         {
