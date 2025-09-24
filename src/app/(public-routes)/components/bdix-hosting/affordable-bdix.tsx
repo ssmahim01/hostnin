@@ -13,7 +13,7 @@ export default function AffordableBdix() {
   };
 
   return (
-    <section className="px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6 pb-14">
+    <section className="px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6 pb-8">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8 relative">
         {/* Text */}
         <div className="flex-1 max-w-xl text-center lg:text-left order-2 lg:order-1">

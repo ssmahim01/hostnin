@@ -13,6 +13,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const testimonials: Testimonial[] = [
   {
@@ -78,8 +79,10 @@ const testimonials: Testimonial[] = [
 ];
 
 export function TestimonialsSection() {
+  const pathname = usePathname();
+
   return (
-    <section className="pt-4 pb-16">
+    <section className={`${pathname === "/" ? "pt-8 pb-16" : "pt-4 pb-10"}`}>
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center mb-8">

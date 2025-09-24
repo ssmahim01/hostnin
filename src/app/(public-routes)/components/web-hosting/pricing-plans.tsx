@@ -63,7 +63,7 @@ export default function PricePlans() {
       className={`w-full flex flex-col items-center justify-center ${
         pathname === "/pricing"
           ? "pt-6 pb-7 sm:pt-8 sm:pb-9 md:pt-14 md:pb-16"
-          : "lg:pt-24 pb-20 md:pt-24 "
+          : "lg:pt-24 pb-16 md:pt-24 "
       } px-3 sm:px-6`}
       style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
     >

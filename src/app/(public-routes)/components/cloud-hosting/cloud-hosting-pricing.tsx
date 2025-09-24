@@ -68,7 +68,7 @@ export default function CloudHostingPrice() {
       className={`w-full flex flex-col items-center justify-center ${
         pathname === "/pricing"
           ? "pt-6 pb-7 sm:pt-8 sm:pb-9 md:pt-14 md:pb-16"
-          : "lg:pt-36 pb-20 md:pt-36 "
+          : "lg:pt-36 pb-16 md:pb-20 md:pt-36 "
       } px-3 sm:px-6`}
       style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
     >
@@ -140,7 +140,7 @@ export default function CloudHostingPrice() {
           </div>
         </div>
 
-        <div className="w-full mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-10 justify-center items-start">
+        <div className="w-full mt-2 md:mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-10 justify-center items-start">
           {plans.map((plan) => (
             <div
               key={plan.title}
@@ -150,7 +150,7 @@ export default function CloudHostingPrice() {
                   : plan.title === "Basic" || plan.title === "Starter"
                   ? "translate-y-14 border-blue-100 dark:hover:border-blue-400 dark:border-transparent hover:border-blue-200"
                   : plan.title === "Ultimate"
-                  ? "translate-y-14 border-blue-100 dark:hover:border-blue-400 dark:border-transparent"
+                  ? "md:translate-y-14 border-blue-100 dark:hover:border-blue-400 dark:border-transparent"
                   : "translate-y-14 border-blue-100 dark:hover:border-blue-400 dark:border-transparent"
               } ${plan.title === "Pro" ? "mt-6 sm:mt-0" : ""}`}
               style={{

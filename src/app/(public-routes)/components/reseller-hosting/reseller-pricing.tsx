@@ -64,9 +64,9 @@ const resellerPlans: Plan[] = [
 
 export default function ResellerPricing() {
   return (
-    <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto  py-14 md:pt-64">
+    <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pt-16 pb-10 md:pt-60">
       {/* Section header */}
-      <div id="pricing" className="text-center mb-14 max-w-3xl mx-auto">
+      <div id="pricing" className="text-center mb-10 max-w-3xl mx-auto">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white">
           Powerful <span className="text-blue-600">Reseller Hosting</span> Plans
         </h2>
@@ -77,7 +77,7 @@ export default function ResellerPricing() {
       </div>
 
       {/* Pricing Cards */}
-      <div className="w-full max-w-7xl mx-auto flex flex-col sm:flex-row flex-wrap gap-6 justify-center items-stretch">
+      <div className="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 justify-center items-stretch">
         {resellerPlans.map((plan, idx) => (
           <div
             key={idx}

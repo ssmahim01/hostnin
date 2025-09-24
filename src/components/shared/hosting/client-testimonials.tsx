@@ -52,10 +52,10 @@ export default function Testimonials() {
         pathname === "/hosting/dedicated-server" ||
         pathname === "/hosting/reseller-hosting"
           ? "pt-10 pb-16"
-          : "md:pt-20 pt-16 pb-12"
+          : "md:pt-20 pt-10 pb-12"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-2">
+      <div className="max-w-7xl mx-auto  px-4 md:px-6 lg:px-8">
         <div
           className={`${
             pathname === "/hosting/dedicated-server" ||

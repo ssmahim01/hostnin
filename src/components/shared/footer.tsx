@@ -134,7 +134,7 @@ export function Footer() {
   return (
     <footer className="bg-[#001158] dark:bg-slate-950 text-white">
       {/* Payment Methods */}
-      <div className="border-b border-blue-800 dark:border-blue-900 max-w-7xl mx-auto">
+      <div className="border-b border-blue-800 dark:border-blue-900 max-w-7xl mx-auto md:block hidden">
         <div className="container mx-auto px-4 py-4">
           <figure className="flex flex-wrap justify-center items-center gap-4">
             <Image

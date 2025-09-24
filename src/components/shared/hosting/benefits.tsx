@@ -10,8 +10,8 @@ export default function BenefitsSection({
   sideCards,
 }: BenefitsSectionProps) {
   return (
-    <section className="py-16 md:px-4 px-2">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-start">
+    <section className="pt-7 md:pb-10 pb-14">
+      <div className=" px-4 md:px-6 lg:px-8 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-start">
         {/* Left */}
         <div>
           <h2 className="text-[26px] sm:text-3xl md:text-4xl font-bold text-[#001858] dark:text-white mb-3 sm:mb-4 leading-tight">
@@ -21,7 +21,7 @@ export default function BenefitsSection({
             {mainDescription}
           </p>
 
-          <div className="bg-accent rounded-xl shadow-lg p-6 md:p-8 pb-8 w-full transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer">
+          <div className="bg-white dark:bg-slate-900 rounded-xl shadow-lg border border-blue-100 dark:border-gray-700 p-6 md:p-8 pb-8 w-full transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer">
             <div className="flex items-center gap-4 sm:gap-6 mb-3">
               <div className="flex-shrink-0">
                 <Image
@@ -47,7 +47,7 @@ export default function BenefitsSection({
           {sideCards.map((card, i) => (
             <div
               key={i}
-              className="bg-accent rounded-xl shadow-lg p-6 md:p-8 transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
+              className="bg-white dark:bg-slate-900 rounded-xl shadow-lg border border-blue-100 dark:border-gray-700 p-6 md:p-8 transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
             >
               <div className="flex items-center gap-4 sm:gap-6 mb-3">
                 <div className="flex-shrink-0">

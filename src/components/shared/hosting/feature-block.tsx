@@ -37,7 +37,7 @@ export default function FeatureBlock({
         reverse ? "lg:flex-row-reverse" : "lg:flex-row"
       } items-center justify-between gap-6 sm:gap-8 xs:gap-12`}
     >
-      <div className="flex-1 max-w-xl order-2 md:order-1">
+      <div className="flex-1 mx-auto max-w-7xl px-4 lg:px-8 order-2 md:order-1">
         <h2
           className={`text-[27px] sm:text-2xl ${
             largeHeading ? "md:text-4xl" : "md:text-5xl"

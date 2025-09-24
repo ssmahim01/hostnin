@@ -50,8 +50,8 @@ export const Banner: React.FC<BannerProps> = ({
       className={`${
         pathname === "/hosting/web-hosting"
           ? "sm:pt-5"
-          : "pt-14 sm:pt-16 md:pt-20 lg:pt-28"
-      } pb-14 px-4 lg:pr-2 lg:pl-[72px] sm:pb-[68px] lg:pb-24 relative`}
+          : "pt-10 sm:pt-16 md:pt-20"
+      } pb-12 px-4 lg:pr-2 lg:pl-[72px] sm:pb-[68px] lg:pb-24 relative`}
       style={{
         backgroundImage: `url(${backgroundImage}), var(--banner-gradient)`,
         backgroundPosition: "left center, center center",
@@ -66,7 +66,7 @@ export const Banner: React.FC<BannerProps> = ({
             {tagline}
           </p>
           <h1
-            className="text-4xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 px-4 md:px-0"
+            className="text-3xl xs:text-xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 px-4 md:px-0"
             style={{ fontFamily: "var(--font-urbanist)" }}
           >
             {headline}
@@ -81,7 +81,7 @@ export const Banner: React.FC<BannerProps> = ({
                     ? "grid-cols-1 sm:grid-cols-2"
                     : "grid-cols-1"
                 }
-                mb-6 my-5 sm:mb-8 text-sm xs:text-base sm:text-lg
+                mb-6 my-5 sm:mb-8 text-sm xs:text-[11px] sm:text-lg
             `}
           >
             {bullets.map((b, idx) => (
@@ -98,15 +98,15 @@ export const Banner: React.FC<BannerProps> = ({
                 key={idx}
                 className="flex md:hidden items-center lg:justify-start justify-center lg:items-start gap-2 sm:gap-3"
               >
-                <Check className="text-lg sm:text-xl flex-shrink-0 mt-1" />
-                <span className="text-base sm:text-lg">{b.text}</span>
+                <Check className="text-sm sm:text-lg flex-shrink-0 mt-1" />
+                <span className="text-sm sm:text-lg">{b.text}</span>
               </li>
             ))}
           </ul>
 
           {/* Countdown */}
           {countdown && (
-            <div className="mb-8 sm:mb-12">
+            <div className="mb-7 sm:mb-12">
               <CountdownTimer />
             </div>
           )}
@@ -115,7 +115,7 @@ export const Banner: React.FC<BannerProps> = ({
           <div className="px-4 md:px-0">
             <button
               onClick={handleScrollToPricing}
-              className="relative bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold px-8 py-4 rounded-xl transition-all duration-500 text-base sm:text-lg shadow-xl hover:shadow-2xl hover:scale-105 w-full sm:w-auto mb-6 sm:mb-10 transform hover:-translate-y-1 hover:border-transparent border-2 border-blue-400 flex items-center justify-center gap-2 cursor-pointer lg:mx-0 mx-auto"
+              className="relative bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold px-6 md:px-8 py-4 rounded-xl transition-all duration-500 text-sm sm:text-lg shadow-xl hover:shadow-2xl hover:scale-105 w-full sm:w-auto mb-2 sm:mb-5 transform hover:-translate-y-1 hover:border-transparent border-2 border-blue-400 flex items-center justify-center gap-2 cursor-pointer lg:mx-0 mx-auto"
             >
               <Zap /> <span className="relative z-10">{buttonText}</span>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-300/20 to-indigo-300/20 rounded-xl opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
@@ -129,7 +129,7 @@ export const Banner: React.FC<BannerProps> = ({
             flex-1 justify-center 
             sm:mt-2 lg:mt-0 
             w-full 
-            max-w-xs md:mb-4 sm:max-w-md lg:max-w-xl xl:max-w-2xl 
+            max-w-[17rem] md:mb-4 sm:max-w-sm lg:max-w-xl xl:max-w-2xl 
             h-full
           `}
         >
