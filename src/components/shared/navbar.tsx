@@ -154,6 +154,7 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [dashboardOpen, setDashboardOpen] = useState(false);
   const [expandedItems, setExpandedItems] = useState<string[]>([]);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [authOpen, setAuthOpen] = useState(false);
   const [authMode, setAuthMode] = useState<"login" | "register">("login");
   const navbarRef = useRef<HTMLDivElement>(null);
@@ -217,9 +218,15 @@ export function Navbar() {
                     <button
                       type="button"
                       className="text-gray-700 dark:text-gray-300 text-base hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 font-medium transition-colors duration-200 flex items-center gap-1"
+                      onMouseEnter={() => setOpenDropdown(item.label)}
+                      onMouseLeave={() => setOpenDropdown(null)}
                     >
                       {item.label}
-                      <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
+                      <ChevronDown
+                        className={`w-4 h-4 transition-transform ${
+                          openDropdown === item.label ? "rotate-180" : ""
+                        }`}
+                      />
                     </button>
                   ) : (
                     <Link
@@ -232,20 +239,22 @@ export function Navbar() {
 
                   {item.hasDropdown && item.dropdownItems && (
                     <div
-                      className={`absolute  ${
+                      onMouseEnter={() => setOpenDropdown(item.label)}
+                      onMouseLeave={() => setOpenDropdown(null)}
+                      className={`absolute mt-2 bg-white dark:bg-gray-900 rounded-b-lg shadow-xl border-b border-gray-200 dark:border-gray-700 transition-all duration-300 transform
+                      ${
+                        openDropdown === item.label
+                          ? "opacity-100 visible translate-y-0"
+                          : "opacity-0 invisible translate-y-2"
+                      }
+                      ${
                         item.label === "Hosting"
-                          ? "-left-40"
+                          ? "-left-40 w-[435px]"
                           : item.label === "About"
-                          ? "-left-[14.4rem]"
-                          : "-left-10"
-                      } mt-2 bg-white dark:bg-gray-900 rounded-b-lg shadow-xl border-b border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0
-                    ${
-                      item.label === "Hosting"
-                        ? "w-[435px]"
-                        : item.label === "About"
-                        ? "w-[505px]"
-                        : "w-36"
-                    }`}
+                          ? "-left-[14.4rem] w-[505px]"
+                          : "-left-10 w-36"
+                      }
+                    `}
                     >
                       {/* Dropdown items remain links */}
                       <div
@@ -261,7 +270,7 @@ export function Navbar() {
                             <Link
                               key={dropdownItem.label}
                               href={dropdownItem.href}
-                              onClick={closeDropdown}
+                              onClick={() => setOpenDropdown(null)}
                               className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group/item"
                             >
                               {IconComponent && (
