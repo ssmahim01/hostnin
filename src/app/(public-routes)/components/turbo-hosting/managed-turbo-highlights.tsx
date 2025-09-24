@@ -10,7 +10,7 @@ export default function ManagedTurboHighlights({
   highlights,
 }: ManagedTurboHighlightsProps) {
   return (
-    <section className="w-full bg-[#fafbfc] dark:bg-gray-900 pt-8 pb-16">
+    <section className="w-full pt-8 pb-16">
       <div className="max-w-7xl mx-auto px-4">
         {/* heading */}
         <div className="flex flex-col lg:flex-row md:items-center lg:justify-between mb-10 gap-6">
