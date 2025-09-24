@@ -62,7 +62,7 @@ const tabs = [
 
 export default function AdvancedFeatures() {
   return (
-    <section className="pt-20 md:pt-14">
+    <section className="pt-20 md:pt-16">
       <div className="container max-w-[76rem] mx-auto px-4">
         <div className="flex flex-col md:flex-row md:justify-between items-center gap-8">
           {/* Illustration Image */}
@@ -80,7 +80,7 @@ export default function AdvancedFeatures() {
           {/* Content */}
           <div className="flex-1">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white/85 mb-6">
-              Advance features for the <br /> advanced user
+              Advance features for the advanced user
             </h2>
 
             <Tabs defaultValue="control-panel" className="w-full">
