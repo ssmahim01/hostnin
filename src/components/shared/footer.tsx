@@ -132,7 +132,7 @@ export function Footer() {
   const getFullYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#001158] dark:bg-slate-950 text-white">
+    <footer className="bg-[#001158] dark:bg-slate-950 text-white border-t border-blue-700 dark:border-slate-800">
       {/* Payment Methods */}
       <div className="border-b border-blue-800 dark:border-blue-900 max-w-7xl mx-auto md:block hidden">
         <div className="container mx-auto px-4 py-4">
