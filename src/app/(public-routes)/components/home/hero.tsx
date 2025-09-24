@@ -51,8 +51,8 @@ export function HeroSection() {
               {heroData.trusted}
             </span>
           </div>
-          <div className="flex items-center gap-2 text-base md:text-lg lg:justify-start justify-center opacity-80 font-semibold">
-            <CircleCheckBig className="w-5 h-5 text-gray-100" />
+          <div className="flex items-center gap-2 text-sm md:text-lg lg:justify-start justify-center opacity-80 font-semibold">
+            <CircleCheckBig className="w-4 h-4 md:w-5 md:h-5 text-gray-100" />
             <span>{heroData.guarantee}</span>
           </div>
         </div>
