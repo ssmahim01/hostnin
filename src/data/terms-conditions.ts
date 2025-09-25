@@ -188,6 +188,168 @@ export const termsSections = [
   },
   {
     id: 17,
+    title: "Affiliate Program Terms",
+    content: [
+      "Self-Referral & Fraud Prohibited: Affiliates cannot earn commissions on their own purchases or on purchases made by entities they own or control. If detected, commissions will be revoked and the affiliate account may be permanently terminated without notice.",
+      "Active Service Requirement: To request commission withdrawals, the affiliate must have at least one active, paid Hostnin service.",
+      "Commission Maturity Period: Commissions become eligible for withdrawal 30 days after the referred customer’s payment. Pending commissions will appear in the dashboard but cannot be withdrawn until they have matured.",
+      "Minimum Withdrawal Threshold & Batch Processing: Commissions can only be withdrawn in multiples of ৳5,000. Each withdrawal request will process the maximum full batch of ৳5,000 available (Example: If the affiliate balance is ৳5,500, ৳5,000 will be processed and the remaining ৳500 will roll over to the next payout). Withdrawals cannot be requested for amounts below ৳5,000.",
+      "Fraud, Abuse & Chargebacks: Any fraudulent sign-ups, coupon abuse, or referrals that later result in cancellations or chargebacks will void commissions.",
+      "Right to Audit: Hostnin reserves the right to audit affiliate accounts and deny or reverse commissions if abuse or violations are detected.",
+      "Account Termination: Affiliates violating these terms may have their accounts terminated and unpaid balances forfeited.",
+    ],
+  },
+  {
+    id: 18,
+    title: "Domain Registration & Renewal Policy",
+    content: [
+      "Domains are registered according to ICANN rules and relevant registries.",
+      "Hostnin is not responsible for loss of domains due to expired renewals if invoices are unpaid or incorrect contact details are provided.",
+      "Renewal reminders are sent as a courtesy only; it is the customer’s responsibility to renew on time.",
+      "Domains may be suspended or cancelled due to trademark disputes, ICANN compliance actions, or legal orders.",
+    ],
+  },
+  {
+    id: 19,
+    title: "Content Liability & Copyright Policy (DMCA)",
+    content: [
+      "Customers are solely responsible for the content hosted on their websites.",
+      "Hostnin complies with Digital Millennium Copyright Act (DMCA) takedown notices and may suspend services for repeat infringements.",
+      "Hosting of pirated content, copyrighted material without permission, or illegal files is strictly prohibited.",
+    ],
+  },
+  {
+    id: 20,
+    title: "Acceptable Email Usage & Anti-Spam Policy",
+    content: [
+      "Sending unsolicited bulk email (spam), phishing campaigns, or mass marketing without consent is forbidden.",
+      "Violations may lead to immediate suspension without refund.",
+      "Hostnin may block outbound mail ports or throttle mail delivery to maintain network reputation.",
+    ],
+  },
+  {
+    id: 21,
+    title: "Resource Abuse & Server Security",
+    content: [
+      "Customers may not use hosting services for crypto mining, malware distribution, or running scripts that compromise server stability.",
+      "Excessive resource use (CPU, RAM, I/O, bandwidth) that affects other customers may result in throttling, suspension, or upgrade requirement.",
+      "Customers must maintain secure software (e.g., update CMS, plugins) to avoid being hacked.",
+    ],
+  },
+  {
+    id: 22,
+    title: "Backup & Data Restoration Policy",
+    content: [
+      "Hostnin performs backups as a courtesy but does not guarantee data integrity.",
+      "Customers are responsible for maintaining their own backups.",
+      "Hostnin is not liable for data loss due to system failure, account suspension, or termination.",
+      "Data restoration (if available) may incur a fee.",
+    ],
+  },
+  {
+    id: 23,
+    title: "Payment Disputes & Chargebacks",
+    content: [
+      "Filing a chargeback or payment dispute immediately suspends all associated services.",
+      "Accounts involved in chargebacks may lose eligibility for refunds and future services.",
+      "Any fees incurred from chargebacks will be billed to the account owner.",
+    ],
+  },
+  {
+    id: 24,
+    title: "Price Changes & Plan Modifications",
+    content: [
+      "Hostnin reserves the right to adjust pricing, plans, or included features with prior notice.",
+      "Existing customers will be billed at the agreed rate until the end of the current billing cycle.",
+    ],
+  },
+  {
+    id: 25,
+    title: "Third-Party Services & Licenses",
+    content: [
+      "Services may include third-party tools or licenses (e.g., cPanel, LiteSpeed, Imunify360).",
+      "Hostnin is not liable for changes, outages, or price adjustments from these third-party providers.",
+      "Customers must comply with all relevant third-party license terms.",
+    ],
+  },
+  {
+    id: 26,
+    title: "Limitation of Liability (Extended)",
+    content: [
+      "Hostnin shall not be liable for indirect, incidental, special, or consequential damages (loss of profits, revenue, or data).",
+      "Maximum liability in any case is limited to the amount paid for the service during the last billing cycle.",
+      "Hostnin is not responsible for business interruption, loss of reputation, or damages resulting from downtime.",
+    ],
+  },
+  {
+    id: 27,
+    title: "Indemnification (Extended)",
+    content: [
+      "Customers agree to indemnify and hold Hostnin, its employees, and affiliates harmless against any claims, damages, or expenses arising from use of our services, violation of these Terms, or infringement of third-party rights.",
+    ],
+  },
+  {
+    id: 28,
+    title: "Reseller Hosting Terms",
+    content: [
+      "Resellers are responsible for the conduct of their own clients.",
+      "Abuse or violations by reseller clients may result in suspension or termination of the reseller’s account.",
+      "Hostnin does not provide direct support to end-users of reseller clients.",
+    ],
+  },
+  {
+    id: 29,
+    title: "Governing Law & Dispute Resolution (Expanded)",
+    content: [
+      "All disputes shall be resolved under the laws of Bangladesh (or the relevant jurisdiction of the company’s registration).",
+      "In case of disputes, parties agree to attempt mediation before seeking court action.",
+    ],
+  },
+  {
+    id: 30,
+    title: "Service Level Agreement (SLA) Disclaimer",
+    content: [
+      "While Hostnin aims for high uptime, scheduled maintenance or unexpected outages may occur.",
+      "SLA credits (if applicable) are limited to future service credits and cannot be exchanged for cash.",
+    ],
+  },
+  {
+    id: 31,
+    title: "Early Termination & Refund Limitations",
+    content: [
+      "No refunds are issued for early cancellation of services unless covered under the 30-Day Money-Back Guarantee.",
+      "Refunds for prepaid plans may be prorated at Hostnin’s discretion.",
+    ],
+  },
+  {
+    id: 32,
+    title: "Account Ownership & Transfer",
+    content: [
+      "The person/entity listed as the primary contact in the Hostnin account is considered the legal owner.",
+      "Ownership transfer requests must be made in writing with proper verification.",
+    ],
+  },
+  {
+    id: 33,
+    title: "Prohibited Content (Explicit List)",
+    content: [
+      "Child exploitation or abuse material",
+      "Hate speech or incitement to violence",
+      "Malware, phishing pages, or hacking tools",
+      "Fraudulent or misleading business practices",
+      "Content violating intellectual property rights",
+    ],
+  },
+  {
+    id: 34,
+    title: "Severability & Entire Agreement",
+    content: [
+      "If any part of these Terms is held invalid by a court, the remainder will stay enforceable.",
+      "These Terms represent the entire agreement between Hostnin and the customer, superseding any prior agreements.",
+    ],
+  },
+  {
+    id: 35,
     title: "Changes to Terms",
     content: [
       "Hostnin may update these Terms from time to time.",
@@ -196,7 +358,7 @@ export const termsSections = [
     ],
   },
   {
-    id: 18,
+    id: 36,
     title: "Contact Information",
     content: [
       "Email: legal@hostnin.com",
