@@ -38,7 +38,7 @@ export default function VideoReviews({
   return (
     <section
       className={`${
-        pathname === "/video-reviews" ? "pt-24 pb-16" : "pt-2"
+        pathname === "/video-reviews" ? "pt-24 pb-16" : "pt-5 pb-1"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

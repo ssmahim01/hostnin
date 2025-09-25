@@ -1,210 +1,8 @@
-// /* eslint-disable @typescript-eslint/no-unused-vars */
-// "use client";
-
-// import { useState } from "react";
-// import { Input } from "@/components/ui/input";
-// import { Button } from "@/components/ui/button";
-// import { Search, ShoppingBag } from "lucide-react";
-// import Image from "next/image";
-// import { toast } from "sonner";
-// import Link from "next/link";
-
-// type DomainResult = {
-//   domain: string;
-//   available: boolean | null;
-//   purchaseUrl?: string | null;
-// };
-
-// const domainTlds = [".COM", ".ORG", ".NET", ".XYZ", ".INFO"];
-
-// function isFullDomain(input: string) {
-//   return /\.[a-zA-Z]{2,}$/.test(input);
-// }
-
-// function normalizeDomain(input: string) {
-//   return input
-//     .trim()
-//     .toLowerCase()
-//     .replace(/^www\./, "")
-//     .replace(/\/.*/, "");
-// }
-
-// export default function DomainBanner() {
-//   const [domain, setDomain] = useState("");
-//   const [results, setResults] = useState<DomainResult[]>([]);
-//   const [loading, setLoading] = useState(false);
-
-//   const checkDomain = async (fullDomain: string) => {
-//     try {
-//       const res = await fetch("/api/check-domain", {
-//         method: "POST",
-//         headers: { "Content-Type": "application/json" },
-//         body: JSON.stringify({ domain: fullDomain }),
-//       });
-//       const data = await res.json();
-//       return {
-//         available: data.status === "available",
-//         purchaseUrl:
-//           data.status === "available"
-//             ? `https://my.hostnin.com/cart.php?a=add&domain=register&query=${fullDomain}`
-//             : null,
-//       };
-//     } catch (err) {
-//       return { available: false, purchaseUrl: null };
-//     }
-//   };
-
-//   const handleSearch = async (e: React.FormEvent) => {
-//     e.preventDefault();
-//     const input = normalizeDomain(domain);
-//     if (!input) return toast.error("Please enter a domain");
-
-//     let initialResults: DomainResult[] = [];
-
-//     if (isFullDomain(input)) {
-//       initialResults = [{ domain: input, available: null }];
-//     } else {
-//       initialResults = domainTlds.map((tld) => ({
-//         domain: `${input}${tld}`,
-//         available: null,
-//       }));
-//     }
-
-//     setResults(initialResults);
-//     setLoading(true);
-
-//     const updatedResults: DomainResult[] = [];
-
-//     for (let i = 0; i < initialResults.length; i++) {
-//       const { available, purchaseUrl } = await checkDomain(
-//         initialResults[i].domain
-//       );
-//       updatedResults.push({
-//         domain: initialResults[i].domain,
-//         available,
-//         purchaseUrl,
-//       });
-//       setResults([...updatedResults]);
-//     }
-
-//     setLoading(false);
-//   };
-
-//   return (
-//     <section
-//       className="pt-16 pb-20 md:pt-20 px-2 sm:px-7 lg:pt-28 lg:pb-16 lg:px-10 relative bg-gradient-to-r from-blue-900/90 to-blue-950/90 bg-no-repeat bg-contain md:bg-cover bg-center dark:from-blue-950/90 dark:to-blue-900/90"
-//       style={{
-//         backgroundImage:
-//           "url('/assets/sh-hero-bg.png'), linear-gradient(278deg, rgba(0, 40, 160, 0.9) 16%, rgba(0, 20, 80, 0.9) 98%)",
-//       }}
-//     >
-//       <div className="w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between pt-8 md:pt-0">
-//         <div className="flex-1 text-white lg:pr-12 text-center lg:text-left mb-8 lg:mb-0">
-//           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold leading-tight mb-4 sm:mb-6">
-//             Search & Register Domain For Your Website
-//           </h1>
-//           <p className="text-base md:text-lg mb-8 sm:mb-12 opacity-90">
-//             Cheap domains with advanced features; get top-level domains only at
-//             1650TK/year.
-//           </p>
-//           <form
-//             className="flex flex-row mb-6 max-w-xs md:max-w-md lg:max-w-xl mx-auto lg:mx-0"
-//             onSubmit={handleSearch}
-//           >
-//             <Input
-//               type="text"
-//               name="query"
-//               className="rounded-l-lg rounded-r-none py-8 bg-white/90 focus:ring-0 flex-1 border-none dark:text-white text-gray-700 font-medium"
-//               placeholder="Enter your domain name..."
-//               value={domain}
-//               onChange={(e) => setDomain(e.target.value)}
-//             />
-//             <Button
-//               type="submit"
-//               className="rounded-r-lg hover:cursor-pointer rounded-l-none text-lg font-bold flex gap-2 items-center bg-blue-600 hover:bg-blue-700 text-white py-8"
-//             >
-//               <Search className="w-7 h-7 font-bold" />
-//               <span>Check</span>
-//             </Button>
-//           </form>
-
-//           {loading && <p className="text-white mb-4">Checking...</p>}
-
-//           {results.length > 0 && (
-//             <div className="space-y-2 max-w-xs md:max-w-md lg:max-w-xl mx-auto lg:mx-0">
-//               {results.map((res) => (
-//                 <div
-//                   key={res.domain}
-//                   className={`flex justify-between p-3 rounded-lg ${
-//                     res.available === null
-//                       ? "bg-yellow-50 text-yellow-800"
-//                       : res.available
-//                       ? "bg-green-50 text-green-800"
-//                       : "bg-red-50 text-red-600"
-//                   }`}
-//                 >
-//                   <span>
-//                     {res.domain}{" "}
-//                     {res.available === null
-//                       ? "Checking..."
-//                       : res.available
-//                       ? "is available!"
-//                       : "is unavailable"}
-//                   </span>
-//                   {res.available && res.purchaseUrl && (
-//                     <Link
-//                       href={res.purchaseUrl}
-//                       target="_blank"
-//                       rel="noopener noreferrer"
-//                     >
-//                       <Button className="bg-blue-600 hover:bg-blue-700 flex gap-2 items-center hover:cursor-pointer text-white py-1 px-3">
-//                         <ShoppingBag /> <span>Purchase</span>
-//                       </Button>
-//                     </Link>
-//                   )}
-//                 </div>
-//               ))}
-//             </div>
-//           )}
-
-//           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mt-8">
-//             {[
-//               { tld: ".COM", price: "৳1650/Year" },
-//               { tld: ".NET", price: "৳1650/Year" },
-//               { tld: ".ORG", price: "৳1650/Year" },
-//               { tld: ".INFO", price: "৳599/Year" },
-//               { tld: ".XYZ", price: "৳599/Year" },
-//             ].map((domain, index) => (
-//               <div key={index} className="text-center">
-//                 <div className="text-xl font-bold mb-1">{domain.tld}</div>
-//                 <div className="text-sm opacity-90">{domain.price}</div>
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-
-//         <div className="flex-1 flex justify-center mt-4 sm:mt-8 lg:mt-0 w-full max-w-xs sm:max-w-md lg:max-w-xl xl:max-w-2xl h-full">
-//           <Image
-//             src="/assets/dm-hero.png"
-//             alt="Domain Registration Illustration"
-//             width={400}
-//             height={400}
-//             className="object-contain w-full h-auto"
-//             priority
-//           />
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
 "use client";
 
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 import { Search } from "lucide-react";
-import Image from "next/image";
 import { z } from "zod";
 
 const domainSearchSchema = z.object({
@@ -257,14 +55,14 @@ export default function DomainBanner() {
   };
 
   return (
-    <section className="relative pt-16 pb-16 md:pt-20 px-2 sm:px-7 lg:pt-28 lg:pb-16 lg:px-10">
+    <section className="relative pt-28 pb-24 md:pt-20 lg:pt-28 lg:pb-24 px-4">
       {/* Overlay gradient */}
       <div
         className="absolute inset-0 w-full h-full"
         style={{
           backgroundImage: `
-        linear-gradient(278deg, rgba(0, 40, 160, 0.9) 16%, rgba(0, 20, 80, 0.9) 98%)
-      `,
+            linear-gradient(278deg, rgba(0, 40, 160, 0.9) 16%, rgba(0, 20, 80, 0.9) 98%)
+          `,
         }}
       />
       {/* Dark mode overlay */}
@@ -272,87 +70,75 @@ export default function DomainBanner() {
 
       {/* Background image */}
       <div
-        className="absolute inset-0 w-full h-full bg-no-repeat bg-contain md:bg-cover bg-center"
+        className="absolute inset-0 w-full md:bg-[url('/assets/sh-hero-bg.png')] h-full bg-no-repeat bg-contain md:bg-cover bg-center"
         style={{
-          backgroundImage: "url('/assets/sh-hero-bg.png')",
           backgroundPosition: "left center, center center",
           backgroundRepeat: "no-repeat, no-repeat",
           backgroundSize: "contain, cover",
         }}
       />
 
-      {/* Hero content */}
-      <div className="relative w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between pt-8 md:pt-0">
-        <div className="flex-1 text-white lg:pr-12 text-center lg:text-left mb-8 lg:mb-0">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold leading-tight mb-4 sm:mb-6">
-            Search & Register Domain For Your Website
-          </h1>
-          <p className="text-base md:text-lg mb-8 sm:mb-12 opacity-90">
-            Cheap domains with advanced features; get top-level domains only at
-            1650TK/year.
-          </p>
-          <form
-            onSubmit={handleSubmit}
-            className="flex flex-row mb-6 max-w-xs md:max-w-md lg:max-w-xl mx-auto lg:mx-0"
+      {/* Content */}
+      <div className="relative w-full max-w-full md:max-w-4xl mx-auto text-center">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+          Search & Register Domain For Your Website
+        </h1>
+        <p className="text-lg lg:text-2xl text-white/90 mb-10 sm:mb-12 max-w-2xl mx-auto">
+          Cheap domains with advanced features; get top-level domains only at
+          1650TK/year.
+        </p>
+
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-col sm:flex-row gap-3 sm:gap-0 mb-6 max-w-4xl mx-auto mt-6 lg:mt-16"
+        >
+          <Input
+            type="text"
+            name="query"
+            className="sm:rounded-l-lg sm:rounded-r-none py-6 sm:py-8 bg-white/90 dark:text-white flex-1 border-none text-gray-700 font-medium"
+            placeholder="Enter your domain name..."
+            value={domain}
+            onChange={(e) => setDomain(e.target.value)}
+          />
+          <button
+            type="submit"
+            className="sm:rounded-r-lg sm:rounded-l-none md:mt-0 mt-8 md:mb-0 mb-4 text-lg font-bold flex gap-2 items-center bg-blue-600 hover:bg-blue-700 text-white rounded-md py-4 md:py-2 px-10 hover:cursor-pointer w-full sm:w-auto justify-center"
           >
-            <Input
-              type="text"
-              name="query"
-              className="rounded-l-lg rounded-r-none py-8 bg-white/90 dark:text-white flex-1 border-none text-gray-700 font-medium"
-              placeholder="Enter your domain name..."
-              value={domain}
-              onChange={(e) => setDomain(e.target.value)}
-            />
-            <Button
-              type="submit"
-              className="rounded-r-lg rounded-l-none text-lg font-bold flex gap-2 items-center bg-blue-600 hover:bg-blue-700 text-white py-8 hover:cursor-pointer"
-            >
-              <Search className="w-7 h-7" />
-              <span>Check</span>
-            </Button>
-          </form>
+            <Search className="w-6 h-6" />
+            <span>Check</span>
+          </button>
+        </form>
 
-          {errors.length > 0 && (
-            <div className="mb-4 p-3 bg-red-50 max-w-xs md:max-w-md lg:max-w-xl mx-auto lg:mx-0 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
-              {errors.map((error, index) => (
-                <p
-                  key={index}
-                  className="text-red-600 dark:text-red-400 text-sm"
-                >
-                  {error}
-                </p>
-              ))}
-            </div>
-          )}
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mt-8">
-            {[
-              { tld: ".COM", price: "৳1650/Year" },
-              { tld: ".NET", price: "৳1650/Year" },
-              { tld: ".ORG", price: "৳1650/Year" },
-              { tld: ".INFO", price: "৳599/Year" },
-              { tld: ".XYZ", price: "৳599/Year" },
-            ].map((domain, index) => (
-              <div
-                key={index}
-                className={`text-center ${index > 3 ? "hidden md:block" : ""}`}
-              >
-                <div className="text-xl font-bold mb-1">{domain.tld}</div>
-                <div className="text-sm opacity-90">{domain.price}</div>
-              </div>
+        {errors.length > 0 && (
+          <div className="mb-4 p-3 bg-red-50 max-w-4xl mx-auto dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg text-left">
+            {errors.map((error, index) => (
+              <p key={index} className="text-red-600 dark:text-red-400 text-sm">
+                {error}
+              </p>
             ))}
           </div>
-        </div>
+        )}
 
-        <div className="flex-1 flex justify-center mt-4 sm:mt-8 lg:mt-0 w-full max-w-xs sm:max-w-md lg:max-w-xl xl:max-w-2xl h-full">
-          <Image
-            src="/assets/dm-hero.png"
-            alt="Domain Registration Illustration"
-            width={400}
-            height={400}
-            className="object-contain w-full h-auto"
-            priority
-          />
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 lg:mt-16 mt-8 justify-center">
+          {[
+            { tld: ".COM", price: "৳1650/Year" },
+            { tld: ".NET", price: "৳1650/Year" },
+            { tld: ".ORG", price: "৳1650/Year" },
+            { tld: ".INFO", price: "৳599/Year" },
+            { tld: ".XYZ", price: "৳599/Year" },
+          ].map((domain, index) => (
+            <div
+              key={index}
+              className={`text-center rounded-xl p-4 bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors ${
+                index > 3 ? "hidden md:block" : ""
+              }`}
+            >
+              <div className="text-2xl font-bold mb-1 text-white">
+                {domain.tld}
+              </div>
+              <div className="text-sm text-white/90">{domain.price}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
