@@ -61,6 +61,7 @@ interface DropdownMenuItemProps {
   href?: string;
   onClick?: () => void;
   active?: boolean;
+  newTab?: boolean
 }
 
 const DropdownMenuItem = ({
@@ -68,10 +69,11 @@ const DropdownMenuItem = ({
   href,
   onClick,
   active = false,
+  newTab,
 }: DropdownMenuItemProps) => (
   <Link
     href={href || ""}
-    target="_blank"
+    target={newTab === true ? "_blank" : "_self"}
     rel="noopener noreferrer"
     onClick={onClick}
     className={`
@@ -116,28 +118,28 @@ export default function Dropdown() {
         )}
       >
         <div className="flex flex-col space-y-1">
-          <DropdownMenuItem href="https://my.hostnin.com" active>
+          <DropdownMenuItem href="https://my.hostnin.com" active newTab={true}>
             <LayoutDashboard className="mr-3 h-5 w-5" />
             <span>Dashboard</span>
           </DropdownMenuItem>
 
-          <DropdownMenuItem href="https://my.hostnin.com/index.php/login">
+          <DropdownMenuItem href="https://my.hostnin.com/index.php/login" newTab={true}>
             <LogIn className="mr-3 h-5 w-5" />
             <span>Login</span>
           </DropdownMenuItem>
 
-          <DropdownMenuItem href="https://my.hostnin.com/register.php">
+          <DropdownMenuItem href="https://my.hostnin.com/register.php" newTab={true}>
             <FilePen className="mr-3 h-5 w-5" />
             <span>Register</span>
           </DropdownMenuItem>
         </div>
         <DropdownMenuSeparator />
         <div className="flex flex-col space-y-1">
-          <DropdownMenuItem href="https://my.hostnin.com/submitticket.php">
+          <DropdownMenuItem href="/support">
             <Wrench className="mr-3 h-5 w-5 text-zinc-500" />
             <span>Open Ticket</span>
           </DropdownMenuItem>
-          <DropdownMenuItem href="https://my.hostnin.com/cart.php?a=add&domain=register">
+          <DropdownMenuItem href="/domain">
             <BadgePlus className="mr-3 h-5 w-5 text-zinc-500" />
             <span>Register A New Domain</span>
           </DropdownMenuItem>

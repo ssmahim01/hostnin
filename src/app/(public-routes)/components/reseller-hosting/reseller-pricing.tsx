@@ -84,11 +84,11 @@ export default function ResellerPricing() {
             className="relative w-full max-w-[400px] sm:max-w-sm mx-auto bg-white dark:bg-slate-900 shadow-xl flex flex-col items-center px-4 md:px-6 py-6 lg:py-8 border border-gray-200 dark:border-slate-700 rounded-xl hover:shadow-2xl transition-shadow"
           >
             <div className="flex flex-col items-center mb-4 w-full">
-              <span className="text-[#232946] dark:text-white font-bold text-xl mb-3 w-full text-center">
+              <span className="text-slate-900 dark:text-white font-bold text-xl mb-3 w-full text-center">
                 {plan.title}
               </span>
               <div className="flex items-end justify-center mb-4 w-full">
-                <span className="text-pink-600 text-4xl lg:text-5xl font-bold">
+                <span className="text-[#232946] dark:text-slate-50 text-4xl lg:text-5xl font-bold">
                   {plan.price.split(" ")[0]}
                 </span>
                 <span className="text-gray-500 dark:text-gray-300 text-sm sm:text-base md:text-lg font-medium ml-1 mb-2">

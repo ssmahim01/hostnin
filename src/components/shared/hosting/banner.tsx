@@ -138,11 +138,8 @@ export const Banner: React.FC<BannerProps> = ({
 
         {/* Right Illustration */}
         <div
-          className={`${
-            pathname === "/hosting/web-hosting" ? "md:flex hidden" : "hidden md:flex"
-          }
-            flex-1 justify-center 
-             lg:mt-0 
+          className={`flex flex-1 justify-center 
+             lg:mt-0 mt-2
             w-full 
             max-w-[17rem] md:mb-4 sm:max-w-sm lg:max-w-xl xl:max-w-2xl 
             h-full

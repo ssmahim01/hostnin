@@ -48,7 +48,7 @@ const testimonials: Testimonial[] = [
   },
   {
     id: "4",
-    name: "Mitchel Johnson",
+    name: "Mostafizur Rahman",
     avatar:
       "https://res.cloudinary.com/daspo1tk3/image/upload/v1757453007/r-1_kfam9t.webp",
     rating: 5,
@@ -58,7 +58,7 @@ const testimonials: Testimonial[] = [
   },
   {
     id: "5",
-    name: "David Wilson",
+    name: "Al Amin Robin",
     avatar:
       "https://res.cloudinary.com/daspo1tk3/image/upload/v1757453007/r-2_pjkj95.webp",
     rating: 5,
@@ -88,12 +88,12 @@ export function TestimonialsSection() {
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 bg-blue-100 dark:bg-blue-900/30 text-blue-500 dark:text-blue-300 px-4 py-2 rounded-full text-sm font-medium mb-4">
             <Star className="w-4 h-4 fill-current" />
-            Customer Reviews
+            96% Customer Satisfaction!
           </div>
 
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-4 text-balance">
             <span className="text-blue-600 dark:text-blue-400">Trusted</span> by
-            Businesses and Creators Worldwide
+            5,400+ Happy Customers
           </h2>
 
           <p className="text-sm md:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto text-pretty">

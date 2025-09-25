@@ -511,15 +511,13 @@ export function Navbar() {
                     <FilePen className="w-5 h-5" /> Register
                   </Link>
                   <Link
-                    href="https://my.hostnin.com/submitticket.php"
-                    target="_blank"
+                    href="/support"
                     className="flex items-center gap-2 p-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md text-base"
                   >
                     <Wrench className="w-5 h-5" /> Open Ticket
                   </Link>
                   <Link
-                    href="https://my.hostnin.com/cart.php?a=add&domain=register"
-                    target="_blank"
+                    href="/domain"
                     className="flex items-center gap-2 p-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md text-base"
                   >
                     <BadgePlus className="w-5 h-5" /> Register A New Domain

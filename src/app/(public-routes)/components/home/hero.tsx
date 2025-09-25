@@ -24,8 +24,8 @@ export function HeroSection() {
     >
       <div className=" max-w-7xl mx-auto container px-5 lg:px-10 flex flex-col lg:flex-row items-center justify-between lg:gap-0 gap-8">
         {/* Text Content */}
-        <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
-          <h1 className="text-[34px] sm:text-4xl md:text-5xl lg:text-5xl font-bold text-white leading-tight">
+        <div className="lg:w-1/2 space-y-4 text-center lg:text-left">
+          <h1 className="text-[32px] sm:text-4xl md:text-5xl lg:text-5xl font-bold text-white leading-tight">
             Best Web Hosting <br />{" "}
             <span className="relative">
               Company in Bangladesh
@@ -33,7 +33,7 @@ export function HeroSection() {
             </span>{" "}
           </h1>
 
-          <p className="text-xl opacity-90 max-w-xl leading-relaxed ">
+          <p className="text-base md:text-xl opacity-90 max-w-xl leading-relaxed ">
             {heroData.description}
           </p>
           <div className="flex items-center flex-col md:flex-row gap-4 lg:justify-start justify-center">
@@ -47,7 +47,7 @@ export function HeroSection() {
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
 
-            <span className="text-lg opacity-80 font-semibold">
+            <span className="text-base md:text-lg opacity-80 font-semibold">
               {heroData.trusted}
             </span>
           </div>
@@ -58,13 +58,13 @@ export function HeroSection() {
         </div>
 
         {/* Image */}
-        <div className=" relative lg:w-1/2 md:flex justify-end hidden">
+        <div className=" relative lg:w-1/2 flex justify-end">
           <Image
             src={heroData.image.src}
             alt={heroData.image.alt}
             width={400}
             height={200}
-            className="max-w-full sm:w-2/3 w-4/5 h-auto mx-auto object-cover"
+            className="max-w-full sm:w-2/3 w-[65%] h-auto mx-auto object-cover"
             priority
           />
 
