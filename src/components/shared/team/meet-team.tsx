@@ -65,7 +65,7 @@ export default function MeetOurTeam() {
             <TeamCard member={team[0]} isLead />
           </div>
 
-          <div className="w-0.5 h-12 bg-blue-500 dark:bg-blue-400 "></div>
+          <div className="w-0.5 h-12 bg-blue-500 dark:bg-blue-400 lg:block hidden"></div>
 
           {/* Middle tier - 3 leads with horizontal connecting line */}
           <div className="relative">
@@ -81,7 +81,7 @@ export default function MeetOurTeam() {
             </div>
           </div>
 
-          <div className="w-0.5 h-12 bg-blue-500 dark:bg-blue-400 "></div>
+          <div className="w-0.5 h-12 bg-blue-500 dark:bg-blue-400 lg:block hidden"></div>
 
           {/* Bottom tier - 3 support roles with horizontal connecting line */}
           <div className="relative">
