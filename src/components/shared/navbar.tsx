@@ -248,9 +248,7 @@ export function Navbar() {
                           : "opacity-0 invisible translate-y-2"
                       }
                       ${
-                        item.label === "Hosting"
-                          ? "-left-40 w-[435px]"
-                          : item.label === "About"
+                        item.label === "Hosting" || item.label === "About"
                           ? "-left-[14.4rem] w-[505px]"
                           : "-left-10 w-36"
                       }

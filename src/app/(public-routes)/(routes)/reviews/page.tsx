@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description:
       "Read authentic customer reviews and testimonials about Hostnin's web hosting, cloud hosting, VPS, and dedicated server services.",
     type: "website",
-    url: "https://hostnin-frontend/reviews",
+    url: "https://hostnin.com/reviews",
   },
   twitter: {
     card: "summary_large_image",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
       "Read authentic customer reviews and testimonials about Hostnin's web hosting services.",
   },
   alternates: {
-    canonical: "https://hostnin-frontend/reviews",
+    canonical: "https://hostnin.com/reviews",
   },
 };
 

@@ -62,6 +62,19 @@ const supportExecutives = [
   { value: "asad-ujjaman", label: "Asad Ujjaman - Hostnin Support" },
   { value: "hasan-tareq", label: "Hasan Tareq - Hostnin Support" },
   { value: "mujahidul-islam", label: "Mujahidul Islam - Hostnin Support" },
+  { value: "minhaj-saki", label: "Minhaj Saki - Hostnin Support" },
+  { value: " mahfuz-islam", label: "Mahfuz Islam - Hostnin Support" },
+  { value: "saiful-islam", label: "Saiful Islam - Hostnin Support" },
+  { value: "saiful-islam", label: "Saiful Islam - Hostnin Support" },
+  { value: "ayesha-siddika", label: "Ayesha Siddika - Hostnin Support" },
+  { value: "israt-jahan ", label: "Israt Jahan  - Hostnin Support" },
+  { value: "mumtahina-maryam", label: "Mumtahina Maryam - Hostnin Support" },
+  { value: "shafiq-ahsan", label: "Shafiq Ahsan - Hostnin Support" },
+  { value: "rabiul-alam", label: "Rabiul Alam - Hostnin Support" },
+  { value: "omar-faruk", label: "Omar Faruk - Hostnin Support" },
+  { value: "abdul-malek", label: "Abdul Malek - Hostnin Support" },
+  { value: "mahmudul-hasan", label: "Mahmudul Hasan - Hostnin Support" },
+  { value: "kamrul-hasan", label: "Kamrul Hasan - Hostnin Support" },
   { value: "general", label: "General Support Team" },
 ];
 
@@ -201,9 +214,7 @@ ${data.email}
   };
 
   return (
-    <div
-     
-    >
+    <div>
       <Card className="shadow-md border-0 backdrop-blur-sm bg-white/80 dark:bg-gray-900/80">
         <CardHeader className="space-y-4 pb-6">
           <div className="flex items-center justify-between">

@@ -1,5 +1,9 @@
 {
   "/(public-routes)/(routes)/domain/page": "app/(public-routes)/(routes)/domain/page.js",
+  "/(public-routes)/(routes)/hosting/cloud-hosting/page": "app/(public-routes)/(routes)/hosting/cloud-hosting/page.js",
+  "/(public-routes)/(routes)/hosting/web-hosting/page": "app/(public-routes)/(routes)/hosting/web-hosting/page.js",
+  "/(public-routes)/(routes)/reviews/page": "app/(public-routes)/(routes)/reviews/page.js",
   "/(public-routes)/(routes)/video-reviews/page": "app/(public-routes)/(routes)/video-reviews/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/page": "app/page.js"
 }

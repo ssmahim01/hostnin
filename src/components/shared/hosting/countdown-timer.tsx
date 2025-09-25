@@ -60,10 +60,10 @@ export function CountdownTimer({}: CountdownTimerProps) {
           transition={{ delay: index * 0.1 }}
           className="bg-white dark:bg-gray-800 rounded-lg p-3 text-center shadow-lg md:min-w-[100px] lg:h-[80px] min-w-[40px] h-full"
         >
-          <div className="text-sm md:text-base lg:text-2xl font-bold text-gray-900 dark:text-white">
+          <div className="text-lg md:text-base lg:text-2xl font-bold text-gray-900 dark:text-white">
             {unit.value}
           </div>
-          <div className="md:text-sm text-xs text-gray-500 dark:text-gray-400 font-medium">
+          <div className="md:text-sm text-base text-gray-500 dark:text-gray-400 font-medium">
             {unit.label}
           </div>
         </motion.div>

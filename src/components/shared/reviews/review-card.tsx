@@ -18,7 +18,7 @@ export default function ReviewCard({ review, index }: ReviewCardProps) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="w-full max-w-lg mx-auto dark:bg-slate-800 bg-white shadow-2xl rounded-xl p-6 hover:shadow-3xl transition-shadow duration-300"
+      className="w-full max-w-lg mx-auto dark:bg-slate-800 bg-white shadow-lg rounded-xl p-6 hover:shadow-3xl transition-shadow duration-300"
     >
       <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4">
         <Image

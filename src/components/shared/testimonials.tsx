@@ -3,7 +3,6 @@
 import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import type { Testimonial } from "@/types/testimonial";
 
@@ -251,21 +250,21 @@ export function TestimonialsSection() {
               {testimonials.map((testimonial) => (
                 <SwiperSlide key={testimonial.id}>
                   <Card className="bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md hover:border-transparent p-0">
-                    <div className="p-5 h-full flex flex-col">
+                    <div className="p-6 h-full flex flex-col">
                       {/* Quote Icon */}
-                      <div className="mb-3">
+                      <div className="mb-5">
                         <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
                           <Quote className="w-5 h-5 text-white" />
                         </div>
                       </div>
 
                       {/* Review Text */}
-                      <blockquote className="text-slate-700 dark:text-slate-300 leading-relaxed mb-4 text-sm flex-grow">
-                        &quot;{testimonial.review.slice(0, 130)}...&quot;
+                      <blockquote className="text-slate-700 dark:text-slate-300 leading-relaxed mb-6 text-base flex-grow">
+                        &quot;{testimonial.review.slice(0, 120)}...&quot;
                       </blockquote>
 
                       {/* Customer Info */}
-                      <div className="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-700">
+                      <div className="flex items-center justify-between pt-6 border-t border-slate-100 dark:border-slate-700">
                         <div className="flex items-center gap-3">
                           <Avatar className="w-12 h-12">
                             <AvatarImage
@@ -321,18 +320,8 @@ export function TestimonialsSection() {
               ))}
             </Swiper>
 
-            {/* Trust Badge */}
-            <div className="absolute md:block hidden bottom-4 text-center lg:text-left">
-              <Badge
-                variant="outline"
-                className="bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 border-green-200 dark:border-green-800 px-4 py-2"
-              >
-                ✓ 99.9% Uptime Guarantee
-              </Badge>
-            </div>
-
             {/* Custom Navigation */}
-            <div className="flex items-center justify-center gap-4 mt-5">
+            <div className="flex items-center justify-center gap-4 mt-8">
               <button className="testimonials-prev hover:cursor-pointer hover:scale-105 transition-transform transform ease-in-out duration-500 w-12 h-12 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full shadow-sm hover:shadow-md hover:bg-slate-50 dark:hover:bg-slate-700 flex items-center justify-center group">
                 <ChevronLeft className="w-5 h-5 text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white transition-colors" />
               </button>

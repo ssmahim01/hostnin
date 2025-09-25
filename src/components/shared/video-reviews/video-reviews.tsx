@@ -3,7 +3,7 @@
 
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
-import { Play, Volume2, Maximize, ArrowRight } from "lucide-react";
+import { Play, Volume2, Maximize, ArrowRight, Star } from "lucide-react";
 import { VideoReview } from "@/types/reviews/video-reviews";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
@@ -88,7 +88,7 @@ export default function VideoReviews({
                 </div>
 
                 {/* Customer Info */}
-                <div className="flex items-center gap-4 dark:p-2 dark:bg-muted/30 rounded-lg">
+                <div className="flex items-center gap-4 p-2 bg-accent rounded-lg">
                   <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center">
                     <Image
                       src={selectedVideo?.customerAvatar || ""}
@@ -117,7 +117,7 @@ export default function VideoReviews({
               <div className="space-y-6">
                 {/* Trust Indicators */}
                 <Card className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
-                  <h4 className="font-bold text-foreground text-lg">
+                  <h4 className="font-bold text-foreground text-lg -mb-1">
                     Why Customers Choose Hostnin
                   </h4>
                   <div className="space-y-3">
@@ -156,7 +156,7 @@ export default function VideoReviews({
 
                 {/* Video Stats */}
                 <Card className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
-                  <h4 className="font-bold text-foreground text-lg">
+                  <h4 className="font-bold text-foreground text-lg -mb-1">
                     Customer Satisfaction
                   </h4>
                   <div className="space-y-4">
@@ -164,6 +164,20 @@ export default function VideoReviews({
                       <div className="flex justify-between text-sm mb-1">
                         <span className="text-gray-900 dark:text-gray-100 font-semibold">
                           Performance
+                        </span>
+                        <span className="text-foreground">99%</span>
+                      </div>
+                      <div className="w-full bg-muted rounded-full h-2">
+                        <div
+                          className="bg-blue-500 dark:bg-blue-400 h-2 rounded-full"
+                          style={{ width: "99%" }}
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <div className="flex justify-between text-sm mb-1">
+                        <span className="text-gray-900 dark:text-gray-100 font-semibold">
+                          Support Quality
                         </span>
                         <span className="text-foreground">98%</span>
                       </div>
@@ -177,46 +191,89 @@ export default function VideoReviews({
                     <div>
                       <div className="flex justify-between text-sm mb-1">
                         <span className="text-gray-900 dark:text-gray-100 font-semibold">
-                          Support Quality
-                        </span>
-                        <span className="text-foreground">96%</span>
-                      </div>
-                      <div className="w-full bg-muted rounded-full h-2">
-                        <div
-                          className="bg-blue-500 dark:bg-blue-400 h-2 rounded-full"
-                          style={{ width: "96%" }}
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <div className="flex justify-between text-sm mb-1">
-                        <span className="text-gray-900 dark:text-gray-100 font-semibold">
                           Value for Money
                         </span>
-                        <span className="text-foreground">94%</span>
+                        <span className="text-foreground">100%</span>
                       </div>
                       <div className="w-full bg-muted rounded-full h-2">
                         <div
                           className="bg-blue-500 dark:bg-blue-400 h-2 rounded-full"
-                          style={{ width: "94%" }}
+                          style={{ width: "100%" }}
                         />
                       </div>
                     </div>
                   </div>
                 </Card>
-              </div>
-            )}
 
-            {/* View All Stories Button */}
-            {pathname === "/" && (
-              <Link href="/video-reviews" className="block w-full mt-6">
-                <button
-                  className="w-full bg-blue-600 dark:bg-blue-500 hover:bg-blue-700 text-white font-semibold py-4 px-6 rounded-lg 
-                hover:cursor-pointer transition-transform flex gap-2 items-center justify-center ease-in-out duration-500 transform hover:scale-105"
-                >
-                  <span>View All Stories</span> <ArrowRight />
-                </button>
-              </Link>
+                <div className="bg-white dark:bg-slate-900 rounded-2xl p-4 md:w-auto w-full shadow-sm border border-slate-200 dark:border-slate-700">
+                  <div className="flex justify-between items-center gap-4 mb-2">
+                    <div>
+                      <h3 className="font-semibold text-slate-900 dark:text-white">
+                        Google Reviews
+                      </h3>
+                      <div className="flex items-center gap-1">
+                        {Array.from({ length: 5 }).map((_, i) => {
+                          const rating = 4.8;
+                          const full = i + 1 <= Math.floor(rating);
+                          const half =
+                            !full &&
+                            i + 1 === Math.ceil(rating) &&
+                            rating % 1 !== 0;
+
+                          if (full) {
+                            return (
+                              <Star
+                                key={i}
+                                className="w-4 h-4 text-yellow-400 fill-yellow-400"
+                              />
+                            );
+                          }
+
+                          if (half) {
+                            return (
+                              <span
+                                key={i}
+                                className="relative w-4 h-4 inline-block"
+                              >
+                                {/* yellow left half */}
+                                <Star
+                                  className="absolute w-4 h-4 text-yellow-400 fill-yellow-400"
+                                  style={{ clipPath: "inset(0 50% 0 0)" }}
+                                />
+                                {/* grey right half */}
+                                <Star className="absolute w-4 h-4 text-slate-300 dark:text-slate-600" />
+                              </span>
+                            );
+                          }
+
+                          return (
+                            <Star
+                              key={i}
+                              className="w-4 h-4 text-slate-300 dark:text-slate-600"
+                            />
+                          );
+                        })}
+                        <span className="text-sm text-slate-600 dark:text-slate-400 ml-2">
+                          4.8/5
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="w-32 h-12 px-3 rounded-lg flex items-center justify-center">
+                      <Image
+                        width={64}
+                        height={64}
+                        src="/assets/google-logo.svg"
+                        alt="Google"
+                        className="w-full h-full"
+                      />
+                    </div>
+                  </div>
+                  <p className="text-slate-600 dark:text-slate-400 text-sm">
+                    Based on 147+ verified reviews from our customers
+                  </p>
+                </div>
+              </div>
             )}
           </div>
         </div>

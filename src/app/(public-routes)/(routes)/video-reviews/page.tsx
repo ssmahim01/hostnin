@@ -5,30 +5,33 @@ export const metadata: Metadata = {
   title: "Customer Video Reviews | Hostnin",
   description:
     "Watch authentic customer success stories and see how Hostnin helps businesses grow with fast, reliable hosting solutions.",
-  openGraph: {
-    title: "Customer Video Reviews | Hostnin",
-    description:
-      "Watch authentic customer success stories and see how Hostnin helps businesses grow with fast, reliable hosting solutions.",
-    url: "/video-reviews",
-    siteName: "Hostnin",
-    images: [
-      {
-        url: "/assets/professional-business-customer-testimonial.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Customer Success Stories at Hostnin",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Customer Video Reviews | Hostnin",
-    description:
-      "Watch authentic customer success stories and see how Hostnin helps businesses grow with fast, reliable hosting solutions.",
-    images: ["/assets/professional-business-customer-testimonial.jpg"],
-  },
+  keywords:
+    "Hostnin reviews, customer video reviews, customer success stories, hosting testimonials, reliable hosting, fast hosting, business growth hosting, hosting case studies, Hostnin customer feedback",
+  // openGraph: {
+
+  //     title: "Customer Video Reviews | Hostnin",
+  //     description:
+  //       "Watch authentic customer success stories and see how Hostnin helps businesses grow with fast, reliable hosting solutions.",
+  //     url: "/video-reviews",
+  //     siteName: "Hostnin",
+  //     images: [
+  //       {
+  //         url: "/assets/professional-business-customer-testimonial.jpg",
+  //         width: 1200,
+  //         height: 630,
+  //         alt: "Customer Success Stories at Hostnin",
+  //       },
+  //     ],
+  //     locale: "en_US",
+  //     type: "website",
+  //   },
+  //   twitter: {
+  //     card: "summary_large_image",
+  //     title: "Customer Video Reviews | Hostnin",
+  //     description:
+  //       "Watch authentic customer success stories and see how Hostnin helps businesses grow with fast, reliable hosting solutions.",
+  //     images: ["/assets/professional-business-customer-testimonial.jpg"],
+  //   },
 };
 
 export default function VideoReviewsPage() {

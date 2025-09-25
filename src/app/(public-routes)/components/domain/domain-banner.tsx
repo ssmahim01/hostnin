@@ -80,17 +80,16 @@ export default function DomainBanner() {
 
       {/* Content */}
       <div className="relative w-full max-w-full md:max-w-4xl mx-auto text-center">
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+        <h1 className="text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
           Search & Register Domain For Your Website
         </h1>
-        <p className="text-lg lg:text-2xl text-white/90 mb-10 sm:mb-12 max-w-2xl mx-auto">
-          Cheap domains with advanced features; get top-level domains only at
-          1650TK/year.
+        <p className="text-lg text-white/90 mb-10 sm:mb-12 max-w-2xl mx-auto">
+          Cheap domains with advanced features; get top-level domains only at 1650TK/year.
         </p>
 
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col sm:flex-row gap-3 sm:gap-0 mb-6 max-w-4xl mx-auto mt-6 lg:mt-16"
+          className="flex flex-col sm:flex-row gap-3 sm:gap-0 mb-6 max-w-4xl mx-auto mt-6 lg:mt-12"
         >
           <Input
             type="text"
@@ -119,7 +118,7 @@ export default function DomainBanner() {
           </div>
         )}
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 lg:mt-16 mt-8 justify-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 lg:mt-14 mt-8 justify-center">
           {[
             { tld: ".COM", price: "৳1650/Year" },
             { tld: ".NET", price: "৳1650/Year" },

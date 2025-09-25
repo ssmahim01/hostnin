@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Filter, Search } from "lucide-react";
+import { Filter, Search, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -15,6 +15,7 @@ import {
 import ReviewCard from "./review-card";
 import type { Review } from "@/types/review";
 import StarRating from "../star-rating";
+import Link from "next/link";
 
 interface ReviewsProps {
   reviews: Review[];
@@ -32,7 +33,6 @@ export default function Reviews({ reviews }: ReviewsProps) {
   React.useEffect(() => {
     let filtered = reviews;
 
-    // Search filter
     if (searchTerm) {
       filtered = filtered.filter(
         (review) =>
@@ -43,12 +43,10 @@ export default function Reviews({ reviews }: ReviewsProps) {
       );
     }
 
-    // Service filter
     if (serviceFilter !== "all") {
       filtered = filtered.filter((review) => review.service === serviceFilter);
     }
 
-    // Rating filter
     if (ratingFilter !== "all") {
       filtered = filtered.filter(
         (review) => review.rating >= Number.parseInt(ratingFilter)
@@ -58,10 +56,18 @@ export default function Reviews({ reviews }: ReviewsProps) {
     setFilteredReviews(filtered);
   }, [searchTerm, serviceFilter, ratingFilter, reviews]);
 
+  const sortedReviews = filteredReviews
+    .slice()
+    .sort((a, b) => b.rating - a.rating);
+
+  const maxVisible = 24;
+  const visibleReviews = sortedReviews.slice(0, maxVisible);
+  const hasMore = sortedReviews.length >= maxVisible;
+
   return (
-    <div className="py-24">
+    <div className="pt-24 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header Section */}
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -79,12 +85,12 @@ export default function Reviews({ reviews }: ReviewsProps) {
           {/* Stats */}
           <div className="flex flex-wrap justify-center items-center gap-8 mb-8">
             <div className="text-center">
-              <StarRating rating={4.4} />
+              <StarRating rating={4.8} />
               <p className="text-2xl font-bold text-gray-900 dark:text-white">
                 {(4.8).toFixed(1)} out of 5
               </p>
               <p className="text-sm text-gray-600 dark:text-slate-400">
-                Based on 122 reviews
+                Based on 154 reviews
               </p>
             </div>
             <div className="text-center">
@@ -106,7 +112,7 @@ export default function Reviews({ reviews }: ReviewsProps) {
           </div>
         </motion.div>
 
-        {/* Filters Section */}
+        {/* Filters */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -159,19 +165,56 @@ export default function Reviews({ reviews }: ReviewsProps) {
           </div>
 
           <div className="mt-4 text-sm text-gray-600 dark:text-slate-400 text-center md:text-left">
-            Showing {filteredReviews.length} of {reviews.length} reviews
+            Showing {visibleReviews.length} of {filteredReviews.length} reviews
           </div>
         </motion.div>
 
         {/* Reviews Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredReviews
-            .slice()
-            .sort((a, b) => b.rating - a.rating)
-            .map((review, index) => (
-              <ReviewCard key={review.id} review={review} index={index} />
-            ))}
+          {visibleReviews.map((review, index) => (
+            <ReviewCard key={review.id} review={review} index={index} />
+          ))}
         </div>
+
+        {/* “See More” Section */}
+        {hasMore && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="flex flex-col items-center mt-12 gap-4"
+          >
+            <p className="text-lg text-gray-700 dark:text-slate-300 text-center max-w-xl">
+              We have even more amazing reviews from our happy customers on
+              trusted platforms.
+            </p>
+            <div className="flex items-center flex-wrap gap-4 justify-center w-full">
+              <Link
+                href="https://www.trustpilot.com/review/hostnin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button
+                  className="px-14 md:px-6 hover:cursor-pointer py-3 bg-white dark:bg-transparent dark:border-gray-100 dark:hover:bg-white/90 dark:hover:text-blue-600 dark:text-white border border-blue-600 text-blue-600 font-bold rounded-lg shadow hover:bg-blue-700 hover:text-white transform hover:scale-105 
+                transition-all duration-300 ease-in-out flex gap-2 items-center"
+                >
+                  View on Trustpilot <ExternalLink className="w-4 h-4" />
+                </button>
+              </Link>
+              <Link
+                href="https://www.google.com/search?q=hostnin&oq=hostnin+&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MggIARBFGCcYOzIGCAIQABgeMgYIAxAAGB4yBggEEAAYHjIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPNIBCDI4ODdqMGoxqAIAsAIA&sourceid=chrome&ie=UTF-8#lrd=0x30acd9cbc6fae927:0xea0dfad1096f2469,1,,,,"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button
+                  className="px-14 md:px-6 hover:cursor-pointer py-3 text-white/95 border border-blue-600 hover:text-white font-bold rounded-lg shadow bg-blue-600 transform hover:scale-105 
+                transition-all duration-300 ease-in-out flex gap-2 items-center"
+                >
+                  View on Google <ExternalLink className="w-4 h-4" />
+                </button>
+              </Link>
+            </div>
+          </motion.div>
+        )}
 
         {/* No Results */}
         {filteredReviews.length === 0 && (
