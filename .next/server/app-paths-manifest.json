@@ -1,12 +1,4 @@
 {
-  "/(public-routes)/(routes)/domain/page": "app/(public-routes)/(routes)/domain/page.js",
-  "/(public-routes)/(routes)/hosting/bdix-hosting/page": "app/(public-routes)/(routes)/hosting/bdix-hosting/page.js",
-  "/(public-routes)/(routes)/hosting/cloud-hosting/page": "app/(public-routes)/(routes)/hosting/cloud-hosting/page.js",
-  "/(public-routes)/(routes)/hosting/reseller-hosting/page": "app/(public-routes)/(routes)/hosting/reseller-hosting/page.js",
-  "/(public-routes)/(routes)/hosting/turbo-hosting/page": "app/(public-routes)/(routes)/hosting/turbo-hosting/page.js",
-  "/(public-routes)/(routes)/hosting/vps-hosting/page": "app/(public-routes)/(routes)/hosting/vps-hosting/page.js",
-  "/(public-routes)/(routes)/hosting/web-hosting/page": "app/(public-routes)/(routes)/hosting/web-hosting/page.js",
-  "/(public-routes)/(routes)/hosting/wordpress-hosting/page": "app/(public-routes)/(routes)/hosting/wordpress-hosting/page.js",
-  "/(public-routes)/(routes)/support/page": "app/(public-routes)/(routes)/support/page.js",
+  "/(public-routes)/(routes)/video-reviews/page": "app/(public-routes)/(routes)/video-reviews/page.js",
   "/page": "app/page.js"
 }

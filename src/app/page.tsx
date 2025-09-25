@@ -8,6 +8,7 @@ import { TestimonialsSection } from "../components/shared/testimonials";
 import ControlPanelSection from "./(public-routes)/components/home/control-panel";
 import SupportBanner from "./(public-routes)/components/home/support-banner";
 import SupportTeam from "./(public-routes)/components/home/support-team";
+import VideoReviews from "../components/shared/video-reviews/video-reviews";
 
 export const metadata: Metadata = {
   title: "Home | Best Web Hosting Company in Bangladesh",
@@ -28,14 +29,15 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-        <HostingPlan />
-        <MovingWebsites />
-        <DomainSearchSection />
-        <ControlPanelSection />
-        <SupportBanner />
-        <TestimonialsSection />
-        <SupportTeam />
-        <Offer />
+      <HostingPlan />
+      <MovingWebsites />
+      <DomainSearchSection />
+      <ControlPanelSection />
+      <VideoReviews show={true} featuresShow={false} />
+      <SupportBanner />
+      <TestimonialsSection />
+      <SupportTeam />
+      <Offer />
     </>
   );
 }
