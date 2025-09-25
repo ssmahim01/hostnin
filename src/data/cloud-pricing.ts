@@ -724,7 +724,7 @@ export const cloudHostingData: PricingPlan[] = [
     icon: "ultimate",
     description: "Best for Huge Resources",
     buttonText: "Add to Cart",
-    infoText: "৳9999/year when you renew",
+    infoText: "৳6999/year when you renew",
     savingsText: "24/7 WhatsApp & Call Support",
   },
   // Three years plans
@@ -1089,7 +1089,7 @@ export const cloudHostingData: PricingPlan[] = [
     icon: "starter",
     description: "Ideal for Mid-level Websites",
     buttonText: "Add to Cart",
-    infoText: "৳12900/triennially when you renew",
+    infoText: "৳9999/triennially when you renew",
     savingsText: "24/7 WhatsApp & Call Support",
   },
   {
@@ -1267,7 +1267,7 @@ export const cloudHostingData: PricingPlan[] = [
     icon: "pro",
     description: "Perfect for Professional Websites",
     buttonText: "Add to Cart",
-    infoText: "৳26991/triennially when you renew",
+    infoText: "৳12999/triennially when you renew",
     savingsText: "24/7 WhatsApp & Call Support",
     highlight: true,
     badge: "Most Popular",
@@ -1450,7 +1450,7 @@ export const cloudHostingData: PricingPlan[] = [
     icon: "ultimate",
     description: "Best for Huge Resources",
     buttonText: "Add to Cart",
-    infoText: "৳44991/triennially when you renew",
+    infoText: "৳19999/triennially when you renew",
     savingsText: "24/7 WhatsApp & Call Support",
   },
 ];

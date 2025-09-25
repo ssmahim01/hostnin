@@ -64,7 +64,7 @@ export function HeroSection() {
             alt={heroData.image.alt}
             width={400}
             height={200}
-            className="max-w-full sm:w-2/3 w-[65%] h-auto mx-auto object-cover"
+            className="max-w-full sm:w-2/3 w-[55%] h-auto mx-auto object-cover"
             priority
           />
 

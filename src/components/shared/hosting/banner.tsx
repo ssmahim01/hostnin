@@ -57,7 +57,7 @@ export const Banner: React.FC<BannerProps> = ({
         pathname === "/hosting/web-hosting"
           ? "sm:pt-5"
           : "pt-24 sm:pt-16 md:pt-20"
-      } md:pb-14 pb-20 px-4 lg:pr-2 lg:pl-[72px] sm:pb-[68px] lg:pb-24 relative`}
+      } md:pb-14 pb-24 px-4 lg:pr-2 lg:pl-[72px] sm:pb-[68px] lg:pb-24 relative`}
       style={{
         backgroundImage: `url(${backgroundImage}), var(--banner-gradient)`,
         backgroundPosition: "left center, center center",
@@ -68,11 +68,11 @@ export const Banner: React.FC<BannerProps> = ({
       <div className="w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-0 pt-5">
         {/* Left Content */}
         <div className="flex-1 text-white lg:pr-12 text-center lg:text-start lg:mb-0 pt-8 md:pt-0">
-          <p className="text-yellow-400 font-bold md:mb-2 mb-6 text-3xl xs:text-base sm:text-xl">
+          <p className="text-yellow-400 font-bold md:mb-2 mb-9 text-lg xs:text-base sm:text-xl">
             {tagline}
           </p>
           <h1
-            className="text-4xl xs:text-xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8 sm:mb-6 px-4 md:px-0"
+            className="text-4xl xs:text-xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-10 sm:mb-6 px-4 md:px-0"
             style={{ fontFamily: "var(--font-urbanist)" }}
           >
             {headline}
@@ -87,7 +87,7 @@ export const Banner: React.FC<BannerProps> = ({
                     ? "grid-cols-1 sm:grid-cols-2"
                     : "grid-cols-1"
                 }
-                mb-10 my-5 sm:mb-8 text-sm xs:text-[11px] sm:text-lg
+                mb-14 my-5 sm:mb-8 text-sm xs:text-[11px] sm:text-lg
             `}
           >
             {bullets.map((b, idx) => (
@@ -112,7 +112,7 @@ export const Banner: React.FC<BannerProps> = ({
 
           {/* Countdown */}
           {countdown && (
-            <div className="mb-12 sm:mb-8">
+            <div className="mb-14 sm:mb-8">
               <CountdownTimer />
             </div>
           )}

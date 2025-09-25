@@ -249,7 +249,7 @@ export function TestimonialsSection() {
             >
               {testimonials.map((testimonial) => (
                 <SwiperSlide key={testimonial.id}>
-                  <Card className="bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md hover:border-transparent p-0">
+                  <Card className="bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl p-0">
                     <div className="p-6 h-full flex flex-col">
                       {/* Quote Icon */}
                       <div className="mb-5">

@@ -12,6 +12,7 @@ import MigrationSection from "@/app/(public-routes)/components/web-hosting/migra
 import AdvancedFeatures from "@/app/(public-routes)/components/web-hosting/advanced-features";
 import PricingPlans from "@/app/(public-routes)/components/web-hosting/pricing-plans";
 import HostingFAQs from "@/components/shared/hosting/hosting-faqs";
+import MeetOurTeam from "@/components/shared/team/meet-team";
 
 export const metadata: Metadata = {
   title: "Web Hosting | Hostnin",
@@ -35,6 +36,7 @@ export default function WebHostingPage() {
         <PricingPlans />
       <TestimonialsSection />
       <DomainSearchSection />
+      <MeetOurTeam />
       <InfrastructurePartners />
       <WhyChooseHosting
         heading="Why Choose Web Hosting?"
