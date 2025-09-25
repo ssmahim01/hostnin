@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: "Customer Video Reviews | Hostnin",
     description:
       "Watch authentic customer success stories and see how Hostnin helps businesses grow with fast, reliable hosting solutions.",
-    url: "https://hostnin.com/video-reviews",
+    url: "/video-reviews",
     siteName: "Hostnin",
     images: [
       {

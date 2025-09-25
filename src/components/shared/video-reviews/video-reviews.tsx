@@ -7,6 +7,7 @@ import { Play, Volume2, Maximize, ArrowRight } from "lucide-react";
 import { VideoReview } from "@/types/reviews/video-reviews";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 
 const videoReviews: VideoReview[] = [
   {
@@ -14,6 +15,7 @@ const videoReviews: VideoReview[] = [
     title: "The Rosepit Story | Fast & Reliable Hosting by Hostnin",
     customerName: "Md. Ariful Islam",
     customerRole: "Founder",
+    customerAvatar: "/assets/ariful-islam.jpg",
     company: "Rosepit",
     embedUrl: "https://www.youtube.com/embed/cvGdfX41vsg?si=6u_SHPo5uXUBvR1x",
     thumbnail: "/assets/professional-business-customer-testimonial.jpg",
@@ -88,9 +90,13 @@ export default function VideoReviews({
                 {/* Customer Info */}
                 <div className="flex items-center gap-4 dark:p-2 dark:bg-muted/30 rounded-lg">
                   <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center">
-                    <span className="text-blue-500 dark:text-blue-400 font-semibold text-lg">
-                      {selectedVideo.customerName.charAt(0)}
-                    </span>
+                    <Image
+                      src={selectedVideo?.customerAvatar || ""}
+                      alt={selectedVideo?.customerName}
+                      width={70}
+                      height={70}
+                      className="object-cover w-full h-full rounded-full border-4 border-blue-400"
+                    />
                   </div>
                   <div>
                     <div className="font-semibold text-foreground">
