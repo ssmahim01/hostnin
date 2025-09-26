@@ -44,7 +44,7 @@ export default function HostingPlan() {
         return (
           <Server className="w-14 h-14 text-blue-600 dark:text-white group-hover:text-white" />
         );
-      case "Bdix Hosting":
+      case "BDIX Hosting":
         return (
           <Database className="w-14 h-14 text-blue-600 dark:text-white group-hover:text-white" />
         );

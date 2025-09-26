@@ -1,6 +1,6 @@
 {
-  "/(public-routes)/(footer-routes)/affiliate/page": "app/(public-routes)/(footer-routes)/affiliate/page.js",
   "/(public-routes)/(routes)/about/page": "app/(public-routes)/(routes)/about/page.js",
+  "/(public-routes)/(routes)/hosting/web-hosting/page": "app/(public-routes)/(routes)/hosting/web-hosting/page.js",
   "/(public-routes)/(routes)/pricing/page": "app/(public-routes)/(routes)/pricing/page.js",
   "/page": "app/page.js"
 }

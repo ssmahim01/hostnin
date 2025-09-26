@@ -22,7 +22,7 @@ export default function MeetOurTeam() {
     },
     {
       name: "Kamrul Hasan",
-      role: " Head of Infrastructure & Systems",
+      role: " Head of Infrastructure",
       image: "/assets/support/4.png",
     },
     {

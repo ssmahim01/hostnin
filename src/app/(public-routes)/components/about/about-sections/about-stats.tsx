@@ -22,7 +22,7 @@ const stats = [
     company: "CLIENTS",
   },
   {
-    number: "10+",
+    number: "5+",
     label: "Years Experience",
     description: "Proven track record in hosting",
     company: "EXPERIENCE",

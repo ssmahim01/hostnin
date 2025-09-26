@@ -7,6 +7,8 @@ import { TestimonialsSection } from "@/components/shared/testimonials";
 import MeetOurTeam from "@/components/shared/team/meet-team";
 import CDNLocations from "../../components/about/about-sections/about-cdn";
 import VisionMission from "../../components/about/about-sections/vision-mission";
+import SupportTeam from "../../components/home/support-team";
+import Offer from "../../../../components/shared/offer";
 
 export const metadata: Metadata = {
   title: "About Us | Hostnin - Leading Web Hosting Solutions",
@@ -39,6 +41,8 @@ export default function AboutPage() {
       <MeetOurTeam />
       <TestimonialsSection />
       <CDNLocations />
+      <SupportTeam />
+      <Offer />
     </>
   );
 }

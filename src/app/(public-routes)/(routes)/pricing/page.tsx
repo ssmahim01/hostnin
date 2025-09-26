@@ -5,6 +5,7 @@ import ControlPanelSection from "../../components/home/control-panel";
 import PricingTab from "@/components/shared/pricing-tab";
 import HostingPlan from "../../../../components/shared/hosting-plan";
 import ScrollToSection from "@/components/shared/scroll";
+import SupportTeam from "../../components/home/support-team";
 
 export const metadata: Metadata = {
   title: "Pricing Plans | Hostnin",
@@ -31,6 +32,7 @@ export default async function PricingPlan({
   return (
     <div className="pt-4">
       <PricingTab />
+      <SupportTeam />
       <TestimonialsSection />
       <InfrastructurePartners />
       {scrollToId && <ScrollToSection id={scrollToId} />}

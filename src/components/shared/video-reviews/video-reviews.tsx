@@ -3,11 +3,20 @@
 
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
-import { Play, Volume2, Maximize, ArrowRight, Star } from "lucide-react";
+import {
+  Play,
+  Volume2,
+  Maximize,
+  ArrowRight,
+  Star,
+  ChevronRight,
+} from "lucide-react";
 import { VideoReview } from "@/types/reviews/video-reviews";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { testimonials } from "@/data/testimonials";
 
 const videoReviews: VideoReview[] = [
   {
@@ -115,6 +124,53 @@ export default function VideoReviews({
             {/* Video Playlist & Info */}
             {show && (
               <div className="space-y-6">
+                {/* Customer Avatars */}
+                <div className="bg-card/50 backdrop-blur-sm border-border/50 rounded-2xl p-5 shadow-sm">
+                  <div className="flex items-center gap-3">
+                    <div className="flex -space-x-3">
+                      {testimonials.slice(0, 4).map((testimonial, i) => (
+                        <Avatar
+                          key={i}
+                          className="w-12 h-12 border-3 border-white dark:border-slate-800 ring-2 ring-blue-100 dark:ring-blue-900/30"
+                        >
+                          <AvatarImage
+                            src={testimonial.avatar || "/placeholder.svg"}
+                            alt={testimonial.name}
+                            className="object-cover"
+                          />
+                          <AvatarFallback className="bg-gradient-to-br from-blue-500 to-blue-600 text-white text-sm font-medium">
+                            {testimonial.name
+                              .split(" ")
+                              .map((n) => n[0])
+                              .join("")}
+                          </AvatarFallback>
+                        </Avatar>
+                      ))}
+                      <div className="w-12 h-12 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-700 dark:to-slate-600 rounded-full flex items-center justify-center border-3 border-white dark:border-slate-800 ring-2 ring-blue-100 dark:ring-blue-900/30">
+                        <span className="text-sm font-medium text-slate-600 dark:text-slate-300">
+                          +2
+                        </span>
+                      </div>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-slate-900 dark:text-white">
+                        Happy Customers
+                      </p>
+                      <p className="text-sm text-slate-600 dark:text-slate-400">
+                        Join thousands of satisfied users
+                      </p>
+                    </div>
+                  </div>
+
+                  <Link
+                    href="/reviews"
+                    className="mt-2 inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium text-sm transition-colors"
+                  >
+                    View all reviews
+                    <ChevronRight className="w-4 h-4" />
+                  </Link>
+                </div>
+
                 {/* Trust Indicators */}
                 <Card className="p-6 bg-card/50 backdrop-blur-sm border-border/50">
                   <h4 className="font-bold text-foreground text-lg -mb-1">
@@ -127,12 +183,7 @@ export default function VideoReviews({
                         Lightning-fast loading speeds
                       </span>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-green-500 rounded-full" />
-                      <span className="text-sm text-gray-700 dark:text-gray-200">
-                        24/7 expert support
-                      </span>
-                    </div>
+
                     <div className="flex items-center gap-3">
                       <div className="w-2 h-2 bg-green-500 rounded-full" />
                       <span className="text-sm text-gray-700 dark:text-gray-200">
@@ -159,7 +210,7 @@ export default function VideoReviews({
                   <h4 className="font-bold text-foreground text-lg -mb-1">
                     Customer Satisfaction
                   </h4>
-                  <div className="space-y-4">
+                  <div className="space-y-5">
                     <div>
                       <div className="flex justify-between text-sm mb-1">
                         <span className="text-gray-900 dark:text-gray-100 font-semibold">
@@ -204,75 +255,6 @@ export default function VideoReviews({
                     </div>
                   </div>
                 </Card>
-
-                <div className="bg-white dark:bg-slate-900 rounded-2xl p-4 md:w-auto w-full shadow-sm border border-slate-200 dark:border-slate-700">
-                  <div className="flex justify-between items-center gap-4 mb-2">
-                    <div>
-                      <h3 className="font-semibold text-slate-900 dark:text-white">
-                        Google Reviews
-                      </h3>
-                      <div className="flex items-center gap-1">
-                        {Array.from({ length: 5 }).map((_, i) => {
-                          const rating = 4.8;
-                          const full = i + 1 <= Math.floor(rating);
-                          const half =
-                            !full &&
-                            i + 1 === Math.ceil(rating) &&
-                            rating % 1 !== 0;
-
-                          if (full) {
-                            return (
-                              <Star
-                                key={i}
-                                className="w-4 h-4 text-yellow-400 fill-yellow-400"
-                              />
-                            );
-                          }
-
-                          if (half) {
-                            return (
-                              <span
-                                key={i}
-                                className="relative w-4 h-4 inline-block"
-                              >
-                                {/* yellow left half */}
-                                <Star
-                                  className="absolute w-4 h-4 text-yellow-400 fill-yellow-400"
-                                  style={{ clipPath: "inset(0 50% 0 0)" }}
-                                />
-                                {/* grey right half */}
-                                <Star className="absolute w-4 h-4 text-slate-300 dark:text-slate-600" />
-                              </span>
-                            );
-                          }
-
-                          return (
-                            <Star
-                              key={i}
-                              className="w-4 h-4 text-slate-300 dark:text-slate-600"
-                            />
-                          );
-                        })}
-                        <span className="text-sm text-slate-600 dark:text-slate-400 ml-2">
-                          4.8/5
-                        </span>
-                      </div>
-                    </div>
-
-                    <div className="w-32 h-12 px-3 rounded-lg flex items-center justify-center">
-                      <Image
-                        width={64}
-                        height={64}
-                        src="/assets/google-logo.svg"
-                        alt="Google"
-                        className="w-full h-full"
-                      />
-                    </div>
-                  </div>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm">
-                    Based on 147+ verified reviews from our customers
-                  </p>
-                </div>
               </div>
             )}
           </div>
