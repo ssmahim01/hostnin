@@ -59,6 +59,12 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   handler satisfies AppPageConfig<"/refund-policy">
 }
 
+// Validate ../../src/app/(public-routes)/(routes)/about/page.tsx
+{
+  const handler = {} as typeof import("../../src/app/(public-routes)/(routes)/about/page.js")
+  handler satisfies AppPageConfig<"/about">
+}
+
 // Validate ../../src/app/(public-routes)/(routes)/book-consultation/page.tsx
 {
   const handler = {} as typeof import("../../src/app/(public-routes)/(routes)/book-consultation/page.js")

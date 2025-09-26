@@ -61,7 +61,7 @@ export default function MeetOurTeam() {
 
         <div className="flex flex-col items-center space-y-0">
           {/* Development Lead at top */}
-          <div className="">
+          <div className="lg:mb-0 mb-7">
             <TeamCard member={team[0]} isLead />
           </div>
 
@@ -73,7 +73,7 @@ export default function MeetOurTeam() {
 
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center">
               {team.slice(1, 4).map((member) => (
-                <div key={member.name} className="relative">
+                <div key={member.name} className="relative lg:mb-0 mb-7">
                   {/* <div className="absolute -top-8 left-1/2 w-0.5 h-8 bg-blue-500 dark:bg-blue-400 transform -translate-x-1/2 hidden lg:block"></div> */}
                   <TeamCard member={member} />
                 </div>
@@ -115,7 +115,7 @@ function TeamCard({
         ${
           isLead
             ? "w-96 py-4 border-2 border-blue-500 shadow-xl bg-white dark:bg-slate-800"
-            : "w-64 p-0 border border-slate-200 dark:border-slate-700 shadow-lg bg-white dark:bg-slate-800"
+            : "w-96 lg:w-64 p-0 border border-slate-200 dark:border-slate-700 shadow-lg bg-white dark:bg-slate-800"
         } 
         hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 rounded-xl overflow-hidden
       `}
