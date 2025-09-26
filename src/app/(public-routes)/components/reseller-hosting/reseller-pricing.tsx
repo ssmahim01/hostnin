@@ -107,7 +107,7 @@ export default function ResellerPricing() {
             <ul className="w-full flex-1 mb-2 space-y-2 text-sm sm:text-base">
               {plan.features.map((f, i) => (
                 <li key={i} className="flex items-center gap-2">
-                  <div className="w-5 h-5 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center flex-shrink-0">
+                  <div className="w-5 h-5 rounded-full bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center flex-shrink-0">
                     <Check className="w-3 h-3 text-white" />
                   </div>
                   <span className="text-slate-700 dark:text-slate-200 text-[15px] md:text-[13px] lg:text-lg">

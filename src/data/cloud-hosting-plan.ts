@@ -25,7 +25,7 @@ export const cloudHostingPlans: CloudHostingPlan = {
     },
     {
       name: "Ultimate",
-      price: 2999,
+      price: 4999,
       priceUnit: "/year",
       orderLink:
         "https://my.hostnin.com/index.php/store/cloud-hosting/ultimate?billingcycle=annually",
@@ -152,7 +152,7 @@ export const cloudHostingPlans: CloudHostingPlan = {
       features: [
         {
           label: "Web Server Type",
-          values: ["Litespeed", "Litespeed", "Litespeed", "Litespeed"],
+          values: ["NGNix/Litespeed", "NGNix/Litespeed", "NGNix/Litespeed", "NGNix/Litespeed"],
         },
         {
           label: "Storage Technology",
@@ -168,11 +168,11 @@ export const cloudHostingPlans: CloudHostingPlan = {
           ],
         },
         { label: "Realtime Traffic", values: ["20+", "100+", "500+", "1000+"] },
-        { label: "Laravel Scripts", values: ["✔️", "✔️", "✔️", "✔️"] },
-        { label: "Web Application", values: ["✔️", "✔️", "✔️", "✔️"] },
+        { label: "Laravel Scripts", values: ["❌", "✔️", "✔️", "✔️"] },
+        { label: "Web Application", values: ["❌", "✔️", "✔️", "✔️"] },
         { label: "Javascript", values: ["✔️", "✔️", "✔️", "✔️"] },
-        { label: "SSH Access", values: ["✔️", "✔️", "✔️", "✔️"] },
-        { label: "FTP Access", values: ["✔️", "✔️", "✔️", "✔️"] },
+        { label: "SSH Access", values: ["❌", "✔️", "✔️", "✔️"] },
+        { label: "FTP Access", values: ["❌", "✔️", "✔️", "✔️"] },
       ],
     },
     {

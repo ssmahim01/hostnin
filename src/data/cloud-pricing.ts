@@ -363,7 +363,7 @@ export const cloudHostingData: PricingPlan[] = [
     icon: "starter",
     description: "Ideal for Mid-level Websites",
     buttonText: "Add to Cart",
-    infoText: "৳3999/year when you renew",
+    infoText: "৳2999/year when you renew",
     savingsText: "24/7 WhatsApp & Call Support",
   },
   {

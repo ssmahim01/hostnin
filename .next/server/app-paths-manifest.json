@@ -1,10 +1,10 @@
 {
-  "/(public-routes)/(routes)/contact/page": "app/(public-routes)/(routes)/contact/page.js",
-  "/(public-routes)/(routes)/domain/page": "app/(public-routes)/(routes)/domain/page.js",
+  "/(public-routes)/(routes)/hosting/bdix-hosting/page": "app/(public-routes)/(routes)/hosting/bdix-hosting/page.js",
   "/(public-routes)/(routes)/hosting/cloud-hosting/page": "app/(public-routes)/(routes)/hosting/cloud-hosting/page.js",
+  "/(public-routes)/(routes)/hosting/dedicated-server/page": "app/(public-routes)/(routes)/hosting/dedicated-server/page.js",
+  "/(public-routes)/(routes)/hosting/reseller-hosting/page": "app/(public-routes)/(routes)/hosting/reseller-hosting/page.js",
+  "/(public-routes)/(routes)/hosting/vps-hosting/page": "app/(public-routes)/(routes)/hosting/vps-hosting/page.js",
   "/(public-routes)/(routes)/hosting/web-hosting/page": "app/(public-routes)/(routes)/hosting/web-hosting/page.js",
-  "/(public-routes)/(routes)/hosting/wordpress-hosting/page": "app/(public-routes)/(routes)/hosting/wordpress-hosting/page.js",
   "/(public-routes)/(routes)/pricing/page": "app/(public-routes)/(routes)/pricing/page.js",
-  "/_not-found/page": "app/_not-found/page.js",
   "/page": "app/page.js"
 }

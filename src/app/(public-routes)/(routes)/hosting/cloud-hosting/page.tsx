@@ -12,6 +12,7 @@ import CloudPlanFeatures from "@/app/(public-routes)/components/cloud-hosting/cl
 import CloudControlPanel from "@/app/(public-routes)/components/cloud-hosting/cloud-control-panel";
 import ComprehensiveGuides from "@/app/(public-routes)/components/cloud-hosting/comprehensive-guides";
 import CloudHostingPricing from "@/app/(public-routes)/components/cloud-hosting/cloud-hosting-pricing";
+import VideoReviews from "@/components/shared/video-reviews/video-reviews";
 
 export const metadata: Metadata = {
   title: "Cloud Hosting | Hostnin – Fast, Secure & Scalable Cloud Hosting",
@@ -45,11 +46,12 @@ export default function CloudHostingPage() {
         scrollId="pricing"
       />
       <CloudHostingPricing />
-      <TestimonialsSection />
+      <VideoReviews show={true} />
       <CloudHostingPlans />
       <CloudPlanSection />
       <SpecialsSection />
       <MoneyBackGuarantee />
+      <TestimonialsSection />
       <div className="lg:pb-0 pb-14">
         <WhyHostnin />
       </div>

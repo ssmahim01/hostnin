@@ -9,6 +9,7 @@ import { Metadata } from "next";
 import HostingFeatures from "@/components/shared/hosting/hosting-features";
 import BDIXReviews from "@/app/(public-routes)/components/bdix-hosting/bdix-reviews";
 import AffordableBdix from "@/app/(public-routes)/components/bdix-hosting/affordable-bdix";
+import VideoReviews from "@/components/shared/video-reviews/video-reviews";
 
 export const metadata: Metadata = {
   title: "BDIX Hosting in Bangladesh | Hostnin",
@@ -44,10 +45,16 @@ export default function BDIXHostingPage() {
         illustration="/assets/banglaee.svg"
         scrollId="bdix-pricing"
       />
-        <BDIXHostingPricing />
-      <TestimonialsSection />
+      <BDIXHostingPricing />
+
+      <div className="-mt-6">
+        <TestimonialsSection />
+      </div>
       <DomainSearchSection />
       <BdixHostingPlans />
+      <div className="pt-6">
+        <VideoReviews show={true} />
+      </div>
       <WhyChooseHosting
         heading="Why Choose BDIX Hosting?"
         subTitle="Get more resources for less with our reliable plans. Starting your business with Hostnin is easier than you think!"

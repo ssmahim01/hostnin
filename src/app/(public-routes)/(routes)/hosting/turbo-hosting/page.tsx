@@ -8,6 +8,7 @@ import HostingPlansInclude from "@/components/shared/hosting/hosting-plans-inclu
 import { InfrastructurePartners } from "@/components/shared/hosting/infrastructure-partners";
 import { WhyChooseHosting } from "@/components/shared/hosting/why-choose-hosting";
 import { QuestionsSection } from "@/components/shared/questions";
+import VideoReviews from "@/components/shared/video-reviews/video-reviews";
 import { highlights } from "@/data/turbo-highlights";
 import { Metadata } from "next";
 
@@ -26,6 +27,7 @@ export default function TurboHostingPage() {
       <TurboHostingPricing />
       <HostingPlansInclude title="All Turbo Hosting Plans Include" />
       <DomainSearchSection />
+      <VideoReviews show={true} />
       <ManagedTurboHighlights
         heading="Managed Turbo Hosting Highlights"
         subheading="Keep your attention on running your company, and don't bother yourself with the intricacies of Turbo hosting. Superior speed, uptime, and support are the hallmarks of our managed hosting."
