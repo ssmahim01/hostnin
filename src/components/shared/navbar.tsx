@@ -29,6 +29,7 @@ import {
   Star,
   HelpCircle,
   Globe,
+  Users,
 } from "lucide-react";
 import type { NavItem } from "@/types/nav";
 import Link from "next/link";
@@ -127,10 +128,10 @@ const navItems: NavItem[] = [
         description: "See what our clients say",
       },
       {
-        label: "Support Ticket",
-        href: "/support",
-        icon: HelpCircle,
-        description: "Get help from our support team",
+        label: "About Us",
+        href: "/about",
+        icon: Users,
+        description: "Learn more about Hostnin",
       },
       {
         label: "Careers",

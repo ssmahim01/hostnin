@@ -12,37 +12,37 @@ export default function MeetOurTeam() {
   const team: TeamMember[] = [
     {
       name: "Imran Mahmud",
-      role: "Development Lead",
+      role: "Chief Executive Officer (CEO)",
       image: "/assets/support/1.png",
     },
     {
       name: "Asad Uzzaman",
-      role: "Frontend Lead",
+      role: "Chief Technology Officer (CTO)",
       image: "/assets/support/2.png",
     },
     {
       name: "Kamrul Hasan",
-      role: "Backend Lead",
+      role: " Head of Infrastructure & Systems",
       image: "/assets/support/4.png",
     },
     {
       name: "Nur Ahmed Robin",
-      role: "Structural Lead",
-      image: "/assets/support/5.png",
+      role: "Lead Technical Engineer ",
+      image: "/assets/support/7.png",
     },
     {
       name: "Sajjad Ahmed",
-      role: "Co-ordinator",
+      role: " Senior Sales Strategist",
       image: "/assets/support/3.png",
     },
     {
       name: "Tareq Bin Amir",
-      role: "Support Core",
+      role: "Senior Growth Strategist",
       image: "/assets/support/6.png",
     },
     {
       name: "Mujahidul Islam",
-      role: "Technology Analyst",
+      role: "Sales & Partnerships Manager",
       image: "/assets/support/5.png",
     },
   ];

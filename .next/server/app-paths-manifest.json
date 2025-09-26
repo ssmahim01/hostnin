@@ -1,4 +1,6 @@
 {
+  "/(public-routes)/(footer-routes)/affiliate/page": "app/(public-routes)/(footer-routes)/affiliate/page.js",
   "/(public-routes)/(routes)/about/page": "app/(public-routes)/(routes)/about/page.js",
-  "/_not-found/page": "app/_not-found/page.js"
+  "/(public-routes)/(routes)/pricing/page": "app/(public-routes)/(routes)/pricing/page.js",
+  "/page": "app/page.js"
 }

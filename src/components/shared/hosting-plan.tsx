@@ -11,12 +11,11 @@ import {
 } from "lucide-react";
 import { plans } from "@/data/hosting-plan";
 import { Plan } from "@/types/hosting-plan";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { Card } from "@/components/ui/card";
 
 export default function HostingPlan() {
   const router = useRouter();
-  const pathname = usePathname();
 
   const handleChoosePlan = (plan: Plan) => {
     const route =
@@ -33,8 +32,6 @@ export default function HostingPlan() {
         : "/hosting/reseller-hosting";
     router.push(route);
   };
-
-  const visiblePlans = pathname === "/pricing" ? plans : plans.slice(0, 3);
 
   // Map plan title to Lucide icon
   const getIcon = (title: string) => {
@@ -80,7 +77,7 @@ export default function HostingPlan() {
         </h2>{" "}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {" "}
-          {visiblePlans.map((plan) => (
+          {plans?.map((plan) => (
             <Card
               key={plan.id}
               className="relative border group border-gray-200 dark:border-gray-700 rounded-xl p-8 text-gray-900 dark:text-white transition-all duration-300 ease-in-out hover:bg-blue-700 hover:text-white/95 dark:hover:text-gray-100 mx-2"
@@ -115,16 +112,6 @@ export default function HostingPlan() {
             </Card>
           ))}
         </div>
-        {pathname === "/" && (
-          <div className="flex justify-center mt-10">
-            <button
-              onClick={() => router.push("/pricing?scrollTo=plans")}
-              className="flex items-center gap-3 border border-blue-500 hover:bg-blue-700 dark:border-gray-200 dark:hover:border-transparent text-blue-500 dark:text-white hover:text-white font-semibold py-3 px-6 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out hover:cursor-pointer"
-            >
-              See More Plans <ArrowRight className="w-5 h-5" />
-            </button>
-          </div>
-        )}
       </div>
     </section>
   );

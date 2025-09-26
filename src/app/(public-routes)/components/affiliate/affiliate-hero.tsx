@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function AffiliateHero() {
   return (
-    <section className="relative lg:pr-2 lg:pl-[72px] pt-20 lg:pt-16 px-4 sm:px-6">
+    <section className="relative lg:pr-2 lg:pl-[72px] pt-24 lg:pt-28 pb-6 px-4 sm:px-6">
       {/* blurred circle */}
       <div className="absolute inset-0 overflow-hidden -z-10">
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-[60rem] h-[60rem] bg-blue-100 dark:bg-blue-950 rounded-full opacity-20 blur-3xl" />
@@ -54,13 +54,13 @@ export default function AffiliateHero() {
 
           {/* Image */}
           <div className="flex-1 justify-center lg:justify-end">
-            <div className="relative w-full max-w-md lg:max-w-lg h-80 md:h-96 lg:h-[550px] drop-shadow-2xl">
+            <div className="relative w-full max-w-md lg:max-w-lg rounded-md h-80 md:h-96 lg:h-[430px] drop-shadow-2xl">
               <Image
-                src="/assets/laptop-man.webp"
+                src="/assets/affiliate.jpg"
                 alt="ScalaHosting Affiliate Benefits"
                 width={800}
                 height={750}
-                className="object-contain rounded-xl w-full h-full"
+                className="object-cover w-full h-full rounded-md"
                 sizes="100vw"
                 priority
               />

@@ -85,6 +85,7 @@ const cdnData: CDNRegion[] = [
         bottom: "70%",
         flag: "🇩🇪",
       },
+
       {
         id: "amsterdam",
         name: "Amsterdam",
@@ -93,6 +94,15 @@ const cdnData: CDNRegion[] = [
         left: "50%",
         bottom: "72%",
         flag: "🇳🇱",
+      },
+      {
+        id: "helsinki",
+        name: "Helsinki",
+        country: "Finland",
+        region: "Europe",
+        left: "56%",
+        bottom: "80%",
+        flag: "🇫🇮",
       },
       {
         id: "paris",
@@ -117,6 +127,15 @@ const cdnData: CDNRegion[] = [
   {
     name: "Asia & Oceania",
     locations: [
+      {
+        id: "dhaka",
+        name: "Dhaka",
+        country: "Bangladesh",
+        region: "Asia & Oceania",
+        left: "70%",
+        bottom: "52%",
+        flag: "🇧🇩",
+      },
       {
         id: "singapore",
         name: "Singapore",
