@@ -26,13 +26,13 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/assets/favicon.png",
+        url: "/assets/Hostnin Logo white-01jpg.jpg",
         sizes: "160x160",
         type: "image/png",
       },
     ],
-    shortcut: "/assets/favicon.png",
-    apple: "/assets/favicon.png",
+    shortcut: "/assets/Hostnin Logo white-01jpg.jpg",
+    apple: "/assets/Hostnin Logo white-01jpg.jpg",
   },
   generator: "Hostnin",
 };

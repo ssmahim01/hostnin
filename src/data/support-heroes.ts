@@ -78,4 +78,15 @@ export const supportHeroes: SupportHero[] = [
       alt: "Nur support hero",
     },
   },
+  {
+    name: "Aisha Siddika",
+    role: "Hostnin Support",
+    email: "aisha@hostnin.com",
+    description:
+      "Dedicated support professional ensuring fast responses, friendly communication, and effective solutions for all your hosting needs.",
+    image: {
+      src: "/assets/support/8.jpg",
+      alt: "Aisha support heroine",
+    },
+  },
 ];

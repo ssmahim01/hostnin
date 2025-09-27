@@ -52,7 +52,7 @@ export default function CloudHostingPage() {
       <SpecialsSection />
       <MoneyBackGuarantee />
       <TestimonialsSection />
-      <div className="lg:pb-0 pb-14">
+      <div className="-pb-14 pb-14">
         <WhyHostnin />
       </div>
       <div className="md:block hidden">

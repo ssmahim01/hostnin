@@ -77,7 +77,7 @@ export const vpsPlansData: VPSPlanData = {
 export const vpsPlanPackages: VPSPlanPackages[] = [
   {
     name: "Starter",
-    price: 2999,
+    price: 1999,
     link: "https://my.hostnin.com/cart.php?a=confproduct&i=1",
     features: [
       {

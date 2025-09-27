@@ -6,6 +6,7 @@ import { X } from "lucide-react";
 export default function FlashSaleBanner() {
   const [showBanner, setShowBanner] = useState(true);
   const [timeLeft, setTimeLeft] = useState({
+    days: 0,
     hours: 2,
     minutes: 20,
     seconds: 40,
@@ -15,17 +16,24 @@ export default function FlashSaleBanner() {
   useEffect(() => {
     const t = setInterval(() => {
       setTimeLeft((prev) => {
-        let { hours, minutes, seconds } = prev;
-        if (seconds > 0) seconds--;
-        else if (minutes > 0) {
+        let { days, hours, minutes, seconds } = prev;
+
+        if (seconds > 0) {
+          seconds--;
+        } else if (minutes > 0) {
           minutes--;
           seconds = 59;
         } else if (hours > 0) {
           hours--;
           minutes = 59;
           seconds = 59;
+        } else if (days > 0) {
+          days--;
+          hours = 23;
+          minutes = 59;
+          seconds = 59;
         }
-        return { hours, minutes, seconds };
+        return { days, hours, minutes, seconds };
       });
     }, 1000);
     return () => clearInterval(t);
@@ -48,6 +56,12 @@ export default function FlashSaleBanner() {
           </div>
           {/* countdown boxes */}
           <div className="flex space-x-1">
+            <div className="bg-white text-[#1a2340] rounded-md px-1 md:px-4 py-1 flex flex-col items-center min-w-[28px] sm:min-w-[36px]">
+              <span className="font-bold text-xs sm:text-sm md:text-lg">
+                {String(timeLeft.days).padStart(2, "0")}
+              </span>
+              <span className="text-[8px] sm:text-[10px]">Day</span>
+            </div>
             <div className="bg-white text-[#1a2340] rounded-md px-1 md:px-4 py-1 flex flex-col items-center min-w-[28px] sm:min-w-[36px]">
               <span className="font-bold text-xs sm:text-sm md:text-lg">
                 {String(timeLeft.hours).padStart(2, "0")}
@@ -74,7 +88,7 @@ export default function FlashSaleBanner() {
           <button
             onClick={() =>
               document
-                .getElementById("pricing") 
+                .getElementById("pricing")
                 ?.scrollIntoView({ behavior: "smooth" })
             }
             className="flex items-center text-xs sm:text-lg font-semibold whitespace-nowrap cursor-pointer underline underline-offset-2 decoration-white hover:text-gray-300 transition"
@@ -87,7 +101,11 @@ export default function FlashSaleBanner() {
               strokeWidth="2"
               viewBox="0 0 24 24"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M19 9l-7 7-7-7"
+              />
             </svg>
           </button>
           <button

@@ -183,7 +183,7 @@ export const AnimatedSupportTeam = ({
             </button>
             </div>
 
-            <Link href="/contact">
+            <Link href="/about">
              <button
             className="px-7 py-2 cursor-pointer bg-white dark:bg-transparent dark:border-gray-100 dark:hover:bg-white/90 dark:hover:text-blue-600 dark:text-white border border-blue-600 text-blue-600 font-bold rounded-lg shadow 
              hover:bg-blue-700 hover:text-white transform hover:scale-105 

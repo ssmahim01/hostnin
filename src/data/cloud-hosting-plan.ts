@@ -90,7 +90,7 @@ export const cloudHostingPlans: CloudHostingPlan = {
         { label: "Remote MySQL Access", values: ["❌", "❌", "✔️", "✔️"] },
         {
           label: "Inode Limit",
-          values: ["10,000", "50,000", "200,000", "300,000"],
+          values: ["10,000", "50,000", "2,00,000", "3,00,000"],
         },
         {
           label: "Money-Back Guarantee",

@@ -26,7 +26,7 @@ const teamMembers = [
   },
   {
     id: 4,
-    src: "/assets/team/img4.webp",
+    src: "/assets/team/img4.jpg",
     alt: "Team member 4",
     span: "row-span-1",
     height: "h-48",

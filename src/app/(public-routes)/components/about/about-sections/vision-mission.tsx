@@ -26,7 +26,7 @@ export default function VisionMission() {
             <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
               To empower businesses, developers and entrepreneurs worldwide with
               high-performance hosting infrastructure, unmatched speed and
-              expert support — making online growth seamless and worry-free.
+              expert support, making online growth seamless and worry-free.
             </p>
           </div>
 

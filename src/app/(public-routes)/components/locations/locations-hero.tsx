@@ -33,7 +33,7 @@ export default function LocationsHero() {
             <h1 className="text-3xl md:text-4xl lg:text-[44px] font-bold leading-tight">
               Accelerate your website
               <span className="block bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
-                With Our Global Edge CDN
+                With Our Global Edge
               </span>
             </h1>
 
@@ -80,7 +80,7 @@ export default function LocationsHero() {
             <div className="relative flex justify-center lg:justify-end">
               <div className="relative md:w-[700px] md:h-full sm:w-80 sm:h-80 lg:w-96 lg:h-96">
                 <Image
-                  src="/assets/hostnin-team.jpg"
+                  src="/assets/data-center1.jpg"
                   alt="Global Edge Network"
                   width={800}
                   height={700}
@@ -88,9 +88,9 @@ export default function LocationsHero() {
                 />
               </div>
 
-              <div className="absolute lg:block hidden -bottom-4 -left-8 w-48 h-48 sm:w-60 sm:h-60 lg:w-72 lg:h-[365px]">
+              <div className="absolute lg:block hidden -bottom-4 -left-8 w-48 h-48 sm:w-60 sm:h-60 lg:w-80 lg:h-[365px]">
                 <Image
-                  src="/assets/team-hostnin.jpg"
+                  src="/assets/data-center.jpg"
                   alt="Edge Server"
                   fill
                   className="rounded-lg object-cover shadow-xl animate-[float_6s_ease-in-out_infinite]"

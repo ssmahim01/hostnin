@@ -2,6 +2,15 @@ import type { Plan } from "@/types/hosting-plan";
 
 export const plans: Plan[] = [
   {
+    id: "cloud-hosting",
+    title: "Cloud Hosting",
+    price: "৳999 /year",
+    image:
+      "https://res.cloudinary.com/daspo1tk3/image/upload/v1757531476/web_icon.d5735016_bz922j.svg",
+    description:
+      "Perfect for landing pages, e-commerce stores with reliable speed and strong security.",
+  },
+  {
     id: "web-hosting",
     title: "Web Hosting",
     price: "৳3595 /year",
@@ -11,15 +20,6 @@ export const plans: Plan[] = [
       "Best choice for personal websites, portfolios, and small projects with highly flexible resources.",
     image:
       "https://res.cloudinary.com/daspo1tk3/image/upload/v1757531476/web_icon.d5735016_bz922j.svg",
-  },
-  {
-    id: "cloud-hosting",
-    title: "Cloud Hosting",
-    price: "৳999 /year",
-    image:
-      "https://res.cloudinary.com/daspo1tk3/image/upload/v1757531476/web_icon.d5735016_bz922j.svg",
-    description:
-      "Perfect for landing pages, e-commerce stores with reliable speed and strong security.",
   },
   {
     id: "turbo-hosting",

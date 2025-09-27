@@ -19,10 +19,10 @@ export default function HostingPlan() {
 
   const handleChoosePlan = (plan: Plan) => {
     const route =
-      plan.title === "Cloud Hosting"
-        ? "/hosting/cloud-hosting"
-        : plan.title === "Web Hosting"
+      plan.title === "Web Hosting"
         ? "/hosting/web-hosting"
+        : plan.title === "Cloud Hosting"
+        ? "/hosting/cloud-hosting"
         : plan.title === "Bdix Hosting"
         ? "/hosting/bdix-hosting"
         : plan.title === "WordPress Hosting"

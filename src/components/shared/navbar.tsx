@@ -116,10 +116,10 @@ const navItems: NavItem[] = [
         description: "How we protect your data",
       },
       {
-        label: "Terms & Condition",
-        href: "/terms-conditions",
-        icon: FileText,
-        description: "Understand our policies",
+        label: "Data Centers",
+        href: "/locations",
+        icon: Cloud,
+        description: "Explore locations",
       },
       {
         label: "Testimonials",
