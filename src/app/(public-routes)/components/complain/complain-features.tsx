@@ -11,6 +11,7 @@ import {
   FileTextIcon,
   PhoneIcon,
 } from "lucide-react";
+import Link from "next/link";
 
 const features = [
   {
@@ -57,10 +58,20 @@ const contactInfo = [
     label: "Hotline",
     value: "+880 1325 875 955",
     color: "text-green-500",
+    href: "https://wa.me/8801325875955?text=Hi%20Hostnin%20Team%2C%20I%20have%20a%20complaint%20regarding...",
   },
 ];
 
 export default function ComplainFeatures() {
+  const email = "complain@hostnin.com";
+  const subject = "Complaint Submission – Hostnin";
+  const body =
+    "Dear Hostnin Team,%0D%0A%0D%0AI would like to submit a complaint regarding ...%0D%0A%0D%0ARegards,%0D%0A[your name here]";
+
+  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodeURIComponent(
+    subject
+  )}&body=${body}`;
+
   return (
     <div className="space-y-6">
       {/* Process Features */}
@@ -126,18 +137,31 @@ export default function ComplainFeatures() {
                   <info.icon className={`h-4 w-4 ${info.color}`} />
                   <span className="text-sm font-medium">{info.label}</span>
                 </div>
-                <Badge variant="secondary" className="text-xs">
-                  {info.value}
-                </Badge>
+                {info.href ? (
+                  <Link
+                    href={info.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-blue-600 hover:underline inline-flex items-center gap-1"
+                  >
+                    {info.value}
+                  </Link>
+                ) : (
+                  <Badge variant="secondary" className="text-xs">
+                    {info.value}
+                  </Badge>
+                )}
               </motion.div>
             ))}
 
             <div className="pt-2 border-t border-muted-foreground/10">
               <p className="text-xs text-muted-foreground text-center">
                 Email:{" "}
-                <span className="font-medium text-blue-600">
-                  complain@hostnin.com
-                </span>
+                <Link href={gmailUrl} target="_blank" rel="noopener noreferrer">
+                  <span className="font-medium text-blue-600">
+                    complain@hostnin.com
+                  </span>
+                </Link>
               </p>
             </div>
           </CardContent>

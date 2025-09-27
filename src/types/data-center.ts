@@ -3,4 +3,5 @@ export interface DataCenter {
   title: string;
   location: string;
   description: string;
+  image: string;
 }

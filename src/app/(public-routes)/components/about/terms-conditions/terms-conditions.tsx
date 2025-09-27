@@ -1,6 +1,7 @@
 "use client";
 
 import { termsSections } from "@/data/terms-conditions";
+import Link from "next/link";
 
 export default function TermsAndConditions() {
   return (
@@ -53,11 +54,22 @@ export default function TermsAndConditions() {
             For questions, contact:{" "}
             <a
               href="mailto:legal@hostnin.com"
-              className="text-blue-600 dark:text-blue-400 underline"
+              className="text-blue-600 dark:text-blue-400"
             >
               legal@hostnin.com
             </a>{" "}
-            | WhatsApp/Phone: +880 1325 875 955 | Office: Chattogram, Bangladesh
+            | WhatsApp/Phone:{" "}
+            <Link
+              href={
+                "https://wa.me/8801325875955?text=Hi%20Hostnin%20Team%2C%20I%20have%20a%20complaint%20regarding..."
+              }
+              target="_blank"
+              className="text-blue-600 dark:text-blue-400"
+              referrerPolicy="no-referrer"
+            >
+              +880 1325 875 955
+            </Link>{" "}
+            | Office: Chattogram, Bangladesh
           </p>
         </div>
       </div>

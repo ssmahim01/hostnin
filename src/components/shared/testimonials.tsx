@@ -135,7 +135,7 @@ export function TestimonialsSection() {
                     ))}
                     <div className="w-12 h-12 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-700 dark:to-slate-600 rounded-full flex items-center justify-center border-3 border-white dark:border-slate-800 ring-2 ring-blue-100 dark:ring-blue-900/30">
                       <span className="text-sm font-medium text-slate-600 dark:text-slate-300">
-                        +2
+                        +22
                       </span>
                     </div>
                   </div>

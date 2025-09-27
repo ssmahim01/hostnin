@@ -1,9 +1,5 @@
 {
-  "/(public-routes)/(routes)/domain/page": "app/(public-routes)/(routes)/domain/page.js",
-  "/(public-routes)/(routes)/hosting/reseller-hosting/page": "app/(public-routes)/(routes)/hosting/reseller-hosting/page.js",
-  "/(public-routes)/(routes)/hosting/wordpress-hosting/page": "app/(public-routes)/(routes)/hosting/wordpress-hosting/page.js",
-  "/(public-routes)/(routes)/locations/page": "app/(public-routes)/(routes)/locations/page.js",
-  "/(public-routes)/(routes)/pricing/page": "app/(public-routes)/(routes)/pricing/page.js",
-  "/_not-found/page": "app/_not-found/page.js",
+  "/(public-routes)/(routes)/reviews/page": "app/(public-routes)/(routes)/reviews/page.js",
+  "/(public-routes)/(routes)/terms-conditions/page": "app/(public-routes)/(routes)/terms-conditions/page.js",
   "/page": "app/page.js"
 }
