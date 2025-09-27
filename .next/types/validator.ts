@@ -143,6 +143,12 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   handler satisfies AppPageConfig<"/hosting/wordpress-hosting">
 }
 
+// Validate ../../src/app/(public-routes)/(routes)/locations/page.tsx
+{
+  const handler = {} as typeof import("../../src/app/(public-routes)/(routes)/locations/page.js")
+  handler satisfies AppPageConfig<"/locations">
+}
+
 // Validate ../../src/app/(public-routes)/(routes)/pricing/page.tsx
 {
   const handler = {} as typeof import("../../src/app/(public-routes)/(routes)/pricing/page.js")

@@ -58,7 +58,7 @@ export default function AdvancedFeatures() {
           {/* Illustration */}
           <div className="md:w-2/5 flex justify-center md:justify-start">
             <Image
-              src="/assets/work-hostnin.jpg"
+              src="/assets/hostnin-team.jpg"
               alt="Advanced features"
               width={900}
               height={800}
@@ -104,7 +104,7 @@ export default function AdvancedFeatures() {
         rounded-3xl p-8 backdrop-blur-xl
         bg-white/60 dark:bg-slate-900/60
         border border-gray-200/60 dark:border-gray-700/50
-        shadow-xl transition-all duration-300
+        shadow-md transition-all duration-300
       "
     >
       <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
