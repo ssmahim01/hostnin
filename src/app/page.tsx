@@ -23,6 +23,31 @@ export const metadata: Metadata = {
     "reliable hosting",
     "Hostnin hosting",
   ],
+  openGraph: {
+    title: "Best Web Hosting Company in Bangladesh | Hostnin",
+    description:
+      "Hostnin is a web hosting company that provides reliable and affordable web hosting services.",
+    url: "https://www.hostnin.com",
+    siteName: "Hostnin",
+    images: [
+      {
+        url: "/assets/Hostnin Logo white-01jpg.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Hostnin Web Hosting",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Best Web Hosting Company in Bangladesh | Hostnin",
+    description:
+      "Reliable and affordable web hosting solutions with global data centers.",
+    images: ["/assets/Hostnin Logo white-01jpg.jpg"],
+  },
 };
 
 export default function Home() {

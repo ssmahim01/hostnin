@@ -1,6 +1,6 @@
 "use client";
 import { Card, CardContent } from "@/components/ui/card";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import Image from "next/image";
 
 interface TeamMember {
   name: string;
@@ -111,30 +111,26 @@ function TeamCard({
 }) {
   return (
     <Card
-      className={`
-        ${
-          isLead
-            ? "w-96 py-4 border-2 border-blue-500 shadow-xl bg-white dark:bg-slate-800"
-            : "w-96 lg:w-64 p-0 border border-slate-200 dark:border-slate-700 shadow-lg bg-white dark:bg-slate-800"
-        } 
-        hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 rounded-xl overflow-hidden
-      `}
+      className={`${
+        isLead
+          ? "w-96 py-4 border-2 border-blue-500 shadow-xl bg-white dark:bg-slate-800"
+          : "w-96 lg:w-64 p-0 border border-slate-200 dark:border-slate-700 shadow-lg bg-white dark:bg-slate-800"
+      } 
+      hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 rounded-xl overflow-hidden`}
     >
       <CardContent className="flex flex-col items-center p-5">
         <div className="relative mb-6">
-          <Avatar className="h-24 w-24 ring-4 ring-blue-100 dark:ring-blue-900 shadow-lg">
-            <AvatarImage
+          <div className="relative h-24 w-24 rounded-full overflow-hidden ring-4 ring-blue-100 dark:ring-blue-900 shadow-lg">
+            <Image
               src={member.image || "/placeholder.svg"}
               alt={member.name}
+              fill
+              sizes="96px" 
               className="object-cover"
+              priority 
             />
-            <AvatarFallback className="bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 text-xl font-bold">
-              {member.name
-                .split(" ")
-                .map((n) => n[0])
-                .join("")}
-            </AvatarFallback>
-          </Avatar>
+          </div>
+
           {isLead && (
             <div className="absolute inset-0 rounded-full bg-blue-500/20 blur-xl -z-10"></div>
           )}
