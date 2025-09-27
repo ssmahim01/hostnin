@@ -24,7 +24,7 @@ const videoReviews: VideoReview[] = [
     title: "The Rosepit Story | Fast & Reliable Hosting by Hostnin",
     customerName: "Md. Ariful Islam",
     customerRole: "Founder",
-    customerAvatar: "/assets/ariful-islam.jpg",
+    customerAvatar: "/assets/hostnin-logo.jpg",
     company: "Rosepit",
     embedUrl: "https://www.youtube.com/embed/cvGdfX41vsg?si=6u_SHPo5uXUBvR1x",
     thumbnail: "/assets/professional-business-customer-testimonial.jpg",
@@ -104,7 +104,7 @@ export default function VideoReviews({
                       alt={selectedVideo?.customerName}
                       width={70}
                       height={70}
-                      className="object-cover w-full h-full rounded-full border-4 border-blue-400"
+                      className="object-cover w-full h-full rounded-full border-4 border-blue-500"
                     />
                   </div>
                   <div>
