@@ -31,11 +31,11 @@ export default function FreeCdnComparison() {
     <section className="container mx-auto md:px-4 lg:px-8 pt-6 pb-12 max-w-7xl">
       <div className="max-w-3xl mx-auto text-center mb-8">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
-          The best free CDN
+          The best free CLOUD CDN
         </h2>
         <p className="mt-4 text-gray-600 dark:text-gray-400">
           Other companies offer ‘CDN hosting’ but only give you a free plan. Our
-          network includes premium features at no cost, saving you hundreds per
+          network includes premium features at no cost, saving you thousands per
           year.
         </p>
       </div>
