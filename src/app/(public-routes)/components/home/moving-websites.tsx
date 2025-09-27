@@ -12,7 +12,7 @@ const movingWebsiteData = {
   button: {
     label: "View Pricing Plan",
   },
-  image: "/assets/features.webp",
+  image: "/assets/moving-web.png",
 };
 
 export default function MovingWebsites() {
