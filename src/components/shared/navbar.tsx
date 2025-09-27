@@ -119,7 +119,7 @@ const navItems: NavItem[] = [
         label: "Terms & Condition",
         href: "/terms-conditions",
         icon: FileText,
-        description: "Understand our service policies",
+        description: "Understand our policies",
       },
       {
         label: "Testimonials",

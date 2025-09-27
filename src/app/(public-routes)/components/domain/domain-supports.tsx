@@ -18,7 +18,7 @@ export default function DomainSupports() {
   };
 
   return (
-   <section className="relative pt-10 pb-0 px-2">
+   <section className="relative py-10 px-2">
   {/* Light gradient overlay */}
   <div
     className="absolute inset-0 w-full h-full"
@@ -67,13 +67,13 @@ export default function DomainSupports() {
       </div>
 
       <div className="flex justify-center lg:justify-end">
-        <div className="w-full max-w-xl lg:max-w-3xl">
+        <div className="w-full max-w-xl">
           <Image
             src={supportSectionData.image.src}
             alt={supportSectionData.image.alt}
             width={700}
             height={560}
-            className="w-full h-auto object-contain"
+            className="w-full h-auto object-cover rounded-md"
             priority
           />
         </div>

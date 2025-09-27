@@ -32,11 +32,13 @@ export default async function PricingPlan({
   return (
     <div className="pt-4">
       <PricingTab />
-      <SupportTeam />
       <TestimonialsSection />
       <InfrastructurePartners />
+      <HostingPlan />
       {scrollToId && <ScrollToSection id={scrollToId} />}
-        <HostingPlan />
+      <div className="pt-5 -mb-5">
+        <SupportTeam />
+      </div>
       <ControlPanelSection />
     </div>
   );

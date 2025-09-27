@@ -11,14 +11,14 @@ import { motion, AnimatePresence } from "framer-motion";
 const tabs = [
   { id: "Web Hosting", label: "Web Hosting", component: <PricePlans /> },
   {
-    id: "Cloud Hosting",
-    label: "Cloud Hosting",
-    component: <CloudHostingPricing />,
-  },
-  {
     id: "Turbo Hosting",
     label: "Turbo Hosting",
     component: <TurboHostingPricing />,
+  },
+  {
+    id: "Cloud Hosting",
+    label: "Cloud Hosting",
+    component: <CloudHostingPricing />,
   },
   {
     id: "BDIX Hosting",

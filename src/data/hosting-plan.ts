@@ -2,15 +2,6 @@ import type { Plan } from "@/types/hosting-plan";
 
 export const plans: Plan[] = [
   {
-    id: "cloud-hosting",
-    title: "Cloud Hosting",
-    price: "৳999 /year",
-    image:
-      "https://res.cloudinary.com/daspo1tk3/image/upload/v1757531476/web_icon.d5735016_bz922j.svg",
-    description:
-      "Perfect for landing pages, e-commerce stores with reliable speed and strong security.",
-  },
-  {
     id: "web-hosting",
     title: "Web Hosting",
     price: "৳3595 /year",
@@ -22,9 +13,18 @@ export const plans: Plan[] = [
       "https://res.cloudinary.com/daspo1tk3/image/upload/v1757531476/web_icon.d5735016_bz922j.svg",
   },
   {
+    id: "cloud-hosting",
+    title: "Cloud Hosting",
+    price: "৳999 /year",
+    image:
+      "https://res.cloudinary.com/daspo1tk3/image/upload/v1757531476/web_icon.d5735016_bz922j.svg",
+    description:
+      "Perfect for landing pages, e-commerce stores with reliable speed and strong security.",
+  },
+  {
     id: "turbo-hosting",
     title: "Turbo Hosting",
-    price: "৳8999 /year",
+    price: "৳11,999 /year",
     description:
       "Built for high-traffic online stores and demanding applications that need extra power.",
 
@@ -33,8 +33,8 @@ export const plans: Plan[] = [
   },
   {
     id: "bdix-hosting",
-    title: "Bdix Hosting",
-    price: "৳799 /year",
+    title: "BDIX Hosting",
+    price: "৳4,295 /year",
     description:
       "Optimized for local Bangladesh traffic with ultra-fast Bdix connectivity and reliable uptime.",
     image: "/assets/bdix.png",
@@ -42,7 +42,7 @@ export const plans: Plan[] = [
   {
     id: "wordpress-hosting",
     title: "WordPress Hosting",
-    price: "৳2499 /year",
+    price: "৳2,399 /year",
     description:
       "Tailored for WordPress websites with pre-installed optimizations, caching, and security features.",
     image: "/assets/wordpress-staging.svg",
@@ -50,7 +50,7 @@ export const plans: Plan[] = [
   {
     id: "reseller-hosting",
     title: "Reseller Hosting",
-    price: "৳6999 /year",
+    price: "৳2,999 /month",
     description:
       "Designed for entrepreneurs and agencies to host multiple client websites with full control and branding.",
     image: "/assets/reseller.png",

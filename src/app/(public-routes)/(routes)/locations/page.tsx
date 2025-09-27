@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import SuperchargeSection from "../../components/locations/supercharge-section";
 import LocationsHero from "../../components/locations/locations-hero";
-import CDNLocations from "../../components/about/about-sections/about-cdn";
 import SupportTeam from "../../components/home/support-team";
 import Offer from "../../../../components/shared/offer";
 import FreeCdnComparison from "@/components/shared/free-cdn-comparison";
 import LocationFeatures from "../../components/locations/location-features";
 import HostninPricing from "../../components/locations/hostnin-pricing";
 import HostingFAQs from "@/components/shared/hosting/hosting-faqs";
+import DataCentersSection from "../../components/locations/data-centers";
 
 export const metadata: Metadata = {
   title: "Global CDN Locations | Hostnin",
@@ -35,9 +35,9 @@ export default function LocationsPage() {
       <LocationsHero />
       <SuperchargeSection />
       <LocationFeatures />
+      <DataCentersSection />
       <FreeCdnComparison />
       <HostninPricing />
-      <CDNLocations />
       <SupportTeam />
       <HostingFAQs />
       <Offer />

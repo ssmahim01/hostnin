@@ -22,7 +22,7 @@ export const supportSectionData: SupportSection = {
     },
   ],
   image: {
-    src: "/assets/support-team.png",
+    src: "/assets/hostnin-team.jpg",
     alt: "Support Team - Hostnin Customer Service Representatives",
   },
 };
