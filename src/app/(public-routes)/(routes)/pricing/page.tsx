@@ -19,6 +19,18 @@ export const metadata: Metadata = {
     "dedicated server pricing",
     "affordable hosting",
   ],
+  openGraph: {
+    title: "Pricing Plans | Hostnin",
+    description:
+      "Explore Hostnin's affordable hosting and server pricing plans. Choose between yearly and monthly plans and find the best fit for your website or business.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pricing Plans | Hostnin",
+    description:
+      "Explore Hostnin's affordable hosting and server pricing plans. Choose between yearly and monthly plans and find the best fit for your website or business.",
+  },
 };
 
 export default async function PricingPlan({

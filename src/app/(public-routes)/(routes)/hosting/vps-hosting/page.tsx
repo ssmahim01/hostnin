@@ -20,6 +20,18 @@ export const metadata: Metadata = {
     "Fast VPS hosting",
     "VPS Starter plan",
   ],
+  openGraph: {
+    title: "High Performance VPS Hosting | Hostnin",
+    description:
+      "Get lightning-fast VPS hosting with 100% NVMe storage. Starter plan starting at ৳1999/mo. Deploy standard distro, 1-click apps, or custom images.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "High Performance VPS Hosting | Hostnin",
+    description:
+      "Get lightning-fast VPS hosting with 100% NVMe storage. Starter plan starting at ৳1999/mo. Deploy standard distro, 1-click apps, or custom images.",
+  },
 };
 
 export default function VPSHostingPage() {

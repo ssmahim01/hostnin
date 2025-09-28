@@ -27,18 +27,30 @@ export const metadata: Metadata = {
     "dedicated server",
     "hostnin hosting",
   ],
+  openGraph: {
+    title: "Web Hosting | Hostnin",
+    description:
+      "Get blazing fast, secure, and affordable web hosting with Hostnin. Enjoy free SSL, domain, 99.9% uptime, and 24/7 support. Perfect for businesses & developers.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Web Hosting | Hostnin",
+    description:
+      "Get blazing fast, secure, and affordable web hosting with Hostnin. Enjoy free SSL, domain, 99.9% uptime, and 24/7 support. Perfect for businesses & developers.",
+  },
 };
 
 export default function WebHostingPage() {
   return (
     <>
       <WebHostingHero />
-        <PricingPlans />
+      <PricingPlans />
       <TestimonialsSection />
       <DomainSearchSection />
-     <div className="pb-6">
-       <VideoReviews show={true} />
-     </div>
+      <div className="pb-6">
+        <VideoReviews show={true} />
+      </div>
       {/* <MeetOurTeam /> */}
       <InfrastructurePartners />
       <WhyChooseHosting

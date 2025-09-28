@@ -23,6 +23,18 @@ export const metadata: Metadata = {
     ".info domain",
     ".xyz domain",
   ],
+  openGraph: {
+    title: "Domain | Hostnin",
+    description:
+      "Search and register your perfect domain name with Hostnin. Get affordable top-level domains starting from 599 TK/year with advanced features and easy management.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Domain | Hostnin",
+    description:
+      "Search and register your perfect domain name with Hostnin. Get affordable top-level domains starting from 599 TK/year with advanced features and easy management.",
+  },
 };
 
 export default function Domain() {

@@ -690,7 +690,7 @@ export const webHostingData: PricingPlan[] = [
   },
   {
     title: "Starter",
-    price: 3595,
+    price: 2995,
     currency: "৳",
     billingPeriod: "yearly",
     features: WebCreateFeatures("10 GB", "Increased Website Speed", "5"),
