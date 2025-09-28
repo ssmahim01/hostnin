@@ -1,5 +1,4 @@
 {
-  "/(public-routes)/(routes)/about/page": "app/(public-routes)/(routes)/about/page.js",
-  "/(public-routes)/(routes)/locations/page": "app/(public-routes)/(routes)/locations/page.js",
+  "/(public-routes)/(routes)/hosting/cloud-hosting/page": "app/(public-routes)/(routes)/hosting/cloud-hosting/page.js",
   "/page": "app/page.js"
 }

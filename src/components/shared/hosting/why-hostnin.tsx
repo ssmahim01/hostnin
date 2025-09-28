@@ -11,13 +11,13 @@ export default function WhyHostnin() {
       className="
     md:mt-6 md:pt-14 -mb-[0.5px]
     bg-cover bg-center bg-[url('/assets/shape.png')] bg-no-repeat 
-    dark:bg-none
+    dark:bg-none relative
   "
     >
       <div className="container max-w-7xl mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center gap-6">
           {/* Person Image */}
-          <div className="md:w-1/2 flex justify-center md:justify-end">
+          <div className="md:w-1/2 relative -bottom-4 md:bottom-20 flex justify-center md:justify-end">
             <Image
               src="/assets/mujabhai.png"
               alt="Hostin representative"
