@@ -57,12 +57,10 @@ export const Banner: React.FC<BannerProps> = ({
         pathname === "/hosting/web-hosting"
           ? "sm:pt-5"
           : "pt-24 sm:pt-16 md:pt-20"
-      } md:pb-14 pb-24 px-4 lg:pr-2 lg:pl-[72px] sm:pb-[68px] lg:pb-24 relative`}
+      } md:pb-14 pb-24 px-4 lg:pr-2 lg:pl-[72px] sm:pb-[68px] lg:pb-24 relative bg-no-repeat md:bg-contain bg-cover`}
       style={{
         backgroundImage: `url(${backgroundImage}), var(--banner-gradient)`,
         backgroundPosition: "left center, center center",
-        backgroundRepeat: "no-repeat, no-repeat",
-        backgroundSize: "contain, cover",
       }}
     >
       <div className="w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-0 pt-5">
@@ -147,7 +145,8 @@ export const Banner: React.FC<BannerProps> = ({
         >
           <Image
             alt="Server Illustration"
-            loading="lazy"
+            priority
+            quality={90}
             width={400}
             height={400}
             className="object-cover w-full h-auto shadow-lg rounded-md"
