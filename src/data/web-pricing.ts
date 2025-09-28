@@ -16,7 +16,7 @@ export const webHostingData: PricingPlan[] = [
   },
   {
     title: "Starter",
-    price: 1099,
+    price: 599,
     currency: "৳",
     billingPeriod: "monthly",
     features: WebCreateFeatures("10 GB", "Increased Website Speed", "5"),
@@ -236,7 +236,7 @@ export const webHostingData: PricingPlan[] = [
   },
   {
     title: "Pro",
-    price: 1499,
+    price: 999,
     currency: "৳",
     billingPeriod: "monthly",
     features: WebCreateFeatures("20 GB", "Super Fast Website Speed", "10"),
@@ -457,7 +457,7 @@ export const webHostingData: PricingPlan[] = [
   },
   {
     title: "Ultimate",
-    price: 2499,
+    price: 1999,
     currency: "৳",
     billingPeriod: "monthly",
     features: WebCreateFeatures("50 GB", "Maximize Website Speed", "Unlimited"),
@@ -1131,7 +1131,7 @@ export const webHostingData: PricingPlan[] = [
   },
   {
     title: "Ultimate",
-    price: 7995,
+    price: 8995,
     currency: "৳",
     billingPeriod: "yearly",
     features: WebCreateFeatures("50 GB", "Maximize Website Speed", "Unlimited"),

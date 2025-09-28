@@ -2,6 +2,7 @@ import SupportBanner from "@/app/(public-routes)/components/home/support-banner"
 import ResellerHostingBanner from "@/app/(public-routes)/components/reseller-hosting/reseller-hosting-banner";
 import ResellerHostingFeatures from "@/app/(public-routes)/components/reseller-hosting/reseller-hosting-features";
 import ResellerPricing from "@/app/(public-routes)/components/reseller-hosting/reseller-pricing";
+import DataCentersSection from "@/components/shared/data-centers";
 import BenefitsSection from "@/components/shared/hosting/benefits";
 import Testimonials from "@/components/shared/hosting/client-testimonials";
 import { InfrastructurePartners } from "@/components/shared/hosting/infrastructure-partners";
@@ -13,6 +14,18 @@ export const metadata: Metadata = {
     "Hostnin Reseller Hosting gives you enterprise-grade SSD/NVMe servers, low client density per server, and 24×7 expert technical support. Launch your own hosting business with blazing-fast speed and unmatched reliability.",
   keywords:
     "Reseller Hosting, White-Label Hosting, NVMe Reseller Hosting, SSD Reseller Hosting, Fast Hosting, 24x7 Support, Low Client Density Hosting, Hostnin",
+    openGraph: {
+    title: "Reseller Hosting | Hostnin",
+    description:
+      "Hostnin Reseller Hosting gives you enterprise-grade SSD/NVMe servers, low client density per server, and 24×7 expert technical support. Launch your own hosting business with blazing-fast speed and unmatched reliability.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Reseller Hosting | Hostnin",
+    description:
+      "Hostnin Reseller Hosting gives you enterprise-grade SSD/NVMe servers, low client density per server, and 24×7 expert technical support. Launch your own hosting business with blazing-fast speed and unmatched reliability.",
+  },
 };
 
 export default function ResellerHostingPage() {
@@ -47,6 +60,8 @@ export default function ResellerHostingPage() {
           },
         ]}
       />
+
+      <DataCentersSection />
 
       <ResellerHostingFeatures />
       <Testimonials />

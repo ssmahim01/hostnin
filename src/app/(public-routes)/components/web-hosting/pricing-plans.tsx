@@ -131,7 +131,7 @@ export default function PricePlans() {
               </defs>
             </svg>
             <span className="text-blue-400 font-medium text-base md:text-lg inline ml-10">
-              Upto 76% save
+              Upto 63% save
             </span>
           </div>
         </div>

@@ -7,7 +7,7 @@ import FreeCdnComparison from "@/components/shared/free-cdn-comparison";
 import LocationFeatures from "../../components/locations/location-features";
 import HostninPricing from "../../components/locations/hostnin-pricing";
 import HostingFAQs from "@/components/shared/hosting/hosting-faqs";
-import DataCentersSection from "../../components/locations/data-centers";
+import DataCentersSection from "../../../../components/shared/data-centers";
 
 export const metadata: Metadata = {
   title: "Global CDN Locations | Hostnin",

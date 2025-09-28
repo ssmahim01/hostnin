@@ -7,7 +7,7 @@ import CloudHostingFeatures from "@/app/(public-routes)/components/cloud-hosting
 import HostingFAQs from "@/components/shared/hosting/hosting-faqs";
 import CloudHostingPlans from "@/app/(public-routes)/components/cloud-hosting/cloud-hosting-plans";
 import CloudPlanSection from "@/app/(public-routes)/components/cloud-hosting/cloud-plan-section";
-import SpecialsSection from "@/app/(public-routes)/components/cloud-hosting/specials-section";
+import SpecialsSection from "@/components/shared/specials-section";
 import CloudPlanFeatures from "@/app/(public-routes)/components/cloud-hosting/cloud-plan-features";
 import CloudControlPanel from "@/app/(public-routes)/components/cloud-hosting/cloud-control-panel";
 import ComprehensiveGuides from "@/app/(public-routes)/components/cloud-hosting/comprehensive-guides";

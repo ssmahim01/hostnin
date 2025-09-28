@@ -4,7 +4,7 @@ export const domainFeatures: DomainFeature[] = [
   {
     title: "DNS Management",
     description:
-      "We include free DNS management with every domain you purchase. Manage all domains from a single location and directly from our control panel, including DNS and name servers. Easily add, edit, or remove DNS records without any technical hassle. Keep your domains organized and secure with real-time updates and monitoring. Enjoy full control over your domain settings anytime, anywhere.       By using the DNS Management option, you can add your domain records, such as A, TXT, and MX records.         We simplified everything for you. When you're ready, place your order and we'll get you going!",
+      "We include free DNS management with every domain you purchase. Manage all domains from a single location and directly from our control panel, including DNS and name servers. Easily add, edit, or remove DNS records without any technical hassle. Keep your domains organized and secure with real-time updates and monitoring. Enjoy full control over your domain settings anytime, anywhere.",
     image: {
       src: "/assets/about-1.png",
       alt: "Domain Registration Illustration",
@@ -13,7 +13,7 @@ export const domainFeatures: DomainFeature[] = [
     },
   },
   {
-    title: "Protect and secure your data from the thieves",
+    title: "Protect and secure your data",
     description:
       "We include WHOIS data protection for free with every domain name registration to keep your personal information safe. By doing this, there is nothing to worry about regarding your personal information, such as your phone number and address.     Defending your personal data from data brokers is a breeze with our Domain ID Protection (WHOIS Protection).",
     image: {
