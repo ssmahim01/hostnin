@@ -99,7 +99,7 @@ export default function Testimonials() {
               ★★★★★
             </div>
             <div className="text-gray-700 dark:text-neutral-300 text-sm font-medium">
-              4.9 Excellent 250 Review
+              4.8 Excellent 250 Review
             </div>
           </div>
         </div>

@@ -24,6 +24,18 @@ export const metadata: Metadata = {
     "Hostnin WordPress hosting",
     "WordPress hosting plans Bangladesh",
   ],
+   openGraph: {
+    title: "WordPress Hosting | Hostnin",
+    description:
+      "Get the best WordPress hosting in Bangladesh with Hostnin. Enjoy 2X faster speed, free SSL, daily backups, 99.9% uptime guarantee, and 24/7 expert support. Managed WordPress plans starting from just ৳2399/year for secure and reliable WordPress websites.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "WordPress Hosting | Hostnin",
+    description:
+      "Get the best WordPress hosting in Bangladesh with Hostnin. Enjoy 2X faster speed, free SSL, daily backups, 99.9% uptime guarantee, and 24/7 expert support. Managed WordPress plans starting from just ৳2399/year for secure and reliable WordPress websites.",
+  },
 };
 
 export default function WordpressHosting() {

@@ -7,12 +7,12 @@ import { WhyChooseHosting } from "@/components/shared/hosting/why-choose-hosting
 import { MoneyBackGuarantee } from "@/components/shared/hosting/money-back-gurantee";
 import WhyHostnin from "@/components/shared/hosting/why-hostnin";
 // import UniqueFeatures from "@/app/(public-routes)/components/web-hosting/unique-features";
-import QuestionsSection from "@/app/(public-routes)/components/web-hosting/questions-section";
 import MigrationSection from "@/app/(public-routes)/components/web-hosting/migration-section";
 import AdvancedFeatures from "@/app/(public-routes)/components/web-hosting/advanced-features";
 import PricingPlans from "@/app/(public-routes)/components/web-hosting/pricing-plans";
 import HostingFAQs from "@/components/shared/hosting/hosting-faqs";
 import VideoReviews from "@/components/shared/video-reviews/video-reviews";
+import DomainSupports from "@/app/(public-routes)/components/domain/domain-supports";
 
 export const metadata: Metadata = {
   title: "Web Hosting | Hostnin",
@@ -62,8 +62,8 @@ export default function WebHostingPage() {
       <MoneyBackGuarantee />
       <WhyHostnin />
       {/* <UniqueFeatures /> */}
-      <div className="-mb-[48px] md:-mb-0 lg:-mt-[42px] px-4">
-        <QuestionsSection />
+      <div className="pt-10">
+        <DomainSupports />
       </div>
       <AdvancedFeatures />
       <MigrationSection />

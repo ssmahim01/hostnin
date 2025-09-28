@@ -54,9 +54,7 @@ export default function CloudHostingPage() {
       <MoneyBackGuarantee />
       <TestimonialsSection />
       <FreeCdnComparison />
-      <div className="-mb-20 lg:pb-0 md:pb-20 pb-32">
         <WhyHostnin />
-      </div>
       <div className="md:block hidden">
         <CloudPlanFeatures />
       </div>

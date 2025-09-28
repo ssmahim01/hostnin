@@ -18,7 +18,7 @@ const footerSections: FooterSection[] = [
     links: [
       {
         label: "Register Your Domain",
-        href: "https://my.hostnin.com/cart.php?a=add&domain=register",
+        href: "/domain",
       },
       {
         label: "Transfer to Us",
@@ -171,7 +171,7 @@ export function Footer() {
                         {link.label}
                         {link?.label === "Careers" && (
                           <span className="font-semibold text-yellow-400">
-                            (Hiring)
+                            {" "}(Hiring)
                           </span>
                         )}
                       </Link>

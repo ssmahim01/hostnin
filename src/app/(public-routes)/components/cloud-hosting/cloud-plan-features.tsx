@@ -56,7 +56,7 @@ const features: FeatureColumn[] = [
 
 export default function CloudPlanFeatures() {
   return (
-    <section className="w-full bg-[#f8f8f8] dark:bg-gray-900 py-14">
+    <section className="w-full pt-14 pb-20">
       <div className="max-w-7xl mx-auto px-3 sm:px-4">
         <h2 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-semibold md:font-bold text-center text-black dark:text-white mb-3 sm:mb-4 font-['Urbanist',sans-serif]">
           Cloud Hosting all Plans

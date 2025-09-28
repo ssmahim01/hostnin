@@ -133,7 +133,7 @@ export default function WordpressPricing() {
               </defs>
             </svg>
             <span className="text-blue-400 font-medium text-base md:text-lg inline ml-10">
-              {billing === "yearly" ? "Flat 75% save" : "Free .com domain"}
+              {billing === "yearly" ? "Flat 75% save" : "Free .COM domain"}
             </span>
           </div>
         </div>

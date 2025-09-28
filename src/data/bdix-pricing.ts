@@ -16,7 +16,7 @@ export const bdixHostingData: PricingPlan[] = [
   },
   {
     title: "Starter",
-    price: 1199,
+    price: 699,
     currency: "৳",
     billingPeriod: "monthly",
     features: BDIXCreateFeatures("10 GB", "Increased Website Speed", "5"),
@@ -194,7 +194,7 @@ export const bdixHostingData: PricingPlan[] = [
   },
   {
     title: "Pro",
-    price: 1499,
+    price: 999,
     currency: "৳",
     billingPeriod: "monthly",
     features: BDIXCreateFeatures("15 GB", "Super Fast Website Speed", "10"),
@@ -374,7 +374,7 @@ export const bdixHostingData: PricingPlan[] = [
   },
   {
     title: "Ultimate",
-    price: 1999,
+    price: 1499,
     currency: "৳",
     billingPeriod: "monthly",
     features: BDIXCreateFeatures(
@@ -569,7 +569,7 @@ export const bdixHostingData: PricingPlan[] = [
   },
   {
     title: "Starter",
-    price: 4295,
+    price: 4190,
     currency: "৳",
     billingPeriod: "yearly",
     features: BDIXCreateFeatures("10 GB", "Increased Website Speed", "5"),
@@ -747,7 +747,7 @@ export const bdixHostingData: PricingPlan[] = [
   },
   {
     title: "Pro",
-    price: 5395,
+    price: 5990,
     currency: "৳",
     billingPeriod: "yearly",
     features: BDIXCreateFeatures("15 GB", "Super Fast Website Speed", "10"),
@@ -927,7 +927,7 @@ export const bdixHostingData: PricingPlan[] = [
   },
   {
     title: "Ultimate",
-    price: 7195,
+    price: 8990,
     currency: "৳",
     billingPeriod: "yearly",
     features: BDIXCreateFeatures(

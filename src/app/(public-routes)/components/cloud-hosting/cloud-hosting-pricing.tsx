@@ -135,7 +135,7 @@ export default function CloudHostingPrice() {
               className="text-blue-500 font-medium text-base inline ml-10"
               style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
             >
-              {billing === "yearly" ? "Upto 90% save" : "Free .com domain"}
+              {billing === "yearly" ? "Upto 90% save" : "Free .COM domain"}
             </span>
           </div>
         </div>

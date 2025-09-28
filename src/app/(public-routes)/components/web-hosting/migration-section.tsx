@@ -27,7 +27,7 @@ export default function MigrationSection() {
               Migrating a website can be daunting, which is why we have a team
               of experts who are always ready to migrate your website smoothly.
             </p>
-            <Link href={"/contact"}>
+            <Link href={"/support"}>
               <button
                 className="px-6 py-3 cursor-pointer bg-transparent border border-blue-600 dark:text-blue-500 text-blue-600 font-semibold rounded-lg shadow dark:hover:text-white
              hover:bg-blue-700 hover:text-white transform hover:scale-105 

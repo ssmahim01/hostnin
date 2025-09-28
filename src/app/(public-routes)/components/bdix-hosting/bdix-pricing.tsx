@@ -129,7 +129,7 @@ export default function BdixHostingPricing() {
               </defs>
             </svg>
             <span className="text-blue-400 font-medium text-base md:text-lg inline ml-10">
-              Upto 75% save
+              Upto 50% save
             </span>
           </div>
         </div>

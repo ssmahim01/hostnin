@@ -201,64 +201,6 @@ export default function TurboHostingPricing() {
                 </div>
 
                 <div className="w-full mb-8">
-                  <div className="mb-6">
-                    {/* Starter Plan Special Gift */}
-                    {plan.title === "Starter" && (
-                      <div className="bg-amber-50 rounded-lg p-3 relative group">
-                        <div className="bg-gray-400 text-gray-700 text-xs font-semibold px-2 py-1 rounded-full inline-block mb-2">
-                          Special Gift
-                        </div>
-                        <div className="flex items-center gap-1 cursor-pointer">
-                          <span className="text-teal-500 text-sm md:text-2xl">
-                            🎁
-                          </span>
-                          <Link
-                            target="_blank"
-                            href="https://pro.hostnin.com"
-                            className="text-gray-500 text-sm md:text-[19px] underline decoration-dotted font-medium cursor-pointer"
-                          >
-                            Landing page design and Facebook ads mastery course
-                          </Link>
-                        </div>
-                        {/* Tooltip */}
-                        <div className="absolute left-0 top-full mt-2 z-50 w-80 bg-blue-600 text-white text-sm md:text-lg rounded-lg p-2 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none ">
-                          Claim your complimentary Landing Page & Ads
-                          Masterclass — designed to help you succeed online.
-                          (৳6000 Value)
-                          <div className="absolute -top-2 left-4 w-3 h-3 bg-blue-600 transform rotate-45"></div>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Pro/Ultimate Plan Special Gift */}
-                    {(plan.title === "Pro" || plan.title === "Ultimate") && (
-                      <div className="bg-amber-50 rounded-lg p-3 relative group">
-                        <div className="bg-teal-500 text-white text-xs font-semibold px-2 py-1 rounded-full inline-block mb-2">
-                          Special Gift
-                        </div>
-                        <div className="flex items-center gap-1 cursor-pointer">
-                          <span className="text-teal-500 text-sm md:text-2xl">
-                            🎁
-                          </span>
-                          <Link
-                            target="_blank"
-                            href="https://pro.hostnin.com"
-                            className="text-gray-700 text-sm md:text-[19px] underline decoration-dotted  font-medium"
-                          >
-                            Landing page design and Facebook ads mastery course
-                          </Link>
-                        </div>
-                        {/* Tooltip */}
-                        <div className="absolute left-0 top-full mt-2 z-50 w-80 bg-blue-600 text-white text-sm md:text-lg rounded-lg p-2 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                          Claim your complimentary Landing Page & Ads
-                          Masterclass — designed to help you succeed online.
-                          (৳6000 Value)
-                          <div className="absolute -top-2 left-4 w-3 h-3 bg-blue-600 transform rotate-45"></div>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-
                   <h4 className="font-bold text-gray-800 dark:text-gray-200 mb-4 text-lg md:text-xl">
                     Features
                   </h4>
