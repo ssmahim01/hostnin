@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export default function DedicatedServerHelp() {
   return (
-    <section className="w-full flex justify-center items-center py-12 px-4 bg-transparent">
+    <section className="w-full flex justify-center items-center pt-9 pb-12 px-4 bg-transparent">
       <div className="w-full max-w-7xl rounded-lg bg-[#001B8A] flex flex-col lg:flex-row items-center justify-between p-5 lg:px-10 shadow-lg">
         {/* Left */}
         <div className="flex-1 flex flex-col items-center lg:items-start justify-center text-white mb-10 md:mb-0">

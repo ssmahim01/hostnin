@@ -131,7 +131,7 @@ export default function ComplainFeatures() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                className="flex items-center justify-between p-3 rounded-lg bg-muted/30"
+                className={`flex items-center ${info.href ? "gap-24 md:gap-16 lg:justify-start md:justify-between" : "justify-between"} p-3 rounded-lg bg-muted/30`}
               >
                 <div className="flex items-center gap-2">
                   <info.icon className={`h-4 w-4 ${info.color}`} />

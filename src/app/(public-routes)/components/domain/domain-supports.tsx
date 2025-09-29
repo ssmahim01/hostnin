@@ -18,7 +18,7 @@ export default function DomainSupports() {
   };
 
   return (
-    <section className="relative py-10">
+    <section className="relative pt-8 pb-10">
       {/* Light gradient overlay */}
       <div
         className="absolute inset-0 w-full h-full"
@@ -58,7 +58,7 @@ export default function DomainSupports() {
                       target="_blank"
                       className="inline-flex items-center font-bold gap-3 bg-white text-blue-900 px-6 py-3 rounded-lg hover:bg-gray-100 hover:scale-105 transition-colors duration-300 font-['Urbanist',sans-serif]"
                     >
-                      {Icon && Icon === MessageSquare ? (
+                      {Icon && Icon !== MessageSquare ? (
                         <Icon className="w-5 h-5" />
                       ) : (
                         <svg

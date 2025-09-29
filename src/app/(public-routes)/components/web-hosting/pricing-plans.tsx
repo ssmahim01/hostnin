@@ -39,13 +39,14 @@ export default function PricePlans() {
   const [showExpandedFeatures, setShowExpandedFeatures] = useState<
     Record<string, boolean>
   >({});
-  const [activeTooltip, setActiveTooltip] = useState<number | null>(null);
+  const [activeTooltip, setActiveTooltip] = useState<string | null>(null);
   const pathname = usePathname();
   const [showAllFeatures, setShowAllFeatures] = useState(false);
   const isMobile = useIsMobile();
 
-  const handleTooltipClick = (i: number) => {
-    setActiveTooltip(i);
+  const handleTooltipClick = (planTitle: string, i: number) => {
+    const key = `${planTitle}-${i}`;
+    setActiveTooltip(key);
     setTimeout(() => setActiveTooltip(null), 3000);
   };
 
@@ -72,11 +73,28 @@ export default function PricePlans() {
         className={`${pathname === "/pricing" ? "" : "md:pt-24"}`}
       >
         {pathname !== "/pricing" && (
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-8 text-balance">
-            Choose Your Perfect Plan
-          </h2>
+          <>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2 text-balance">
+              Choose Your Perfect Plan
+            </h2>
+
+            {/* Subtitle */}
+            <p
+              className="
+          text-gray-600 text-center dark:text-gray-300 
+          text-base md:text-lg 
+          mb-8 
+          transition-all duration-500 
+          hover:text-blue-500 dark:hover:text-blue-400 
+          hover:translate-y-[-2px] animate-smooth
+        "
+            >
+              You&apos;re just 5 minutes away from a faster&nbsp;website
+            </p>
+          </>
         )}
       </div>
+
       <div
         id="plans-container"
         className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
@@ -168,7 +186,7 @@ export default function PricePlans() {
                   </p>
                 </div>
 
-                <div className="text-center mb-8">
+                <div className="text-center mb-4">
                   <div className="flex items-baseline justify-center gap-1 mb-3">
                     <span className="text-sm md:text-lg text-gray-600 dark:text-gray-300">
                       {plan.currency}
@@ -205,60 +223,121 @@ export default function PricePlans() {
                 </div>
 
                 <div className="w-full mb-8">
-                  <div className="mb-6">
+                  <div className="mb-4">
                     {/* Starter Plan Special Gift */}
                     {plan.title === "Starter" && (
-                      <div className="bg-amber-50 rounded-lg p-3 relative group">
-                        <div className="bg-gray-400 text-gray-700  text-xs font-semibold px-2 py-1 rounded-full inline-block mb-2">
+                      <div
+                        className={`rounded-lg p-3 relative group ${
+                          billing === "monthly"
+                            ? "bg-amber-50 dark:bg-accent"
+                            : "bg-amber-50 dark:bg-accent"
+                        }`}
+                      >
+                        <div
+                          className={`text-xs font-semibold px-2 py-1 rounded-full inline-block mb-2
+                          ${
+                            billing === "monthly"
+                              ? "bg-gray-300 dark:bg-gray-900 dark:text-white text-gray-500 cursor-not-allowed"
+                              : "bg-teal-500 text-white"
+                          }
+                        `}
+                        >
                           Special Gift
                         </div>
-                        <div className="flex items-center gap-1 cursor-pointer">
+
+                        <div
+                          className={`flex items-center gap-1 ${
+                            billing === "monthly"
+                              ? "opacity-50 cursor-not-allowed"
+                              : ""
+                          }`}
+                        >
                           <span className="text-teal-500 text-sm md:text-2xl">
                             🎁
                           </span>
                           <Link
                             target="_blank"
-                            href="https://pro.hostnin.com"
-                            className="text-gray-500 text-sm md:text-[19px] underline decoration-dotted font-medium cursor-pointer"
+                            href={
+                              billing === "monthly"
+                                ? "#"
+                                : "https://pro.hostnin.com"
+                            }
+                            className={`underline decoration-dotted font-medium ${
+                              billing === "monthly"
+                                ? "text-gray-900 dark:text-gray-100 pointer-events-none"
+                                : "text-gray-700 dark:text-gray-100 md:text-[19px]"
+                            }`}
                           >
                             Landing page design and Facebook ads mastery course
                           </Link>
                         </div>
-                        {/* Tooltip */}
-                        <div className="absolute left-0 top-full mt-2 z-50 w-80 bg-blue-600 text-white text-sm md:text-lg rounded-lg p-2 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none ">
-                          Claim your complimentary Landing Page & Ads
-                          Masterclass — designed to help you succeed online.
-                          (৳6000 Value)
-                          <div className="absolute -top-2 left-4 w-3 h-3 bg-blue-600 transform rotate-45"></div>
-                        </div>
+
+                        {billing === "yearly" && (
+                          <div className="absolute left-0 top-full mt-2 z-50 w-80 bg-blue-600 text-white text-sm md:text-lg rounded-lg p-2 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none ">
+                            Claim your complimentary Landing Page & Ads
+                            Masterclass — designed to help you succeed online.
+                            (৳6000 Value)
+                            <div className="absolute -top-2 left-4 w-3 h-3 bg-blue-600 transform rotate-45"></div>
+                          </div>
+                        )}
                       </div>
                     )}
 
                     {/* Pro/Ultimate Plan Special Gift */}
                     {(plan.title === "Pro" || plan.title === "Ultimate") && (
-                      <div className="bg-amber-50 rounded-lg p-3 relative group">
-                        <div className="bg-teal-500 text-white text-xs font-semibold px-2 py-1 rounded-full inline-block mb-2">
+                      <div
+                        className={`rounded-lg p-3 relative group ${
+                          billing === "monthly"
+                            ? "bg-amber-50 dark:bg-accent"
+                            : "bg-amber-50 dark:bg-accent"
+                        }`}
+                      >
+                        <div
+                          className={`text-xs font-semibold px-2 py-1 rounded-full inline-block mb-2
+                        ${
+                          billing === "monthly"
+                            ? "bg-gray-300 dark:bg-gray-900 dark:text-gray-100 text-gray-500 cursor-not-allowed"
+                            : "bg-teal-500 text-white"
+                        }`}
+                        >
                           Special Gift
                         </div>
-                        <div className="flex items-center gap-1 cursor-pointer">
+
+                        <div
+                          className={`flex items-center gap-1 ${
+                            billing === "monthly"
+                              ? "opacity-50 cursor-not-allowed"
+                              : ""
+                          }`}
+                        >
                           <span className="text-teal-500 text-sm md:text-2xl">
                             🎁
                           </span>
                           <Link
                             target="_blank"
-                            href="https://pro.hostnin.com"
-                            className="text-gray-700 text-sm md:text-[19px] underline decoration-dotted font-medium"
+                            href={
+                              billing === "monthly"
+                                ? "#"
+                                : "https://pro.hostnin.com"
+                            }
+                            className={`underline decoration-dotted font-medium ${
+                              billing === "monthly"
+                                ? "text-gray-900 dark:text-gray-100 pointer-events-none"
+                                : "text-gray-700 dark:text-gray-100 md:text-[19px]"
+                            }`}
                           >
                             Landing page design and Facebook ads mastery course
                           </Link>
                         </div>
-                        {/* Tooltip */}
-                        <div className="absolute left-0 top-full mt-2 z-50 w-80 bg-blue-600 text-white text-sm md:text-lg rounded-lg p-2 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                          Claim your complimentary Landing Page & Ads
-                          Masterclass — designed to help you succeed online.
-                          (৳6000 Value)
-                          <div className="absolute -top-2 left-4 w-3 h-3 bg-blue-600 transform rotate-45"></div>
-                        </div>
+
+                        {billing === "yearly" && (
+                          <div className="absolute left-0 top-full mt-2 z-50 w-80 bg-blue-600 text-white text-sm md:text-lg rounded-lg p-2 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none ">
+                            Claim your complimentary Landing Page & Ads
+                            Masterclass — designed to help you succeed online.
+                            (৳6000 Value)
+                            <div className="absolute -top-2 left-4 w-3 h-3 bg-blue-600 transform rotate-45"></div>
+                          </div>
+                        )}
                       </div>
                     )}
                   </div>
@@ -267,36 +346,40 @@ export default function PricePlans() {
                     Features
                   </h4>
                   <div className="space-y-3">
-                    {plan.features.map((feature, i: number) => (
-                      <div
-                        key={i}
-                        className="flex items-center gap-3 group relative"
-                        onClick={() => handleTooltipClick(i)}
-                      >
-                        <div className="flex-shrink-0 w-5 h-5 bg-green-100 rounded-full flex items-center justify-center">
-                          <Check className="text-xs text-green-600 font-bold" />
-                        </div>
-                        <span className="text-[15px] md:text-base text-gray-700 dark:text-gray-300 cursor-help font-medium">
-                          {feature.text}
-                        </span>
+                    {plan.features.map((feature, i) => {
+                      const tooltipKey = `${plan.title}-${i}`;
+                      return (
+                        <div
+                          key={tooltipKey}
+                          className="flex items-center gap-3 relative"
+                          onClick={() => handleTooltipClick(plan.title, i)}
+                          onMouseEnter={() => setActiveTooltip(tooltipKey)}
+                          onMouseLeave={() => setActiveTooltip(null)}
+                        >
+                          <div className="flex-shrink-0 w-5 h-5 bg-green-100 rounded-full flex items-center justify-center">
+                            <Check className="text-xs text-green-600 font-bold" />
+                          </div>
+                          <span className="text-[15px] md:text-base text-gray-700 dark:text-gray-300 cursor-pointer font-medium">
+                            {feature.text}
+                          </span>
 
-                        {feature.tooltip && (
-                          <div
-                            className={`absolute left-0 top-full mt-2 z-50 w-60 bg-blue-600 text-white text-sm md:text-lg rounded-lg p-3 shadow-lg
+                          {feature.tooltip && (
+                            <div
+                              className={`absolute left-0 top-full mt-2 z-50 w-60 bg-blue-600 text-white text-sm md:text-lg rounded-lg p-3 shadow-lg
                               ${
-                                activeTooltip === i
+                                activeTooltip === tooltipKey
                                   ? "opacity-100 visible"
                                   : "opacity-0 invisible"
                               }
-                              md:group-hover:opacity-100 md:group-hover:visible
-                              transition-opacity duration-300 pointer-events-auto`}
-                          >
-                            {feature.tooltip}
-                            <div className="absolute -top-2 left-4 w-3 h-3 bg-blue-600 transform rotate-45"></div>
-                          </div>
-                        )}
-                      </div>
-                    ))}
+                              transition-opacity duration-300`}
+                            >
+                              {feature.tooltip}
+                              <div className="absolute -top-2 left-4 w-3 h-3 bg-blue-600 transform rotate-45"></div>
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
 
                     {((!isMobile && showAllFeatures) ||
                       (isMobile && showExpandedFeatures[plan.title])) &&

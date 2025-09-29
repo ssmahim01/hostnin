@@ -168,6 +168,157 @@ export default function RefundPolicy() {
         </CardContent>
       </Card>
 
+      {/* 5. Service Availability */}
+      <Card className="mb-10 bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700">
+        <CardHeader>
+          <CardTitle className="text-2xl font-bold mb-4 text-blue-600 text-center">
+            5. Service Availability
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <ul className="list-disc list-inside mb-4 text-gray-700 dark:text-neutral-300 space-y-1">
+            <li>
+              Hostnin targets 99.9% monthly uptime for shared hosting services.
+              This uptime percentage does not include scheduled maintenance,
+              emergency maintenance, force majeure events, network failures
+              outside Hostnin’s control, or customer-caused outages.
+            </li>
+            <li>
+              No financial compensation is provided beyond the limits described
+              in the Refund & Credit Policy.
+            </li>
+          </ul>
+        </CardContent>
+      </Card>
+
+      {/* 6. Force Majeure */}
+      <Card className="mb-10 bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700">
+        <CardHeader>
+          <CardTitle className="text-2xl font-bold mb-4 text-blue-600 text-center">
+            6. Force Majeure
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <ul className="list-disc list-inside mb-4 text-gray-700 dark:text-neutral-300 space-y-1">
+            <li>
+              Hostnin shall not be held liable for any failure or delay in
+              performance caused by circumstances beyond reasonable control,
+              including but not limited to acts of God, natural disasters, power
+              outages, network failures, DDoS attacks, government actions, or
+              third-party provider failures.
+            </li>
+          </ul>
+        </CardContent>
+      </Card>
+
+      {/* 7. Backups & Data Responsibility */}
+      <Card className="mb-10 bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700">
+        <CardHeader>
+          <CardTitle className="text-2xl font-bold mb-4 text-blue-600 text-center">
+            7. Backups & Data Responsibility
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <ul className="list-disc list-inside mb-4 text-gray-700 dark:text-neutral-300 space-y-1">
+            <li>
+              Hostnin performs regular backups on a best-effort basis but does
+              not guarantee the availability, integrity, or completeness of
+              backups.
+            </li>
+            <li>
+              Customers are solely responsible for maintaining their own copies
+              of data. Hostnin shall not be liable for any data loss,
+              corruption, or restoration delays.
+            </li>
+          </ul>
+        </CardContent>
+      </Card>
+
+      {/* 8. Limitation of Liability */}
+      <Card className="mb-10 bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700">
+        <CardHeader>
+          <CardTitle className="text-2xl font-bold mb-4 text-blue-600 text-center">
+            8. Limitation of Liability
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <ul className="list-disc list-inside mb-4 text-gray-700 dark:text-neutral-300 space-y-1">
+            <li>
+              To the maximum extent permitted by law, Hostnin’s total aggregate
+              liability for any claim arising out of or related to the Services
+              shall not exceed the total fees paid by the customer for the
+              affected service during the 3 months immediately preceding the
+              event giving rise to the claim.
+            </li>
+            <li>
+              Hostnin shall not be liable for indirect, consequential,
+              incidental, special, or punitive damages including but not limited
+              to lost profits, lost sales, lost advertising spend, or
+              development costs.
+            </li>
+          </ul>
+        </CardContent>
+      </Card>
+
+      {/* 9. Upgrades & Add-Ons */}
+      <Card className="mb-10 bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700">
+        <CardHeader>
+          <CardTitle className="text-2xl font-bold mb-4 text-blue-600 text-center">
+            9. Upgrades & Add-Ons
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <ul className="list-disc list-inside mb-4 text-gray-700 dark:text-neutral-300 space-y-1">
+            <li>
+              Payments for plan upgrades, add-ons, or resource increases are
+              non-refundable once activated or provisioned, regardless of
+              subsequent downgrades, cancellations, or service interruptions.
+            </li>
+          </ul>
+        </CardContent>
+      </Card>
+
+      {/* 10. Governing Law & Jurisdiction */}
+      <Card className="mb-10 bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700">
+        <CardHeader>
+          <CardTitle className="text-2xl font-bold mb-4 text-blue-600 text-center">
+            10. Governing Law & Jurisdiction
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <ul className="list-disc list-inside mb-4 text-gray-700 dark:text-neutral-300 space-y-1">
+            <li>
+              These Terms are governed by the laws of Bangladesh. Any disputes
+              arising shall be submitted exclusively to the courts located in
+              Chattogram, Bangladesh.
+            </li>
+          </ul>
+        </CardContent>
+      </Card>
+
+      {/* 11. Refund Request Procedure */}
+      <Card className="mb-10 bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700">
+        <CardHeader>
+          <CardTitle className="text-2xl font-bold mb-4 text-blue-600 text-center">
+            11. Refund Request Procedure
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <ul className="list-disc list-inside mb-4 text-gray-700 dark:text-neutral-300 space-y-1">
+            <li>
+              Refund requests must be submitted via ticket to Hostnin within 30
+              calendar days of the initial service activation. Refunds requested
+              outside this window will not be processed.
+            </li>
+            <li>
+              Refunds are processed only once per customer account and exclude
+              domains, dedicated IPs, third-party software, and any fees
+              incurred by payment processors.
+            </li>
+          </ul>
+        </CardContent>
+      </Card>
+
       <p className="text-gray-700 dark:text-neutral-300 text-lg leading-relaxed text-center">
         <strong>Contact Us:</strong> Our support team is available 24/7 for any
         questions or clarifications.

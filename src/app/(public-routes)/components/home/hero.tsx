@@ -19,12 +19,12 @@ export function HeroSection() {
       className="
         md:py-28 pt-24 pb-16 text-white
         bg-[linear-gradient(278deg,rgba(0,40,160,0.9)_16%,rgba(0,20,80,0.9)_98%)]
-     dark:bg-[linear-gradient(278deg,rgba(17,17,17,0.5)_16%,rgba(17,17,17,0.5)_98%)]
+     dark:bg-[linear-gradient(278deg,rgba(5,5,5,0.5)_16%,rgba(5,5,5,0.5)_98%)]
       "
     >
       <div className=" max-w-7xl mx-auto container px-5 lg:px-10 flex flex-col lg:flex-row items-center justify-between lg:gap-0 gap-8">
         {/* Text Content */}
-        <div className="lg:w-1/2 space-y-4 text-center lg:text-left">
+        <div className="lg:w-1/2 space-y-4 md:space-y-7 text-center lg:text-left">
           <h1 className="text-[32px] sm:text-4xl md:text-5xl lg:text-5xl font-bold text-white leading-tight">
             Best Web Hosting <br />{" "}
             <span className="relative">
@@ -64,7 +64,7 @@ export function HeroSection() {
             alt={heroData.image.alt}
             width={400}
             height={200}
-            className="max-w-full sm:w-2/3 w-[55%] h-auto mx-auto object-cover"
+            className="max-w-full sm:w-2/3 w-[50%] h-auto mx-auto object-cover"
             priority
           />
 
@@ -74,7 +74,7 @@ export function HeroSection() {
             width={140}
             height={80}
             quality={90}
-            className="md:block hidden absolute md:-bottom-[5.9rem] -bottom-[4rem] left-10 h-[200px] md:h-[280px] w-auto object-contain"
+            className="md:block hidden absolute md:-bottom-[5.9rem] -bottom-[4rem] left-10 h-[180px] md:h-[280px] w-auto object-contain"
             priority
           />
         </div>

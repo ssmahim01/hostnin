@@ -110,13 +110,13 @@ export function WhyChooseHosting({
 }) {
   return (
     <section
-      className="pt-10 pb-20 bg-cover bg-center bg-no-repeat dark:from-gray-900 dark:to-gray-800"
+      className="pt-8 pb-20 bg-cover bg-center bg-no-repeat dark:from-gray-900 dark:to-gray-800"
       style={{
         backgroundImage: "url('/assets/bg-curve.png')",
       }}
     >
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <div className="text-center mb-9">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
             {heading}
           </h2>

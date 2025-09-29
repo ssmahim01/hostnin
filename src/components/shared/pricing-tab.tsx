@@ -58,7 +58,7 @@ export default function PricingTab() {
               </button>
             ))}
           </div>
-          <ScrollBar orientation="horizontal" />
+          <ScrollBar orientation="horizontal" className="h-1" />
         </ScrollArea>
       </div>
 

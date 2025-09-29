@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function MigrationSection() {
   return (
-    <section className="my-14 max-w-7xl px-4 mx-auto">
+    <section className="mt-9 mb-14 max-w-7xl px-4 mx-auto">
       <Card className="lg:py-4 py-8 lg:px-8 px-6 rounded-lg shadow-md bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 hover:shadow-xl hover:scale-105 transition-transform duration-500 overflow-hidden">
         <CardContent className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6 ">
           <div className="md:w-1/2 flex justify-center">

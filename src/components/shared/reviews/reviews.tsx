@@ -16,6 +16,7 @@ import ReviewCard from "./review-card";
 import type { Review } from "@/types/review";
 import StarRating from "../star-rating";
 import Link from "next/link";
+import VideoReviews from "../video-reviews/video-reviews";
 
 interface ReviewsProps {
   reviews: Review[];
@@ -66,13 +67,13 @@ export default function Reviews({ reviews }: ReviewsProps) {
 
   return (
     <div className="pt-24 pb-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-8"
         >
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Customer Reviews
@@ -95,7 +96,7 @@ export default function Reviews({ reviews }: ReviewsProps) {
             </div>
             <div className="text-center">
               <p className="text-3xl font-bold text-blue-600 dark:text-blue-400">
-                99.9%
+                96%
               </p>
               <p className="text-sm text-gray-600 dark:text-slate-400">
                 Customer Satisfaction
@@ -117,7 +118,7 @@ export default function Reviews({ reviews }: ReviewsProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-white dark:bg-slate-800 rounded-lg shadow-lg p-6 mb-8"
+          className="bg-white dark:bg-slate-800 rounded-lg shadow-lg p-6 mb-8 mx-4 sm:mx-6 lg:mx-8"
         >
           <div className="flex flex-col md:flex-row gap-4 items-center">
             <div className="flex items-center gap-2 text-gray-700 dark:text-slate-300">
@@ -170,18 +171,20 @@ export default function Reviews({ reviews }: ReviewsProps) {
         </motion.div>
 
         {/* Reviews Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 sm:px-6 lg:px-8 mb-14">
           {visibleReviews.map((review, index) => (
             <ReviewCard key={review.id} review={review} index={index} />
           ))}
         </div>
+
+        <VideoReviews show={true} />
 
         {/* “See More” Section */}
         {hasMore && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="flex flex-col items-center mt-12 gap-4"
+            className="flex flex-col items-center mt-4 gap-4"
           >
             <p className="text-lg text-gray-700 dark:text-slate-300 text-center max-w-xl">
               We have even more amazing reviews from our happy customers on

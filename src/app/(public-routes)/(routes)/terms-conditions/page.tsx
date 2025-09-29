@@ -13,6 +13,18 @@ export const metadata: Metadata = {
     "Hosting",
     "Bangladesh",
   ],
+   openGraph: {
+    title: "Terms & Conditions | Hostnin",
+    description:
+      "Read Hostnin's Terms & Conditions including account responsibilities, acceptable use, payments, privacy, and more.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Terms & Conditions | Hostnin",
+    description:
+      "Read Hostnin's Terms & Conditions including account responsibilities, acceptable use, payments, privacy, and more.",
+  },
 };
 
 export default function TermsConditions() {

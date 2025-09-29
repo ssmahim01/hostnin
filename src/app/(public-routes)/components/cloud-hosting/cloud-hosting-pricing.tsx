@@ -51,11 +51,12 @@ export default function CloudHostingPrice() {
   const [showAllFeatures, setShowAllFeatures] = useState(false);
   const isMobile = useIsMobile();
 
-  const [activeTooltip, setActiveTooltip] = useState<number | null>(null);
+  const [activeTooltip, setActiveTooltip] = useState<string | null>(null);
   const pathname = usePathname();
 
-  const handleTooltipClick = (i: number) => {
-    setActiveTooltip(i);
+  const handleTooltipClick = (planTitle: string, i: number) => {
+    const key = `${planTitle}-${i}`;
+    setActiveTooltip(key);
     setTimeout(() => setActiveTooltip(null), 3000);
   };
 
@@ -238,36 +239,40 @@ export default function CloudHostingPrice() {
                     Features
                   </h4>
                   <div className="space-y-3">
-                    {plan.features.map((feature, i: number) => (
-                      <div
-                        key={i}
-                        className="flex items-center gap-3 group relative"
-                        onClick={() => handleTooltipClick(i)}
-                      >
-                        <div className="flex-shrink-0 w-5 h-5 bg-green-100 rounded-full flex items-center justify-center">
-                          <Check className="text-xs text-green-600 font-bold" />
-                        </div>
-                        <span className="text-[15px] md:text-base text-gray-700 dark:text-gray-300 cursor-help font-medium">
-                          {feature.text}
-                        </span>
-
-                        {feature.tooltip && (
-                          <div
-                            className={`absolute left-0 top-full z-50 w-60 bg-blue-600 text-white text-sm md:text-lg rounded-lg p-3 shadow-lg
-                ${
-                  activeTooltip === i
-                    ? "opacity-100 visible"
-                    : "opacity-0 invisible"
-                }
-                md:group-hover:opacity-100 md:group-hover:visible
-                transition-opacity duration-300 pointer-events-auto`}
-                          >
-                            {feature.tooltip}
-                            <div className="absolute -top-2 left-4 w-3 h-3 bg-blue-600 transform rotate-45"></div>
+                    {plan.features.map((feature, i) => {
+                      const tooltipKey = `${plan.title}-${i}`;
+                      return (
+                        <div
+                          key={tooltipKey}
+                          className="flex items-center gap-3 relative"
+                          onClick={() => handleTooltipClick(plan.title, i)}
+                          onMouseEnter={() => setActiveTooltip(tooltipKey)}
+                          onMouseLeave={() => setActiveTooltip(null)}
+                        >
+                          <div className="flex-shrink-0 w-5 h-5 bg-green-100 rounded-full flex items-center justify-center">
+                            <Check className="text-xs text-green-600 font-bold" />
                           </div>
-                        )}
-                      </div>
-                    ))}
+                          <span className="text-[15px] md:text-base text-gray-700 dark:text-gray-300 cursor-pointer font-medium">
+                            {feature.text}
+                          </span>
+
+                          {feature.tooltip && (
+                            <div
+                              className={`absolute left-0 top-full mt-2 z-50 w-60 bg-blue-600 text-white text-sm md:text-lg rounded-lg p-3 shadow-lg
+                              ${
+                                activeTooltip === tooltipKey
+                                  ? "opacity-100 visible"
+                                  : "opacity-0 invisible"
+                              }
+                              transition-opacity duration-300`}
+                            >
+                              {feature.tooltip}
+                              <div className="absolute -top-2 left-4 w-3 h-3 bg-blue-600 transform rotate-45"></div>
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
 
                     {/* Show More */}
                     {((!isMobile && showAllFeatures) ||

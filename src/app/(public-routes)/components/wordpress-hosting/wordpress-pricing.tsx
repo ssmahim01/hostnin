@@ -41,13 +41,14 @@ export default function WordpressPricing() {
   const [showExpandedFeatures, setShowExpandedFeatures] = useState<
     Record<string, boolean>
   >({});
-  const [activeTooltip, setActiveTooltip] = useState<number | null>(null);
+  const [activeTooltip, setActiveTooltip] = useState<string | null>(null);
   const pathname = usePathname();
   const [showAllFeatures, setShowAllFeatures] = useState(false);
   const isMobile = useIsMobile();
 
-  const handleTooltipClick = (i: number) => {
-    setActiveTooltip(i);
+  const handleTooltipClick = (planTitle: string, i: number) => {
+    const key = `${planTitle}-${i}`;
+    setActiveTooltip(key);
     setTimeout(() => setActiveTooltip(null), 3000);
   };
 
@@ -206,99 +207,45 @@ export default function WordpressPricing() {
                   </div>
                 </div>
 
-                <div className="w-full mb-8">
-                  <div className="mb-2">
-                    {/* Starter Plan Special Gift */}
-                    {plan.title === "Starter" && (
-                      <div className="bg-amber-50 rounded-lg p-3 relative group">
-                        <div className="bg-gray-400 text-gray-700  text-xs font-semibold px-2 py-1 rounded-full inline-block mb-2">
-                          Special Gift
-                        </div>
-                        <div className="flex items-center gap-1 cursor-pointer">
-                          <span className="text-teal-500 text-sm md:text-2xl">
-                            🎁
-                          </span>
-                          <Link
-                            target="_blank"
-                            href="https://pro.hostnin.com"
-                            className="text-gray-500 text-sm md:text-[19px] underline decoration-dotted font-medium cursor-pointer"
-                          >
-                            Landing page design and Facebook ads mastery course
-                          </Link>
-                        </div>
-                        {/* Tooltip */}
-                        <div className="absolute left-0 top-full mt-2 z-50 w-80 bg-blue-600 text-white text-sm md:text-lg rounded-lg p-2 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none ">
-                          Claim your complimentary Landing Page & Ads
-                          Masterclass — designed to help you succeed online.
-                          (৳6000 Value)
-                          <div className="absolute -top-2 left-4 w-3 h-3 bg-blue-600 transform rotate-45"></div>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Pro/Ultimate Plan Special Gift */}
-                    {(plan.title === "Pro" || plan.title === "Ultimate") && (
-                      <div className="bg-amber-50 rounded-lg p-3 relative group">
-                        <div className="bg-teal-500 text-white text-xs font-semibold px-2 py-1 rounded-full inline-block mb-2">
-                          Special Gift
-                        </div>
-                        <div className="flex items-center gap-1 cursor-pointer">
-                          <span className="text-teal-500 text-sm md:text-2xl">
-                            🎁
-                          </span>
-                          <Link
-                            target="_blank"
-                            href="https://pro.hostnin.com"
-                            className="text-gray-700 text-sm md:text-[19px] underline decoration-dotted font-medium"
-                          >
-                            Landing page design and Facebook ads mastery course
-                          </Link>
-                        </div>
-                        {/* Tooltip */}
-                        <div className="absolute left-0 top-full mt-2 z-50 w-80 bg-blue-600 text-white text-sm md:text-lg rounded-lg p-2 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                          Claim your complimentary Landing Page & Ads
-                          Masterclass — designed to help you succeed online.
-                          (৳6000 Value)
-                          <div className="absolute -top-2 left-4 w-3 h-3 bg-blue-600 transform rotate-45"></div>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-
+                <div className="w-full mb-7">
                   <h4 className="font-bold text-gray-800 dark:text-gray-200 mb-4 text-lg md:text-xl">
                     Features
                   </h4>
                   <div className="space-y-3">
-                    {plan.features.map((feature, i: number) => (
-                      <div
-                        key={i}
-                        className="flex items-center gap-3 group relative"
-                        onClick={() => handleTooltipClick(i)}
-                      >
-                        <div className="flex-shrink-0 w-5 h-5 bg-green-100 rounded-full flex items-center justify-center">
-                          <Check className="text-xs text-green-600 font-bold" />
-                        </div>
-                        <span className="text-[15px] md:text-base text-gray-700 dark:text-gray-300 cursor-help font-medium">
-                          {feature.text}
-                        </span>
+                    {plan.features.map((feature, i) => {
+                      const tooltipKey = `${plan.title}-${i}`;
+                      return (
+                        <div
+                          key={tooltipKey}
+                          className="flex items-center gap-3 relative"
+                          onClick={() => handleTooltipClick(plan.title, i)}
+                          onMouseEnter={() => setActiveTooltip(tooltipKey)}
+                          onMouseLeave={() => setActiveTooltip(null)}
+                        >
+                          <div className="flex-shrink-0 w-5 h-5 bg-green-100 rounded-full flex items-center justify-center">
+                            <Check className="text-xs text-green-600 font-bold" />
+                          </div>
+                          <span className="text-[15px] md:text-base text-gray-700 dark:text-gray-300 cursor-pointer font-medium">
+                            {feature.text}
+                          </span>
 
-                        {feature.tooltip && (
-                          <div
-                            className={`absolute left-0 top-full mt-2 z-50 w-60 bg-blue-600 text-white text-sm md:text-lg rounded-lg p-3 shadow-lg
+                          {feature.tooltip && (
+                            <div
+                              className={`absolute left-0 top-full mt-2 z-50 w-60 bg-blue-600 text-white text-sm md:text-lg rounded-lg p-3 shadow-lg
                               ${
-                                activeTooltip === i
+                                activeTooltip === tooltipKey
                                   ? "opacity-100 visible"
                                   : "opacity-0 invisible"
                               }
-                              md:group-hover:opacity-100 md:group-hover:visible
-                              transition-opacity duration-300 pointer-events-auto`}
-                          >
-                            {feature.tooltip}
-                            <div className="absolute -top-2 left-4 w-3 h-3 bg-blue-600 transform rotate-45"></div>
-                          </div>
-                        )}
-                      </div>
-                    ))}
+                              transition-opacity duration-300`}
+                            >
+                              {feature.tooltip}
+                              <div className="absolute -top-2 left-4 w-3 h-3 bg-blue-600 transform rotate-45"></div>
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
 
                     {((!isMobile && showAllFeatures) ||
                       (isMobile && showExpandedFeatures[plan.title])) &&

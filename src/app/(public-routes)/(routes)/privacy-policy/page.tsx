@@ -12,6 +12,18 @@ export const metadata: Metadata = {
     "Bangladesh hosting privacy",
     "data security",
   ],
+   openGraph: {
+    title: "Privacy Policy | Hostnin",
+    description:
+      "Read Hostnin's Privacy Policy to learn how we collect, use, store, and protect your personal data when using our web hosting services in Bangladesh.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy | Hostnin",
+    description:
+      "Read Hostnin's Privacy Policy to learn how we collect, use, store, and protect your personal data when using our web hosting services in Bangladesh.",
+  },
 };
 
 export default function PrivacyPolicyPage() {

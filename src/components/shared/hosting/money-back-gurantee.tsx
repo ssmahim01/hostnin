@@ -20,9 +20,9 @@ export function MoneyBackGuarantee() {
           </p>
         </div>
 
-        <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 max-w-6xl mx-auto">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-3 lg:gap-12 max-w-6xl mx-auto">
           {/* Feature 1 */}
-          <div className="flex items-center gap-2 text-center group">
+          <div className="flex items-center gap-3 text-center group">
             <div className="w-12 h-12 bg-blue-600 dark:bg-blue-500 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
               <Plus className="w-7 h-7 text-white" />
             </div>
@@ -32,7 +32,7 @@ export function MoneyBackGuarantee() {
           </div>
 
           {/* Feature 2 */}
-          <div className="flex items-center text-center gap-2 group">
+          <div className="flex items-center text-center lg:ml-0 ml-2 gap-3 group">
             <div className="w-12 h-12 bg-blue-600 dark:bg-blue-500 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
               <MinusSquare className="w-7 h-7 text-white" />
             </div>
@@ -42,7 +42,7 @@ export function MoneyBackGuarantee() {
           </div>
 
           {/* Feature 3 */}
-          <div className="flex items-center text-center gap-2 group">
+          <div className="flex items-center text-center gap-3 group">
             <div className="w-12 h-12 bg-blue-600 dark:bg-blue-500 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
               <Clock className="w-7 h-7 text-white" />
             </div>

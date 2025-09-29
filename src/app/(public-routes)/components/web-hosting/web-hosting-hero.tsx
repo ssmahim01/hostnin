@@ -15,7 +15,7 @@ export default function WebHostingHero() {
           <>
             Get Fastest Hosting
             <br />
-            Up to 76% Discount
+            Up to 63% Discount
           </>
         }
         bullets={[

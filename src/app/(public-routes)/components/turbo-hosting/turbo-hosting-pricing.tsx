@@ -38,13 +38,14 @@ export default function TurboHostingPricing() {
   const [showExpandedFeatures, setShowExpandedFeatures] = useState<
     Record<string, boolean>
   >({});
-  const [activeTooltip, setActiveTooltip] = useState<number | null>(null);
+  const [activeTooltip, setActiveTooltip] = useState<string | null>(null);
   const pathname = usePathname();
   const [showAllFeatures, setShowAllFeatures] = useState(false);
   const isMobile = useIsMobile();
 
-  const handleTooltipClick = (i: number) => {
-    setActiveTooltip(i);
+  const handleTooltipClick = (planTitle: string, i: number) => {
+    const key = `${planTitle}-${i}`;
+    setActiveTooltip(key);
     setTimeout(() => setActiveTooltip(null), 3000);
   };
 
@@ -68,12 +69,28 @@ export default function TurboHostingPricing() {
     >
       <div
         id="turbo-pricing"
-        className={`${pathname === "/pricing" ? "" : "pt-24"}`}
+        className={`${pathname === "/pricing" ? "" : "md:pt-24"}`}
       >
         {pathname !== "/pricing" && (
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-8 text-balance">
-            Choose Your Perfect Plan
-          </h2>
+          <>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2 text-balance">
+              Choose Your Perfect Plan
+            </h2>
+
+            {/* Subtitle */}
+            <p
+              className="
+          text-gray-600 text-center dark:text-gray-300 
+          text-base md:text-lg 
+          mb-8 
+          transition-all duration-500 
+          hover:text-blue-500 dark:hover:text-blue-400 
+          hover:translate-y-[-2px] animate-smooth
+        "
+            >
+              You&apos;re just 5 minutes away from a faster&nbsp;website
+            </p>
+          </>
         )}
       </div>
       <div id="plans-container" className="w-full max-w-7xl">
@@ -205,36 +222,40 @@ export default function TurboHostingPricing() {
                     Features
                   </h4>
                   <div className="space-y-3">
-                    {plan.features.map((feature, i: number) => (
-                      <div
-                        key={i}
-                        className="flex items-center gap-3 group relative"
-                        onClick={() => handleTooltipClick(i)}
-                      >
-                        <div className="flex-shrink-0 w-5 h-5 bg-green-100 rounded-full flex items-center justify-center">
-                          <Check className="text-xs text-green-600 font-bold" />
-                        </div>
-                        <span className="text-[15px] md:text-base text-gray-700 dark:text-gray-300 cursor-help font-medium">
-                          {feature.text}
-                        </span>
+                    {plan.features.map((feature, i) => {
+                      const tooltipKey = `${plan.title}-${i}`;
+                      return (
+                        <div
+                          key={tooltipKey}
+                          className="flex items-center gap-3 relative"
+                          onClick={() => handleTooltipClick(plan.title, i)}
+                          onMouseEnter={() => setActiveTooltip(tooltipKey)}
+                          onMouseLeave={() => setActiveTooltip(null)}
+                        >
+                          <div className="flex-shrink-0 w-5 h-5 bg-green-100 rounded-full flex items-center justify-center">
+                            <Check className="text-xs text-green-600 font-bold" />
+                          </div>
+                          <span className="text-[15px] md:text-base text-gray-700 dark:text-gray-300 cursor-pointer font-medium">
+                            {feature.text}
+                          </span>
 
-                        {feature.tooltip && (
-                          <div
-                            className={`absolute left-0 top-full mt-2 z-50 w-60 bg-blue-600 text-white text-sm md:text-lg rounded-lg p-3 shadow-lg
+                          {feature.tooltip && (
+                            <div
+                              className={`absolute left-0 top-full mt-2 z-50 w-60 bg-blue-600 text-white text-sm md:text-lg rounded-lg p-3 shadow-lg
                               ${
-                                activeTooltip === i
+                                activeTooltip === tooltipKey
                                   ? "opacity-100 visible"
                                   : "opacity-0 invisible"
                               }
-                              md:group-hover:opacity-100 md:group-hover:visible
-                              transition-opacity duration-300 pointer-events-auto`}
-                          >
-                            {feature.tooltip}
-                            <div className="absolute -top-2 left-4 w-3 h-3 bg-blue-600 transform rotate-45"></div>
-                          </div>
-                        )}
-                      </div>
-                    ))}
+                              transition-opacity duration-300`}
+                            >
+                              {feature.tooltip}
+                              <div className="absolute -top-2 left-4 w-3 h-3 bg-blue-600 transform rotate-45"></div>
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
 
                     {((!isMobile && showAllFeatures) ||
                       (isMobile && showExpandedFeatures[plan.title])) &&

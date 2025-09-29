@@ -54,15 +54,17 @@ export default function VideoReviews({
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-8">
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-2">
-            Watch Customer Success Stories
-          </h2>
-          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-            See how Hostnin has helped businesses like yours achieve their goals
-            with reliable hosting solutions.
-          </p>
-        </div>
+        {pathname !== "/reviews" && (
+          <div className="text-center mb-8">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-2">
+              Watch Customer Success Stories
+            </h2>
+            <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+              See how Hostnin has helped businesses like yours achieve their
+              goals with reliable hosting solutions.
+            </p>
+          </div>
+        )}
 
         {/* Main Video Player */}
         <div className="grid lg:grid-cols-3 gap-8 mb-12">

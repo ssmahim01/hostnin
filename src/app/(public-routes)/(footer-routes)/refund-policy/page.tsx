@@ -7,6 +7,18 @@ export const metadata: Metadata = {
     "Read Hostnin's transparent refund policy including 30-day money-back guarantee, eligibility, timelines, exclusions, and how to request a refund.",
   keywords:
     "Hostnin refund policy, money back guarantee, hosting refund, bdix hosting refund, refund process, Hostnin support",
+     openGraph: {
+    title: "Refund Policy | Hostnin",
+    description:
+      "Read Hostnin's transparent refund policy including 30-day money-back guarantee, eligibility, timelines, exclusions, and how to request a refund.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Refund Policy | Hostnin",
+    description:
+      "Read Hostnin's transparent refund policy including 30-day money-back guarantee, eligibility, timelines, exclusions, and how to request a refund.",
+  },
 };
 
 export default function RefundPolicyPage() {

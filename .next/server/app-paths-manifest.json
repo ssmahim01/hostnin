@@ -1,5 +1,14 @@
 {
+  "/(public-routes)/(footer-routes)/refund-policy/page": "app/(public-routes)/(footer-routes)/refund-policy/page.js",
+  "/(public-routes)/(routes)/complain/page": "app/(public-routes)/(routes)/complain/page.js",
+  "/(public-routes)/(routes)/domain/page": "app/(public-routes)/(routes)/domain/page.js",
+  "/(public-routes)/(routes)/hosting/bdix-hosting/page": "app/(public-routes)/(routes)/hosting/bdix-hosting/page.js",
   "/(public-routes)/(routes)/hosting/cloud-hosting/page": "app/(public-routes)/(routes)/hosting/cloud-hosting/page.js",
+  "/(public-routes)/(routes)/hosting/dedicated-server/page": "app/(public-routes)/(routes)/hosting/dedicated-server/page.js",
+  "/(public-routes)/(routes)/hosting/turbo-hosting/page": "app/(public-routes)/(routes)/hosting/turbo-hosting/page.js",
   "/(public-routes)/(routes)/hosting/web-hosting/page": "app/(public-routes)/(routes)/hosting/web-hosting/page.js",
+  "/(public-routes)/(routes)/hosting/wordpress-hosting/page": "app/(public-routes)/(routes)/hosting/wordpress-hosting/page.js",
+  "/(public-routes)/(routes)/pricing/page": "app/(public-routes)/(routes)/pricing/page.js",
+  "/(public-routes)/(routes)/reviews/page": "app/(public-routes)/(routes)/reviews/page.js",
   "/page": "app/page.js"
 }
