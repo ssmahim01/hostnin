@@ -46,7 +46,7 @@ const tabs = [
 
 export default function AdvancedFeatures() {
   return (
-    <section className="relative pt-20 md:pt-24 pb-12">
+    <section className="relative pt-10 pb-16">
       <div className="container max-w-7xl mx-auto px-4 lg:px-8">
         <div className="flex flex-col md:flex-row-reverse md:items-start gap-12">
           {/* Illustration */}

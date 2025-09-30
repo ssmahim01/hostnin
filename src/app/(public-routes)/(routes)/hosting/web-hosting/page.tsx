@@ -8,7 +8,6 @@ import { MoneyBackGuarantee } from "@/components/shared/hosting/money-back-guran
 import WhyHostnin from "@/components/shared/hosting/why-hostnin";
 // import UniqueFeatures from "@/app/(public-routes)/components/web-hosting/unique-features";
 import MigrationSection from "@/app/(public-routes)/components/web-hosting/migration-section";
-import AdvancedFeatures from "@/app/(public-routes)/components/web-hosting/advanced-features";
 import PricingPlans from "@/app/(public-routes)/components/web-hosting/pricing-plans";
 import HostingFAQs from "@/components/shared/hosting/hosting-faqs";
 import VideoReviews from "@/components/shared/video-reviews/video-reviews";
@@ -62,10 +61,9 @@ export default function WebHostingPage() {
       <MoneyBackGuarantee />
       <WhyHostnin />
       {/* <UniqueFeatures /> */}
-      <div className="pt-10">
+      <div className="py-10">
         <DomainSupports />
       </div>
-      <AdvancedFeatures />
       <MigrationSection />
       <HostingFAQs />
     </>

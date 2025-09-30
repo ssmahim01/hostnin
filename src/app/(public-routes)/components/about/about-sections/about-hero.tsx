@@ -14,7 +14,7 @@ const awards = [
 
 export default function AboutHero() {
   return (
-    <section className="overflow-hidden pt-16 pb-12 max-w-7xl mx-auto px-4 lg:px-8">
+    <section className="overflow-hidden pt-16 pb-8 max-w-7xl mx-auto px-4 lg:px-8">
       <div className="container pt-8 md:pt-16">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
@@ -77,7 +77,7 @@ export default function AboutHero() {
 
               {/* Professional Team Image */}
               <Image
-                src="/assets/team-hostnin.jpg"
+                src="/assets/hostnin-team.jpg"
                 alt="Hostnin Leadership Team"
                 className="absolute inset-0 w-full h-full object-cover object-center"
                 width={800}
