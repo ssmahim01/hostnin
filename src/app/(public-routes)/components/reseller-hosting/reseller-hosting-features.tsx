@@ -16,7 +16,7 @@ export default function ResellerHostingFeatures() {
           ]}
           buttonLabel="See Pricing"
           scrollId={true}
-          imageSrc="/assets/cloudData.png"
+          imageSrc="/assets/gif-assets/motion.gif"
           imageAlt="Cloud Data"
         />
 

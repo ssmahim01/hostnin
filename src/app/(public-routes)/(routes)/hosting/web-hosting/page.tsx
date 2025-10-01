@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: "Web Hosting | Hostnin",
     description:
       "Get blazing fast, secure, and affordable web hosting with Hostnin. Enjoy free SSL, domain, 99.9% uptime, and 24/7 support. Perfect for businesses & developers.",
-    url: "https://hostnin.com",
+    url: "https://hostnin.com/hosting/web-hosting",
     type: "website",
     images: [
       {

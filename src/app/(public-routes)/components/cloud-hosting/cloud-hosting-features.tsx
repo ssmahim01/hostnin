@@ -10,7 +10,7 @@ export default function CloudHostingFeatures() {
           heading="We Offers Lighting Fast Loading Speed"
           description={`Speed is one of the most basic but powerful features that you will get instantly with your Shared hosting package. A fast loading website ensures that your competitor are not able to snatch your potential customers.
           In case you have any confusion regarding which Email Solution is best suited for your business, you can contact us for assistance. Live Chat is available 24 hours a day, 7 days a week.`}
-           bullets={[
+          bullets={[
             "16+ CDN Included (Worthy as CloudFlare Premium Plan)",
             "100% Secure & safe Shell (SSH) Access",
             "Web Optimization feature for SEO",
@@ -18,7 +18,7 @@ export default function CloudHostingFeatures() {
           ]}
           scrollId={true}
           buttonLabel="See Pricing"
-          imageSrc="/assets/features.webp"
+          imageSrc="/assets/gif-assets/motion.gif"
           imageAlt="Features"
         />
 

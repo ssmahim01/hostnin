@@ -30,7 +30,6 @@ export default function FeatureBlock({
   reverse,
   bullets,
 }: FeatureBlockProps) {
-
   return (
     <div
       className={`flex flex-col ${
@@ -95,6 +94,7 @@ export default function FeatureBlock({
           src={imageSrc}
           width={640}
           height={400}
+          unoptimized
           className="object-contain drop-shadow-xl w-full h-auto"
         />
       </div>

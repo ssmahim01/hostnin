@@ -8,6 +8,3 @@ npm install --legacy-peer-deps
 
 echo "🔨 Building Next.js..."
 npm run build
-
-echo "🚀 Deploying to CapRover..."
-caprover deploy -h https://captain.hostnin.cfd -a hostnin -p '71;f6io[QBZp'

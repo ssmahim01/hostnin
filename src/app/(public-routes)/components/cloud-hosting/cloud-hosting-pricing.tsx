@@ -12,30 +12,6 @@ const tabClass = (active: boolean) =>
     active ? "bg-[#0070f3] text-white" : "bg-transparent text-white"
   }`;
 
-const planLinks = {
-  yearly: {
-    basic:
-      "https://my.hostnin.com/index.php/store/cloud-hosting/basic?billingcycle=annually",
-    starter:
-      "https://my.hostnin.com/index.php/store/cloud-hosting/cloud-starter?billingcycle=annually",
-    pro: "https://my.hostnin.com/index.php/store/cloud-hosting/professional?billingcycle=annually",
-    ultimate:
-      "https://my.hostnin.com/index.php/store/cloud-hosting/ultimate?billingcycle=annually",
-  },
-    "3-years": {
-      basic: "https://my.hostnin.com/index.php/store/cloud-hosting/basic?billingcycle=triennially",
-      starter:
-        "https://my.hostnin.com/index.php/store/cloud-hosting/cloud-starter?billingcycle=triennially",
-      pro: "https://my.hostnin.com/index.php/store/cloud-hosting/professional?billingcycle=triennially",
-      ultimate: "https://my.hostnin.com/index.php/store/cloud-hosting/ultimate?billingcycle=triennially",
-    },
-};
-
-const getPlanLink = (planTitle: string, billing: "yearly" | "3-years") => {
-  const planKey = planTitle.toLowerCase() as keyof typeof planLinks.yearly;
-  return planLinks[billing][planKey] || "#";
-};
-
 const icons = IconMap({
   basic: "/assets/svgexport-39-1.svg",
   starter: "/assets/starter-42.svg",
@@ -212,7 +188,23 @@ export default function CloudHostingPrice() {
                   </div>
 
                   <Link
-                    href={getPlanLink(plan.title, billing)}
+                    href={
+                      billing === "yearly"
+                        ? plan.title === "Basic"
+                          ? "https://my.hostnin.com/index.php/store/cloud-hosting/basic?billingcycle=annually"
+                          : plan.title === "Starter"
+                          ? "https://my.hostnin.com/index.php/store/cloud-hosting/cloud-starter?billingcycle=annually"
+                          : plan.title === "Pro"
+                          ? "https://my.hostnin.com/index.php/store/cloud-hosting/professional?billingcycle=annually"
+                          : "https://my.hostnin.com/index.php/store/cloud-hosting/ultimate?billingcycle=annually"
+                        : plan.title === "Basic"
+                        ? "https://my.hostnin.com/index.php/store/cloud-hosting/basic?billingcycle=triennially"
+                        : plan.title === "Starter"
+                        ? "https://my.hostnin.com/index.php/store/cloud-hosting/cloud-starter?billingcycle=triennially"
+                        : plan.title === "Pro"
+                        ? "https://my.hostnin.com/index.php/store/cloud-hosting/professional?billingcycle=triennially"
+                        : "https://my.hostnin.com/index.php/store/cloud-hosting/ultimate?billingcycle=triennially"
+                    }
                     rel="noopener noreferrer"
                     className={`block w-full py-4 px-6 rounded-xl font-bold text-sm transition-all duration-300 cursor-pointer transform hover:scale-105 ${
                       plan.highlight
