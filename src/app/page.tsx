@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     title: "Best Web Hosting Company in Bangladesh | Hostnin",
     description:
       "Hostnin is a web hosting company that provides reliable and affordable web hosting services.",
-    url: "https://www.hostnin.com",
+    url: "https://hostnin.com",
     type: "website",
     images: [
       {

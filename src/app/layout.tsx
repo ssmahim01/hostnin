@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   title: "Premium Web Hosting Solutions | Hostnin",
   description:
     "Hostnin is a web hosting company that provides reliable and affordable web hosting services.",
-  metadataBase: new URL("https://www.hostnin.com"),
+  metadataBase: new URL("https://hostnin.com"),
   icons: {
     icon: [
       {
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title: "Premium Web Hosting Solutions | Hostnin",
     description:
       "Hostnin is a web hosting company that provides reliable and affordable web hosting services.",
-    url: "https://www.hostnin.com",
+    url: "https://hostnin.com",
     siteName: "Hostnin",
     images: [
       {
