@@ -14,13 +14,6 @@ const tabClass = (active: boolean) =>
 
 const planLinks = {
   yearly: {
-    basic: "https://my.hostnin.com/index.php/store/cloud-hosting/basic",
-    starter:
-      "https://my.hostnin.com/index.php/store/cloud-hosting/cloud-starter",
-    pro: "https://my.hostnin.com/index.php/store/cloud-hosting/professional",
-    ultimate: "https://my.hostnin.com/index.php/store/cloud-hosting/ultimate",
-  },
-  "3-years": {
     basic:
       "https://my.hostnin.com/index.php/store/cloud-hosting/basic?billingcycle=annually",
     starter:
@@ -29,6 +22,13 @@ const planLinks = {
     ultimate:
       "https://my.hostnin.com/index.php/store/cloud-hosting/ultimate?billingcycle=annually",
   },
+    "3-years": {
+      basic: "https://my.hostnin.com/index.php/store/cloud-hosting/basic?billingcycle=triennially",
+      starter:
+        "https://my.hostnin.com/index.php/store/cloud-hosting/cloud-starter?billingcycle=triennially",
+      pro: "https://my.hostnin.com/index.php/store/cloud-hosting/professional?billingcycle=triennially",
+      ultimate: "https://my.hostnin.com/index.php/store/cloud-hosting/ultimate?billingcycle=triennially",
+    },
 };
 
 const getPlanLink = (planTitle: string, billing: "yearly" | "3-years") => {

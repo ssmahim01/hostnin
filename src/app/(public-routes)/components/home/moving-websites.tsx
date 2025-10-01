@@ -12,7 +12,7 @@ const movingWebsiteData = {
   button: {
     label: "View Pricing Plan",
   },
-  image: "/assets/moving-web.png",
+  gif: "/assets/gif-assets/2nd-motion.gif",
 };
 
 export default function MovingWebsites() {
@@ -27,15 +27,16 @@ export default function MovingWebsites() {
 
   return (
     <section className="pt-10 pb-5">
-      <div className="container max-w-7xl mx-auto px-4 flex flex-col-reverse md:flex-row items-center gap-10">
-        {/* Left Image */}
-        <div className="md:w-1/2 flex justify-center">
+      <div className="container max-w-7xl mx-auto px-4 flex flex-col-reverse md:flex-row items-center md:gap-10">
+        {/* Left GIF */}
+        <div className="md:w-1/2 h-full flex justify-center">
           <Image
-            src={movingWebsiteData.image}
+            src={movingWebsiteData.gif}
             alt={movingWebsiteData.title}
-            width={500}
-            height={500}
-            className="max-w-full h-auto object-contain"
+            width={1200}
+            height={900}
+            unoptimized 
+            className="max-w-full w-full h-full object-cover rounded-lg"
             priority
           />
         </div>

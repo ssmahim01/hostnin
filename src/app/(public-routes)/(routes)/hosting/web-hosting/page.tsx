@@ -30,13 +30,21 @@ export const metadata: Metadata = {
     title: "Web Hosting | Hostnin",
     description:
       "Get blazing fast, secure, and affordable web hosting with Hostnin. Enjoy free SSL, domain, 99.9% uptime, and 24/7 support. Perfect for businesses & developers.",
-    type: "website",
+    images: [
+      {
+        url: "/assets/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Hostnin Web Hosting",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Web Hosting | Hostnin",
     description:
       "Get blazing fast, secure, and affordable web hosting with Hostnin. Enjoy free SSL, domain, 99.9% uptime, and 24/7 support. Perfect for businesses & developers.",
+    images: ["/assets/og-image.jpg"],
   },
 };
 

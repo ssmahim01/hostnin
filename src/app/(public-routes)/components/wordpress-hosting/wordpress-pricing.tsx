@@ -22,17 +22,17 @@ const icons = IconMap({
 const planLinks = {
   yearly: {
     starter:
-      "https://my.hostnin.com/index.php/store/wordpress-hosting/wp-starter",
-    pro: "https://my.hostnin.com/index.php/store/wordpress-hosting/professional",
-    ultimate:
-      "https://my.hostnin.com/index.php/store/wordpress-hosting/ultimate",
-  },
-  "3-years": {
-    starter:
       "https://my.hostnin.com/index.php/store/wordpress-hosting/wp-starter?billingcycle=annually",
     pro: "https://my.hostnin.com/index.php/store/wordpress-hosting/professional?billingcycle=annually",
     ultimate:
       "https://my.hostnin.com/index.php/store/wordpress-hosting/ultimate?billingcycle=annually",
+  },
+  "3-years": {
+    starter:
+      "https://my.hostnin.com/index.php/store/wordpress-hosting/wp-starter?billingcycle=triennially",
+    pro: "https://my.hostnin.com/index.php/store/wordpress-hosting/professional?billingcycle=triennially",
+    ultimate:
+      "https://my.hostnin.com/index.php/store/wordpress-hosting/ultimate?billingcycle=triennially",
   },
 };
 
