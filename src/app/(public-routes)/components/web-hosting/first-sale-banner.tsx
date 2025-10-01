@@ -54,7 +54,7 @@ export default function FlashSaleBanner() {
                 24-Hour Flash Sale!
               </span>
               <span className="hidden lg:block font-semibold text-sm sm:text-base md:text-lg whitespace-nowrap">
-                Get 76% off Hosting plans + free Domain & SSL!
+                Get 63% off Hosting plans + free Domain & SSL!
               </span>
             </div>
             {/* countdown boxes */}
