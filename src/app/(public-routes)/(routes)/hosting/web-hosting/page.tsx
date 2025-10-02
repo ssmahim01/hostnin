@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/assets/og-image.jpg",
+        url: "https://hostnin.com/assets/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Hostnin Hosting Bangladesh",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     title: "Web Hosting | Hostnin",
     description:
       "Get blazing fast, secure, and affordable web hosting with Hostnin. Enjoy free SSL, domain, 99.9% uptime, and 24/7 support. Perfect for businesses & developers.",
-    images: ["/assets/og-image.jpg"],
+    images: ["https://hostnin.com/assets/og-image.jpg"],
   },
 };
 

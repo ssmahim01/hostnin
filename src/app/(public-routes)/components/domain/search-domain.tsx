@@ -1,7 +1,6 @@
 "use client";
 
 import { domains } from "@/data/domains";
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -20,10 +19,10 @@ export default function SearchDomain() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {domains.map((domain) => (
-            <motion.div
+            <div
               key={domain.id}
-              className="group relative bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 overflow-hidden"
-              whileHover={{ scale: 1.05 }}
+              className="group relative hover:scale-105 ease-in-out transition-transform bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transform duration-500 overflow-hidden"
+             
             >
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
               <div className="absolute top-4 right-4 bg-gradient-to-b from-red-500 to-pink-400 text-white text-xs font-bold px-2 py-1 rounded z-10 shadow-lg">
@@ -68,7 +67,7 @@ export default function SearchDomain() {
                   </Link>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

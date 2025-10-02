@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 import { Filter, Search, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -69,12 +68,7 @@ export default function Reviews({ reviews }: ReviewsProps) {
     <div className="pt-24 pb-20">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-8"
-        >
+        <div className="text-center mb-8">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Customer Reviews
           </h1>
@@ -111,15 +105,10 @@ export default function Reviews({ reviews }: ReviewsProps) {
               </p>
             </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* Filters */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-white dark:bg-slate-800 rounded-lg shadow-lg p-6 mb-8 mx-4 sm:mx-6 lg:mx-8"
-        >
+        <div className="bg-white dark:bg-slate-800 rounded-lg shadow-lg p-6 mb-8 mx-4 sm:mx-6 lg:mx-8">
           <div className="flex flex-col md:flex-row gap-4 items-center">
             <div className="flex items-center gap-2 text-gray-700 dark:text-slate-300">
               <Filter className="w-5 h-5" />
@@ -168,7 +157,7 @@ export default function Reviews({ reviews }: ReviewsProps) {
           <div className="mt-4 text-sm text-gray-600 dark:text-slate-400 text-center md:text-left">
             Showing {visibleReviews.length} of {filteredReviews.length} reviews
           </div>
-        </motion.div>
+        </div>
 
         {/* Reviews Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 sm:px-6 lg:px-8 mb-14">
@@ -181,11 +170,7 @@ export default function Reviews({ reviews }: ReviewsProps) {
 
         {/* “See More” Section */}
         {hasMore && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="flex flex-col items-center mt-4 gap-4"
-          >
+          <div className="flex flex-col items-center mt-4 gap-4">
             <p className="text-lg text-gray-700 dark:text-slate-300 text-center max-w-xl">
               We have even more amazing reviews from our happy customers on
               trusted platforms.
@@ -216,16 +201,12 @@ export default function Reviews({ reviews }: ReviewsProps) {
                 </button>
               </Link>
             </div>
-          </motion.div>
+          </div>
         )}
 
         {/* No Results */}
         {filteredReviews.length === 0 && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="text-center py-12"
-          >
+          <div className="text-center py-12">
             <p className="text-xl text-gray-600 dark:text-slate-400 mb-4">
               No reviews found matching your criteria.
             </p>
@@ -239,7 +220,7 @@ export default function Reviews({ reviews }: ReviewsProps) {
             >
               Clear Filters
             </Button>
-          </motion.div>
+          </div>
         )}
       </div>
     </div>

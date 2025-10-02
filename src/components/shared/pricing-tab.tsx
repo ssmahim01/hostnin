@@ -6,7 +6,7 @@ import TurboHostingPricing from "@/app/(public-routes)/components/turbo-hosting/
 import PricePlans from "@/app/(public-routes)/components/web-hosting/pricing-plans";
 import React, { useState } from "react";
 import { ScrollArea, ScrollBar } from "../ui/scroll-area";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 const tabs = [
   { id: "Web Hosting", label: "Web Hosting", component: <PricePlans /> },
@@ -65,15 +65,9 @@ export default function PricingTab() {
       {/* Tab Content */}
       <div className="rounded-xl">
         <AnimatePresence mode="wait">
-          <motion.div
-            key={activeTab}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-          >
+          <div key={activeTab}>
             {tabs.find((tab) => tab.id === activeTab)?.component}
-          </motion.div>
+          </div>
         </AnimatePresence>
       </div>
     </div>

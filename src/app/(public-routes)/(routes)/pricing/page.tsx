@@ -23,13 +23,23 @@ export const metadata: Metadata = {
     title: "Pricing Plans | Hostnin",
     description:
       "Explore Hostnin's affordable hosting and server pricing plans. Choose between yearly and monthly plans and find the best fit for your website or business.",
+    url: "https://hostnin.com/pricing",
     type: "website",
+    images: [
+      {
+        url: "https://hostnin.com/assets/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Hostnin Hosting Bangladesh",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Pricing Plans | Hostnin",
     description:
       "Explore Hostnin's affordable hosting and server pricing plans. Choose between yearly and monthly plans and find the best fit for your website or business.",
+    images: ["https://hostnin.com/assets/og-image.jpg"],
   },
 };
 

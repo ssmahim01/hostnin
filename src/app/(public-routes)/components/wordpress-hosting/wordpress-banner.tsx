@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Zap } from "lucide-react";
 import { CountdownTimer } from "../../../../components/shared/hosting/countdown-timer";
@@ -232,11 +231,7 @@ export function WordPressBanner() {
 
               {/* Button */}
               <div className="space-y-4">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.6 }}
-                >
+                <div>
                   <Button
                     size="lg"
                     onClick={handleScrollToPricing}
@@ -244,7 +239,7 @@ export function WordPressBanner() {
                   >
                     <Zap /> Claim Offer Now
                   </Button>
-                </motion.div>
+                </div>
               </div>
             </div>
 
@@ -263,14 +258,8 @@ export function WordPressBanner() {
               {/* Floating elements */}
               <div className="absolute inset-0 overflow-hidden">
                 {[...Array(6)].map((_, i) => (
-                  <motion.div
+                  <div
                     key={i}
-                    animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
-                    transition={{
-                      duration: 3 + i * 0.5,
-                      repeat: Number.POSITIVE_INFINITY,
-                      ease: "easeInOut",
-                    }}
                     className={`absolute w-8 h-8 bg-blue-400/20 rounded-lg ${
                       i % 2 === 0 ? "top-1/4" : "bottom-1/4"
                     } ${i % 3 === 0 ? "left-1/4" : "right-1/4"}`}

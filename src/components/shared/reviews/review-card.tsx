@@ -1,7 +1,6 @@
 "use client";
 
 import type React from "react";
-import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 import type { Review } from "@/types/review";
 import Image from "next/image";
@@ -12,14 +11,9 @@ interface ReviewCardProps {
   index: number;
 }
 
-export default function ReviewCard({ review, index }: ReviewCardProps) {
+export default function ReviewCard({ review }: ReviewCardProps) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="w-full max-w-lg mx-auto dark:bg-slate-800 bg-white shadow-lg rounded-xl p-6 hover:shadow-3xl transition-shadow duration-300"
-    >
+    <div className="w-full max-w-lg mx-auto dark:bg-slate-800 bg-white shadow-lg rounded-xl p-6 hover:shadow-3xl transition-shadow duration-300">
       <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4">
         <Image
           width={80}
@@ -69,6 +63,6 @@ export default function ReviewCard({ review, index }: ReviewCardProps) {
           day: "numeric",
         })}
       </div>
-    </motion.div>
+    </div>
   );
 }
