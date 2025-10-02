@@ -17,7 +17,7 @@ interface Plan {
 const resellerPlans: Plan[] = [
   {
     title: "Reseller Starter",
-    price: "৳2999 /mo",
+    price: "৳4999 /mo",
     link: "https://my.hostnin.com/index.php/store/reseller/starter",
     features: [
       { text: "50 GB NVMe SSD Storage" },
@@ -32,7 +32,7 @@ const resellerPlans: Plan[] = [
   },
   {
     title: "Reseller Standard",
-    price: "৳4999 /mo",
+    price: "৳7999 /mo",
     link: "https://my.hostnin.com/index.php/store/reseller/standard",
     features: [
       { text: "100 GB NVMe Storage" },
