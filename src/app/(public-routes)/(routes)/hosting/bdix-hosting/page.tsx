@@ -17,6 +17,28 @@ export const metadata: Metadata = {
     "Hostnin BDIX Hosting offers lightning-fast SSD hosting with lifetime free SSL, unlimited bandwidth, managed WordPress, and expert 24x7 support. Perfect for Bangladeshi websites.",
   keywords:
     "BDIX hosting, Bangladeshi hosting, SSD hosting Bangladesh, fast web hosting, WordPress hosting Bangladesh, secure hosting, managed hosting, Hostnin",
+     openGraph: {
+    title: "BDIX Hosting in Bangladesh | Hostnin",
+    description:
+      "Hostnin BDIX Hosting offers lightning-fast SSD hosting with lifetime free SSL, unlimited bandwidth, managed WordPress, and expert 24x7 support. Perfect for Bangladeshi websites.",
+    url: "https://hostnin.com/hosting/bdix-hosting",
+    type: "website",
+    images: [
+      {
+        url: "https://hostnin.com/assets/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Hostnin Hosting Bangladesh",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "BDIX Hosting in Bangladesh | Hostnin",
+    description:
+      "Hostnin BDIX Hosting offers lightning-fast SSD hosting with lifetime free SSL, unlimited bandwidth, managed WordPress, and expert 24x7 support. Perfect for Bangladeshi websites.",
+    images: ["https://hostnin.com/assets/og-image.jpg"],
+  },
 };
 
 export default function BDIXHostingPage() {

@@ -28,13 +28,23 @@ export const metadata: Metadata = {
     title: "WordPress Hosting | Hostnin",
     description:
       "Get the best WordPress hosting in Bangladesh with Hostnin. Enjoy 2X faster speed, free SSL, daily backups, 99.9% uptime guarantee, and 24/7 expert support. Managed WordPress plans starting from just ৳2399/year for secure and reliable WordPress websites.",
+    url: "https://hostnin.com/hosting/wordpress-hosting",
     type: "website",
+    images: [
+      {
+        url: "https://hostnin.com/assets/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Hostnin Hosting Bangladesh",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "WordPress Hosting | Hostnin",
     description:
       "Get the best WordPress hosting in Bangladesh with Hostnin. Enjoy 2X faster speed, free SSL, daily backups, 99.9% uptime guarantee, and 24/7 expert support. Managed WordPress plans starting from just ৳2399/year for secure and reliable WordPress websites.",
+    images: ["https://hostnin.com/assets/og-image.jpg"],
   },
 };
 

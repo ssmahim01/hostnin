@@ -21,6 +21,28 @@ export const metadata: Metadata = {
     "Get lightning-fast, secure and scalable Cloud Hosting from Hostnin. Enjoy up to 90% discount, free domain on 3 years billing, lifetime free SSL certificate, 24/7 expert support, and powerful global CDN for your website.",
   keywords:
     "Cloud Hosting, Scalable Hosting, Fast Web Hosting, Secure Cloud Hosting, Affordable Cloud Hosting, Free SSL, Free Domain Hosting, 24/7 Hosting Support, Global CDN Hosting, Hostnin Cloud Plans",
+     openGraph: {
+    title: "Cloud Hosting | Hostnin – Fast, Secure & Scalable Cloud Hosting",
+    description:
+      "Get lightning-fast, secure and scalable Cloud Hosting from Hostnin. Enjoy up to 90% discount, free domain on 3 years billing, lifetime free SSL certificate, 24/7 expert support, and powerful global CDN for your website.",
+    url: "https://hostnin.com/hosting/cloud-hosting",
+    type: "website",
+    images: [
+      {
+        url: "https://hostnin.com/assets/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Hostnin Hosting Bangladesh",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cloud Hosting | Hostnin – Fast, Secure & Scalable Cloud Hosting",
+    description:
+      "Get lightning-fast, secure and scalable Cloud Hosting from Hostnin. Enjoy up to 90% discount, free domain on 3 years billing, lifetime free SSL certificate, 24/7 expert support, and powerful global CDN for your website.",
+    images: ["https://hostnin.com/assets/og-image.jpg"],
+  },
 };
 
 export default function CloudHostingPage() {

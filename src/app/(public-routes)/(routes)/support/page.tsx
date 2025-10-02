@@ -15,6 +15,28 @@ export const metadata: Metadata = {
     "technical support",
     "billing support",
   ],
+   openGraph: {
+    title: "Support Ticket | Hostnin",
+    description:
+      "Get professional assistance from the Hostnin support team. Submit a support ticket for hosting, billing, domain or technical issues and we’ll respond promptly.",
+    url: "https://hostnin.com/support",
+    type: "website",
+    images: [
+      {
+        url: "https://hostnin.com/assets/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Hostnin Hosting Bangladesh",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Support Ticket | Hostnin",
+    description:
+      "Get professional assistance from the Hostnin support team. Submit a support ticket for hosting, billing, domain or technical issues and we’ll respond promptly.",
+    images: ["https://hostnin.com/assets/og-image.jpg"],
+  },
 };
 
 export default function SupportPage() {

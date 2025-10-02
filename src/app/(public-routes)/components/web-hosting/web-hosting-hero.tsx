@@ -25,7 +25,7 @@ export default function WebHostingHero() {
         ]}
         countdown={true}
         buttonText="Claim Offer Now"
-        illustration="/assets/webhero.png"
+        illustration="/assets/final.png"
         scrollId="pricing"
       />
     </div>

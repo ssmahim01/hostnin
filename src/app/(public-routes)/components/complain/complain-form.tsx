@@ -3,7 +3,6 @@
 import type React from "react";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -43,6 +42,7 @@ import {
   UserCheckIcon,
   RefreshCcw,
 } from "lucide-react";
+import { AnimatePresence } from "framer-motion";
 
 const complainSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -227,12 +227,7 @@ ${data.email}
                 proper investigation.
               </CardDescription>
             </div>
-            <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ delay: 0.5, type: "spring" }}
-              className="flex flex-col items-center gap-2"
-            >
+            <div className="flex flex-col items-center gap-2">
               <div className="relative w-16 h-16">
                 <svg
                   className="w-16 h-16 transform -rotate-90"
@@ -244,14 +239,11 @@ ${data.email}
                     fill="none"
                     d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
                   />
-                  <motion.path
+                  <path
                     className="text-blue-500 stroke-current"
                     strokeWidth="3"
                     strokeLinecap="round"
                     fill="none"
-                    initial={{ pathLength: 0 }}
-                    animate={{ pathLength: progress / 100 }}
-                    transition={{ duration: 0.5, ease: "easeInOut" }}
                     d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
                     strokeDasharray="100, 100"
                   />
@@ -263,7 +255,7 @@ ${data.email}
                 </div>
               </div>
               <span className="text-xs text-muted-foreground">Complete</span>
-            </motion.div>
+            </div>
           </div>
 
           <div className="space-y-2">
@@ -281,12 +273,7 @@ ${data.email}
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
               {/* Personal Information */}
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                className="space-y-4"
-              >
+              <div className="space-y-4">
                 <div className="flex items-center gap-2 mb-4">
                   <div className="w-8 h-8 rounded-full bg-blue-500/10 flex items-center justify-center">
                     <UserIcon className="h-4 w-4 text-blue-500" />
@@ -311,16 +298,13 @@ ${data.email}
                           />
                         </FormLabel>
                         <FormControl>
-                          <motion.div
-                            whileFocus={{ scale: 1.02 }}
-                            transition={{ type: "spring", stiffness: 300 }}
-                          >
+                          <div>
                             <Input
                               placeholder="Enter your full name"
                               className="h-12 transition-all duration-300 focus:ring-2 focus:ring-red-500/20"
                               {...field}
                             />
-                          </motion.div>
+                          </div>
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -340,32 +324,24 @@ ${data.email}
                           />
                         </FormLabel>
                         <FormControl>
-                          <motion.div
-                            whileFocus={{ scale: 1.02 }}
-                            transition={{ type: "spring", stiffness: 300 }}
-                          >
+                          <div>
                             <Input
                               type="email"
                               placeholder="Enter your email"
                               className="h-12 transition-all duration-300 focus:ring-2 focus:ring-red-500/20"
                               {...field}
                             />
-                          </motion.div>
+                          </div>
                         </FormControl>
                         <FormMessage />
                       </FormItem>
                     )}
                   />
                 </div>
-              </motion.div>
+              </div>
 
               {/* Complaint Details */}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                className="space-y-4"
-              >
+              <div className="space-y-4">
                 <div className="grid gap-4 md:grid-cols-2">
                   <FormField
                     control={form.control}
@@ -485,14 +461,10 @@ ${data.email}
                     </FormItem>
                   )}
                 />
-              </motion.div>
+              </div>
 
               {/* Complaint Description */}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.5 }}
-              >
+              <div>
                 <FormField
                   control={form.control}
                   name="complainDetails"
@@ -517,15 +489,10 @@ ${data.email}
                     </FormItem>
                   )}
                 />
-              </motion.div>
+              </div>
 
               {/* Submit Button */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.7 }}
-                className="flex gap-4 flex-wrap md:justify-center flex-col md:flex-row w-full items-center pt-2"
-              >
+              <div className="flex gap-4 flex-wrap md:justify-center flex-col md:flex-row w-full items-center pt-2">
                 <Button
                   type="submit"
                   disabled={isSubmitting || progress < 100}
@@ -533,37 +500,17 @@ ${data.email}
                 >
                   <AnimatePresence mode="wait">
                     {isSubmitting ? (
-                      <motion.div
-                        key="submitting"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className="flex items-center gap-2"
-                      >
-                        <motion.div
-                          animate={{ rotate: 360 }}
-                          transition={{
-                            duration: 1,
-                            repeat: Number.POSITIVE_INFINITY,
-                            ease: "linear",
-                          }}
-                          className="h-4 w-4 border-2 border-current border-t-transparent rounded-full"
-                        />
+                      <div key="submitting" className="flex items-center gap-2">
+                        <div className="h-4 w-4 border-2 border-current border-t-transparent rounded-full" />
                         <span>Preparing...</span>
                         {formProgress > 0 && (
                           <span className="ml-2 text-sm">
                             ({formProgress}%)
                           </span>
                         )}
-                      </motion.div>
+                      </div>
                     ) : (
-                      <motion.div
-                        key="submit"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className="flex items-center gap-2"
-                      >
+                      <div key="submit" className="flex items-center gap-2">
                         <SendIcon className="h-4 w-4" />
                         <span>Submit Complaint</span>
                         {progress < 100 && (
@@ -571,16 +518,11 @@ ${data.email}
                             {Math.round(progress)}%
                           </Badge>
                         )}
-                      </motion.div>
+                      </div>
                     )}
                   </AnimatePresence>
 
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-primary/0 via-white/20 to-primary/0"
-                    initial={{ x: "-100%" }}
-                    whileHover={{ x: "100%" }}
-                    transition={{ duration: 0.6 }}
-                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-white/20 to-primary/0" />
                 </Button>
 
                 <Button
@@ -596,7 +538,7 @@ ${data.email}
                   <RefreshCcw className="h-4 w-4" />
                   <span>Reset Form</span>
                 </Button>
-              </motion.div>
+              </div>
             </form>
           </Form>
         </CardContent>

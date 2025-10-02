@@ -18,6 +18,28 @@ export const metadata: Metadata = {
     "high paying affiliate program",
     "Bangladesh hosting affiliate",
   ],
+   openGraph: {
+    title: "Affiliate Program | Hostnin",
+    description:
+      "Join the Hostnin Affiliate Program and earn industry-leading commissions promoting premium cloud hosting. Get up to 15,000 BDT per sale with fast approval, ready-made banners, and marketing tools.",
+    url: "https://hostnin.com/affiliate",
+    type: "website",
+    images: [
+      {
+        url: "https://hostnin.com/assets/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Hostnin Hosting Bangladesh",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Affiliate Program | Hostnin",
+    description:
+      "Join the Hostnin Affiliate Program and earn industry-leading commissions promoting premium cloud hosting. Get up to 15,000 BDT per sale with fast approval, ready-made banners, and marketing tools.",
+    images: ["https://hostnin.com/assets/og-image.jpg"],
+  },
 };
 
 export default function AffiliatePage() {

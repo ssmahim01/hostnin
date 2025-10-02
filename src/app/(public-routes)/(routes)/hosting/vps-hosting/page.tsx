@@ -24,13 +24,23 @@ export const metadata: Metadata = {
     title: "High Performance VPS Hosting | Hostnin",
     description:
       "Get lightning-fast VPS hosting with 100% NVMe storage. Starter plan starting at ৳1999/mo. Deploy standard distro, 1-click apps, or custom images.",
+    url: "https://hostnin.com/hosting/vps-hosting",
     type: "website",
+    images: [
+      {
+        url: "https://hostnin.com/assets/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Hostnin Hosting Bangladesh",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "High Performance VPS Hosting | Hostnin",
     description:
       "Get lightning-fast VPS hosting with 100% NVMe storage. Starter plan starting at ৳1999/mo. Deploy standard distro, 1-click apps, or custom images.",
+    images: ["https://hostnin.com/assets/og-image.jpg"],
   },
 };
 

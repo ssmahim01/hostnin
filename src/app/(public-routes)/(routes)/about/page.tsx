@@ -17,17 +17,27 @@ export const metadata: Metadata = {
     "Discover Hostnin's journey in providing reliable, fast, and secure web hosting solutions. Learn about our mission, values, and commitment to empowering businesses online.",
   keywords:
     "about hostnin, web hosting company, hosting solutions, reliable hosting, fast hosting, secure hosting",
-  openGraph: {
-    title: "About Us - Hostnin | Leading Web Hosting Solutions",
+ openGraph: {
+    title: "About Us | Hostnin - Leading Web Hosting Solutions",
     description:
-      "Discover Hostnin's journey in providing reliable, fast, and secure web hosting solutions.",
+      "Discover Hostnin's journey in providing reliable, fast, and secure web hosting solutions. Learn about our mission, values, and commitment to empowering businesses online.",
+    url: "https://hostnin.com/about",
     type: "website",
+    images: [
+      {
+        url: "https://hostnin.com/assets/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Hostnin Hosting Bangladesh",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Us - Hostnin | Leading Web Hosting Solutions",
+    title: "About Us | Hostnin - Leading Web Hosting Solutions",
     description:
-      "Discover Hostnin's journey in providing reliable, fast, and secure web hosting solutions.",
+      "Discover Hostnin's journey in providing reliable, fast, and secure web hosting solutions. Learn about our mission, values, and commitment to empowering businesses online.",
+    images: ["https://hostnin.com/assets/og-image.jpg"],
   },
 };
 

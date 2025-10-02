@@ -5,6 +5,28 @@ export const metadata: Metadata = {
   title: "Book Consultation | Hostnin",
   description: "Schedule a consultation with Hostnin using Calendly.",
   keywords: "book consultation, hostnin, calendly, schedule meeting",
+   openGraph: {
+    title: "Book Consultation | Hostnin",
+    description:
+      "Schedule a consultation with Hostnin using Calendly.",
+    url: "https://hostnin.com/book-consultation",
+    type: "website",
+    images: [
+      {
+        url: "https://hostnin.com/assets/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Hostnin Hosting Bangladesh",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Book Consultation | Hostnin",
+    description:
+      "Schedule a consultation with Hostnin using Calendly.",
+    images: ["https://hostnin.com/assets/og-image.jpg"],
+  },
 };
 
 export default function BookConsultation() {

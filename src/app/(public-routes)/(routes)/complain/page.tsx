@@ -8,6 +8,28 @@ export const metadata: Metadata = {
   description:
     "Submit your complaint to Hostnin's support team. Fill out the form and our technical experts will reach out to resolve your issue promptly.",
   keywords: "Hostnin, complaint, support, customer service, issue reporting",
+   openGraph: {
+    title: "Submit Complain | Hostnin",
+    description:
+      "Submit your complaint to Hostnin's support team. Fill out the form and our technical experts will reach out to resolve your issue promptly.",
+    url: "https://hostnin.com/complain",
+    type: "website",
+    images: [
+      {
+        url: "https://hostnin.com/assets/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Hostnin Hosting Bangladesh",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Submit Complain | Hostnin",
+    description:
+      "Submit your complaint to Hostnin's support team. Fill out the form and our technical experts will reach out to resolve your issue promptly.",
+    images: ["https://hostnin.com/assets/og-image.jpg"],
+  },
 };
 
 export default function ComplainPage() {

@@ -26,16 +26,26 @@ export const metadata: Metadata = {
     ".xyz domain",
   ],
   openGraph: {
-    title: "Domain | Hostnin",
+    title: "Domain | Hostnin - Search & Register Your Domain",
     description:
       "Search and register your perfect domain name with Hostnin. Get affordable top-level domains starting from 599 TK/year with advanced features and easy management.",
+    url: "https://hostnin.com/domain",
     type: "website",
+    images: [
+      {
+        url: "https://hostnin.com/assets/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Hostnin Hosting Bangladesh",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Domain | Hostnin",
+    title: "Domain | Hostnin - Search & Register Your Domain",
     description:
       "Search and register your perfect domain name with Hostnin. Get affordable top-level domains starting from 599 TK/year with advanced features and easy management.",
+    images: ["https://hostnin.com/assets/og-image.jpg"],
   },
 };
 

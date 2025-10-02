@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -75,11 +74,7 @@ export default function ComplainFeatures() {
   return (
     <div className="space-y-6">
       {/* Process Features */}
-      <motion.div
-        initial={{ opacity: 0, x: 30 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6, delay: 0.3 }}
-      >
+      <div>
         <Card className="shadow-md border-0 backdrop-blur-sm bg-white/80 dark:bg-gray-900/80">
           <CardHeader>
             <CardTitle className="text-xl font-semibold flex items-center gap-2">
@@ -88,12 +83,9 @@ export default function ComplainFeatures() {
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            {features.map((feature, index) => (
-              <motion.div
+            {features.map((feature) => (
+              <div
                 key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
                 className="flex items-start gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors"
               >
                 <div className={`p-2 rounded-full ${feature.bgColor}`}>
@@ -105,18 +97,14 @@ export default function ComplainFeatures() {
                     {feature.description}
                   </p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </CardContent>
         </Card>
-      </motion.div>
+      </div>
 
       {/* Contact Information */}
-      <motion.div
-        initial={{ opacity: 0, x: 30 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6, delay: 0.5 }}
-      >
+      <div>
         <Card className="shadow-md border-0 backdrop-blur-sm bg-white/80 dark:bg-gray-900/80">
           <CardHeader>
             <CardTitle className="text-xl font-semibold flex items-center gap-2">
@@ -125,13 +113,14 @@ export default function ComplainFeatures() {
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            {contactInfo.map((info, index) => (
-              <motion.div
+            {contactInfo.map((info) => (
+              <div
                 key={info.label}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                className={`flex items-center ${info.href ? "gap-24 md:gap-16 lg:justify-start md:justify-between" : "justify-between"} p-3 rounded-lg bg-muted/30`}
+                className={`flex items-center ${
+                  info.href
+                    ? "gap-24 md:gap-16 lg:justify-start md:justify-between"
+                    : "justify-between"
+                } p-3 rounded-lg bg-muted/30`}
               >
                 <div className="flex items-center gap-2">
                   <info.icon className={`h-4 w-4 ${info.color}`} />
@@ -151,7 +140,7 @@ export default function ComplainFeatures() {
                     {info.value}
                   </Badge>
                 )}
-              </motion.div>
+              </div>
             ))}
 
             <div className="pt-2 border-t border-muted-foreground/10">
@@ -166,52 +155,7 @@ export default function ComplainFeatures() {
             </div>
           </CardContent>
         </Card>
-      </motion.div>
-
-      {/* Resolution Timeline */}
-      {/* <motion.div
-        initial={{ opacity: 0, x: 30 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6, delay: 0.7 }}
-      >
-        <Card className="shadow-md border-0 backdrop-blur-sm bg-white/80 dark:bg-gray-900/80">
-          <CardHeader>
-            <CardTitle className="text-xl font-semibold flex items-center gap-2">
-              <ClockIcon className="h-5 w-5 text-orange-500" />
-              Resolution Timeline
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-3">
-            <div className="space-y-3">
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full bg-green-500"></div>
-                <div className="text-sm">
-                  <span className="font-medium">0-48 hours:</span>
-                  <span className="text-muted-foreground ml-1">
-                    Acknowledgment
-                  </span>
-                </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full bg-blue-500"></div>
-                <div className="text-sm">
-                  <span className="font-medium">3-7 days:</span>
-                  <span className="text-muted-foreground ml-1">
-                    Investigation
-                  </span>
-                </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full bg-orange-500"></div>
-                <div className="text-sm">
-                  <span className="font-medium">7-14 days:</span>
-                  <span className="text-muted-foreground ml-1">Resolution</span>
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      </motion.div> */}
+      </div>
     </div>
   );
 }

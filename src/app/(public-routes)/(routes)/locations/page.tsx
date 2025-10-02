@@ -15,17 +15,27 @@ export const metadata: Metadata = {
     "Discover Hostnin's global CDN network with edge caching technology. Deploy faster websites with unlimited traffic, premium edge servers, and enhanced security across worldwide locations.",
   keywords:
     "CDN locations, edge caching, content delivery network, global servers, website speed, Hostnin CDN",
-  openGraph: {
+ openGraph: {
     title: "Global CDN Locations | Hostnin",
     description:
-      "Lightning fast content delivery with our global CDN network and edge caching technology.",
+      "Discover Hostnin's global CDN network with edge caching technology. Deploy faster websites with unlimited traffic, premium edge servers, and enhanced security across worldwide locations.",
+    url: "https://hostnin.com/locations",
     type: "website",
+    images: [
+      {
+        url: "https://hostnin.com/assets/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Hostnin Hosting Bangladesh",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Global CDN Locations | Hostnin",
     description:
-      "Lightning fast content delivery with our global CDN network and edge caching technology.",
+      "Discover Hostnin's global CDN network with edge caching technology. Deploy faster websites with unlimited traffic, premium edge servers, and enhanced security across worldwide locations.",
+    images: ["https://hostnin.com/assets/og-image.jpg"],
   },
 };
 

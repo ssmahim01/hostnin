@@ -18,6 +18,28 @@ export const metadata: Metadata = {
     "Experience enterprise-grade security, blazing-fast speed and 24/7 expert support with our Turbo Hosting plans. Perfect for businesses who demand performance.",
   keywords:
     "Turbo Hosting, NVMe Hosting, Fast Hosting, Enterprise Security, 24/7 Support, Reliable Hosting, Web Hosting Plans",
+     openGraph: {
+    title: "Turbo Hosting | Hostnin – Fast, Secure & Reliable",
+    description:
+      "Experience enterprise-grade security, blazing-fast speed and 24/7 expert support with our Turbo Hosting plans. Perfect for businesses who demand performance.",
+    url: "https://hostnin.com/hosting/turbo-hosting",
+    type: "website",
+    images: [
+      {
+        url: "https://hostnin.com/assets/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Hostnin Hosting Bangladesh",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Turbo Hosting | Hostnin – Fast, Secure & Reliable",
+    description:
+      "Experience enterprise-grade security, blazing-fast speed and 24/7 expert support with our Turbo Hosting plans. Perfect for businesses who demand performance.",
+    images: ["https://hostnin.com/assets/og-image.jpg"],
+  },
 };
 
 export default function TurboHostingPage() {

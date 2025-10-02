@@ -15,16 +15,26 @@ export const metadata: Metadata = {
   keywords:
     "Reseller Hosting, White-Label Hosting, NVMe Reseller Hosting, SSD Reseller Hosting, Fast Hosting, 24x7 Support, Low Client Density Hosting, Hostnin",
     openGraph: {
-    title: "Reseller Hosting | Hostnin",
+    title: "Reseller Hosting | Hostnin – High-Performance Reseller Plans",
     description:
       "Hostnin Reseller Hosting gives you enterprise-grade SSD/NVMe servers, low client density per server, and 24×7 expert technical support. Launch your own hosting business with blazing-fast speed and unmatched reliability.",
+    url: "https://hostnin.com/hosting/reseller-hosting",
     type: "website",
+    images: [
+      {
+        url: "https://hostnin.com/assets/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Hostnin Hosting Bangladesh",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Reseller Hosting | Hostnin",
+    title: "Reseller Hosting | Hostnin – High-Performance Reseller Plans",
     description:
       "Hostnin Reseller Hosting gives you enterprise-grade SSD/NVMe servers, low client density per server, and 24×7 expert technical support. Launch your own hosting business with blazing-fast speed and unmatched reliability.",
+    images: ["https://hostnin.com/assets/og-image.jpg"],
   },
 };
 

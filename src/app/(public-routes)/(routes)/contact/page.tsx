@@ -19,6 +19,28 @@ export const metadata: Metadata = {
     "customer support",
     "web hosting",
   ],
+  openGraph: {
+    title: "Contact Us | Hostnin",
+    description:
+      "Get in touch with Hostnin for 24/7 support via live chat, WhatsApp, or email. Reach out for additional features or management support.",
+    url: "https://hostnin.com/contact",
+    type: "website",
+    images: [
+      {
+        url: "https://hostnin.com/assets/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Hostnin Hosting Bangladesh",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Us | Hostnin",
+    description:
+      "Get in touch with Hostnin for 24/7 support via live chat, WhatsApp, or email. Reach out for additional features or management support.",
+    images: ["https://hostnin.com/assets/og-image.jpg"],
+  },
 };
 
 export default function ContactPage() {
