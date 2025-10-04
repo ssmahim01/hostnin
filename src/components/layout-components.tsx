@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import { Navbar } from "@/components/shared/navbar";
 import { Footer } from "@/components/shared/footer";
 import { ToasterProvider } from "@/components/ToasterProvider/ToasterProvider";
@@ -11,13 +12,16 @@ export default function LayoutComponents({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
+  const [showBanner, setShowBanner] = useState(true);
+
+  const mainPadding =
+    pathname === "/hosting/web-hosting" ? showBanner ? "pt-12" : "" : showBanner ? "pt-14" : "";
 
   return (
     <>
-      <Navbar />
-      <main className={`${pathname === "/hosting/web-hosting" ? "" : "pt-7"}`}>
-        {children}
-      </main>
+      
+      <Navbar setShowBanner={setShowBanner} />
+      <main className={mainPadding}>{children}</main>
       <ScrollProvider />
       <ToasterProvider />
       <Footer />

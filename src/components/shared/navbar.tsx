@@ -38,7 +38,7 @@ import Image from "next/image";
 import Dropdown from "../ui/menu-dropdown";
 import { AuthModal } from "../auth/auth-modal";
 import { AnimatePresence, motion } from "framer-motion";
-import FlashSaleBanner from "@/app/(public-routes)/components/web-hosting/first-sale-banner";
+import FlashSaleBanner from "@/app/(public-routes)/components/web-hosting/flash-sale-banner";
 
 const navItems: NavItem[] = [
   { label: "Pricing", href: "/pricing" },
@@ -151,7 +151,11 @@ const navItems: NavItem[] = [
   },
 ];
 
-export function Navbar() {
+export function Navbar({
+  setShowBanner,
+}: {
+  setShowBanner: (value: boolean) => void;
+}) {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [dashboardOpen, setDashboardOpen] = useState(false);
@@ -194,7 +198,7 @@ export function Navbar() {
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 
         bg-white dark:bg-slate-900 backdrop-blur-md shadow-sm"
     >
-      <FlashSaleBanner />
+      <FlashSaleBanner setShowBanner={setShowBanner} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
