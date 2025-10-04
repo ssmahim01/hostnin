@@ -82,7 +82,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          <main>{children}</main>
+          <main className="pt-14">{children}</main>
           <ScrollProvider />
           <ToasterProvider />
           <Footer />

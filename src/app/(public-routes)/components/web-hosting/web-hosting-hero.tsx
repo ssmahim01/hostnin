@@ -1,13 +1,9 @@
 "use client";
 import { Banner } from "@/components/shared/hosting/banner";
-import FlashSaleBanner from "./first-sale-banner";
 
 export default function WebHostingHero() {
   return (
     <div className="py-16">
-      {/* Flash Sale Banner */}
-      <FlashSaleBanner />
-
       <Banner
         backgroundImage="/assets/sh-hero-bg.png"
         tagline="Everything You Need to Create a Website"

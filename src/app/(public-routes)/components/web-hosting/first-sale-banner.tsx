@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { X } from "lucide-react";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import Link from "next/link";
 
 export default function FlashSaleBanner() {
   const [showBanner, setShowBanner] = useState(true);
@@ -43,17 +44,17 @@ export default function FlashSaleBanner() {
   if (!showBanner) return null;
 
   return (
-    <div className="w-full bg-gradient-to-r from-blue-600 to-blue-800 text-white px-2 md:px-4 py-2 md:py-6 text-sm">
+    <div className="w-full bg-gradient-to-r from-blue-600 to-blue-800 text-white px-2 md:px-4 py-2 text-sm">
       {/* Wrap only the horizontal scrollable content */}
       <ScrollArea className="overflow-x-auto w-full">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-2 whitespace-nowrap px-4 lg:px-10">
           {/* left text + countdown */}
           <div className="flex items-center md:gap-8 gap-2 shrink-0">
             <div className="flex flex-col">
-              <span className="font-semibold text-xs sm:text-base md:text-xl whitespace-nowrap">
+              <span className="font-semibold text-xs sm:text-sm whitespace-nowrap">
                 24-Hour Flash Sale!
               </span>
-              <span className="hidden lg:block font-semibold text-sm sm:text-base md:text-lg whitespace-nowrap">
+              <span className="hidden lg:block font-semibold text-xs whitespace-nowrap">
                 Get 63% off Hosting plans + free Domain & SSL!
               </span>
             </div>
@@ -71,15 +72,13 @@ export default function FlashSaleBanner() {
                     bg-white dark:bg-gray-800 
                     text-[#1a2340] dark:text-white 
                     rounded-md px-1 md:px-4 py-1 flex flex-col items-center 
-                    min-w-[28px] sm:min-w-[36px]
+                    min-w-[28px]
                   "
                 >
-                  <span className="font-bold text-xs sm:text-sm md:text-lg">
+                  <span className="font-bold text-xs sm:text-sm">
                     {String(item.value).padStart(2, "0")}
                   </span>
-                  <span className="text-[8px] sm:text-[10px]">
-                    {item.label}
-                  </span>
+                  <span className="text-[8px]">{item.label}</span>
                 </div>
               ))}
             </div>
@@ -87,35 +86,30 @@ export default function FlashSaleBanner() {
 
           {/* right buttons */}
           <div className="flex items-center gap-2 shrink-0 ml-auto">
-            <button
-              onClick={() =>
-                document
-                  .getElementById("pricing")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
-              className="flex items-center text-xs sm:text-lg font-semibold whitespace-nowrap cursor-pointer underline underline-offset-2 decoration-white hover:text-gray-300 transition"
-            >
-              View Details
-              <svg
-                className="ml-1 w-3 h-3 sm:w-4 sm:h-4"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
-            </button>
+            <Link href={"/hosting/web-hosting"}>
+              <button className="flex items-center text-xs sm:text-sm font-semibold whitespace-nowrap cursor-pointer underline underline-offset-2 decoration-white hover:text-gray-300 transition">
+                View Details
+                <svg
+                  className="ml-1 w-3 h-3"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+            </Link>
             <button
               aria-label="Close banner"
               onClick={() => setShowBanner(false)}
               className="text-white text-lg cursor-pointer"
             >
-              <X className="w-[17px] h-[17px]" />
+              <X className="w-[16px] h-[16px]" />
             </button>
           </div>
         </div>

@@ -153,7 +153,7 @@ export const Banner: React.FC<BannerProps> = ({
             quality={90}
             width={400}
             height={400}
-            className="object-cover w-full h-auto shadow-lg rounded-md"
+            className="object-cover w-full h-auto rounded-md"
             src={illustration}
             sizes="(max-width: 640px) 100vw,
            (max-width: 768px) 50vw,
