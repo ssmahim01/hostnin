@@ -84,7 +84,7 @@ export default function DomainBanner() {
           Search & Register Domain For Your Website
         </h1>
         <p className="text-lg text-white/90 mb-10 sm:mb-12 max-w-2xl mx-auto">
-          Cheap domains with advanced features; get top-level domains only at 999TK/year.
+          Cheap domains with advanced features; get top-level domains only at 1650TK/year.
         </p>
 
         <form
@@ -120,11 +120,11 @@ export default function DomainBanner() {
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 lg:mt-14 mt-8 justify-center">
           {[
-            { tld: ".COM", price: "৳999/Year" },
+            { tld: ".COM", price: "৳1650/Year" },
             { tld: ".NET", price: "৳1650/Year" },
             { tld: ".ORG", price: "৳1650/Year" },
             { tld: ".INFO", price: "৳599/Year" },
-            { tld: ".XYZ", price: "৳299/Year" },
+            { tld: ".XYZ", price: "৳599/Year" },
           ].map((domain, index) => (
             <div
               key={index}
