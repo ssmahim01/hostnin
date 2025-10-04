@@ -2,11 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider/theme-provider";
-import { Navbar } from "@/components/shared/navbar";
-import { Footer } from "@/components/shared/footer";
-import { ToasterProvider } from "@/components/ToasterProvider/ToasterProvider";
-import { ScrollProvider } from "@/components/shared/scroll-provider";
 import Script from "next/script";
+import LayoutComponents from "@/components/layout-components";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -81,11 +78,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-          <main className="pt-14">{children}</main>
-          <ScrollProvider />
-          <ToasterProvider />
-          <Footer />
+         <LayoutComponents>{children}</LayoutComponents>
         </ThemeProvider>
       </body>
     </html>

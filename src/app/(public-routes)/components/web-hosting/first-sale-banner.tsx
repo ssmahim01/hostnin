@@ -47,16 +47,14 @@ export default function FlashSaleBanner() {
     <div className="w-full bg-gradient-to-r from-blue-600 to-blue-800 text-white px-2 md:px-4 py-2 text-sm">
       {/* Wrap only the horizontal scrollable content */}
       <ScrollArea className="overflow-x-auto w-full">
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-2 whitespace-nowrap px-4 lg:px-10">
+        <div className="max-w-7xl mx-auto flex items-center justify-center gap-8 whitespace-nowrap px-4 lg:px-10">
           {/* left text + countdown */}
           <div className="flex items-center md:gap-8 gap-2 shrink-0">
             <div className="flex flex-col">
-              <span className="font-semibold text-xs sm:text-sm whitespace-nowrap">
+              <span className="font-semibold text-xs sm:text-xl whitespace-nowrap">
                 24-Hour Flash Sale!
               </span>
-              <span className="hidden lg:block font-semibold text-xs whitespace-nowrap">
-                Get 63% off Hosting plans + free Domain & SSL!
-              </span>
+             
             </div>
             {/* countdown boxes */}
             <div className="flex space-x-1">
@@ -82,10 +80,14 @@ export default function FlashSaleBanner() {
                 </div>
               ))}
             </div>
+
+            <p className=""> <span className="hidden lg:block font-semibold text-sm whitespace-nowrap">
+                Get 63% off Hosting plans + Free Domain & SSL!
+              </span></p>
           </div>
 
           {/* right buttons */}
-          <div className="flex items-center gap-2 shrink-0 ml-auto">
+          <div className="flex items-center gap-2 shrink-0">
             <Link href={"/hosting/web-hosting"}>
               <button className="flex items-center text-xs sm:text-sm font-semibold whitespace-nowrap cursor-pointer underline underline-offset-2 decoration-white hover:text-gray-300 transition">
                 View Details
