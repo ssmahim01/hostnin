@@ -66,11 +66,21 @@ export const Banner: React.FC<BannerProps> = ({
       <div className="w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-0 pt-5">
         {/* Left Content */}
         <div className="flex-1 text-white lg:pr-12 text-center lg:text-start lg:mb-0 pt-8 md:pt-0">
-          <p className="text-yellow-400 font-bold md:mb-2 mb-5 text-xl xs:text-base sm:text-xl">
+          <p
+            className={`${
+              pathname === "/hosting/turbo-hosting"
+                ? "text-sm text-yellow-400 font-bold md:mb-2 mb-5 xs:text-base sm:text-xl"
+                : "text-yellow-400 font-bold md:mb-2 mb-5 xs:text-base sm:text-xl text-base"
+            }`}
+          >
             {tagline}
           </p>
           <h1
-            className="text-4xl xs:text-xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 sm:mb-6 px-4 md:px-0"
+            className={`${
+              pathname === "/hosting/bdix-hosting" || pathname === "/hosting/reseller-hosting"
+                ? "text-[30px]"
+                : "text-[33px]"
+            } xs:text-xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 sm:mb-6 px-4 md:px-0`}
             style={{ fontFamily: "var(--font-urbanist)" }}
           >
             {headline}
@@ -100,10 +110,10 @@ export const Banner: React.FC<BannerProps> = ({
             {bullets.slice(0, 3).map((b, idx) => (
               <li
                 key={idx}
-                className="flex md:hidden items-center ml-8 gap-2"
+                className="flex md:hidden items-center text-left ml-5 gap-2"
               >
-                <Check className="text-xl sm:text-lg flex-shrink-0 mt-1" />
-                <span className="text-xl sm:text-lg">{b.text}</span>
+                <Check className="text-lg sm:text-lg flex-shrink-0 mt-1" />
+                <span className="text-lg sm:text-lg">{b.text}</span>
               </li>
             ))}
           </ul>
@@ -126,7 +136,7 @@ export const Banner: React.FC<BannerProps> = ({
           >
             <button
               onClick={handleScrollToPricing}
-              className="relative bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold px-6 md:px-8 py-6 md:py-4 rounded-xl transition-all duration-500 sm:text-lg shadow-xl hover:shadow-2xl hover:scale-105 w-full sm:w-auto mb-2 sm:mb-5 transform hover:-translate-y-1 hover:border-transparent border-2 text-xl border-blue-400 flex items-center justify-center gap-2 cursor-pointer lg:mx-0 mx-auto"
+              className="relative bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold px-6 md:px-8 py-5 md:py-4 rounded-xl transition-all duration-500 sm:text-lg shadow-xl hover:shadow-2xl hover:scale-105 w-full sm:w-auto mb-2 sm:mb-5 transform hover:-translate-y-1 hover:border-transparent border-2 text-xl border-blue-400 flex items-center justify-center gap-2 cursor-pointer lg:mx-0 mx-auto"
             >
               <Zap /> <span className="relative z-10">{buttonText}</span>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-300/20 to-indigo-300/20 rounded-xl opacity-0 hover:opacity-100 transition-opacity duration-500"></div>

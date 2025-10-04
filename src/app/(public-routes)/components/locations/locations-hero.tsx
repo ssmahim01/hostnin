@@ -10,7 +10,7 @@ export default function LocationsHero() {
   const features = [
     "Premium CDN Edge Server network",
     "Free for all Hostnin customers",
-    "Unlimited traffic – no limits or throttling",
+    "Unlimited traffic, no limits or throttling",
     "Fully integrated & easy to use",
   ];
 
@@ -41,12 +41,12 @@ export default function LocationsHero() {
               {features.map((feature) => (
                 <div
                   key={feature}
-                  className="flex lg:justify-start justify-center lg:text-left items-center gap-3 group hover:translate-x-2 transition-transform duration-300"
+                  className="flex lg:justify-start text-left items-center gap-3 group hover:translate-x-2 transition-transform duration-300"
                 >
                   <div className="flex-shrink-0 w-7 h-7 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-sm">
                     <Check className="h-4 w-4 text-white" />
                   </div>
-                  <span className="text-lg text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+                  <span className="lg:text-lg text-base text-muted-foreground group-hover:text-foreground transition-colors duration-300">
                     {feature}
                   </span>
                 </div>

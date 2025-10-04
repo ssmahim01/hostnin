@@ -92,9 +92,9 @@ export const webHostingData: PricingPlan[] = [
       ],
       server: [
         {
-          text: "99.99% Uptime Guarantee",
+          text: "99.9% Uptime Guarantee",
           included: true,
-          tooltip: "Guaranteed server uptime of 99.99%",
+          tooltip: "Guaranteed server uptime of 99.9%",
         },
         {
           text: "2 Core Hosting CPU",
@@ -312,9 +312,9 @@ export const webHostingData: PricingPlan[] = [
       ],
       server: [
         {
-          text: "99.99% Uptime Guarantee",
+          text: "99.9% Uptime Guarantee",
           included: true,
-          tooltip: "Guaranteed server uptime of 99.99%",
+          tooltip: "Guaranteed server uptime of 99.9%",
         },
         {
           text: "3 Core Hosting CPU",
@@ -533,9 +533,9 @@ export const webHostingData: PricingPlan[] = [
       ],
       server: [
         {
-          text: "99.99% Uptime Guarantee",
+          text: "99.9% Uptime Guarantee",
           included: true,
-          tooltip: "Guaranteed server uptime of 99.99%",
+          tooltip: "Guaranteed server uptime of 99.9%",
         },
         {
           text: "4 Core Hosting CPU",
@@ -766,9 +766,9 @@ export const webHostingData: PricingPlan[] = [
       ],
       server: [
         {
-          text: "99.99% Uptime Guarantee",
+          text: "99.9% Uptime Guarantee",
           included: true,
-          tooltip: "Guaranteed server uptime of 99.99%",
+          tooltip: "Guaranteed server uptime of 99.9%",
         },
         {
           text: "2 Core Hosting CPU",
@@ -913,7 +913,7 @@ export const webHostingData: PricingPlan[] = [
     price: 5495,
     currency: "৳",
     billingPeriod: "yearly",
-    features: WebCreateFeatures("20 GB", "Super Fast Website Speed", "10"),
+    features: WebCreateFeatures("20 GB", "Super Fast Website Speed", "Unlimited"),
     expandedFeatures: {
       primary: [
         {
@@ -986,9 +986,9 @@ export const webHostingData: PricingPlan[] = [
       ],
       server: [
         {
-          text: "99.99% Uptime Guarantee",
+          text: "99.9% Uptime Guarantee",
           included: true,
-          tooltip: "Guaranteed server uptime of 99.99%",
+          tooltip: "Guaranteed server uptime of 99.9%",
         },
         {
           text: "3 Core Hosting CPU",
@@ -1207,9 +1207,9 @@ export const webHostingData: PricingPlan[] = [
       ],
       server: [
         {
-          text: "99.99% Uptime Guarantee",
+          text: "99.9% Uptime Guarantee",
           included: true,
-          tooltip: "Guaranteed server uptime of 99.99%",
+          tooltip: "Guaranteed server uptime of 99.9%",
         },
         {
           text: "4 Core Hosting CPU",

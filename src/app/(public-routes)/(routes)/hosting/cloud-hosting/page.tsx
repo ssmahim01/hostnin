@@ -3,7 +3,6 @@ import { Banner } from "@/components/shared/hosting/banner";
 import { MoneyBackGuarantee } from "@/components/shared/hosting/money-back-gurantee";
 import { TestimonialsSection } from "@/components/shared/testimonials";
 import { Metadata } from "next";
-import CloudHostingFeatures from "@/app/(public-routes)/components/cloud-hosting/cloud-hosting-features";
 import HostingFAQs from "@/components/shared/hosting/hosting-faqs";
 import CloudHostingPlans from "@/app/(public-routes)/components/cloud-hosting/cloud-hosting-plans";
 import CloudPlanSection from "@/app/(public-routes)/components/cloud-hosting/cloud-plan-section";
@@ -14,6 +13,7 @@ import ComprehensiveGuides from "@/app/(public-routes)/components/cloud-hosting/
 import CloudHostingPricing from "@/app/(public-routes)/components/cloud-hosting/cloud-hosting-pricing";
 import VideoReviews from "@/components/shared/video-reviews/video-reviews";
 import FreeCdnComparison from "@/components/shared/free-cdn-comparison";
+import HostingFeaturesBlock from "@/components/shared/hosting/hosting-features-block";
 
 export const metadata: Metadata = {
   title: "Cloud Hosting | Hostnin – Fast, Secure & Scalable Cloud Hosting",
@@ -81,7 +81,7 @@ export default function CloudHostingPage() {
         <CloudPlanFeatures />
       </div>
       <CloudControlPanel />
-      <CloudHostingFeatures />
+      <HostingFeaturesBlock />
       <ComprehensiveGuides />
       <HostingFAQs />
     </>

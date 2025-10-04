@@ -17,7 +17,7 @@ export function HeroSection() {
   return (
     <section
       className="
-        md:py-28 pt-24 pb-16 text-white
+        md:py-28 pt-28 pb-20 text-white
         bg-[linear-gradient(278deg,rgba(0,40,160,0.9)_16%,rgba(0,20,80,0.9)_98%)]
      dark:bg-[linear-gradient(278deg,rgba(5,5,5,0.5)_16%,rgba(5,5,5,0.5)_98%)]
       "
@@ -25,7 +25,7 @@ export function HeroSection() {
       <div className=" max-w-7xl mx-auto container px-5 lg:px-10 flex flex-col lg:flex-row items-center justify-between lg:gap-0 gap-8">
         {/* Text Content */}
         <div className="lg:w-1/2 space-y-4 md:space-y-7 text-center lg:text-left">
-          <h1 className="text-[32px] sm:text-4xl md:text-5xl lg:text-5xl font-bold text-white leading-tight">
+          <h1 className="text-[29px] sm:text-4xl md:text-5xl lg:text-5xl font-bold text-white leading-tight">
             Best Web Hosting <br />{" "}
             <span className="relative">
               Company in Bangladesh
@@ -58,7 +58,7 @@ export function HeroSection() {
         </div>
 
         {/* Image */}
-        <div className=" relative lg:w-1/2 flex justify-end">
+        <div className=" relative lg:w-1/2 justify-end md:flex hidden">
           <Image
             src={heroData.image.src}
             alt={heroData.image.alt}

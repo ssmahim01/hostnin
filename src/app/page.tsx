@@ -9,6 +9,7 @@ import ControlPanelSection from "./(public-routes)/components/home/control-panel
 import SupportBanner from "./(public-routes)/components/home/support-banner";
 import SupportTeam from "./(public-routes)/components/home/support-team";
 import VideoReviews from "../components/shared/video-reviews/video-reviews";
+import HostingFeaturesBlock from "@/components/shared/hosting/hosting-features-block";
 
 export const metadata: Metadata = {
   title: "Home | Best Web Hosting Company in Bangladesh",
@@ -46,6 +47,9 @@ export default function Home() {
       <div className="lg:-my-16 md:my-0 -mb-10">
         <MovingWebsites />
       </div>{" "}
+      <div className="-mb-8 -mt-10">
+        <HostingFeaturesBlock />
+      </div>
       <DomainSearchSection />
       <ControlPanelSection />
       <VideoReviews show={true} featuresShow={false} />

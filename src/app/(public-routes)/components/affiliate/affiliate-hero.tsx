@@ -17,10 +17,10 @@ export default function AffiliateHero() {
         <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
           {/* Text area */}
           <div className="flex-1 text-center lg:text-left">
-            <h1 className="text-4xl lg:text-5xl font-extrabold text-gray-900 dark:text-gray-100 mb-4">
+            <h1 className="text-3xl lg:text-5xl font-extrabold text-gray-900 dark:text-gray-100 mb-4">
               HOSTNIN AFFILIATE PROGRAM
             </h1>
-            <h2 className="text-3xl md:text-4xl font-bold text-blue-700 dark:text-blue-400 mb-6 leading-snug">
+            <h2 className="text-2xl md:text-4xl font-bold text-blue-700 dark:text-blue-400 mb-6 leading-snug">
               Join the Highest Paying <br />
               Hosting Affiliate Program
             </h2>

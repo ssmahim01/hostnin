@@ -31,7 +31,7 @@ export default function CloudControlPanel() {
 
   return (
     <section className="relative w-full bg-[#03206B] overflow-hidden py-6 sm:py-10 lg:py-10 px-3 sm:px-6 lg:px-20 flex flex-col items-center">
-      <h2 className="text-white text-2xl sm:text-3xl lg:text-4xl font-bold text-center pt-6 sm:pt-8 lg:pt-5 z-10 px-3 sm:px-4 font-['Urbanist',sans-serif]">
+      <h2 className="text-white text-2xl sm:text-3xl lg:text-4xl font-bold text-center pt-6 sm:pt-8 lg:pt-5 z-10 pb-5 px-3 sm:px-4 font-['Urbanist',sans-serif]">
         Most Secured &amp; Advanced
         <br />
         Control Panel around

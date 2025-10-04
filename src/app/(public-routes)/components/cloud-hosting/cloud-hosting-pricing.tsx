@@ -51,7 +51,7 @@ export default function CloudHostingPrice() {
     >
       <div id="pricing" className={`${pathname === "/pricing" ? "" : "pt-24"}`}>
         {pathname !== "/pricing" && (
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-8 text-balance">
+          <h2 className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white mb-8 text-balance">
             Choose Your Perfect Plan
           </h2>
         )}

@@ -9,8 +9,8 @@ export default function SupportSection() {
   return (
     <div className="pb-60 sm:pb-72 bg-[#f8f8f8] dark:bg-neutral-900">
       {/* Top blue section */}
-      <section className="bg-[#03206B] px-4 sm:px-6 lg:px-10 pt-6 sm:pt-8 pb-24 sm:pb-32 relative overflow-visible">
-        <div className="w-full max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center justify-between gap-6 sm:gap-8 lg:gap-12">
+      <section className="bg-[#03206B] pt-6 sm:pt-8 pb-24 sm:pb-32 relative overflow-visible">
+        <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-10 mx-auto flex flex-col-reverse lg:flex-row items-center justify-between gap-6 sm:gap-8">
           {/* Text content */}
           <div className="flex-1 text-white lg:pr-8 text-center lg:text-left">
             <h1 className="text-[30px] sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold leading-tight mb-3 sm:mb-4 md:mb-6 font-['Urbanist',sans-serif]">
@@ -56,10 +56,10 @@ export default function SupportSection() {
           <div className="flex-1 flex justify-center items-center w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl">
             <Image
               alt="Support Banner"
-              src="/assets/support-team.png"
+              src="/assets/hostnin-team.jpg"
               width={800}
               height={600}
-              className="object-contain w-full h-auto max-h-[400px] sm:max-h-[500px]"
+              className="object-cover rounded-lg w-full h-auto max-h-[400px] sm:max-h-[500px]"
             />
           </div>
         </div>

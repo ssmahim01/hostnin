@@ -34,10 +34,10 @@ export default function Offer() {
       }}
     >
       <div className="container max-w-5xl mx-auto px-4">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
+        <h2 className="text-xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
           {offerData.title}
         </h2>
-        <p className="text-gray-200 mt-2 text-lg font-semibold leading-relaxed">
+        <p className="text-gray-200 mt-2 text-base md:text-lg font-semibold leading-relaxed">
           {offerData.subtitle}
         </p>
 

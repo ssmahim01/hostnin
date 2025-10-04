@@ -245,7 +245,7 @@ export default function CDNLocations() {
           >
             {/* World Map SVG */}
             <Image
-              className="w-96 md:w-[570px] h-auto max-w-6xl"
+              className="w-80 md:w-[570px] h-auto max-w-6xl"
               src="/assets/map.svg"
               alt="Hostnin CDN world map"
               width={2370}

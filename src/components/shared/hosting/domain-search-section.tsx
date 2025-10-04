@@ -16,10 +16,10 @@ const domainSearchSchema = z.object({
 });
 
 const domainExtensions: DomainExtension[] = [
-  { extension: ".com", price: "৳1650", color: "text-blue-500" },
+  { extension: ".com", price: "৳999", color: "text-blue-500" },
   { extension: ".net", price: "৳1650", color: "text-red-500" },
   { extension: ".org", price: "৳1650", color: "text-green-500" },
-  { extension: ".xyz", price: "৳599", color: "text-yellow-500" },
+  { extension: ".xyz", price: "৳299", color: "text-yellow-500" },
 ];
 
 export function DomainSearchSection() {
@@ -130,11 +130,11 @@ export function DomainSearchSection() {
                     </div>
                     <div className="flex items-center justify-center gap-2 mb-2">
                       <div className="bg-blue-600 text-white px-4 py-2 rounded-full text-lg font-bold">
-                        30% off
+                        60% off
                       </div>
                     </div>
                     <div className="text-xl font-semibold text-blue-600 dark:text-blue-400">
-                      1650tk/year
+                      999tk/year
                     </div>
                   </div>
 

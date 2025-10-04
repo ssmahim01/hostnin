@@ -57,7 +57,7 @@ export default function DedicatedServerBanner() {
         </div>
 
         {/* Image */}
-        <div className="flex-1 md:ml-0 ml-8 flex justify-center items-center w-[400px] h-[400px] sm:w-[600px] sm:h-[500px] lg:w-[800px] lg:h-[600px]">
+        <div className="flex-1 md:ml-0 flex justify-center items-center w-full ml-4 h-[400px] sm:w-[600px] sm:h-[500px] lg:w-[800px] lg:h-[600px]">
           <Image
             src="/assets/Vps-slider-2.png"
             alt="Server Illustration"

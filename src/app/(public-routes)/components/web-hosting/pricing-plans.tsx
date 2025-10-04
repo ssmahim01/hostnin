@@ -74,7 +74,7 @@ export default function PricePlans() {
       >
         {pathname !== "/pricing" && (
           <>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2 text-balance">
+            <h2 className="text-2xl text-center md:text-4xl font-bold text-gray-900 dark:text-white mb-2 text-balance">
               Choose Your Perfect Plan
             </h2>
 
@@ -82,7 +82,7 @@ export default function PricePlans() {
             <p
               className="
           text-gray-600 text-center dark:text-gray-300 
-          text-base md:text-lg 
+           md:text-lg 
           mb-8 
           transition-all duration-500 
           hover:text-blue-500 dark:hover:text-blue-400 

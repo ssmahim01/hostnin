@@ -113,8 +113,8 @@ function TeamCard({
     <Card
       className={`${
         isLead
-          ? "w-96 py-4 border-2 border-blue-500 shadow-xl bg-white dark:bg-slate-800"
-          : "w-96 lg:w-64 p-0 border border-slate-200 dark:border-slate-700 shadow-lg bg-white dark:bg-slate-800"
+          ? "w-80 md:w-96 py-4 border-2 border-blue-500 shadow-xl bg-white dark:bg-slate-800"
+          : "w-80 md:w-96 lg:w-64 p-0 border border-slate-200 dark:border-slate-700 shadow-lg bg-white dark:bg-slate-800"
       } 
       hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 rounded-xl overflow-hidden`}
     >

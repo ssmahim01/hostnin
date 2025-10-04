@@ -104,7 +104,7 @@ export const VPSBannerSection: React.FC = () => {
       </div>
 
       {/* Specs Cards */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 w-full max-w-7xl -bottom-[36rem] sm:-bottom-[30rem] lg:-bottom-[22rem] z-20 px-3 sm:px-0">
+      <div className="absolute left-1/2 transform -translate-x-1/2 w-full max-w-7xl -bottom-[38rem] sm:-bottom-[29rem] lg:-bottom-[22rem] z-20 px-3 sm:px-0">
        <VPSFeatureCard />
       </div>
     </section>
