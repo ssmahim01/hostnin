@@ -55,7 +55,7 @@ export default function MeetOurTeam() {
             MEET OUR TEAM
           </h1>
           <div className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-md font-semibold text-sm tracking-wide uppercase transition-colors duration-200 shadow-lg">
-            INSIDE DEVELOPMENT
+            INSIDE HOSTNIN
           </div>
         </div>
 

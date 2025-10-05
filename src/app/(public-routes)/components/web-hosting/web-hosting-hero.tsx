@@ -15,13 +15,13 @@ export default function WebHostingHero() {
           </>
         }
         bullets={[
-          { text: "Free .COM Domain on Trinnially" },
+          { text: "Free .COM Domain Included" },
           { text: "Genuine & Latest Control Panel" },
           { text: "Free WildCard SSL for Lifetime" },
         ]}
         countdown={true}
         buttonText="Claim Offer Now"
-        illustration="/assets/final.png"
+        illustration="/assets/web-banner.png"
         scrollId="pricing"
       />
     </div>

@@ -9,8 +9,8 @@ interface CountdownTimerProps {
 export function CountdownTimer({}: CountdownTimerProps) {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
-    hours: 2,
-    minutes: 20,
+    hours: 17,
+    minutes: 15,
     seconds: 40,
   });
 

@@ -56,7 +56,10 @@ export default function CloudHostingPrice() {
           </h2>
         )}
       </div>
-      <div id="plans-container" className="w-full max-w-7xl">
+      <div
+        id="plans-container"
+        className="w-full max-w-[88rem] mx-auto px-4 sm:px-6 lg:px-8"
+      >
         <div className="flex flex-row items-center gap-4  justify-center">
           <div className="flex bg-[#2a3553] rounded-full p-1">
             <button

@@ -7,7 +7,7 @@ const stats = [
     number: "99.9%",
     label: "Uptime Guarantee",
     description: "Reliable hosting you can count on",
-    company: "HOSTNIN",
+    company: "SERVICE",
   },
   {
     number: "24/7",

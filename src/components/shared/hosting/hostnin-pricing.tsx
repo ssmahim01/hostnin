@@ -28,17 +28,6 @@ type Plan = {
 
 const PLANS: Plan[] = [
   {
-    id: "web-hosting",
-    Icon: Globe,
-    title: "Web Hosting",
-    description:
-      "Fast, secure and reliable web hosting with Hostnin CDN integrated for top performance worldwide.",
-    priceLabel: "month",
-    price: "৳1,099",
-    ctaLabel: "Web Hosting",
-    href: "/hosting/web-hosting",
-  },
-  {
     id: "managed-cloud",
     Icon: ServerCog,
     title: "Managed Cloud Hosting",
@@ -48,12 +37,23 @@ const PLANS: Plan[] = [
     price: "৳999",
     ctaLabel: "Managed Cloud Hosting",
     href: "/hosting/cloud-hosting",
+  },
+  {
+    id: "web-hosting",
+    Icon: Globe,
+    title: "Web Hosting",
+    description:
+      "Fast, secure and reliable web hosting with Hostnin CDN integrated for top performance worldwide.",
+    priceLabel: "year",
+    price: "৳1,995",
+    ctaLabel: "Web Hosting",
+    href: "/hosting/web-hosting",
     highlight: true,
   },
   {
     id: "wordpress",
     Icon: Layers,
-    title: "Managed WordPress Hosting",
+    title: "WordPress Hosting",
     description: "Host unlimited WordPress sites on a fast, secure platform.",
     priceLabel: "year",
     price: "৳2,399",
@@ -67,7 +67,7 @@ const PLANS: Plan[] = [
     description:
       "Sell hosting to your customers with no per-account fees — full rebranding allowed.",
     priceLabel: "month",
-    price: "৳2,999",
+    price: "৳4,999",
     ctaLabel: "Reseller Hosting",
     href: "/hosting/reseller-hosting",
   },
@@ -75,16 +75,15 @@ const PLANS: Plan[] = [
 
 export default function HostninPricing() {
   return (
-    <section className="container mx-auto px-4 lg:px-8 pt-6 pb-20 max-w-7xl">
-      <div className="text-center max-w-3xl mx-auto mb-8 space-y-4">
-        <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white">
-          Use Hostnin CDN with any of these hosting platforms
-        </h2>
-        <p className="mt-3 text-sm sm:text-base text-muted-foreground">
-          Get the performance benefits of Hostnin’s CDN paired with
-          best-in-class hosting — autoscaling, managed cloud, WordPress and
-          reseller options.
-        </p>
+    <section className="container mx-auto px-4 lg:px-8 pt-[70px] pb-4 max-w-7xl">
+      <div className="text-center max-w-3xl mx-auto mb-7 space-y-4">
+        <h2
+          id="plans"
+          className="text-3xl font-bold text-center text-gray-900 dark:text-white"
+        >
+          {" "}
+          Select Your Perfect Hosting Plan{" "}
+        </h2>{" "}
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

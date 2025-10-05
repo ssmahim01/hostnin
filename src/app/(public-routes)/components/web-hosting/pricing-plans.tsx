@@ -14,6 +14,7 @@ const tabClass = (active: boolean) =>
   }`;
 
 const icons = IconMap({
+  basic: "/assets/svgexport-39-1.svg",
   starter: "/assets/starter-42.svg",
   pro: "/assets/pro.svg",
   ultimate: "/assets/ultimate.svg",
@@ -21,11 +22,13 @@ const icons = IconMap({
 
 const planLinks = {
   monthly: {
+    basic: "https://my.hostnin.com/index.php/store/web-hosting/basic",
     starter: "https://my.hostnin.com/index.php/store/web-hosting/starter",
     pro: "https://my.hostnin.com/index.php/store/web-hosting/professional",
     ultimate: "https://my.hostnin.com/index.php/store/web-hosting/ultimate",
   },
   yearly: {
+    basic: "https://my.hostnin.com/index.php/store/web-hosting/basic?billingcycle=annually",
     starter:
       "https://my.hostnin.com/index.php/store/web-hosting/starter?billingcycle=annually",
     pro: "https://my.hostnin.com/index.php/store/web-hosting/professional?billingcycle=annually",
@@ -51,7 +54,7 @@ export default function PricePlans() {
   };
 
   const plans: PricingPlan[] = webHostingData.filter(
-    (plan) => plan.billingPeriod === billing && plan.title !== "Basic"
+    (plan) => plan.billingPeriod === billing
   );
 
   const getPlanLink = (planTitle: string) => {
@@ -97,7 +100,7 @@ export default function PricePlans() {
 
       <div
         id="plans-container"
-        className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        className="w-full max-w-[88rem] mx-auto px-4 sm:px-6 lg:px-8"
       >
         <div className="flex flex-row items-center gap-4 mb-8 justify-center">
           <div className="flex bg-[#2a3553] rounded-full p-1">
@@ -149,12 +152,12 @@ export default function PricePlans() {
               </defs>
             </svg>
             <span className="text-blue-400 font-medium text-base md:text-lg inline ml-10">
-              Upto 63% save
+              Upto 62% save
             </span>
           </div>
         </div>
 
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-8 md:gap-10 justify-center items-start mt-8 sm:mt-12 md:mt-16">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-8 md:gap-10 justify-center items-start mt-8 sm:mt-12 md:mt-16">
           {plans.map((plan) => (
             <div
               key={plan.title}
@@ -181,7 +184,7 @@ export default function PricePlans() {
                       {plan.title}
                     </h3>
                   </div>
-                  <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 font-medium ">
+                  <p className="text-sm text-gray-600 dark:text-gray-300 font-medium ">
                     {plan.description}
                   </p>
                 </div>
@@ -200,7 +203,7 @@ export default function PricePlans() {
                   </div>
 
                   {plan.savingsText && (
-                    <div className="bg-gradient-to-r from-green-50 to-blue-50 text-green-700 dark:from-green-100 dark:to-blue-100 font-bold text-sm md:text-base mb-6 px-4 py-2 rounded-full border border-green-200 inline-block shadow-sm">
+                    <div className="bg-gradient-to-r from-blue-50 to-cyan-50 text-gray-800 dark:text-white/90 dark:from-accent dark:to-accent font-bold text-sm mb-6 px-4  py-2 rounded-full border dark:border-transparent border-blue-100 inline-block shadow-sm">
                       {plan.savingsText}
                     </div>
                   )}
@@ -217,15 +220,14 @@ export default function PricePlans() {
                     {plan.buttonText || "Add to Cart"}
                   </Link>
 
-                  <div className="text-xs md:text-base text-gray-500 dark:text-gray-300 mt-4 text-center">
+                  <div className="text-xs md:text-sm text-gray-500 dark:text-gray-300 mt-4 text-center">
                     {plan.infoText}
                   </div>
                 </div>
 
                 <div className="w-full mb-8">
-                  <div className="mb-4">
-                    {/* Starter Plan Special Gift */}
-                    {plan.title === "Starter" && (
+                  {/* <div className="mb-4"> */}
+                    {/* {plan.title === "Starter" && (
                       <div
                         className={`rounded-lg p-3 relative group ${
                           billing === "monthly"
@@ -283,7 +285,6 @@ export default function PricePlans() {
                       </div>
                     )}
 
-                    {/* Pro/Ultimate Plan Special Gift */}
                     {(plan.title === "Pro" || plan.title === "Ultimate") && (
                       <div
                         className={`rounded-lg p-3 relative group ${
@@ -339,8 +340,8 @@ export default function PricePlans() {
                           </div>
                         )}
                       </div>
-                    )}
-                  </div>
+                    )} */}
+                  {/* </div> */}
 
                   <h4 className="font-bold text-gray-800 dark:text-gray-200 mb-4 text-lg md:text-xl">
                     Features

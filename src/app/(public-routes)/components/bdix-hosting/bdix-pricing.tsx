@@ -13,6 +13,7 @@ const tabClass = (active: boolean) =>
   }`;
 
 const icons = IconMap({
+  basic: "/assets/svgexport-39-1.svg",
   starter: "/assets/starter-42.svg",
   pro: "/assets/pro.svg",
   ultimate: "/assets/ultimate.svg",
@@ -20,12 +21,15 @@ const icons = IconMap({
 
 const planLinks = {
   monthly: {
+    basic: "https://my.hostnin.com/index.php/store/bdix-hosting/cloud-basic",
     starter:
       "https://my.hostnin.com/index.php/store/bdix-hosting/cloud-starter",
     pro: "https://my.hostnin.com/index.php/store/bdix-hosting/professional",
     ultimate: "https://my.hostnin.com/index.php/store/bdix-hosting/ultimate",
   },
   yearly: {
+    basic:
+      "https://my.hostnin.com/index.php/store/bdix-hosting/cloud-basic?billingcycle=annually",
     starter:
       "https://my.hostnin.com/index.php/store/bdix-hosting/cloud-starter?billingcycle=annually",
     pro: "https://my.hostnin.com/index.php/store/bdix-hosting/professional?billingcycle=annually",
@@ -52,7 +56,7 @@ export default function BdixHostingPricing() {
   };
 
   const plans = bdixHostingData.filter(
-    (plan) => plan.billingPeriod === billing && plan.title !== "Basic"
+    (plan) => plan.billingPeriod === billing
   );
 
   const getPlanLink = (planTitle: string) => {
@@ -79,7 +83,10 @@ export default function BdixHostingPricing() {
           </h2>
         )}
       </div>
-      <div id="plans-container" className="w-full max-w-7xl">
+      <div
+        id="plans-container"
+        className="w-full max-w-[88rem] mx-auto px-4 sm:px-6 lg:px-8"
+      >
         <div className="flex flex-row items-center gap-4 mb-8 justify-center">
           <div className="flex bg-[#2a3553] rounded-full p-1">
             <button
@@ -135,7 +142,7 @@ export default function BdixHostingPricing() {
           </div>
         </div>
 
-        <div className="w-full  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-8 md:gap-10 justify-center items-start mt-8 sm:mt-12 md:mt-16">
+        <div className="w-full  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-8 md:gap-10 justify-center items-start mt-8 sm:mt-12 md:mt-16">
           {plans.map((plan) => (
             <div
               key={plan.title}
@@ -162,7 +169,7 @@ export default function BdixHostingPricing() {
                       {plan.title}
                     </h3>
                   </div>
-                  <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 font-medium ">
+                  <p className="text-sm text-gray-600 dark:text-gray-300 font-medium ">
                     {plan.description}
                   </p>
                 </div>
@@ -179,13 +186,11 @@ export default function BdixHostingPricing() {
                       /Per {billing === "monthly" ? "Month" : "Year"}
                     </span>
                   </div>
-
                   {plan.savingsText && (
-                    <div className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-100 dark:to-blue-100 text-green-700 font-bold text-sm md:text-base mb-6 px-4 py-2 rounded-full border border-green-200 inline-block shadow-sm">
+                    <div className="bg-gradient-to-r from-blue-50 to-cyan-50 text-gray-800 dark:text-white/90 dark:from-accent dark:to-accent font-bold text-xs md:text-sm mb-6 px-4  py-2 rounded-full border dark:border-transparent border-blue-100 inline-block shadow-sm">
                       {plan.savingsText}
                     </div>
                   )}
-
                   <Link
                     href={getPlanLink(plan.title)}
                     rel="noopener noreferrer"
@@ -198,131 +203,12 @@ export default function BdixHostingPricing() {
                     {plan.buttonText || "Add to Cart"}
                   </Link>
 
-                  <div className="text-xs md:text-base text-gray-500 dark:text-gray-300 mt-4 text-center">
+                  <div className="text-xs md:text-sm text-gray-500 dark:text-gray-300 mt-4 text-center">
                     {plan.infoText}
                   </div>
                 </div>
 
                 <div className="w-full mb-8">
-                  <div className="mb-4">
-                    {/* Starter Plan Special Gift */}
-                    {plan.title === "Starter" && (
-                      <div
-                        className={`rounded-lg p-3 relative group ${
-                          billing === "monthly"
-                            ? "bg-amber-50 dark:bg-accent"
-                            : "bg-amber-50 dark:bg-accent"
-                        }`}
-                      >
-                        <div
-                          className={`text-xs font-semibold px-2 py-1 rounded-full inline-block mb-2
-                          ${
-                            billing === "monthly"
-                              ? "bg-gray-300 dark:bg-gray-900 dark:text-white text-gray-500 cursor-not-allowed"
-                              : "bg-teal-500 text-white"
-                          }
-                        `}
-                        >
-                          Special Gift
-                        </div>
-
-                        <div
-                          className={`flex items-center gap-1 ${
-                            billing === "monthly"
-                              ? "opacity-50 cursor-not-allowed"
-                              : ""
-                          }`}
-                        >
-                          <span className="text-teal-500 text-sm md:text-2xl">
-                            🎁
-                          </span>
-                          <Link
-                            target="_blank"
-                            href={
-                              billing === "monthly"
-                                ? "#"
-                                : "https://pro.hostnin.com"
-                            }
-                            className={`underline decoration-dotted font-medium ${
-                              billing === "monthly"
-                                ? "text-gray-900 dark:text-gray-100 pointer-events-none"
-                                : "text-gray-700 dark:text-gray-100 md:text-[19px]"
-                            }`}
-                          >
-                            Landing page design and Facebook ads mastery course
-                          </Link>
-                        </div>
-
-                        {billing === "yearly" && (
-                          <div className="absolute left-0 top-full mt-2 z-50 w-80 bg-blue-600 text-white text-sm md:text-lg rounded-lg p-2 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none ">
-                            Claim your complimentary Landing Page & Ads
-                            Masterclass — designed to help you succeed online.
-                            (৳6000 Value)
-                            <div className="absolute -top-2 left-4 w-3 h-3 bg-blue-600 transform rotate-45"></div>
-                          </div>
-                        )}
-                      </div>
-                    )}
-
-                    {/* Pro/Ultimate Plan Special Gift */}
-                    {(plan.title === "Pro" || plan.title === "Ultimate") && (
-                      <div
-                        className={`rounded-lg p-3 relative group ${
-                          billing === "monthly"
-                            ? "bg-amber-50 dark:bg-accent"
-                            : "bg-amber-50 dark:bg-accent"
-                        }`}
-                      >
-                        <div
-                          className={`text-xs font-semibold px-2 py-1 rounded-full inline-block mb-2
-                        ${
-                          billing === "monthly"
-                            ? "bg-gray-300 dark:bg-gray-900 dark:text-gray-100 text-gray-500 cursor-not-allowed"
-                            : "bg-teal-500 text-white"
-                        }`}
-                        >
-                          Special Gift
-                        </div>
-
-                        <div
-                          className={`flex items-center gap-1 ${
-                            billing === "monthly"
-                              ? "opacity-50 cursor-not-allowed"
-                              : ""
-                          }`}
-                        >
-                          <span className="text-teal-500 text-sm md:text-2xl">
-                            🎁
-                          </span>
-                          <Link
-                            target="_blank"
-                            href={
-                              billing === "monthly"
-                                ? "#"
-                                : "https://pro.hostnin.com"
-                            }
-                            className={`underline decoration-dotted font-medium ${
-                              billing === "monthly"
-                                ? "text-gray-900 dark:text-gray-100 pointer-events-none"
-                                : "text-gray-700 dark:text-gray-100 md:text-[19px]"
-                            }`}
-                          >
-                            Landing page design and Facebook ads mastery course
-                          </Link>
-                        </div>
-
-                        {billing === "yearly" && (
-                          <div className="absolute left-0 top-full mt-2 z-50 w-80 bg-blue-600 text-white text-sm md:text-lg rounded-lg p-2 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none ">
-                            Claim your complimentary Landing Page & Ads
-                            Masterclass — designed to help you succeed online.
-                            (৳6000 Value)
-                            <div className="absolute -top-2 left-4 w-3 h-3 bg-blue-600 transform rotate-45"></div>
-                          </div>
-                        )}
-                      </div>
-                    )}
-                  </div>
-
                   <h4 className="font-bold text-gray-800 dark:text-gray-200 mb-4 text-lg md:text-xl">
                     Features
                   </h4>

@@ -5,9 +5,9 @@ import SupportTeam from "../../components/home/support-team";
 import Offer from "../../../../components/shared/offer";
 import FreeCdnComparison from "@/components/shared/free-cdn-comparison";
 import LocationFeatures from "../../components/locations/location-features";
-import HostninPricing from "../../components/locations/hostnin-pricing";
 import HostingFAQs from "@/components/shared/hosting/hosting-faqs";
 import DataCentersSection from "../../../../components/shared/data-centers";
+import HostingPlan from "@/components/shared/hosting-plan";
 
 export const metadata: Metadata = {
   title: "Global CDN Locations | Hostnin",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "Discover Hostnin's global CDN network with edge caching technology. Deploy faster websites with unlimited traffic, premium edge servers, and enhanced security across worldwide locations.",
   keywords:
     "CDN locations, edge caching, content delivery network, global servers, website speed, Hostnin CDN",
- openGraph: {
+  openGraph: {
     title: "Global CDN Locations | Hostnin",
     description:
       "Discover Hostnin's global CDN network with edge caching technology. Deploy faster websites with unlimited traffic, premium edge servers, and enhanced security across worldwide locations.",
@@ -47,7 +47,7 @@ export default function LocationsPage() {
       <LocationFeatures />
       <DataCentersSection />
       <FreeCdnComparison />
-      <HostninPricing />
+      <HostingPlan />
       <SupportTeam />
       <HostingFAQs />
       <Offer />

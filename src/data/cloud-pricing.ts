@@ -97,11 +97,7 @@ export const cloudHostingData: PricingPlan[] = [
           tooltip: "MySQL database support included.",
           included: true,
         },
-        {
-          text: "Woocommerce Optimization",
-          tooltip: "Special optimizations for Woocommerce stores.",
-          included: false,
-        },
+
         {
           text: "Multiple Hosting Locations",
           tooltip: "Choose from multiple server locations worldwide.",
@@ -278,11 +274,7 @@ export const cloudHostingData: PricingPlan[] = [
           tooltip: "MySQL database support included.",
           included: true,
         },
-        {
-          text: "Woocommerce Optimization",
-          tooltip: "Special optimizations for Woocommerce stores.",
-          included: true,
-        },
+
         {
           text: "Multiple Hosting Locations",
           tooltip: "Choose from multiple server locations worldwide.",
@@ -363,6 +355,7 @@ export const cloudHostingData: PricingPlan[] = [
     icon: "starter",
     description: "Ideal for Mid-level Websites",
     buttonText: "Add to Cart",
+    highlight: true,
     infoText: "৳2999/year when you renew",
     savingsText: "24/7 WhatsApp & Call Support",
   },
@@ -456,11 +449,7 @@ export const cloudHostingData: PricingPlan[] = [
           tooltip: "MySQL database support included.",
           included: true,
         },
-        {
-          text: "Woocommerce Optimization",
-          tooltip: "Special optimizations for Woocommerce stores.",
-          included: true,
-        },
+
         {
           text: "Multiple Hosting Locations",
           tooltip: "Choose from multiple server locations worldwide.",
@@ -543,7 +532,6 @@ export const cloudHostingData: PricingPlan[] = [
     buttonText: "Add to Cart",
     infoText: "৳4999/year when you renew",
     savingsText: "24/7 WhatsApp & Call Support",
-    highlight: true,
     badge: "Most Popular",
   },
   {
@@ -639,11 +627,7 @@ export const cloudHostingData: PricingPlan[] = [
           tooltip: "MySQL database support included.",
           included: true,
         },
-        {
-          text: "Woocommerce Optimization",
-          tooltip: "Special optimizations for Woocommerce stores.",
-          included: true,
-        },
+
         {
           text: "Multiple Hosting Locations",
           tooltip: "Choose from multiple server locations worldwide.",
@@ -823,11 +807,7 @@ export const cloudHostingData: PricingPlan[] = [
           tooltip: "MySQL database support included.",
           included: true,
         },
-        {
-          text: "Woocommerce Optimization",
-          tooltip: "Special optimizations for Woocommerce stores.",
-          included: false,
-        },
+
         {
           text: "Multiple Hosting Locations",
           tooltip: "Choose from multiple server locations worldwide.",
@@ -1004,11 +984,7 @@ export const cloudHostingData: PricingPlan[] = [
           tooltip: "MySQL database support included.",
           included: true,
         },
-        {
-          text: "Woocommerce Optimization",
-          tooltip: "Special optimizations for Woocommerce stores.",
-          included: true,
-        },
+
         {
           text: "Multiple Hosting Locations",
           tooltip: "Choose from multiple server locations worldwide.",
@@ -1089,6 +1065,7 @@ export const cloudHostingData: PricingPlan[] = [
     icon: "starter",
     description: "Ideal for Mid-level Websites",
     buttonText: "Add to Cart",
+    highlight: true,
     infoText: "৳9999/triennially when you renew",
     savingsText: "24/7 WhatsApp & Call Support",
   },
@@ -1182,11 +1159,7 @@ export const cloudHostingData: PricingPlan[] = [
           tooltip: "MySQL database support included.",
           included: true,
         },
-        {
-          text: "Woocommerce Optimization",
-          tooltip: "Special optimizations for Woocommerce stores.",
-          included: true,
-        },
+
         {
           text: "Multiple Hosting Locations",
           tooltip: "Choose from multiple server locations worldwide.",
@@ -1269,7 +1242,6 @@ export const cloudHostingData: PricingPlan[] = [
     buttonText: "Add to Cart",
     infoText: "৳12999/triennially when you renew",
     savingsText: "24/7 WhatsApp & Call Support",
-    highlight: true,
     badge: "Most Popular",
   },
   {
@@ -1365,11 +1337,7 @@ export const cloudHostingData: PricingPlan[] = [
           tooltip: "MySQL database support included.",
           included: true,
         },
-        {
-          text: "Woocommerce Optimization",
-          tooltip: "Special optimizations for Woocommerce stores.",
-          included: true,
-        },
+
         {
           text: "Multiple Hosting Locations",
           tooltip: "Choose from multiple server locations worldwide.",

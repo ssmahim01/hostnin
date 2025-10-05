@@ -11,11 +11,12 @@ import {
 } from "lucide-react";
 import { plans } from "@/data/hosting-plan";
 import { Plan } from "@/types/hosting-plan";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { Card } from "@/components/ui/card";
 
 export default function HostingPlan() {
   const router = useRouter();
+  const pathname = usePathname();
 
   const handleChoosePlan = (plan: Plan) => {
     const route =
@@ -64,17 +65,32 @@ export default function HostingPlan() {
   };
 
   return (
-    <section id="hosting-plans" className="pt-[70px] pb-10">
+    <section
+      id="hosting-plans"
+      className={`${pathname === "/pricing" ? "pt-[70px] pb-10" : " pb-16"} `}
+    >
       {" "}
       <div className="container max-w-7xl mx-auto px-4">
-        {" "}
-        <h2
-          id="plans"
-          className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12"
-        >
-          {" "}
-          Select Your Perfect Hosting Plan{" "}
-        </h2>{" "}
+        {pathname === "/pricing" ? (
+          <h2
+            id="plans"
+            className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12"
+          >
+            {" "}
+            Select Your Perfect Hosting Plan{" "}
+          </h2>
+        ) : (
+          <div className="text-center max-w-3xl mx-auto mb-8 space-y-4">
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white">
+              Use Hostnin CDN with any of these hosting platforms
+            </h2>
+            <p className="mt-3 text-sm sm:text-base text-muted-foreground">
+              Get the performance benefits of Hostnin’s CDN paired with
+              best-in-class hosting — autoscaling, managed cloud, WordPress and
+              reseller options.
+            </p>
+          </div>
+        )}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {" "}
           {plans?.map((plan) => (

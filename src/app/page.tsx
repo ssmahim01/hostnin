@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import { HeroSection } from "./(public-routes)/components/home/hero";
-import HostingPlan from "../components/shared/hosting-plan";
 import MovingWebsites from "./(public-routes)/components/home/moving-websites";
 import Offer from "../components/shared/offer";
 import { DomainSearchSection } from "../components/shared/hosting/domain-search-section";
@@ -10,6 +9,7 @@ import SupportBanner from "./(public-routes)/components/home/support-banner";
 import SupportTeam from "./(public-routes)/components/home/support-team";
 import VideoReviews from "../components/shared/video-reviews/video-reviews";
 import HostingFeaturesBlock from "@/components/shared/hosting/hosting-features-block";
+import HostninPricing from "../components/shared/hosting/hostnin-pricing";
 
 export const metadata: Metadata = {
   title: "Home | Best Web Hosting Company in Bangladesh",
@@ -43,8 +43,8 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <HostingPlan />
-      <div className="lg:-my-16 md:my-0 -mb-10">
+      <HostninPricing />
+      <div className="lg:-my-24 md:my-0 -mb-10">
         <MovingWebsites />
       </div>{" "}
       <div className="-mb-8 -mt-10">
