@@ -143,7 +143,7 @@ export const Banner: React.FC<BannerProps> = ({
           className={`hidden md:flex flex-1 justify-center 
              lg:mt-0 lg:pr-[73px] mt-2
             w-full 
-            max-w-[17rem] md:mb-4 sm:max-w-sm lg:max-w-xl 
+            max-w-[17rem] md:mb-4 sm:max-w-sm lg:max-w-2xl 
             h-full
           `}
         >

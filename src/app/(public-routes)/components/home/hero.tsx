@@ -3,17 +3,9 @@
 import { ArrowRight, CircleCheckBig } from "lucide-react";
 import Image from "next/image";
 import { heroData } from "@/data/hero";
+import Link from "next/link";
 
 export function HeroSection() {
-  // Smooth scroll function
-  const handleScrollToPlan = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    const section = document.querySelector("#hosting-plans");
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <section
       className="
@@ -33,19 +25,20 @@ export function HeroSection() {
             </span>{" "}
           </h1>
 
-          <p className="text-base md:text-xl opacity-90 max-w-xl leading-relaxed ">
+          <p className="text-base md:text-xl opacity-90 max-w-xl leading-relaxed">
             {heroData.description}
           </p>
           <div className="flex items-center flex-col md:flex-row gap-4 lg:justify-start justify-center">
-            <button
-              className="
+            <Link href={"/pricing"}>
+              <button
+                className="
               group w-full sm:w-auto cursor-pointer bg-white/90 text-gray-600 hover:bg-white dark:bg-white/95 font-semibold px-6 sm:px-8 py-3 sm:py-4  rounded-full border border-gray-300 dark:hover:bg-white  transition-transform duration-300 ease-in-out flex items-center gap-2 justify-center text-sm sm:text-base lg:text-[17px] hover:scale-105
             "
-              onClick={handleScrollToPlan}
-            >
-              <span>{heroData.cta}</span>
-              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
-            </button>
+              >
+                <span>{heroData.cta}</span>
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+              </button>
+            </Link>
 
             <span className="text-base md:text-lg opacity-80 font-semibold">
               {heroData.trusted}

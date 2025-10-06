@@ -77,10 +77,7 @@ export default function HostninPricing() {
   return (
     <section className="container mx-auto px-4 lg:px-8 pt-[70px] pb-4 max-w-7xl">
       <div className="text-center max-w-3xl mx-auto mb-7 space-y-4">
-        <h2
-          id="plans"
-          className="text-3xl font-bold text-center text-gray-900 dark:text-white"
-        >
+        <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white">
           {" "}
           Select Your Perfect Hosting Plan{" "}
         </h2>{" "}
